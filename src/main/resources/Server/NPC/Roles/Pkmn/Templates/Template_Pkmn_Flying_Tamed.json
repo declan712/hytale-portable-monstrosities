@@ -163,10 +163,6 @@
 			"Value": 2,
 			"Description": "The maximum climb height, in blocks."
 		},
-		"DropHeight": {
-            "Value": 5,
-            "Description": "Max drop height"
-        },
 		"AttitudeGroup": {
 			"Value": "Predators",
 			"Description": "The attitude group this NPC belongs to."
@@ -601,10 +597,7 @@
 			"JumpDescentSteepness": 8,
 			"MaxClimbHeight": {
 				"Compute": "ClimbHeight"
-			},
-            "DropHeight": {
-                "Compute": "DropHeight"
-            }
+			}
 		},
         {
 			"Type": "Fly",
@@ -726,7 +719,7 @@
 		"Init_Stats_Test": {
 			"Interactions": [
 				{
-					"Type": "SetPkmnNameplate",
+					"Type": "SetCreatureNameplate",
 					"BaseStats": {"Compute":"BaseStats"},
 					"Type1": {"Compute":"Type1"},
 					"Type2": {"Compute":"Type2"}
@@ -746,6 +739,32 @@
 						"RandomPercentageModifier": 0.1
 					}
 				}
+			]
+		},
+		"Move_Start_1": {
+			"Interactions": [
+				"Pkmn_Moves_Tackle"
+			]
+		},
+		"Move_Start_2": {
+			"Interactions": [
+				"Pkmn_Moves_Scratch"
+			]
+		},
+		"Move_Start_3": {
+			"Interactions": [
+				{
+					"Type":"Simple",
+					"RunTime":0.75,
+					"Effects":{
+						"ItemAnimationId": "Alerted"
+					}
+				}
+			]
+		},
+		"Move_Start_4": {
+			"Interactions": [
+				"Pkmn_Moves_Bite"
 			]
 		}
 	},

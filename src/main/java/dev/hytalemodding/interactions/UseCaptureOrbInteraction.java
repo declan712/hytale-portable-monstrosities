@@ -108,7 +108,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull InteractionContext context,
         @Nonnull CooldownHandler cooldownHandler
     ) {
-        LOGGER.atInfo().log("UsePokeballInteraction: type=" + type);
         CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
         assert commandBuffer != null;
 

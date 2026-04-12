@@ -1,7 +1,7 @@
 {
   "TranslationProperties": {
-    "Name": "portablemonstrosities.items.Container_Tank.name",
-    "Description": "portablemonstrosities.items.Container_Tank.description"
+    "Name": "pizzamon.items.Container_Tank.name",
+    "Description": "pizzamon.items.Container_Tank.description"
   },
   "ResourceTypes": [],
   "Icon": "Icons/ItemsGenerated/Container_Tank.png",
@@ -130,13 +130,10 @@
       "Variant": true,
       "$TODO": "Parent: Container_Bucket",
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Container_Tank_Water.name",
-        "Description": "portablemonstrosities.items.Container_Tank_Water.description"
+        "Name": "pizzamon.items.Container_Tank_Water.name",
+        "Description": "pizzamon.items.Container_Tank_Water.description"
       },
       "ResourceTypes": [
-        {
-          "Id": "Mixer_Resource"
-        }
       ],
       "IconProperties": {
         "Scale": 0.58823,
@@ -182,7 +179,7 @@
         "Pick": {
           "Interactions": [
             {
-              "Type": "Fill_Fluid_Container",
+              "Type": "FillFluidContainer",
               "Effects": {
                 "ClearSoundEventOnFinish": true,
                 "LocalSoundEventId": "SFX_Water_MoveIn"
@@ -241,8 +238,8 @@
       "Variant": true,
       "$TODO": "Parent: Container_Bucket",
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Container_Tank_Lava.name",
-        "Description": "portablemonstrosities.items.Container_Tank_Lava.description"
+        "Name": "pizzamon.items.Container_Tank_Lava.name",
+        "Description": "pizzamon.items.Container_Tank_Lava.description"
       },
       "IconProperties": {
         "Scale": 0.58823,
@@ -335,13 +332,10 @@
       "Variant": true,
       "$TODO": "Parent: Container_Bucket",
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Container_Tank_Molten_Copper.name",
-        "Description": "portablemonstrosities.items.Container_Tank_Molten_Copper.description"
+        "Name": "pizzamon.items.Container_Tank_Molten_Copper.name",
+        "Description": "pizzamon.items.Container_Tank_Molten_Copper.description"
       },
       "ResourceTypes": [
-        {
-          "Id": "Mixer_Resource"
-        }
       ],
       "IconProperties": {
         "Scale": 0.58823,
@@ -428,18 +422,10 @@
     "Filled_Milk": {
       "Variant": true,
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Container_Bucket_Milk.name",
-        "Description": "portablemonstrosities.items.Container_Bucket_Milk.description"
+        "Name": "pizzamon.items.Container_Bucket_Milk.name",
+        "Description": "pizzamon.items.Container_Bucket_Milk.description"
       },
       "ResourceTypes": [
-        {
-          "Id": "Milk_Bucket",
-          "Quantity": 1
-        },
-        {
-          "Id": "Mixer_Resource",
-          "Quantity": 1
-        }
       ],
       "IconProperties": {
         "Scale": 0.58823,
@@ -544,18 +530,10 @@
     "Filled_Mosshorn_Milk": {
       "Variant": true,
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Container_Bucket_Mosshorn_Milk.name",
-        "Description": "portablemonstrosities.items.Container_Bucket_Mosshorn_Milk.description"
+        "Name": "pizzamon.items.Container_Bucket_Mosshorn_Milk.name",
+        "Description": "pizzamon.items.Container_Bucket_Mosshorn_Milk.description"
       },
       "ResourceTypes": [
-        {
-          "Id": "Milk_Mosshorn_Bucket",
-          "Quantity": 1
-        },
-        {
-          "Id": "Mixer_Resource",
-          "Quantity": 1
-        }
       ],
       "IconProperties": {
         "Scale": 0.58823,

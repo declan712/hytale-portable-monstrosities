@@ -11,6 +11,7 @@ import dev.hytalemodding.interactions.CaptureWildCreatureInteraction;
 import dev.hytalemodding.interactions.StayCapturedInteraction;
 import dev.hytalemodding.interactions.HasOwnerInteration;
 import dev.hytalemodding.interactions.CreatureScannerInteration;
+import dev.hytalemodding.interactions.FillFluidContainerInteraction;
 import dev.hytalemodding.interactions.SetCreatureNameplateInteraction;
 import dev.hytalemodding.interactions.UseCaptureOrbInteraction;
 import javax.annotation.Nonnull;
@@ -44,7 +45,7 @@ public class PortableMonstrosities extends JavaPlugin {
         this.getCodecRegistry(Interaction.CODEC).register("SetCreatureNameplate", SetCreatureNameplateInteraction.class, SetCreatureNameplateInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteration.class, CreatureScannerInteration.CODEC);
         // this.getCodecRegistry(Interaction.CODEC).register("Bench_Dough_Mixer_Interaction", DoughMixerInteraction.class, DoughMixerInteraction.CODEC);
-        // this.getCodecRegistry(Interaction.CODEC).register("Fill_Fluid_Container", FillFluidContainer.class, FillFluidContainer.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("FillFluidContainer", FillFluidContainerInteraction.class, FillFluidContainerInteraction.CODEC);
 
 
         // -- Components ----------
