@@ -1,0 +1,100 @@
+{
+  "Type": "Repeat",
+  "ForkInteractions": {
+    "Interactions": [
+      {
+        "Type": "Parallel",
+        "Interactions": [
+          {
+            "Interactions": [
+              {
+                "Type": "ApplyEffect",
+                "EffectId": "FlamethrowerSource",
+                "RunTime": 0.25,
+                "Entity": "Owner",
+                "Effects": {}
+              },
+              {
+                "Type": "Simple",
+                "Effects": {
+                  "Particles": [
+                    {
+                      "PositionOffset": {
+                        "X": 0,
+                        "Y": -0.2,
+                        "Z": 3
+                      },
+                      "RotationOffset": {
+                        "Pitch": 0,
+                        "Roll": 0,
+                        "Yaw": 180
+                      },
+                      "TargetNodeName": "Head",
+                      "SystemId": "Flamethrower",
+                      "TargetEntityPart": "Entity"
+                    }
+                  ],
+                  "WorldSoundEventId": "SFX_Pkmn_Move_Flamethrower"
+                }
+              }
+            ]
+          },
+          {
+            "Interactions": [
+              {
+                "Type": "Selector",
+                "$Comment": "Length of Combat",
+                "RunTime": 0.1,
+                "Selector": {
+                  "Id": "Stab",
+                  "TestLineOfSight": true,
+                  "ExtendTop": 0.175,
+                  "ExtendLeft": 0.175,
+                  "ExtendRight": 0.175,
+                  "ExtendBottom": 0.175,
+                  "StartDistance": 0.1,
+                  "EndDistance": 5.5
+                },
+                "HitEntity": {
+                  "Interactions": [
+                    {
+                      "Type": "Replace",
+                      "Var": "Flamethrower_Damage",
+                      "DefaultOk": true,
+                      "DefaultValue": {
+                        "Interactions": [
+                          "Pkmn_Moves_Flamethrower_Damage"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "RunTime": 0.5
+      }
+    ]
+  },
+  "RunTime": 3,
+  "Repeat": 10,
+  "Next": {
+    "Type": "Simple",
+    "Effects": {
+      "ClearAnimationOnFinish": true,
+      "ItemPlayerAnimationsId": "Pkmn_Default",
+      "ItemAnimationId": "Breath"
+    },
+    "RunTime": 0.2
+  },
+  "Failed": {
+    "Type": "Simple",
+    "Effects": {
+      "ClearAnimationOnFinish": true,
+      "ItemPlayerAnimationsId": "Pkmn_Default",
+      "ItemAnimationId": "Breath"
+    },
+    "RunTime": 0.2
+  }
+}

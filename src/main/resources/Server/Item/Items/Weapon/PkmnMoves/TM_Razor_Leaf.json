@@ -1,0 +1,85 @@
+{
+  "Parent": "TM_Template",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.TM_Razor_Leaf.name",
+    "Description": "portablemonstrosities.items.TM_Razor_Leaf.description"
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Weapons"
+  ],
+  "Quality": "Uncommon",
+  "ItemLevel": 20,
+  "Model": "Items/Weapons/Thrown/Razor_Leaf/Razor_Leaf.blockymodel",
+  "Texture": "Items/Weapons/Thrown/Razor_Leaf/Razor_Leaf_Texture.png",
+  "PlayerAnimationsId": "Throwing_Knife",
+  "Utility": {
+    "Compatible": false,
+    "Usable": false
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+            "Parent": "Razor_Leaf",
+            "Effects": {
+            "PlayerAnimationsId": "Throwing_Knife",
+            "ItemAnimationId": "Throw"
+            }
+        }
+        ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      39,
+      239,
+      345
+    ],
+    "Translation": [
+      22,
+      -26
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Wand"
+    ]
+  },
+  "Weapon": {
+    "StatModifiers": {
+      "SignatureEnergy": [
+        {
+          "CalculationType": "Additive",
+          "Amount": 20
+        }
+      ]
+    },
+    "EntityStatsToClear": [
+      "SignatureEnergy"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Icon": "Icons/ItemsGenerated/TM_Razor_Leaf.png",
+  "InteractionVars": {
+    "Razor_Leaf_Damage": {
+      "Interactions": [
+        {
+          "Type": "DamageEntity",
+          "Parent": "Razor_Leaf_Damage",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Grass": 10
+            },
+            "RandomPercentageModifier": 0.1
+          }
+        }
+      ]
+    }
+  }
+}

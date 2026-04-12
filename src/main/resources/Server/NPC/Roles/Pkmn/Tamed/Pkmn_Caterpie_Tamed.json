@@ -1,0 +1,33 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T0_Chitin",
+    "Type1": "BugType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [7,100],
+    "EvolveRoleChange": "Pkmn_Metapod_Tamed",
+    "Appearance": "Pkmn_Caterpie",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "AttitudeGroup": "Prey",
+    "MaxHealth": 20,
+    "MaxSpeed": 4,
+    "WanderRadius": 20,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Caterpie.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

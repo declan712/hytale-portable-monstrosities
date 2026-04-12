@@ -1,0 +1,267 @@
+{
+  "Parent": "Bluegill",
+  "Model": "NPC/Pkmn/Gyarados/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Gyarados/Models/Texture.png",
+  "EyeHeight": 1.5,
+  "HitBox": {
+    "Max": {
+      "X": 2,
+      "Y": 2,
+      "Z": 2
+    },
+    "Min": {
+      "X": -2,
+      "Y": 0,
+      "Z": -2
+    }
+  },
+  "MinScale": 1.6,
+  "MaxScale": 2,
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 5,
+        "Min": -5
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "PositionOffset": {
+      "X": 2,
+      "Y": 2,
+      "Z": 10
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Max": 5,
+        "Min": -5
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    }
+  },
+  "AnimationSets": {
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Default/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "SoundEventId": "SFX_Pkmn_Gyarados_Cry"
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Idle.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Backward.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Fast.blockyanim",
+          "Speed": 1
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Idle.blockyanim",
+          "Speed": 0.5,
+          "BlendingDuration": 0.5
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim.blockyanim",
+          "Speed": 0.5,
+          "BlendingDuration": 0.5
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Backward.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Fast.blockyanim",
+          "Speed": 1
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Jump.blockyanim",
+          "Looping": true
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Idle.blockyanim"
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Backward.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Fast.blockyanim",
+          "Speed": 1
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Idle.blockyanim",
+          "Looping": true,
+          "Speed": 0.5,
+          "BlendingDuration": 0.5
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Backward.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Fast.blockyanim",
+          "Speed": 1
+        }
+      ]
+    },
+    "SwimHurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Damage/Hurt_Swim.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false
+        }
+      ]
+    },
+    "SwimDeath": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Damage/Death_Swim.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Idle.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Swim/Swim_Idle.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Default/Spawn.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gyarados/Animations/Default/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.2,
+          "SoundEventId": "SFX_Pkmn_Gyarados_Cry"
+        }
+      ]
+    }
+  },
+  "Icon": "Icons/ModelsGenerated/Pkmn_Gyarados.png",
+  "IconProperties": {
+    "Scale": 0.2,
+    "Rotation": [
+      0,
+      11,
+      6
+    ],
+    "Translation": [
+      -10,
+      -69
+    ]
+  }
+}

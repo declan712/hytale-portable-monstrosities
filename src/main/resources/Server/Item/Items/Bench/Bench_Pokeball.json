@@ -1,0 +1,130 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Bench_Pokeball.name",
+    "Description": "portablemonstrosities.items.Bench_Pokeball.description"
+  },
+  "Recipe": {
+    "TimeSeconds": 3,
+    "Input": [
+      {
+        "Quantity": 6,
+        "ResourceTypeId": "Wood_Trunk"
+      },
+      {
+        "Quantity": 4,
+        "ResourceTypeId": "Rock"
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Crafting"
+        ],
+        "Id": "Workbench"
+      }
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Bench_Pokeball.png",
+  "Categories": [
+    "Furniture.Benches",
+    "PortableMonstrosities.Furniture"
+  ],
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Semitransparent",
+    "CustomModel": "Blocks/Benches/Pokeball.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Benches/Pokeball_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Bench_Loom",
+    "VariantRotation": "NESW",
+    "Bench": {
+      "Type": "Crafting",
+      "Categories": [
+        {
+          "Id": "Pkmn_General",
+          "Icon": "Icons/CraftingCategories/Pkmn/Bench_Pkmn_PC.png",
+          "Name": "portablemonstrosities.benchCategories.pokeball.general"
+        },
+        {
+          "Id": "Pkmn_Crafting",
+          "Icon": "Icons/CraftingCategories/Pkmn/Bench_Pkmn_PC.png",
+          "Name": "portablemonstrosities.benchCategories.pokeball.crafting"
+        },
+        {
+          "Id": "Pkmn_Balls",
+          "Icon": "Icons/CraftingCategories/Pkmn/Pokeball.png",
+          "Name": "portablemonstrosities.benchCategories.pokeball.balls"
+        },
+        {
+          "Name": "portablemonstrosities.benchCategories.pokeball.apricorn",
+          "Id": "Pkmn_Apricorn",
+          "Icon": "Icons/CraftingCategories/Pkmn/Plant_Fruit_Apricorn.png"
+        },
+        {
+          "Name": "portablemonstrosities.benchCategories.pokeball.leather",
+          "Icon": "Icons/CraftingCategories/Pkmn/Ingredient_Leather_Pkmn_Charizard.png",
+          "Id": "Pkmn_Leather"
+        }
+      ],
+      "LocalOpenSoundEventId": "SFX_Workbench_Open",
+      "LocalCloseSoundEventId": "SFX_Workbench_Close",
+      "CompletedSoundEventId": "SFX_Workbench_Craft",
+      "FailedSoundEventId": "SFX_Generic_Crafting_Failed",
+      "Id": "Bench_Pokeball"
+    },
+    "State": {
+      "Id": "crafting",
+      "Definitions": {
+        "CraftCompleted": {
+          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim",
+          "Looping": true
+        },
+        "CraftCompletedInstant": {
+          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim"
+        }
+      }
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches"
+      }
+    },
+    "BlockParticleSetId": "Wood",
+    "ParticleColor": "#6b472f",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockSoundSetId": "Wood"
+  },
+  "PlayerAnimationsId": "Block",
+  "IconProperties": {
+    "Scale": 0.42,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      13,
+      -13.2
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Bench"
+    ]
+  },
+  "MaxStack": 1,
+  "ItemLevel": 7,
+  "ItemSoundSetId": "ISS_Blocks_Wood"
+}

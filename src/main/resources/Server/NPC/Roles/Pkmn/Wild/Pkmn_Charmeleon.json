@@ -1,0 +1,104 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Charmeleon",
+    "AttitudeGroup": "Predators",
+    "FlockArray": [
+      "Pkmn_Charizard",
+      "Pkmn_Charmeleon",
+      "Pkmn_Charmander"
+    ],
+    "AttractiveItemSet": [
+      "Ingredient_Powder_Boom"
+    ],
+    "Type1": "FireType",
+    "WildLevelMin": 16,
+    "WildLevelMax": 36,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Charmeleon_Tamed",
+    "MaxHealth": 100,
+    "MaxSpeed": 10,
+    "WanderRadius": 12,
+    "ViewRange": 12,
+    "HearingRange": 8,
+    "FleeRange": 15,
+    "AlertedRange": 18,
+    "AbsoluteDetectionRange": 2,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "MaintainDistanceWhileAlerted": true,
+    "DropList": "Drop_Pkmn_Charmeleon",
+    "Attack": "Root_NPC_Pkmn_Charmeleon_Attack",
+    "AlwaysSleepAtNight": false,
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Charmeleon",
+    "_InteractionVars": {
+      "Melee_Damage": {
+        "Interactions": [
+          {
+            "Parent": "NPC_Attack_Melee_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {
+                "Physical": 32
+              },
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Flamethrower_Damage":{
+        "Interactions": [
+          {
+            "Type": "DamageEntity",
+            "DamageCalculator": {
+              "BaseDamage": {
+                "Physical": 8
+              }
+            },
+            "DamageEffects": {
+              "Knockback": {
+                "Type": "Force",
+                "VelocityConfig": {
+                  "GroundResistance": 0.804,
+                  "GroundResistanceMax": 0.0,
+                  "AirResistance": 0.972,
+                  "AirResistanceMax": 0.028,
+                  "Threshold": 1.0,
+                  "Style": "Exp"
+                },
+                "Direction": {
+                  "X": 1.0,
+                  "Y": 2.0,
+                  "Z": 3.0
+                },
+                "Force": 0.2,
+                "VelocityType": "Set"
+              },
+              "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_Impact",
+              "WorldParticles": [
+                {
+                  "SystemId": "Impact_Sword_Charged"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Charmeleon.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

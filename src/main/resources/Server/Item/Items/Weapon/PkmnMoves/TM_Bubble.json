@@ -1,0 +1,111 @@
+{
+  "Parent": "TM_Template",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.TM_Bubble.name",
+    "Description": "portablemonstrosities.items.TM_Bubble.description"
+  },
+  "Quality": "Uncommon",
+  "ItemLevel": 20,
+  "Model": "Items/Weapons/Tm/Model.blockymodel",
+  "Texture": "Items/Weapons/Tm/Water.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Effects": {
+            "ItemPlayerAnimationsId": "Spellbook",
+            "ItemAnimationId": "CastPushCharging",
+            "ClearAnimationOnFinish": true
+          },
+          "AllowIndefiniteHold": true,
+          "DisplayProgress": true,
+          "Next": {
+            "0": {
+              "Type": "Simple"
+            },
+            "1": {
+              "Type": "Repeat",
+              "ForkInteractions": {
+                "Interactions": [
+                  {
+                    "Type": "Parallel",
+                    "Interactions": [
+                      {
+                        "Interactions": [
+                          {
+                            "Type": "ChangeStat",
+                            "StatModifiers": {
+                              "MagicCharges": 0
+                            }
+                          },
+                          {
+                            "Type": "Simple",
+                            "RunTime": 0.25,
+                            "Effects": {
+                              "ItemPlayerAnimationsId": "Spellbook",
+                              "ItemAnimationId": "CastPushCharged",
+                              "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Launch",
+                              "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Launch"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Interactions": [
+                          {
+                            "Type": "Simple",
+                            "RunTime": 0.25
+                          },
+                          {
+                            "Type": "Projectile",
+                            "Config": "Projectile_Config_Bubble",
+                            "Next": {
+                              "Type": "Simple",
+                              "RunTime": 0.5
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "RunTime": 1,
+              "Repeat": 3
+            }
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      231,
+      5,
+      155
+    ],
+    "Translation": [
+      3,
+      -18
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/TM_Bubble.png",
+  "InteractionVars": {
+    "Bubble_Damage": {
+      "Interactions": [
+        {
+          "Type": "DamageEntity",
+          "Parent": "Pkmn_Moves_Bubble Damage",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Water": 8
+            },
+            "RandomPercentageModifier": 0.1
+          }
+        }
+      ]
+    }
+  }
+}

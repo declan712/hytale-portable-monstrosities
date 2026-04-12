@@ -1,0 +1,150 @@
+{
+  "Parent": "Weapon_Club_Iron",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Rocket_Baton.name",
+    "Description": "portablemonstrosities.items.Rocket_Baton.description"
+  },
+  "Model": "Items/Weapons/Club/Rocket_Baton.blockymodel",
+  "Texture": "Items/Weapons/Club/Rocket_Baton_Texture.png",
+  "Quality": "Uncommon",
+  "ItemLevel": 10,
+  "Recipe": {
+    "TimeSeconds": 4,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pkmn_T1",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Ingredient_Leather_Charmeleon",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Weapon_Club"
+        ],
+        "Id": "Weapon_Bench",
+        "RequiredTierLevel": 2
+      }
+    ]
+  },
+  "PlayerAnimationsId": "Club",
+  "Utility": {
+    "Compatible": true
+  },
+  "MaxDurability": 150,
+  "DurabilityLossOnHit": 0.56,
+  "Interactions": {
+    "Primary": "Club_Attack",
+    "Secondary": {
+      "Rules": {
+        "BlockedBy": [
+          "Primary"
+        ]
+      },
+      "Interactions": [
+        "Weapon_Secondary_Guard_Pkmn"
+      ]
+    }
+  },
+  "InteractionVars": {
+    "Club_Swing_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Club_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Swing"
+          }
+        }
+      ]
+    },
+    "Club_Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Club_Swing_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Normal": 10
+            },
+            "RandomPercentageModifier": 0.1
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Impact"
+          }
+        }
+      ]
+    },
+    "Club_Swing_Right_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Club_Swing_Right_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Swing"
+          }
+        }
+      ]
+    },
+    "Club_Swing_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Club_Swing_Right_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Normal": 10
+            },
+            "RandomPercentageModifier": 0.1
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Impact"
+          }
+        }
+      ]
+    },
+    "Club_Swing_Down_Charged_Effect": "Club_Swing_Down_Charged_Effect",
+    "Club_Swing_Down_Charged_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Club_Swing_Down_Charged_Damage",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Normal": 26
+            },
+            "Type": "Absolute",
+            "RandomPercentageModifier": 0.1
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Impact"
+          }
+        }
+      ]
+    }
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Weapons"
+  ],
+  "ItemSoundSetId": "ISS_Weapons_Blunt_Small",
+  "Icon": "Icons/ItemsGenerated/Rocket_Baton.png",
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      42,
+      131,
+      21
+    ],
+    "Translation": [
+      -26,
+      -27
+    ]
+  }
+}

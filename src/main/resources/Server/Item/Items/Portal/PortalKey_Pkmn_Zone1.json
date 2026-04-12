@@ -1,0 +1,77 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.PortalKey_Pkmn_Zone1.name",
+    "Description": "portablemonstrosities.items.PortalKey_Pkmn_Zone1.description"
+  },
+  "Icon": "Icons/ItemsGenerated/PortalKey_Howling_Sands.png",
+  "Categories": [
+    "Blocks.Portals",
+    "PortableMonstrosities.Items"
+  ],
+  "PortalKey": {
+    "PortalType": "Pkmn_Zone1",
+    "TimeLimitSeconds": 600
+  },
+  "BlockType": {
+    "DrawType": "Model",
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/Miscellaneous/Portal_Shard.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Miscellaneous/Portal_Shard_Texture.png",
+        "Weight": 1
+      }
+    ]
+  },
+  "Recipe": {
+    "TimeSeconds": 1,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pkmn_T1",
+        "Quantity": 5
+      },
+      {
+        "ItemId": "Ingredient_Pkmn_Chitin_T1",
+        "Quantity": 5
+      },
+      {
+        "ItemId": "Ingredient_Pkmn_Hide_T1",
+        "Quantity": 5
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Bench_Pokeball",
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_General"
+        ],
+        "RequiredTierLevel": 1
+      }
+    ],
+    "RequiredMemoriesLevel": 1
+  },
+  "PlayerAnimationsId": "Item",
+  "Tags": {
+    "Type": [
+      "Portal",
+      "Temporary"
+    ]
+  },
+  "Quality": "Uncommon",
+  "ItemLevel": 15,
+  "IconProperties": {
+    "Scale": 1.4,
+    "Rotation": [
+      22.5,
+      137.0,
+      22.5
+    ],
+    "Translation": [
+      0.0,
+      1.0
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Pkmn_Candy",
+              "QuantityMin": 3,
+              "QuantityMax": 5
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Ingredient_Pkmn_Hide_T2",
+              "QuantityMin": 1,
+              "QuantityMax": 3
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Food_Wildmeat_Raw",
+              "QuantityMin": 2,
+              "QuantityMax": 5
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

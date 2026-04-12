@@ -1,0 +1,32 @@
+{
+  "Model": "NPC_Spawn_Marker",
+  "NPCs": [
+    {
+      "Name": "Pkmn_Gyarados",
+      "Weight": 100,
+      "RealtimeRespawnTime": 5,
+      "Flock": {
+        "Size": [
+          1,
+          1
+        ],
+        "Parent": "Group_Small"
+      }
+    },
+    {
+      "Name": "Pkmn_Magikarp",
+      "Weight": 50,
+      "RealtimeRespawnTime": 5,
+      "Flock": {
+        "Size": [
+          1,
+          5
+        ],
+        "Parent": "Group_Small"
+      }
+    }
+  ],
+  "ExclusionRadius": 10,
+  "RealtimeRespawn": true,
+  "MaxDropHeight": 4
+}

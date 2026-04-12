@@ -1,0 +1,129 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Tool_Pickaxe_Pokemetal.name"
+  },
+  "Parent": "Tool_Pickaxe_Crude",
+  "Icon": "Icons/ItemsGenerated/Tool_Pickaxe_Pokemetal.png",
+  "Quality": "Epic",
+  "ItemLevel": 50,
+  "Model": "Items/Tools/Pickaxe/Pokemetal.blockymodel",
+  "Texture": "Items/Tools/Pickaxe/Pokemetal_Texture.png",
+  "Recipe": {
+    "TimeSeconds": 5,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 9
+      },
+      {
+        "ItemId": "Ingredient_Leather_Pkmn_Charizard",
+        "Quantity": 4
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Bench_Pokeball",
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_General"
+        ],
+        "RequiredTierLevel": 1
+      }
+    ]
+  },
+  "Tool": {
+    "Specs": [
+      {
+        "Power": 1,
+        "GatherType": "SoftBlocks"
+      },
+      {
+        "Power": 1.0,
+        "GatherType": "Soils"
+      },
+      {
+        "Power": 0.05,
+        "GatherType": "Woods"
+      },
+      {
+        "Power": 1.0,
+        "GatherType": "Rocks",
+        "Quality": 6
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "Benches"
+      },
+      {
+        "Power": 0.34,
+        "GatherType": "VolcanicRocks"
+      },
+      {
+        "Power": 1.0,
+        "GatherType": "OreCopper"
+      },
+      {
+        "Power": 1.0,
+        "GatherType": "OreIron"
+      },
+      {
+        "Power": 1.0,
+        "GatherType": "OreSilver"
+      },
+      {
+        "Power": 1.0,
+        "GatherType": "OreGold"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "OreThorium"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "OreCobalt"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "OreAdamantite",
+        "Quality": 5
+      },
+      {
+        "Power": 0.25,
+        "GatherType": "OreMithril"
+      },
+      {
+        "Power": 0.25,
+        "GatherType": "OrePkmn",
+        "Quality": 5
+      }
+    ],
+    "DurabilityLossBlockTypes": [
+      {
+        "BlockSets": [
+          "Stone",
+          "Rock",
+          "Ores",
+          "Soil"
+        ],
+        "DurabilityLossOnHit": 0.25
+      }
+    ]
+  },
+  "MaxDurability": 600,
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      135,
+      90,
+      180
+    ],
+    "Translation": [
+      32,
+      -32
+    ]
+  },
+  "Categories": [
+    "Items.Tools",
+    "PortableMonstrosities.Tools"
+  ]
+}

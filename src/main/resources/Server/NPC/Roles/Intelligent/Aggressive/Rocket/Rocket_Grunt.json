@@ -1,0 +1,86 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Trork_Hybrid",
+  "Modify": {
+    "Appearance": "Rocket",
+    "DropList": "Drop_Outlander_Stalker",
+    "MaxHealth": 80,
+    "MaxSpeed": 4,
+    "HearingRange": 4,
+    "AlertedRange": 15,
+    "AlertedTime": [1,2],
+    "ViewRange": 25,
+    "ViewSector": 270,
+    "Weapons": [
+      "Weapon_Handgun",
+      "Rocket_Baton"
+    ],
+    "AttitudeGroup": "Rocket",
+    "TargetGroups": [
+      "Rocket"
+    ],
+    "ChestBlockSet": "Trork_Chest",
+    "BedBlockSet": "Trork_Bedroll",
+    "CampfireBlockSet": "Trork_Campfire",
+    "UnderlingGroups": [
+      "RocketPkmn"
+    ],
+    "DisableDamageGroups": [
+      "Self",
+      "Rocket"
+    ],
+    "AttackDistance": 2.5,
+    "AttackSequence": "Component_Instruction_Attack_Sequence_Rocket_Grunt",
+    "RangedAttack": "Trork_Sentry_Spear_Throw",
+    "DesiredRangedAttackDistanceRange": [10,20],
+    "RangedAttackSequence": "Component_Instruction_Attack_Sequence_Rocket_Grunt_Ranged",
+    "IdleMotionComponent": "$Null",
+    "CrouchToAttack": true,
+    "IsMemory": true,
+    "MemoriesCategory": "Outlander",
+    "_InteractionVars": {
+      "Club_Swing_Left_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Club_Swing_Left_Damage",
+            "DamageCalculator": {
+              "BaseDamage": {
+                "Normal": 17
+              }
+            }
+          }
+        ]
+      },
+      "Club_Swing_Right_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Club_Swing_Right_Damage",
+            "DamageCalculator": {
+              "BaseDamage": {
+                "Normal": 19
+              }
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+      "FollowPath": false,
+      "FollowPathRange": 30,
+      "PathShape": "Line",
+      "SleepsAtNight": true,
+      "LeashDistance": 30,
+      "LeashMinPlayerDistance": 10,
+      "LeashTimer": [8,8],
+      "BreakOffRange": 8,
+      "CombatRelativeTurnSpeed": 1.5
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Rocket_Grunt.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

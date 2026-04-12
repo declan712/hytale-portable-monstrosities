@@ -1,0 +1,48 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Ivysaur",
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [32,100],
+    "EvolveRoleChange": "Pkmn_Venusaur_Tamed",
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "AttitudeGroup": "Predators",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "IsMountable": false,
+    "MaxHealth": 100,
+    "MaxSpeed": 8,
+    "WanderRadius": 12,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "DropList": "Drop_Pkmn_Bulbasaur",
+    "_InteractionVars": {
+      "Melee_Damage": {
+        "Interactions": [
+          {
+            "Parent": "NPC_Attack_Melee_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {
+                "Physical": 28
+              },
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Ivysaur.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

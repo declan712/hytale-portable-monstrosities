@@ -1,0 +1,108 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Flying_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Charizard",
+    "AttitudeGroup": "PredatorsBig",
+    "FlockArray": [
+      "Pkmn_Charizard",
+      "Pkmn_Charmeleon",
+      "Pkmn_Charmander"
+    ],
+    "Type1": "FireType",
+    "Type2": "FlyingType",
+    "IsMountable": true,
+    "AbsoluteDetectionRange": 2,
+    "AlertedRange": 18,
+    "MountAnchorX":0,
+    "MountAnchorY":2,
+    "MountAnchorZ":1,
+    "AttackWhenStartled": true,
+    "WanderRadius": 12,
+    "ViewRange": 12,
+    "HearingRange": 8,
+    "DropList": "Drop_Pkmn_Charizard",
+    "MaxSpeed": 8,
+    "Attack": "Root_NPC_Pkmn_Charizard_Attack",
+    "MaxHealth": 300,
+    "_InteractionVars": {
+      "Explosion_Damage": {
+        "Interactions": [
+          {
+            "Parent": "NPC_Attack_Melee_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {
+                "Fire": 110
+              },
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Melee_Damage": {
+        "Interactions": [
+          {
+            "Parent": "NPC_Attack_Melee_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {
+                "Physical": 75
+              },
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Flamethrower_Damage":{
+        "Interactions": [
+          {
+            "Type": "DamageEntity",
+            "DamageCalculator": {
+              "BaseDamage": {
+                "Physical": 12
+              }
+            },
+            "DamageEffects": {
+              "Knockback": {
+                "Type": "Force",
+                "VelocityConfig": {
+                  "GroundResistance": 0.804,
+                  "GroundResistanceMax": 0.0,
+                  "AirResistance": 0.972,
+                  "AirResistanceMax": 0.028,
+                  "Threshold": 1.0,
+                  "Style": "Exp"
+                },
+                "Direction": {
+                  "X": 1.0,
+                  "Y": 2.0,
+                  "Z": 3.0
+                },
+                "Force": 1.0,
+                "VelocityType": "Set"
+              },
+              "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_Impact",
+              "WorldParticles": [
+                {
+                  "SystemId": "Impact_Sword_Charged"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Charizard.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

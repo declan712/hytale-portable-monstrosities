@@ -1,0 +1,303 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Bench_Blast_Furnace.name",
+    "Description": "portablemonstrosities.items.Bench_Blast_Furnace.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Bench_Blast_Furnace.png",
+  "Categories": [
+    "Furniture.Benches",
+    "PortableMonstrosities.Furniture"
+  ],
+  "Recipe": {
+    "Input": [
+      {
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 12
+      },
+      {
+        "ResourceTypeId": "Rock",
+        "Quantity": 20
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Bench_Blast_Furnace"
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Crafting"
+        ],
+        "Id": "Workbench"
+      }
+    ],
+    "TimeSeconds": 5
+  },
+  "BlockType": {
+    "DrawType": "Model",
+    "CustomModel": "Blocks/Benches/Furnace_Simple.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Benches/Furnace_Simple_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "VariantRotation": "NESW",
+    "Bench": {
+      "Type": "Processing",
+      "AllowNoInputProcessing": false,
+      "Input": [
+        {
+          "FilterValidIngredients": true
+        },
+        {
+          "FilterValidIngredients": true
+        }
+      ],
+      "Fuel": [
+        {
+          "ResourceTypeId": "Fuel",
+          "Icon": "Icons/Processing/FuelSlotIcon.png"
+        }
+      ],
+      "LocalOpenSoundEventId": "SFX_Furnace_Bench_Open",
+      "LocalCloseSoundEventId": "SFX_Furnace_Bench_Close",
+      "CompletedSoundEventId": "SFX_Furnace_Bench_Processing_Complete",
+      "EndSoundEventId": "SFX_Furnace_Bench_Processing_End",
+      "FailedSoundEventId": "SFX_Furnace_Bench_Processing_Failed",
+      "BenchUpgradeSoundEventId": "SFX_Workbench_Upgrade_Start_Default",
+      "BenchUpgradeCompletedSoundEventId": "SFX_Workbench_Upgrade_Complete_Default",
+      "ExtraOutput": {
+        "Outputs": [
+          {
+            "ItemId": "Ingredient_Charcoal"
+          }
+        ],
+        "PerFuelItemsConsumed": 2,
+        "IgnoredFuelSources": [
+          {
+            "ItemId": "Ingredient_Charcoal"
+          },
+          {
+            "ItemId": "Ingredient_Fibre"
+          },
+          {
+            "ItemId": "Ingredient_Tree_Sap"
+          },
+          {
+            "ItemId": "Wood_Burnt_Trunk"
+          }
+        ]
+      },
+      "OutputSlotsCount": 4,
+      "Id": "Blast_Furnace",
+      "TierLevels": [
+        {
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Copper",
+                "Quantity": 5
+              },
+              {
+                "ItemId": "Ingredient_Bar_Iron",
+                "Quantity": 5
+              },
+              {
+                "ItemId": "Ingredient_Bar_Thorium",
+                "Quantity": 5
+              },
+              {
+                "ItemId": "Ingredient_Bar_Cobalt",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 3
+          },
+          "CraftingTimeReductionModifier": 0.0
+        },
+        {
+          "CraftingTimeReductionModifier": 0.1,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Pkmn_T1",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 5
+          }
+        },
+        {
+          "CraftingTimeReductionModifier": 0.2,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Pkmn_T2",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 7.5
+          }
+        },
+        {
+          "CraftingTimeReductionModifier": 0.3,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Pkmn_T3",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 10
+          },
+          "ExtraInputSlot": 1,
+          "ExtraOutputSlot": 1
+        },
+        {
+          "CraftingTimeReductionModifier": 0.4,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Pkmn_T4",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 12.5
+          },
+          "ExtraInputSlot": 1,
+          "ExtraOutputSlot": 1
+        },
+        {
+          "CraftingTimeReductionModifier": 0.5,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Pkmn_T5",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 15
+          },
+          "ExtraInputSlot": 2,
+          "ExtraOutputSlot": 2
+        },
+        {
+          "CraftingTimeReductionModifier": 0.6,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Pkmn_T6",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 17.5
+          },
+          "ExtraInputSlot": 2,
+          "ExtraOutputSlot": 3
+        },
+        {
+          "CraftingTimeReductionModifier": 0.7,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Pkmn_T7",
+                "Quantity": 5
+              }
+            ],
+            "TimeSeconds": 20
+          },
+          "ExtraInputSlot": 3,
+          "ExtraOutputSlot": 4
+        }
+      ]
+    },
+    "State": {
+      "Id": "processingBench",
+      "Definitions": {
+        "Processing": {
+          "Looping": true,
+          "Light": {
+            "Color": "#B72"
+          },
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Benches/Furnace_Texture.png",
+              "Weight": 1
+            }
+          ],
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.7,
+              "PositionOffset": {
+                "X": 0,
+                "Z": 0.3
+              }
+            }
+          ],
+          "AmbientSoundEventId": "SFX_Furnace_Bench_Processing",
+          "CustomModelAnimation": "Blocks/Benches/Furnace_Smelting.blockyanim"
+        },
+        "ProcessCompleted": {
+          "Light": {
+            "Color": "#B72"
+          },
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Benches/Furnace_Texture.png",
+              "Weight": 1
+            }
+          ],
+          "AmbientSoundEventId": "SFX_Furnace_Bench_Processing",
+          "Looping": true,
+          "CustomModelAnimation": "Blocks/Benches/Furnace_Smelting.blockyanim"
+        }
+      }
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches"
+      }
+    },
+    "HitboxType": "Bench_Furnace",
+    "BlockParticleSetId": "Stone",
+    "ParticleColor": "#d16038",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockSoundSetId": "Stone",
+    "Interactions": {
+      "Use": "Open_Processing_Bench"
+    },
+    "Light": {
+      "Color": "#c88",
+      "Radius": 1
+    },
+    "Tint": [
+      "#403c3c"
+    ],
+    "Material": "Solid",
+    "Opacity": "Transparent"
+  },
+  "IconProperties": {
+    "Scale": 0.365,
+    "Rotation": [
+      360,
+      327,
+      352
+    ],
+    "Translation": [
+      15,
+      -33
+    ]
+  },
+  "Parent": "Bench_Furnace"
+}

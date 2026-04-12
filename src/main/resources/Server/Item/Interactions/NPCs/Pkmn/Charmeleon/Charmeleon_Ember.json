@@ -1,0 +1,67 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Spit"
+  },
+  "$Comment": "Prepare Delay",
+  "RunTime": 0.5,
+  "Next":{
+    "Type": "Simple",
+    "$Comment": "Charge Delay",
+    "RunTime": 0.5,
+    "Effects": {
+      "ClearAnimationOnFinish": true,
+      "ClearSoundEventOnFinish": true,
+      "WorldSoundEventId": "SFX_Staff_Flame_Consume_Charge_1",
+      "LocalSoundEventId": "SFX_Staff_Flame_Consume_Charge_1_Local",
+      "Particles": [
+        {
+          "TargetNodeName": "Head",
+          "SystemId": "Fire_Charge1",
+          "Scale": 2
+        },
+        {
+          "TargetNodeName": "Origin_Projectile",
+          "SystemId": "Fireball_Charge_To_4",
+          "Scale": 0.2,
+          "PositionOffset": {
+            "X": 0,
+            "Y": 0.15,
+            "Z": 0
+          }
+        }
+      ]
+    },
+    "Next": {
+      "Type": "Parallel",
+      "$Comment": "Make sure this parallel interaction is needed and can't be optimized away",
+      "Interactions": [
+        {
+          "Interactions": [
+            {
+              "Type": "Simple",
+              "RunTime": 0.2
+            },
+            {
+              "Parent": "Pkmn_Moves_Ember_Projectile_Base",
+              "Config": "Projectile_Config_Fireball_Charged_3"
+            }
+          ]
+        },
+        {
+          "Interactions": [
+            {
+              "Type": "Simple",
+              "$Comment": "Length of Effect",
+              "RunTime": 0.183,
+              "Effects": {
+                "WorldSoundEventId": "SFX_Scarak_Spitball_Fire"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

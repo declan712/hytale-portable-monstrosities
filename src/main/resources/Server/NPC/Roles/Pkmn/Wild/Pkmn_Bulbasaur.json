@@ -1,0 +1,51 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Bulbasaur",
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Bulbasaur",
+      "Pkmn_Ivysaur",
+      "Pkmn_Venusaur"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 16,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Bulbasaur_Tamed",
+    "MaxHealth": 45,
+    "MaxSpeed": 4.5,
+    "ViewRange": 12,
+    "AttackWhenStartled": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "ProduceItem": "Ingredient_Poop",
+    "DropList": "Drop_Pkmn_Bulbasaur",
+    "Timid": false,
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Bulbasaur",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Bulbasaur.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

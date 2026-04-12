@@ -1,0 +1,47 @@
+{
+  "Type": "SendMessage",
+  "Message": "Almost had it!",
+  "RunTime": 0.1,
+  "Next": {
+    "Type": "ClearEntityEffect",
+    "EntityEffectId": "Captured",
+    "Entity": "Target",
+    "RunTime": 0.25,
+    "Next": {
+      "Type": "DamageEntity",
+      "RunTime": 0.5,
+      "DamageCalculator": {
+        "Type": "Absolute",
+        "BaseDamage": {
+          "Pkmn": 0.1
+        }
+      },
+      "Next": {
+        "Type": "Simple",
+        "RunTime": 0.1
+      },
+      "DamageEffects": {
+        "ModelParticles": [
+          {
+            "SystemId": "Magic_Hit",
+            "Color": "#ff00ff",
+            "Scale": 2,
+            "TargetEntityPart": "Entity",
+            "TargetNodeName": "Origin",
+            "DetachedFromModel": true
+          }
+        ]
+      },
+      "Effects": {
+        "Particles": [
+          {
+            "TargetEntityPart": "Entity",
+            "TargetNodeName": "Origin",
+            "SystemId": "Explosion_Big",
+            "DetachedFromModel": true
+          }
+        ]
+      }
+    }
+  }
+}

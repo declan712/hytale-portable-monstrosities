@@ -1,0 +1,52 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Blastoise",
+    "AttitudeGroup": "PredatorsBig",
+    "FlockArray": [
+      "Pkmn_Squirtle",
+      "Pkmn_Wartortle",
+      "Pkmn_Blastoise"
+    ],
+    "AttractiveItemSet": [
+      "Fish_Lobster_Item"
+    ],
+    "Type1": "WaterType",
+    "WildLevelMin": 36,
+    "WildLevelMax": 72,
+    "CaptureDifficulty": 0.10,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Blastoise_Tamed",
+    "MaxHealth": 350,
+    "MaxSpeed": 9,
+    "WanderRadius": 12,
+    "ViewRange": 12,
+    "HearingRange": 8,
+    "FleeRange": 15,
+    "AlertedRange": 18,
+    "AbsoluteDetectionRange": 2,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "MaintainDistanceWhileAlerted": true,
+    "AlwaysSleepAtNight": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "DropList": "Drop_Pkmn_T2_Chitin",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Blastoise",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Blastoise.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

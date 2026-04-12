@@ -1,0 +1,35 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T0_Hide",
+    "Appearance": "Pkmn_NidoranF",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "PoisonType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [16,100],
+    "EvolveRoleChange": "Pkmn_Nidorina_Tamed",
+    "AttitudeGroup": "Prey",
+    "MaxHealth": 21,
+    "MaxSpeed": 10,
+    "WanderRadius": 20,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.NidoranF.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

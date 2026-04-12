@@ -1,0 +1,135 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "RunTime": 1,
+  "Next": {
+    "Type": "ApplyForce",
+    "Force": 20,
+    "ItemPlayerAnimationsId": "Charizard",
+    "ItemAnimationId": "LeapSlam",
+    "Direction": {
+      "Y": 2
+    },
+    "Duration": 1,
+    "GroundNext": {
+      "Type": "ApplyEffect",
+      "EffectId": {
+        "Parent": "Charizard_Immunity_Effect",
+        "Invulnerable": false,
+        "RemovalBehavior": "Duration",
+        "Duration": 2,
+        "OverlapBehavior": "Ignore",
+        "Infinite": false,
+        "StatusEffectIcon": "UI/StatusEffects/Poison.png"
+      },
+      "Next": {
+        "Type": "Simple",
+        "Effects": {
+          "Particles": [
+            {
+              "SystemId": "Impact_Fire",
+              "Color": "#ff6b00",
+              "PositionOffset": {
+                "Y": 0.5
+              },
+              "TargetEntityPart": "Entity",
+              "Scale": 10
+            },
+            {
+              "SystemId": "Explosion_Big",
+              "TargetEntityPart": "Entity",
+              "Color": "#ff4a00",
+              "PositionOffset": {
+                "Y": 0.5
+              }
+            }
+          ],
+          "WorldSoundEventId": "SFX_Golem_Earth_Slam_Impact",
+          "LocalSoundEventId": "SFX_Golem_Earth_Slam_Impact"
+        },
+        "Next": {
+          "Type": "Explode",
+          "Config": {
+            "DamageEntities": false,
+            "DamageBlocks": true,
+            "EntityDamage": 10,
+            "EntityDamageRadius": 10,
+            "BlockDamageRadius": 5
+          },
+          "Effects": {
+            "WorldSoundEventId": "SFX_Goblin_Lobber_Bomb_Death",
+            "LocalSoundEventId": "SFX_Goblin_Lobber_Bomb_Death"
+          },
+          "Next": {
+            "Type": "Selector",
+            "$Comment": "Length of Combat",
+            "RunTime": 0.217,
+            "Selector": {
+              "Id": "Horizontal",
+              "Direction": "ToLeft",
+              "TestLineOfSight": true,
+              "ExtendTop": 2,
+              "ExtendBottom": 2,
+              "StartDistance": 0.5,
+              "EndDistance": 8,
+              "Length": 180,
+              "RollOffset": 90,
+              "YawStartOffset": -90
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "Replace",
+                  "DefaultValue": {
+                    "Interactions": [
+                      "Weapon_Stick_Fire_Shoot_Base"
+                    ]
+                  },
+                  "Var": "Explosion_Damage"
+                }
+              ]
+            },
+            "Next": {
+              "Type": "Simple",
+              "$Comment": "Pad the interaction length",
+              "RunTime": 0.55
+            }
+          }
+        },
+        "RunTime": 0.3
+      },
+      "Entity": "Owner"
+    },
+    "WaitForGround": true,
+    "WaitForCollision": true,
+    "Effects": {
+      "WorldSoundEventId": "SFX_Rex_Alerted",
+      "LocalSoundEventId": "SFX_Rex_Alerted",
+      "Particles": [
+        {
+          "SystemId": "Battleaxe_Signature_Whirlwind",
+          "Color": "#196aa4",
+          "TargetEntityPart": "Entity",
+          "Scale": 1,
+          "PositionOffset": {
+            "Y": 2
+          }
+        }
+      ]
+    }
+  },
+  "Effects": {
+    "ItemPlayerAnimationsId": "Charizard",
+    "ItemAnimationId": "LeapSlam",
+    "Particles": [
+      {
+        "SystemId": "Fire_AoE_Spawn",
+        "Color": "#ff9400",
+        "PositionOffset": {
+          "Y": 0.5
+        },
+        "TargetEntityPart": "Entity"
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Armor_Pkmn_Shell_Chest.name",
+    "Description": "portablemonstrosities.items.Armor_Pkmn_Shell_Chest.description"
+  },
+  "Parent": "Armor_Iron_Chest",
+  "Quality": "Rare",
+  "ItemLevel": 35,
+  "Icon": "Icons/ItemsGenerated/Armor_Pkmn_Shell_Chest.png",
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0.3,
+      -6.9
+    ]
+  },
+  "Model": "Items/Armors/Pkmn_Shell/Chest.blockymodel",
+  "Texture": "Items/Armors/Pkmn_Shell/Chest_Texture.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 24
+      },
+      {
+        "ItemId": "Ingredient_Leather_Heavy",
+        "Quantity": 7
+      },
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Shadoweave",
+        "Quantity": 7
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Chest"
+        ],
+        "RequiredTierLevel": 2
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "Armor": {
+    "ArmorSlot": "Chest",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Overtop"
+    ],
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.1152,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Pkmn": [
+        {
+          "Amount": 0.25,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Water": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.5
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 22,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageClassEnhancement": {
+      "Signature": [
+        {
+          "Amount": 0.06,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "DamageEnhancement": {
+      "Water": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.2
+        }
+      ]
+    }
+  },
+  "MaxDurability": 120,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Cobalt"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "DurabilityLossOnHit": 0.5,
+  "Categories": [
+    "PortableMonstrosities.Equipment"
+  ],
+  "Interactions": {
+    "Equipped": {
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": "WaterType"
+        }
+      ]
+    }
+  }
+}

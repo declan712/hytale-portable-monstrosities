@@ -1,0 +1,31 @@
+{
+  "Type": "Selector",
+  "Selector": {
+    "Id": "AOECircle",
+    "Range": 2.5,
+    "Offset": {
+      "Y": 0.5
+    }
+  },
+  "HitEntity": {
+    "Interactions": [
+      "Pkmn_Moves_Rock_Throw_Damage"
+    ]
+  },
+  "Effects": {
+    "Particles": [
+      {
+        "SystemId": "Stick_Slam_Ground_Medium",
+        "TargetEntityPart": "Entity",
+        "Color": "#423c36",
+        "DetachedFromModel": true,
+        "PositionOffset": {
+          "Y": 0.25
+        }
+      }
+    ],
+    "WorldSoundEventId": "SFX_Golem_Earth_Slam_Impact",
+    "LocalSoundEventId": "SFX_Golem_Earth_Slam_Impact"
+  },
+  "IgnoreOwner": true
+}

@@ -1,0 +1,42 @@
+{
+  "InitialValue": 0,
+  "Min": 0,
+  "Max": 1000,
+  "MaxValueEffects": {
+    "Interactions": {
+      "Interactions": [
+        {
+          "Type": "ChangeStat",
+          "StatModifiers": {
+            "Lvl": 1
+          },
+          "RunTime": 0,
+          "Entity": "Owner",
+          "ValueType": "Absolute",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Pkmn_Level_Up",
+            "LocalSoundEventId": "SFX_Pkmn_Level_Up",
+            "Particles": [
+              {
+                "SystemId": "MemoryUnlock",
+                "Color": "#00ebff",
+                "Scale": 1,
+                "TargetEntityPart": "Entity"
+              }
+            ]
+          },
+          "Behaviour": "Add",
+          "Next": {
+            "Type": "SetPkmnNameplate",
+            "RunTime": 0.2
+          }
+        }
+      ],
+      "Cooldown": {
+        "Cooldown": 0.3,
+        "Id": "LevelUpCooldown"
+      }
+    }
+  },
+  "HideFromTooltip": true
+}

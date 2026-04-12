@@ -1,0 +1,49 @@
+{
+  "Appearance": "Spirit_Root",
+  "SticksVertically": false,
+  "MuzzleVelocity": 30,
+  "TerminalVelocity": 30,
+  "Gravity": 20,
+  "TimeToLive": 10,
+  "Damage": 0,
+  "DeathEffectsOnHit": true,
+  "DeadTime": 0,
+  "HitParticles": {
+    "SystemId": "Stone_Death",
+    "Color": "#ff0000",
+    "Scale": 2
+  },
+  "DepthShot": 1,
+  "HorizontalCenterShot": 0.1,
+  "HitSoundEventId": "SFX_Egg_Hit",
+  "MissSoundEventId": "SFX_Pokeball_Poof",
+  "DeadTimeMiss": 0,
+  "MissParticles": {
+    "SystemId": "Stone_Death"
+  },
+  "Density": 500,
+  "WaterHitImpulseLoss": 0.5,
+  "ExplosionConfig": {
+    "DamageEntities": true,
+    "DamageBlocks": true,
+    "EntityDamage": 0,
+    "EntityDamageRadius": 2,
+    "BlockDamageRadius": 0
+  },
+  "BounceParticles": {
+    "Color": "#00ff22",
+    "SystemId": "Stone_Bounce",
+    "Scale": 1
+  },
+  "ImpactSlowdown": 0.75,
+  "Bounciness": 3,
+  "ComputeYaw": true,
+  "ComputePitch": true,
+  "ComputeRoll": true,
+  "DeathParticles": {
+    "SystemId": "Stone_Death",
+    "Color": "#ffffff",
+    "Scale": 1
+  },
+  "RotationMode": "VelocityDamped"
+}

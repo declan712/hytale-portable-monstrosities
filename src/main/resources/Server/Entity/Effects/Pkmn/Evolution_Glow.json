@@ -1,0 +1,41 @@
+{
+  "ModelOverride": {
+    "Texture": "NPC/Pkmn/Template_Quad/Models/Evolving.png",
+    "Model": "NPC/Pkmn/Template_Quad/Models/Model.blockymodel"
+  },
+  "Duration": 2,
+  "ApplicationEffects": {
+    "Particles": [
+      {
+        "SystemId": "Memory_Projectile_Sparks",
+        "Color": "#fff6bc",
+        "Scale": 0.25,
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Pelvis"
+      },
+      {
+        "SystemId": "Flying_Orb",
+        "Scale": 10,
+        "Color": "#ffd700",
+        "RotationOffset": {
+          "Yaw": 0,
+          "Pitch": 0,
+          "Roll": 0
+        },
+        "PositionOffset": {
+          "Y": 0.5,
+          "Z": 1,
+          "X": -2
+        },
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Pelvis"
+      }
+    ],
+    "EntityTopTint": "#fffbb9",
+    "EntityBottomTint": "#fff9d7",
+    "EntityAnimationId": "Alerted",
+    "LocalSoundEventId": "SFX_Pokeball_Return",
+    "WorldSoundEventId": "SFX_Pokeball_Return"
+  },
+  "RemovalBehavior": "Duration"
+}

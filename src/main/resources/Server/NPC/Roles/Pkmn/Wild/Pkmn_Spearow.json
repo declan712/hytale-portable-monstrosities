@@ -1,0 +1,43 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Flying_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Spearow",
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Pidgey",
+      "Chicken_Chick"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Crop_Corn_Item"
+    ],
+    "Type1": "FlyingType",
+    "WildLevelMin": 4,
+    "WildLevelMax": 20,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Spearow_Tamed",
+    "IsTameable": true,
+    "DropList": "Drop_Chicken",
+    "MaxHealth": 29,
+    "MaxSpeed": 5,
+    "AlertedActionRange": 4,
+    "AbsoluteDetectionRange": 1.5,
+    "ProduceItem": "Food_Egg",
+    "ProduceTimeout": [
+      "PT18H",
+      "PT48H"
+    ],
+    "Timid": false,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Pidgey",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Pidgey.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

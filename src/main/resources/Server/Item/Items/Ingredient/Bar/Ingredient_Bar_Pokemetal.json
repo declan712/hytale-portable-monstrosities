@@ -1,0 +1,59 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Ingredient_Bar_Pokemetal.name",
+    "Description": "portablemonstrosities.items.Ingredient_Bar_Pokemetal.description"
+  },
+  "Categories": [
+    "Items",
+    "PortableMonstrosities.Resources"
+  ],
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ore_Pokemetal",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Processing",
+        "Id": "Blast_Furnace"
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 22,
+    "KnowledgeRequired": false
+  },
+  "Model": "Resources/Materials/Pkmn/Ingot.blockymodel",
+  "Texture": "Resources/Materials/Pkmn/Ingot_Textures/Pokemetal_Ingot.png",
+  "Icon": "Icons/ItemsGenerated/Ingredient_Bar_Pokemetal.png",
+  "ResourceTypes": [
+    {
+      "Id": "Metal_Bars"
+    }
+  ],
+  "PlayerAnimationsId": "Item",
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -3
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "ItemEntity": {
+    "ParticleSystemId": null
+  },
+  "ItemSoundSetId": "ISS_Items_Ingots",
+  "DropOnDeath": true,
+  "Quality": "Rare"
+}

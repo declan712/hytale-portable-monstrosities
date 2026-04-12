@@ -1,0 +1,50 @@
+{
+  "Type": "DamageEntity",
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Rock": 50
+    }
+  },
+  "DamageEffects": {
+    "Knockback": {
+      "Type": "Force",
+      "VelocityConfig": {
+        "GroundResistance": 0.804,
+        "GroundResistanceMax": 0.0,
+        "AirResistance": 0.972,
+        "AirResistanceMax": 0.028,
+        "Threshold": 1.0,
+        "Style": "Exp"
+      },
+      "Direction": {
+        "X": 0,
+        "Y": 0,
+        "Z": -2
+      },
+      "Force": 5,
+      "VelocityType": "Add",
+      "Duration": 0.2
+    },
+    "WorldSoundEventId": "SFX_Pkmn_Damage",
+    "WorldParticles": [
+      {
+        "SystemId": "Stone_Death",
+        "Color": "#4b422f",
+        "Scale": 2,
+        "PositionOffset": {
+          "Y": 0.1
+        }
+      },
+      {
+        "SystemId": "Stone_Death",
+        "Color": "#4d493f",
+        "Scale": 1,
+        "PositionOffset": {
+          "Y": 0.2
+        }
+      }
+    ],
+    "StaminaDrainMultiplier": 0.75,
+    "LocalSoundEventId": "SFX_Pkmn_Damage"
+  }
+}

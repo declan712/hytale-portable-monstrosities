@@ -1,0 +1,63 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Pkmn_Candy",
+              "QuantityMin": 3,
+              "QuantityMax": 5
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Ingredient_Hide_Pkmn_Charizard",
+              "QuantityMin": 2,
+              "QuantityMax": 3
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Food_Wildmeat_Raw",
+              "QuantityMin": 3,
+              "QuantityMax": 5
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Choice",
+        "Weight": 50,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Ingredient_Fire_Essence",
+              "QuantityMax": 3,
+              "QuantityMin": 1
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

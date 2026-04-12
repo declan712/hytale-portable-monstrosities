@@ -1,0 +1,35 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Swimming_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Gyarados",
+    "FlockArray": [
+      "Pkmn_Gyarados",
+      "Pkmn_Magikarp"
+    ],
+    "Type1": "WaterType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 20,
+    "WildLevelMax": 60,
+    "TameRoleChange": "Pkmn_Gyarados_Tamed",
+    "DropList": "Drop_Pkmn_T3_Chitin",
+    "MaxHealth": 450,
+    "AttackRange": 4,
+    "AlertedRange": 30,
+    "IsMemory": true,
+    "MemoriesCategory": "Abyssal",
+    "MemoriesNameOverride": "Gyarados",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Gyarados.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

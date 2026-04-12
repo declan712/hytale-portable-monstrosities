@@ -1,0 +1,53 @@
+{
+  "Parent": "TM_Template",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.HM_Flash.name",
+    "Description": "portablemonstrosities.items.HM_Flash.description"
+  },
+  "Quality": "Epic",
+  "ItemLevel": 20,
+  "Model": "Items/Weapons/Tm/Model.blockymodel",
+  "Texture": "Items/Weapons/Tm/Electric.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Effects": {
+            "ItemPlayerAnimationsId": "Handgun",
+            "ItemAnimationId": "Shoot",
+            "ClearAnimationOnFinish": true
+          },
+          "AllowIndefiniteHold": true,
+          "DisplayProgress": true,
+          "Next": {
+            "0": {
+              "Type": "Simple",
+              "RunTime": 0.5,
+              "Effects": {
+                "WorldSoundEventId": "SFX_Campfire_Processing_Failed"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      231,
+      5,
+      155
+    ],
+    "Translation": [
+      3,
+      -18
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/HM_Flash.png",
+  "Light": {
+    "Color": "#872",
+    "Radius": 100
+  }
+}

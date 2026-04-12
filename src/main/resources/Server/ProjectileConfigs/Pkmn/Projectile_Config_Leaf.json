@@ -1,0 +1,67 @@
+{
+  "Model": "Razor_Leaf",
+  "SpawnRotationOffset": {
+    "Pitch": 2.5,
+    "Yaw": -0.5,
+    "Roll": -50
+  },
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 15,
+    "TerminalVelocityAir": 50,
+    "TerminalVelocityWater": 15,
+    "RotationMode": "VelocityDamped",
+    "SticksVertically": true
+  },
+  "LaunchForce": 50,
+  "SpawnOffset": {
+    "X": -0.15,
+    "Y": -0.25,
+    "Z": -1
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "DefaultValue": {
+            "Interactions": [
+              "Pkmn_Moves_Razor_Leaf_Damage"
+            ]
+          },
+          "Var": "Razor_Leaf_Damage"
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "WorldSoundEventId": "SFX_Daggers_T2_Stab_Impact"
+          }
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 5,
+          "Effects": {
+            "LocalSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "WorldSoundEventId": "SFX_Daggers_T2_Stab_Impact"
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    }
+  }
+}

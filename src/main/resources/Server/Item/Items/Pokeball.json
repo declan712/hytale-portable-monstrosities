@@ -1,0 +1,190 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pokeball.name",
+    "Description": "portablemonstrosities.items.Pokeball.description"
+  },
+  "Quality": "Common",
+  "ItemLevel": 5,
+  "Model": "Items/Pokeball/Pokeball.blockymodel",
+  "Texture": "Items/Pokeball/Pokeball.png",
+  "Icon": "Icons/ItemsGenerated/Pokeball.png",
+  "PlayerAnimationsId": "Sword",
+  "Reticle": "DefaultMelee",
+  "MaxStack": 99,
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Plant_Fruit_Apricorn",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Bar_Copper",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_Balls"
+        ],
+        "Id": "Bench_Pokeball"
+      }
+    ]
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "ItemAnimationId": "Interact"
+          },
+          "RunTime": 0.05,
+          "Next": {
+            "Type": "UsePokeballInteraction",
+            "FullIcon": "Icons/Items/Pokeball_Full.png",
+            "AcceptedNpcGroups": [
+              "Pokeball"
+            ],
+            "CaptureItemId": "Pokeball",
+            "RunTime": 0.05,
+            "HorizontalSpeedMultiplier": 0.7,
+            "Failed": {
+              "Type": "Parallel",
+              "Interactions": [
+                {
+                  "Interactions": [
+                    {
+                      "Type": "Replace",
+                      "DefaultValue": {
+                        "Interactions": [
+                          {
+                            "Type": "Projectile",
+                            "Config": "Projectile_Config_Pokeball_Base"
+                          }
+                        ]
+                      },
+                      "Var": "Projectile_Config"
+                    }
+                  ]
+                },
+                {
+                  "Interactions": [
+                    {
+                      "Type": "ModifyInventory",
+                      "AdjustHeldItemQuantity": -1
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "Cooldown": {
+        "Id": "Pokeball",
+        "Cooldown": 0.5
+      }
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "PlaceBlock"
+        }
+      ]
+    }
+  },
+  "InteractionVars": {
+    "Projectile_Config": {
+      "Interactions": [
+        {
+          "Type": "Projectile",
+          "Config": "Projectile_Config_Pokeball_Base"
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      349,
+      145,
+      0
+    ],
+    "Translation": [
+      3,
+      -19
+    ]
+  },
+  "RenderDeployablePreview": false,
+  "UsePlayerAnimations": true,
+  "DroppedItemAnimation": "Items/Pokeball/Wobble_Once.blockyanim",
+  "Categories": [
+    "PortableMonstrosities.Tools"
+  ],
+  "BlockType": {
+    "DrawType": "Model",
+    "CustomModel": "Items/Pokeball/Pokeball.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Pokeball/Pokeball.png"
+      }
+    ],
+    "CustomModelScale": 0.25,
+    "RandomRotation": "YawStep1",
+    "Material": "Empty",
+    "PlacementSettings": {
+      "PlaceInEmptyBlocks": true
+    },
+    "BlockSoundSetId": "Metal",
+    "SupportDropType": "Destroy",
+    "BlockEntity": {
+      "Components": {
+        "Coop": {
+          "FarmingCoopId": "Coop_Pokeball"
+        }
+      }
+    },
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "UseCoop"
+          }
+        ]
+      }
+    },
+    "State": {
+      "Id": "coop",
+      "Definitions": {
+        "Produce_Ready": {
+          "CustomModelScale": 0.5,
+          "CustomModelAnimation": "Items/Pokeball/Wobble_Once.blockyanim",
+          "Looping": true
+        }
+      }
+    },
+    "Gathering": {
+      "UseDefaultDropWhenPlaced": true,
+      "Soft": {
+        "ItemId": "Pokeball"
+      }
+    }
+  },
+  "Scale": 2,
+  "DropOnDeath": false,
+  "InteractionConfig": {
+    "DebugOutlines": true,
+    "DisplayOutlines": true,
+    "AllEntities": false,
+    "UseDistance": {
+      "Adventure": 10
+    }
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "EyeHeight": 0.45,
+  "CrouchOffset": -0.15,
+  "HitBox": {
+    "Max": {
+      "X": 0.9,
+      "Y": 1.5,
+      "Z": 0.9
+    },
+    "Min": {
+      "X": -0.9,
+      "Y": 0,
+      "Z": -0.9
+    }
+  },
+  "Model": "NPC/Straya/Lizard_Ground_Stage2/Models/Model.blockymodel",
+  "Texture": "NPC/Straya/Lizard_Ground_Stage2/Models/Texture.png",
+  "AnimationSets": {
+    "IdlePassive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Flavour/Shake.blockyanim"
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0,
+          "SoundEventId": "SFX_Pkmn_Charizard_Cry"
+        }
+      ]
+    },
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Walk.blockyanim",
+          "Speed": 0.5,
+          "FootstepIntervals": [
+            50
+          ],
+          "SoundEventId": "SFX_Pkmn_Large_Walk"
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.5,
+          "FootstepIntervals": [
+            50,
+            100
+          ],
+          "SoundEventId": "SFX_Pkmn_Large_Walk"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Run.blockyanim",
+          "Speed": 0.7,
+          "SoundEventId": "SFX_Pkmn_Large_Walk",
+          "PassiveLoopCount": 1,
+          "FootstepIntervals": [
+            25,
+            50,
+            75,
+            100
+          ]
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.1,
+          "Speed": 0.5
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1,
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Jump.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Speed": 0.6
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Jump.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Speed": 0.5
+        }
+      ]
+    },
+    "JumpFar": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Jump_Far.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "Speed": 0.8,
+          "SoundEventId": "SFX_Pkmn_Charizard_Cry"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Laydown.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Sleep.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Wake.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Damage/Hurt.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Damage/Death.blockyanim",
+          "Looping": false,
+          "Speed": 0.8,
+          "SoundEventId": "SFX_Rex_Death"
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Idle.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Jump.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Speed": 0.6
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Fast.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Backward.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Float.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Sink.blockyanim"
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Idle.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Walk.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Run.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Fly/Fly_Idle.blockyanim"
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Straya/Lizard_Ground_Stage2/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    }
+  },
+  "MinScale": 1.5,
+  "MaxScale": 1.7
+}

@@ -1,0 +1,36 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "FallingLeaves",
+      "InitialVelocity": {
+        "Speed": {
+          "Min": 4,
+          "Max": 5
+        },
+        "Yaw": {
+          "Min": 0
+        },
+        "Pitch": {
+          "Min": 90,
+          "Max": 90
+        }
+      },
+      "Attractors": [
+        {
+          "LinearAcceleration": {
+            "Y": -2
+          }
+        }
+      ],
+      "EmitOffset": {
+        "Y": {
+          "Min": 1.5,
+          "Max": 1.5
+        }
+      },
+      "PositionOffset": {
+        "Y": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Handgun",
+    "ItemAnimationId": "Shoot"
+  },
+  "$Comment": "Prepare Delay",
+  "RunTime": 1,
+  "Next": {
+    "Type": "LaunchProjectile",
+    "RunTime": 0,
+    "Effects": {
+        "Particles": [
+            {
+                "SystemId": "RifleShooting",
+                "PositionOffset": {
+                "Z": 0.35,
+                "Y": 0.15
+                },
+                "RotationOffset": {
+                "Pitch": 90
+                }
+            }
+        ],
+        "WorldSoundEventId": "SFX_Handgun_Fire",
+        "LocalSoundEventId": "SFX_Handgun_Fire"
+    },
+    "ProjectileId": "Rocket_Bullet",
+    "Tags": {
+      "AimingReference": []
+    }
+  },
+    "Failed": "Gun_Shoot_Fail"
+}

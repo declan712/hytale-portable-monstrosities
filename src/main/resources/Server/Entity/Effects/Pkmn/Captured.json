@@ -1,0 +1,61 @@
+{
+  "ApplicationEffects": {
+    "Particles": [
+      {
+        "SystemId": "Laser_Impact",
+        "Color": "#ff0000",
+        "Scale": 2,
+        "TargetEntityPart": "Entity",
+        "DetachedFromModel": true,
+        "TargetNodeName": "Head"
+      }
+    ],
+    "EntityBottomTint": "#ff0000",
+    "EntityTopTint": "#ff0000",
+    "MovementEffects": {
+      "DisableAll": true
+    },
+    "HorizontalSpeedMultiplier": 0,
+    "KnockbackMultiplier": 0,
+    "AbilityEffects": {
+      "Disabled": [
+        "Primary",
+        "Secondary",
+        "Ability1",
+        "Ability2",
+        "Ability3"
+      ]
+    }
+  },
+  "Infinite": false,
+  "OverlapBehavior": "Ignore",
+  "Duration": 5,
+  "ModelChange": "Captured_Pkmn",
+  "StatusEffectIcon": "Icons/PkmnType/WaterType.png",
+  "RemovalBehavior": "Duration",
+  "Debuff": false,
+  "ModelOverride": {
+    "Model": "Items/Pokeball/Pokeball.blockymodel",
+    "Texture": "Items/Pokeball/Pokeball.png",
+    "AnimationSets": {
+      "Idle": {
+        "Animations": [
+          {
+            "Animation": "Items/Pokeball/Wobble_Once.blockyanim",
+            "Looping": true,
+            "Speed": 0.75,
+            "PassiveLoopCount": 3
+          }
+        ]
+      }
+    }
+  },
+  "Invulnerable": true,
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Pkmn": 0.1
+    }
+  },
+  "WorldRemovalSoundEventId": "SFX_Pokeball_Poof",
+  "LocalRemovalSoundEventId": "SFX_Pokeball_Poof"
+}

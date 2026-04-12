@@ -1,0 +1,199 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Simoso.name",
+    "Description": "portablemonstrosities.items.Simoso.description"
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Weapons"
+  ],
+  "Icon": "Icons/ItemsGenerated/Simoso.png",
+  "Quality": "Legendary",
+  "ItemLevel": 100,
+  "Recipe": {
+    "TimeSeconds": 3.3,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 15
+      },
+      {
+        "ItemId": "Ingredient_Leather_Pkmn_Charizard",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Pizza_Dough",
+        "Quantity": 36
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_General"
+        ],
+        "Id": "Bench_Pokeball"
+      }
+    ]
+  },
+  "Model": "Items/Weapons/Longsword/Simoso/Simoso.blockymodel",
+  "Texture": "Items/Weapons/Longsword/Simoso/Simoso_Texture.png",
+  "PlayerAnimationsId": "Greatsword",
+  "Interactions": {
+    "Primary": "Greatsword_Attack",
+    "Secondary": {
+      "Rules": {
+        "BlockedBy": [
+          "Primary"
+        ],
+        "Blocking": [
+          "Primary"
+        ]
+      },
+      "Interactions": [
+        "Greatsword_Block"
+      ]
+    },
+    "Dodge": {
+      "Interactions": [
+        "Dodge"
+      ]
+    },
+    "Ability1": "Double_Jump",
+    "Ability2": {
+      "Interactions": [
+        "Greatsword_Dash"
+      ]
+    }
+  },
+  "InteractionVars": {
+    "Greatsword_Swing_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 33
+            },
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Right_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Right_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 33
+            },
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Up_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Up_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Up_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 33
+            },
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Greatsword_Stab_Charged_Effect": "Greatsword_Stab_Charged_Effect",
+    "Greatsword_Stab_Charged_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Stab_Charged_Damage",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Physical": 99
+            },
+            "Type": "Absolute",
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.36,
+    "Rotation": [
+      64,
+      139,
+      347
+    ],
+    "Translation": [
+      -36,
+      -37
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "MaxDurability": 333,
+  "DurabilityLossOnHit": 0.33,
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Longsword"
+    ]
+  },
+  "Weapon": {},
+  "ItemSoundSetId": "ISS_Weapons_Blade_Large",
+  "Light": {
+    "Color": "#b94"
+  }
+}

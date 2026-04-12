@@ -1,0 +1,184 @@
+{
+  "Parent": "Pokeball",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pokeball_Ultra.name",
+    "Description": "portablemonstrosities.items.Pokeball_Ultra.description"
+  },
+  "Quality": "Rare",
+  "ItemLevel": 50,
+  "Model": "Items/Pokeball_Ultra/Pokeball_Ultra.blockymodel",
+  "Texture": "Items/Pokeball_Ultra/Pokeball_Ultra.png",
+  "Icon": "Icons/ItemsGenerated/Pokeball_Ultra.png",
+  "MaxStack": 99,
+  "Recipe": {
+    "TimeSeconds": 4,
+    "Input": [
+      {
+        "Quantity": 10,
+        "ResourceTypeId": "",
+        "ItemId": "Plant_Fruit_Apricorn"
+      },
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 10
+      },
+      {
+        "ItemId": "Ingredient_Bar_Pkmn_T3",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_Balls"
+        ],
+        "Id": "Bench_Pokeball"
+      }
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      349,
+      145,
+      0
+    ],
+    "Translation": [
+      3,
+      -19
+    ]
+  },
+  "Scale": 2,
+  "UsePlayerAnimations": true,
+  "Light": {
+    "Radius": 0,
+    "Color": "#320"
+  },
+  "InteractionVars": {
+    "Projectile_Config": {
+      "Interactions": [
+        {
+          "Type": "Projectile",
+          "Config": "Projectile_Config_Pokeball_Ultra"
+        }
+      ]
+    },
+    "Pokeball_Capture_Interaction": {
+      "Interactions": [
+        {
+          "Type": "UsePokeballInteraction",
+          "AcceptedNpcGroups": [
+            "Pokeball",
+            "Pokeball_Great",
+            "Pokeball_Ultra"
+          ],
+          "CaptureItemId": "Pokeball_Ultra",
+          "FullIcon": "Icons/Items/Pokeball_Full.png"
+        }
+      ]
+    }
+  },
+  "BlockType": {
+    "CustomModel": "Items/Pokeball_Ultra/Pokeball_Ultra.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Pokeball_Ultra/Pokeball_Ultra.png"
+      }
+    ],
+    "CustomModelScale": 0.25,
+    "RandomRotation": "YawStep1",
+    "Material": "Empty",
+    "BlockSoundSetId": "Metal",
+    "SupportDropType": "Destroy",
+    "BlockEntity": {
+      "Components": {
+        "Coop": {
+          "FarmingCoopId": "Coop_Pokeball"
+        }
+      }
+    },
+    "State": {
+      "Id": "coop",
+      "Definitions": {
+        "Produce_Ready": {
+          "CustomModelScale": 0.5,
+          "CustomModelAnimation": "Items/Pokeball/Wobble_Once.blockyanim",
+          "Looping": true
+        }
+      }
+    },
+    "DrawType": "Model",
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "UseCoop"
+          }
+        ]
+      }
+    },
+    "PlacementSettings": {
+      "PlaceInEmptyBlocks": true
+    },
+    "Gathering": {
+      "Soft": {
+        "ItemId": "Pokeball_Ultra"
+      }
+    }
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "ItemAnimationId": "Interact"
+          },
+          "RunTime": 0.05,
+          "Next": {
+            "Type": "UsePokeballInteraction",
+            "FullIcon": "Icons/Items/Pokeball_Full.png",
+            "AcceptedNpcGroups": [
+              "Pokeball",
+              "Pokeball_Great",
+              "Pokeball_Ultra"
+            ],
+            "CaptureItemId": "Pokeball_Ultra",
+            "RunTime": 0.05,
+            "HorizontalSpeedMultiplier": 0.7,
+            "Failed": {
+              "Type": "Parallel",
+              "Interactions": [
+                {
+                  "Interactions": [
+                    {
+                      "Type": "Replace",
+                      "DefaultValue": {
+                        "Interactions": [
+                          {
+                            "Type": "Projectile",
+                            "Config": "Projectile_Config_Pokeball_Ultra"
+                          }
+                        ]
+                      },
+                      "Var": "Projectile_Config"
+                    }
+                  ]
+                },
+                {
+                  "Interactions": [
+                    {
+                      "Type": "ModifyInventory",
+                      "AdjustHeldItemQuantity": -1
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "Type": "Simple",
+  "Next": {
+    "Type": "Repeat",
+    "Repeat": 3,
+    "ForkInteractions": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 1.0,
+          "Effects": {
+            "WorldSoundEventId": "SFX_Pokeball_Shake",
+            "LocalSoundEventId": "SFX_Pokeball_Shake"
+          }
+        },
+        {
+          "Type": "Simple",
+          "RunTime": 0.1
+        },
+        {
+          "Type": "StayCaptured",
+          "BallBonus": 1.0
+        }
+      ]
+    },
+    "Next": {
+      "Type": "Simple",
+      "RunTime": 0.2,
+      "Next": {
+        "Type": "CaptureWildCreature",
+        "RunTime": 0.2,
+        "CaptureItemId": "Pokeball",
+        "FullIcon": "Icons/Items/Pokeball_Full.png",
+        "Next": {
+          "Type": "RemoveEntity",
+          "Entity": "Target",
+          "Next": {
+            "Type": "RemoveEntity",
+            "Entity": "User"
+          }
+        },
+        "Effects": {
+          "WorldSoundEventId": "SFX_Pkmn_Confirm",
+          "LocalSoundEventId": "SFX_Pkmn_Confirm"
+        }
+      }
+    },
+    "Failed": "Pokeball_Escape"
+  },
+  "RunTime": 0.1
+}

@@ -1,0 +1,126 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pokedex.name"
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Tools"
+  ],
+    "Recipe": {
+    "BenchRequirement": [
+      {
+        "Id": "Bench_Pokeball"
+      }
+    ],
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pkmn_T1",
+        "Quantity": 10
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Pkmn_Pokedex",
+        "Quantity": 1
+      }
+    ]
+  },
+  "Model": "Items/Pokedex/Pokedex.blockymodel",
+  "Texture": "Items/Pokedex/Pokedex_Texture.png",
+  "Icon": "Icons/ItemsGenerated/Pkmn_Pokedex.png",
+  "PlayerAnimationsId": "Handgun",
+  "Interactions": {
+    "Primary": {
+      "Cooldown": {
+        "Id": "Shoot",
+        "Cooldown": 3
+      },
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "DisplayProgress": true,
+          "RunTime": 1.5,
+          "AllowIndefiniteHold": false,
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "NatureBeam",
+                "Color": "#00ffeb",
+                "Scale": 0.5,
+                "TargetEntityPart": "Self",
+                "RotationOffset": {
+                  "Yaw": 180
+                },
+                "PositionOffset": {
+                  "Y": 0.2,
+                  "Z": 1.2,
+                  "X": 0.2
+                }
+              }
+            ],
+            "ItemAnimationId": "ShootFlintlockCharging",
+            "WorldSoundEventId": "SFX_Avatar_Powers_Enable",
+            "ClearAnimationOnFinish": true,
+            "ClearSoundEventOnFinish": true
+          },
+          "HorizontalSpeedMultiplier": 0.5,
+          "Next": {
+            "0": {
+              "Type": "Simple",
+              "Effects": {
+                "WorldSoundEventId": "SFX_Generic_Crafting_Failed"
+              }
+            },
+            "1.5": {
+              "Type": "PokedexScan"
+            }
+          }
+        }
+      ]
+    },
+    "Secondary": "Gun_Attack"
+  },
+  "InteractionVars": {
+    "Gun_Swing_Left_Effect": "Gun_Swing_Left_Effect",
+    "Gun_Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Gun_Swing_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Dps",
+            "BaseDamage": {
+              "Physical": 5
+            },
+            "RandomPercentageModifier": 0.1
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Unarmed_Impact"
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 1.1,
+    "Rotation": [
+      349,
+      145,
+      0
+    ],
+    "Translation": [
+      3,
+      -16
+    ]
+  },
+  "Utility": {
+    "Compatible": true
+  },
+  "Quality": "Tool",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ]
+  },
+  "Weapon": {},
+  "UsePlayerAnimations": false
+}

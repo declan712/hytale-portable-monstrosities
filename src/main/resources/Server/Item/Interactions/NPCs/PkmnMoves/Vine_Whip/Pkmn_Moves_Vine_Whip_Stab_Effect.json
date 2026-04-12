@@ -1,0 +1,45 @@
+{
+  "Type": "Simple",
+  "$Comment": "Length of Effect",
+  "RunTime": 0.223,
+  "Effects": {
+    "Trails": [
+      {
+        "PositionOffset": {
+          "X": -0.5,
+          "Y": 8,
+          "Z": 0.5
+        },
+        "RotationOffset": {
+          "Pitch": 0,
+          "Roll": 0,
+          "Yaw": -30
+        },
+        "TargetNodeName": "Projectile_Origin",
+        "TrailId": "Void_Green",
+        "TargetEntityPart": "PrimaryItem"
+      }
+    ],
+    "LocalSoundEventId": "SFX_Pkmn_Move_Vine_Whip",
+    "WorldSoundEventId": "SFX_Pkmn_Move_Vine_Whip",
+    "Particles": [
+      {
+        "SystemId": "NatureBeam",
+        "Color": "#ffc900",
+        "TargetNodeName": "Head",
+        "TargetEntityPart": "Self",
+        "Scale": 1,
+        "RotationOffset": {
+          "Pitch": 90,
+          "Roll": 0,
+          "Yaw": 0
+        },
+        "PositionOffset": {
+          "Z": 0,
+          "Y": 2,
+          "X": 0
+        }
+      }
+    ]
+  }
+}

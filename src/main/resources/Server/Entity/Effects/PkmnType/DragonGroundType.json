@@ -1,0 +1,58 @@
+{
+  "Name": "entityEffects.PkmnType.DragonGround.name",
+  "DamageResistance": {
+    "Electric": [
+      {
+        "Target": "Max",
+        "CalculationType": "Multiplicative",
+        "Amount": 1.0
+      }
+    ],
+    "Ice": [
+      {
+        "Target": "Min",
+        "CalculationType": "Multiplicative",
+        "Amount": -3.0
+      }
+    ],
+    "Dragon": [
+      {
+        "Target": "Min",
+        "CalculationType": "Multiplicative",
+        "Amount": -1.0
+      }
+    ],
+    "Poison": [
+      {
+        "Target": "Min",
+        "CalculationType": "Multiplicative",
+        "Amount": 0.5
+      }
+    ],
+    "Rock": [
+      {
+        "Target": "Min",
+        "CalculationType": "Multiplicative",
+        "Amount": 0.5
+      }
+    ],
+    "Fire": [
+      {
+        "Target": "Min",
+        "CalculationType": "Multiplicative",
+        "Amount": 0.5
+      }
+    ],
+    "Physical": [
+      {
+        "Target": "Min",
+        "CalculationType": "Multiplicative",
+        "Amount": 0.8
+      }
+    ]
+  },
+  "Infinite": true,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Infinite",
+  "StatusEffectIcon": "Icons/PkmnType/GroundType.png"
+}

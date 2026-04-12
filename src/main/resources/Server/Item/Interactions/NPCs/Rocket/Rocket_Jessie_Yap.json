@@ -1,0 +1,56 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Rifle",
+    "ItemAnimationId": "Shoot"
+  },
+  "$Comment": "Prepare Delay",
+  "RunTime": 1,
+  "Next": {
+    "Type": "Chaining",
+    "ChainId": "Jessie_Yapping",
+    "Next": [
+      {
+        "Type": "Simple",
+        "Effects": {
+          "WorldSoundEventId": "SFX_Prepare_For_Trouble",
+          "LocalSoundEventId": "SFX_Prepare_For_Trouble"
+        },
+        "RunTime": 2
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_To_Protect_The_World",
+          "LocalSoundEventId": "SFX_To_Protect_The_World"
+        }
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_To_Denounce_The_Evils",
+          "LocalSoundEventId": "SFX_To_Denounce_The_Evils"
+        }
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_Jessie",
+          "LocalSoundEventId": "SFX_Jessie"
+        }
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_Team_Rocket_Blasts_Off",
+          "LocalSoundEventId": "SFX_Team_Rocket_Blasts_Off"
+        }
+      }
+    ],
+    "ChainingAllowance": 30
+  }
+}

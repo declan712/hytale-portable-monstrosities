@@ -1,0 +1,34 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T0_Chitin",
+    "Appearance": "Pkmn_Weedle",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "BugType",
+    "Type2": "PoisonType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [7,100],
+    "EvolveRoleChange": "Pkmn_Kakuna_Tamed",
+    "AttitudeGroup": "Prey",
+    "MaxHealth": 20,
+    "MaxSpeed": 4,
+    "WanderRadius": 20,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Weedle.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

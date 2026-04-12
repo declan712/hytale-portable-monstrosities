@@ -1,0 +1,42 @@
+{
+  "Type": "ModifyInventory",
+  "AdjustHeldItemDurability": -0.5,
+  "Failed": "Staff_Cast_Fail",
+  "Next": {
+    "Type": "Parallel",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "ChangeStat",
+            "StatModifiers": {
+              "MagicCharges": -4
+            }
+          },
+          {
+            "Type": "Simple",
+            "RunTime": 0.119,
+            "Effects": {
+              "ItemPlayerAnimationsId": "Rifle",
+              "ItemAnimationId": "ShootFlintlockCharged",
+              "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Launch",
+              "LocalSoundEventId": "SFX_Staff_Flame_Fireball_Launch_Local"
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 0.2
+          },
+          {
+            "Parent": "Weapon_Pkmn_Ember_Projectile_Base",
+            "Config": "Projectile_Config_Fireball_Charged_3"
+          }
+        ]
+      }
+    ]
+  }
+}

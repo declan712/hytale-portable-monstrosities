@@ -1,0 +1,37 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Caterpie",
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Caterpie",
+      "Pkmn_Metapod"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Crop_Corn_Item"
+    ],
+    "Type1": "BugType",
+    "WildLevelMin": 7,
+    "WildLevelMax": 10,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Metapod_Tamed",
+    "IsTameable": true,
+    "MaxHealth": 40,
+    "MaxSpeed": 0.5,
+    "AlertedActionRange": 4,
+    "AbsoluteDetectionRange": 1.5,
+    "Timid": true,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Weedle",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Metapod.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

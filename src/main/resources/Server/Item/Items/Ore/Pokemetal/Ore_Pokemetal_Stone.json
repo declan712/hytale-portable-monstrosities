@@ -1,0 +1,83 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Ore_Pokemetal_Stone.name",
+    "Description": "portablemonstrosities.items.Ore_Pokemetal.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Ore_Pokemetal_Stone.png",
+  "Categories": [
+    "Blocks.Ores",
+    "PortableMonstrosities.Blocks"
+  ],
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "CubeWithModel",
+    "CustomModel": "Resources/Ores/Pkmn/Ore_Pokemetal.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Ores/Pkmn/Ore_Textures/Ore_Pokemetal.png",
+        "Weight": 1
+      }
+    ],
+    "Group": "Stone",
+    "Flags": {},
+    "RandomRotation": "YawStep90",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OrePkmn",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Ore_Pokemetal"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Stone_Cobble"
+                }
+              }
+            ]
+          }
+        },
+        "Quality": 4
+      }
+    },
+    "BlockParticleSetId": "Ore",
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Stone.png"
+      }
+    ],
+    "ParticleColor": "#d0d1c1",
+    "BlockSoundSetId": "Ore"
+  },
+  "PlayerAnimationsId": "Block",
+  "Tags": {
+    "Type": [
+      "Ore"
+    ],
+    "Family": [
+      "Pokemetal"
+    ]
+  },
+  "MaxStack": 25,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  },
+  "Parent": "Ore_Iron_Stone"
+}

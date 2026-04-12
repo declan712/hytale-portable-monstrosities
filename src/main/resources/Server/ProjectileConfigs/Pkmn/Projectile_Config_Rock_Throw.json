@@ -1,0 +1,111 @@
+{
+  "Model": "Rock_Throw",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 12,
+    "TerminalVelocityAir": 50,
+    "TerminalVelocityWater": 50,
+    "RotationMode": "VelocityRoll",
+    "ComputeYaw": true,
+    "ComputePitch": true,
+    "RotationForce": 0.5,
+    "SpeedRotationFactor": -0.5,
+    "HitWaterImpulseLoss": 0.1
+  },
+  "LaunchForce": 15,
+  "SpawnOffset": {
+    "Y": 0.5,
+    "Z": 0
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "DefaultValue": {
+            "Interactions": [
+              "Pkmn_Moves_Rock_Throw_Damage"
+            ]
+          },
+          "Var": "Rock_Throw_Damage"
+        },
+        {
+          "Type": "Simple",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Stone_Break",
+            "WorldSoundEventId": "SFX_Stone_Break",
+            "Particles": [
+              {
+                "SystemId": "Stone_Death",
+                "Scale": 2,
+                "TargetEntityPart": "Entity",
+                "Color": "#5f5542"
+              }
+            ]
+          },
+          "RunTime": 0.5
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Stone_Break",
+            "WorldSoundEventId": "SFX_Stone_Break"
+          }
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        "Pkmn_Moves_Rock_Throw_Splash",
+        {
+          "Type": "Simple",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Stone_Break",
+            "WorldSoundEventId": "SFX_Stone_Break",
+            "Particles": [
+              {
+                "SystemId": "Stone_Death",
+                "Scale": 2,
+                "TargetEntityPart": "Entity",
+                "Color": "#5f5542"
+              }
+            ]
+          },
+          "RunTime": 5
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Stone_Break",
+            "WorldSoundEventId": "SFX_Stone_Break"
+          }
+        }
+      ]
+    },
+    "ProjectileSpawn": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Golem_Earth_Hurt",
+            "LocalSoundEventId": "SFX_Golem_Earth_Hurt",
+            "Trails": []
+          }
+        }
+      ]
+    }
+  },
+  "SpawnRotationOffset": {
+    "Yaw": 0,
+    "Pitch": 0,
+    "Roll": 0
+  }
+}

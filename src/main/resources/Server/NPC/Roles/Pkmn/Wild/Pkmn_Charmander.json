@@ -1,0 +1,44 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Charmander",
+    "AttitudeGroup": "Predators",
+    "FlockArray": [
+      "Pkmn_Charizard",
+      "Pkmn_Charmeleon",
+      "Pkmn_Charmander"
+    ],
+    "Type1": "FireType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 16,
+    "MaxHealth": 39,
+    "ViewRange": 12,
+    "MaxSpeed": 6.5,
+    "AttractiveItemSet": [
+      "Ingredient_Charcoal"
+    ],
+    "_CombatConfig": {
+      "EntityEffect": "FireType"
+    },
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Charmander_Tamed",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "ProduceItem": "Ingredient_Poop",
+    "DropList": "Drop_Pkmn_Charmander",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Charmander",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Charmander.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

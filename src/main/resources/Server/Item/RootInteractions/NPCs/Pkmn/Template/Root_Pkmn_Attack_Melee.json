@@ -1,0 +1,61 @@
+{
+  "Interactions": [
+    {
+      "Type": "Replace",
+      "Var": "Melee_Start",
+      "DefaultOk": true,
+      "DefaultValue": {
+        "Interactions": [
+          {
+            "Type": "Chaining",
+            "ChainId": "Attacks",
+            "ChainingAllowance": 30,
+            "Next": [
+              {
+                "Type": "Replace",
+                "Var": "Move_Start_1",
+                "DefaultValue": {
+                  "Interactions": [
+                    "Pkmn_Moves_Tackle"
+                  ]
+                }
+              },
+              {
+                "Type": "Replace",
+                "Var": "Move_Start_2",
+                "DefaultValue": {
+                  "Interactions": [
+                    "Pkmn_Moves_Scratch"
+                  ]
+                }
+              },
+              {
+                "Type": "Replace",
+                "Var": "Move_Start_3",
+                "DefaultValue": {
+                  "Interactions": [
+                    "Pkmn_Moves_Tackle"
+                  ]
+                }
+              },
+              {
+                "Type": "Replace",
+                "Var": "Move_Start_4",
+                "DefaultValue": {
+                  "Interactions": [
+                    "Pkmn_Moves_Bite"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "Tags": {
+    "Attack": [
+      "Melee"
+    ]
+  }
+}

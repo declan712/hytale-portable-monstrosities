@@ -1,0 +1,88 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "Particles": [
+      {
+        "SystemId": "FallingLeaves",
+        "PositionOffset": {
+          "Z": 1,
+          "Y": 0.5,
+          "X": 0
+        },
+        "Scale": 1,
+        "Color": "#226a28",
+        "TargetEntityPart": "Entity"
+      }
+    ],
+    "WorldSoundEventId": "SFX_Pkmn_Move_Razor_Leaf",
+    "LocalSoundEventId": "SFX_Pkmn_Move_Razor_Leaf",
+    "PlayerAnimationsId": "Throwing_Knife",
+    "ItemAnimationId": "Throw"
+  },
+  "RunTime": 1.25,
+  "Next": {
+    "Type": "Parallel",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 0.01,
+            "Next": {
+              "Type": "Projectile",
+              "Config": "Projectile_Config_Leaf"
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 0.03,
+            "Next": {
+              "Type": "Projectile",
+              "Config": "Projectile_Config_Leaf"
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 0.04,
+            "Next": {
+              "Type": "Projectile",
+              "Config": "Projectile_Config_Leaf"
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 0.06,
+            "Next": {
+              "Type": "Projectile",
+              "Config": "Projectile_Config_Leaf"
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 0.03,
+            "Next": {
+              "Type": "Projectile",
+              "Config": "Projectile_Config_Leaf"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

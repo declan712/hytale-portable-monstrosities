@@ -1,0 +1,16 @@
+{
+  "Name": "entityEffects.PkmnType.Ghost.name",
+  "DamageResistance": {
+    "Normal":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  1.0 }],
+    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  1.0 }],
+    "Poison":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
+    "Bug":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
+    "Ghost":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
+    "Dark":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
+    "Physical": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  1.0 }]
+  },
+  "Infinite": true,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Infinite",
+  "StatusEffectIcon": "Icons/PkmnType/GhostType.png"
+}

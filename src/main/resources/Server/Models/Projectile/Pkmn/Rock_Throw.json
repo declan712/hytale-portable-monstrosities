@@ -1,0 +1,75 @@
+{
+  "HitBox": {
+    "Max": {
+      "X": 0.05,
+      "Y": 0.05,
+      "Z": 0.05
+    },
+    "Min": {
+      "X": -0.05,
+      "Y": -0.05,
+      "Z": -0.05
+    }
+  },
+  "MinScale": 1,
+  "MaxScale": 1.5,
+  "Trails": [
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "TargetNodeName": "Handle",
+      "TrailId": "Rubble",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 0,
+        "Roll": 0
+      }
+    },
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "TargetNodeName": "Handle",
+      "TrailId": "Wind",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 45,
+        "Roll": 90
+      }
+    }
+  ],
+  "DefaultAttachments": [
+    {
+      "Model": "Items/Projectiles/Pkmn/Rock_Throw/Rock_Throw.blockymodel",
+      "Texture": "Items/Projectiles/Pkmn/Rock_Throw/Rock_Throw_Texture.png"
+    }
+  ],
+  "Model": "Items/Projectiles/Projectile.blockymodel",
+  "Texture": "Items/Projectiles/Projectile_default.png",
+  "Icon": "Icons/ModelsGenerated/Rock_Throw.png",
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      0,
+      -45,
+      72
+    ],
+    "Translation": [
+      -3,
+      -2
+    ]
+  },
+  "Particles": [
+    {
+      "SystemId": "BoulderTrail",
+      "Color": "#4f3928",
+      "TargetEntityPart": "Self",
+      "Scale": 0.5
+    }
+  ]
+}

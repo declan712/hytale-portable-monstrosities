@@ -1,0 +1,15 @@
+{
+  "Name": "entityEffects.PkmnType.Dark.name",
+  "DamageResistance": {
+    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
+    "Bug":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
+    "Psychic":  [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  1.0 }],
+    "Ghost":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
+    "Dark":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
+    "Physical": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.8 }]
+  },
+  "Infinite": true,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Infinite",
+  "StatusEffectIcon": "Icons/PkmnType/DarkType.png"
+}

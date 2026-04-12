@@ -1,0 +1,69 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Alert",
+    "WorldSoundEventId": "SFX_Pkmn_Travel",
+    "LocalSoundEventId": "SFX_Pkmn_Travel",
+    "ClearAnimationOnFinish": true,
+    "Particles": [
+      {
+        "SystemId": "Teleport"
+      }
+    ]
+  },
+  "RunTime": 0.25,
+  "Next": {
+    "Type": "CameraShake",
+    "CameraEffect": {
+      "Type": "CameraShake",
+      "CameraShake": {
+        "Parent": "Battleaxe_Jump"
+      },
+      "Intensity": {
+        "Value": 1,
+        "AccumulationMode": "Set"
+      }
+    },
+    "Next": {
+      "Type": "Selector",
+      "Selector": {
+        "Id": "Raycast",
+        "Distance": 40
+      },
+      "HitBlock": {
+        "Interactions": [
+          {
+            "Type": "SendMessage",
+            "Message": "Block hit",
+            "Next": {
+              "Type": "UseBlock",
+              "Next": {
+                "Type": "Teleporter",
+                "Next": {
+                  "Type": "SendMessage",
+                  "Message": "TeleportNext"
+                },
+                "RunTime": 1,
+                "UseLatestTarget": true,
+                "Failed": {
+                  "Type": "SendMessage",
+                  "Message": "TeleportFailed"
+                },
+                "ClearOutXZ": 0.01,
+                "ClearOutY": 0.01
+              },
+              "RunTime": 0.25,
+              "Failed": {
+                "Type": "SendMessage",
+                "Message": "UseBlock Failed"
+              }
+            }
+          }
+        ]
+      },
+      "FailOn": "Entity"
+    }
+  }
+}

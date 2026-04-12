@@ -1,0 +1,75 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "GroundSlam"
+  },
+  "RunTime": 0.25,
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 0.2,
+    "Effects": {
+      "Particles": [
+        {
+          "SystemId": "Earthquake_Aoe",
+          "TargetEntityPart": "Entity",
+          "TargetNodeName": "Origin",
+          "Color": "#603d00"
+        }
+      ],
+      "WorldSoundEventId": "SFX_Golem_Earth_Slam",
+      "LocalSoundEventId": "SFX_Golem_Earth_Slam"
+    },
+    "Next": {
+      "Type": "Repeat",
+      "Repeat": 8,
+      "ForkInteractions": {
+        "Interactions": [
+          {
+            "Type": "Selector",
+            "Effects": {
+              "Particles": [
+                {
+                  "SystemId": "Earthquake_Aoe_Pulse",
+                  "Color": "#a8834a",
+                  "TargetEntityPart": "Entity",
+                  "TargetNodeName": "Origin"
+                }
+              ],
+              "WorldSoundEventId": "SFX_Golem_Earth_Slam_Impact",
+              "LocalSoundEventId": "SFX_Golem_Earth_Slam_Impact",
+              "CameraEffect": {
+                "Type": "CameraShake",
+                "CameraShake": "Impact_Strong",
+                "Intensity": {
+                  "Value": 0.5,
+                  "AccumulationMode": "Sum"
+                }
+              }
+            },
+            "RunTime": 0.25,
+            "Selector": {
+              "Id": "AOECircle",
+              "Range": 7.5
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "Replace",
+                  "Var": "Earthquake_Damage",
+                  "DefaultValue": {
+                    "Interactions": [
+                      "Pkmn_Moves_Earthquake_Damage"
+                    ]
+                  }
+                }
+              ]
+            },
+            "HorizontalSpeedMultiplier": 0.3
+          }
+        ]
+      }
+    }
+  }
+}

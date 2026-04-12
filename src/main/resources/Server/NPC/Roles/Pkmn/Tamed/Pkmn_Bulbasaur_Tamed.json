@@ -1,0 +1,50 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Bulbasaur",
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [16,100],
+    "EvolveRoleChange": "Pkmn_Ivysaur_Tamed",
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Bulbasaur_Tamed",
+      "Pkmn_Ivysaur_Tamed",
+      "Pkmn_Venusaur_Tamed"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "MaxHealth": 35,
+    "MaxSpeed": 6,
+    "ViewRange": 12,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "ProduceItem": "Ingredient_Poop",
+    "DropList": "Drop_Pkmn_Bulbasaur",
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Pkmn_Default",
+              "ItemAnimationId": "Breath"
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Bulbasaur.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

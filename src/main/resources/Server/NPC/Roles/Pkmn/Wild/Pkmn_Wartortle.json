@@ -1,0 +1,90 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Wartortle",
+    "AttitudeGroup": "Predators",
+    "FlockArray": [
+      "Pkmn_Squirtle",
+      "Pkmn_Wartortle",
+      "Pkmn_Blastoise"
+    ],
+    "Type1": "WaterType",
+    "WildLevelMin": 16,
+    "WildLevelMax": 36,
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Wartortle_Tamed",
+    "MaxHealth": 100,
+    "MaxSpeed": 8,
+    "WanderRadius": 12,
+    "ViewRange": 12,
+    "HearingRange": 8,
+    "FleeRange": 15,
+    "AlertedRange": 18,
+    "AbsoluteDetectionRange": 2,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "MaintainDistanceWhileAlerted": true,
+    "AlwaysSleepAtNight": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "DropList": "Drop_Pkmn_T1_Chitin",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Wartortle",
+    "_InteractionVars": {
+      "Bite_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {"Physical": 30},
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Tackle_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {"Physical": 20},
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Scratch_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {"Physical": 20},
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Wartortle.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

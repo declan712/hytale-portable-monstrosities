@@ -1,0 +1,118 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Bench_Pkmn_PC.name",
+    "Description": "portablemonstrosities.items.Bench_Pkmn_PC.description"
+  },
+  "Categories": [
+    "Furniture.Benches",
+    "PortableMonstrosities.Furniture"
+  ],
+  "Recipe": {
+    "Input": [
+      {
+        "Quantity": 10,
+        "ItemId": "Ingredient_Bar_Copper"
+      },
+      {
+        "Quantity": 1,
+        "ItemId": "Ingredient_Bar_Silver"
+      },
+      {
+        "Quantity": 1,
+        "ItemId": "Ingredient_Bar_Gold"
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_Crafting"
+        ],
+        "Id": "Bench_Pokeball"
+      }
+    ],
+    "TimeSeconds": 3
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/Benches/Bench_Pkmn_PC.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Benches/Bench_Pkmn_PC_Texture_Off.png",
+        "Weight": 1
+      }
+    ],
+    "VariantRotation": "NESW",
+    "State": {
+      "Id": "container",
+      "Capacity": 30,
+      "Definitions": {
+        "CloseWindow": {
+          "InteractionSoundEventId": "SFX_Pkmn_Pc_Close",
+          "DrawType": "Model"
+        },
+        "OpenWindow": {
+          "InteractionSoundEventId": "SFX_Pkmn_Pc_Boot",
+          "Light": {
+            "Color": "#7ef"
+          },
+          "DrawType": "Model"
+        }
+      }
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches"
+      }
+    },
+    "HitboxType": "Bench_Pkmn_PC",
+    "BlockParticleSetId": "Metal",
+    "ParticleColor": "#969486",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockSoundSetId": "Metal",
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "OpenContainer"
+          }
+        ]
+      }
+    },
+    "Flags": {
+      "IsUsable": true
+    }
+  },
+  "PlayerAnimationsId": "Block",
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      19,
+      29,
+      16
+    ],
+    "Translation": [
+      1,
+      -23
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ]
+  },
+  "MaxStack": 1,
+  "ItemLevel": 50,
+  "ItemSoundSetId": "ISS_Items_Metal",
+  "Model": "Blocks/Benches/Bench_Pkmn_PC.blockymodel",
+  "Texture": "Blocks/Benches/Bench_Pkmn_PC_Texture_Off.png",
+  "Icon": "Icons/ItemsGenerated/Bench_Pkmn_PC.png"
+}

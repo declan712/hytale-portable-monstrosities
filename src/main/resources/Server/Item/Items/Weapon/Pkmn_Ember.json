@@ -1,0 +1,67 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Weapon_Pkmn_Ember.name"
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Weapons"
+  ],
+  "Icon": "Icons/ItemsGenerated/Pkmn_Flamethrower.png",
+  "Quality": "Rare",
+  "ItemLevel": 40,
+  "Model": "NPC/Pkmn/Charmander/Models/Charmander_Gun.blockymodel",
+  "Texture": "NPC/Pkmn/Charmander/Models/Texture.png",
+  "PlayerAnimationsId": "Watering_Can",
+  "Particles": [
+    {
+      "SystemId": "Torch_Fire",
+      "TargetNodeName": "TailFire"
+    },
+    {
+      "SystemId": "Smoke_Gold_Brazier_Small",
+      "Color": "#797979",
+      "TargetEntityPart": "PrimaryItem",
+      "TargetNodeName": "TailFIre",
+      "Scale": 0.5
+    }
+  ],
+  "Utility": {
+    "Compatible": false
+  },
+  "Interactions": {
+    "Primary": "Root_Weapon_Pkmn_Ember_Primary_Entry",
+    "Secondary": {
+      "Parent": "Root_Weapon_Pkmn_Ember_Secondary_Entry"
+    },
+    "Pick": {
+      "Parent": "Root_Weapon_Pkmn_Ember_Ability1_Entry"
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.2,
+    "Rotation": [
+      332,
+      86,
+      0
+    ],
+    "Translation": [
+      -31,
+      -79
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Gun"
+    ]
+  },
+  "Weapon": {},
+  "ItemSoundSetId": "ISS_Weapons_Wand",
+  "Scale": 0.5,
+  "Light": {
+    "Color": "#ba6"
+  }
+}

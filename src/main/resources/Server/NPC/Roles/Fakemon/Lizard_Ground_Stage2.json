@@ -1,0 +1,63 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T2_Hide",
+    "Appearance": "Lizard_Ground_Stage2",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "_CombatConfig": {
+      "EntityEffect": "DragonGroundType"
+    },
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Lizard_Ground_Stage2_Tamed",
+    "AttitudeGroup": "PredatorsBig",
+    "MaxHealth": 125,
+    "MaxSpeed": 10,
+    "WanderRadius": 20,
+    "ViewRange": 8,
+    "HearingRange": 10,
+    "AlertedRange": 12,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "FleeIfNotThreatened": true,
+    "FleeRange": 15,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 3.5,
+    "CombatBackOffAfterAttack": false,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 3,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "AlwaysSleepAtNight": false,
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": true,
+    "DayFlavorAnimation": "Idle",
+    "NightFlavorAnimation": "Idle",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "GroundLizardStage2",
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Lizard_Ground_Baby.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

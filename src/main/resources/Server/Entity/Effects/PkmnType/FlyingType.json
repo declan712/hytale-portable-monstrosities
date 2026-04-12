@@ -1,0 +1,17 @@
+{
+  "Name": "entityEffects.PkmnType.Flying.name",
+  "DamageResistance": {
+    "Grass":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
+    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
+    "Bug":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
+    "Ground":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  1.0 }],
+    "Ice":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0 }],
+    "Rock":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0 }],
+    "Electric": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0 }],
+    "Physical": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.8 }]
+  },
+  "Infinite": true,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Infinite",
+  "StatusEffectIcon": "Icons/PkmnType/FlyingType.png"
+}

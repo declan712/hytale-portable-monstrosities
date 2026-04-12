@@ -1,0 +1,56 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Rifle",
+    "ItemAnimationId": "Shoot"
+  },
+  "$Comment": "Prepare Delay",
+  "RunTime": 1,
+  "Next": {
+    "Type": "Chaining",
+    "ChainId": "James_Yapping",
+    "Next": [
+      {
+        "Type": "Simple",
+        "Effects": {
+          "WorldSoundEventId": "SFX_Make_It_Double",
+          "LocalSoundEventId": "SFX_Make_It_Double"
+        },
+        "RunTime": 2
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_To_Unite_All_People",
+          "LocalSoundEventId": "SFX_To_Unite_All_People"
+        }
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_To_Extend_Our_Reach",
+          "LocalSoundEventId": "SFX_To_Extend_Our_Reach"
+        }
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_James",
+          "LocalSoundEventId": "SFX_James"
+        }
+      },
+      {
+        "Type": "Simple",
+        "RunTime": 2,
+        "Effects": {
+          "WorldSoundEventId": "SFX_Surrender_Now_Or_Prepare",
+          "LocalSoundEventId": "SFX_Surrender_Now_Or_Prepare"
+        }
+      }
+    ],
+    "ChainingAllowance": 30
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Ore_Pokemetal_Basalt.name"
+  },
+  "Icon": "Icons/ItemsGenerated/Ore_Pokemetal_Basalt.png",
+  "Parent": "Ore_Pokemetal_Stone",
+  "BlockType": {
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OrePkmn",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Ore_Pokemetal"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Basalt_Cobble"
+                }
+              }
+            ]
+          }
+        },
+        "Quality": 4
+      }
+    },
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Basalt.png"
+      }
+    ],
+    "DrawType": "CubeWithModel"
+  },
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pkmn_Candy.name",
+    "Description": "portablemonstrosities.items.Pkmn_Candy.description"
+  },
+  "Quality": "Common",
+  "MaxStack": 9999,
+  "ItemLevel": 1,
+  "Model": "Items/Consumables/Rare_Candy.blockymodel",
+  "Texture": "Items/Consumables/Rare_Candy.png",
+  "Categories": [
+    "PortableMonstrosities.Items"
+  ],
+  "Scale": 0.5,
+  "PlayerAnimationsId": {
+    "Parent": "Item"
+  },
+  "Icon": "Icons/ItemsGenerated/Rare_Candy.png",
+  "IconProperties": {
+    "Scale": 0.75,
+    "Rotation": [
+      0,
+      115,
+      53
+    ],
+    "Translation": [
+      -5,
+      -12
+    ]
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Selector",
+          "Selector": {
+            "Id": "Stab",
+            "EndDistance": 3,
+            "ExtendTop": 0.25,
+            "ExtendBottom": 0.25,
+            "ExtendLeft": 0.25,
+            "ExtendRight": 0.25,
+            "StartDistance": 1
+          },
+          "HitEntity": {
+            "Interactions": [
+              {
+                "Type": "ApplyEffect",
+                "Entity": "Target",
+                "EffectId": {
+                  "StatModifiers": {
+                    "Exp": 100
+                  },
+                  "ValueType": "Absolute",
+                  "Parent": "Exp_Gain",
+                  "Duration": 0.2
+                },
+                "Next": {
+                  "Type": "ModifyInventory",
+                  "AdjustHeldItemQuantity": -1
+                }
+              }
+            ]
+          },
+          "IgnoreOwner": true,
+          "RunTime": 0.1,
+          "Effects": {
+            "ItemAnimationId": "Interact"
+          }
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "Selector",
+          "Selector": {
+            "Id": "Stab",
+            "EndDistance": 3,
+            "ExtendTop": 0.25,
+            "ExtendBottom": 0.25,
+            "ExtendLeft": 0.25,
+            "ExtendRight": 0.25,
+            "StartDistance": 1
+          },
+          "HitEntity": {
+            "Interactions": [
+              {
+                "Type": "ApplyEffect",
+                "Entity": "Target",
+                "Next": {
+                  "Type": "ModifyInventory",
+                  "AdjustHeldItemQuantity": -1
+                },
+                "EffectId": "Evolution_Glow"
+              }
+            ]
+          },
+          "IgnoreOwner": true,
+          "RunTime": 0.1,
+          "Effects": {
+            "ItemAnimationId": "Interact"
+          }
+        }
+      ]
+    }
+  }
+}

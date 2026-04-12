@@ -1,0 +1,98 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Diglett",
+    "DropList": "Drop_Pkmn_Geodude",
+    "AttractiveItemSet": [
+      "Ore_Copper",
+      "Rubble_Marble",
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "GroundType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 26,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Diglett_Tamed",
+    "MaxHealth": 44,
+    "MaxSpeed": 8,
+    "WanderRadius": 12,
+    "ViewRange": 18,
+    "HearingRange": 12,
+    "AbsoluteDetectionRange": 2,
+    "AlertedRange": 18,
+    "IsMemory": true,
+    "MemoriesCategory": "Elemental",
+    "MemoriesNameOverride": "Diglett",
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "MaintainDistanceWhileAlerted": false,
+    "ThreatenDelayRange": [
+      2,
+      2
+    ],
+    "ThreatenAnimation": "Jump",
+    "FleeIfNotThreatened": false,
+    "FleeRange": 11,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "LeashMinPlayerDistance": 7,
+    "LeashTimer": [
+      3,
+      4
+    ],
+    "CombatBehaviorDistance": 6.5,
+    "CombatRelativeTurnSpeed": 1,
+    "CombatDirectWeight": 10,
+    "CombatStrafeWeight": 10,
+    "CombatBackOffAfterAttack": true,
+    "CombatBackOffDurationRange": [
+      3,
+      4
+    ],
+    "CombatBackOffDistanceRange": [
+      2,
+      3
+    ],
+    "CombatStrafingFrequencyRange": [
+      1,
+      2
+    ],
+    "CombatStrafingDurationRange": [
+      2,
+      3
+    ],
+    "CombatMovingRelativeSpeed": 0.7,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2.25,
+    "ChaseRelativeSpeed": 1,
+    "AlwaysSleepAtNight": false,
+    "DayFlavorAnimation": "",
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": false,
+    "DayTimePeriod": [
+      18.01,
+      6.01
+    ],
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Diglett.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

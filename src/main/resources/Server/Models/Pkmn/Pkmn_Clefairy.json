@@ -1,0 +1,366 @@
+{
+  "Model": "NPC/Pkmn/Clefairy/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Clefairy/Models/Texture_Pink.png",
+  "EyeHeight": 1.2,
+  "CrouchOffset": -0.2,
+  "HitBox": {
+    "Max": {
+      "X": 0.45,
+      "Y": 0.9,
+      "Z": 0.45
+    },
+    "Min": {
+      "X": -0.45,
+      "Y": 0,
+      "Z": -0.45
+    }
+  },
+  "MinScale": 0.7,
+  "MaxScale": 0.9,
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 45,
+        "Min": -15
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Max": 30,
+        "Min": -30
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "PositionOffset": {
+      "X": 0.55,
+      "Y": 0.2,
+      "Z": 3.4
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0,
+          "SoundEventId": "SFX_Pkmn_Wartortle_Cry"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Walk.blockyanim"
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Run.blockyanim"
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": true
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Jump.blockyanim",
+          "Speed": 0.8,
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "JumpFar": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Jump_Run.blockyanim",
+          "Speed": 0.8,
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Fall.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "FallFar": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Fall.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Fall.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Wartortle_Cry"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Sleep.blockyanim"
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Damage/Death.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Swim/Swim_Idle.blockyanim"
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Swim/Swim_Jump.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Swim/Swim_Float.blockyanim"
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Swim/Swim_Sink.blockyanim"
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Idle.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Walk.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Default/Run.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Fly/Fly_Idle.blockyanim"
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Fly/Fly.blockyanim"
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Fly/Fly_Fast.blockyanim"
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Fly/Fly_Backward.blockyanim"
+        }
+      ]
+    },
+    "IdlePassive": {
+      "Animations": [
+	    {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Curious.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Dig.blockyanim"
+        },
+		{
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Dig_Find.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Eat.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Eat_Hand.blockyanim"
+        },
+		{
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Eat_Trough.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Flee.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Happy.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Sniff.blockyanim"
+        },
+		{
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Shake.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Clefairy/Animations/Flavor/Scratch_Back_Ground.blockyanim"
+        }
+      ],
+      "NextAnimationDelay": {
+        "Max": 10,
+        "Min": 2
+      }
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.35,
+    "Rotation": [
+      0,
+      342,
+      0
+    ],
+    "Translation": [
+      -5,
+      -41
+    ]
+  },
+  "Icon": "Icons/ModelsGenerated/Pkmn_Clefairy.png"
+}

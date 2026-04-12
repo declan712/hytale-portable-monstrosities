@@ -1,0 +1,41 @@
+{
+  "Type": "StatsCondition",
+  "Costs": {
+    "Stamina": 2
+  },
+  "Next": {
+    "Type": "Charging",
+    "Effects": {
+      "ItemAnimationId": "StabCharging"
+    },
+    "AllowIndefiniteHold": false,
+    "Next": {
+      "0": {
+        "Type": "ChangeStat",
+        "Behaviour": "Add",
+        "StatModifiers": {
+          "Stamina": -2,
+          "StaminaRegenDelay": 1
+        },
+        "Next": {
+          "Type": "Chaining",
+          "ChainingAllowance": 2,
+          "Next": [
+            "Greatsword_Swing_Left",
+            "Greatsword_Swing_Right",
+            "Greatsword_Swing_Up_Left"
+          ]
+        }
+      },
+      "1.565": {
+        "Type": "ChangeStat",
+        "Behaviour": "Add",
+        "StatModifiers": {
+          "Stamina": -3
+        },
+        "Next": "Greatsword_Stab_Charged"
+      }
+    }
+  },
+  "Failed": "Staff_Cast_Fail"
+}

@@ -1,0 +1,221 @@
+{
+  "Model": "NPC/Pkmn/Diglett/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Diglett/Models/Texture.png",
+  "EyeHeight": 0.5,
+  "HitBox": {
+    "Max": {
+      "X": 0.6,
+      "Y": 0.9,
+      "Z": 0.6
+    },
+    "Min": {
+      "X": -0.6,
+      "Y": 0,
+      "Z": -0.6
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Idle.blockyanim",
+          "Speed": 1
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Walk.blockyanim",
+          "SoundEventId": "SFX_Crawler_Void_Walk",
+          "Speed": 1
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Run.blockyanim",
+          "SoundEventId": "SFX_Crawler_Void_Run",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Jump_Far.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        },
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Jump_Far2.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Geodude_Cry"
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Crawler_Void_Hurt"
+        },
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Damage/Hurt2.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Crawler_Void_Hurt"
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Damage/Death.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Crawler_Void_Death"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Sleep.blockyanim",
+          "SoundEventId": "SFX_Crawler_Void_Sleep"
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Geodude_Cry"
+        }
+      ]
+    },
+    "Despawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Diglett/Animations/Default/Despawn.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Crawler_Void_Despawn"
+        }
+      ]
+    }
+  },
+  "Icon": "Icons/ModelsGenerated/Pkmn_Diglett.png",
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      0,
+      29,
+      0
+    ],
+    "Translation": [
+      0,
+      -44
+    ]
+  },
+  "Particles": [
+    {
+      "SystemId": "BoulderTrail",
+      "TargetEntityPart": "Self",
+      "TargetNodeName": "Pelvis",
+      "Color": "#65573e",
+      "Scale": 1,
+      "PositionOffset": {
+        "Y": 0.1
+      }
+    }
+  ]
+}

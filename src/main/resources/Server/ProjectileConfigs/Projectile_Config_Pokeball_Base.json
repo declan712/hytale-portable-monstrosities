@@ -1,0 +1,147 @@
+{
+  "Parent": "Projectile_Config_Pokeball_Base",
+  "Model": "Pokeball",
+  "SpawnRotationOffset": {
+    "Pitch": 2,
+    "Yaw": 0.25,
+    "Roll": 0
+  },
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 15,
+    "TerminalVelocityAir": 30,
+    "TerminalVelocityWater": 5,
+    "RotationMode": "VelocityRoll",
+    "Bounciness": 0.85,
+    "SticksVertically": false,
+    "AllowRolling": false,
+    "ComputeYaw": true,
+    "ComputePitch": true,
+    "HitWaterImpulseLoss": 0.75,
+    "BounceCount": 5,
+    "SpeedRotationFactor": 0.25,
+    "RotationForce": 0.25
+  },
+  "LaunchForce": 30,
+  "SpawnOffset": {
+    "X": 0.15,
+    "Y": -0.25,
+    "Z": 0
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Interactions": [
+        {
+          "Type": "HasOwner",
+          "RunTime": 0.1,
+          "Next": {
+            "Type": "UseCaptureOrb",
+            "FullIcon": "Icons/Items/Pokeball_Full.png",
+            "AcceptedNpcGroups": [
+              "Pokeball",
+              "Pokeball_Great",
+              "Pokeball_Ultra"
+            ],
+            "CaptureItemId": "Pokeball"
+          },
+          "Failed": {
+            "Type": "ApplyEffect",
+            "EffectId": "Captured",
+            "Entity": "Target",
+            "Next": {
+              "Type": "Simple",
+              "RunTime": 0.75,
+              "Effects": {
+                "WorldSoundEventId": "SFX_Pokeball_Poof",
+                "LocalSoundEventId": "SFX_Pokeball_Poof",
+                "Particles": [
+                  {
+                    "SystemId": "Laser_Impact",
+                    "Color": "#ff0000",
+                    "Scale": 3,
+                    "TargetEntityPart": "Entity"
+                  }
+                ]
+              },
+              "Next": "Pkmn_Capture_Wobble"
+            }
+          }
+        },
+        {
+          "Type": "Simple",
+          "RunTime": 0.1
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Pkmn_Bump",
+            "LocalSoundEventId": "SFX_Pkmn_Bump",
+            "Particles": [
+              {
+                "SystemId": "Stone_Bounce",
+                "Color": "#b76868",
+                "DetachedFromModel": true,
+                "TargetEntityPart": "Entity"
+              }
+            ]
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    },
+    "ProjectileBounce": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Pokeball_Bounce",
+            "LocalSoundEventId": "SFX_Pokeball_Bounce",
+            "Particles": [
+              {
+                "Color": "#b76868",
+                "SystemId": "Stone_Bounce",
+                "TargetEntityPart": "Entity",
+                "DetachedFromModel": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "InteractionVars": {
+    "Stay_Captured": {
+      "Interactions": [
+        {
+          "Type": "StayCaptured",
+          "BallBonus": 1.0
+        }
+      ]
+    },
+    "Use_Capture_Item": {
+      "Interactions": [
+        {
+          "Type": "UseCaptureOrb",
+          "FullIcon": "Icons/Items/Pokeball_Full.png",
+          "AcceptedNpcGroups": [
+            "Pokeball",
+            "Pokeball_Great",
+            "Pokeball_Ultra"
+          ],
+          "CaptureItemId": "Pokeball"
+        }
+      ]
+    }
+  }
+}

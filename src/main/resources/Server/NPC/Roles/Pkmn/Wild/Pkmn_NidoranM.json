@@ -1,0 +1,55 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_NidoranM",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "PoisonType",
+    "WildLevelMin": 2,
+    "WildLevelMax": 16,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_NidoranM_Tamed",
+    "AttitudeGroup": "Prey",
+    "MaxHealth": 21,
+    "MaxSpeed": 10,
+    "WanderRadius": 20,
+    "ViewRange": 8,
+    "HearingRange": 10,
+    "AlertedRange": 12,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "FleeIfNotThreatened": true,
+    "FleeRange": 15,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 3,
+    "CombatBackOffAfterAttack": false,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "AlwaysSleepAtNight": false,
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": true,
+    "DayFlavorAnimation": "IdlePassive",
+    "NightFlavorAnimation": "IdlePassive",
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "NidoranM",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_NidoranM.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "Name": "entityEffects.PkmnType.GrassPoison.name",
+  "DamageResistance": {
+    "Grass":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.25}],
+    "Water":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
+    "Electric": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
+    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
+    "Fire":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Ice":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Flying":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Bug":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Psychic":  [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Physical": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.8 }]
+  },
+  "Infinite": true,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Infinite",
+  "StatusEffectIcon": "Icons/PkmnType/GrassPoisonType.png"
+}

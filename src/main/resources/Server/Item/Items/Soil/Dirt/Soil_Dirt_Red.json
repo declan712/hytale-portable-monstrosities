@@ -1,0 +1,64 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Soil_Dirt_Red.name"
+  },
+  "ItemLevel": 10,
+  "Icon": "Icons/ItemsGenerated/Soil_Dirt_Red.png",
+  "Categories": [
+    "Blocks.Soils"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Set": "Soil",
+  "ResourceTypes": [
+    {
+      "Id": "Soils"
+    }
+  ],
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Group": "Dirt",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Soils"
+      }
+    },
+    "BlockParticleSetId": "Dirt",
+    "Textures": [
+      {
+        "All": "BlockTextures/Soil_Dirt_Red.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#8c3b22",
+    "BlockSoundSetId": "Dirt",
+    "TransitionTexture": "BlockTextures/Transition_Soil_Dirt_Red.png",
+    "TransitionToGroups": [
+      "Stone",
+      "Dirt"
+    ],
+    "BlockBreakingDecalId": "Breaking_Decals_Soil"
+  },
+  "Tags": {
+    "Type": [
+      "Soil"
+    ],
+    "Spreadable": [
+      "Grass"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Soft",
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}

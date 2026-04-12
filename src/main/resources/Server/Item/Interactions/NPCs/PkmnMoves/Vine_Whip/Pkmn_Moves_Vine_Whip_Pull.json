@@ -1,0 +1,108 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemAnimationId": "Breath",
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ClearAnimationOnFinish": true
+  },
+  "$Comment": "Prepare Delay",
+  "RunTime": 0.223,
+  "Next": {
+    "Type": "Parallel",
+    "$Comment": "Make sure this parallel interaction is needed and can't be optimized away",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "Selector",
+            "$Comment": "Length of Combat",
+            "RunTime": 0.111,
+            "Selector": {
+              "Id": "Stab",
+              "TestLineOfSight": true,
+              "ExtendTop": 0.2,
+              "ExtendLeft": 0.2,
+              "ExtendRight": 0.2,
+              "ExtendBottom": 0.2,
+              "StartDistance": 0.1,
+              "EndDistance": 8
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "ApplyEffect",
+                  "Entity": "Target",
+                  "EffectId": {
+                    "ApplicationEffects": {
+                      "EntityBottomTint": "#123900",
+                      "EntityTopTint": "#86ff66",
+                      "Particles": [
+                        {
+                          "TargetEntityPart": "Entity",
+                          "SystemId": "Stunned",
+                          "Color": "#095200",
+                          "PositionOffset": {
+                            "Y": 0
+                          },
+                          "Scale": 2
+                        }
+                      ]
+                    },
+                    "Duration": 1,
+                    "Debuff": true
+                  },
+                  "Next": {
+                    "Type": "DamageEntity",
+                    "DamageEffects": {
+                      "Knockback": {
+                        "Type": "Directional",
+                        "VelocityType": "Set",
+                        "Duration": 0.5,
+                        "Force": 2,
+                        "RelativeZ": 0.2,
+                        "VelocityConfig": {
+                          "GroundResistance": 0.02,
+                          "AirResistance": 0.012,
+                          "GroundResistanceMax": 0.016,
+                          "AirResistanceMax": 0.016
+                        },
+                        "VelocityY": 3
+                      }
+                    },
+                    "DamageCalculator": {
+                      "BaseDamage": {
+                        "Grass": 10
+                      },
+                      "Type": "Absolute"
+                    }
+                  },
+                  "Effects": {
+                    "ClearAnimationOnFinish": true
+                  }
+                }
+              ]
+            },
+            "Next": {
+              "Type": "Simple",
+              "$Comment": "Pad the interaction length",
+              "RunTime": 0.223
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "DefaultValue": {
+              "Interactions": [
+                "Pkmn_Moves_Vine_Whip_Stab_Effect"
+              ]
+            },
+            "Var": "Vine_Whip_Stab_Effect"
+          }
+        ]
+      }
+    ]
+  }
+}

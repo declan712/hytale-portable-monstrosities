@@ -1,0 +1,62 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T2_Hide",
+    "Appearance": "Lizard_Ground_Stage2",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "FlockArray": [
+      "Lizard_Ground_Baby_Tamed",
+      "Lizard_Ground_Stage1_Tamed",
+      "Lizard_Ground_Stage2_Tamed"
+    ],
+    "_CombatConfig": {
+      "EntityEffect": "DragonGroundType"
+    },
+    "MountAnchorX": 0,
+    "MountAnchorY": 1.5,
+    "MountAnchorZ": -1 ,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "AttitudeGroup": "PredatorsBig",
+    "MaxHealth": 125,
+    "MaxSpeed": 10,
+    "WanderRadius": 20,
+    "ViewRange": 16,
+    "HearingRange": 24,
+    "LeashDistance": 15,
+    "CombatBehaviorDistance": 3.5,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 3,
+    "DayTimeNapWeight": 0,
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "GroundLizardStage2",
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Lizard_Ground_Baby.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

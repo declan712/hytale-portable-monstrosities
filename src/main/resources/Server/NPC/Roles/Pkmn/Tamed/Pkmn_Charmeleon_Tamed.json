@@ -1,0 +1,70 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Charmeleon",
+    "AttitudeGroup": "Predators",
+    "AttractiveItemSet": [
+      "Ingredient_Powder_Boom"
+    ],
+    "Type1": "FireType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [36,100],
+    "EvolveRoleChange": "Pkmn_Charizard_Tamed",
+    "MaxHealth": 100,
+    "MaxSpeed": 10,
+    "WanderRadius": 12,
+    "DropList": "Drop_Pkmn_Charmeleon",
+    "Attack": "Root_NPC_Pkmn_Charmeleon_Attack",
+    "_InteractionVars": {
+      "Flamethrower_Damage":{
+        "Interactions": [
+          {
+            "Type": "DamageEntity",
+            "DamageCalculator": {
+              "BaseDamage": {
+                "Physical": 8
+              }
+            },
+            "DamageEffects": {
+              "Knockback": {
+                "Type": "Force",
+                "VelocityConfig": {
+                  "GroundResistance": 0.804,
+                  "GroundResistanceMax": 0.0,
+                  "AirResistance": 0.972,
+                  "AirResistanceMax": 0.028,
+                  "Threshold": 1.0,
+                  "Style": "Exp"
+                },
+                "Direction": {
+                  "X": 1.0,
+                  "Y": 2.0,
+                  "Z": 3.0
+                },
+                "Force": 0.2,
+                "VelocityType": "Set"
+              },
+              "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_Impact",
+              "WorldParticles": [
+                {
+                  "SystemId": "Impact_Sword_Charged"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Charmeleon.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

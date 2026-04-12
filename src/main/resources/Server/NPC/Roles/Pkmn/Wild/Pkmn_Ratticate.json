@@ -1,0 +1,67 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Rattata",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "NormalType",
+    "WildLevelMin": 20,
+    "WildLevelMax": 40,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Ratticate_Tamed",
+    "AttitudeGroup": "Predators",
+    "MaxHealth": 30,
+    "MaxSpeed": 9,
+    "WanderRadius": 20,
+    "ViewRange": 8,
+    "HearingRange": 10,
+    "AlertedRange": 12,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "FleeIfNotThreatened": true,
+    "FleeRange": 15,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 3,
+    "CombatBackOffAfterAttack": false,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "AlwaysSleepAtNight": false,
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": true,
+    "DayFlavorAnimation": "IdlePassive",
+    "NightFlavorAnimation": "IdlePassive",
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "Ratticate",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack",
+            "$Comment": "Sets animations and delay before hit",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Rat_Default",
+              "ItemAnimationId": "Bite"
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Ratticate.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

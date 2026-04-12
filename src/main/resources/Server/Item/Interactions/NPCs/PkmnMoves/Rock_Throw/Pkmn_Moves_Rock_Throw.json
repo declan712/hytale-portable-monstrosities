@@ -1,0 +1,55 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "ThrowLift",
+    "WorldSoundEventId": "SFX_Tombstone_Break",
+    "LocalSoundEventId": "SFX_Tombstone_Break",
+    "ClearAnimationOnFinish": false,
+    "Particles": [
+      {
+        "TargetEntityPart": "Entity",
+        "SystemId": "Stone_Death",
+        "Scale": 2,
+        "Color": "#302c28",
+        "PositionOffset": {
+          "Z": 0.5
+        }
+      },
+      {
+        "SystemId": "BoulderTrail",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "R-Attachment",
+        "Color": "#4a3d28",
+        "PositionOffset": {
+          "Y": 0,
+          "X": 0.5
+        },
+        "Scale": 0.75
+      }
+    ],
+    "MovementEffects": {
+      "DisableAll": true
+    }
+  },
+  "RunTime": 0.75,
+  "Next": {
+    "Type": "Projectile",
+    "Config": "Projectile_Config_Rock_Throw",
+    "RunTime": 2.5,
+    "Effects": {
+      "ClearAnimationOnFinish": true,
+      "Particles": [
+        {
+          "TargetEntityPart": "Entity",
+          "SystemId": "Stone_Bounce",
+          "Color": "#37312e"
+        }
+      ],
+      "ItemPlayerAnimationsId": "Pkmn_Default",
+      "ItemAnimationId": "ThrowRelease"
+    }
+  },
+  "HorizontalSpeedMultiplier": 0
+}

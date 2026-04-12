@@ -1,0 +1,69 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.PkmnEgg.name",
+    "Description": "portablemonstrosities.items.PkmnEgg.description"
+  },
+  "Quality": "Rare",
+  "ItemLevel": 18,
+  "Model": "Items/PkmnEgg/PkmnEgg.blockymodel",
+  "Texture": "Items/PkmnEgg/PkmnEgg.png",
+  "PlayerAnimationsId": "Sword",
+  "Reticle": "DefaultMelee",
+  "MaxStack": 1,
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "PlaceBlock"
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      349,
+      123,
+      0
+    ],
+    "Translation": [
+      3,
+      -19
+    ]
+  },
+  "UsePlayerAnimations": true,
+  "DroppedItemAnimation": "Items/Pokeball/Wobble_Once.blockyanim",
+  "Categories": [
+    "PortableMonstrosities.Items"
+  ],
+  "BlockType": {
+    "DrawType": "Model",
+    "CustomModel": "Items/PkmnEgg/PkmnEgg.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/PkmnEgg/PkmnEgg.png"
+      }
+    ],
+    "CustomModelScale": 1,
+    "RandomRotation": "YawStep1",
+    "Material": "Solid",
+    "PlacementSettings": {
+      "PlaceInEmptyBlocks": true
+    },
+    "BlockSoundSetId": "Bone",
+    "SupportDropType": "Destroy",
+    "Gathering": {
+      "Breaking": {
+        "ItemId": "Fluid_Slime_Red",
+        "Quantity": 1
+      },
+      "Soft": {
+        "IsWeaponBreakable": true,
+        "ItemId": "Fluid_Slime_Red"
+      }
+    },
+    "CustomModelAnimation": "Items/Pokeball/Wobble_Once.blockyanim"
+  },
+  "Scale": 2,
+  "Icon": "Icons/ItemsGenerated/PkmnEgg.png"
+}

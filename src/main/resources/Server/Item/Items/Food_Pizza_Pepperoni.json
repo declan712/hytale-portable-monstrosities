@@ -1,0 +1,107 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Food_Pizza_Pepperoni.name",
+    "Description": "portablemonstrosities.items.Food_Pizza_Pepperoni.description"
+  },
+  "Parent": "Template_Food",
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Food_T3"
+  },
+  "Quality": "Epic",
+  "Icon": "Icons/ItemsGenerated/Food_Pizza_Pepperoni.png",
+  "BlockType": {
+    "Material": "Empty",
+    "DrawType": "Model",
+    "CustomModel": "Items/Consumables/Food/Pizza_Pepperoni.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Consumables/Food/Pizza_Pepperoni.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#a0784d",
+    "CustomModelAnimation": "Items/Consumables/Food/Pizza_Physics.blockyanim"
+  },
+  "InteractionVars": {
+    "Consume_Charge": {
+      "Interactions": [
+        {
+          "Parent": "Consume_Charge_Food_T1_Inner",
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Food_Eat",
+                "Color": "#7EBB4F",
+                "TargetNodeName": "Mouth",
+                "TargetEntityPart": "Entity"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": "Food_Instant_Heal_T3"
+        },
+        "HealthRegen_TierCheck_T3",
+        "FruitVeggie_TierCheck_T3"
+      ]
+    }
+  },
+  "Recipe": {
+    "TimeSeconds": 1,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Dough"
+      },
+      {
+        "Quantity": 1,
+        "ItemId": "Plant_Crop_Tomato_Item"
+      },
+      {
+        "ResourceTypeId": "Meats",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Food_Cheese",
+        "Quantity": 1
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Food_Pizza_Pepperoni"
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Cookingbench",
+        "Categories": [
+          "Prepared"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false
+  },
+  "ItemLevel": 15,
+  "MaxStack": 25,
+  "DropOnDeath": true,
+  "IconProperties": {
+    "Scale": 0.8,
+    "Rotation": [
+      337,
+      236,
+      316
+    ],
+    "Translation": [
+      -1,
+      -5
+    ]
+  },
+  "Categories": [
+    "PortableMonstrosities.Food"
+  ]
+}

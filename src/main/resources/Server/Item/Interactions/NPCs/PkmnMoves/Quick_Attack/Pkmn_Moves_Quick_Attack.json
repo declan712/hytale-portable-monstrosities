@@ -1,0 +1,63 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "RunTime": 0.25,
+  "Next": {
+    "Type": "ApplyForce",
+    "$Comment": "Move at target",
+    "RunTime": 0.425,
+    "Effects": {
+      "WorldSoundEventId": "SFX_Pkmn_Move_Quick_Attack",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Quick_Attack"
+    },
+    "Direction": {
+      "Z": -20,
+      "Y": 0.5,
+      "X": 0
+    },
+    "Force": 200,
+    "AdjustVertical": false,
+    "Next": {
+      "Type": "Selector",
+      "Effects": {
+        "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
+      },
+      "$Comment": "Length of Combat",
+      "RunTime": 0.125,
+      "Selector": {
+        "Id": "Horizontal",
+        "Direction": "ToLeft",
+        "TestLineOfSight": true,
+        "ExtendTop": 0.75,
+        "ExtendBottom": 0.75,
+        "StartDistance": 0.5,
+        "EndDistance": 4.5,
+        "Length": 30,
+        "RollOffset": 90,
+        "YawStartOffset": -15
+      },
+      "HitEntity": {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "DefaultValue": {
+              "Interactions": [
+                "Pkmn_Moves_Quick_Attack_Damage"
+              ]
+            },
+            "Var": "Quick_Attack_Damage"
+          }
+        ]
+      },
+      "Next": {
+        "Type": "Simple",
+        "$Comment": "Pad the interaction length",
+        "RunTime": 0.2
+      }
+    }
+  },
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Tackle"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_Geodude",
+    "Appearance": "Pkmn_Sandshrew",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "GroundType",
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "AttitudeGroup": "Prey",
+    "MaxHealth": 21,
+    "MaxSpeed": 10,
+    "WanderRadius": 20,
+    "ViewRange": 8,
+    "HearingRange": 10,
+    "AlertedRange": 12,
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "Sandshrew",
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Sandshrew.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

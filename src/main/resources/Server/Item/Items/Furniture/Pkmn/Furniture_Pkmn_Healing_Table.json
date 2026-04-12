@@ -1,0 +1,98 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Furniture_Pkmn_Healing_Table.name"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Furniture.Beds",
+    "PortableMonstrosities.Furniture"
+  ],
+  "Set": "Furniture_Temple_Light",
+  "Icon": "Icons/ItemsGenerated/Furniture_Pkmn_Healing_Table.png",
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      -21,
+      -13
+    ]
+  },
+  "BlockType": {
+    "BlockParticleSetId": "Stone",
+    "Beds": [
+      {
+        "Offset": {
+          "X": 0.4,
+          "Y": 0.4,
+          "Z": 1.0
+        },
+        "Yaw": 0
+      }
+    ],
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "Bed",
+            "Effects": {
+              "WorldSoundEventId": "SFX_Pkmn_Recovery",
+              "LocalSoundEventId": "SFX_Pkmn_Recovery"
+            }
+          }
+        ]
+      },
+      "Primary": "Check_Can_Break_Respawn"
+    },
+    "CustomModel": "Blocks/Decorative_Sets/Pkmn/Bed.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Decorative_Sets/Pkmn/Bed_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "DrawType": "Model",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks"
+      }
+    },
+    "HitboxType": "Pkmn_Healing_Table",
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "NESW",
+    "BlockSoundSetId": "Stone",
+    "BlockEntity": {
+      "Components": {
+        "RespawnBlock": {}
+      }
+    },
+    "InteractionSoundEventId": "SFX_Pkmn_Recovery"
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ],
+    "Family": [
+      "Temple"
+    ]
+  },
+  "Scale": 0.6,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 1
+}

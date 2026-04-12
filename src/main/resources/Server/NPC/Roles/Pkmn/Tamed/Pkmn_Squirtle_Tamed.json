@@ -1,0 +1,31 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Squirtle",
+    "MaxSpeed": 2,
+    "MaxHealth": 50,
+    "MountAnchorX":0,
+    "MountAnchorY":0.5,
+    "MountAnchorZ":0.25,
+    "AttackWhenStartled": true,
+    "Type1": "WaterType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [16,100],
+    "EvolveRoleChange": "Pkmn_Wartortle_Tamed",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "DropList": "Drop_Pkmn_T0_Chitin",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Squirtle.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

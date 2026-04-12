@@ -1,0 +1,32 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Geodude",
+    "DropList": "Drop_Pkmn_Geodude",
+    "MaxHealth": 74,
+    "MaxSpeed": 8,
+    "Type1": "RockType",
+    "Type2": "GroundType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [25,100],
+    "EvolveRoleChange": "Pkmn_Geodude_Tamed",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2.25,
+    "AttractiveItemSet": [
+      "Ore_Copper",
+      "Rubble_Marble",
+      "Plant_Fruit_Apricorn"
+    ],
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Geodude.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

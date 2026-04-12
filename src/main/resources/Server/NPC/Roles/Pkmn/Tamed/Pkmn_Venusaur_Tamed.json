@@ -1,0 +1,42 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Venusaur",
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Bulbasaur",
+      "Pkmn_Ivysaur",
+      "Pkmn_Venusaur"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Fruit_Spiral"
+    ],
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "IsMountable": true,
+    "BaseStats": [45, 49, 49, 65, 65, 45],
+    "MountAnchorX": 0,
+    "MountAnchorY": 2,
+    "MountAnchorZ": -1,
+    "MaxHealth": 400,
+    "MaxSpeed": 8,
+    "WanderRadius": 12,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "DropList": "Drop_Pkmn_Bulbasaur",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Venusaur",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Venusaur.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

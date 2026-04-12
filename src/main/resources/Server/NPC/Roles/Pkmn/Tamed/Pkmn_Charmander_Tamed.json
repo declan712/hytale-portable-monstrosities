@@ -1,0 +1,33 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Charmander",
+    "AttitudeGroup": "Predators",
+    "Type1": "FireType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [16,100],
+    "EvolveRoleChange": "Pkmn_Charmeleon_Tamed",
+    "MaxHealth": 30,
+    "ViewRange": 12,
+    "MaxSpeed": 6,
+    "AttractiveItemSet": [
+      "Ingredient_Charcoal"
+    ],
+    "Attack": "Root_NPC_Attack_Melee",
+    "ProduceItem": "Ingredient_Poop",
+    "DropList": "Drop_Pkmn_Charmander",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Charmander.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

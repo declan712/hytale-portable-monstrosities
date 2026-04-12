@@ -1,0 +1,696 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Container_Tank.name",
+    "Description": "portablemonstrosities.items.Container_Tank.description"
+  },
+  "ResourceTypes": [],
+  "Icon": "Icons/ItemsGenerated/Container_Tank.png",
+  "ItemLevel": 15,
+  "MaxStack": 1,
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      8,
+      40,
+      8
+    ],
+    "Translation": [
+      1,
+      -18
+    ]
+  },
+  "Categories": [
+    "Furniture.Containers",
+    "PortableMonstrosities.Tools"
+  ],
+  "Recipe": {
+    "TimeSeconds": 1,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "Quantity": 1,
+        "ItemId": "Container_Bucket"
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 6
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Bench_Pokeball",
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_General"
+        ]
+      }
+    ]
+  },
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "Condition",
+          "Crouching": false,
+          "Next": {
+            "$Comment": "Not crouching: try water, then milk, then nothing",
+            "Type": "RefillContainer",
+            "Effects": {
+              "ClearSoundEventOnFinish": true,
+              "LocalSoundEventId": "SFX_Water_MoveIn"
+            },
+            "States": {
+              "Filled_Water": {
+                "AllowedFluids": [
+                  "Water_Source"
+                ],
+                "TransformFluid": "Empty",
+                "Durability": 1
+              },
+              "Filled_Lava": {
+                "AllowedFluids": [
+                  "Lava_Source"
+                ],
+                "TransformFluid": "Empty",
+                "Durability": 1
+              },
+              "Filled_Molten_Copper": {
+                "AllowedFluids": [
+                  "Molten_Copper_Source"
+                ],
+                "TransformFluid": "Empty",
+                "Durability": 1
+              }
+            },
+            "Failed": "Bucket_Milk_Cow",
+            "Next": {
+              "Type": "ModifyInventory",
+              "AdjustHeldItemDurability": 1,
+              "BrokenItem": "Container_Tank"
+            }
+          },
+          "Failed": {
+            "$Comment": "Crouching: try water, then milk, then place bucket",
+            "Type": "RefillContainer",
+            "Effects": {
+              "ClearSoundEventOnFinish": true,
+              "LocalSoundEventId": "SFX_Water_MoveIn"
+            },
+            "States": {
+              "Filled_Water": {
+                "AllowedFluids": [
+                  "Water_Source"
+                ],
+                "TransformFluid": "Empty",
+                "Durability": 1
+              },
+              "Filled_Lava": {
+                "AllowedFluids": [
+                  "Lava_Source"
+                ],
+                "TransformFluid": "Empty",
+                "Durability": 1
+              },
+              "Filled_Molten_Copper": {
+                "AllowedFluids": [
+                  "Molten_Copper_Source"
+                ],
+                "TransformFluid": "Empty",
+                "Durability": 1
+              }
+            },
+            "Failed": "Bucket_Milk_Cow_Crouching"
+          }
+        }
+      ]
+    }
+  },
+  "State": {
+    "Filled_Water": {
+      "Variant": true,
+      "$TODO": "Parent: Container_Bucket",
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Container_Tank_Water.name",
+        "Description": "portablemonstrosities.items.Container_Tank_Water.description"
+      },
+      "ResourceTypes": [
+        {
+          "Id": "Mixer_Resource"
+        }
+      ],
+      "IconProperties": {
+        "Scale": 0.58823,
+        "Rotation": [
+          0.0,
+          121.0,
+          25.0
+        ],
+        "Translation": [
+          -3.0,
+          -18.0
+        ]
+      },
+      "Interactions": {
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "Condition",
+              "Crouching": false,
+              "Next": {
+                "Type": "PlaceFluid",
+                "RemoveItemInHand": false,
+                "FluidToPlace": "Water_Source",
+                "Effects": {
+                  "ClearSoundEventOnFinish": true,
+                  "LocalSoundEventId": "SFX_WATER_MoveOut"
+                },
+                "Next": {
+                  "Type": "ModifyInventory",
+                  "AdjustHeldItemDurability": -1,
+                  "BrokenItem": "Container_Tank"
+                },
+                "Failed": "Bucket_Milk_Cow",
+                "RunTime": 0.1,
+                "CancelOnItemChange": true
+              },
+              "Failed": "Bucket_Milk_Cow_Crouching",
+              "RunTime": 0.1,
+              "CancelOnItemChange": true
+            }
+          ]
+        },
+        "Pick": {
+          "Interactions": [
+            {
+              "Type": "Fill_Fluid_Container",
+              "Effects": {
+                "ClearSoundEventOnFinish": true,
+                "LocalSoundEventId": "SFX_Water_MoveIn"
+              },
+              "Next": {
+                "Type": "ModifyInventory",
+                "AdjustHeldItemDurability": 0,
+                "BrokenItem": "Container_Tank"
+              },
+              "Failed": {
+                "Type": "ModifyInventory",
+                "AdjustHeldItemDurability": 0,
+                "BrokenItem": "Container_Tank"
+              }
+            }
+          ]
+        }
+      },
+      "Consumable": true,
+      "MaxDurability": 10,
+      "MaxStack": 1,
+      "$Comment": "FOLLOWING PROPERTIES DUPLICATED BECAUSE OF SERVER BUG",
+      "BlockType": {
+        "Material": "Empty",
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Containers/Fluid/Fluid_Tank_Full_Dark.blockymodel",
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Containers/Fluid/Fluid_Tank_Texture_Water.png"
+          }
+        ],
+        "Gathering": {
+          "Soft": {
+            "IsWeaponBreakable": false
+          }
+        },
+        "HitboxType": "Plant_Full",
+        "BlockParticleSetId": "Metal",
+        "BlockSoundSetId": "Metal",
+        "Support": {
+          "Down": [
+            {
+              "FaceType": "Full"
+            }
+          ]
+        },
+        "Looping": true,
+        "CustomModelAnimation": "Blocks/Containers/Fluid/Container_Tank_Full.blockyanim"
+      },
+      "Animation": "Blocks/Containers/Fluid/Container_Tank_Full.blockyanim",
+      "Icon": "Icons/ItemsGenerated/Container_Tank_Water.png"
+    },
+    "Filled_Lava": {
+      "Variant": true,
+      "$TODO": "Parent: Container_Bucket",
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Container_Tank_Lava.name",
+        "Description": "portablemonstrosities.items.Container_Tank_Lava.description"
+      },
+      "IconProperties": {
+        "Scale": 0.58823,
+        "Rotation": [
+          0.0,
+          121.0,
+          25.0
+        ],
+        "Translation": [
+          -3.0,
+          -18.0
+        ]
+      },
+      "Interactions": {
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "Condition",
+              "Crouching": false,
+              "Next": {
+                "Type": "PlaceFluid",
+                "RemoveItemInHand": false,
+                "Next": {
+                  "Type": "ModifyInventory",
+                  "AdjustHeldItemDurability": -1,
+                  "BrokenItem": "Container_Tank"
+                },
+                "FluidToPlace": "Lava_Source",
+                "Effects": {
+                  "ClearSoundEventOnFinish": true,
+                  "LocalSoundEventId": "SFX_WATER_MoveOut"
+                }
+              },
+              "Failed": "Bucket_Milk_Cow_Crouching"
+            }
+          ]
+        }
+      },
+      "Consumable": true,
+      "MaxDurability": 10,
+      "MaxStack": 1,
+      "$Comment": "FOLLOWING PROPERTIES DUPLICATED BECAUSE OF SERVER BUG",
+      "BlockType": {
+        "Material": "Empty",
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Containers/Fluid/Fluid_Tank_Full.blockymodel",
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Containers/Fluid/Fluid_Tank_Texture_Lava.png"
+          }
+        ],
+        "Gathering": {
+          "Soft": {
+            "IsWeaponBreakable": false
+          }
+        },
+        "HitboxType": "Plant_Full",
+        "BlockParticleSetId": "Metal",
+        "BlockSoundSetId": "Wood",
+        "Support": {
+          "Down": [
+            {
+              "FaceType": "Full"
+            }
+          ]
+        },
+        "Looping": true,
+        "CustomModelAnimation": "Blocks/Containers/Fluid/Container_Tank_Full.blockyanim",
+        "Light": {
+          "Color": "#741",
+          "Radius": 1
+        },
+        "ParticleColor": "#ff6409",
+        "Textures": [
+          {
+            "All": "Blocks/Containers/Fluid/Fluid_Tank_Texture_Lava.png"
+          }
+        ]
+      },
+      "ItemEntity": {
+        "ParticleColor": "#e97814",
+        "ShowItemParticles": true,
+        "ParticleSystemId": "Block_Lava_Bubbles"
+      },
+      "Icon": "Icons/ItemsGenerated/Container_Tank_Lava.png"
+    },
+    "Filled_Molten_Copper": {
+      "Variant": true,
+      "$TODO": "Parent: Container_Bucket",
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Container_Tank_Molten_Copper.name",
+        "Description": "portablemonstrosities.items.Container_Tank_Molten_Copper.description"
+      },
+      "ResourceTypes": [
+        {
+          "Id": "Mixer_Resource"
+        }
+      ],
+      "IconProperties": {
+        "Scale": 0.58823,
+        "Rotation": [
+          0.0,
+          121.0,
+          25.0
+        ],
+        "Translation": [
+          -3.0,
+          -18.0
+        ]
+      },
+      "Interactions": {
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "Condition",
+              "Crouching": false,
+              "Next": {
+                "Type": "PlaceFluid",
+                "RemoveItemInHand": false,
+                "Next": {
+                  "Type": "ModifyInventory",
+                  "AdjustHeldItemDurability": -1,
+                  "BrokenItem": "Container_Tank"
+                },
+                "FluidToPlace": "Molten_Copper_Source",
+                "Effects": {
+                  "ClearSoundEventOnFinish": true,
+                  "LocalSoundEventId": "SFX_WATER_MoveOut"
+                }
+              },
+              "Failed": "Bucket_Milk_Cow_Crouching"
+            }
+          ]
+        }
+      },
+      "Consumable": true,
+      "MaxDurability": 10,
+      "MaxStack": 1,
+      "$Comment": "FOLLOWING PROPERTIES DUPLICATED BECAUSE OF SERVER BUG",
+      "BlockType": {
+        "Material": "Empty",
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Containers/Fluid/Fluid_Tank_Full.blockymodel",
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Containers/Fluid/Fluid_Tank_Texture_Molten_Copper.png"
+          }
+        ],
+        "Gathering": {
+          "Soft": {
+            "IsWeaponBreakable": false
+          }
+        },
+        "HitboxType": "Plant_Full",
+        "BlockParticleSetId": "Metal",
+        "BlockSoundSetId": "Wood",
+        "Support": {
+          "Down": [
+            {
+              "FaceType": "Full"
+            }
+          ]
+        },
+        "Looping": true,
+        "CustomModelAnimation": "Blocks/Containers/Fluid/Container_Tank_Full.blockyanim",
+        "Light": {
+          "Color": "#632",
+          "Radius": 1
+        },
+        "ParticleColor": "#e28264",
+        "Textures": [
+          {
+            "All": "Blocks/Containers/Fluid/Fluid_Tank_Texture_Molten_Copper.png"
+          }
+        ]
+      },
+      "Icon": "Icons/ItemsGenerated/Container_Tank_Molten_Copper.png"
+    },
+    "Filled_Milk": {
+      "Variant": true,
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Container_Bucket_Milk.name",
+        "Description": "portablemonstrosities.items.Container_Bucket_Milk.description"
+      },
+      "ResourceTypes": [
+        {
+          "Id": "Milk_Bucket",
+          "Quantity": 1
+        },
+        {
+          "Id": "Mixer_Resource",
+          "Quantity": 1
+        }
+      ],
+      "IconProperties": {
+        "Scale": 0.58823,
+        "Rotation": [
+          0.0,
+          121.0,
+          25.0
+        ],
+        "Translation": [
+          -3.0,
+          -18.0
+        ]
+      },
+      "Interactions": {
+        "Secondary": "Root_Secondary_Consume_Drink"
+      },
+      "InteractionVars": {
+        "Effect": {
+          "Interactions": [
+            {
+              "Type": "ApplyEffect",
+              "EffectId": "Antidote"
+            }
+          ]
+        },
+        "ConsumeSFX": {
+          "Interactions": [
+            {
+              "Parent": "Consume_SFX",
+              "Effects": {
+                "LocalSoundEventId": "SFX_Health_Potion_High_Drink"
+              }
+            }
+          ]
+        },
+        "ConsumedSFX": {
+          "Interactions": [
+            {
+              "Parent": "Consumed_SFX",
+              "Effects": {
+                "LocalSoundEventId": "SFX_Water_MoveOut"
+              }
+            }
+          ]
+        },
+        "DurabilityModify": {
+          "Interactions": [
+            {
+              "Type": "ModifyInventory",
+              "AdjustHeldItemDurability": -1,
+              "BrokenItem": "Container_Tank"
+            }
+          ]
+        }
+      },
+      "Consumable": true,
+      "MaxDurability": 10,
+      "MaxStack": 1,
+      "$Comment": "FOLLOWING PROPERTIES DUPLICATED BECAUSE OF SERVER BUG",
+      "BlockType": {
+        "Material": "Empty",
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Decorative_Sets/Village/Bucket_Full.blockymodel",
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Decorative_Sets/Village/Bucket_Texture_Milk.png"
+          }
+        ],
+        "CustomModelScale": 0.75,
+        "RandomRotation": "YawStep1",
+        "Gathering": {
+          "Soft": {
+            "IsWeaponBreakable": true
+          }
+        },
+        "HitboxType": "Plant_Full",
+        "BlockParticleSetId": "Wood",
+        "BlockSoundSetId": "Wood",
+        "Support": {
+          "Down": [
+            {
+              "FaceType": "Full"
+            }
+          ]
+        }
+      },
+      "PlayerAnimationsId": {
+        "Parent": "Item",
+        "Animations": {
+          "Consume": {
+            "FirstPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink_FPS.blockyanim",
+            "ThirdPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink.blockyanim",
+            "Speed": 1,
+            "Looping": true
+          }
+        }
+      },
+      "Icon": "Icons/ItemsGenerated/Container_Tank_Water.png"
+    },
+    "Filled_Mosshorn_Milk": {
+      "Variant": true,
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Container_Bucket_Mosshorn_Milk.name",
+        "Description": "portablemonstrosities.items.Container_Bucket_Mosshorn_Milk.description"
+      },
+      "ResourceTypes": [
+        {
+          "Id": "Milk_Mosshorn_Bucket",
+          "Quantity": 1
+        },
+        {
+          "Id": "Mixer_Resource",
+          "Quantity": 1
+        }
+      ],
+      "IconProperties": {
+        "Scale": 0.58823,
+        "Rotation": [
+          0.0,
+          121.0,
+          25.0
+        ],
+        "Translation": [
+          -3.0,
+          -18.0
+        ]
+      },
+      "Interactions": {
+        "Secondary": "Root_Secondary_Consume_Drink"
+      },
+      "InteractionVars": {
+        "Effect": {
+          "Interactions": [
+            {
+              "Type": "ApplyEffect",
+              "EffectId": "Potion_Morph_Mosshorn"
+            }
+          ]
+        },
+        "ConsumeSFX": {
+          "Interactions": [
+            {
+              "Parent": "Consume_SFX",
+              "Effects": {
+                "LocalSoundEventId": "SFX_Health_Potion_High_Drink"
+              }
+            }
+          ]
+        },
+        "ConsumedSFX": {
+          "Interactions": [
+            {
+              "Parent": "Consumed_SFX",
+              "Effects": {
+                "LocalSoundEventId": "SFX_Water_MoveOut"
+              }
+            }
+          ]
+        },
+        "DurabilityModify": {
+          "Interactions": [
+            {
+              "Type": "ModifyInventory",
+              "AdjustHeldItemDurability": -1,
+              "BrokenItem": "Container_Tank"
+            }
+          ]
+        }
+      },
+      "Consumable": true,
+      "MaxDurability": 1,
+      "MaxStack": 1,
+      "$Comment": "FOLLOWING PROPERTIES DUPLICATED BECAUSE OF SERVER BUG",
+      "BlockType": {
+        "Material": "Empty",
+        "DrawType": "Model",
+        "Opacity": "Transparent",
+        "CustomModel": "Blocks/Decorative_Sets/Village/Bucket_Full.blockymodel",
+        "CustomModelTexture": [
+          {
+            "Weight": 1,
+            "Texture": "Blocks/Decorative_Sets/Village/Bucket_Texture_Mosshorn_Milk.png"
+          }
+        ],
+        "CustomModelScale": 0.75,
+        "RandomRotation": "YawStep1",
+        "Gathering": {
+          "Soft": {
+            "IsWeaponBreakable": true
+          }
+        },
+        "HitboxType": "Plant_Full",
+        "BlockParticleSetId": "Wood",
+        "BlockSoundSetId": "Wood",
+        "Support": {
+          "Down": [
+            {
+              "FaceType": "Full"
+            }
+          ]
+        }
+      },
+      "PlayerAnimationsId": {
+        "Parent": "Item",
+        "Animations": {
+          "Consume": {
+            "FirstPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink_FPS.blockyanim",
+            "ThirdPerson": "Characters/Animations/Items/Main_Handed/Item/Attacks/Drink/Drink.blockyanim",
+            "Speed": 1,
+            "Looping": true
+          }
+        }
+      }
+    }
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Blocks/Containers/Fluid/Fluid_Tank.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Weight": 1,
+        "Texture": "Blocks/Containers/Fluid/Fluid_Tank_Texture.png"
+      }
+    ],
+    "CustomModelScale": 1,
+    "RandomRotation": "None",
+    "Gathering": {
+      "Soft": {}
+    },
+    "HitboxType": "Plant_Full",
+    "BlockParticleSetId": "Metal",
+    "BlockSoundSetId": "Metal",
+    "ParticleColor": "#939393",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    }
+  },
+  "PlayerAnimationsId": "Item",
+  "Tags": {
+    "Type": [
+      "Container"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Metal",
+  "MaxDurability": 10
+}

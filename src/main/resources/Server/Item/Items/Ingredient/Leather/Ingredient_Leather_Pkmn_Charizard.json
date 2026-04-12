@@ -1,0 +1,56 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Ingredient_Leather_Pkmn_Charizard.name"
+  },
+  "Categories": [
+    "Items.Ingredients",
+    "PortableMonstrosities.Resources"
+  ],
+  "SubCategory": "Leather",
+  "Model": "Resources/Materials/Leather.blockymodel",
+  "Texture": "Resources/Materials/Pkmn/Leather_Textures/Charizard.png",
+  "Quality": "Common",
+  "ItemLevel": 20,
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Hide_Pkmn_Charizard",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Processing",
+        "Id": "Tannery"
+      }
+    ],
+    "TimeSeconds": 40
+  },
+  "PlayerAnimationsId": "Item",
+  "IconProperties": {
+    "Scale": 0.8,
+    "Rotation": [
+      352,
+      30,
+      10
+    ],
+    "Translation": [
+      3,
+      -16
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Ingredient_Leather_Pkmn_Charizard.png",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ],
+    "Family": [
+      "Leather"
+    ]
+  },
+  "ItemEntity": {
+    "ParticleSystemId": null
+  },
+  "ItemSoundSetId": "ISS_Items_Leather",
+  "DropOnDeath": true
+}

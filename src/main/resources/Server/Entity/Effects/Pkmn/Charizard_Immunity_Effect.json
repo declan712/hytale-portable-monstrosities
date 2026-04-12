@@ -1,0 +1,56 @@
+{
+  "ApplicationEffects": {
+    "EntityBottomTint": "#ff1400",
+    "EntityTopTint": "#ffc300",
+    "Particles": [
+      {
+        "SystemId": "Torch_Fire",
+        "TargetEntityPart": "Entity",
+        "Scale": 3,
+        "Color": "#ff4300",
+        "PositionOffset": {
+          "Y": 0.5
+        }
+      }
+    ]
+  },
+  "Invulnerable": false,
+  "RemovalBehavior": "Duration",
+  "OverlapBehavior": "Extend",
+  "Duration": 2,
+  "Infinite": false,
+  "Debuff": false,
+  "DamageResistance": {
+    "Environmental": [
+      {
+        "CalculationType": "Multiplicative",
+        "Amount": 0.95
+      }
+    ],
+    "Command": [
+      {
+        "CalculationType": "Multiplicative",
+        "Amount": 0.95
+      }
+    ],
+    "Physical": [
+      {
+        "CalculationType": "Multiplicative",
+        "Amount": 0.95
+      }
+    ],
+    "Environment": [
+      {
+        "CalculationType": "Multiplicative",
+        "Amount": 0.95
+      }
+    ],
+    "Elemental": [
+      {
+        "Target": "Max",
+        "CalculationType": "Multiplicative",
+        "Amount": 0.95
+      }
+    ]
+  }
+}

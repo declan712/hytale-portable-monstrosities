@@ -1,0 +1,37 @@
+{
+  "Type": "DamageEntity",
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Electric": 10
+    }
+  },
+  "DamageEffects": {
+    "Knockback": {
+      "Type": "Force",
+      "VelocityConfig": {
+        "GroundResistance": 0.804,
+        "GroundResistanceMax": 0.0,
+        "AirResistance": 0.972,
+        "AirResistanceMax": 0.028,
+        "Threshold": 1.0,
+        "Style": "Exp"
+      },
+      "Direction": {
+        "X": 0,
+        "Y": -1,
+        "Z": 0
+      },
+      "Force": 0.2,
+      "VelocityType": "Set"
+    },
+    "WorldSoundEventId": "SFX_Pkmn_Damage",
+    "WorldParticles": [
+      {
+        "SystemId": "Laser_Impact",
+        "Color": "#f8ff00",
+        "Scale": 0.25
+      }
+    ],
+    "StaminaDrainMultiplier": 1.5
+  }
+}

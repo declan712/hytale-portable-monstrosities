@@ -1,0 +1,96 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Ivysaur",
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Bulbasaur",
+      "Pkmn_Ivysaur",
+      "Pkmn_Ivysaur"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 16,
+    "WildLevelMax": 32,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Ivysaur_Tamed",
+    "MaxHealth": 100,
+    "MaxSpeed": 8,
+    "WanderRadius": 12,
+    "ViewRange": 12,
+    "HearingRange": 8,
+    "FleeRange": 15,
+    "AlertedRange": 18,
+    "AbsoluteDetectionRange": 2,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "MaintainDistanceWhileAlerted": true,
+    "AlwaysSleepAtNight": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "DropList": "Drop_Pkmn_Bulbasaur",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Ivysaur",
+    "_InteractionVars": {
+      "Bite_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {"Physical": 30},
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Tackle_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {"Physical": 20},
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Scratch_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch_Damage",
+            "$Comment": "Sets damage and onhit effects",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {"Physical": 20},
+              "RandomPercentageModifier": 0.1
+            }
+          }
+        ]
+      },
+      "Move_Start_1": {
+        "Interactions": [
+          "Pkmn_Moves_Vine_Whip"
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Ivysaur.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

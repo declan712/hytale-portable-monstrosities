@@ -1,0 +1,32 @@
+{
+  "Type": "DamageEntity",
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Water": 8
+    },
+    "SequentialModifierStep": 0.1
+  },
+  "DamageEffects": {
+    "WorldSoundEventId": "SFX_Pkmn_Damage",
+    "WorldParticles": [
+      {
+        "SystemId": "Stone_Death",
+        "Color": "#0000FF",
+        "Scale": 1.5,
+        "PositionOffset": {
+          "Y": 0.1
+        }
+      },
+      {
+        "SystemId": "Stone_Death",
+        "Color": "#00FFFF",
+        "Scale": 1,
+        "PositionOffset": {
+          "Y": 0.2
+        }
+      }
+    ],
+    "StaminaDrainMultiplier": 0.25,
+    "LocalSoundEventId": "SFX_Pkmn_Damage"
+  }
+}

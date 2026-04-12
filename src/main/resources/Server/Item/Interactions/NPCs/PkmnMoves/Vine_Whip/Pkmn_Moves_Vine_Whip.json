@@ -1,0 +1,18 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Breath"
+  },
+  "RunTime": 0.25,
+  "Next": {
+    "Type": "Replace",
+    "DefaultValue": {
+        "Interactions": [
+            "Pkmn_Moves_Vine_Whip_Pull"
+        ]
+    },
+    "Var": "Vine_Whip_Attack"
+    }
+}

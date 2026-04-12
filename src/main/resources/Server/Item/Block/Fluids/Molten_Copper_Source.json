@@ -1,0 +1,63 @@
+{
+  "Effect": [
+    "Slime"
+  ],
+  "Opacity": "Transparent",
+  "Textures": [
+    {
+      "Weight": 1,
+      "All": "BlockTextures/Fluid_Molten_Copper.png"
+    }
+  ],
+  "BlockParticleSetId": "Lava",
+  "ParticleColor": "#f9d411",
+  "BlockSoundSetId": "Empty",
+  "FluidFXId": "Molten_Copper",
+  "Light": {
+    "Color": "#e90"
+  },
+  "Interactions": {
+    "Collision": {
+      "Cooldown": {
+        "Id": "BurnEffect",
+        "Cooldown": 1
+      },
+      "Interactions": [
+        {
+          "Type": "Condition",
+          "RequiredGameMode": "Adventure",
+          "Next": {
+            "Type": "ApplyEffect",
+            "EffectId": {
+              "Duration": 1,
+              "OverlapBehavior": "Overwrite",
+              "ApplicationEffects": {
+                "HorizontalSpeedMultiplier": 0.5
+              }
+            },
+            "Next": {
+              "Type": "ApplyEffect",
+              "EffectId": "Lava_Burn"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "Ticker": {
+    "CanDemote": false,
+    "SpreadFluid": "Molten_Copper",
+    "Collisions": {
+      "Water": {
+        "BlockToPlace": "Ore_Copper_Stone",
+        "SoundEvent": "SFX_Flame_Break"
+      },
+      "Water_Source": {
+        "BlockToPlace": "Ore_Copper_Shale",
+        "SoundEvent": "SFX_Flame_Break"
+      }
+    },
+    "FlowRate": 5
+  },
+  "MaxFluidLevel": 1
+}

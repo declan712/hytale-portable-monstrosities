@@ -1,0 +1,96 @@
+{
+  "Type": "NoiseRange",
+  "Biomes": [
+    {
+    "Biome" : "Ocean",
+      "Min" : -2,
+      "Max" : -0.6
+    },{
+    "Biome" : "Desert1_Shore",
+      "Min" : -0.6,
+      "Max" : -0.5
+    },{
+      "Biome" : "Desert1_Rocky",
+      "Min" : -0.5,
+      "Max" : -0.4
+    },{
+      "Biome" : "Desert1_Stacks",
+      "Min" : -0.4,
+      "Max" : -0.3
+    },{
+      "Biome" : "Desert1_River",
+      "Min" : -0.3,
+      "Max" : -0.25
+    },{
+      "Biome" : "Pkmn_Basic",
+      "Min" : -0.25,
+      "Max" : -0.15
+    },{
+      "Biome" : "Pkmn_Zone1_Oak",
+      "Min" : -0.15,
+      "Max" : 0
+    },{
+      "Biome" : "Pkmn_Zone1_Gorges",
+      "Min" : 0,
+      "Max" : 0.1
+    },{
+      "Biome" : "Pkmn_Zone1_Deeproot",
+      "Min" : 0.1,
+      "Max" : 0.2
+    },{
+      "Biome" : "Pkmn_Zone1_River",
+      "Min" : 0.2,
+      "Max" : 0.3
+    },{
+      "Biome" : "Pkmn_Zone1_Shore",
+      "Min" : 0.3,
+      "Max" : 0.35
+    },{
+      "Biome" : "Oceans",
+      "Min" : 0.35,
+      "Max" : 0.65
+    },{
+      "Biome" : "Taiga1_Shore",
+      "Min" : 0.65,
+      "Max" : 0.7
+    },{
+      "Biome" : "Taiga1_River",
+      "Min" : 0.7,
+      "Max" : 0.8
+    },{
+      "Biome" : "Taiga1_Redwood",
+      "Min" : 0.8,
+      "Max" : 0.9
+    },{
+      "Biome" : "Taiga1_Mountains",
+      "Min" : 0.9,
+      "Max" : 1
+    }
+  ],
+  "DefaultBiome": "Pkmn_Basic",
+  "DefaultTransitionDistance": 32,
+  "MaxBiomeEdgeDistance" : 32,
+  "Density": {
+    "Type" : "Imported",
+    "Name" : "Biome-Map"
+	},
+  "Framework" : [
+    {
+      "Type" : "DecimalConstants",
+      "Entries" : [
+        {
+          "Name" : "Base",
+          "Value" : 100
+        },
+        {
+          "Name" : "Water",
+          "Value" : 100
+        },
+        {
+          "Name" : "Bedrock",
+          "Value" : 0
+        }
+      ]
+    }
+  ]
+}

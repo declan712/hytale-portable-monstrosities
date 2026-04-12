@@ -1,0 +1,19 @@
+{
+  "Name": "entityEffects.PkmnType.Rock.name",
+  "DamageResistance": {
+    "Water":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Normal":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
+    "Fire":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
+    "Grass":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Ice":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Poison":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
+    "Ground":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
+    "Flying":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
+    "Physical": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.8 }]
+  },
+  "Infinite": true,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Infinite",
+  "StatusEffectIcon": "Icons/PkmnType/RockType.png"
+}

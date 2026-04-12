@@ -1,0 +1,36 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Diglett",
+    "DropList": "Drop_Pkmn_T1_Hide",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "GroundType",
+    "IsMountable": false,
+    "MaxHealth": 38,
+    "MaxSpeed": 8,
+    "WanderRadius": 10,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2.5,
+    "CombatBehaviorDistance": 6,
+    "CombatDirectWeight": 0,
+    "CombatStrafeWeight": 10,
+    "CombatBackOffAfterAttack": false,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "_InteractionVars": {
+    },
+    "MemoriesNameOverride": "Dugtrio",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Dugtrio.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

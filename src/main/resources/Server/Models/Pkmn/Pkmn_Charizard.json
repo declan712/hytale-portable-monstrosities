@@ -1,0 +1,440 @@
+{
+  "Model": "NPC/Pkmn/Charizard/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Charizard/Models/Texture.png",
+  "EyeHeight": 2.2,
+  "CrouchOffset": -0.3,
+  "HitBox": {
+    "Max": {
+      "X": 0.4,
+      "Y": 1.75,
+      "Z": 0.55
+    },
+    "Min": {
+      "X": -0.55,
+      "Y": 0,
+      "Z": -0.55
+    }
+  },
+  "MinScale": 1.8,
+  "MaxScale": 2.1,
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 45,
+        "Min": -15
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "PositionOffset": {
+      "X": 1,
+      "Y": 0,
+      "Z": 6
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Max": 30,
+        "Min": -30
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    }
+  },
+  "AnimationSets": {
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Charizard_Cry"
+        }
+      ]
+    },
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "IdlePassive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Right.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Left.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Left.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Right.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Roar.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Around.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        }
+      ],
+      "NextAnimationDelay": {
+        "Min": 2,
+        "Max": 10
+      }
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Walk.blockyanim",
+          "FootstepIntervals": [
+            50,
+            100
+          ],
+          "SoundEventId": "SFX_Pkmn_Large_Walk"
+        }
+      ]
+    },
+    "WalkPassive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Right.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Left.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Left.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Right.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Around.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Run.blockyanim",
+          "SoundEventId": "SFX_Pkmn_Large_Walk",
+          "PassiveLoopCount": 1,
+          "FootstepIntervals": [
+            25,
+            50,
+            75,
+            100
+          ]
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch_Walk.blockyanim",
+          "Speed": 0.9,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.75
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.75
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.75
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Fly/Fly.blockyanim"
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Rex_Cave/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "SoundEventId": "SFX_Pkmn_Charizard_Cry"
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Fly/Fly.blockyanim"
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Fly/Fly_Fast.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Fly/Fly_Fast.blockyanim"
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Damage/Death.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Rex_Death"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Idle.blockyanim"
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim.blockyanim",
+          "Speed": 1.2
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Jump.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Idle.blockyanim"
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Fall.blockyanim"
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Idle.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Run.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Charizard/Animations/Default/Sleep.blockyanim"
+        }
+      ]
+    }
+  },
+  "Light": {
+    "Color": "#a84",
+    "Radius": 4
+  },
+  "Particles": [
+    {
+      "SystemId": "Goblin_Torch_Fire",
+      "Color": "#f3c555",
+      "TargetEntityPart": "Entity",
+      "Scale": 0.5,
+      "TargetNodeName": "TailFire",
+      "RotationOffset": {
+        "Roll": 0,
+        "Pitch": -90
+      }
+    },
+    {
+      "SystemId": "Smoke_Black",
+      "Scale": 0.1,
+      "TargetNodeName": "Nose"
+    },
+    {
+      "SystemId": "Smoke_Black",
+      "Scale": 0.5,
+      "TargetNodeName": "TailFire"
+    }
+  ],
+  "Icon": "Icons/ModelsGenerated/Pkmn_Charizard.png",
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      -3,
+      -104
+    ]
+  }
+}

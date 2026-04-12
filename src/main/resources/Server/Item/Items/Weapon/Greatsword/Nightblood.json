@@ -1,0 +1,292 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Nightblood.name",
+    "Description": "portablemonstrosities.items.Nightblood.description"
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Weapons"
+  ],
+  "Quality": "Legendary",
+  "ItemLevel": 100,
+  "Recipe": {
+    "TimeSeconds": 3.3,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 15
+      },
+      {
+        "ItemId": "Ingredient_Leather_Pkmn_Charizard",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Pizza_Dough",
+        "Quantity": 36
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_General"
+        ],
+        "Id": "Bench_Pokeball"
+      }
+    ]
+  },
+  "Model": "Items/Weapons/Greatsword/Nightblood/Nightblood.blockymodel",
+  "Texture": "Items/Weapons/Greatsword/Nightblood/Nightblood_Texture.png",
+  "PlayerAnimationsId": "Greatsword",
+  "Interactions": {
+    "Primary": "Greatsword_Attack",
+    "Secondary": {
+      "Rules": {
+        "BlockedBy": [
+          "Primary"
+        ],
+        "Blocking": [
+          "Primary"
+        ]
+      },
+      "Interactions": [
+        "Greatsword_Block"
+      ]
+    },
+    "Dodge": {
+      "Interactions": [
+        "Dodge"
+      ]
+    },
+    "Ability1": "Double_Jump",
+    "Ability2": {
+      "Interactions": [
+        "Greatsword_Dash"
+      ]
+    },
+    "Held": {
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": {
+            "ApplicationEffects": {
+              "EntityBottomTint": "#333333",
+              "EntityTopTint": "#565656",
+              "Particles": [
+                {
+                  "SystemId": "Smoke_Black",
+                  "Scale": 1,
+                  "Color": "#110c17",
+                  "TargetEntityPart": "Entity",
+                  "TargetNodeName": "Pelvis",
+                  "RotationOffset": {
+                    "Pitch": 180
+                  },
+                  "PositionOffset": {
+                    "Y": 1
+                  }
+                }
+              ],
+              "ScreenEffect": "ScreenEffects/Sand.png"
+            },
+            "Duration": 2,
+            "DamageCalculator": {
+              "BaseDamage": {
+                "Suffocation": 1
+              }
+            },
+            "DamageCalculatorCooldown": 1,
+            "Debuff": true
+          },
+          "Entity": "User"
+        }
+      ]
+    }
+  },
+  "InteractionVars": {
+    "Greatsword_Swing_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 33
+            },
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Right_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Right_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 33
+            },
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Up_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Greatsword_Swing_Up_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Swing_Up_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 33
+            },
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Greatsword_Stab_Charged_Effect": "Greatsword_Stab_Charged_Effect",
+    "Greatsword_Stab_Charged_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Greatsword_Stab_Charged_Damage",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Physical": 99
+            },
+            "Type": "Absolute",
+            "RandomPercentageModifier": 0.33
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      135,
+      90,
+      0
+    ],
+    "Translation": [
+      -22,
+      22
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "MaxDurability": 333,
+  "DurabilityLossOnHit": 0.33,
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Longsword"
+    ]
+  },
+  "Weapon": {},
+  "ItemSoundSetId": "ISS_Weapons_Blade_Large",
+  "Light": {
+    "Color": "#113",
+    "Radius": 0
+  },
+  "Particles": [
+    {
+      "TargetEntityPart": "PrimaryItem",
+      "Color": "#000000",
+      "SystemId": "Smoke_Tall_Round",
+      "TargetNodeName": "Sword Base",
+      "Scale": 0.3,
+      "RotationOffset": {
+        "Roll": -90
+      }
+    },
+    {
+      "TargetEntityPart": "PrimaryItem",
+      "TargetNodeName": "Sword Base",
+      "RotationOffset": {
+        "Roll": -90
+      },
+      "SystemId": "Smoke_Black",
+      "Color": "#000000",
+      "Scale": 1
+    }
+  ],
+  "Trails": [
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "TargetNodeName": "Sword Middle",
+      "TrailId": "Daggers_Dash_Distortion",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 0,
+        "Roll": 90
+      },
+      "TargetEntityPart": "PrimaryItem"
+    },
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "TargetNodeName": "Sword Middle",
+      "TrailId": "Void",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 0,
+        "Roll": 0
+      },
+      "TargetEntityPart": "PrimaryItem"
+    }
+  ],
+  "Icon": "Icons/ItemsGenerated/Nightblood.png"
+}

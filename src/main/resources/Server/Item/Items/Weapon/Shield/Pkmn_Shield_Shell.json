@@ -1,0 +1,165 @@
+{
+  "Parent": "Template_Weapon_Shield",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pkmn_Shield_Shell.name",
+    "Description": "portablemonstrosities.items.Pkmn_Shield_Shell.description"
+  },
+  "Model": "Items/Weapons/Shield/Shell.blockymodel",
+  "Texture": "Items/Weapons/Shield/Shell_Texture.png",
+  "Icon": "Icons/ItemsGenerated/Pkmn_Shield_Shell.png",
+  "Quality": "Rare",
+  "ItemLevel": 40,
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      52,
+      267,
+      0
+    ],
+    "Translation": [
+      41,
+      -36
+    ]
+  },
+  "Categories": [
+    "PortableMonstrosities.Equipment"
+  ],
+  "Recipe": {
+    "BenchRequirement": [
+      {
+        "Id": "Bench_Pokeball"
+      }
+    ],
+    "Input": [
+      {
+        "ItemId": "Ingredient_Pkmn_Chitin_T2",
+        "Quantity": 30
+      }
+    ],
+    "Output": [
+      {
+        "ItemId": "Pkmn_Shield_Shell",
+        "Quantity": 1
+      }
+    ]
+  },
+  "InteractionVars": {
+    "Guard_Start_StaminaCost": {
+      "Interactions": [
+        {
+          "$Comment": "The amount of stamina consumed upon starting guarding",
+          "Type": "ChangeStat",
+          "StatModifiers": {
+            "Stamina": -1.5
+          }
+        }
+      ]
+    },
+    "Guard_Wield": {
+      "Interactions": [
+        {
+          "$Comment": "Actively guarding with the weapon",
+          "Parent": "Weapon_Shield_Secondary_Guard_Wield",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Shield_T2_Raise",
+            "LocalSoundEventId": "SFX_Shield_T2_Raise_Local"
+          },
+          "StaminaCost": {
+            "Value": 20,
+            "CostType": "Damage"
+          },
+          "BlockedEffects": {
+            "WorldSoundEventId": "SFX_Shield_T2_Impact"
+          },
+          "AngledWielding": {
+            "Angle": 0,
+            "AngleDistance": 120,
+            "DamageModifiers": {
+              "Physical": 0,
+              "Projectile": 0,
+              "Poison": 0,
+              "Pkmn": 0,
+              "Dark": 0,
+              "Bug": 0,
+              "Electric": 0,
+              "Fighting": 0,
+              "Ghost": 0,
+              "Grass": 0,
+              "Ground": 0,
+              "Ice": 0,
+              "Normal": 0,
+              "Psychic": 0,
+              "Pure": 0,
+              "Rock": 0,
+              "Steel": 0,
+              "Water": 0
+            },
+            "KnockbackModifiers": {
+              "Physical": 0.25,
+              "Projectile": 0.25
+            }
+          }
+        }
+      ]
+    },
+    "Guard_Bash": {
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": "Stamina_Broken_Immune"
+        },
+        {
+          "$Comment": "Effects and stamina consumed upon a guard bash",
+          "Parent": "Weapon_Shield_Secondary_Guard_Bash",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Shield_T2_Swing",
+            "LocalSoundEventId": "SFX_Shield_T2_Swing_Local"
+          },
+          "StatModifiers": {
+            "Stamina": -2
+          }
+        }
+      ]
+    },
+    "Guard_Bash_Damage": {
+      "Interactions": [
+        {
+          "$Comment": "Damage \u0026 Effects on a successful hit with the guard shove attack",
+          "Parent": "Weapon_Shield_Secondary_Guard_Bash_Damage",
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Shield_T2_Impact",
+            "LocalSoundEventId": "SFX_Shield_T2_Impact"
+          }
+        }
+      ]
+    }
+  },
+  "Weapon": {
+    "StatModifiers": {
+      "Stamina": [
+        {
+          "CalculationType": "Additive",
+          "Amount": 20,
+          "Target": "Min"
+        },
+        {
+          "CalculationType": "Additive",
+          "Amount": 20
+        }
+      ],
+      "Health": [
+        {
+          "CalculationType": "Additive",
+          "Amount": 50
+        }
+      ],
+      "StaminaRegenDelay": [
+        {
+          "Target": "Max",
+          "CalculationType": "Multiplicative",
+          "Amount": 0.5
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Swimming_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Lapras",
+    "DropList": "Drop_Pkmn_T3_Chitin",
+    "Type1": "WaterType",
+    "Type2": "IceType",
+    "WildLevelMin": 25,
+    "WildLevelMax": 55,
+    "TameRoleChange": "Pkmn_Lapras_Tamed",
+    "MaxHealth": 450,
+    "AttackRange": 4,
+    "AlertedRange": 30,
+    "IsMemory": true,
+    "MemoriesCategory": "Abyssal",
+    "MemoriesNameOverride": "Lapras",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "_CombatConfig": {
+      "EntityEffect": "WaterType"
+    },
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {}
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "pizzamon.npcRoles.Pkmn_Lapras.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

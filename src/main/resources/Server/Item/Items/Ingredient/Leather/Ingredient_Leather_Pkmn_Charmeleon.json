@@ -1,0 +1,56 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Ingredient_Leather_Pkmn_Charmeleon.name"
+  },
+  "Categories": [
+    "Items.Ingredients",
+    "PortableMonstrosities.Resources"
+  ],
+  "SubCategory": "Leather",
+  "Icon": "Icons/ItemsGenerated/Ingredient_Leather_Pkmn_Charmeleon.png",
+  "Model": "Resources/Materials/Leather.blockymodel",
+  "Texture": "Resources/Materials/Pkmn/Leather_Textures/Charmeleon.png",
+  "Quality": "Common",
+  "ItemLevel": 15,
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Hide_Pkmn_Charmeleon",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Processing",
+        "Id": "Tannery"
+      }
+    ],
+    "TimeSeconds": 30
+  },
+  "PlayerAnimationsId": "Item",
+  "IconProperties": {
+    "Scale": 0.8,
+    "Rotation": [
+      352,
+      30,
+      10
+    ],
+    "Translation": [
+      3,
+      -16
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ],
+    "Family": [
+      "Leather"
+    ]
+  },
+  "ItemEntity": {
+    "ParticleSystemId": null
+  },
+  "ItemSoundSetId": "ISS_Items_Leather",
+  "DropOnDeath": true
+}

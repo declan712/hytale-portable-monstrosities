@@ -1,0 +1,181 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pokeball_Great.name",
+    "Description": "portablemonstrosities.items.Pokeball_Great.description"
+  },
+  "Quality": "Uncommon",
+  "ItemLevel": 20,
+  "Model": "Items/Pokeball_Great/Pokeball_Great.blockymodel",
+  "Texture": "Items/Pokeball_Great/Pokeball_Great.png",
+  "Icon": "Icons/ItemsGenerated/Pokeball_Great.png",
+  "MaxStack": 99,
+  "Recipe": {
+    "TimeSeconds": 4,
+    "Input": [
+      {
+        "Quantity": 3,
+        "ResourceTypeId": "",
+        "ItemId": "Plant_Fruit_Apricorn"
+      },
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 10
+      },
+      {
+        "ItemId": "Ingredient_Bar_Pkmn_T2",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": [
+          "Pkmn_Balls"
+        ],
+        "Id": "Bench_Pokeball"
+      }
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      349,
+      145,
+      0
+    ],
+    "Translation": [
+      3,
+      -19
+    ]
+  },
+  "Scale": 2,
+  "Light": {
+    "Radius": 0,
+    "Color": "#003"
+  },
+  "Parent": "Pokeball",
+  "BlockType": {
+    "CustomModel": "Items/Pokeball_Great/Pokeball_Great.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Pokeball_Great/Pokeball_Great.png"
+      }
+    ],
+    "CustomModelScale": 0.25,
+    "RandomRotation": "YawStep1",
+    "Material": "Empty",
+    "BlockSoundSetId": "Metal",
+    "SupportDropType": "Destroy",
+    "BlockEntity": {
+      "Components": {
+        "Coop": {
+          "FarmingCoopId": "Coop_Pokeball"
+        }
+      }
+    },
+    "State": {
+      "Id": "coop",
+      "Definitions": {
+        "Produce_Ready": {
+          "CustomModelScale": 0.5,
+          "CustomModelAnimation": "Items/Pokeball/Wobble_Once.blockyanim",
+          "Looping": true
+        }
+      }
+    },
+    "DrawType": "Model",
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "UseCoop"
+          }
+        ]
+      }
+    },
+    "PlacementSettings": {
+      "PlaceInEmptyBlocks": true
+    },
+    "Gathering": {
+      "Soft": {
+        "ItemId": "Pokeball_Great"
+      }
+    }
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "ItemAnimationId": "Interact"
+          },
+          "RunTime": 0.05,
+          "Next": {
+            "Type": "UsePokeballInteraction",
+            "FullIcon": "Icons/Items/Pokeball_Full.png",
+            "AcceptedNpcGroups": [
+              "Pokeball",
+              "Pokeball_Great"
+            ],
+            "CaptureItemId": "Pokeball_Great",
+            "RunTime": 0.05,
+            "HorizontalSpeedMultiplier": 0.7,
+            "Failed": {
+              "Type": "Parallel",
+              "Interactions": [
+                {
+                  "Interactions": [
+                    {
+                      "Type": "Replace",
+                      "DefaultValue": {
+                        "Interactions": [
+                          {
+                            "Type": "Projectile",
+                            "Config": "Projectile_Config_Pokeball_Great"
+                          }
+                        ]
+                      },
+                      "Var": "Projectile_Config"
+                    }
+                  ]
+                },
+                {
+                  "Interactions": [
+                    {
+                      "Type": "ModifyInventory",
+                      "AdjustHeldItemQuantity": -1
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "InteractionVars": {
+    "Projectile_Config": {
+      "Interactions": [
+        {
+          "Type": "Projectile",
+          "Config": "Projectile_Config_Pokeball_Great"
+        }
+      ]
+    },
+    "Pokeball_Capture_Interaction": {
+      "Interactions": [
+        {
+          "Type": "UsePokeballInteraction",
+          "AcceptedNpcGroups": [
+            "Pokeball",
+            "Pokeball_Great"
+          ],
+          "CaptureItemId": "Pokeball_Great",
+          "FullIcon": "Icons/Items/Pokeball_Full.png"
+        }
+      ]
+    }
+  }
+}

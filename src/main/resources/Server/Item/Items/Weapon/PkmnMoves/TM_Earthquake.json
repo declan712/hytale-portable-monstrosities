@@ -1,0 +1,60 @@
+{
+  "Parent": "TM_Template",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.TM_Earthquake.name",
+    "Description": "portablemonstrosities.items.TM_Earthquake.description"
+  },
+  "Quality": "Uncommon",
+  "ItemLevel": 40,
+  "Texture": "Items/Weapons/Tm/Ground.png",
+  "PlayerAnimationsId": "Spellbook",
+  "Utility": {
+    "Compatible": true
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Effects": {
+            "ItemPlayerAnimationsId": "Pkmn_Default",
+            "ItemAnimationId": "ThrowLift",
+            "ClearAnimationOnFinish": true,
+            "Particles": [
+              {
+                "SystemId": "Aoe_Indicator",
+                "Color": "#ff6500",
+                "TargetEntityPart": "Entity",
+                "TargetNodeName": "Origin"
+              }
+            ]
+          },
+          "AllowIndefiniteHold": true,
+          "DisplayProgress": true,
+          "Next": {
+            "0": {
+              "Type": "Simple"
+            },
+            "2": "Pkmn_Moves_Earthquake"
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      231,
+      5,
+      155
+    ],
+    "Translation": [
+      3,
+      -18
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Weapon": {},
+  "Icon": "Icons/ItemsGenerated/TM_Earthquake.png",
+  "ItemSoundSetId": "ISS_Blocks_Stone"
+}

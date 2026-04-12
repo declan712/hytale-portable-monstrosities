@@ -1,0 +1,59 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Trork_Hybrid",
+  "Modify": {
+    "HearingRange": 4,
+    "ViewSector": 270,
+    "Weapons": [
+      "Weapon_Gun_Blunderbuss",
+      "Rocket_Baton"
+    ],
+    "DropList": "Drop_Outlander_Stalker",
+    "Appearance": "Rocket_Jessie",
+    "AttackSequence": "Component_Instruction_Attack_Sequence_Rocket_Grunt",
+    "TargetGroups": [
+      "Rocket"
+    ],
+    "ChestBlockSet": "Trork_Chest",
+    "BedBlockSet": "Trork_Bedroll",
+    "CampfireBlockSet": "Trork_Campfire",
+    "UnderlingGroups": [
+      "Rocket"
+    ],
+    "DisableDamageGroups": [
+      "Self",
+      "Rocket"
+    ],
+    "RangedAttackSequence": "Component_Instruction_Attack_Sequence_Rocket_Jessie_Ranged",
+    "AttitudeGroup": "Rocket",
+    "AttackDistance": 2.5,
+    "IdleMotionComponent": "$Null",
+    "CrouchToAttack": true,
+    "MaxHealth": 200,
+    "IsMemory": true,
+    "MemoriesCategory": "Outlander",
+    "_InteractionVars": {
+      "Melee_Damage": {
+        "Interactions": [
+          {
+            "Parent": "NPC_Attack_Melee_Damage",
+            "DamageCalculator": {
+              "BaseDamage": {
+                "Physical": 46
+              }
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Outlander_Stalker.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
