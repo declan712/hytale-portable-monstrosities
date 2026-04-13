@@ -1,5 +1,5 @@
 {
-  "Model": "Items/Projectiles/Pkmn/Balls/Pokeball.blockymodel",
+  "Model": "Items/Projectiles/Projectile.blockymodel",
   "HitBox": {
     "Max": {
       "X": 0.15,
@@ -14,8 +14,14 @@
   },
   "MinScale": 0.8,
   "MaxScale": 0.8,
-  "Texture": "Items/Projectiles/Pkmn/Balls/Pokeball.png",
   "Light": {
     "Color": "#700"
-  }
+  },
+  "DefaultAttachments": [
+    {
+      "Model": "Items/Projectiles/Pkmn/Balls/Pokeball.blockymodel",
+      "Texture": "Items/Projectiles/Pkmn/Balls/Pokeball.png"
+    }
+  ],
+  "Texture": "Items/Projectiles/Pkmn/Balls/Pokeball.png"
 }

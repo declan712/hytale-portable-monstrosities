@@ -48,7 +48,7 @@
       "Categories": [
         {
           "Id": "Pkmn_General",
-          "Icon": "Icons/CraftingCategories/Pkmn/Bench_Pkmn_PC.png",
+          "Icon": "Icons/CraftingCategories/Pkmn/Ingredient_Leather_Pkmn_Charizard.png",
           "Name": "portablemonstrosities.benchCategories.pokeball.general"
         },
         {
@@ -78,18 +78,6 @@
       "FailedSoundEventId": "SFX_Generic_Crafting_Failed",
       "Id": "Bench_Pokeball"
     },
-    "State": {
-      "Id": "crafting",
-      "Definitions": {
-        "CraftCompleted": {
-          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim",
-          "Looping": true
-        },
-        "CraftCompletedInstant": {
-          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim"
-        }
-      }
-    },
     "Gathering": {
       "Breaking": {
         "GatherType": "Benches"
@@ -104,7 +92,19 @@
         }
       ]
     },
-    "BlockSoundSetId": "Wood"
+    "BlockSoundSetId": "Wood",
+    "State": {
+      "Id": "crafting",
+      "Definitions": {
+        "CraftCompleted": {
+          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim",
+          "Looping": true
+        },
+        "CraftCompletedInstant": {
+          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim"
+        }
+      }
+    }
   },
   "PlayerAnimationsId": "Block",
   "IconProperties": {
