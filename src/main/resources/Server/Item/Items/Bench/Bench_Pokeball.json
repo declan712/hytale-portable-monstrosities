@@ -33,7 +33,7 @@
   "BlockType": {
     "Material": "Solid",
     "DrawType": "Model",
-    "Opacity": "Semitransparent",
+    "Opacity": "Transparent",
     "CustomModel": "Blocks/Benches/Pokeball.blockymodel",
     "CustomModelTexture": [
       {
@@ -41,7 +41,7 @@
         "Weight": 1
       }
     ],
-    "HitboxType": "Bench_Loom",
+    "HitboxType": "Bench_Workbench",
     "VariantRotation": "NESW",
     "Bench": {
       "Type": "Crafting",
@@ -62,21 +62,126 @@
           "Name": "portablemonstrosities.benchCategories.pokeball.balls"
         },
         {
-          "Name": "portablemonstrosities.benchCategories.pokeball.apricorn",
           "Id": "Pkmn_Apricorn",
-          "Icon": "Icons/CraftingCategories/Pkmn/Plant_Fruit_Apricorn.png"
+          "Icon": "Icons/CraftingCategories/Pkmn/Plant_Fruit_Apricorn.png",
+          "Name": "portablemonstrosities.benchCategories.pokeball.apricorn"
         },
         {
-          "Name": "portablemonstrosities.benchCategories.pokeball.leather",
+          "Id": "Pkmn_Leather",
           "Icon": "Icons/CraftingCategories/Pkmn/Ingredient_Leather_Pkmn_Charizard.png",
-          "Id": "Pkmn_Leather"
+          "Name": "portablemonstrosities.benchCategories.pokeball.leather"
         }
       ],
       "LocalOpenSoundEventId": "SFX_Workbench_Open",
       "LocalCloseSoundEventId": "SFX_Workbench_Close",
       "CompletedSoundEventId": "SFX_Workbench_Craft",
       "FailedSoundEventId": "SFX_Generic_Crafting_Failed",
-      "Id": "Bench_Pokeball"
+      "BenchUpgradeSoundEventId": "SFX_Workbench_Upgrade_Start_Default",
+      "BenchUpgradeCompletedSoundEventId": "SFX_Workbench_Upgrade_Complete_Default",
+      "Id": "Bench_Pokeball",
+      "TierLevels": [
+        {
+          "CraftingTimeReductionModifier": 0.0,
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Copper",
+                "Quantity": 30
+              },
+              {
+                "ItemId": "Ingredient_Bar_Iron",
+                "Quantity": 20
+              },
+              {
+                "ItemId": "Ingredient_Fabric_Scrap_Linen",
+                "Quantity": 20
+              }
+            ],
+            "TimeSeconds": 5.0
+          }
+        },
+        {
+          "UpgradeRequirement": {
+            "Material": [
+              {
+                "ItemId": "Ingredient_Bar_Thorium",
+                "Quantity": 30
+              },
+              {
+                "ItemId": "Ingredient_Bar_Cobalt",
+                "Quantity": 20
+              },
+              {
+                "ItemId": "Ingredient_Leather_Heavy",
+                "Quantity": 30
+              },
+              {
+                "ItemId": "Ingredient_Fabric_Scrap_Shadoweave",
+                "Quantity": 50
+              },
+              {
+                "ItemId": "Ingredient_Fire_Essence",
+                "Quantity": 25
+              }
+            ],
+            "TimeSeconds": 10.0
+          },
+          "CraftingTimeReductionModifier": 0.15
+        },
+        {
+          "CraftingTimeReductionModifier": 0.3
+        }
+      ]
+    },
+    "BlockEntity": {
+      "Components": {
+        "BenchBlock": {}
+      }
+    },
+    "State": {
+      "Definitions": {
+        "CraftCompleted": {
+          "CustomModelAnimation": "Blocks/Benches/Workbench_Crafting.blockyanim",
+          "Looping": true
+        },
+        "CraftCompletedInstant": {
+          "CustomModelAnimation": "Blocks/Benches/Workbench_Crafting.blockyanim"
+        },
+        "Tier2": {
+          "CustomModel": "Blocks/Benches/Pokeball.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Benches/Pokeball_Texture.png",
+              "Weight": 1
+            }
+          ],
+          "HitboxType": "Bench_Workbench2",
+          "State": {
+            "Definitions": {
+              "CraftCompleted": {
+                "CustomModelAnimation": "Blocks/Benches/Workbench2_Crafting.blockyanim"
+              }
+            }
+          }
+        },
+        "Tier3": {
+          "CustomModel": "Blocks/Benches/Pokeball.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Benches/Pokeball_Texture.png",
+              "Weight": 1
+            }
+          ],
+          "HitboxType": "Bench_Workbench3",
+          "State": {
+            "Definitions": {
+              "CraftCompleted": {
+                "CustomModelAnimation": "Blocks/Benches/Workbench3_Crafting.blockyanim"
+              }
+            }
+          }
+        }
+      }
     },
     "Gathering": {
       "Breaking": {
@@ -92,19 +197,7 @@
         }
       ]
     },
-    "BlockSoundSetId": "Wood",
-    "State": {
-      "Id": "crafting",
-      "Definitions": {
-        "CraftCompleted": {
-          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim",
-          "Looping": true
-        },
-        "CraftCompletedInstant": {
-          "CustomModelAnimation": "Blocks/Benches/Carpenter_Crafting.blockyanim"
-        }
-      }
-    }
+    "BlockSoundSetId": "Wood"
   },
   "PlayerAnimationsId": "Block",
   "IconProperties": {
@@ -125,6 +218,6 @@
     ]
   },
   "MaxStack": 1,
-  "ItemLevel": 7,
+  "ItemLevel": 1,
   "ItemSoundSetId": "ISS_Blocks_Wood"
 }
