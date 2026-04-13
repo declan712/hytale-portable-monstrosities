@@ -25,21 +25,23 @@
     "PortableMonstrosities.Equipment"
   ],
   "Recipe": {
-    "BenchRequirement": [
-      {
-        "Id": "Bench_Pokeball"
-      }
-    ],
     "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 1
+      },
       {
         "ItemId": "Ingredient_Pkmn_Chitin_T2",
         "Quantity": 30
       }
     ],
-    "Output": [
+    "BenchRequirement": [
       {
-        "ItemId": "Pkmn_Shield_Shell",
-        "Quantity": 1
+        "Type": "Crafting",
+        "Id": "Bench_Pokeball",
+        "Categories": [
+          "Pkmn_General"
+        ]
       }
     ]
   },
