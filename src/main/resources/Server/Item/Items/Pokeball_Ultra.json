@@ -63,17 +63,78 @@
         }
       ]
     },
-    "Pokeball_Capture_Interaction": {
+    "Stay_Captured": {
+      "Interactions": [
+        {
+          "Type": "StayCaptured",
+          "BallBonus": 2.0
+        }
+      ]
+    },
+    "Use_Capture_Item": {
       "Interactions": [
         {
           "Type": "UseCaptureOrb",
+          "FullIcon": "Icons/Items/Pokeball_Full_Ultra.png",
           "AcceptedNpcGroups": [
             "Pokeball",
             "Pokeball_Great",
             "Pokeball_Ultra"
           ],
+          "CaptureItemId": "Pokeball_Ultra"
+        }
+      ]
+    },
+    "Capture_Escape_Effect": {
+      "Interactions": [
+        "Pokeball_Escape_Ultra"
+      ]
+    },
+    "Capture_Effect" : {
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": "Captured_Ultraball",
+          "Entity": "Target",
+          "Next": {
+            "Type": "Simple",
+            "RunTime": 0.75,
+            "Effects": {
+              "WorldSoundEventId": "SFX_Pokeball_Poof",
+              "LocalSoundEventId": "SFX_Pokeball_Poof",
+              "Particles": [
+                {
+                  "SystemId": "Laser_Impact",
+                  "Color": "#ff0000",
+                  "Scale": 3,
+                  "TargetEntityPart": "Entity"
+                }
+              ]
+            },
+            "Next": "Pkmn_Capture_Wobble"
+          }
+        }
+      ]
+    },
+    "Capture_Success" : {
+      "Interactions": [
+        {
+          "Type": "CaptureWildCreature",
+          "RunTime": 0.2,
           "CaptureItemId": "Pokeball_Ultra",
-          "FullIcon": "Icons/Items/Pokeball_Full.png"
+          "FullIcon": "Icons/Items/Pokeball_Full_Ultra.png",
+          "Next": {
+            "Type": "RemoveEntity",
+            "Entity": "Target",
+            "Next": {
+              "Type": "RemoveEntity",
+              "Entity": "User"
+            }
+          },
+          "Effects": {
+            "WorldSoundEventId": "SFX_Pkmn_Confirm",
+            "LocalSoundEventId": "SFX_Pkmn_Confirm"
+          }
         }
       ]
     }

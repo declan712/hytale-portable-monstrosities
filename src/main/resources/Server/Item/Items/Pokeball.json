@@ -108,6 +108,81 @@
           "Config": "Projectile_Config_Pokeball_Base"
         }
       ]
+    },
+    "Stay_Captured": {
+      "Interactions": [
+        {
+          "Type": "StayCaptured",
+          "BallBonus": 1.0
+        }
+      ]
+    },
+    "Use_Capture_Item": {
+      "Interactions": [
+        {
+          "Type": "UseCaptureOrb",
+          "FullIcon": "Icons/Items/Pokeball_Full.png",
+          "AcceptedNpcGroups": [
+            "Pokeball",
+            "Pokeball_Great",
+            "Pokeball_Ultra"
+          ],
+          "CaptureItemId": "Pokeball"
+        }
+      ]
+    },
+    "Capture_Escape_Effect": {
+      "Interactions": [
+        "Pokeball_Escape"
+      ]
+    },
+    "Capture_Effect" : {
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": "Captured",
+          "Entity": "Target",
+          "Next": {
+            "Type": "Simple",
+            "RunTime": 0.75,
+            "Effects": {
+              "WorldSoundEventId": "SFX_Pokeball_Poof",
+              "LocalSoundEventId": "SFX_Pokeball_Poof",
+              "Particles": [
+                {
+                  "SystemId": "Laser_Impact",
+                  "Color": "#ff0000",
+                  "Scale": 3,
+                  "TargetEntityPart": "Entity"
+                }
+              ]
+            },
+            "Next": "Pkmn_Capture_Wobble"
+          }
+        }
+      ]
+    },
+    "Capture_Success" : {
+      "Interactions": [
+        {
+          "Type": "CaptureWildCreature",
+          "RunTime": 0.2,
+          "CaptureItemId": "Pokeball",
+          "FullIcon": "Icons/Items/Pokeball_Full.png",
+          "Next": {
+            "Type": "RemoveEntity",
+            "Entity": "Target",
+            "Next": {
+              "Type": "RemoveEntity",
+              "Entity": "User"
+            }
+          },
+          "Effects": {
+            "WorldSoundEventId": "SFX_Pkmn_Confirm",
+            "LocalSoundEventId": "SFX_Pkmn_Confirm"
+          }
+        }
+      ]
     }
   },
   "IconProperties": {

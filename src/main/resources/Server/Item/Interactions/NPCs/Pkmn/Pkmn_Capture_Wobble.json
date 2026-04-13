@@ -7,7 +7,7 @@
       "Interactions": [
         {
           "Type": "Simple",
-          "RunTime": 1.0,
+          "RunTime": 0.5,
           "Effects": {
             "WorldSoundEventId": "SFX_Pokeball_Shake",
             "LocalSoundEventId": "SFX_Pokeball_Shake"
@@ -15,37 +15,60 @@
         },
         {
           "Type": "Simple",
-          "RunTime": 0.1
+          "RunTime": 0.6
         },
         {
-          "Type": "StayCaptured",
-          "BallBonus": 1.0
+          "Type": "Replace",
+          "Var": "Stay_Captured",
+          "DefaultOk": true,
+          "DefaultValue": {
+            "Interactions": [
+              {
+                "Type": "StayCaptured",
+                "BallBonus": 1.0
+              }
+            ]
+          }
         }
       ]
     },
     "Next": {
-      "Type": "Simple",
-      "RunTime": 0.2,
-      "Next": {
-        "Type": "CaptureWildCreature",
+      "Type": "Replace",
+      "Var": "Capture_Success",
+      "DefaultOk": true,
+      "DefaultValue": {
+        "Type": "Simple",
         "RunTime": 0.2,
-        "CaptureItemId": "Pokeball",
-        "FullIcon": "Icons/Items/Pokeball_Full.png",
         "Next": {
-          "Type": "RemoveEntity",
-          "Entity": "Target",
+          "Type": "CaptureWildCreature",
+          "RunTime": 0.2,
+          "CaptureItemId": "Pokeball",
+          "FullIcon": "Icons/Items/Pokeball_Full.png",
           "Next": {
             "Type": "RemoveEntity",
-            "Entity": "User"
+            "Entity": "Target",
+            "Next": {
+              "Type": "RemoveEntity",
+              "Entity": "User"
+            }
+          },
+          "Effects": {
+            "WorldSoundEventId": "SFX_Pkmn_Confirm",
+            "LocalSoundEventId": "SFX_Pkmn_Confirm"
           }
-        },
-        "Effects": {
-          "WorldSoundEventId": "SFX_Pkmn_Confirm",
-          "LocalSoundEventId": "SFX_Pkmn_Confirm"
         }
       }
     },
-    "Failed": "Pokeball_Escape"
+    "Failed": {
+      "Type": "Replace",
+      "DefaultOk": true,
+      "Var": "Capture_Escape_Effect",
+      "DefaultValue": {
+        "Interactions": [
+          "Pokeball_Escape"
+        ]
+      }
+    }
   },
   "RunTime": 0.1
 }

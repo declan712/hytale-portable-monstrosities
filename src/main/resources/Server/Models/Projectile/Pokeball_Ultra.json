@@ -11,20 +11,15 @@
       "Z": -0.15
     }
   },
-  "MinScale": 0.4,
-  "MaxScale": 0.4,
-  "Model": "Items/Projectiles/Pkmn/Balls/Pokeball_Ultra.blockymodel",
-  "Texture": "Items/Pokeball_Ultra/Pokeball_Ultra.png",
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "Items/Animations/Spin_Roll/Spin_Roll_Left.blockyanim",
-          "Looping": true
-        }
-      ]
+  "MinScale": 0.8,
+  "MaxScale": 0.8,
+  "Model": "Items/Projectiles/Projectile.blockymodel",
+  "DefaultAttachments": [
+    {
+      "Model": "Items/Projectiles/Pkmn/Balls/Pokeball_Ultra.blockymodel",
+      "Texture": "Items/Pokeball_Ultra/Pokeball_Ultra.png"
     }
-  },
+  ],
   "Light": {
     "Color": "#540"
   },
