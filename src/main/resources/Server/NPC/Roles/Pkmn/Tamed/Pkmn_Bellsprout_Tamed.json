@@ -1,0 +1,56 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Bellsprout",
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "IsMountable": false,
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Bellsprout_Tamed"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "MaxHealth": 35,
+    "MaxSpeed": 6,
+    "ViewRange": 12,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "ProduceItem": "Ingredient_Poop",
+    "DropList": "Drop_Pkmn_Bulbasaur",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Pkmn_Default",
+              "ItemAnimationId": "Breath"
+            }
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Pkmn_Default",
+              "ItemAnimationId": "Breath"
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Bellsprout.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

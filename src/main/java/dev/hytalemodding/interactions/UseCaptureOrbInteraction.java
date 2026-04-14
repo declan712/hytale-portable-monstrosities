@@ -89,10 +89,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
     protected String   fullIcon;
     protected String captureItemId;
 
-    // Path to per-species fullIcons 
     // TODO: use captureItemId/species combination to choose icon
-    private static final String SPECIES_ICON_PREFIX = "Icons/Items/Pokeball/";
-    private static final String SPECIES_ICON_SUFFIX = ".png";
 
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
@@ -405,29 +402,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         }
         if (!tagFound) return null;
 
-        // HP
-        // TODO: use method from utils instead
-        EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());
-        if (stats == null) return null;
-        IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
-        int             lvlIdx = assetMap.getIndex("Lvl");
-        int             expIdx = assetMap.getIndex("Exp");
-        int             healthIdx = DefaultEntityStatTypes.getHealth();
-        EntityStatValue health    = stats.get(healthIdx);
-        EntityStatValue lvl       = stats.get(lvlIdx);
-        EntityStatValue exp       = stats.get(expIdx);
-        if (health == null) return null;
-        float currentHp = health.get();
-        float maxHp     = health.getMax();
-        float currentExp = exp.get();
-        float currentLvl = lvl.get();
-
-        // Scale
-        // TODO: do something with size
-        float scale = 1f;
-        EntityScaleComponent scaleComponent = store.getComponent(
-            targetRef, EntityModule.get().getEntityScaleComponentType());
-        if (scaleComponent != null) scale = scaleComponent.getScale();
 
         // PkmnStatsComponent
         // TODO: use method from utils instead
@@ -437,69 +411,26 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         if (pkmnStats != null) {
             String owner  = pkmnStats.getOwnerUuid();
             Player player = commandBuffer.getComponent(catcherRef, Player.getComponentType());
-            if (hasOtherOwner(owner, player)) {
+            if (PkmnStatUtils.hasOtherOwner(owner, player)) {
                 LOGGER.atInfo().log("Creature is owned by someone else");
                 return null;
             }
         }
 
         String roleId = NPCPlugin.get().getName(npcComponent.getRoleIndex());
-        int[] baseStats = PkmnBaseStatList.fromMap(toDisplayName(roleId));
+        int[] baseStats = PkmnBaseStatList.fromMap(PkmnStatUtils.toDisplayName(roleId));
 
         if(pkmnStats == null) {
             pkmnStats = new PkmnStatsComponent();
-            String species = toDisplayName(roleId);
+            String species = PkmnStatUtils.toDisplayName(roleId);
             pkmnStats.setBaseStats(PkmnBaseStatList.fromMap(species));
         }
-        
-        PkmnCaptureMetadata captureMetadata = new PkmnCaptureMetadata();
-        captureMetadata.setCurrentHp(currentHp);
-        captureMetadata.setMaxHp(maxHp);
-        captureMetadata.setModelScale(scale);
-        captureMetadata.setLevel((int)currentLvl);
-        captureMetadata.setExperience((long)currentExp);
 
-        captureMetadata.setBaseStats(baseStats);
-        captureMetadata.setEvs(pkmnStats.getEvs());
-        captureMetadata.setIvs(pkmnStats.getIvs());
-        captureMetadata.setNature(pkmnStats.getNature());
-        captureMetadata.setNickname(pkmnStats.getNickname());
-        captureMetadata.setOwnerUuid(pkmnStats.getOwnerUuid());
+        PkmnCaptureMetadata captureMetadata = 
+            PkmnStatUtils.captureMetadata(commandBuffer, targetRef);
 
-
-        // CapturedNPCMetadata: name + icons
-        // TODO: do this better? 
-        // TODO: also move to utils and reuse for wild capture
-        CapturedNPCMetadata npcMeta = (CapturedNPCMetadata)
-            sourceItem.getFromMetadataOrDefault("CapturedEntity", CapturedNPCMetadata.CODEC);
-
-        npcMeta.setNpcNameKey(roleId);
-
-        // Icon
-        PersistentModel persistentModel = (PersistentModel)
-            commandBuffer.getComponent(targetRef, PersistentModel.getComponentType());
-        if (persistentModel == null){ 
-            LOGGER.atInfo().log("persistentModel null");
-            return null;
-        }
-
-        ModelAsset modelAsset = (ModelAsset) ModelAsset.getAssetMap().getAsset(
-            persistentModel.getModelReference().getModelAssetId());
-        if (modelAsset != null) {
-            npcMeta.setIconPath(modelAsset.getIcon());
-        }
-
-        // Per-species full icon: Icons/Items/Pokeball/<roleId>.png
-        // TODO: fallback to fullIcon from interaction config
-        String speciesIcon = (roleId != null)
-            ? SPECIES_ICON_PREFIX + roleId + SPECIES_ICON_SUFFIX
-            : null;
-
-        if (speciesIcon != null) {
-            npcMeta.setFullItemIcon(speciesIcon);
-        } else if (this.fullIcon != null) {
-            npcMeta.setFullItemIcon(this.fullIcon);
-        }
+        CapturedNPCMetadata npcMeta = 
+            PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,sourceItem,this.fullIcon);
 
         // Write metadata
         ItemStack withNpc = sourceItem.withMetadata(CapturedNPCMetadata.KEYED_CODEC, npcMeta);
@@ -598,62 +529,9 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
     //                              Utilities
     // ██████████████████████████████████████████████████████████████████████████
 
-    /**
-     * Converts a role ID to the species display name.<br>
-     * <br>
-     * Strips Prefixes:<br>
-     *      Pkmn_<br>
-     * <br>
-     * And Suffixes:<br>
-     *      _Tamed<br>
-     * <br>
-     * <br>
-    */
-    @Nonnull
-    private static String toDisplayName(@Nullable String roleId) {
-        if (roleId == null || roleId.isEmpty()) return "";
-
-        // Strip leading "Pkmn_" prefix (case-insensitive)
-        String s = roleId;
-        if (s.regionMatches(true, 0, "Pkmn_", 0, 5)) {
-            s = s.substring(5);
-        }
-
-        // Strip known trailing variant suffixes
-        for (String suffix : new String[]{"_Tamed", "_Shiny"}) {
-            if (s.endsWith(suffix)) {
-                s = s.substring(0, s.length() - suffix.length());
-                break;
-            }
-        }
-
-        // Title-case each underscore-separated word
-        String[] words = s.split("_");
-        StringBuilder sb = new StringBuilder();
-        for (String word : words) {
-            if (word.isEmpty()) continue;
-            if (sb.length() > 0) sb.append(' ');
-            sb.append(Character.toUpperCase(word.charAt(0)));
-            if (word.length() > 1) sb.append(word.substring(1).toLowerCase());
-        }
-        return sb.toString();
-    }
-
     private static void fail(@Nonnull InteractionContext context) {
         context.getState().state = InteractionState.Failed;
     }
-
-    private static boolean hasOtherOwner(
-        @Nullable String owner,
-        @Nullable Player player
-    ){
-        if (owner == null || owner.isBlank())   return false;
-        if(player == null)                      return true;
-        String playerId = player.getUuid().toString();
-        if(playerId == null)                    return true;
-        return !owner.equals(playerId);
-    }
-
 
     //                               CODEC
     // ██████████████████████████████████████████████████████████████████████████

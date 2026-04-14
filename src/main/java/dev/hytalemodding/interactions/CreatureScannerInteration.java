@@ -97,7 +97,7 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
             return;
         }
 
-        String pokemonSpecies = speciesFromRole(roleName);
+        String pokemonSpecies = PkmnStatUtils.speciesFromRole(roleName);
 
         PkmnCaptureMetadata metadata = PkmnStatUtils.captureMetadata(commandBuffer,targetRef);
         PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(metadata);
@@ -111,7 +111,7 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
         notifyPlayer(
             player.getPlayerRef(),
             nameplateString,
-            speciesFromRole(roleName)
+            PkmnStatUtils.speciesFromRole(roleName)
         );
         next(interactionContext);
         return;
@@ -130,24 +130,13 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
         @Nonnull PkmnStatsComponent stats,
         @Nullable String playerUuid
     ){
-        String name = speciesFromRole(npcRoleId);
+        String name = PkmnStatUtils.speciesFromRole(npcRoleId);
         var nickname = stats.getNickname();
         if(nickname != null && !nickname.isBlank()){
             name=nickname;
         }
         String lvl = String.valueOf(stats.getLevel());
         return name+" ["+lvl+"]";
-    }
-    private String speciesFromRole(@Nonnull String npcRoleId){
-        String species = npcRoleId;
-        if(npcRoleId.startsWith("Pkmn_")){
-            species = npcRoleId.replaceFirst("Pkmn_", "");
-        }
-        if(npcRoleId.endsWith("_Tamed")){
-            species = species.replaceFirst("_Tamed", "");
-        }
-        species = species.replaceAll("_"," ");
-        return species;
     }
 
     private boolean filterByRoleName(String roleName) {

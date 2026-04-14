@@ -37,6 +37,7 @@ import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
+import dev.hytalemodding.util.PkmnStatUtils;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -56,12 +57,8 @@ import java.util.List;
  *  TODO: combine naming/icon logic of this+UseCaptureOrbInteraction<br>
  */
 public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
-
     protected String captureItemId = "Pokeball";
     protected String fullIcon      = "Icons/Items/Pokeball_Full.png";
-
-    private static final String SPECIES_ICON_PREFIX = "Icons/Items/Pokeball/";
-    private static final String SPECIES_ICON_SUFFIX = ".png";
 
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
@@ -108,29 +105,16 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
         if (npcEntity == null) { fail(context); return; }
 
         String wildRoleId = NPCPlugin.get().getName(npcEntity.getRoleIndex());
-        String tameRoleId = resolveTameRole(wildRoleId);
+        String tameRoleId = PkmnStatUtils.resolveTameRole(wildRoleId);
 
         // Get stats
-        // TODO: use util method isntead
         EntityStatMap statMap = store.getComponent(targetRef, EntityStatMap.getComponentType());
         if (statMap == null) { fail(context); return; }
-
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
-        EntityStatValue healthStat = statMap.get(DefaultEntityStatTypes.getHealth());
-        if (healthStat == null) { fail(context); return; }
-
-        float currentHp  = healthStat.get();
-        float maxHp      = healthStat.getMax();
         EntityStatValue lvlV = statMap.get(assetMap.getIndex("Lvl"));
-        EntityStatValue expV = statMap.get(assetMap.getIndex("Exp"));
         float currentLvl = (lvlV != null) ? lvlV.get() : 1f;
-        float currentExp = (expV != null) ? expV.get() : 0f;
 
-        // scale
-        float scale = 1f;
-        EntityScaleComponent scaleComp = store.getComponent(
-            targetRef, EntityModule.get().getEntityScaleComponentType());
-        if (scaleComp != null) scale = scaleComp.getScale();
+
 
         // item drop pos
         TransformComponent transform = store.getComponent(
@@ -148,41 +132,17 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
         PkmnStatsComponent pkmnStats = store.getComponent(
             targetRef, PkmnStatsComponent.getComponentType());
 
-        PkmnCaptureMetadata captureMeta = new PkmnCaptureMetadata();
-        captureMeta.setCurrentHp(currentHp);
-        captureMeta.setMaxHp(maxHp);
-        captureMeta.setModelScale(scale);
-        captureMeta.setLevel((int) currentLvl);
-        captureMeta.setExperience((long) currentExp);
-        captureMeta.setOwnerUuid(ownerUuid);
-        if (pkmnStats != null) {
-            captureMeta.setBaseStats(pkmnStats.getBaseStats());
-            captureMeta.setEvs(pkmnStats.getEvs());
-            captureMeta.setIvs(pkmnStats.getIvs());
-            if (pkmnStats.getNature()   != null) captureMeta.setNature(pkmnStats.getNature());
-            if (pkmnStats.getNickname() != null) captureMeta.setNickname(pkmnStats.getNickname());
-        }
-
-        // vanilla metadata
-        // TODO: combine with UseCaptureOrbInteraction logic, move to utils
-        CapturedNPCMetadata npcMeta = new CapturedNPCMetadata();
-        npcMeta.setNpcNameKey(tameRoleId);
-
-        PersistentModel persistentModel = store.getComponent(
-            targetRef, PersistentModel.getComponentType());
-        if (persistentModel != null) {
-            ModelAsset modelAsset = (ModelAsset) ModelAsset.getAssetMap().getAsset(
-                persistentModel.getModelReference().getModelAssetId());
-            if (modelAsset != null) npcMeta.setIconPath(modelAsset.getIcon());
-        }
-        String speciesIcon = SPECIES_ICON_PREFIX + tameRoleId + SPECIES_ICON_SUFFIX;
-        npcMeta.setFullItemIcon(speciesIcon);
-
         // set owned to prevent a second projectile hit from triggering again
         if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
         pkmnStats.setOwnerUuid(ownerUuid);
-        commandBuffer.putComponent(
-            targetRef, PkmnStatsComponent.getComponentType(), pkmnStats);
+        commandBuffer.putComponent(targetRef, PkmnStatsComponent.getComponentType(), pkmnStats);
+
+
+        PkmnCaptureMetadata captureMeta = PkmnStatUtils.captureMetadata(commandBuffer,targetRef);
+    
+        CapturedNPCMetadata npcMeta = 
+            PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,null,fullIcon);
+
 
         ItemStack ball         = new ItemStack(captureItemId, 1);
         ItemStack withNpc      = ball.withMetadata(CapturedNPCMetadata.KEYED_CODEC,  npcMeta);
@@ -206,11 +166,7 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
         context.getState().state = InteractionState.Finished;
     }
 
-    @Nonnull
-    private static String resolveTameRole(@Nullable String wildRoleId) {
-        if (wildRoleId == null || wildRoleId.isBlank()) return "";
-        return wildRoleId.endsWith("_Tamed") ? wildRoleId : wildRoleId + "_Tamed";
-    }
+
 
     private static void fail(@Nonnull InteractionContext context) {
         context.getState().state = InteractionState.Failed;
