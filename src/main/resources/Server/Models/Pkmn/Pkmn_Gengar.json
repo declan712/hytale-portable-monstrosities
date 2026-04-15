@@ -351,32 +351,33 @@
   "Particles": [
     {
       "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "R-Horn"
+      "TargetNodeName": "Head",
+      "PositionOffset": {
+        "Z": 0,
+        "Y": 0.3
+      }
     },
     {
       "PositionOffset": {
         "Y": 0
       },
       "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "L-Horn"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0.25
-      },
-      "SystemId": "Spectre_Void_Hands",
       "TargetNodeName": "R-Hand"
     },
     {
       "PositionOffset": {
-        "Y": 0.25
+        "Y": 0
       },
       "SystemId": "Spectre_Void_Hands",
       "TargetNodeName": "L-Hand"
     },
     {
       "SystemId": "Spectre_Void_Body",
-      "TargetNodeName": "Chest"
+      "TargetNodeName": "Head",
+      "Scale": 1.5,
+      "PositionOffset": {
+        "Z": -0.25
+      }
     }
   ],
   "Light": {
@@ -386,15 +387,16 @@
   "MinScale": 1.2,
   "MaxScale": 1.4,
   "IconProperties": {
-    "Scale": 0.4,
+    "Scale": 0.3,
     "Rotation": [
-      15,
-      306,
-      357
+      8,
+      350,
+      360
     ],
     "Translation": [
       2,
-      -37
+      -47
     ]
-  }
+  },
+  "Icon": "Icons/ModelsGenerated/Pkmn_Gengar.png"
 }

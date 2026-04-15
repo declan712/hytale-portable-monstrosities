@@ -1,0 +1,41 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Example_Hit_Sparks",
+      "PositionOffset": {
+        "Y": 0.5
+      },
+      "FixedRotation": false,
+      "MaxConcurrent": 1,
+      "TotalSpawners": 2,
+      "StartDelay": 0,
+      "SpawnRate": {
+        "Min": 50,
+        "Max": 50
+      },
+      "LifeSpan": {
+        "Min": 0.1,
+        "Max": 0.1
+      }
+    },
+    {
+      "SpawnerId": "Example_Hit_Sparks2",
+      "PositionOffset": {
+        "Y": 0.5
+      },
+      "MaxConcurrent": 1,
+      "TotalSpawners": 2,
+      "SpawnRate": {
+        "Min": 50,
+        "Max": 50
+      },
+      "LifeSpan": {
+        "Min": 0.1,
+        "Max": 0.1
+      }
+    }
+  ],
+  "BoundingRadius": 100.0,
+  "CullDistance": 100.0,
+  "IsImportant": true
+}

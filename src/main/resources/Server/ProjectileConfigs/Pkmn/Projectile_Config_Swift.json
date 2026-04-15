@@ -1,19 +1,22 @@
 {
   "Model": "Swift",
   "SpawnRotationOffset": {
-    "Pitch": 2.5,
-    "Yaw": -0.5,
-    "Roll": -50
+    "Pitch": 0,
+    "Yaw": 0,
+    "Roll": 90
   },
   "Physics": {
     "Type": "Standard",
     "Gravity": 0,
-    "TerminalVelocityAir": 5,
-    "TerminalVelocityWater": 5,
+    "TerminalVelocityAir": 50,
+    "TerminalVelocityWater": 50,
     "RotationMode": "VelocityDamped",
-    "SticksVertically": false
+    "SticksVertically": false,
+    "BounceCount": 2,
+    "Bounciness": 0.568,
+    "SpeedRotationFactor": 0.5
   },
-  "LaunchForce": 5,
+  "LaunchForce": 60,
   "SpawnOffset": {
     "X": -0.15,
     "Y": -0.25,
@@ -29,10 +32,10 @@
           "Type": "Replace",
           "DefaultValue": {
             "Interactions": [
-              "Pkmn_Moves_Razor_Leaf_Damage"
+              "Pkmn_Moves_Swift_Damage"
             ]
           },
-          "Var": "Razor_Leaf_Damage"
+          "Var": "Swift_Damage"
         },
         {
           "Type": "RemoveEntity",
@@ -51,7 +54,7 @@
       "Interactions": [
         {
           "Type": "Simple",
-          "RunTime": 5,
+          "RunTime": 0.5,
           "Effects": {
             "LocalSoundEventId": "SFX_Daggers_T2_Stab_Impact",
             "WorldSoundEventId": "SFX_Daggers_T2_Stab_Impact"

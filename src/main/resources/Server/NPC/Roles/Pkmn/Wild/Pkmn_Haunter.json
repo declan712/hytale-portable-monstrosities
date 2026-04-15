@@ -10,7 +10,9 @@
       "Pkmn_Haunter",
       "Pkmn_Gengar"
     ],
-    "AttractiveItemSet": ["Plant_Crop_Corn_Item"],
+    "AttractiveItemSet": [
+      "Plant_Crop_Corn_Item"
+    ],
     "Type1": "GhostType",
     "Type2": "PoisonType",
     "WildLevelMin": 25,
@@ -25,7 +27,40 @@
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "DayTimePeriod": [17.99,6.01]
+    "DayTimePeriod": [
+      17.99,
+      6.01
+    ],
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      }
+    }
   },
   "Parameters": {
     "NameTranslationKey": {

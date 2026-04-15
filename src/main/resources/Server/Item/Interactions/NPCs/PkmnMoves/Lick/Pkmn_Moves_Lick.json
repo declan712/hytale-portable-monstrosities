@@ -1,0 +1,65 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Alert",
+    "ClearAnimationOnFinish": true
+  },
+  "RunTime": 0.5,
+  "Next": {
+    "Type": "Selector",
+    "$Comment": "Length of Combat",
+    "RunTime": 0.75,
+    "Selector": {
+      "Id": "Horizontal",
+      "Length": 60,
+      "Direction": "ToLeft",
+      "StartDistance": 0.1,
+      "TestLineOfSight": false,
+      "EndDistance": 3.5,
+      "RollOffset": -90
+    },
+    "HitEntity": {
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "Var": "Lick_Damage",
+          "DefaultOk": true,
+          "DefaultValue": {
+            "Interactions": [
+              "Pkmn_Moves_Lick_Damage"
+            ]
+          }
+        }
+      ]
+    },
+    "Effects": {
+      "WorldSoundEventId": "SFX_James",
+      "LocalSoundEventId": "SFX_James",
+      "ItemAnimationId": "Alerted",
+      "Particles": [
+        {
+          "SystemId": "Pkmn_Lick",
+          "TargetNodeName": "Head",
+          "TargetEntityPart": "Entity",
+          "PositionOffset": {
+            "Z": 0.8,
+            "Y": -0.5
+          }
+        }
+      ],
+      "FirstPersonParticles": [
+        {
+          "SystemId": "Pkmn_Lick",
+          "TargetEntityPart": "Entity",
+          "TargetNodeName": "Head",
+          "PositionOffset": {
+            "Z": 2,
+            "Y": 0.5
+          }
+        }
+      ]
+    }
+  }
+}

@@ -11,7 +11,10 @@
     "Type2": "PoisonType",
     "IsMountable": false,
     "CanEvolve": true,
-    "EvolveRequiredLevel": [25,100],
+    "EvolveRequiredLevel": [
+      25,
+      100
+    ],
     "EvolveRoleChange": "Pkmn_Haunter_Tamed",
     "FlockArray": [
       "Pkmn_Gastly_Tamed",
@@ -22,11 +25,42 @@
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 3,
     "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "DayTimePeriod": [17.99,6.01]
+    "DayTimePeriod": [
+      17.99,
+      6.01
+    ]
   },
   "Parameters": {
     "NameTranslationKey": {
