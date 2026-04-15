@@ -2,9 +2,9 @@
   "Type": "Simple",
   "$Comment": "Prepare Delay",
   "Effects": {
-    "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Alert",
-    "ClearAnimationOnFinish": true
+    "ItemAnimationId": "Spit",
+    "ClearAnimationOnFinish": true,
+    "ItemPlayerAnimationsId": "Pkmn_Default"
   },
   "RunTime": 0.5,
   "Next": {
@@ -35,9 +35,9 @@
       ]
     },
     "Effects": {
-      "WorldSoundEventId": "SFX_James",
-      "LocalSoundEventId": "SFX_James",
-      "ItemAnimationId": "Alerted",
+      "WorldSoundEventId": "SFX_Pkmn_Move_Lick",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Lick",
+      "ItemAnimationId": "Spit",
       "Particles": [
         {
           "SystemId": "Pkmn_Lick",
@@ -59,7 +59,9 @@
             "Y": 0.5
           }
         }
-      ]
+      ],
+      "ItemPlayerAnimationsId": "Pkmn_Default",
+      "ClearAnimationOnFinish": true
     }
   }
 }
