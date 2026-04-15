@@ -2,9 +2,9 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Flying_Predator",
   "Modify": {
-    "Appearance": "Pkmn_Haunter",
-    "AttitudeGroup": "Predators",
-    "DropList": "Drop_Pkmn_T1_Hide",
+    "Appearance": "Pkmn_Gengar",
+    "AttitudeGroup": "PredatorsBig",
+    "DropList": "Drop_Pkmn_T2_Hide",
     "FlockArray": [
       "Pkmn_Gastly",
       "Pkmn_Haunter",
@@ -13,15 +13,15 @@
     "AttractiveItemSet": ["Plant_Crop_Corn_Item"],
     "Type1": "GhostType",
     "Type2": "PoisonType",
-    "WildLevelMin": 25,
-    "WildLevelMax": 45,
+    "WildLevelMin": 55,
+    "WildLevelMax": 75,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Haunter_Tamed",
+    "TameRoleChange": "Pkmn_Gengar_Tamed",
     "IsTameable": true,
-    "MaxSpeed": 8,
+    "MaxSpeed": 12,
     "Timid": false,
     "IsMemory": true,
-    "MemoriesNameOverride": "Haunter",
+    "MemoriesNameOverride": "Gengar",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
@@ -29,7 +29,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Haunter.name",
+      "Value": "server.npcRoles.Pkmn_Gengar.name",
       "Description": "Translation key for NPC name display"
     }
   }

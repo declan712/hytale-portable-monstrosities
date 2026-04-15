@@ -2,23 +2,15 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
-    "Appearance": "Pkmn_Gastly",
-    "DropList": "Drop_Pkmn_T0_Hide",
+    "Appearance": "Pkmn_Gengar",
+    "DropList": "Drop_Pkmn_T2_Hide",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
     ],
     "Type1": "GhostType",
     "Type2": "PoisonType",
-    "IsMountable": false,
-    "CanEvolve": true,
-    "EvolveRequiredLevel": [25,100],
-    "EvolveRoleChange": "Pkmn_Haunter_Tamed",
-    "FlockArray": [
-      "Pkmn_Gastly_Tamed",
-      "Pkmn_Haunter_Tamed",
-      "Pkmn_Gengar_Tamed"
-    ],
-    "MaxSpeed": 6,
+    "IsMountable": true,
+    "MaxSpeed": 12,
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 3,
     "_InteractionVars": {
@@ -30,7 +22,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Gastly.name",
+      "Value": "server.npcRoles.Pkmn_Gengar.name",
       "Description": "Translation key for NPC name display"
     }
   }

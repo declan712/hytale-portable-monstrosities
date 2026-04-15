@@ -1,0 +1,400 @@
+{
+  "Model": "NPC/Pkmn/Gengar/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Gengar/Models/Texture.png",
+  "EyeHeight": 1.2,
+  "HitBox": {
+    "Max": {
+      "X": 0.4,
+      "Y": 1.145,
+      "Z": 0.4
+    },
+    "Min": {
+      "X": -0.4,
+      "Y": 0,
+      "Z": -0.4
+    }
+  },
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 180,
+        "Min": -180
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Max": 180,
+        "Min": -180
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0,
+          "SoundEventId": "SFX_Pkmn_Gengar_Cry"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Walk.blockyanim"
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Run.blockyanim"
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": true
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Jump.blockyanim",
+          "Speed": 0.8,
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "JumpFar": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Jump_Run.blockyanim",
+          "Speed": 0.8,
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Fall.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "FallFar": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Fall_Far.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Fall.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
+        },
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Gengar_Cry"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Sleep.blockyanim"
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Damage/Death.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Idle.blockyanim"
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Jump.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Float.blockyanim"
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Sink.blockyanim"
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Dive.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Dive_Fast.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Swim/Swim_Dive_Backward.blockyanim"
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Idle.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Walk.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Default/Run.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Fly/Fly_Idle.blockyanim"
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Fly/Fly.blockyanim"
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Fly/Fly_Fast.blockyanim"
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Fly/Fly_Backward.blockyanim"
+        }
+      ]
+    },
+    "IdlePassive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Flavor/Eat.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Flavor/Eat_Finish.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Flavor/Hunch.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Flavor/Scared.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Flavor/Sniff.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Gengar/Animations/Flavor/Sniff_Ground.blockyanim"
+        }
+      ],
+      "NextAnimationDelay": {
+        "Max": 10,
+        "Min": 2
+      }
+    }
+  },
+  "Particles": [
+    {
+      "SystemId": "Spectre_Void_Hands",
+      "TargetNodeName": "R-Horn"
+    },
+    {
+      "PositionOffset": {
+        "Y": 0
+      },
+      "SystemId": "Spectre_Void_Hands",
+      "TargetNodeName": "L-Horn"
+    },
+    {
+      "PositionOffset": {
+        "Y": 0.25
+      },
+      "SystemId": "Spectre_Void_Hands",
+      "TargetNodeName": "R-Hand"
+    },
+    {
+      "PositionOffset": {
+        "Y": 0.25
+      },
+      "SystemId": "Spectre_Void_Hands",
+      "TargetNodeName": "L-Hand"
+    },
+    {
+      "SystemId": "Spectre_Void_Body",
+      "TargetNodeName": "Chest"
+    }
+  ],
+  "Light": {
+    "Color": "#308",
+    "Radius": 1
+  },
+  "MinScale": 1.2,
+  "MaxScale": 1.4,
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      15,
+      306,
+      357
+    ],
+    "Translation": [
+      2,
+      -37
+    ]
+  }
+}
