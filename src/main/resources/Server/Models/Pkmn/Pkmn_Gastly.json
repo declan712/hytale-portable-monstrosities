@@ -273,82 +273,59 @@
   "Particles": [
     {
       "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "R-Horn"
+      "TargetNodeName": "Head",
+      "PositionOffset": {
+        "Y": 0.25,
+        "X": 0.25,
+        "Z": 0.15
+      }
     },
     {
       "PositionOffset": {
-        "Y": 0
+        "Y": 0.25,
+        "X": -0.25,
+        "Z": 0.15
       },
       "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "L-Horn"
+      "TargetNodeName": "Head"
+    },
+    {
+      "PositionOffset": {
+        "Y": 0.25,
+        "X": 0
+      },
+      "SystemId": "Spectre_Void_Hands",
+      "TargetNodeName": "Head"
     },
     {
       "PositionOffset": {
         "Y": 0.25
       },
       "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "R-Hand"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0.25
-      },
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "L-Hand"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0,
-        "Z": 0
-      },
-      "SystemId": "Spectre_Void_Tail",
-      "TargetNodeName": "Chest"
-    },
-    {
-      "PositionOffset": {
-        "Y": -0.4,
-        "Z": 0.1
-      },
-      "RotationOffset": {
-        "Pitch": 0,
-        "Roll": 0,
-        "Yaw": 0
-      },
-      "SystemId": "Spectre_Void_Arms",
-      "TargetNodeName": "R-Arm"
-    },
-    {
-      "PositionOffset": {
-        "Y": -0.4,
-        "Z": 0.1
-      },
-      "RotationOffset": {
-        "Pitch": -10,
-        "Roll": 0,
-        "Yaw": 0
-      },
-      "SystemId": "Spectre_Void_Arms",
-      "TargetNodeName": "L-Arm"
+      "TargetNodeName": "Head"
     },
     {
       "SystemId": "Spectre_Void_Body",
-      "TargetNodeName": "Chest"
-    },
-    {
+      "TargetNodeName": "Head",
       "PositionOffset": {
-        "X": 0.125
+        "X": 0
       },
-      "SystemId": "Spectre_Void_Head",
-      "TargetNodeName": "Head"
+      "Scale": 2
     },
     {
+      "SystemId": "Smoke_Gastly",
+      "TargetNodeName": "Head",
+      "Scale": 0.75,
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 90,
+        "Roll": 180
+      },
       "PositionOffset": {
-        "X": -0.125,
+        "X": 0,
         "Y": 0,
-        "Z": 0
-      },
-      "SystemId": "Spectre_Void_Head",
-      "TargetNodeName": "Head"
+        "Z": 0.25
+      }
     }
   ],
   "Light": {
