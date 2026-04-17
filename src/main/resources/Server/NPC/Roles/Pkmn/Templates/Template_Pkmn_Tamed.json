@@ -757,13 +757,32 @@
 			},
 			"Instructions": [
 				{
-					"ActionsBlocking": true,
-					"Actions": [
+					"Continue":true,
+					"Enabled": {"Compute": "!isEmpty(Type1)"},
+					"Actions":[
 						{
-							"Type": "State",
-							"State": "Idle"
+							"Type": "ApplyEntityEffect",
+							"UseTarget": false,
+							"Once": true,
+							"EntityEffect": {"Compute":"Type1"}
 						}
 					]
+				},
+				{
+					"Continue":true,
+					"Enabled": {"Compute": "!isEmpty(Type2)"},
+					"Actions":[
+						{
+							"Type": "ApplyEntityEffect",
+							"UseTarget": false,
+							"Once": true,
+							"EntityEffect": {"Compute":"Type2"}
+						}
+					]
+				},
+				{
+					"ActionsBlocking": true,
+					"Actions": [{"Type": "State","State": "Idle"}]
 				}
 			]
 		},

@@ -1,0 +1,40 @@
+{
+  "Name": "portablemonstrosities.entityEffects.Pkmn_Harden.name",
+  "ApplicationEffects": {
+    "EntityBottomTint": "#423f01",
+    "EntityTopTint": "#dcbd64",
+    "Particles": [
+      {
+        "SystemId": "Block_Gem_Sparks",
+        "Color": "#c9c357",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Head"
+      }
+    ]
+  },
+  "Duration": 180,
+  "OverlapBehavior": "Extend",
+  "RemovalBehavior": "Duration",
+  "ValueType": "Percent",
+  "DamageResistance": {
+    "Physical":   [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Projectile": [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Dark":       [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Dragon":     [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Electric":   [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Fire":       [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Flying":     [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Fighting":   [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Ghost":      [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Grass":      [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Ground":     [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Ice":        [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Normal":     [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Poison":     [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Psychic":    [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Rock":       [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Steel":      [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Water":      [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}],
+    "Bug":        [{"Target": "Max","CalculationType": "Multiplicative","Amount": 0.8}]
+  }
+}

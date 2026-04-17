@@ -1,0 +1,17 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Alerted"
+  },
+  "RunTime": 0.5,
+  "Next": {
+    "Type": "ApplyEffect",
+    "Effects": {
+      "WorldSoundEventId": "SFX_Pkmn_Potion",
+      "LocalSoundEventId": "SFX_Pkmn_Potion"
+    }
+  },
+  "HorizontalSpeedMultiplier": 0.1
+}

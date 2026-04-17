@@ -36,6 +36,70 @@ public class PkmnStatUtils {
     private static final String SPECIES_ICON_SUFFIX = ".png";
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
+
+    public static void applyMetadata(
+        @Nonnull CommandBuffer<EntityStore> commandBuffer,
+        @Nonnull Ref<EntityStore> targetRef,
+        @Nonnull PkmnCaptureMetadata pkmnMetadata
+    ){
+        Store<EntityStore> store = commandBuffer.getExternalData().getStore();
+        if (store == null) return;
+
+        NPCEntity npcComponent = (NPCEntity)
+        commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
+        if (npcComponent == null) return;
+
+        DeathComponent deathComponent = (DeathComponent)
+        commandBuffer.getComponent(targetRef, DeathComponent.getComponentType());
+        if (deathComponent != null) return;
+
+        EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());
+        if (stats == null) return;
+
+        IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
+        int             lvlIdx = assetMap.getIndex("Lvl");
+        int             expIdx = assetMap.getIndex("Exp");
+        int             atkIdx = assetMap.getIndex("Atk");
+        int             defIdx = assetMap.getIndex("Def");
+        int             spAtkIdx = assetMap.getIndex("SpAtk");
+        int             spDefIdx = assetMap.getIndex("SpDef");
+        int             spdIdx = assetMap.getIndex("Spd");
+
+        int             healthIdx = DefaultEntityStatTypes.getHealth();
+        EntityStatValue health    = stats.get(healthIdx);
+        EntityStatValue lvl       = stats.get(lvlIdx);
+        EntityStatValue exp       = stats.get(expIdx);
+        EntityStatValue atk       = stats.get(atkIdx);
+        EntityStatValue def       = stats.get(defIdx);
+        EntityStatValue spAtk     = stats.get(spAtkIdx);
+        EntityStatValue spDef     = stats.get(spDefIdx);
+        EntityStatValue spd       = stats.get(spdIdx);
+
+
+        EntityScaleComponent scaleComponent = store.getComponent(
+            targetRef, EntityModule.get().getEntityScaleComponentType());
+        // if (scaleComponent != null) scale = scaleComponent.getScale();
+        scaleComponent.setScale(pkmnMetadata.getModelScale());
+
+        PkmnStatsComponent pkmnStats = fromMetadata(pkmnMetadata);
+
+        String roleId = NPCPlugin.get().getName(npcComponent.getRoleIndex());
+        int[] baseStats = pkmnStats.getBaseStats();
+        if (baseStats == null || baseStats[0] == 0){
+            String species = toDisplayName(roleId);
+            pkmnStats.setBaseStats(PkmnBaseStatList.fromMap(species));
+        }
+
+        float currentHp = pkmnMetadata.getCurrentHp();
+
+        apply(store,commandBuffer,targetRef,pkmnStats);
+        stats.setStatValue(healthIdx,currentHp);
+        
+        commandBuffer.putComponent(targetRef, EntityModule.get().getEntityScaleComponentType(), scaleComponent);
+        commandBuffer.putComponent(targetRef, EntityStatMap.getComponentType(), stats);
+    }
+
+
     public static PkmnCaptureMetadata captureMetadata(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> targetRef
@@ -348,6 +412,7 @@ public class PkmnStatUtils {
         int calcHp = pkmnStats.calcEffectiveStat(0);
         stats.putModifier(healthIdx, "NPC_Max",
             new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcHp - 100));
+
         int level = pkmnStats.getLevel();
         int expMax = level * level * level;
 
@@ -359,8 +424,10 @@ public class PkmnStatUtils {
         
         if (level   >= 0) stats.setStatValue(lvlIdx,   (float) level);
 
-        if (expIdx >= 0) stats.putModifier(expIdx, "NPC_Max",
-            new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, expMax - 1000));
+        if (expIdx >= 0) {
+            stats.putModifier(expIdx, "NPC_Max", new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, expMax - 1000));
+            stats.setStatValue(expIdx, pkmnStats.getExperience());
+        }
     }
 
     /**

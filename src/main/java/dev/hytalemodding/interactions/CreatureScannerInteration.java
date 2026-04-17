@@ -4,8 +4,10 @@ import javax.annotation.Nullable;
 
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
+import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.CommandBuffer;
+import com.hypixel.hytale.component.ComponentAccessor;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
@@ -13,6 +15,9 @@ import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.protocol.ItemWithAllMetadata;
 import com.hypixel.hytale.server.core.Message;
+import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffect;
+import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
+import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.nameplate.Nameplate;
@@ -27,6 +32,7 @@ import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.util.PkmnStatUtils;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 
 
@@ -101,6 +107,27 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
 
         PkmnCaptureMetadata metadata = PkmnStatUtils.captureMetadata(commandBuffer,targetRef);
         PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(metadata);
+
+
+        EffectControllerComponent effectControllerComponent = store.getComponent(targetRef,EffectControllerComponent.getComponentType());
+        IndexedLookupTableAssetMap<String, EntityEffect> effectMap = EntityEffect.getAssetMap();
+        Int2ObjectMap<ActiveEntityEffect> activeEffects = effectControllerComponent.getActiveEffects();
+        if(activeEffects != null && !activeEffects.isEmpty()){
+            player.sendMessage(Message.raw("Active effects:"));
+            for(ActiveEntityEffect activeEffect : activeEffects.values()){
+                int idx = activeEffect.getEntityEffectIndex();
+                EntityEffect effect = effectMap.getAsset(idx);
+                String effectId = effect.getId();
+                player.sendMessage(Message.raw("  - "+effectId));
+                // player.sendMessage(Message.raw("  - "+activeEffect.toString()));
+            }
+        }
+        int[] effectIndexes = effectControllerComponent.getActiveEffectIndexes();
+        if(effectIndexes != null){
+        }
+
+        // EntityEffect effect = (EntityEffect)effectMap.getAsset();
+
         
         player.sendMessage(Message.raw(pokemonSpecies+", the something Pkmn."));
 

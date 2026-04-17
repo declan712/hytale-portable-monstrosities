@@ -774,11 +774,30 @@
 				{
 					"ActionsBlocking": true,
 					"Actions": [
+					{
+					"Continue":true,
+					"Enabled": {"Compute": "!isEmpty(Type1)"},
+					"Actions":[
 						{
-							"Type": "Attack",
-							"Attack": {"Compute": "SpawnAttack"},
-							"AttackPauseRange": [0, 0]
-						},
+							"Type": "ApplyEntityEffect",
+							"UseTarget": false,
+							"Once": true,
+							"EntityEffect": {"Compute":"Type1"}
+						}
+					]
+				},
+				{
+					"Continue":true,
+					"Enabled": {"Compute": "!isEmpty(Type2)"},
+					"Actions":[
+						{
+							"Type": "ApplyEntityEffect",
+							"UseTarget": false,
+							"Once": true,
+							"EntityEffect": {"Compute":"Type2"}
+						}
+					]
+				},
 						{
 							"Type": "State",
 							"State": "Idle"

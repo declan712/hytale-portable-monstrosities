@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
-    "Appearance": "Pkmn_Caterpie",
+    "Appearance": "Pkmn_Metapod",
     "AttitudeGroup": "Prey",
     "FlockArray": [
       "Pkmn_Caterpie",
@@ -26,6 +26,36 @@
     "MemoriesNameOverride": "Weedle",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
+    },
+    "_InteractionVars":{
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      }
     }
   },
   "Parameters": {
