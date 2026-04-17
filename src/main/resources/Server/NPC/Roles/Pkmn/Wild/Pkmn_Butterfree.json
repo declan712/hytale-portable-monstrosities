@@ -1,8 +1,8 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Pkmn_Predator",
+  "Reference": "Template_Pkmn_Flying_Predator",
   "Modify": {
-    "Appearance": "Pkmn_Caterpie",
+    "Appearance": "Pkmn_Butterfree",
     "AttitudeGroup": "Prey",
     "FlockArray": [
       "Pkmn_Caterpie",
@@ -13,25 +13,26 @@
       "Plant_Crop_Corn_Item"
     ],
     "Type1": "BugType",
-    "WildLevelMin": 2,
-    "WildLevelMax": 7,
+    "Type2": "FlyingType",
+    "WildLevelMin": 10,
+    "WildLevelMax": 25,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Caterpie_Tamed",
+    "TameRoleChange": "Pkmn_Butterfree_Tamed",
     "IsTameable": true,
     "MaxHealth": 45,
-    "MaxSpeed": 4.5,
+    "MaxSpeed": 7,
     "AlertedActionRange": 4,
     "AbsoluteDetectionRange": 1.5,
     "Timid": true,
     "IsMemory": true,
-    "MemoriesNameOverride": "Caterpie",
+    "MemoriesNameOverride": "Butterfree",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     }
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Caterpie.name",
+      "Value": "server.npcRoles.Pkmn_Butterfree.name",
       "Description": "Translation key for NPC name display"
     }
   }

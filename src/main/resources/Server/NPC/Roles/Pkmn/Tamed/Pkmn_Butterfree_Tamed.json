@@ -1,23 +1,21 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Pkmn_Tamed",
+  "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T0_Chitin",
+    "DropList": "Drop_Pkmn_T1_Chitin",
     "Type1": "BugType",
-    "CanEvolve": true,
+    "Type2": "FlyingType",
+    "CanEvolve": false,
     "IsMountable": false,
-    "EvolveRequiredLevel": [10,100],
-    "EvolveRoleChange": "Pkmn_Butterfree_Tamed",
-    "Appearance": "Pkmn_Metapod",
+    "Appearance": "Pkmn_Butterfree",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
     ],
     "AttitudeGroup": "Prey",
-    "MaxHealth": 20,
-    "MaxSpeed": 1,
+    "MaxSpeed": 7,
     "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2,
+    "AttackDistance": 3,
     "ChaseRelativeSpeed": 0.6,
     "CombatMovingRelativeSpeed": 0.6,
     "NameTranslationKey": {
@@ -26,7 +24,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Metapod.name",
+      "Value": "server.npcRoles.Pkmn_Butterfree.name",
       "Description": "Translation key for NPC name display"
     }
   }
