@@ -1,0 +1,50 @@
+{
+    "Class": "Instruction",
+    "Parameters": {
+        "_ImportStates": [
+            "Idle"
+        ],
+		"Type1": {
+			"Value": "GrassType",
+			"Description": "Primary elemental type of this Pokémon (e.g. Fire, Water, Grass, Rock, Ground, Electric, Ice, Poison, Psychic, Bug, Ghost, Dragon, Flying, Fighting, Normal). Used to compute damage resistances and weaknesses."
+		},
+		"Type2": {
+			"Value": "",
+			"Description": "Secondary elemental type (optional). Leave empty for single-type Pokémon."
+		}
+    },
+    "Content": {
+        "Instructions": [
+            {"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
+                "Instructions": [
+                    {
+                        "Continue":true,
+                        "Enabled": {"Compute": "!isEmpty(Type1)"},
+                        "Actions":[
+                            {
+                                "Type": "ApplyEntityEffect",
+                                "UseTarget": false,
+                                "Once": true,
+                                "EntityEffect": {"Compute":"Type1"}
+                            }
+                        ]
+                    },
+                    {
+                        "Continue":true,
+                        "Enabled": {"Compute": "!isEmpty(Type2)"},
+                        "Actions":[
+                            {
+                                "Type": "ApplyEntityEffect",
+                                "UseTarget": false,
+                                "Once": true,
+                                "EntityEffect": {"Compute":"Type2"}
+                            }
+                        ]
+                    },
+                    {"Actions":[{"Type": "ParentState","State": "Idle"}]}
+                ]
+            }
+        ]
+    },
+    "Type": "Component"
+}
