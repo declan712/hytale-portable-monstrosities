@@ -1,0 +1,34 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Flying_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Pidgeot",
+    "MaxSpeed": 12,
+    "MountAnchorX":0,
+    "MountAnchorY":0.75,
+    "MountAnchorZ":0.25,
+    "AttackWhenStartled": true,
+    "ProduceItem": "Food_Egg",
+    "ProduceTimeout": [
+      "PT18H",
+      "PT48H"
+    ],
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "CanEvolve": false,
+    "IsMountable": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "MemoriesNameOverride": "Pidgeot",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Pidgeot.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

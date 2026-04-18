@@ -1,0 +1,155 @@
+{
+    "Class": "Instruction",
+    "DefaultState": ".Default",
+    "Parameters": {
+        "_ImportStates": [
+            "Idle"
+        ],
+        "ParticleOffset": {
+            "Value": [
+                0,
+                1,
+                0
+            ],
+            "Description": "The offset of any spawned particle systems."
+        },
+        "CanEvolve": {
+            "Value": false,
+            "Description": "Whether this NPC can be evolved."
+        },
+        "EvolveRequiredItem": {
+            "Value": [
+                "Plant_Fruit_Apricorn"
+            ],
+            "Description": "The list of items that are deemed attractive (there's a chance targets holding them will be followed)."
+        },
+        "EvolveRequiredLevel": {
+            "Value": [16,100],
+            "Description": "The level required to evolve this NPC."
+        },
+        "EvolveRoleChange": {
+            "Value": "Pkmn_Ivysaur_Tamed",
+            "Description": "The role the NPC will change into when it's evolved."
+        }
+    },
+    "Content": {
+        "Instructions": [
+            {
+                "Sensor": {"Type": "State", "State": ".Evolving"},
+                "Instructions": [
+                    {
+                        "ActionsBlocking": true,
+                        "Actions": [
+                            {
+                                "Type": "Timeout",
+                                "Delay": [3,3]
+                            },
+                            {
+                                "Type": "Role",
+                                "Role": {"Compute": "EvolveRoleChange"}
+                            },
+                            {
+                                "Type": "SetInteractable",
+                                "Interactable": false
+                            },
+                            {
+                                "Type": "ParentState",
+                                "State": "Idle"
+                            },
+                            {
+                                "Type": "State",
+                                "State": ".Default"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {"$Comment": "Evolution",
+                "Enabled": {"Compute": "CanEvolve"},
+                "Sensor": {"Type": "State","State": ".Default"},
+                "TreeMode": true,
+                "Instructions": [
+                    {
+                        "InvertTreeModeResult": true,
+                        "Sensor": {
+                            "Type": "Not",
+							"Sensor":{
+								"Type": "Self",
+								"Filters": [
+									{
+										"Type": "Stat",
+										"Stat": "Lvl",
+										"StatTarget": "Value",
+										"RelativeTo": "Lvl",
+										"RelativeToTarget": "Min",
+										"ValueRange": {"Compute": "EvolveRequiredLevel"}
+									}
+								]
+							}
+                        },
+                        "Actions": [{"Type": "Nothing"}]
+                    },
+                    {
+                        "InvertTreeModeResult": true,
+                        "Continue": true,
+                        "Sensor": {"Type": "Any"},
+                        "Actions": [
+                            {
+                                "Type": "SetInteractable",
+                                "Interactable": true,
+                                "Hint": "portablemonstrosities.interactionHints.evolve"
+                            }
+                        ]
+                    },
+                    {
+                        "Sensor": {"Type": "HasInteracted"},
+                        "Instructions": [
+                            {
+                                "Sensor": {"Type": "Any"},
+                                "Actions":[
+                                    {
+                                        "Type": "ApplyEntityEffect",
+                                        "UseTarget": false,
+                                        "EntityEffect": "Pkmn_Evolving"
+                                    },
+                                    {"Type": "State","State": ".Evolving"},
+                                    {
+                                        "Type": "SpawnParticles",
+                                        "ParticleSystem": "Hearts",
+                                        "Offset": {"Compute": "ParticleOffset"},
+                                        "TargetNodeName": "Head"
+                                    },
+                                    {
+                                        "Type": "Timeout",
+                                        "Delay": [3,3],
+                                        "Action":{
+                                            "Type": "Role",
+                                            "Role": {"Compute": "EvolveRoleChange"}
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Sensor": {
+                    "Type": "Not",
+                    "Sensor": {
+                        "$Comment": "Check the negative first so we can exit early and avoid the rest of the logic",
+                        "Type": "CanInteract",
+                        "ViewSector": 90
+                    }
+                },
+                "Actions": [
+                    {
+                        "Type": "SetInteractable",
+                        "Interactable": false
+                    }
+                ]
+            }
+        ]
+    },
+    "Type": "Component"
+}

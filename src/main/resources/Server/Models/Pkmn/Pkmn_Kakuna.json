@@ -1,0 +1,93 @@
+{
+  "Parent": "Scarak_Louse",
+  "Model": "NPC/Pkmn/Kakuna/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Kakuna/Models/Texture.png",
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Metapod/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Metapod/Animations/Default/Walk.blockyanim",
+          "Speed": 2.5
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Metapod/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Metapod/Animations/Default/Run.blockyanim",
+          "Speed": 1.5
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Metapod/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.3
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Metapod/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.3
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Metapod/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.3
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Scarak_Louse/Animations/Default/Alerted.blockyanim",
+          "BlendingDuration": 0.2,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Kakuna_Cry"
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Scarak_Louse/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Kakuna_Cry"
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      360,
+      313,
+      355
+    ],
+    "Translation": [
+      -1,
+      -43
+    ]
+  }
+}

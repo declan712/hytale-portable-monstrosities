@@ -1,0 +1,460 @@
+{
+  "Model": "NPC/Pkmn/Golbat/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Golbat/Models/Texture.png",
+  "EyeHeight": 0.7,
+  "CrouchOffset": -0.1,
+  "HitBox": {
+    "Max": {
+      "X": 0.4,
+      "Y": 0.9,
+      "Z": 0.4
+    },
+    "Min": {
+      "X": -0.4,
+      "Y": 0,
+      "Z": -0.4
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Walk.blockyanim"
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Run.blockyanim"
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Run_Backward.blockyanim"
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Sprint.blockyanim"
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "StepWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Step_Walk.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "StepRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Step_Run.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "StepSprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Step_Sprint.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "JumpSprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Golbat_Cry"
+        }
+      ]
+    },
+    "Curious": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Flavor/Curious.blockyanim"
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Idle.blockyanim",
+          "SoundEventId": "SFX_Pkmn_Golbat_Cry"
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Idle.blockyanim",
+          "Speed": 1.25
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Idle.blockyanim",
+          "Speed": 1.5
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly.blockyanim",
+          "SoundEventId": "SFX_Bat_Alerted"
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly.blockyanim",
+          "Speed": 1.25,
+          "SoundEventId": "SFX_Bat_Alerted"
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly.blockyanim",
+          "Speed": 1.5,
+          "SoundEventId": "SFX_Bat_Alerted"
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Backward.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Backward.blockyanim",
+          "Speed": 1.25
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Backward.blockyanim",
+          "Speed": 1.5
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Fast.blockyanim"
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Fast.blockyanim",
+          "Speed": 1.25
+        },
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Fly/Fly_Fast.blockyanim",
+          "Speed": 1.5
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Bat_Hurt"
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Death.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Bat_Death"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Sleep.blockyanim"
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Golbat_Cry"
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim_Idle.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim_Float.blockyanim"
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim_Sink.blockyanim"
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim_Backward.blockyanim"
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Swim/Swim_Fast.blockyanim"
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Idle.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Walk.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Default/Run.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "HurtFly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Hurt_Fly.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Bat_Hurt"
+        }
+      ]
+    },
+    "DeathFly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Death_Fly.blockyanim",
+          "BlendingDuration": 0.6,
+          "SoundEventId": "SFX_Bat_Death"
+        }
+      ]
+    },
+    "DeathFlyImpact": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Death_Fly_Impact.blockyanim",
+          "BlendingDuration": 0.05,
+          "Looping": false
+        }
+      ]
+    },
+    "HurtSwim": {
+      "Animations": [
+        {
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Hurt_Swim.blockyanim",
+          "SoundEventId": "SFX_Bat_Hurt"
+        }
+      ]
+    },
+    "DeathSwim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Death_Swim.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Bat_Death"
+        }
+      ]
+    },
+    "HurtDrown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Hurt_Drown.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Bat_Hurt"
+        }
+      ]
+    },
+    "DeathDrown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Zubat/Animations/Damage/Death_Drown.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Bat_Death"
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      0,
+      34,
+      0
+    ],
+    "Translation": [
+      0,
+      -53
+    ]
+  }
+}

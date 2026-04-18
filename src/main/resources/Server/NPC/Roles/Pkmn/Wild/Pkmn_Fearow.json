@@ -1,0 +1,43 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Flying_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Fearow",
+    "AttitudeGroup": "Prey",
+    "FlockArray": [
+      "Pkmn_Spearow",
+      "Pkmn_Fearow"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Crop_Corn_Item"
+    ],
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 20,
+    "WildLevelMax": 45,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Fearow_Tamed",
+    "IsTameable": true,
+    "DropList": "Drop_Chicken",
+    "MaxSpeed": 10,
+    "AlertedActionRange": 4,
+    "AbsoluteDetectionRange": 1.5,
+    "ProduceItem": "Food_Egg",
+    "ProduceTimeout": [
+      "PT18H",
+      "PT48H"
+    ],
+    "Timid": false,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Fearow",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Fearow.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

@@ -155,10 +155,6 @@
 			"Value": 2,
 			"Description": "The maximum climb height, in blocks."
 		},
-		"DropHeight": {
-            "Value": 5,
-            "Description": "Max drop height"
-        },
 		"AttitudeGroup": {
 			"Value": "Predators",
 			"Description": "The attitude group this NPC belongs to."
@@ -593,10 +589,7 @@
 			"JumpDescentSteepness": 8,
 			"MaxClimbHeight": {
 				"Compute": "ClimbHeight"
-			},
-            "DropHeight": {
-                "Compute": "DropHeight"
-            }
+			}
 		},
 		{
 		"Type": "Dive",
@@ -766,15 +759,9 @@
 	},
 	"Instructions": [
 		{"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
-			"Sensor": {
-				"Type": "State",
-				"State": "Init"
-			},
+			"Sensor": {"Type": "State","State": "Init"},
 			"Instructions": [
 				{
-					"ActionsBlocking": true,
-					"Actions": [
-					{
 					"Continue":true,
 					"Enabled": {"Compute": "!isEmpty(Type1)"},
 					"Actions":[
@@ -798,12 +785,7 @@
 						}
 					]
 				},
-						{
-							"Type": "State",
-							"State": "Idle"
-						}
-					]
-				}
+				{"Actions":[{"Type": "State","State": "Idle"}]}
 			]
 		},
 		{"$Comment": "This is separate so it can run all the time regardless of the rest of the script",
@@ -3795,7 +3777,7 @@
 			"Compute": "IsHarvestable || IsMountable || CanEvolve"
 		},
 		"Instructions": [
-			{"$Comment": "Evolvution",
+			{"$Comment": "Evolution",
                 "Enabled": {"Compute": "CanEvolve"},
                 "TreeMode": true,
                 "Instructions": [

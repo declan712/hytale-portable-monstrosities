@@ -10,6 +10,10 @@
 			"Value": [45, 49, 49, 65, 65, 45],
 			"Description": "Base stats: HP/Atk/Def/SpAtk/SpDef/Spe"
 		},
+    "CaptureDifficulty": {
+      "Value": 0.45,
+      "Description": "1.0 = trivial, 0.05 = legendary. Uses Gen-III catch formula: catchValue = hpFactor * captureDifficulty * ballBonus. Typical values: common = 0.45, uncommon = 0.20, rare = 0.10, pseudo-legendary = 0.05."
+    },
     "WildLevelMin": {
 			"Value": 5,
 			"Description": "Level for this Pkmn to spawn with in the wild"
@@ -678,7 +682,7 @@
       },
       "MaxSinkSpeed": 5,
       "MaxClimbSpeed": 5,
-      "MinAirSpeed": 3,
+      "MinAirSpeed": 0,
       "Acceleration": 5,
       "MinHeightOverGround": {
         "Compute": "MinHeightOverGround"

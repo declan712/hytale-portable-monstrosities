@@ -155,10 +155,6 @@
 			"Value": 2,
 			"Description": "The maximum climb height, in blocks."
 		},
-		"DropHeight": {
-            "Value": 5,
-            "Description": "Max drop height"
-        },
 		"AttitudeGroup": {
 			"Value": "Predators",
 			"Description": "The attitude group this NPC belongs to."
@@ -593,10 +589,7 @@
 			"JumpDescentSteepness": 8,
 			"MaxClimbHeight": {
 				"Compute": "ClimbHeight"
-			},
-            "DropHeight": {
-                "Compute": "DropHeight"
-            }
+			}
 		}
 	],
 	"StateTransitions": [
@@ -751,10 +744,7 @@
 	},
 	"Instructions": [
 		{"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
-			"Sensor": {
-				"Type": "State",
-				"State": "Init"
-			},
+			"Sensor": {"Type": "State","State": "Init"},
 			"Instructions": [
 				{
 					"Continue":true,
@@ -780,10 +770,7 @@
 						}
 					]
 				},
-				{
-					"ActionsBlocking": true,
-					"Actions": [{"Type": "State","State": "Idle"}]
-				}
+				{"Actions":[{"Type": "State","State": "Idle"}]}
 			]
 		},
 		{"$Comment": "This is separate so it can run all the time regardless of the rest of the script",
@@ -791,9 +778,7 @@
 			"Instructions": [
 				{"$Comment": "Join player flock",
                     "Continue": true,
-                    "Sensor": {
-                        "Type": "Any"
-                    },
+                    "Sensor": {"Type": "Any"},
                     "Instructions": [
                         {
                             "Sensor": {"Type": "Player","Range": 30},
@@ -3775,95 +3760,26 @@
 			"Compute": "IsHarvestable || IsMountable || CanEvolve"
 		},
 		"Instructions": [
-			{"$Comment": "Evolvution",
-                "Enabled": {"Compute": "CanEvolve"},
-                "TreeMode": true,
-                "Instructions": [
-                    {
-                        "$TODO": "Add combat, alerted, flee?",
-                        "InvertTreeModeResult": true,
-                        "Sensor": {
-                            "$Comment": "Check the negative first so we can exit early and avoid the rest of the logic",
-                            "Type": "State",
-                            "State": "Sleep"
-                        },
-                        "Actions": [{"Type": "Nothing"}]
-                    },
-                    {
-                        "InvertTreeModeResult": true,
-                        "Sensor": {
-                            "Type": "Not",
-							"Sensor":{
-								"Type": "Self",
-								"Filters": [
-									{
-										"Type": "Stat",
-										"Stat": "Lvl",
-										"StatTarget": "Value",
-										"RelativeTo": "Lvl",
-										"RelativeToTarget": "Min",
-										"ValueRange": {"Compute": "EvolveRequiredLevel"}
-									}
-								]
-							}
-                        },
-                        "Actions": [{"Type": "Nothing"}]
-                    },
-                    {
-                        "InvertTreeModeResult": true,
-                        "Continue": true,
-                        "Sensor": {"Type": "Any"},
-                        "Actions": [
-                            {
-                                "Type": "SetInteractable",
-                                "Interactable": true,
-                                "Hint": "portablemonstrosities.interactionHints.evolve"
-                            }
-                        ]
-                    },
-                    {
-                        "Sensor": {"Type": "HasInteracted"},
-                        "Instructions": [
-                            {
-                                "$Comment": "Get evolved",
-                                "Sensor": {"Type": "Any"},
-                                "Actions": [
-                                    {
-                                        "Type": "SpawnParticles",
-                                        "ParticleSystem": "Hearts",
-                                        "Offset": {"Compute": "ParticleOffset"},
-                                        "TargetNodeName": "Head"
-                                    },
-                                    {
-                                        "Type": "SetInteractable",
-                                        "Interactable": false
-                                    },
-                                    {
-                                        "Type": "Role",
-                                        "Role": {"Compute": "EvolveRoleChange"},
-                                        "State": "$Evolved"
-                                    }
-                                ]
-                            },
-                            {
-                                "Actions": [
-                                    {
-                                        "Type": "PlayAnimation",
-                                        "Slot": "Status",
-                                        "Animation": "Alerted"
-                                    },
-                                    {
-                                        "Type": "SpawnParticles",
-                                        "TargetNodeName": "Head",
-                                        "ParticleSystem": {"Compute": "AttractiveItemSetParticles"},
-                                        "Offset": {"Compute": "ParticleOffset"}
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
+			{"$Comment": "Evolve",
+				"$TODO": "combat, alerted, fleeing?",
+				"Sensor": {
+					"Type": "Not",
+					"Sensor":{"Type": "State","State": "Sleep"}
+				},
+				"Instructions":[
+					{
+						"Reference": "Component_Instruction_Interaction_Evolution",
+						"Modify": {
+							"_ExportStates": ["Idle"],
+							"CanEvolve":{"Compute": "CanEvolve"},
+							"ParticleOffset":{"Compute": "ParticleOffset"},
+							"EvolveRequiredItem":{"Compute": "EvolveRequiredItem"},
+							"EvolveRequiredLevel":{"Compute": "EvolveRequiredLevel"},
+							"EvolveRoleChange":{"Compute": "EvolveRoleChange"}
+						}
+					}
+				]
+			},
 			{"$Comment": "Harvest",
 				"Enabled": {"Compute": "IsHarvestable"},
 				"Instructions": [

@@ -1,0 +1,31 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Flying_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T1_Chitin",
+    "Type1": "BugType",
+    "Type2": "PoisonType",
+    "CanEvolve": false,
+    "IsMountable": false,
+    "Appearance": "Pkmn_Beedrill",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "AttitudeGroup": "Predators",
+    "MaxSpeed": 7,
+    "WanderRadius": 20,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 3,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Beedrill.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

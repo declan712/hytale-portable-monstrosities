@@ -1,23 +1,9 @@
 {
-  "Parent": "DamageEntityParent",
-  "DamageCalculator": {
-    "BaseDamage": {
-      "Dark": 60
-    }
+  "Type": "ApplyEffect",
+  "RunTime": 0.2,
+  "Effects": {
+    "WorldSoundEventId": "SFX_Pkmn_Potion",
+    "LocalSoundEventId": "SFX_Pkmn_Potion"
   },
-  "DamageEffects": {
-    "Knockback": {
-      "Force": 1,
-      "RelativeX": 0,
-      "RelativeZ": 5,
-      "VelocityY": 5
-    },
-    "WorldSoundEventId": "SFX_Pkmn_Damage",
-    "LocalSoundEventId": "SFX_Pkmn_Damage",
-    "WorldParticles": [
-      {
-        "SystemId": "Impact_Sword_Basic"
-      }
-    ]
-  }
+  "EffectId": "Pkmn_Harden"
 }

@@ -2,11 +2,12 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
-    "Appearance": "Pkmn_Weedle",
+    "Appearance": "Pkmn_Kakuna",
     "AttitudeGroup": "Prey",
     "FlockArray": [
       "Pkmn_Weedle",
-      "Pkmn_Kakuna"
+      "Pkmn_Kakuna",
+      "Pkmn_Beedrill"
     ],
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
@@ -15,6 +16,7 @@
     "Type2": "PoisonType",
     "WildLevelMin": 7,
     "WildLevelMax": 10,
+    "CaptureDifficulty": 0.85,
     "AttractiveItemSetParticles": "Want_Food_Corn",
     "TameRoleChange": "Pkmn_Kakuna_Tamed",
     "IsTameable": true,
@@ -24,7 +26,7 @@
     "AbsoluteDetectionRange": 1.5,
     "Timid": true,
     "IsMemory": true,
-    "MemoriesNameOverride": "Weedle",
+    "MemoriesNameOverride": "Kakuna",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     }

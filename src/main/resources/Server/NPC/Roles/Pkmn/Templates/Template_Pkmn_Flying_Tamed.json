@@ -606,7 +606,7 @@
 			},
 			"MaxSinkSpeed": 5,
 			"MaxClimbSpeed": 5,
-			"MinAirSpeed": 3,
+			"MinAirSpeed": 0,
 			"Acceleration": 5,
 			"MinHeightOverGround": {
 				"Compute": "MinHeightOverGround"
@@ -770,10 +770,7 @@
 	},
 	"Instructions": [
 		{"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
-			"Sensor": {
-				"Type": "State",
-				"State": "Init"
-			},
+			"Sensor": {"Type": "State","State": "Init"},
 			"Instructions": [
 				{
 					"Continue":true,

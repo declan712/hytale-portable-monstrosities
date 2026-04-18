@@ -1,21 +1,20 @@
 {
-  "ModelOverride": {
-    "Texture": "NPC/Pkmn/Template_Quad/Models/Evolving.png",
-    "Model": "NPC/Pkmn/Template_Quad/Models/Model.blockymodel"
-  },
-  "Duration": 2,
+  "Duration": 3,
   "ApplicationEffects": {
     "Particles": [
       {
         "SystemId": "Memory_Projectile_Sparks",
         "Color": "#fff6bc",
-        "Scale": 0.25,
+        "Scale": 0.1,
+        "PositionOffset": {
+          "Y": 0
+        },
         "TargetEntityPart": "Entity",
-        "TargetNodeName": "Pelvis"
+        "TargetNodeName": "Chest"
       },
       {
         "SystemId": "Flying_Orb",
-        "Scale": 10,
+        "Scale": 2,
         "Color": "#ffd700",
         "RotationOffset": {
           "Yaw": 0,
@@ -23,19 +22,26 @@
           "Roll": 0
         },
         "PositionOffset": {
-          "Y": 0.5,
-          "Z": 1,
-          "X": -2
+          "Y": 0,
+          "Z": 0,
+          "X": 0
         },
         "TargetEntityPart": "Entity",
-        "TargetNodeName": "Pelvis"
+        "TargetNodeName": "Chest"
       }
     ],
     "EntityTopTint": "#fffbb9",
     "EntityBottomTint": "#fff9d7",
     "EntityAnimationId": "Alerted",
     "LocalSoundEventId": "SFX_Pokeball_Return",
-    "WorldSoundEventId": "SFX_Pokeball_Return"
+    "WorldSoundEventId": "SFX_Pokeball_Return",
+    "MovementEffects": {
+      "DisableAll": true
+    },
+    "HorizontalSpeedMultiplier": 0,
+    "ModelVFXId": "VFX_Pkmn_Evolving"
   },
-  "RemovalBehavior": "Duration"
+  "RemovalBehavior": "Duration",
+  "WorldRemovalSoundEventId": "SFX_Pkmn_Fanfare_Item_Get_1",
+  "LocalRemovalSoundEventId": "SFX_Pkmn_Fanfare_Item_Get_1"
 }

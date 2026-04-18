@@ -1,0 +1,32 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Flying_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Golbat",
+    "FlockArray": [
+      "Pkmn_Zubat",
+      "Pkmn_Golbat"
+    ],
+    "Type1": "PoisonType",
+    "Type2": "FlyingType",
+    "MaxSpeed": 12,
+    "WildLevelMin": 22,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.4,
+    "DropList": "Drop_Pkmn_T1_Hide",
+    "TameRoleChange": "Pkmn_Golbat_Tamed",
+    "WanderRadius": 15,
+    "IsMemory": true,
+    "MemoriesCategory": "Avian",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "DayTimePeriod": [17.99,6.01]
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Golbat.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
