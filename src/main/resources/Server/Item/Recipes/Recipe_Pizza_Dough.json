@@ -1,0 +1,14 @@
+{
+    "Input": [
+        {"ItemId": "Ingredient_Flour",                      "Quantity": 10},
+        {"ItemId": "*Container_Bucket_State_Filled_Water",  "Quantity": 1}
+    ],
+    "BenchRequirement": [
+        {"Id": "Bench_Dough_Mixer",     "Type": "Processing"}
+    ],
+    "TimeSeconds": 20,
+    "Output": [
+        {"ItemId": "Ingredient_Pizza_Dough",    "Quantity": 10},
+        {"ItemId": "Container_Bucket",          "Quantity": 1}
+    ]
+}
