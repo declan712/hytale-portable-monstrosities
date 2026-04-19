@@ -747,28 +747,13 @@
 			"Sensor": {"Type": "State","State": "Init"},
 			"Instructions": [
 				{
-					"Continue":true,
-					"Enabled": {"Compute": "!isEmpty(Type1)"},
-					"Actions":[
-						{
-							"Type": "ApplyEntityEffect",
-							"UseTarget": false,
-							"Once": true,
-							"EntityEffect": {"Compute":"Type1"}
-						}
-					]
-				},
-				{
-					"Continue":true,
-					"Enabled": {"Compute": "!isEmpty(Type2)"},
-					"Actions":[
-						{
-							"Type": "ApplyEntityEffect",
-							"UseTarget": false,
-							"Once": true,
-							"EntityEffect": {"Compute":"Type2"}
-						}
-					]
+				"Reference": "Component_Instruction_Pkmn_Init",
+				"Modify": {
+					"_ExportStates":["Idle"],
+					"Type1": {"Compute":"Type1"},
+					"Type2": {"Compute":"Type2"},
+					"IsWild": false
+				}
 				},
 				{"Actions":[{"Type": "State","State": "Idle"}]}
 			]
@@ -3260,11 +3245,6 @@
 						},
 						{
 							"Actions": [
-								{
-									"Type": "SetStat",
-									"Stat": "Health",
-									"Value": 1000000
-								},
 								{
 									"Type": "State",
 									"State": "Idle"

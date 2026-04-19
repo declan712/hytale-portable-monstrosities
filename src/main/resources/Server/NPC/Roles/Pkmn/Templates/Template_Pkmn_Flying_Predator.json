@@ -849,59 +849,21 @@
 	},
   "Instructions": [
     {"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
-			"Sensor": {
-				"Type": "State",
-				"State": "Init"
-			},
+			"Sensor": {"Type": "State","State": "Init"},
 			"Instructions": [
-				{
-          "Continue":true,
-					"Actions": [
-            {
-              "Type": "SetStat",
-              "Stat": "Lvl",
-              "Value": {"Compute":"randomInRange(WildLevelMin, WildLevelMax)"}
-            }
-					]
-				},
         {
-          "Continue":true,
-          "ActionsBlocking": true,
-          "Actions":[
-            {
-							"Type": "Attack",
-							"Attack": {"Compute": "SpawnAttack"},
-							"AttackPauseRange": [0, 0]
-						}
-          ]
-				},
-        {
-          "Continue":true,
-          "Enabled": {"Compute": "!isEmpty(Type1)"},
-          "Actions":[
-            {
-              "Type": "ApplyEntityEffect",
-              "UseTarget": false,
-              "Once": true,
-              "EntityEffect": {"Compute":"Type1"}
-            }
-          ]
-				},
-        {
-          "Continue":true,
-          "Enabled": {"Compute": "!isEmpty(Type2)"},
-          "Actions":[
-            {
-              "Type": "ApplyEntityEffect",
-              "UseTarget": false,
-              "Once": true,
-              "EntityEffect": {"Compute":"Type2"}
-            }
-          ]
+          "Reference": "Component_Instruction_Pkmn_Init",
+          "Modify": {
+            "_ExportStates":["Idle"],
+            "Type1": {"Compute":"Type1"},
+            "Type2": {"Compute":"Type2"},
+            "IsWild": true,
+            "WildLevelMin": {"Compute": "WildLevelMin"},
+            "WildLevelMax": {"Compute": "WildLevelMax"},
+            "CaptureDifficulty": {"Compute": "CaptureDifficulty"}
+          }
         },
-        {
-          "Actions":[{"Type": "State","State": "Idle"}]
-        }
+        {"Actions":[{"Type": "State","State": "Idle"}]}
 			]
 		},
     {

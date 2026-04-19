@@ -773,38 +773,15 @@
 			"Sensor": {"Type": "State","State": "Init"},
 			"Instructions": [
 				{
-					"Continue":true,
-					"Enabled": {"Compute": "!isEmpty(Type1)"},
-					"Actions":[
-						{
-							"Type": "ApplyEntityEffect",
-							"UseTarget": false,
-							"Once": true,
-							"EntityEffect": {"Compute":"Type1"}
-						}
-					]
+					"Reference": "Component_Instruction_Pkmn_Init",
+					"Modify": {
+						"_ExportStates":["Idle"],
+						"Type1": {"Compute":"Type1"},
+						"Type2": {"Compute":"Type2"},
+						"IsWild": false
+					}
 				},
-				{
-					"Continue":true,
-					"Enabled": {"Compute": "!isEmpty(Type2)"},
-					"Actions":[
-						{
-							"Type": "ApplyEntityEffect",
-							"UseTarget": false,
-							"Once": true,
-							"EntityEffect": {"Compute":"Type2"}
-						}
-					]
-				},
-				{
-					"ActionsBlocking": true,
-					"Actions": [
-						{
-							"Type": "State",
-							"State": "Idle"
-						}
-					]
-				}
+				{"Actions":[{"Type": "State","State": "Idle"}]}
 			]
 		},
 		{"$Comment": "This is separate so it can run all the time regardless of the rest of the script",
@@ -3296,11 +3273,6 @@
 						},
 						{
 							"Actions": [
-								{
-									"Type": "SetStat",
-									"Stat": "Health",
-									"Value": 1000000
-								},
 								{
 									"Type": "State",
 									"State": "Idle"

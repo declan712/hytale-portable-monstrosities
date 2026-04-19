@@ -520,8 +520,9 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
 
             commandBuffer.putComponent(newEntityRef,PkmnStatsComponent.getComponentType(),pkmnStats);
 
-            String nameplateText = SetCreatureNameplateInteraction.buildNamplateString(roleId, pkmnStats, null);
-            commandBuffer.putComponent(newEntityRef,Nameplate.getComponentType(),new Nameplate(nameplateText));
+            PkmnStatUtils.setPkmnNameplate(commandBuffer, newEntityRef, roleId, pkmnStats);
+            // String nameplateText = PkmnStatUtils.buildNamplateString(roleId, pkmnStats, null);
+            // commandBuffer.putComponent(newEntityRef,Nameplate.getComponentType(),new Nameplate(nameplateText));
         });
     }
 

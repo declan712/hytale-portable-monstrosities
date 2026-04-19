@@ -10,6 +10,7 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
 import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.entity.nameplate.Nameplate;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.EntityScaleComponent;
@@ -36,6 +37,15 @@ public class PkmnStatUtils {
     private static final String SPECIES_ICON_SUFFIX = ".png";
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
+    public static void setPkmnNameplate(
+        @Nonnull CommandBuffer<EntityStore> commandBuffer,
+        @Nonnull Ref<EntityStore> ref,
+        @Nonnull String roleName,
+        @Nonnull PkmnStatsComponent pkmnStats
+    ){
+        String nameplateString = buildNamplateString(roleName,pkmnStats,null);
+        commandBuffer.putComponent(ref,Nameplate.getComponentType(),new Nameplate(nameplateString));
+    }
 
     public static void applyMetadata(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
@@ -98,7 +108,6 @@ public class PkmnStatUtils {
         commandBuffer.putComponent(targetRef, EntityModule.get().getEntityScaleComponentType(), scaleComponent);
         commandBuffer.putComponent(targetRef, EntityStatMap.getComponentType(), stats);
     }
-
 
     public static PkmnCaptureMetadata captureMetadata(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
@@ -231,92 +240,6 @@ public class PkmnStatUtils {
         }
         return npcMeta;
     }
-
-
-    // /**
-    //  * Create {@link PkmnCaptureMetadata} for given {@code Ref<EntityStore>}<br>
-    //  * 
-    //  * @param commandBuffer
-    //  * @param targetRef
-    //  * @return [PkmnCaptureMetadata]
-    //  */
-    // @Nullable
-    // public static PkmnCaptureMetadata captureMetadata(
-    //     @Nonnull CommandBuffer<EntityStore> commandBuffer,
-    //     @Nonnull Ref<EntityStore> targetRef
-    // ) {
-    //     // LOGGER.atInfo().log("GetPkmnStats.read");
-    //     Store<EntityStore> store = commandBuffer.getExternalData().getStore();
-    //     if (store == null) return null;
-
-    //     NPCEntity npcComponent = (NPCEntity)
-    //         commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
-    //     if (npcComponent == null) return null;
-
-    //     DeathComponent deathComponent = (DeathComponent)
-    //         commandBuffer.getComponent(targetRef, DeathComponent.getComponentType());
-    //     if (deathComponent != null) return null;
-
-
-    //     // -- Get HP ----------
-    //     EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());
-    //     if (stats == null) return null;
-    //     IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
-    //     int             lvlIdx = assetMap.getIndex("Lvl");
-    //     int             expIdx = assetMap.getIndex("Exp");
-    //     int             healthIdx = DefaultEntityStatTypes.getHealth();
-    //     EntityStatValue health    = stats.get(healthIdx);
-    //     EntityStatValue lvl       = stats.get(lvlIdx);
-    //     EntityStatValue exp       = stats.get(expIdx);
-    //     if (health == null) return null;
-    //     float currentHp = health.get();
-    //     float maxHp     = health.getMax();
-    //     float currentExp = exp.get();
-    //     float currentLvl = lvl.get();
-
-        
-
-    //     // -- Get Scale ----------
-    //     float scale = 1f;
-    //     EntityScaleComponent scaleComponent = store.getComponent(
-    //         targetRef, EntityModule.get().getEntityScaleComponentType());
-    //     if (scaleComponent != null) scale = scaleComponent.getScale();
-    //     // TransformComponent targetTransform = store.getComponent(targetRef, EntityModule.get().getTransformComponentType());
-    //     // Vector3d targetPosition = targetTransform.getPosition();
-
-    //     // -- Get PkmnStatsComponent ----------
-    //     PkmnStatsComponent pokemonStats = (PkmnStatsComponent)
-    //         commandBuffer.getComponent(targetRef, PkmnStatsComponent.getComponentType());
-
-    //     String roleId = NPCPlugin.get().getName(npcComponent.getRoleIndex());
-    //     if(pokemonStats == null) {
-    //         pokemonStats = new PkmnStatsComponent();
-    //         String species = displayNameOf(roleId);
-    //         pokemonStats.setBaseStats(PkmnBaseStatList.fromMap(species));
-    //         // IVs are randomised by default in PokemonStatsComponent field initialiser
-    //     }
-
-    //     // -- Get PkmnCaptureMetadata ----------
-    //     PkmnCaptureMetadata captureMetadata = new PkmnCaptureMetadata();
-    //     captureMetadata.setCurrentHp(currentHp);
-    //     captureMetadata.setMaxHp(maxHp);
-    //     captureMetadata.setModelScale(scale);
-    //     captureMetadata.setLevel((int)(currentLvl));
-    //     captureMetadata.setExperience((long)(currentExp));
-    //     if (pokemonStats != null) {
-    //         captureMetadata.setBaseStats(pokemonStats.getBaseStats());
-    //         captureMetadata.setEvs(pokemonStats.getEvs());
-    //         captureMetadata.setIvs(pokemonStats.getIvs());
-    //         captureMetadata.setNature(pokemonStats.getNature());
-    //         captureMetadata.setNickname(pokemonStats.getNickname());
-    //         captureMetadata.setOwnerUuid(pokemonStats.getOwnerUuid());
-    //     }
-    //     // LOGGER.atInfo().log("GetPkmnStats.captureMetadata: currentExp="+String.valueOf(currentExp));
-    //     // LOGGER.atInfo().log("GetPkmnStats.captureMetadata: currentLvl="+String.valueOf(currentLvl));
-    //     // LOGGER.atInfo().log("GetPkmnStats.captureMetadata: Lvl="+String.valueOf(captureMetadata.getLevel()));
-    //     return captureMetadata;
-    // }
-    
 
     /**
      * Converts {@link PkmnCaptureMetadata} to {@link PkmnStatsComponent}]<br>
@@ -537,5 +460,28 @@ public class PkmnStatUtils {
     public static String resolveTameRole(@Nullable String wildRoleId) {
         if (wildRoleId == null || wildRoleId.isBlank()) return "";
         return wildRoleId.endsWith("_Tamed") ? wildRoleId : wildRoleId + "_Tamed";
+    }
+
+    public static String buildNamplateString(
+        @Nonnull String npcRoleId,
+        @Nonnull PkmnStatsComponent stats,
+        @Nullable String playerUuid
+    ){
+        String name = speciesFromRole(npcRoleId);
+        var nickname = stats.getNickname();
+        if(nickname != null && !nickname.isBlank()){
+            name=nickname;
+        }
+        if(isTamed(npcRoleId)){
+            name = "(-o-) "+name;
+        }
+        String lvl = String.valueOf(stats.getLevel());
+        return name+" ["+lvl+"]";
+    }
+
+    public static boolean filterByRoleName(String roleName) {
+        if(roleName.startsWith("Pkmn_")) return true;
+        if(roleName.startsWith("Lizard_Ground_")) return true;
+        return false;
     }
 }

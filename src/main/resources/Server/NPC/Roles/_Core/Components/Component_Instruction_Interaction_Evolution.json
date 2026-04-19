@@ -40,26 +40,11 @@
                     {
                         "ActionsBlocking": true,
                         "Actions": [
-                            {
-                                "Type": "Timeout",
-                                "Delay": [3,3]
-                            },
-                            {
-                                "Type": "Role",
-                                "Role": {"Compute": "EvolveRoleChange"}
-                            },
-                            {
-                                "Type": "SetInteractable",
-                                "Interactable": false
-                            },
-                            {
-                                "Type": "ParentState",
-                                "State": "Idle"
-                            },
-                            {
-                                "Type": "State",
-                                "State": ".Default"
-                            }
+                            {"Type": "SetInteractable","Interactable": false},
+                            {"Type": "Timeout","Delay": [2.5,2.5]},
+                            {"Type": "Role","Role": {"Compute": "EvolveRoleChange"}},
+                            {"Type": "ParentState","State": "Idle"},
+                            {"Type": "State","State": ".Default"}
                         ]
                     }
                 ]

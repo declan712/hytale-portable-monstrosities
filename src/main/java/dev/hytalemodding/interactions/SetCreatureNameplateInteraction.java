@@ -55,20 +55,17 @@ public class SetCreatureNameplateInteraction extends SimpleInstantInteraction {
             return;
         }
         String roleName = npcEntity.getRoleName();
-        if(!filterByRoleName(roleName)) {
+        if(!PkmnStatUtils.filterByRoleName(roleName)) {
             fail(interactionContext);
             return;
         }
 
-        String species = PkmnStatUtils.speciesFromRole(roleName);
-        // LOGGER.atInfo().log("Add nameplate to: "+species);
         PkmnCaptureMetadata metadata = PkmnStatUtils.captureMetadata(commandBuffer,ref);
         PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(metadata);
 
         PkmnStatUtils.apply(store, commandBuffer, ref, pkmnStats);
 
-        String nameplateString = buildNamplateString(roleName,pkmnStats,null);
-        commandBuffer.putComponent(ref,Nameplate.getComponentType(),new Nameplate(nameplateString));
+        PkmnStatUtils.setPkmnNameplate(commandBuffer,ref,roleName,pkmnStats);
         next(interactionContext);
         return;
     }
@@ -81,31 +78,5 @@ public class SetCreatureNameplateInteraction extends SimpleInstantInteraction {
         interactionContext.getState().state = InteractionState.Failed;
     }
 
-    public static  String buildNamplateString(
-        @Nonnull String npcRoleId,
-        @Nonnull PkmnStatsComponent stats,
-        @Nullable String playerUuid
-    ){
-        String name = PkmnStatUtils.speciesFromRole(npcRoleId);
-        var nickname = stats.getNickname();
-        if(nickname != null && !nickname.isBlank()){
-            name=nickname;
-        }
-        if(PkmnStatUtils.isTamed(npcRoleId)){
-            name = "(-o-) "+name;
-        }
-        String lvl = String.valueOf(stats.getLevel());
-        return name+" ["+lvl+"]";
-    }
-
-
-    
-
-    
-    public static boolean filterByRoleName(String roleName) {
-        if(roleName.startsWith("Pkmn_")) return true;
-        if(roleName.startsWith("Lizard_Ground_")) return true;
-        return false;
-    }
 
 }

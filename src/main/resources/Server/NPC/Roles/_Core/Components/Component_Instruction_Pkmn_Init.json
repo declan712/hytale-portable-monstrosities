@@ -4,19 +4,60 @@
         "_ImportStates": [
             "Idle"
         ],
-		"Type1": {
+        "Type1": {
 			"Value": "GrassType",
 			"Description": "Primary elemental type of this Pokémon (e.g. Fire, Water, Grass, Rock, Ground, Electric, Ice, Poison, Psychic, Bug, Ghost, Dragon, Flying, Fighting, Normal). Used to compute damage resistances and weaknesses."
 		},
 		"Type2": {
 			"Value": "",
 			"Description": "Secondary elemental type (optional). Leave empty for single-type Pokémon."
-		}
+		},
+        "IsWild": {
+            "Value": false,
+            "Description": "If true, does some extra stat calcs"
+        },
+        "WildLevelMin": {
+			"Value": 5,
+			"Description": "Level for this Pkmn to spawn with in the wild"
+		},
+        "WildLevelMax": {
+			"Value": 20,
+			"Description": "Level for this Pkmn to spawn with in the wild"
+		},
+        "CaptureDifficulty": {
+            "Value": 0.45,
+            "Description": "1.0 = trivial, 0.05 = legendary. Uses Gen-III catch formula: catchValue = hpFactor * captureDifficulty * ballBonus. Typical values: common = 0.45, uncommon = 0.20, rare = 0.10, pseudo-legendary = 0.05."
+        }
     },
     "Content": {
         "Instructions": [
             {"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
                 "Instructions": [
+                    {
+                        "Enabled":{"Compute":"IsWild"},
+                        "Continue":true,
+                        "Actions":[
+                            {
+                                "Type": "SetStat",
+                                "Stat": "Lvl",
+                                "Value": {"Compute":"randomInRange(WildLevelMin, WildLevelMax)"}
+                            },
+                            {
+                                "Type": "SetStat",
+                                "Stat": "CaptureDifficulty",
+                                "Value": {"Compute":"CaptureDifficulty"}
+                            }
+                        ]
+                    },
+                    {
+                        "Actions":[
+                            {
+                                "Type": "Attack",
+                                "Attack": "Root_Pkmn_Init_Stats",
+                                "AttackPauseRange": [0, 0]
+                            }
+                        ]
+                    },
                     {
                         "Continue":true,
                         "Enabled": {"Compute": "!isEmpty(Type1)"},
@@ -38,6 +79,17 @@
                                 "UseTarget": false,
                                 "Once": true,
                                 "EntityEffect": {"Compute":"Type2"}
+                            }
+                        ]
+                    },
+                    {
+                        "Continue":true,
+                        "ActionsBlocking": true,
+                        "Actions":[
+                            {
+                                "Type": "Attack",
+                                "Attack": "Root_Pkmn_Init_Stats",
+                                "AttackPauseRange": [0, 0]
                             }
                         ]
                     },
