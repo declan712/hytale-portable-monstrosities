@@ -22,6 +22,7 @@ import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.EntityScaleComponent;
 import com.hypixel.hytale.server.core.modules.entity.component.PersistentModel;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
+import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.item.ItemComponent;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatValue;
@@ -92,18 +93,21 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
         CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
         if (commandBuffer == null) { fail(context); return; }
 
-        Ref<EntityStore> targetRef  = context.getTargetEntity();
-        Ref<EntityStore> throwerRef = context.getOwningEntity();
-        if (targetRef == null) { fail(context); return; }
-
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         World world = commandBuffer.getExternalData().getWorld();
         if (store == null || world == null) { fail(context); return; }
 
-        // Get tamed role
+        Ref<EntityStore> throwerRef = context.getOwningEntity();
+        Ref<EntityStore> targetRef  = context.getTargetEntity();
+        if (targetRef == null) { fail(context); return; }
+
         NPCEntity npcEntity = store.getComponent(targetRef, NPCEntity.getComponentType());
         if (npcEntity == null) { fail(context); return; }
 
+        DeathComponent deathComponent = store.getComponent(targetRef, DeathComponent.getComponentType());
+        if (deathComponent != null) { fail(context); return; }
+
+        // Get tamed role
         String wildRoleId = NPCPlugin.get().getName(npcEntity.getRoleIndex());
         String tameRoleId = PkmnStatUtils.resolveTameRole(wildRoleId);
 
@@ -140,13 +144,14 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
 
         PkmnCaptureMetadata captureMeta = PkmnStatUtils.captureMetadata(commandBuffer,targetRef);
     
-        CapturedNPCMetadata npcMeta = 
-            PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,null,fullIcon);
-
-
         ItemStack ball         = new ItemStack(captureItemId, 1);
+
+        CapturedNPCMetadata npcMeta = 
+            PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,ball,fullIcon);
+
         ItemStack withNpc      = ball.withMetadata(CapturedNPCMetadata.KEYED_CODEC,  npcMeta);
         ItemStack capturedBall = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta);
+
 
         // drop as
         final Vector3d dropPos   = pos;

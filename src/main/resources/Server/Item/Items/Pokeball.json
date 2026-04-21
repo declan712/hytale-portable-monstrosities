@@ -136,7 +136,7 @@
         "Pokeball_Escape"
       ]
     },
-    "Capture_Effect" : {
+    "Capture_Effect": {
       "Interactions": [
         {
           "Type": "ApplyEffect",
@@ -162,7 +162,7 @@
         }
       ]
     },
-    "Capture_Success" : {
+    "Capture_Success": {
       "Interactions": [
         {
           "Type": "CaptureWildCreature",
@@ -260,6 +260,155 @@
     "AllEntities": false,
     "UseDistance": {
       "Adventure": 10
+    }
+  },
+  "State": {
+    "Active": {
+      "Animation": "Items/Pokeball/Open.blockyanim",
+      "Model": "Items/Pokeball/Pokeball.blockymodel",
+      "DropOnDeath": false,
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Pokeball.nameFull",
+        "Description": "portablemonstrosities.items.Pokeball.description"
+      },
+      "Icon": "Icons/Items/Pokeball_Open.png",
+      "Interactions": {
+        "Primary": {
+          "Interactions": [
+            {
+              "Type": "Simple",
+              "Effects": {
+                "ItemAnimationId": "Interact"
+              },
+              "RunTime": 0.05,
+              "Next": {
+                "Type": "UseCaptureOrb",
+                "FullIcon": "Icons/Items/Pokeball_Full.png",
+                "AcceptedNpcGroups": [
+                  "Pokeball"
+                ],
+                "CaptureItemId": "Pokeball",
+                "RunTime": 0,
+                "HorizontalSpeedMultiplier": 0.5,
+                "Failed": {
+                  "Type": "ReturnPkmn",
+                  "HorizontalSpeedMultiplier": 0.1,
+                  "Failed": {
+                    "Type": "Simple",
+                    "Effects": {
+                      "WorldSoundEventId": "SFX_Pkmn_Bump",
+                      "LocalSoundEventId": "SFX_Pkmn_Bump",
+                      "ItemAnimationId": "Interact"
+                    },
+                    "RunTime": 0.25,
+                    "HorizontalSpeedMultiplier": 0.5
+                  },
+                  "Effects": {
+                    "WorldSoundEventId": "SFX_Pkmn_Confirm",
+                    "LocalSoundEventId": "SFX_Pkmn_Confirm",
+                    "Particles": [
+                      {
+                        "TargetEntityPart": "PrimaryItem",
+                        "SystemId": "Laser_Impact",
+                        "Color": "#ff0000",
+                        "Scale": 2,
+                        "TargetNodeName": "Origin"
+                      }
+                    ]
+                  },
+                  "CancelOnItemChange": true
+                },
+                "Effects": {}
+              }
+            }
+          ],
+          "Cooldown": {
+            "Id": "Pokeball",
+            "Cooldown": 1.0
+          }
+        },
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "SendMessage",
+              "Message": "CLEAR BALL METADATA (CANNOT BE UNDONE)"
+            }
+          ]
+        }
+      },
+      "Variant": true
+    },
+    "Fainted": {
+      "DropOnDeath": false,
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Pokeball.nameFainted",
+        "Description": "portablemonstrosities.items.Pokeball.description"
+      },
+      "Icon": "Icons/Items/Pokeball_Dead.png",
+      "Interactions": {
+        "Primary": {
+          "Interactions": [
+            {
+              "Type": "SendMessage",
+              "RunTime": 0.5,
+              "Message": "CANT DO THAT, HE DEAD"
+            }
+          ]
+        },
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "SendMessage",
+              "Message": "CANT DO THAT EITHER, STILL DEAD"
+            }
+          ]
+        }
+      },
+      "Variant": true
+    },
+    "Full": {
+      "DropOnDeath": false,
+      "TranslationProperties": {
+        "Name": "portablemonstrosities.items.Pokeball.nameFull",
+        "Description": "portablemonstrosities.items.Pokeball.description"
+      },
+      "Icon": "Icons/Items/Pokeball_Full.png",
+      "Interactions": {
+        "Primary": {
+          "Interactions": [
+            {
+              "Type": "Simple",
+              "Effects": {
+                "ItemAnimationId": "Interact"
+              },
+              "RunTime": 0.05,
+              "Next": {
+                "Type": "UseCaptureOrb",
+                "FullIcon": "Icons/Items/Pokeball_Full.png",
+                "AcceptedNpcGroups": [
+                  "Pokeball"
+                ],
+                "CaptureItemId": "Pokeball",
+                "RunTime": 0.05,
+                "HorizontalSpeedMultiplier": 0.7
+              }
+            }
+          ],
+          "Cooldown": {
+            "Id": "Pokeball",
+            "Cooldown": 1.0
+          }
+        },
+        "Secondary": {
+          "Interactions": [
+            {
+              "Type": "SendMessage",
+              "Message": "RIGHT CLICK"
+            }
+          ]
+        }
+      },
+      "Variant": true
     }
   }
 }

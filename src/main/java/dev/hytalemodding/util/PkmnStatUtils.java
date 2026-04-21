@@ -9,6 +9,7 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
+import com.hypixel.hytale.server.core.entity.Entity;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.nameplate.Nameplate;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
@@ -25,6 +26,7 @@ import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifie
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier.CalculationType;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
+import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
@@ -45,6 +47,34 @@ public class PkmnStatUtils {
     ){
         String nameplateString = buildNamplateString(roleName,pkmnStats,null);
         commandBuffer.putComponent(ref,Nameplate.getComponentType(),new Nameplate(nameplateString));
+    }
+
+    public static ItemStack linkNpcWithBall(
+        @Nonnull CommandBuffer<EntityStore> commandBuffer,
+        @Nonnull Ref<EntityStore> targetRef,
+        @Nonnull ItemStack ball
+    ) {
+        Store<EntityStore> store = commandBuffer.getExternalData().getStore();
+        if (store == null) return ball;
+
+        NPCEntity npcComponent = (NPCEntity)
+        commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
+        if (npcComponent == null) return ball;
+
+        DeathComponent deathComponent = (DeathComponent)
+        commandBuffer.getComponent(targetRef, DeathComponent.getComponentType());
+        if (deathComponent != null) return ball;
+
+        PkmnCaptureMetadata captureMetadata = (PkmnCaptureMetadata)
+            ball.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
+
+        UUIDComponent targetUuid = store.getComponent(targetRef, UUIDComponent.getComponentType());
+        String entityId = targetUuid.getUuid().toString();
+        captureMetadata.setNpcEntityUuid(entityId);
+
+        LOGGER.atInfo().log("released NPC with uuid: "+entityId);
+
+        return ball.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMetadata);
     }
 
     public static void applyMetadata(
@@ -110,22 +140,38 @@ public class PkmnStatUtils {
     }
 
     public static PkmnCaptureMetadata captureMetadata(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> targetRef
+    ){
+        return _captureMetadata(store,targetRef);
+    }
+
+    public static PkmnCaptureMetadata captureMetadata(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> targetRef
     ){
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         if (store == null) return null;
+        return _captureMetadata(store,targetRef);
+    }
 
+    private static PkmnCaptureMetadata _captureMetadata(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> targetRef
+    ) {
         NPCEntity npcComponent = (NPCEntity)
-            commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
+        store.getComponent(targetRef, NPCEntity.getComponentType());
         if (npcComponent == null) return null;
 
-        DeathComponent deathComponent = (DeathComponent)
-            commandBuffer.getComponent(targetRef, DeathComponent.getComponentType());
-        if (deathComponent != null) return null;
+        boolean isDead = store.getComponent(targetRef, DeathComponent.getComponentType()) != null;
+
+        if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
 
         EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());
-        if (stats == null) return null;
+        if (stats == null){ 
+            LOGGER.atInfo().log("NPC has no EntityStatMap"); 
+            return null;
+        }
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
         int             lvlIdx = assetMap.getIndex("Lvl");
         int             expIdx = assetMap.getIndex("Exp");
@@ -146,7 +192,7 @@ public class PkmnStatUtils {
         EntityStatValue spd       = stats.get(spdIdx);
 
         if (health == null) return null;
-        float currentHp = health.get();
+        float currentHp = isDead?0:health.get();
         float maxHp     = health.getMax();
         float currentExp = exp.get();
         float currentLvl = lvl.get();
@@ -167,7 +213,7 @@ public class PkmnStatUtils {
         int[] baseStats = PkmnBaseStatList.fromMap(toDisplayName(roleId));
 
         PkmnStatsComponent pkmnStats = (PkmnStatsComponent)
-            commandBuffer.getComponent(targetRef, PkmnStatsComponent.getComponentType());
+            store.getComponent(targetRef, PkmnStatsComponent.getComponentType());
 
         if(pkmnStats == null) {
             pkmnStats = new PkmnStatsComponent();
@@ -190,6 +236,7 @@ public class PkmnStatUtils {
         captureMetadata.setNature(pkmnStats.getNature());
         captureMetadata.setNickname(pkmnStats.getNickname());
         captureMetadata.setOwnerUuid(pkmnStats.getOwnerUuid());
+        captureMetadata.setNpcStatus(isDead?"Fainted":"Healthy");
         return captureMetadata;
     }
 

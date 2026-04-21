@@ -59,12 +59,18 @@ import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.util.PkmnBaseStatList;
 import dev.hytalemodding.util.PkmnStatUtils;
+import io.sentry.util.UUIDGenerator;
+import io.sentry.util.UUIDStringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import org.bson.BsonArray;
 import org.bson.BsonDocument;
+import org.bson.BsonElement;
+import org.bson.BsonString;
 
 /**
  * UseCaptureOrbInteraction<br>
@@ -288,7 +294,38 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             blockRef = BlockModule.ensureBlockEntity(worldChunk, pos.x, pos.y, pos.z);
         }
 
-        ItemStack emptyBall = item.withMetadata((BsonDocument) null);
+        // CapturedNPCMetadata existingMeta = (CapturedNPCMetadata)
+        //             item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
+
+        // ItemStack withNpc      = ball.withMetadata(CapturedNPCMetadata.KEYED_CODEC,  npcMeta);
+        // ItemStack capturedBall = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta);
+
+        PkmnCaptureMetadata existingCaptureMeta = item.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
+            LOGGER.atInfo().log("NPC IS not?");
+        if(existingCaptureMeta == null ){
+            fail(context);
+            return;
+        }
+        String npcStatus = existingCaptureMeta.getNpcStatus();
+        if (npcStatus==null) npcStatus="Healthy";
+        if(npcStatus == "Fainted"){
+            LOGGER.atInfo().log("NPC IS DEAD?");
+            fail(context);
+            return;
+        }
+        if(npcStatus == "Active"){
+            LOGGER.atInfo().log("NPC not currently in ball?");
+            fail(context);
+            return;
+        }
+        LOGGER.atInfo().log("NPC state: "+npcStatus);
+        
+        existingCaptureMeta.setNpcStatus("Active");
+
+        ItemStack blankBall = item.withMetadata((BsonDocument) null);
+        ItemStack emptyBall = blankBall
+                .withMetadata(PkmnCaptureMetadata.KEYED_CODEC, existingCaptureMeta)
+                .withState("Active");
 
         if (blockRef != null && blockRef.isValid()) {
             Store<ChunkStore> chunkStore         = world.getChunkStore().getStore();
@@ -312,8 +349,20 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                 return;
             }
         }
-        spawnCapturedCreature(world, commandBuffer, context, pos, existingMeta, item);
-        inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
+        
+        spawnCapturedCreature(
+            world, 
+            commandBuffer, 
+            context, 
+            pos, 
+            existingMeta, 
+            item.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, existingCaptureMeta),
+            inventory,
+            hotbarSlot, 
+            item, 
+            emptyBall
+        );
+        // inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
     }
 
     @Override
@@ -432,9 +481,33 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         CapturedNPCMetadata npcMeta = 
             PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,sourceItem,this.fullIcon);
 
+
+
+        String npcStatus = captureMetadata.getNpcStatus();
+        if (npcStatus==null) npcStatus="Healthy";
+
+        if(npcStatus == "Fainted"){
+            LOGGER.atInfo().log("NPC IS DEAD?");;
+        }
+        if(npcStatus == "Active"){
+            LOGGER.atInfo().log("NPC not currently in ball?");
+            captureMetadata.setNpcStatus("Healthy");
+        }
+        LOGGER.atInfo().log("NPC state: "+npcStatus);
+
+        // String ballEntityId = existingCaptureMeta.getballEntityUuid();
+        // if(ballEntityId==null || ballEntityId.isBlank()){
+        //     String randomId = UUIDGenerator.randomUUID().toString();
+        //     // existingCaptureMeta.setnpcEntityUuid(randomId);
+        //     existingCaptureMeta.setballEntityUuid(randomId);
+        // }
+
+
         // Write metadata
         ItemStack withNpc = sourceItem.withMetadata(CapturedNPCMetadata.KEYED_CODEC, npcMeta);
-        ItemStack withAll = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMetadata);
+        ItemStack withAll = withNpc
+                .withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMetadata)
+                .withState("Full");
         // Remove NPC from world
         commandBuffer.removeEntity(targetRef, RemoveReason.REMOVE);
         return withAll;
@@ -475,8 +548,13 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull InteractionContext context,
         @Nonnull BlockPosition pos,
         @Nonnull CapturedNPCMetadata existingMeta,
-        @Nonnull ItemStack item
+        @Nonnull ItemStack item,
+        @Nonnull Inventory  inventory,
+        @Nonnull byte  hotbarSlot, 
+        @Nonnull ItemStack itemToReplace, 
+        @Nonnull ItemStack replacementItem
     ) {
+
         LOGGER.atInfo().log("spawnCapturedCreature");
         Vector3d spawnPos = new Vector3d(pos.x + 0.5, pos.y, pos.z + 0.5);
         if (context.getClientState() != null) {
@@ -521,6 +599,11 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             commandBuffer.putComponent(newEntityRef,PkmnStatsComponent.getComponentType(),pkmnStats);
 
             PkmnStatUtils.setPkmnNameplate(commandBuffer, newEntityRef, roleId, pkmnStats);
+
+            ItemStack modifiedBall = PkmnStatUtils.linkNpcWithBall(commandBuffer, newEntityRef,replacementItem);
+
+            inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, itemToReplace, modifiedBall);
+
             // String nameplateText = PkmnStatUtils.buildNamplateString(roleId, pkmnStats, null);
             // commandBuffer.putComponent(newEntityRef,Nameplate.getComponentType(),new Nameplate(nameplateText));
         });

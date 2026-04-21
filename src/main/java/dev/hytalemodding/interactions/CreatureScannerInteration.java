@@ -97,7 +97,7 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
             return;
         }
         String roleName = npcEntity.getRoleName();
-        if(!filterByRoleName(roleName)) {
+        if(!PkmnStatUtils.filterByRoleName(roleName)) {
             player.sendMessage(Message.raw("That's not a pkmn, its a "+roleName));
             fail(interactionContext);
             return;
@@ -132,14 +132,16 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
         player.sendMessage(Message.raw(pokemonSpecies+", the something Pkmn."));
 
         String playerUuid = player.getUuid().toString();
-        String nameplateString = buildNamplateString(roleName,pkmnStats,playerUuid);
 
-        commandBuffer.putComponent(targetRef,Nameplate.getComponentType(),new Nameplate(nameplateString));
-        notifyPlayer(
-            player.getPlayerRef(),
-            nameplateString,
-            PkmnStatUtils.speciesFromRole(roleName)
-        );
+        String displayName = PkmnStatUtils.displayNameOf(roleName);
+        PkmnStatUtils.setPkmnNameplate(commandBuffer, targetRef, roleName, pkmnStats);
+
+
+        String topText = displayName;
+        String bottomText = "Lvl: "+pkmnStats.getLevel()+", IVs:"+pkmnStats.getIvs().toString()+", Base stats:"+pkmnStats.getBaseStats().toString();
+
+
+        notifyPlayer(player.getPlayerRef(),topText,bottomText);
         next(interactionContext);
         return;
     }
@@ -152,26 +154,26 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
         interactionContext.getState().state = InteractionState.Failed;
     }
     
-    private String buildNamplateString(
-        @Nonnull String npcRoleId,
-        @Nonnull PkmnStatsComponent stats,
-        @Nullable String playerUuid
-    ){
-        String name = PkmnStatUtils.speciesFromRole(npcRoleId);
-        var nickname = stats.getNickname();
-        if(nickname != null && !nickname.isBlank()){
-            name=nickname;
-        }
-        String lvl = String.valueOf(stats.getLevel());
-        return name+" ["+lvl+"]";
-    }
+    // private String buildNamplateString(
+    //     @Nonnull String npcRoleId,
+    //     @Nonnull PkmnStatsComponent stats,
+    //     @Nullable String playerUuid
+    // ){
+    //     String name = PkmnStatUtils.speciesFromRole(npcRoleId);
+    //     var nickname = stats.getNickname();
+    //     if(nickname != null && !nickname.isBlank()){
+    //         name=nickname;
+    //     }
+    //     String lvl = String.valueOf(stats.getLevel());
+    //     return name+" ["+lvl+"]";
+    // }
 
-    private boolean filterByRoleName(String roleName) {
-        if(roleName.startsWith("Pkmn_")) return true;
-        // testing custom NPC/fakemon
-        if(roleName.startsWith("Lizard_Ground_")) return true;
-        return false;
-    }
+    // private boolean filterByRoleName(String roleName) {
+    //     if(roleName.startsWith("Pkmn_")) return true;
+    //     // testing custom NPC/fakemon
+    //     if(roleName.startsWith("Lizard_Ground_")) return true;
+    //     return false;
+    // }
 
 
     private void notifyPlayer(
@@ -181,8 +183,8 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
     ) {
         String primaryText = "Custom data";
         String secondaryText = "";
-        String primaryColour = "#00FF00";
-        String secondaryColour = "#228B22";
+        String primaryColour = "#a64cca";
+        String secondaryColour = "#959097";
         String iconItemId = "Pkmn_Pokedex";
 
         if(topText==null) topText = primaryText;

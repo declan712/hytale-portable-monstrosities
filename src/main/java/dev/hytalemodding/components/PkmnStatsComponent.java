@@ -35,7 +35,6 @@ public class PkmnStatsComponent implements Component<EntityStore> {
     public static ComponentType<EntityStore, PkmnStatsComponent> getComponentType() {
         return PortableMonstrosities.instance().getPkmnStatsComponentType();
     }
-
     /** HP / Atk / Def / SpA / SpD / Spd */
     private int[] baseStats = new int[6];
     /** 0 - 252 */
@@ -216,6 +215,8 @@ public class PkmnStatsComponent implements Component<EntityStore> {
     public void setType2(String v) {
         this.type2 = (v != null && !v.isEmpty()) ? v : null;
     }
+
+
 
 
     /**

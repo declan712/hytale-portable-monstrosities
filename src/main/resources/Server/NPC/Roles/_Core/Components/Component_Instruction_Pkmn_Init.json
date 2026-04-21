@@ -34,8 +34,8 @@
             {"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
                 "Instructions": [
                     {
-                        "Enabled":{"Compute":"IsWild"},
                         "Continue":true,
+                        "Enabled":{"Compute":"IsWild"},
                         "Actions":[
                             {
                                 "Type": "SetStat",
@@ -50,6 +50,7 @@
                         ]
                     },
                     {
+                        "Continue":true,
                         "Actions":[
                             {
                                 "Type": "Attack",

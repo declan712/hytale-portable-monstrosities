@@ -31,6 +31,8 @@ public class PkmnCaptureMetadata {
     private float maxHp = 0f;
     private float modelScale  = 1f;
 
+    private String npcEntityUuid;
+    private String npcStatus;
 
     // mod-specific data
     @Nullable private int[]  baseStats;
@@ -91,19 +93,29 @@ public class PkmnCaptureMetadata {
     public long getExperience()         { return experience; }
     public void setExperience(long v)   { this.experience = v; }
 
+    @Nullable public String getNpcEntityUuid()      { return npcEntityUuid; }
+    public void setNpcEntityUuid(String v)          { this.npcEntityUuid = v; }
+
+    @Nullable public String getNpcStatus()           { return npcStatus; }
+    public void setNpcStatus(String v)               { this.npcStatus = v; }
+
+
     public String toString(){
         return Map.of(
-            "currentHp",    currentHp,
-            // "maxHp",        maxHp,
-            "modelScale",   modelScale,
-            "baseStats",    baseStats,
-            "evs",          evs,
-            "ivs",          ivs,
-            "nature",       nature,
-            "nickname",     nickname,
-            "ownerUuid",    ownerUuid,
-            "level",        level,
+            "currentHp",     currentHp,
+            // "maxHp",      maxHp,
+            "modelScale",    modelScale,
+            "baseStats",     baseStats,
+            "evs",           evs,
+            "ivs",           ivs,
+            "nature",        nature,
+            "nickname",      nickname,
+            "ownerUuid",     ownerUuid,
+            "level",         level,
             "experience",   experience
+            // "ballId",        ballEntityUuid,
+            // "npcId",         npcEntityUuid,
+            // "npcStatus",      npcStatus
         ).toString();
     }
 
@@ -165,6 +177,16 @@ public class PkmnCaptureMetadata {
             (o, v) -> o.experience = v, 
             o -> o.experience,
             (o, p) -> o.experience = p.experience
+        ).add()
+        .appendInherited(new KeyedCodec<>("NpcId", Codec.STRING),
+            (o, v) -> o.npcEntityUuid = v,
+            o -> o.npcEntityUuid,
+            (o, p) -> o.npcEntityUuid = p.npcEntityUuid
+        ).add()
+        .appendInherited(new KeyedCodec<>("NpcStatus", Codec.STRING),
+            (o, v) -> o.npcStatus = v,
+            o -> o.npcStatus,
+            (o, p) -> o.npcStatus = p.npcStatus
         ).add()
         .build();
 

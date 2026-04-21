@@ -25,6 +25,11 @@
             <id>hytale-pre-release</id>
             <url>https://maven.hytale.com/pre-release</url>
         </repository>
+        <repository>
+            <id>HM-releases</id>
+            <name>Hytale-Mods.info Maven</name>
+            <url>https://maven.hytale-mods.dev/releases</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -37,6 +42,11 @@
             <!-- <version>2026.02.18-f3b8fff95</version> -->
             <version>2026.03.26-89796e57b</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.buuz135</groupId>
+            <artifactId>MultipleHUD</artifactId>
+            <version>1.0.7</version>
         </dependency>
     </dependencies>
 </project>
