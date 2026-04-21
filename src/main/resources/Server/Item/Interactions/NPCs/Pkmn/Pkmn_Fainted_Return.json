@@ -1,11 +1,11 @@
 {
   "Type": "Replace",
   "DefaultOk": true,
-  "Var": "Pkmn_Faint",
+  "Var": "Pkmn_Fainted_Return",
   "DefaultValue": {
     "Interactions": [
       {
-        "Type": "SpawnPkmnTombstone",
+        "Type": "ReturnFaintedPkmn",
         "RunTime": 0.25,
         "Effects": {}
       }

@@ -61,9 +61,9 @@ public class PkmnStatUtils {
         commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
         if (npcComponent == null) return ball;
 
-        DeathComponent deathComponent = (DeathComponent)
-        commandBuffer.getComponent(targetRef, DeathComponent.getComponentType());
-        if (deathComponent != null) return ball;
+        // DeathComponent deathComponent = (DeathComponent)
+        // commandBuffer.getComponent(targetRef, DeathComponent.getComponentType());
+        // if (deathComponent != null) return ball;
 
         PkmnCaptureMetadata captureMetadata = (PkmnCaptureMetadata)
             ball.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
@@ -164,7 +164,6 @@ public class PkmnStatUtils {
         if (npcComponent == null) return null;
 
         boolean isDead = store.getComponent(targetRef, DeathComponent.getComponentType()) != null;
-
         if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
 
         EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());

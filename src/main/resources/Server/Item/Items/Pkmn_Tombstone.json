@@ -1,0 +1,80 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pkmn_Tombstone.name",
+    "Description": "portablemonstrosities.items.Pkmn_Tombstone.description"
+  },
+  "Quality": "Common",
+  "ItemLevel": 5,
+  "PlayerAnimationsId": "Block",
+  "MaxStack": 1,
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "PlaceBlock"
+        }
+      ]
+    }
+  },
+  "Categories": [
+    "PortableMonstrosities.Blocks"
+  ],
+  "BlockType": {
+    "DrawType": "Model",
+    "CustomModel": "NPC/Pkmn/Fainted/Model.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "NPC/Pkmn/Fainted/Texture.png"
+      }
+    ],
+    "CustomModelScale": 0.8,
+    "RandomRotation": "YawStep1",
+    "Material": "Solid",
+    "PlacementSettings": {
+      "PlaceInEmptyBlocks": true
+    },
+    "BlockSoundSetId": "Stone",
+    "SupportDropType": "Destroy",
+    "BlockEntity": {
+      "Components": {
+        "Coop": {
+          "FarmingCoopId": "Coop_Pokeball"
+        }
+      }
+    },
+    "Opacity": "Semitransparent",
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "SendMessage",
+            "Message": "Pick up \u0022fainted\u0022 pkmn",
+            "RunTime": 0.1
+          }
+        ]
+      }
+    },
+    "Particles": [
+      {
+        "SystemId": "Smoke_Gastly",
+        "Scale": 0.7
+      }
+    ]
+  },
+  "DropOnDeath": false,
+  "Model": "NPC/Pkmn/Fainted/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Fainted/Texture.png",
+  "Icon": "Icons/ItemsGenerated/Pkmn_Tombstone.png",
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -17
+    ]
+  }
+}

@@ -7,16 +7,21 @@ import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import dev.hytalemodding.commands.PkmnHudTestCommand;
+import dev.hytalemodding.components.FaintedPkmnComponent;
 import dev.hytalemodding.components.PkmnStatsComponent;
+import dev.hytalemodding.components.PkmnStorageComponent;
 import dev.hytalemodding.interactions.CaptureWildCreatureInteraction;
 import dev.hytalemodding.interactions.StayCapturedInteraction;
 import dev.hytalemodding.interactions.HasOwnerInteration;
 import dev.hytalemodding.interactions.ReturnActivePkmnInteraction;
+import dev.hytalemodding.interactions.ReturnFaintedPkmnInteraction;
 import dev.hytalemodding.interactions.SpawnPkmnTombstoneInteration;
 import dev.hytalemodding.interactions.CreatureScannerInteration;
 import dev.hytalemodding.interactions.FillFluidContainerInteraction;
 import dev.hytalemodding.interactions.SetCreatureNameplateInteraction;
 import dev.hytalemodding.interactions.UseCaptureOrbInteraction;
+import dev.hytalemodding.systems.AddNetworkIdToMyEntitySystem;
+
 import javax.annotation.Nonnull;
 
 public class PortableMonstrosities extends JavaPlugin {
@@ -24,6 +29,8 @@ public class PortableMonstrosities extends JavaPlugin {
     private static PortableMonstrosities instance = null;
 
     private ComponentType<EntityStore, PkmnStatsComponent> pkmnStatsComponent;
+    private ComponentType<EntityStore, FaintedPkmnComponent> faintedPkmnComponent;
+    private ComponentType<EntityStore, PkmnStorageComponent> pkmnStorageComponent;
     // private ComponentType<EntityStore, PkmnCaptureMetadata> pkmnCaptureMetadata;
 
 
@@ -47,7 +54,8 @@ public class PortableMonstrosities extends JavaPlugin {
         this.getCodecRegistry(Interaction.CODEC).register("CaptureWildCreature", CaptureWildCreatureInteraction.class, CaptureWildCreatureInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("UseCaptureOrb", UseCaptureOrbInteraction.class, UseCaptureOrbInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("ReturnPkmn", ReturnActivePkmnInteraction.class, ReturnActivePkmnInteraction.CODEC);
-        // this.getCodecRegistry(Interaction.CODEC).register("SpawnPkmnTombstone", SpawnPkmnTombstoneInteration.class, SpawnPkmnTombstoneInteration.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("ReturnFaintedPkmn", ReturnFaintedPkmnInteraction.class, ReturnFaintedPkmnInteraction.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("SpawnPkmnTombstone", SpawnPkmnTombstoneInteration.class, SpawnPkmnTombstoneInteration.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("SetCreatureNameplate", SetCreatureNameplateInteraction.class, SetCreatureNameplateInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteration.class, CreatureScannerInteration.CODEC);
         // this.getCodecRegistry(Interaction.CODEC).register("Bench_Dough_Mixer_Interaction", DoughMixerInteraction.class, DoughMixerInteraction.CODEC);
@@ -57,14 +65,26 @@ public class PortableMonstrosities extends JavaPlugin {
         // -- Components ----------
         this.pkmnStatsComponent = this.getEntityStoreRegistry()
                 .registerComponent(PkmnStatsComponent.class,"pkmnStatsComponent", PkmnStatsComponent.CODEC);
+        this.faintedPkmnComponent = this.getEntityStoreRegistry()
+                .registerComponent(FaintedPkmnComponent.class,"faintedPkmnComponent", FaintedPkmnComponent.CODEC);
+        this.pkmnStorageComponent = this.getEntityStoreRegistry()
+                .registerComponent(PkmnStorageComponent.class,"pkmnStorageComponent", PkmnStorageComponent.CODEC);
         // this.pkmnCaptureMetadata = this.getEntityStoreRegistry()
         //         .registerComponent(PkmnCaptureMetadata.class,"kmnCapture", PkmnCaptureMetadata.CODEC);
 
 
+        // -- Systems ----------
+        this.getEntityStoreRegistry().registerSystem(new AddNetworkIdToMyEntitySystem());
     }
 
     public ComponentType<EntityStore, PkmnStatsComponent> getPkmnStatsComponentType() {
         return this.pkmnStatsComponent;
+    }
+    public ComponentType<EntityStore, FaintedPkmnComponent> getFaintedPkmnComponent() {
+        return this.faintedPkmnComponent;
+    }
+    public ComponentType<EntityStore, PkmnStorageComponent> getPkmnStorageComponentType() {
+        return this.pkmnStorageComponent;
     }
     // public ComponentType<EntityStore, PokmnCaptureMetadata> getPkmnCaptureMetadataType() {
     //     return this.pkmnCaptureMetadata;
