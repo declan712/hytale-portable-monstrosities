@@ -1,20 +1,41 @@
 {
   "Model": "NPC/Pkmn/Beedrill/Models/Model.blockymodel",
   "Texture": "NPC/Pkmn/Beedrill/Models/Texture.png",
-  "EyeHeight": 0.7,
-  "CrouchOffset": -0.1,
+  "EyeHeight": 1.4,
+  "CrouchOffset": -0.4,
   "MinScale": 0.75,
   "MaxScale": 1,
   "HitBox": {
     "Max": {
-      "X": 0.4,
-      "Y": 0.9,
-      "Z": 0.4
+      "X": 0.7,
+      "Y": 1.8,
+      "Z": 0.7
     },
     "Min": {
-      "X": -0.4,
+      "X": -0.7,
       "Y": 0,
-      "Z": -0.4
+      "Z": -0.7
+    }
+  },
+  "DefaultAttachments": [],
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 30,
+        "Min": -45
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "Yaw": {
+      "TargetNodes": [
+        "Head"
+      ],
+      "AngleRange": {
+        "Min": -45,
+        "Max": 45
+      }
     }
   },
   "AnimationSets": {
@@ -142,7 +163,8 @@
     "Fall": {
       "Animations": [
         {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Jump.blockyanim"
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.4
         }
       ]
     },
@@ -181,18 +203,15 @@
     "Fly": {
       "Animations": [
         {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Fly/Fly.blockyanim",
-          "SoundEventId": "SFX_Bat_Alerted"
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Fly/Fly.blockyanim"
         },
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Fly/Fly.blockyanim",
-          "Speed": 1.25,
-          "SoundEventId": "SFX_Bat_Alerted"
+          "Speed": 1.25
         },
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Fly/Fly.blockyanim",
-          "Speed": 1.5,
-          "SoundEventId": "SFX_Bat_Alerted"
+          "Speed": 1.5
         }
       ]
     },
@@ -223,58 +242,6 @@
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Fly/Fly_Fast.blockyanim",
           "Speed": 1.5
-        }
-      ]
-    },
-    "Hurt": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Hurt.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "SoundEventId": "SFX_Bat_Hurt"
-        }
-      ]
-    },
-    "Death": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Death.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Bat_Death"
-        }
-      ]
-    },
-    "Laydown": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Laydown.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Sleep": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Sleep.blockyanim"
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Wake.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Beedrill_Cry"
         }
       ]
     },
@@ -381,13 +348,61 @@
         }
       ]
     },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Scarak_Seeker_Hurt"
+        },
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Hurt2.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Scarak_Seeker_Hurt"
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Death.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Scarak_Seeker_Death"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Sleep.blockyanim"
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
     "HurtFly": {
       "Animations": [
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Hurt_Fly.blockyanim",
           "BlendingDuration": 0.1,
           "Looping": false,
-          "SoundEventId": "SFX_Bat_Hurt"
+          "SoundEventId": "SFX_Scarak_Seeker_Hurt"
         }
       ]
     },
@@ -396,7 +411,7 @@
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Death_Fly.blockyanim",
           "BlendingDuration": 0.6,
-          "SoundEventId": "SFX_Bat_Death"
+          "SoundEventId": "SFX_Scarak_Seeker_Death"
         }
       ]
     },
@@ -415,7 +430,7 @@
           "Looping": false,
           "BlendingDuration": 0.1,
           "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Hurt_Swim.blockyanim",
-          "SoundEventId": "SFX_Bat_Hurt"
+          "SoundEventId": "SFX_Scarak_Seeker_Hurt"
         }
       ]
     },
@@ -424,7 +439,7 @@
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Death_Swim.blockyanim",
           "Looping": false,
-          "SoundEventId": "SFX_Bat_Death"
+          "SoundEventId": "SFX_Scarak_Seeker_Death"
         }
       ]
     },
@@ -433,7 +448,7 @@
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Hurt_Drown.blockyanim",
           "Looping": false,
-          "SoundEventId": "SFX_Bat_Hurt"
+          "SoundEventId": "SFX_Scarak_Seeker_Hurt"
         }
       ]
     },
@@ -442,7 +457,23 @@
         {
           "Animation": "NPC/Pkmn/Beedrill/Animations/Damage/Death_Drown.blockyanim",
           "Looping": false,
-          "SoundEventId": "SFX_Bat_Death"
+          "SoundEventId": "SFX_Scarak_Seeker_Death"
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Beedrill_Cry"
+        },
+        {
+          "Animation": "NPC/Pkmn/Beedrill/Animations/Default/Spawn2.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Beedrill_Cry"
         }
       ]
     }

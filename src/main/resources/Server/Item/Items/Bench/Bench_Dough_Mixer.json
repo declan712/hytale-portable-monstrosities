@@ -32,7 +32,7 @@
   "BlockType": {
     "Material": "Solid",
     "DrawType": "Model",
-    "Opacity": "Transparent",
+    "Opacity": "Semitransparent",
     "CustomModel": "Blocks/Benches/Dough_Mixer.blockymodel",
     "CustomModelTexture": [
       {
@@ -124,12 +124,15 @@
           "CraftingTimeReductionModifier": 0.3,
           "ExtraInputSlot": 1
         }
-      ],
-      "MaxFuel": -1,
-      "FuelDropItemId": ""
+      ]
+    },
+    "BlockEntity": {
+      "Components": {
+        "BenchBlock": {},
+        "ProcessingBenchBlock": {}
+      }
     },
     "State": {
-      "Id": "processingBench",
       "Definitions": {
         "Processing": {
           "Looping": true,
@@ -176,15 +179,7 @@
     "BlockSoundSetId": "Metal",
     "Interactions": {
       "Use": "Open_Processing_Bench"
-    },
-    "Seats": [
-      {
-        "Offset": {
-          "Yaw": 1.5
-        },
-        "Yaw": 90
-      }
-    ]
+    }
   },
   "PlayerAnimationsId": "Block",
   "IconProperties": {

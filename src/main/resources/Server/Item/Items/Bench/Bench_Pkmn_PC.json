@@ -11,14 +11,14 @@
     "Input": [
       {
         "Quantity": 10,
-        "ItemId": "Ingredient_Bar_Copper"
+        "ItemId": "Ingredient_Bar_Pkmn_T2"
       },
       {
-        "Quantity": 1,
-        "ItemId": "Ingredient_Bar_Silver"
+        "Quantity": 5,
+        "ItemId": "Ingredient_Bar_Pkmn_T3"
       },
       {
-        "Quantity": 1,
+        "Quantity": 5,
         "ItemId": "Ingredient_Bar_Gold"
       }
     ],
@@ -46,8 +46,6 @@
     ],
     "VariantRotation": "NESW",
     "State": {
-      "Id": "container",
-      "Capacity": 30,
       "Definitions": {
         "CloseWindow": {
           "InteractionSoundEventId": "SFX_Pkmn_Pc_Close",
@@ -59,6 +57,13 @@
             "Color": "#7ef"
           },
           "DrawType": "Model"
+        }
+      }
+    },
+    "BlockEntity": {
+      "Components": {
+        "ItemContainerBlock": {
+          "Capacity": 30
         }
       }
     },
