@@ -27,13 +27,13 @@ import javax.annotation.Nonnull;
  * TODO: check if _Tamed?<br>
  *<br>
  */
-public class HasOwnerInteration extends SimpleInstantInteraction {
+public class HasOwnerInteraction extends SimpleInstantInteraction {
 
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
-    public static final BuilderCodec<HasOwnerInteration> CODEC = BuilderCodec.builder(
-        HasOwnerInteration.class,
-        HasOwnerInteration::new,
+    public static final BuilderCodec<HasOwnerInteraction> CODEC = BuilderCodec.builder(
+        HasOwnerInteraction.class,
+        HasOwnerInteraction::new,
         SimpleInstantInteraction.CODEC
     ).build();
 

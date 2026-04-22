@@ -58,13 +58,12 @@
     "Club_Swing_Left_Damage": {
       "Interactions": [
         {
-          "Parent": "Club_Swing_Left_Damage",
+          "Parent": "Test_Damage_Pkmn_Entity",
           "DamageCalculator": {
             "Type": "Absolute",
             "BaseDamage": {
-              "Normal": 10
-            },
-            "RandomPercentageModifier": 0.1
+              "Water": 40
+            }
           },
           "DamageEffects": {
             "WorldSoundEventId": "SFX_Club_Steel_Impact"
@@ -89,7 +88,7 @@
           "DamageCalculator": {
             "Type": "Absolute",
             "BaseDamage": {
-              "Normal": 10
+              "Normal": 20
             },
             "RandomPercentageModifier": 0.1
           },
@@ -106,7 +105,7 @@
           "Parent": "Club_Swing_Down_Charged_Damage",
           "DamageCalculator": {
             "BaseDamage": {
-              "Normal": 26
+              "Normal": 30
             },
             "Type": "Absolute",
             "RandomPercentageModifier": 0.1

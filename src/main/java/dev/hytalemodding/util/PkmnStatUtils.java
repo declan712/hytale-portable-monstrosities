@@ -1,5 +1,7 @@
 package dev.hytalemodding.util;
 
+import java.util.ArrayList;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -8,6 +10,7 @@ import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffect;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
 import com.hypixel.hytale.server.core.entity.Entity;
 import com.hypixel.hytale.server.core.entity.entities.Player;
@@ -16,6 +19,7 @@ import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.EntityScaleComponent;
 import com.hypixel.hytale.server.core.modules.entity.component.PersistentModel;
+import com.hypixel.hytale.server.core.modules.entity.damage.DamageCause;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatValue;
@@ -27,11 +31,15 @@ import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifie
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
+import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
+import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
 import dev.hytalemodding.components.PkmnCaptureMetadata;
-import dev.hytalemodding.components.PkmnStatsComponent;;
+import dev.hytalemodding.components.PkmnStatsComponent;
+import dev.hytalemodding.components.PkmnStatsComponent.PkmnStat;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;;
 
 
 public class PkmnStatUtils {
@@ -39,6 +47,13 @@ public class PkmnStatUtils {
     private static final String SPECIES_ICON_SUFFIX = ".png";
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
+    /**
+     * 
+     * @param commandBuffer
+     * @param ref
+     * @param roleName
+     * @param pkmnStats
+     */
     public static void setPkmnNameplate(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> ref,
@@ -49,6 +64,13 @@ public class PkmnStatUtils {
         commandBuffer.putComponent(ref,Nameplate.getComponentType(),new Nameplate(nameplateString));
     }
 
+    /**
+     * 
+     * @param commandBuffer
+     * @param targetRef
+     * @param ball
+     * @return
+     */
     public static ItemStack linkNpcWithBall(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> targetRef,
@@ -77,6 +99,12 @@ public class PkmnStatUtils {
         return ball.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMetadata);
     }
 
+    /**
+     * 
+     * @param commandBuffer
+     * @param targetRef
+     * @param pkmnMetadata
+     */
     public static void applyMetadata(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> targetRef,
@@ -139,6 +167,122 @@ public class PkmnStatUtils {
         commandBuffer.putComponent(targetRef, EntityStatMap.getComponentType(), stats);
     }
 
+    public static int[] getCurrentStats(
+        @Nonnull CommandBuffer<EntityStore>  commandBuffer, 
+        @Nonnull Ref<EntityStore> ref
+    ){
+        Store<EntityStore> store = commandBuffer.getExternalData().getStore();
+        if (store == null) return null;
+
+        boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
+        if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
+
+        EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
+        if (stats == null){ 
+            LOGGER.atInfo().log("Entity has no EntityStatMap"); 
+            return null;
+        }
+
+        IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
+        int             lvlIdx = assetMap.getIndex("Lvl");
+        int             expIdx = assetMap.getIndex("Exp");
+        int             atkIdx = assetMap.getIndex("Atk");
+        int             defIdx = assetMap.getIndex("Def");
+        int             spAtkIdx = assetMap.getIndex("SpAtk");
+        int             spDefIdx = assetMap.getIndex("SpDef");
+        int             spdIdx = assetMap.getIndex("Spd");
+
+        int             healthIdx = DefaultEntityStatTypes.getHealth();
+        var health    = (int) stats.get(healthIdx).get();
+        var lvl       = (int) stats.get(lvlIdx).get();
+        var exp       = (int) stats.get(expIdx).get();
+        var atk       = (int) stats.get(atkIdx).get();
+        var def       = (int) stats.get(defIdx).get();
+        var spAtk     = (int) stats.get(spAtkIdx).get();
+        var spDef     = (int) stats.get(spDefIdx).get();
+        var spd       = (int) stats.get(spdIdx).get();
+
+        int[] statArray = {health,atk,def,spAtk,spDef,spd};
+        return statArray;
+    }
+
+    public static PkmnStatsComponent getPkmnStatsComponent(
+        @Nonnull CommandBuffer<EntityStore>  commandBuffer, 
+        @Nonnull Ref<EntityStore> ref
+    ){
+        Store<EntityStore> store = commandBuffer.getExternalData().getStore();
+        if (store == null) return null;
+
+        // NPCEntity npcComponent = (NPCEntity)
+        // store.getComponent(ref, NPCEntity.getComponentType());
+        // if (npcComponent == null) return null;
+
+        boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
+        if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
+
+
+        EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
+        if (stats == null){ 
+            LOGGER.atInfo().log("Entity has no EntityStatMap"); 
+            return null;
+        }
+
+        IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
+        int             lvlIdx = assetMap.getIndex("Lvl");
+        int             expIdx = assetMap.getIndex("Exp");
+        int             atkIdx = assetMap.getIndex("Atk");
+        int             defIdx = assetMap.getIndex("Def");
+        int             spAtkIdx = assetMap.getIndex("SpAtk");
+        int             spDefIdx = assetMap.getIndex("SpDef");
+        int             spdIdx = assetMap.getIndex("Spd");
+
+        int             healthIdx = DefaultEntityStatTypes.getHealth();
+        EntityStatValue health    = stats.get(healthIdx);
+        EntityStatValue lvl       = stats.get(lvlIdx);
+        EntityStatValue exp       = stats.get(expIdx);
+        EntityStatValue atk       = stats.get(atkIdx);
+        EntityStatValue def       = stats.get(defIdx);
+        EntityStatValue spAtk     = stats.get(spAtkIdx);
+        EntityStatValue spDef     = stats.get(spDefIdx);
+        EntityStatValue spd       = stats.get(spdIdx);
+
+        if (health == null) return null;
+        float currentHp = isDead?0:health.get();
+        float maxHp     = health.getMax();
+        float currentExp = exp.get();
+        float currentLvl = lvl.get();
+        float currentAtk =   atk.get();
+        float currentDef =   def.get();
+        float currentSpAtk = spAtk.get();
+        float currentSpDef = spDef.get();
+        float currentSpd =   spd.get();
+
+        PkmnStatsComponent pkmnStats = store.getComponent(ref, PkmnStatsComponent.getComponentType());
+        if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
+
+        pkmnStats.setLevel((int)currentLvl);
+        pkmnStats.setExperience((long) currentExp);
+        int[] baseStats = pkmnStats.getBaseStats();
+
+        NPCEntity npcEntity = store.getComponent(ref, NPCEntity.getComponentType());
+        if (npcEntity != null) {
+            String roleName = npcEntity.getRoleName();
+            String species = toDisplayName(roleName);
+            pkmnStats.setBaseStats(PkmnBaseStatList.fromMap(species));
+        }
+
+        if ( baseStats[PkmnStat.ATK.index] == 0) { LOGGER.atInfo().log("Entity base ATK is 0"); }
+        if ( baseStats[PkmnStat.DEF.index] == 0) { LOGGER.atInfo().log("Entity base DEF is 0"); }
+        return pkmnStats;
+    }
+
+
+    /**
+     * 
+     * @param store
+     * @param targetRef
+     * @return
+     */
     public static PkmnCaptureMetadata captureMetadata(
         @Nonnull Store<EntityStore> store,
         @Nonnull Ref<EntityStore> targetRef
@@ -146,6 +290,12 @@ public class PkmnStatUtils {
         return _captureMetadata(store,targetRef);
     }
 
+    /**
+     * 
+     * @param commandBuffer
+     * @param targetRef
+     * @return
+     */
     public static PkmnCaptureMetadata captureMetadata(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> targetRef
@@ -239,6 +389,14 @@ public class PkmnStatUtils {
         return captureMetadata;
     }
 
+    /**
+     * 
+     * @param commandBuffer
+     * @param targetRef
+     * @param sourceItem
+     * @param fullIcon
+     * @return
+     */
     public static CapturedNPCMetadata getNpcMetadata(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> targetRef,
@@ -275,8 +433,8 @@ public class PkmnStatUtils {
 
         // Per-species full icon: Icons/Items/Pokeball/<roleId>.png
         // TODO: fallback to fullIcon from interaction config
-        String speciesIcon = (roleId != null)
-            ? SPECIES_ICON_PREFIX + roleId + SPECIES_ICON_SUFFIX
+        String speciesIcon = (tameRoleId != null)
+            ? SPECIES_ICON_PREFIX + tameRoleId + SPECIES_ICON_SUFFIX
             : null;
 
         if (speciesIcon != null) {
@@ -475,6 +633,11 @@ public class PkmnStatUtils {
         return sb.toString();
     }
 
+    /**
+     * 
+     * @param npcRoleId
+     * @return
+     */
     public static String speciesFromRole(@Nonnull String npcRoleId){
         String species = npcRoleId;
         if(npcRoleId.startsWith("Pkmn_")){
@@ -487,10 +650,21 @@ public class PkmnStatUtils {
         return species;
     }
 
+    /**
+     * 
+     * @param npcRoleId
+     * @return
+     */
     public static boolean isTamed(@Nonnull String npcRoleId){
         return npcRoleId.endsWith("_Tamed");
     }
 
+    /**
+     * 
+     * @param owner
+     * @param player
+     * @return
+     */
     public static boolean hasOtherOwner(
         @Nullable String owner,
         @Nullable Player player
@@ -502,12 +676,24 @@ public class PkmnStatUtils {
         return !owner.equals(playerId);
     }
 
+    /**
+     * 
+     * @param wildRoleId
+     * @return
+     */
     @Nonnull
     public static String resolveTameRole(@Nullable String wildRoleId) {
         if (wildRoleId == null || wildRoleId.isBlank()) return "";
         return wildRoleId.endsWith("_Tamed") ? wildRoleId : wildRoleId + "_Tamed";
     }
 
+    /**
+     * 
+     * @param npcRoleId
+     * @param stats
+     * @param playerUuid
+     * @return
+     */
     public static String buildNamplateString(
         @Nonnull String npcRoleId,
         @Nonnull PkmnStatsComponent stats,
@@ -525,9 +711,112 @@ public class PkmnStatUtils {
         return name+" ["+lvl+"]";
     }
 
+    /**
+     * 
+     * @param roleName
+     * @return
+     */
     public static boolean filterByRoleName(String roleName) {
         if(roleName.startsWith("Pkmn_")) return true;
         if(roleName.startsWith("Lizard_Ground_")) return true;
+        return false;
+    }
+
+    /**
+     * Generation III damage formula
+     * <br>
+     * Damage=(((2×Level5+2)×Power×A/D50)×Burn×Screen×Targets×Weather×FF+2)×Stockpile×Critical×DoubleDmg×Charge×HH×STAB×Type1×Type2×random
+     * <br>
+     * <br>
+     * where:
+     * <br>
+     * Level is the level of the attacking Pokémon. If the used move is Beat Up, L is instead the level of the Pokémon performing the strike.
+     * <br> A is the effective Attack stat of the attacking Pokémon if the used move is a physical move, or the effective Special Attack stat of the attacking Pokémon if the used move is a special move (for a critical hit, negative Attack or Special Attack stat stages are ignored). If the used move is Beat Up, A is instead the base Attack of the Pokémon performing the strike.
+     * <br> D is the effective Defense stat of the target if the used move is a physical move, or the effective Special Defense stat of the target if the used move is a special move (for a critical hit, positive Defense or Special Defense stat stages are ignored). If the used move is Beat Up, D is instead the base Defense of the target.
+     * <br> Power is the effective power of the used move.
+     * <br> Burn is 0.5 if the attacker is burned, its Ability is not Guts, and the used move is a physical move, and 1 otherwise.
+     * <br> Screen is 0.5 if the used move is physical and Reflect is present on the target's side of the field, or special and Light Screen is present. For a Double Battle, Screen is instead 2/3, and 1 otherwise or if the used move lands a critical hit. However, if, in a Double Battle, when the move is executed, the only Pokémon on the target's side is the target, Screen remains as 0.5.
+     * <br> Targets is 0.5 in Double Battles if the move targets both foes (unless it targets all other Pokémon, like Earthquake, and only if there is more than one such target when the move is executed, regardless of whether the move actually hits or can hit all the targets), and 1 otherwise.
+     * <br> If the base damage after applying Targets is 0 and the move is physical the base damage is increased by one.[1]
+     * <br> Weather is 1.5 if a Water-type move is being used during rain or a Fire-type move during harsh sunlight, and 0.5 if a Water-type move is used during harsh sunlight, any Fire-type move during rain, or SolarBeam during any non-clear weather besides harsh sunlight, and 1 otherwise or if any Pokémon on the field have the Ability Cloud Nine or Air Lock.
+     * <br> FF is 1.5 if the used move is Fire-type, and the attacker's Ability is Flash Fire that has been activated by a Fire-type move, and 1 otherwise.
+     * <br> Stockpile is 1, 2, or 3 if the used move is Spit Up, depending on how many Stockpiles have been used, or always 1 if the used move is not Spit Up.
+     * <br> Critical is 2 for a critical hit, and 1 otherwise. It is always 1 if Future Sight, Doom Desire, or Spit Up is used, if the target's Ability is Battle Armor or Shell Armor, or if the battle is the first one against PoochyenaRS/ZigzagoonE or the capture tutorial where Wally catches a Ralts.
+     * <br> DoubleDmg is 2 if the used move is (and 1 if the used move is not any of these moves): 
+     * <br>     - Gust or Twister and the target is in the semi-invulnerable turn of Fly or Bounce.
+     * <br>     - Stomp, Needle Arm, Astonish, or Extrasensory and the target has previously used Minimize.
+     * <br>     - Surf or Whirlpool and the target is in the semi-invulnerable turn of Dive.
+     * <br>     - Earthquake or Magnitude and the target is in the semi-invulnerable turn of Dig.
+     * <br>     - Pursuit and the target is attempting to switch out.
+     * <br>     - Facade and the user is poisoned, burned, or paralyzed.
+     * <br>     - SmellingSalt and the target is paralyzed.
+     * <br>     - Revenge and the attacker has been damaged by the target this turn.
+     * <br>     - Weather Ball, there is non-clear weather, and no Pokémon on the field have the Ability Cloud Nine or Air Lock.
+     * <br> Charge is 2 if the move is Electric-type and Charge takes effect, and 1 otherwise.
+     * <br> HH is 1.5 if the attacker's ally in a Double Battle has used Helping Hand on it, and 1 otherwise.
+     * <br> STAB is the same-type attack bonus. This is equal to 1.5 if the move's type matches any of the user's types and 1 if otherwise.
+     * <br> Type1 is the type effectiveness of the used move against the target's first type (or only type, if it only has a single type). This can be 0.5 (not very effective), 1 (normally effective), or 2 (super effective). If the used move is Struggle, Future Sight, Beat Up, or Doom Desire, both Type1 and Type2 are always 1.
+     * <br> Type2 is the type effectiveness of the used move against the target's second type. This can be 0.5 (not very effective), 1 (normally effective), or 2 (super effective). If the target only has a single type, Type2 is 1.
+     * <br> random is realized as a multiplication by a random uniformly distributed integer between 85 and 100 (inclusive), followed by an integer division by 100. random is always 1 if Spit Up is used.
+     * @return
+     */
+    public static Integer damageFormula(
+        int level,
+        int atk,
+        int def,
+        float power,
+        boolean attackerIsBurned,
+        boolean defenderhasScreen,
+        float weather,
+        boolean attackerSTAB,
+        boolean isCrit
+    ) {
+        float burn = attackerIsBurned ? 0.5f : 1; //0.5 if attacker is burned
+        float screen = defenderhasScreen ? 0.5f : 1; //0.5 if defender used reflect/light screen
+        //float weather = 1; //1.5 if weather buff, 0.5 if weather debuff
+        float crit = isCrit ? 2 : 1;//2 for crit, 3 for crit with sniper
+        float item = 1;//1.3 with attack boost item
+        double random = 0.85+Math.random()*0.15;// 0.85-1.00
+        float stab = attackerSTAB ? 1.5f : 1.0f;//1.5 if matching type
+
+
+        float raw = (2+2*level/5)*power*atk/def/50;
+        float withStatus = raw*burn*screen*weather+2;
+        float damage = withStatus*crit*item*(float)random*stab;
+
+        LOGGER.atInfo().log("POW: "+power+", ATK: "+String.valueOf(atk)+", DEF: "+String.valueOf(def)+", STAB: "+attackerSTAB+", crit: "+crit+", lvl: "+level);
+
+        return (int) damage;
+    }
+
+    public static ArrayList<String>  activeEffects(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull  Ref<EntityStore> ref
+    ) {
+        EffectControllerComponent effectControllerComponent = store.getComponent(ref,EffectControllerComponent.getComponentType());
+        IndexedLookupTableAssetMap<String, EntityEffect> effectMap = EntityEffect.getAssetMap();
+        Int2ObjectMap<ActiveEntityEffect> activeEffects = effectControllerComponent.getActiveEffects();
+        ArrayList<String> effectIds = new ArrayList<>();
+
+        if(activeEffects != null && !activeEffects.isEmpty()){
+            for(ActiveEntityEffect activeEffect : activeEffects.values()){
+                int idx = activeEffect.getEntityEffectIndex();
+                EntityEffect effect = effectMap.getAsset(idx);
+                String effectId = effect.getId();
+                effectIds.add(effectId);
+            }
+        }
+        return effectIds;
+    }
+
+    public static boolean hasSTAB(
+        ArrayList<String> activeEFfects,
+        DamageCause attack
+    ){
+        String attackType = attack.getId();
+        for(int i=0; i<activeEFfects.size(); i++){
+            if( activeEFfects.get(i).equals(attackType+"Type")) return true;
+        }
         return false;
     }
 }

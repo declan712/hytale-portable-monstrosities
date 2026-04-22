@@ -217,7 +217,20 @@ public class PkmnStatsComponent implements Component<EntityStore> {
     }
 
 
+    public enum PkmnStat {
+        HP(0),
+        ATK(1),
+        DEF(2),
+        SPATK(3),
+        SPDEF(4),
+        SPD(5);
 
+        public int index;
+
+        PkmnStat(int i) {
+            index=i;
+        }
+    }
 
     /**
     * Returns the effective stat value for the given index using the Gen-III formula.

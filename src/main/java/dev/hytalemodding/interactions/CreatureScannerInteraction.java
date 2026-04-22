@@ -1,4 +1,7 @@
 package dev.hytalemodding.interactions;
+import java.util.Collection;
+import java.util.UUID;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -25,6 +28,7 @@ import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.util.NotificationUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
@@ -36,13 +40,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 
 
-public class CreatureScannerInteration extends SimpleInstantInteraction {
+public class CreatureScannerInteraction extends SimpleInstantInteraction {
 
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
-    public static final BuilderCodec<CreatureScannerInteration> CODEC = BuilderCodec.builder(
-        CreatureScannerInteration.class, 
-        CreatureScannerInteration::new, 
+    public static final BuilderCodec<CreatureScannerInteraction> CODEC = BuilderCodec.builder(
+        CreatureScannerInteraction.class, 
+        CreatureScannerInteraction::new, 
         SimpleInstantInteraction.CODEC
     ).build();
 
@@ -105,9 +109,64 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
 
         String pokemonSpecies = PkmnStatUtils.speciesFromRole(roleName);
 
-        PkmnCaptureMetadata metadata = PkmnStatUtils.captureMetadata(commandBuffer,targetRef);
-        PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(metadata);
+        PkmnCaptureMetadata pkmnMeta = PkmnStatUtils.captureMetadata(commandBuffer,targetRef);
+        PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(pkmnMeta);
 
+                
+        player.sendMessage(Message.raw(pokemonSpecies+", the something Pkmn."));
+        player.sendMessage(Message.raw("Lvl: "+String.valueOf((int) pkmnMeta.getLevel())));
+        player.sendMessage(Message.raw("Exp: "+String.valueOf((int) pkmnMeta.getExperience())));
+        // [0] HP
+        // [1] Attack
+        // [2] Defense
+        // [3] Sp.Atk
+        // [4] Sp.Def
+        // [5] Speed
+        String hp      = String.valueOf((int) pkmnMeta.getCurrentHp());
+        String maxHp   = String.valueOf((int) pkmnMeta.getMaxHp());
+
+        // var evs = pkmnStats.getEvs();
+        var ivs = pkmnStats.getIvs();
+
+        // var hp      = pkmnStats.calcEffectiveStat(0);
+        var atk     = String.valueOf((int) pkmnStats.calcEffectiveStat(1) );
+        var def     = String.valueOf((int) pkmnStats.calcEffectiveStat(2) );
+        var spatk   = String.valueOf((int) pkmnStats.calcEffectiveStat(3) );
+        var spdef   = String.valueOf((int) pkmnStats.calcEffectiveStat(4) );
+        var spd     = String.valueOf((int) pkmnStats.calcEffectiveStat(5) );
+
+        player.sendMessage(Message.raw("HP: "+hp+"/"+maxHp+"    ( +"+String.valueOf(ivs[0])+" )"  ));
+        player.sendMessage(Message.raw("Atk: "+atk+"    ( +"+String.valueOf(ivs[1])+" )"  ));
+        player.sendMessage(Message.raw("Def: "+def+"    ( +"+String.valueOf(ivs[2])+" )"  ));
+        player.sendMessage(Message.raw("Sp.Atk: "+spatk+"   ( +"+String.valueOf(ivs[3])+" )"  ));
+        player.sendMessage(Message.raw("Sp.Def: "+spdef+"   ( +"+String.valueOf(ivs[4])+" )"  ));
+        player.sendMessage(Message.raw("Spd: "+spd+"    ( +"+String.valueOf(ivs[5])+" )"  ));
+
+        // player.sendMessage(Message.raw("IVs: [a,b,c,d,e,f]"));
+        // player.sendMessage(Message.raw("EVs: [a,b,c,d,e,f]"));
+        // player.sendMessage(Message.raw("Base: [a,b,c,d,e,f]"));
+        // player.sendMessage(Message.raw("Stat: [a,b,c,d,e,f]"));
+
+        String ownerUuid = pkmnStats.getOwnerUuid();
+        World world = store.getExternalData().getWorld();
+
+        if (ownerUuid != null) {
+            Ref<EntityStore> ownerRef = world.getEntityRef(UUID.fromString(ownerUuid));
+            if(ownerRef != null){
+                PlayerRef owner = store.getComponent(ownerRef, PlayerRef.getComponentType());
+                if (owner != null) {
+                    String username = owner.getUsername();
+                    player.sendMessage(Message.raw("owned by: "+username));
+                }
+            }
+        }
+
+        // PlayerRef ownerRef;
+        // for (int i=0;i<playerRefs.length;i++) {
+        //     playerRefs[i];
+        // }
+        
+        
 
         EffectControllerComponent effectControllerComponent = store.getComponent(targetRef,EffectControllerComponent.getComponentType());
         IndexedLookupTableAssetMap<String, EntityEffect> effectMap = EntityEffect.getAssetMap();
@@ -128,8 +187,7 @@ public class CreatureScannerInteration extends SimpleInstantInteraction {
 
         // EntityEffect effect = (EntityEffect)effectMap.getAsset();
 
-        
-        player.sendMessage(Message.raw(pokemonSpecies+", the something Pkmn."));
+
 
         String playerUuid = player.getUuid().toString();
 

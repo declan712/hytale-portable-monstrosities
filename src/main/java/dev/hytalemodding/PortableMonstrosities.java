@@ -12,11 +12,12 @@ import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.components.PkmnStorageComponent;
 import dev.hytalemodding.interactions.CaptureWildCreatureInteraction;
 import dev.hytalemodding.interactions.StayCapturedInteraction;
-import dev.hytalemodding.interactions.HasOwnerInteration;
+import dev.hytalemodding.interactions.HasOwnerInteraction;
 import dev.hytalemodding.interactions.ReturnActivePkmnInteraction;
 import dev.hytalemodding.interactions.ReturnFaintedPkmnInteraction;
 import dev.hytalemodding.interactions.SpawnPkmnTombstoneInteration;
-import dev.hytalemodding.interactions.CreatureScannerInteration;
+import dev.hytalemodding.interactions.CreatureScannerInteraction;
+import dev.hytalemodding.interactions.DamagePkmnEntityInteraction;
 import dev.hytalemodding.interactions.FillFluidContainerInteraction;
 import dev.hytalemodding.interactions.SetCreatureNameplateInteraction;
 import dev.hytalemodding.interactions.UseCaptureOrbInteraction;
@@ -49,7 +50,8 @@ public class PortableMonstrosities extends JavaPlugin {
         // this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, ExampleEvent::onPlayerReady);
 
         // -- Codecs (Interactions)  ----------
-        this.getCodecRegistry(Interaction.CODEC).register("HasOwner", HasOwnerInteration.class, HasOwnerInteration.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("DamagePkmnEntity", DamagePkmnEntityInteraction.class, DamagePkmnEntityInteraction.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("HasOwner", HasOwnerInteraction.class, HasOwnerInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("StayCaptured", StayCapturedInteraction.class, StayCapturedInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("CaptureWildCreature", CaptureWildCreatureInteraction.class, CaptureWildCreatureInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("UseCaptureOrb", UseCaptureOrbInteraction.class, UseCaptureOrbInteraction.CODEC);
@@ -57,7 +59,7 @@ public class PortableMonstrosities extends JavaPlugin {
         this.getCodecRegistry(Interaction.CODEC).register("ReturnFaintedPkmn", ReturnFaintedPkmnInteraction.class, ReturnFaintedPkmnInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("SpawnPkmnTombstone", SpawnPkmnTombstoneInteration.class, SpawnPkmnTombstoneInteration.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("SetCreatureNameplate", SetCreatureNameplateInteraction.class, SetCreatureNameplateInteraction.CODEC);
-        this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteration.class, CreatureScannerInteration.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteraction.class, CreatureScannerInteraction.CODEC);
         // this.getCodecRegistry(Interaction.CODEC).register("Bench_Dough_Mixer_Interaction", DoughMixerInteraction.class, DoughMixerInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("FillFluidContainer", FillFluidContainerInteraction.class, FillFluidContainerInteraction.CODEC);
 
