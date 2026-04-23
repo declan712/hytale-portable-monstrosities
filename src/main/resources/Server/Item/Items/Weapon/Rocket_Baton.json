@@ -32,7 +32,6 @@
   "MaxDurability": 150,
   "DurabilityLossOnHit": 0.56,
   "Interactions": {
-    "Primary": "Club_Attack",
     "Secondary": {
       "Rules": {
         "BlockedBy": [
@@ -42,7 +41,8 @@
       "Interactions": [
         "Weapon_Secondary_Guard_Pkmn"
       ]
-    }
+    },
+    "Primary": "Club_Attack"
   },
   "InteractionVars": {
     "Club_Swing_Left_Effect": {
@@ -58,14 +58,14 @@
     "Club_Swing_Left_Damage": {
       "Interactions": [
         {
-          "Parent": "Test_Damage_Pkmn_Entity",
+          "Parent": "DamagePkmnParent",
           "DamageCalculator": {
             "Type": "Absolute",
             "BaseDamage": {
-              "Water": 40
+              "Normal": 15
             }
           },
-          "DamageEffects": {
+          "Effects": {
             "WorldSoundEventId": "SFX_Club_Steel_Impact"
           }
         }
@@ -84,33 +84,14 @@
     "Club_Swing_Right_Damage": {
       "Interactions": [
         {
-          "Parent": "Club_Swing_Right_Damage",
+          "Parent": "DamagePkmnParent",
           "DamageCalculator": {
             "Type": "Absolute",
             "BaseDamage": {
               "Normal": 20
-            },
-            "RandomPercentageModifier": 0.1
+            }
           },
-          "DamageEffects": {
-            "WorldSoundEventId": "SFX_Club_Steel_Impact"
-          }
-        }
-      ]
-    },
-    "Club_Swing_Down_Charged_Effect": "Club_Swing_Down_Charged_Effect",
-    "Club_Swing_Down_Charged_Damage": {
-      "Interactions": [
-        {
-          "Parent": "Club_Swing_Down_Charged_Damage",
-          "DamageCalculator": {
-            "BaseDamage": {
-              "Normal": 30
-            },
-            "Type": "Absolute",
-            "RandomPercentageModifier": 0.1
-          },
-          "DamageEffects": {
+          "Effects": {
             "WorldSoundEventId": "SFX_Club_Steel_Impact"
           }
         }

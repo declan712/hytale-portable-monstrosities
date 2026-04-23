@@ -1,17 +1,7 @@
 package dev.hytalemodding.interactions;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.UUID;
-import java.util.function.BiConsumer;
-
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
-
-import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
-import com.hypixel.hytale.builtin.tagset.config.NPCGroup;
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -19,43 +9,26 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
-import com.hypixel.hytale.protocol.GameMode;
-import com.hypixel.hytale.protocol.InteractionSettings;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
-import com.hypixel.hytale.protocol.ItemWithAllMetadata;
-import com.hypixel.hytale.protocol.WaitForDataFrom;
-import com.hypixel.hytale.server.core.Message;
-import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffect;
-import com.hypixel.hytale.server.core.entity.Entity;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
-import com.hypixel.hytale.server.core.entity.LivingEntity;
-import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
-import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
-import com.hypixel.hytale.server.core.entity.entities.Player;
-import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.entity.damage.*;
-import com.hypixel.hytale.server.core.modules.entity.damage.Damage.EntitySource;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.DamageEntityInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageCalculator;
-import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageEffects;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.core.util.NotificationUtil;
-import com.hypixel.hytale.server.npc.entities.NPCEntity;
-
-import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.components.PkmnStatsComponent.PkmnStat;
 import dev.hytalemodding.util.PkmnStatUtils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 
 public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
 
     protected DamageCalculator damageCalculator;
+    protected DamageEffects damageEffects;
     protected boolean isPhysical;
 
 
@@ -73,6 +46,13 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
         (o, p) -> o.damageCalculator = p.damageCalculator
     )
     .add()
+    .appendInherited(
+        new KeyedCodec<>("DamageEffects", DamageEffects.CODEC),
+        (o, v) -> o.damageEffects = v,
+        (o)    -> o.damageEffects,
+        (o, p) -> o.damageEffects = p.damageEffects
+    )
+    .add()
     .appendInherited(new KeyedCodec<>("IsPhysical", Codec.BOOLEAN),
         (o, v) -> o.isPhysical = v,
         (o)    -> o.isPhysical,
@@ -80,7 +60,6 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
     )
     .add()
     .build();
-
 
     // static {
     //     CODEC = BuilderCodec.builder(
@@ -136,7 +115,7 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
         CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
 
         if (commandBuffer == null) {
-            LOGGER.atInfo().log("CommandBuffer is null");
+            // LOGGER.atInfo().log("CommandBuffer is null");
             fail(context);
             return;
         }
@@ -148,8 +127,16 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
         Ref<EntityStore> targetRef  = context.getTargetEntity();
         Ref<EntityStore> thirdRef   = context.getEntity();
 
-        if(ownerRef == null) { LOGGER.atInfo().log("ownerRef is NULL"); fail(context); return; }
-        if(targetRef == null) { LOGGER.atInfo().log("targetRef is NULL"); fail(context); return; }
+        if(ownerRef == null)  { 
+            // LOGGER.atInfo().log("ownerRef is NULL"); 
+            fail(context); 
+            return; 
+        }
+        if(targetRef == null) { 
+            // LOGGER.atInfo().log("targetRef is NULL"); 
+            fail(context); 
+            return; 
+        }
 
         // PkmnStatsComponent ownerStats = store.getComponent(ownerRef, PkmnStatsComponent.getComponentType());
         // PkmnStatsComponent targetStats = store.getComponent(targetRef, PkmnStatsComponent.getComponentType());
@@ -162,6 +149,16 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
         int[] ownerStatArray = PkmnStatUtils.getCurrentStats(commandBuffer, ownerRef);
         int[] targetStatArray = PkmnStatUtils.getCurrentStats(commandBuffer, targetRef);
 
+        if(ownerStatArray == null)  { 
+            // LOGGER.atInfo().log("ownerStatArray is NULL");  
+            fail(context); 
+            return; 
+        }
+        if(targetStatArray == null) { 
+            // LOGGER.atInfo().log("targetStatArray is NULL"); 
+            fail(context); 
+            return; 
+        }
         // NPCEntity attacker = store.getComponent(ownerRef,NPCEntity.getComponentType());
         // if(attacker != null) {
         //     String attackerRole = attacker.getRoleName();
@@ -182,6 +179,7 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
         int ownerAtk = ownerStatArray[PkmnStat.ATK.index];
         int ownerSpAtk = ownerStatArray[PkmnStat.SPATK.index];
 
+
         int targetDef = targetStatArray[PkmnStat.DEF.index];
         int targetSpDef = targetStatArray[PkmnStat.SPDEF.index];
 
@@ -193,14 +191,15 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
         Object2FloatMap<DamageCause> calculatedDamage = damageCalculator.calculateDamage(horizontalSpeedMultiplier);
         Damage.EntitySource source = new Damage.EntitySource(ownerRef);
 
+        
 
         calculatedDamage.forEach((DamageCause cause, Float power) ->{
             boolean stab = PkmnStatUtils.hasSTAB(ownerActiveEffects, cause);
             Integer attackDamage = PkmnStatUtils.damageFormula(
                 lvl,atk,def,power,false,false,1.0f,stab,false);
-                LOGGER.atInfo().log("ATTACK: ("+power+" "+cause.getId()+") => "+String.valueOf(attackDamage));
-                
+                // LOGGER.atInfo().log("ATTACK: ("+power+" "+cause.getId()+") => "+String.valueOf(attackDamage));
             Damage damage = new Damage(source, cause, attackDamage);
+            damageEffects.addToDamage(damage);
             DamageSystems.executeDamage(targetRef, commandBuffer, damage);
         });
         

@@ -1,0 +1,28 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Graveler",
+    "DropList": "Drop_Pkmn_Geodude",
+    "MaxSpeed": 8,
+    "Type1": "RockType",
+    "Type2": "GroundType",
+    "IsMountable": false,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 3,
+    "AttractiveItemSet": [
+      "Ore_Copper",
+      "Rubble_Marble",
+      "Plant_Fruit_Apricorn"
+    ],
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Graveler.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

@@ -784,7 +784,7 @@ public class PkmnStatUtils {
         float withStatus = raw*burn*screen*weather+2;
         float damage = withStatus*crit*item*(float)random*stab;
 
-        LOGGER.atInfo().log("POW: "+power+", ATK: "+String.valueOf(atk)+", DEF: "+String.valueOf(def)+", STAB: "+attackerSTAB+", crit: "+crit+", lvl: "+level);
+        // LOGGER.atInfo().log("POW: "+power+", ATK: "+String.valueOf(atk)+", DEF: "+String.valueOf(def)+", STAB: "+attackerSTAB+", crit: "+crit+", lvl: "+level);
 
         return (int) damage;
     }

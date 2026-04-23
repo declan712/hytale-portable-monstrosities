@@ -1,0 +1,58 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Graveler",
+    "DropList": "Drop_Pkmn_Geodude",
+    "AttractiveItemSet": [
+      "Ore_Copper",
+      "Rubble_Marble",
+      "Plant_Fruit_Apricorn"
+    ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Graveler_Tamed",
+    "Type1": "RockType",
+    "Type2": "GroundType",
+    "WildLevelMin": 25,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.5,
+    "MaxSpeed": 8,
+    "WanderRadius": 12,
+    "ViewRange": 18,
+    "HearingRange": 12,
+    "AbsoluteDetectionRange": 2,
+    "AlertedRange": 18,
+    "IsMemory": true,
+    "MemoriesCategory": "Elemental",
+    "MemoriesNameOverride": "Graveler",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 3,
+    "ChaseRelativeSpeed": 1,
+    "AlwaysSleepAtNight": true,
+    "DayFlavorAnimation": "",
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": false,
+    "DayTimePeriod": [
+      6.01,
+      17.99
+    ],
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Graveler.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
