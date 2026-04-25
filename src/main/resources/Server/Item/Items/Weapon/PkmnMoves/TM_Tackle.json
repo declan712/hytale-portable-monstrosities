@@ -1,0 +1,203 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.TM_Tackle.name",
+    "Description": "portablemonstrosities.items.TM_Tackle.description"
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Weapons"
+  ],
+  "SubCategory": "TM",
+  "Quality": "Uncommon",
+  "ItemLevel": 40,
+  "Model": "Items/Weapons/Tm/Model.blockymodel",
+  "Texture": "Items/Weapons/Tm/Normal.png",
+  "PlayerAnimationsId": "Spellbook",
+  "Utility": {
+    "Compatible": true
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Bench_Pokeball",
+        "Categories": [
+          "Pkmn_TM"
+        ]
+      }
+    ]
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "StatsCondition",
+          "Lenient": false,
+          "Costs": {
+            "Stamina": 2.01
+          },
+          "Next": {
+            "Type": "EffectCondition",
+            "EntityEffectIds": [
+              "Stamina_Broken"
+            ],
+            "Match": "None",
+            "Next": {
+              "Type": "Serial",
+              "Interactions": [
+                {
+                  "Type": "ChangeStat",
+                  "StatModifiers": {
+                    "StaminaRegenDelay": -1.5
+                  },
+                  "Behaviour": "Set"
+                },
+                {
+                  "Type": "Charging",
+                  "Effects": {
+                    "ItemPlayerAnimationsId": "Spellbook",
+                    "ItemAnimationId": "CastPushCharging",
+                    "ClearAnimationOnFinish": true
+                  },
+                  "AllowIndefiniteHold": true,
+                  "DisplayProgress": true,
+                  "Next": {
+                    "0": {
+                      "Type": "Replace",
+                      "Var": "Primary_Attack",
+                      "DefaultValue": {
+                        "Parent": "Root_NPC_Attack_Melee"
+                      }
+                    },
+                    "0.5": {
+                      "Type": "StatsCondition",
+                      "Costs": {
+                        "Stamina": 5.01
+                      },
+                      "Next": {
+                        "Type": "Serial",
+                        "Interactions": [
+                          {
+                            "Type": "ChangeStat",
+                            "StatModifiers": {
+                              "Stamina": -5
+                            },
+                            "Behaviour": "Add",
+                            "Entity": "Owner",
+                            "ValueType": "Absolute"
+                          },
+                          {
+                            "Type": "ChangeStat",
+                            "StatModifiers": {
+                              "StaminaRegenDelay": -3
+                            },
+                            "Behaviour": "Set"
+                          },
+                          {
+                            "Type": "Replace",
+                            "Var": "Ability",
+                            "DefaultValue": {
+                              "Interactions": [
+                                "Pkmn_Moves_Tackle"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "Failed": "Spellbook_Cast_Fail",
+                      "ValueType": "Absolute"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Secondary": {
+      "RequireNewClick": true,
+      "Rules": {
+        "BlockedBy": [
+          "Primary"
+        ]
+      },
+      "Cooldown": {
+        "Id": "Block",
+        "Cooldown": 0.75
+      },
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "Var": "Guard_Start",
+          "DefaultOk": true,
+          "DefaultValue": {
+            "Interactions": [
+              "Weapon_Sword_Secondary_Guard"
+            ]
+          }
+        }
+      ],
+      "Tags": {
+        "Attack": [
+          "Melee"
+        ]
+      }
+    }
+  },
+  "InteractionVars": {
+    "Guard_Wield": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Sword_Secondary_Guard_Wield",
+          "Effects": {
+            "ItemPlayerAnimationsId": "Sword",
+            "ItemAnimationId": "Guard",
+            "ClearAnimationOnFinish": true,
+            "WorldSoundEventId": "SFX_Light_Melee_T2_Block",
+            "LocalSoundEventId": "SFX_Sword_T2_Block_Local"
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      231,
+      5,
+      155
+    ],
+    "Translation": [
+      3,
+      -18
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Spellbook"
+    ]
+  },
+  "Weapon": {},
+  "Icon": "Icons/ItemsGenerated/TM_Normal.png",
+  "ItemSoundSetId": "ISS_Weapon_Blade_Small",
+  "Scale": 1.25,
+  "Particles": [
+    {
+      "SystemId": "Willow_Fruit",
+      "PositionOffset": {
+        "Y": 0.25
+      }
+    }
+  ]
+}
