@@ -1,7 +1,11 @@
 package dev.hytalemodding.interactions;
 
 import java.util.ArrayList;
+import java.util.UUID;
+
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -9,23 +13,39 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
+import com.hypixel.hytale.math.hitdetection.HitDetectionBuffer;
+import com.hypixel.hytale.math.vector.Vector3d;
+import com.hypixel.hytale.math.vector.Vector3f;
+import com.hypixel.hytale.math.vector.Vector4d;
+import com.hypixel.hytale.protocol.CombatTextUpdate;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
+import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.modules.debug.DebugUtils;
 import com.hypixel.hytale.server.core.modules.entity.damage.*;
+import com.hypixel.hytale.server.core.modules.entity.tracker.EntityTrackerSystems;
+import com.hypixel.hytale.server.core.modules.entity.tracker.EntityTrackerSystems.EntityViewer;
+import com.hypixel.hytale.server.core.modules.entityui.asset.CombatTextUIComponent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.none.SelectInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.DamageEntityInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageCalculator;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageEffects;
-import com.hypixel.hytale.server.core.universe.world.World;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
+// import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.npc.entities.NPCEntity;
+
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.components.PkmnStatsComponent.PkmnStat;
 import dev.hytalemodding.util.PkmnStatUtils;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 
-public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
+public class DamagePkmnEntityInteraction extends SimpleInteraction{
 
     protected DamageCalculator damageCalculator;
     protected DamageEffects damageEffects;
@@ -37,7 +57,7 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
     public static final BuilderCodec<DamagePkmnEntityInteraction> CODEC = BuilderCodec.builder(
         DamagePkmnEntityInteraction.class, 
         DamagePkmnEntityInteraction::new, 
-        SimpleInstantInteraction.CODEC
+        SimpleInteraction.CODEC
     )
     .appendInherited(
         new KeyedCodec<>("DamageCalculator", DamageCalculator.CODEC),
@@ -61,155 +81,241 @@ public class DamagePkmnEntityInteraction extends SimpleInstantInteraction{
     .add()
     .build();
 
-    // static {
-    //     CODEC = BuilderCodec.builder(
-    //         DamagePkmnEntityInteraction.class, 
-    //         DamagePkmnEntityInteraction::new, 
-    //         SimpleInstantInteraction.CODEC
-    //     )
-    //         .appendInherited(
-    //             new KeyedCodec<>("AcceptedNpcGroups", NPCGroup.CHILD_ASSET_CODEC_ARRAY),
-    //             (o, v) -> o.acceptedNpcGroupIds = v,
-    //             (o)    -> o.acceptedNpcGroupIds,
-    //             (o, p) -> o.acceptedNpcGroupIds = p.acceptedNpcGroupIds
-    //         )
-    //         .addValidator(NPCGroup.VALIDATOR_CACHE.getArrayValidator())
-    //         .add()
-    //         .appendInherited(
-    //             new KeyedCodec<>("FullIcon", Codec.STRING),
-    //             (o, v) -> o.fullIcon = v,
-    //             (o)    -> o.fullIcon,
-    //             (o, p) -> o.fullIcon = p.fullIcon
-    //         )
-    //         .add()
-    //         .appendInherited(
-    //             new KeyedCodec<>("CaptureItemId", Codec.STRING),
-    //             (o, v) -> o.captureItemId = v,
-    //             (o)    -> o.captureItemId,
-    //             (o, p) -> o.captureItemId = p.captureItemId
-    //         )
-    //         .add()
-    //         .afterDecode(captureData -> {
-    //             if (captureData.acceptedNpcGroupIds != null) {
-    //                 captureData.acceptedNpcGroupIndexes = new int[captureData.acceptedNpcGroupIds.length];
-    //                 for (int i = 0; i < captureData.acceptedNpcGroupIds.length; i++) {
-    //                     int assetIdx = NPCGroup.getAssetMap().getIndex(captureData.acceptedNpcGroupIds[i]);
-    //                     captureData.acceptedNpcGroupIndexes[i] = assetIdx;
-    //                 }
-    //             }
-    //         })
-    //         .build();
-    // }
-
-
-
-
+    @Override
+    protected void tick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        if (context.getState().state == InteractionState.Failed && context.hasLabels()) {
+            context.jump(context.getLabel(0));
+        }
+        if(firstRun) { firstRun(type,context,cooldownHandler); }
+    }
 
 
     @Override
+    protected void simulateTick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        // Intentionally empty — damage must only be applied on the server tick.
+    }
+
+
+
+    // @Override
     protected void firstRun(
         @Nonnull InteractionType interactionType,
         @Nonnull InteractionContext context,
         @Nonnull CooldownHandler cooldownHandler
     ) {
         CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
+        if (commandBuffer == null) { fail(context);return;}
 
-        if (commandBuffer == null) {
-            // LOGGER.atInfo().log("CommandBuffer is null");
-            fail(context);
-            return;
+        Store<EntityStore> store = commandBuffer.getExternalData().getStore();
+
+        Vector4d hit = (Vector4d)context.getMetaStore().getMetaObject(Interaction.HIT_LOCATION);
+        if (SelectInteraction.SHOW_VISUAL_DEBUG && hit != null) {
+            DebugUtils.addSphere(((EntityStore)commandBuffer.getExternalData()).getWorld(), 
+            new Vector3d(hit.x, hit.y, hit.z), 
+            new Vector3f(1.0F, 0.0F, 0.0F), 
+            (double)0.2F, 5.0F);
         }
 
-        World world = commandBuffer.getExternalData().getWorld();
-        Store<EntityStore> store = commandBuffer.getExternalData().getStore();
 
         Ref<EntityStore> ownerRef   = context.getOwningEntity();
         Ref<EntityStore> targetRef  = context.getTargetEntity();
-        Ref<EntityStore> thirdRef   = context.getEntity();
 
-        if(ownerRef == null)  { 
-            // LOGGER.atInfo().log("ownerRef is NULL"); 
-            fail(context); 
-            return; 
-        }
-        if(targetRef == null) { 
-            // LOGGER.atInfo().log("targetRef is NULL"); 
-            fail(context); 
-            return; 
-        }
-
-        // PkmnStatsComponent ownerStats = store.getComponent(ownerRef, PkmnStatsComponent.getComponentType());
-        // PkmnStatsComponent targetStats = store.getComponent(targetRef, PkmnStatsComponent.getComponentType());
+        if(ownerRef == null)  { fail(context); return; }
+        if(targetRef == null) { fail(context); return; }
 
         PkmnStatsComponent ownerStats = PkmnStatUtils.getPkmnStatsComponent(commandBuffer, ownerRef);
+        if (ownerStats == null) ownerStats = new PkmnStatsComponent();
+        PkmnStatUtils.apply(store,commandBuffer,ownerRef,ownerStats);
         commandBuffer.putComponent(ownerRef, PkmnStatsComponent.getComponentType(), ownerStats);
+
         PkmnStatsComponent targetStats = PkmnStatUtils.getPkmnStatsComponent(commandBuffer, targetRef);
+        if (targetStats == null) targetStats = new PkmnStatsComponent();
+        PkmnStatUtils.apply(store,commandBuffer,targetRef,targetStats);
         commandBuffer.putComponent(targetRef, PkmnStatsComponent.getComponentType(), targetStats);
 
         int[] ownerStatArray = PkmnStatUtils.getCurrentStats(commandBuffer, ownerRef);
         int[] targetStatArray = PkmnStatUtils.getCurrentStats(commandBuffer, targetRef);
 
-        if(ownerStatArray == null)  { 
-            // LOGGER.atInfo().log("ownerStatArray is NULL");  
-            fail(context); 
-            return; 
-        }
-        if(targetStatArray == null) { 
-            // LOGGER.atInfo().log("targetStatArray is NULL"); 
-            fail(context); 
-            return; 
-        }
-        // NPCEntity attacker = store.getComponent(ownerRef,NPCEntity.getComponentType());
-        // if(attacker != null) {
-        //     String attackerRole = attacker.getRoleName();
-        //     LOGGER.atInfo().log("ATTACKER: "+attackerRole);
-        // }
-        // NPCEntity defender = store.getComponent(targetRef,NPCEntity.getComponentType());
-        // if(defender != null) {
-        //     String defenderRole = defender.getRoleName();
-        //     LOGGER.atInfo().log("DEFENDER: "+defenderRole);
-        // }
+        if(ownerStatArray == null)  { fail(context); return; }
+        if(targetStatArray == null) { fail(context); return; }
 
         int lvl = ownerStats.getLevel();
-        // int ownerAtk = ownerStats.calcEffectiveStat(PkmnStat.ATK.index);
-        // int ownerSpAtk = ownerStats.calcEffectiveStat(PkmnStat.SPATK.index);
 
-        // int targetDef = targetStats.calcEffectiveStat(PkmnStat.DEF.index);
-        // int targetSpDef = targetStats.calcEffectiveStat(PkmnStat.SPDEF.index);
-        int ownerAtk = ownerStatArray[PkmnStat.ATK.index];
-        int ownerSpAtk = ownerStatArray[PkmnStat.SPATK.index];
-
-
-        int targetDef = targetStatArray[PkmnStat.DEF.index];
-        int targetSpDef = targetStatArray[PkmnStat.SPDEF.index];
-
-        int atk = isPhysical ? ownerAtk : ownerSpAtk;
-        int def = isPhysical ? targetDef : targetSpDef;
+        int atk = isPhysical 
+            ? ownerStatArray[PkmnStat.ATK.index]
+            : ownerStatArray[PkmnStat.SPATK.index];
+        int def = isPhysical 
+            ? targetStatArray[PkmnStat.DEF.index]
+            : targetStatArray[PkmnStat.SPDEF.index];
 
         ArrayList<String> ownerActiveEffects = PkmnStatUtils.activeEffects(store, ownerRef);
 
         Object2FloatMap<DamageCause> calculatedDamage = damageCalculator.calculateDamage(horizontalSpeedMultiplier);
         Damage.EntitySource source = new Damage.EntitySource(ownerRef);
 
-        
-
         calculatedDamage.forEach((DamageCause cause, Float power) ->{
             boolean stab = PkmnStatUtils.hasSTAB(ownerActiveEffects, cause);
-            Integer attackDamage = PkmnStatUtils.damageFormula(
-                lvl,atk,def,power,false,false,1.0f,stab,false);
-                // LOGGER.atInfo().log("ATTACK: ("+power+" "+cause.getId()+") => "+String.valueOf(attackDamage));
+            Integer attackDamage = 
+                PkmnStatUtils.damageFormula( lvl,atk,def,power,false,false,1.0f,stab,false);
             Damage damage = new Damage(source, cause, attackDamage);
             damageEffects.addToDamage(damage);
             DamageSystems.executeDamage(targetRef, commandBuffer, damage);
+            LOGGER.atInfo().log("executeDamage: "+String.valueOf(attackDamage));
+            updateCombatText(targetRef,store,commandBuffer,damage);
         });
         
         context.getState().state = InteractionState.Finished;
         return;
     }
 
-
     private void fail(@Nonnull InteractionContext interactionContext){
         interactionContext.getState().state = InteractionState.Failed;
     }
 
+    private void updateCombatText(
+        @Nonnull Ref<EntityStore> targetRef, 
+        @Nonnull Store<EntityStore> store, 
+        @Nonnull CommandBuffer<EntityStore> commandBuffer, 
+        @Nonnull Damage damage
+    ) {
+        // damage must be >0
+        if (!(damage.getAmount() > 0.0F)) return;
+
+        // Damage source must be entity
+        Damage.Source damageSource = damage.getSource();
+        if (!(damageSource instanceof Damage.EntitySource)) return;
+
+        // Entity ref must be valid
+        Damage.EntitySource entitySource = (Damage.EntitySource)damageSource;
+        Ref<EntityStore> sourceRef = entitySource.getRef();
+        if (!sourceRef.isValid()) return;
+
+        // Entity must be player
+        // TODO: show if either source or target is player or Tamed
+        boolean shouldShowCombatText = false;
+
+        PlayerRef sourcePlayerRef = (PlayerRef)commandBuffer.getComponent(sourceRef, PlayerRef.getComponentType());
+        PlayerRef targetPlayerRef = (PlayerRef)commandBuffer.getComponent(targetRef, PlayerRef.getComponentType());
+
+        boolean isPlayerSource = sourcePlayerRef!=null  && sourcePlayerRef.isValid();
+        boolean isPlayerTarget = targetPlayerRef!=null  && targetPlayerRef.isValid();
+
+        NPCEntity sourceNpc = commandBuffer.getComponent(sourceRef, NPCEntity.getComponentType());
+        NPCEntity targetNpc = commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
+
+        boolean isTamedSource = sourceNpc!=null && sourceNpc.getRoleName().endsWith("_Tamed");
+        boolean isTamedTarget = targetNpc!=null && targetNpc.getRoleName().endsWith("_Tamed");
+
+        shouldShowCombatText = isPlayerTarget || isTamedSource || isTamedTarget;
+
+
+        if (!shouldShowCombatText) return;
+
+        // player must have EntityViewer
+        EntityTrackerSystems.EntityViewer entityViewerComponent;
+        // if(isPlayerSource) {
+        //     entityViewerComponent= commandBuffer.getComponent(sourceRef, EntityViewer.getComponentType());
+        //     LOGGER.atInfo().log("use sources entityViewerComponent");
+        // } else 
+        if (isPlayerTarget) {
+            entityViewerComponent = commandBuffer.getComponent(targetRef, EntityViewer.getComponentType());
+            LOGGER.atInfo().log("use targets entityViewerComponent");
+            entityViewerComponent.visible.add(targetRef);
+            commandBuffer.putComponent(targetRef, EntityViewer.getComponentType(),entityViewerComponent);
+
+        } else if (isTamedSource){
+            LOGGER.atInfo().log("use sources owners entityViewerComponent");
+            Ref<EntityStore> owner = getOwnerRef(sourceRef,store,commandBuffer);
+            if (owner == null) return;
+
+            entityViewerComponent = commandBuffer.getComponent(owner, EntityViewer.getComponentType());
+            Player ownerPlayer = store.getComponent(owner, Player.getComponentType());
+            if (ownerPlayer == null) return;
+
+            String ownerName = ownerPlayer.getDisplayName();
+            LOGGER.atInfo().log("show damage text to owner: "+ownerName);
+
+        } else if (isTamedTarget){
+            LOGGER.atInfo().log("use targets owners entityViewerComponent");
+            Ref<EntityStore> owner = getOwnerRef(targetRef,store,commandBuffer);
+            if (owner == null) return;
+
+            entityViewerComponent = commandBuffer.getComponent(owner, EntityViewer.getComponentType());
+            Player ownerPlayer = store.getComponent(owner, Player.getComponentType());
+            if (ownerPlayer == null) return;
+
+            String ownerName = ownerPlayer.getDisplayName();
+            LOGGER.atInfo().log("show damage text to owner: "+ownerName);
+        } else {
+            return;
+        }
+
+        if (entityViewerComponent == null) return;
+
+        // Update combat text
+        Float hitAngleDeg = damage.getIfPresentMetaObject(Damage.HIT_ANGLE);
+        queueUpdateFor(targetRef, damage.getAmount(), hitAngleDeg, entityViewerComponent);
+    }
+
+    private static Ref<EntityStore> getOwnerRef(
+        @Nonnull Ref<EntityStore> ref, 
+        @Nonnull Store<EntityStore> store, 
+        @Nonnull CommandBuffer<EntityStore> commandBuffer
+    ) {
+        PkmnStatsComponent pkmnStats = commandBuffer.getComponent(ref,PkmnStatsComponent.getComponentType());
+        if (pkmnStats == null) { 
+            LOGGER.atInfo().log("pkmnStats NULL => no owner"); 
+            return null;
+        }
+        String ownerId = pkmnStats.getOwnerUuid();
+        if (ownerId == null)  { 
+            LOGGER.atInfo().log("ownerUuid NULL"); 
+            return null;
+        }
+        Ref<EntityStore> ownerRef = store.getExternalData().getRefFromUUID(UUID.fromString(ownerId));
+        if(ownerRef == null) {
+            LOGGER.atInfo().log("ownerREf NULL"); 
+            return null;
+        }
+        Player ownerPlayer = store.getComponent(ownerRef, Player.getComponentType());
+        if (ownerPlayer == null){
+            LOGGER.atInfo().log("Owner not a player"); 
+            return null;
+        }
+        String ownerName = ownerPlayer.getDisplayName();
+        LOGGER.atInfo().log("Owner is "+ownerName); 
+        return ownerRef;
+
+
+    }
+
+
+    private static void queueUpdateFor(
+        @Nonnull Ref<EntityStore> ref, 
+        float damageAmount, 
+        @Nullable Float hitAngleDeg, 
+        @Nonnull EntityTrackerSystems.EntityViewer viewer
+    ) {
+        CombatTextUIComponent combatText = new CombatTextUIComponent();
+        CombatTextUpdate update = new CombatTextUpdate(hitAngleDeg == null ? 0.0F : hitAngleDeg, Integer.toString((int)Math.floor((double)damageAmount)));
+        viewer.queueUpdate(ref, update);
+    }
+
+
+
 }
+
+
+

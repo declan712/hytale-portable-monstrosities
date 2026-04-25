@@ -46,6 +46,9 @@ public class PkmnStatUtils {
     private static final String SPECIES_ICON_PREFIX = "Icons/Items/Pokeball/";
     private static final String SPECIES_ICON_SUFFIX = ".png";
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
+    public static final int[] PLAYER_BASE_STATS = {100,30,60,20,80,75};
+    public static final float PLAYER_HP_BONUS_FACTOR = 0.5f;
+    public static final int DEAULT_STAT_MAX = 50;
 
     /**
      * 
@@ -175,13 +178,26 @@ public class PkmnStatUtils {
         if (store == null) return null;
 
         boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
-        if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
+        if (isDead) {
+            LOGGER.atInfo().log("NPC is dead");
+            return null;
+        }
 
         EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
         if (stats == null){ 
             LOGGER.atInfo().log("Entity has no EntityStatMap"); 
             return null;
         }
+
+        // // Player
+        // // TODO: check if pkmn or not?
+        // Player player = store.getComponent(ref, Player.getComponentType());
+        // boolean isPlayer = player != null;
+        // if (isPlayer) {
+
+        //     //playerBaseStats
+        // }
+
 
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
         int             lvlIdx = assetMap.getIndex("Lvl");
@@ -268,8 +284,11 @@ public class PkmnStatUtils {
         if (npcEntity != null) {
             String roleName = npcEntity.getRoleName();
             String species = toDisplayName(roleName);
-            pkmnStats.setBaseStats(PkmnBaseStatList.fromMap(species));
+            var defaultBaseStats = PkmnBaseStatList.fromMap(species);
+            if(baseStats!=defaultBaseStats) pkmnStats.setBaseStats(defaultBaseStats);
         }
+        Player player = store.getComponent(ref, Player.getComponentType());
+        if (player != null && baseStats!=PLAYER_BASE_STATS) pkmnStats.setBaseStats(PLAYER_BASE_STATS);
 
         if ( baseStats[PkmnStat.ATK.index] == 0) { LOGGER.atInfo().log("Entity base ATK is 0"); }
         if ( baseStats[PkmnStat.DEF.index] == 0) { LOGGER.atInfo().log("Entity base DEF is 0"); }
@@ -492,7 +511,10 @@ public class PkmnStatUtils {
     ) {
         EntityStatMap stats = store.getComponent(entityRef, EntityStatMap.getComponentType());
         if (stats == null) return;
-        _applyToStatMap(stats, pkmnStats);
+        boolean isPlayer = store.getComponent(entityRef,Player.getComponentType())!=null;
+        NPCEntity npcEntity = store.getComponent(entityRef,NPCEntity.getComponentType());
+        boolean isPkmn = npcEntity != null && filterByRoleName(npcEntity.getRoleName());
+        _applyToStatMap(stats, pkmnStats, isPlayer, isPkmn);
         store.putComponent(entityRef, EntityStatMap.getComponentType(), stats);
     }
 
@@ -509,9 +531,12 @@ public class PkmnStatUtils {
             @Nonnull Ref<EntityStore> entityRef,
             @Nonnull PkmnStatsComponent pkmnStats
     ) {
-        EntityStatMap stats = store.getComponent(entityRef, EntityStatMap.getComponentType());
+        EntityStatMap stats = commandBuffer.getComponent(entityRef, EntityStatMap.getComponentType());
         if (stats == null) return;
-        _applyToStatMap(stats, pkmnStats);
+        boolean isPlayer = commandBuffer.getComponent(entityRef,Player.getComponentType())!=null;
+        NPCEntity npcEntity = commandBuffer.getComponent(entityRef,NPCEntity.getComponentType());
+        boolean isPkmn = npcEntity != null && filterByRoleName(npcEntity.getRoleName());
+        _applyToStatMap(stats, pkmnStats, isPlayer, isPkmn);
         commandBuffer.putComponent(entityRef, EntityStatMap.getComponentType(), stats);
     }
 
@@ -523,7 +548,9 @@ public class PkmnStatUtils {
      */
     private static void _applyToStatMap(
         @Nonnull EntityStatMap stats,
-        @Nonnull PkmnStatsComponent pkmnStats
+        @Nonnull PkmnStatsComponent pkmnStats,
+        boolean isPlayer,
+        boolean isPkmn
     ) {
 
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
@@ -536,19 +563,51 @@ public class PkmnStatUtils {
         int spDefIdx   = assetMap.getIndex("SpDef");
         int speIdx     = assetMap.getIndex("Spd");
 
-        int calcHp = pkmnStats.calcEffectiveStat(0);
-        stats.putModifier(healthIdx, "NPC_Max",
-            new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcHp - 100));
+        if (isPlayer){
+            int calcHp = pkmnStats.calcEffectiveStat(PkmnStat.HP.index);
+            int hpBonus = Math.max(0, Math.round((calcHp - 100) * PLAYER_HP_BONUS_FACTOR));
+            stats.putModifier(healthIdx, "NPC_Max",
+                new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, hpBonus));
+        } else if (isPkmn) {
+            int calcHp = pkmnStats.calcEffectiveStat(PkmnStat.HP.index);
+            stats.putModifier(healthIdx, "NPC_Max",
+                new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcHp - 100));
+        } else {
+            int calcHp = pkmnStats.calcEffectiveStat(PkmnStat.HP.index);
+            int hpBonus = Math.max(0, Math.round((calcHp - 100) * PLAYER_HP_BONUS_FACTOR));
+            stats.putModifier(healthIdx, "NPC_Max",
+                new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, hpBonus));
+        }
+
 
         int level = pkmnStats.getLevel();
         int expMax = level * level * level;
 
-        if (atkIdx   >= 0) stats.setStatValue(atkIdx,   (float) pkmnStats.calcEffectiveStat(1));
-        if (defIdx   >= 0) stats.setStatValue(defIdx,   (float) pkmnStats.calcEffectiveStat(2));
-        if (spAtkIdx >= 0) stats.setStatValue(spAtkIdx, (float) pkmnStats.calcEffectiveStat(3));
-        if (spDefIdx >= 0) stats.setStatValue(spDefIdx, (float) pkmnStats.calcEffectiveStat(4));
-        if (speIdx   >= 0) stats.setStatValue(speIdx,   (float) pkmnStats.calcEffectiveStat(5));
-        
+        if (atkIdx   >= 0) {
+            int calcStat = pkmnStats.calcEffectiveStat(PkmnStat.ATK.index);
+            stats.putModifier(atkIdx, "NPC_Max", new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcStat - DEAULT_STAT_MAX));
+            stats.setStatValue(atkIdx, (float) calcStat);
+        }
+        if (defIdx   >= 0) {
+            int calcStat = pkmnStats.calcEffectiveStat(PkmnStat.DEF.index);
+            stats.putModifier(defIdx, "NPC_Max", new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcStat - DEAULT_STAT_MAX));
+            stats.setStatValue(defIdx, (float) calcStat);
+        }
+        if (spAtkIdx >= 0) {
+            int calcStat = pkmnStats.calcEffectiveStat(PkmnStat.SPATK.index);
+            stats.putModifier(spAtkIdx, "NPC_Max", new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcStat - DEAULT_STAT_MAX));
+            stats.setStatValue(spAtkIdx, (float) calcStat);
+        }
+        if (spDefIdx >= 0) {
+            int calcStat = pkmnStats.calcEffectiveStat(PkmnStat.SPDEF.index);
+            stats.putModifier(spDefIdx, "NPC_Max", new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcStat - DEAULT_STAT_MAX));
+            stats.setStatValue(spDefIdx, (float) calcStat);
+        }
+        if (speIdx   >= 0) {
+            int calcStat = pkmnStats.calcEffectiveStat(PkmnStat.SPD.index);
+            stats.putModifier(speIdx, "NPC_Max", new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcStat - DEAULT_STAT_MAX));
+            stats.setStatValue(speIdx, (float) calcStat);
+        }
         if (level   >= 0) stats.setStatValue(lvlIdx,   (float) level);
 
         if (expIdx >= 0) {

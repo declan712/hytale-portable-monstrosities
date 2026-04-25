@@ -1,6 +1,7 @@
 package dev.hytalemodding;
 
 import com.hypixel.hytale.component.ComponentType;
+import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
@@ -10,6 +11,7 @@ import dev.hytalemodding.commands.PkmnHudTestCommand;
 import dev.hytalemodding.components.FaintedPkmnComponent;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.components.PkmnStorageComponent;
+import dev.hytalemodding.events.InitPlayerStatsEvent;
 import dev.hytalemodding.interactions.CaptureWildCreatureInteraction;
 import dev.hytalemodding.interactions.StayCapturedInteraction;
 import dev.hytalemodding.interactions.HasOwnerInteraction;
@@ -48,6 +50,7 @@ public class PortableMonstrosities extends JavaPlugin {
 
         // -- Events ----------
         // this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, ExampleEvent::onPlayerReady);
+        this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, InitPlayerStatsEvent::onPlayerReady);
 
         // -- Codecs (Interactions)  ----------
         this.getCodecRegistry(Interaction.CODEC).register("DamagePkmnEntity", DamagePkmnEntityInteraction.class, DamagePkmnEntityInteraction.CODEC);

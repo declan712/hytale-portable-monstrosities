@@ -27,6 +27,7 @@ import com.hypixel.hytale.server.core.entity.Entity;
 import com.hypixel.hytale.server.core.entity.EntityUtils;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.LivingEntity;
+import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
@@ -307,6 +308,9 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         LOGGER.atInfo().log("NPC state: "+npcStatus);
         
         existingCaptureMeta.setNpcStatus("Active");
+        UUIDComponent ownerUuidComponent = commandBuffer.getComponent(ref, UUIDComponent.getComponentType());
+        if (ownerUuidComponent != null) existingCaptureMeta.setOwnerUuid(ownerUuidComponent.getUuid().toString());
+        
 
         ItemStack blankBall = item.withMetadata((BsonDocument) null);
         ItemStack emptyBall = blankBall

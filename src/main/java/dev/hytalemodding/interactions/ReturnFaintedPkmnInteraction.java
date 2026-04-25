@@ -121,18 +121,20 @@ public class ReturnFaintedPkmnInteraction extends SimpleInstantInteraction {
                 .withState("Fainted");
 
 
+        var storage = store.getComponent(playerRef, InventoryComponent.Storage.getComponentType());
         var hotbar = store.getComponent(playerRef, InventoryComponent.Hotbar.getComponentType());
         var slot = hotbar.getActiveSlot();
-        var inventory = hotbar.getInventory();
+        var hotbarInventory = hotbar.getInventory();
+        var inventory = storage.getInventory();
 
         ItemStack remainder = ball.withQuantity(ball.getQuantity() - 1);
         if(remainder == null){
-            inventory.replaceItemStackInSlot((short) slot, ball, capturedBall);
+            hotbarInventory.replaceItemStackInSlot((short) slot, ball, capturedBall);
         } else if (remainder.getQuantity() > 0) {
-            inventory.replaceItemStackInSlot((short) slot, ball, remainder);
+            hotbarInventory.replaceItemStackInSlot((short) slot, ball, remainder);
             inventory.addItemStack(capturedBall);
         } else {
-            inventory.replaceItemStackInSlot((short) slot, ball, capturedBall);
+            hotbarInventory.replaceItemStackInSlot((short) slot, ball, capturedBall);
         }
         commandBuffer.removeEntity(targetRef, RemoveReason.REMOVE);
         context.getState().state = InteractionState.Finished;

@@ -155,7 +155,7 @@ public class PkmnBaseStatList {
             case "Mewtwo": return Mewtwo;
             case "Mew": return Mew;
             default: 
-            int[] base = {10,10,10,10,10,10};
+            int[] base = {50,50,50,50,50,50};
             return base;
         }
     }
