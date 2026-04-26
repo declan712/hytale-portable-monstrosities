@@ -61,6 +61,17 @@
                     },
                     {
                         "Continue":true,
+                        "Actions":[
+                            {
+                                "Type": "ApplyEntityEffect",
+                                "UseTarget": false,
+                                "Once": true,
+                                "EntityEffect": "Pkmn"
+                            }
+                        ]
+                    },
+                    {
+                        "Continue":true,
                         "Enabled": {"Compute": "!isEmpty(Type1)"},
                         "Actions":[
                             {

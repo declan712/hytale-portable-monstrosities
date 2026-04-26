@@ -573,10 +573,10 @@ public class PkmnStatUtils {
             stats.putModifier(healthIdx, "NPC_Max",
                 new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, calcHp - 100));
         } else {
-            int calcHp = pkmnStats.calcEffectiveStat(PkmnStat.HP.index);
-            int hpBonus = Math.max(0, Math.round((calcHp - 100) * PLAYER_HP_BONUS_FACTOR));
-            stats.putModifier(healthIdx, "NPC_Max",
-                new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, hpBonus));
+            // int calcHp = pkmnStats.calcEffectiveStat(PkmnStat.HP.index);
+            // int hpBonus = Math.max(0, Math.round((calcHp - 100) * PLAYER_HP_BONUS_FACTOR));
+            // stats.putModifier(healthIdx, "NPC_Max",
+            //     new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, hpBonus));
         }
 
 
