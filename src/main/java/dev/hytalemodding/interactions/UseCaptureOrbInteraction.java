@@ -578,6 +578,10 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
 
             PkmnStatUtils.apply(store, commandBuffer, newEntityRef, pkmnStats);
 
+            float currentHealth = captureMetadata.getCurrentHp();
+            PkmnStatUtils.setCurrentHp(commandBuffer,newEntityRef,currentHealth);
+
+
             EntityScaleComponent scaleComponent  = store.getComponent(
                 newEntityRef, EntityModule.get().getEntityScaleComponentType());
             if(scaleComponent != null) {
@@ -585,6 +589,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                 commandBuffer.putComponent(
                     newEntityRef, EntityModule.get().getEntityScaleComponentType(), scaleComponent);
             }
+            
 
             commandBuffer.putComponent(newEntityRef,PkmnStatsComponent.getComponentType(),pkmnStats);
 

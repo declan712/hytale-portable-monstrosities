@@ -1,7 +1,7 @@
 {
-  "Parent": "Template_Pkmn_Quad",
-  "Model": "NPC/Pkmn/Flareon/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Flareon/Models/Texture.png",
+  "Parent": "Template_Pkmn",
+  "Model": "NPC/Pkmn/Eevee/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Eevee/Models/Texture.png",
   "EyeHeight": 0.9,
   "CrouchOffset": -0.4,
   "HitBox": {
@@ -16,8 +16,6 @@
       "Z": -0.45
     }
   },
-  "MinScale": 1.2,
-  "MaxScale": 1.4,
   "Camera": {
     "Pitch": {
       "AngleRange": {
@@ -140,7 +138,7 @@
         {
           "Animation": "NPC/Beast/Fox/Animations/Default/Alerted.blockyanim",
           "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Flareon_Cry"
+          "SoundEventId": "SFX_Fox_Alerted"
         }
       ]
     },
@@ -329,8 +327,7 @@
         {
           "Animation": "NPC/Beast/Fox/Animations/Default/Spawn.blockyanim",
           "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Flareon_Cry"
+          "Looping": false
         }
       ]
     },
@@ -345,7 +342,7 @@
       "Animations": [
         {
           "Animation": "NPC/Beast/Fox/Animations/Flavor/Threaten.blockyanim",
-          "SoundEventId": "SFX_Pkmn_Flareon_Cry"
+          "SoundEventId": "SFX_Fox_Alerted"
         }
       ]
     },
@@ -362,22 +359,21 @@
         {
           "Animation": "NPC/Beast/Fox/Animations/Flavor/Threaten.blockyanim",
           "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Flareon_Cry"
+          "SoundEventId": "SFX_Fox_Alerted"
         }
       ]
     }
   },
   "IconProperties": {
-    "Scale": 0.3,
+    "Scale": 0.6,
     "Rotation": [
-      0,
-      -45,
-      0
+      0.0,
+      -45.0,
+      0.0
     ],
     "Translation": [
-      -5,
-      -52
+      19.0,
+      -41.0
     ]
-  },
-  "Icon": "Icons/ModelsGenerated/Pkmn_Flareon.png"
+  }
 }

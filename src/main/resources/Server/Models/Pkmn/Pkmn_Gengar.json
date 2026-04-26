@@ -1,4 +1,5 @@
 {
+  "Parent": "Template_Pkmn_Bi",
   "Model": "NPC/Pkmn/Gengar/Models/Model.blockymodel",
   "Texture": "NPC/Pkmn/Gengar/Models/Texture.png",
   "EyeHeight": 1.2,
@@ -351,22 +352,27 @@
   "Particles": [
     {
       "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "Head",
+      "TargetNodeName": "Head-Spikes",
       "PositionOffset": {
-        "Z": 0,
-        "Y": 0.3
+        "X": 0,
+        "Y": 0,
+        "Z": 0
       }
     },
     {
       "PositionOffset": {
-        "Y": 0
+        "X": 0,
+        "Y": 0,
+        "Z": 0
       },
       "SystemId": "Spectre_Void_Hands",
       "TargetNodeName": "R-Hand"
     },
     {
       "PositionOffset": {
-        "Y": 0
+        "X": 0,
+        "Y": 0,
+        "Z": 0
       },
       "SystemId": "Spectre_Void_Hands",
       "TargetNodeName": "L-Hand"
@@ -376,7 +382,9 @@
       "TargetNodeName": "Head",
       "Scale": 1.5,
       "PositionOffset": {
-        "Z": -0.25
+        "X": 0,
+        "Y": 0,
+        "Z": 0
       }
     }
   ],

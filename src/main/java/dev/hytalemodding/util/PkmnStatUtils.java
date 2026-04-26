@@ -497,6 +497,21 @@ public class PkmnStatUtils {
         return pkmnStats;
     }
 
+
+    public static void setCurrentHp(
+        @Nonnull CommandBuffer<EntityStore> commandBuffer,
+        @Nonnull Ref<EntityStore> entityRef,
+        @Nonnull float hp
+    ) {
+        EntityStatMap stats = commandBuffer.getComponent(entityRef, EntityStatMap.getComponentType());
+        if (stats == null) return;
+
+        int healthIdx  = DefaultEntityStatTypes.getHealth();
+        stats.setStatValue(healthIdx, (float) hp);
+
+        commandBuffer.putComponent(entityRef, EntityStatMap.getComponentType(), stats);
+    }
+
     /**
      * no CommandBuffer available, use store.putComponent instead<br>
      * 
