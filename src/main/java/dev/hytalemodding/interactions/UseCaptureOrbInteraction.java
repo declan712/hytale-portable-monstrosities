@@ -107,7 +107,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             World world = commandBuffer.getExternalData().getWorld();
             Ref<EntityStore> ownerRef = context.getOwningEntity();
             if(ownerRef==null){
-                LOGGER.atInfo().log("ownerRef null");
+                // LOGGER.atInfo().log("ownerRef null");
                 fail(context);
                 super.tick0(firstRun, time, type, context, cooldownHandler);
                 return;
@@ -162,7 +162,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         Ref<EntityStore> ref = context.getEntity();
         Entity caster = EntityUtils.getEntity(ref, commandBuffer);
         if (!(caster instanceof LivingEntity)) {
-            LOGGER.atInfo().log("caster not LivingEntity");
+            // LOGGER.atInfo().log("caster not LivingEntity");
             fail(context);
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
@@ -173,7 +173,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         byte         hotbarSlot    = inventory.getActiveHotbarSlot();
         ItemStack    inHandItem    = inventory.getActiveHotbarItem();
         if (inHandItem == null) {
-            LOGGER.atInfo().log("inHandItem NULL");
+            // LOGGER.atInfo().log("inHandItem NULL");
             fail(context);
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
@@ -182,7 +182,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         CapturedNPCMetadata existingMeta = (CapturedNPCMetadata)
             item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
         if (existingMeta != null) {
-            LOGGER.atInfo().log("CapturedNPCMetadata != NULL");
+            // LOGGER.atInfo().log("CapturedNPCMetadata != NULL");
 
             if (context.getTargetBlock() == null) { 
                 context.getState().state = InteractionState.Finished;
@@ -194,7 +194,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
 
         Ref<EntityStore> targetRef = context.getTargetEntity();
         if (targetRef == null) {
-            LOGGER.atInfo().log("targetRef NULL");
+            // LOGGER.atInfo().log("targetRef NULL");
             fail(context);
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
@@ -203,7 +203,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         ItemStack singleBall = inHandItem.withQuantity(1);
         ItemStack capturedBall = tryCaptureIntoItem(commandBuffer, singleBall, targetRef, ref);
         if (capturedBall == null) {
-            LOGGER.atInfo().log("capturedBall NULL");
+            // LOGGER.atInfo().log("capturedBall NULL");
             fail(context);
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
@@ -236,7 +236,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
     ) {
         ItemStack item = context.getHeldItem();
         if (item == null) { 
-            LOGGER.atInfo().log("ItemStack NULL");
+            // LOGGER.atInfo().log("ItemStack NULL");
             fail(context); 
             return; 
         }
@@ -244,7 +244,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         Ref<EntityStore> ref    = context.getEntity();
         Entity           caster = EntityUtils.getEntity(ref, commandBuffer);
         if (!(caster instanceof LivingEntity)) { 
-            LOGGER.atInfo().log("Caster not LivingEntity");
+            // LOGGER.atInfo().log("Caster not LivingEntity");
             fail(context); 
             return; 
         }
@@ -256,14 +256,14 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         CapturedNPCMetadata existingMeta = (CapturedNPCMetadata)
             item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
         if (existingMeta == null) { 
-            LOGGER.atInfo().log("CapturedNPCMetadata NULL");
+            // LOGGER.atInfo().log("CapturedNPCMetadata NULL");
             fail(context); 
             return; 
         }
 
         BlockPosition pos = context.getTargetBlock();
         if (pos == null) { 
-            LOGGER.atInfo().log("BlockPosition NULL");
+            // LOGGER.atInfo().log("BlockPosition NULL");
             fail(context); 
             return;
         }
@@ -271,7 +271,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         long       chunkIndex = ChunkUtil.indexChunkFromBlock(pos.x, pos.z);
         WorldChunk worldChunk = world.getChunk(chunkIndex);
         if (worldChunk == null) { 
-            LOGGER.atInfo().log("WorldChunk NULL");
+            // LOGGER.atInfo().log("WorldChunk NULL");
             fail(context); 
             return; 
         }
@@ -288,7 +288,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         // ItemStack capturedBall = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta);
 
         PkmnCaptureMetadata existingCaptureMeta = item.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
-            LOGGER.atInfo().log("NPC IS not?");
+            // LOGGER.atInfo().log("NPC IS not?");
         if(existingCaptureMeta == null ){
             fail(context);
             return;
@@ -296,16 +296,16 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         String npcStatus = existingCaptureMeta.getNpcStatus();
         if (npcStatus==null) npcStatus="Healthy";
         if(npcStatus == "Fainted"){
-            LOGGER.atInfo().log("NPC IS DEAD?");
+            // LOGGER.atInfo().log("NPC IS DEAD?");
             fail(context);
             return;
         }
         if(npcStatus == "Active"){
-            LOGGER.atInfo().log("NPC not currently in ball?");
+            // LOGGER.atInfo().log("NPC not currently in ball?");
             fail(context);
             return;
         }
-        LOGGER.atInfo().log("NPC state: "+npcStatus);
+        // LOGGER.atInfo().log("NPC state: "+npcStatus);
         
         existingCaptureMeta.setNpcStatus("Active");
         UUIDComponent ownerUuidComponent = commandBuffer.getComponent(ref, UUIDComponent.getComponentType());
@@ -333,7 +333,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                     inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
                     context.getState().state = InteractionState.Finished;
                 } else {
-                    LOGGER.atInfo().log("Unable to add new resident to coop");
+                    // LOGGER.atInfo().log("Unable to add new resident to coop");
                     fail(context);
                 }
                 return;
@@ -363,7 +363,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull World world,
         @Nonnull Vector3i targetBlock
     ) {
-        LOGGER.atInfo().log("simulateInteractWithBlock?");
+        // LOGGER.atInfo().log("simulateInteractWithBlock?");
     }
 
 
@@ -417,7 +417,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull Ref<EntityStore> targetRef,
         @Nonnull Ref<EntityStore> catcherRef
     ) {
-        LOGGER.atInfo().log("tryCaptureIntoItem");
+        // LOGGER.atInfo().log("tryCaptureIntoItem");
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         if (store == null) return null;
 
@@ -451,7 +451,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             String owner  = pkmnStats.getOwnerUuid();
             Player player = commandBuffer.getComponent(catcherRef, Player.getComponentType());
             if (PkmnStatUtils.hasOtherOwner(owner, player)) {
-                LOGGER.atInfo().log("Creature is owned by someone else");
+                // LOGGER.atInfo().log("Creature is owned by someone else");
                 return null;
             }
         }
@@ -477,13 +477,13 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         if (npcStatus==null) npcStatus="Healthy";
 
         if(npcStatus == "Fainted"){
-            LOGGER.atInfo().log("NPC IS DEAD?");;
+            // LOGGER.atInfo().log("NPC IS DEAD?");;
         }
         if(npcStatus == "Active"){
-            LOGGER.atInfo().log("NPC not currently in ball?");
+            // LOGGER.atInfo().log("NPC not currently in ball?");
             captureMetadata.setNpcStatus("Healthy");
         }
-        LOGGER.atInfo().log("NPC state: "+npcStatus);
+        // LOGGER.atInfo().log("NPC state: "+npcStatus);
 
         // String ballEntityId = existingCaptureMeta.getballEntityUuid();
         // if(ballEntityId==null || ballEntityId.isBlank()){
@@ -545,7 +545,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull ItemStack replacementItem
     ) {
 
-        LOGGER.atInfo().log("spawnCapturedCreature");
+        // LOGGER.atInfo().log("spawnCapturedCreature");
         Vector3d spawnPos = new Vector3d(pos.x + 0.5, pos.y, pos.z + 0.5);
         if (context.getClientState() != null) {
             BlockFace face = BlockFace.fromProtocolFace(context.getClientState().blockFace);

@@ -87,7 +87,6 @@ public class SpawnPkmnTombstoneInteration extends SimpleInstantInteraction {
 
         DeathComponent deathComponent = store.getComponent(ownerRef, DeathComponent.getComponentType());
         if (deathComponent == null) { 
-            LOGGER.atInfo().log("spawning tombstone for NPC that isnt dead??");
             // fail(context); return; 
         }
 
@@ -130,35 +129,10 @@ public class SpawnPkmnTombstoneInteration extends SimpleInstantInteraction {
         long       chunkIndex = ChunkUtil.indexChunkFromBlock(pos.x, pos.z);
         WorldChunk worldChunk = world.getChunk(chunkIndex);
         if (worldChunk == null) { 
-            LOGGER.atInfo().log("WorldChunk NULL");
             fail(context); 
             return; 
         }
         
-        // worldChunk.setBlock(pos.x, pos.y, pos.z, tombstoneItemId);
-
-        // Ref<ChunkStore> blockRef = worldChunk.getBlockComponentEntity(pos.x, pos.y, pos.z);
-        // if (blockRef == null || !blockRef.isValid()) {
-        //     LOGGER.atInfo().log("Block ref invalid");
-        //     // blockRef = BlockModule.ensureBlockEntity(worldChunk, pos.x, pos.y, pos.z);
-        // }
-        // Store<ChunkStore> chunkStore         = world.getChunkStore().getStore();
-        
-
-        // Holder<ChunkStore> holder = worldChunk.getBlockComponentHolder(pos.x, pos.y, pos.z);
-
-        // BlockEntity blockEntity = new BlockEntity(tombstoneItemId);
-
-        // chunkStore.(blockRef, null, null);
-
-        // var hotbar = store.getComponent(ownerRef, InventoryComponent.Hotbar.getComponentType());
-        // var slot = hotbar.getActiveSlot();
-        // var inventory = hotbar.getInventory();
-        // inventory.replaceItemStackInSlot(slot, ball, modifiedBall);
-
-        // commandBuffer.removeEntity(targetRef, RemoveReason.REMOVE);
-
-
 
 
         world.execute(() -> {

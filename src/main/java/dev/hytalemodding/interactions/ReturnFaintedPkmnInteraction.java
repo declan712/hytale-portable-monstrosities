@@ -85,17 +85,11 @@ public class ReturnFaintedPkmnInteraction extends SimpleInstantInteraction {
             }
         }
         if (!validItem){
-            LOGGER.atInfo().log("Held item not valid: "+heldItemId);
+            // LOGGER.atInfo().log("Held item not valid: "+heldItemId);
             fail(context); 
             return;
         }
         String roleId = faintedPkmnComponent.getNpcRoleId();
-        // PkmnStatsComponent  maybeStats =  faintedPkmnComponent.getPkmnStats();
-        // if(maybeStats!=null){
-        //     LOGGER.atInfo().log("faintedPkmnComponent.getPkmnStats not null");
-        //     LOGGER.atInfo().log(" - LVL:" + String.valueOf(maybeStats.getLevel()));
-        //     LOGGER.atInfo().log(" - EXP:" + String.valueOf(maybeStats.getExperience()));
-        // }
 
         CapturedNPCMetadata npcMetadata = new CapturedNPCMetadata();
         PkmnCaptureMetadata pkmnMetadata = new PkmnCaptureMetadata();

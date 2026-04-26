@@ -15,6 +15,7 @@ import dev.hytalemodding.events.InitPlayerStatsEvent;
 import dev.hytalemodding.interactions.CaptureWildCreatureInteraction;
 import dev.hytalemodding.interactions.StayCapturedInteraction;
 import dev.hytalemodding.interactions.HasOwnerInteraction;
+import dev.hytalemodding.interactions.HealAllPkmnInteraction;
 import dev.hytalemodding.interactions.ReturnActivePkmnInteraction;
 import dev.hytalemodding.interactions.ReturnFaintedPkmnInteraction;
 import dev.hytalemodding.interactions.SpawnPkmnTombstoneInteration;
@@ -53,6 +54,7 @@ public class PortableMonstrosities extends JavaPlugin {
         this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, InitPlayerStatsEvent::onPlayerReady);
 
         // -- Codecs (Interactions)  ----------
+        this.getCodecRegistry(Interaction.CODEC).register("HealAllPkmn", HealAllPkmnInteraction.class, HealAllPkmnInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("DamagePkmnEntity", DamagePkmnEntityInteraction.class, DamagePkmnEntityInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("HasOwner", HasOwnerInteraction.class, HasOwnerInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("StayCaptured", StayCapturedInteraction.class, StayCapturedInteraction.CODEC);

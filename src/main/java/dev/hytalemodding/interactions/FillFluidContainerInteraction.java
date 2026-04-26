@@ -33,7 +33,7 @@ public class FillFluidContainerInteraction extends SimpleInstantInteraction {
 
         if (commandBuffer == null) {
             interactionContext.getState().state = InteractionState.Failed;
-            LOGGER.atInfo().log("CommandBuffer is null");
+            // LOGGER.atInfo().log("CommandBuffer is null");
             return;
         }
 
@@ -44,14 +44,14 @@ public class FillFluidContainerInteraction extends SimpleInstantInteraction {
         Player player = commandBuffer.getComponent(ref, Player.getComponentType());
         if (player == null) {
             interactionContext.getState().state = InteractionState.Failed;
-            LOGGER.atInfo().log("Player is null");
+            // LOGGER.atInfo().log("Player is null");
             return;
         }
 
         ItemStack itemStack = interactionContext.getHeldItem();
         if (itemStack == null) {
             interactionContext.getState().state = InteractionState.Failed;
-            LOGGER.atInfo().log("ItemStack is null");
+            // LOGGER.atInfo().log("ItemStack is null");
             return;
         }
         double  durability = itemStack.getDurability();
@@ -93,9 +93,7 @@ public class FillFluidContainerInteraction extends SimpleInstantInteraction {
         try {
             var a = itemStack.getItemId().toString();
             var b = "*Container_Tank_State_Filled_Water";
-            if(aboveTargetFluid!=7){
-                 player.sendMessage(Message.raw(aboveTargetFluid+" != "+7));
-            }
+            if(aboveTargetFluid!=7){ player.sendMessage(Message.raw(aboveTargetFluid+" != "+7)); }
             if(aboveTargetFluid==7 && a.equals(b)){
                 player.sendMessage(Message.raw("Found water!"));
                 // interactionContext.setHeldItem(itemStack.withDurability(durability+1));

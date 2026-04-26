@@ -97,10 +97,10 @@ public class StayCapturedInteraction extends SimpleInstantInteraction {
         float escapeProb = lvlMultiplier * computeEscapeProb(currentHp, maxHp, difficulty, ballBonus);
         boolean escapes  = RNG.nextFloat() < escapeProb;
 
-        LOGGER.atInfo().log(String.format(
-            "Wobble: hp=%.0f/%.0f diff=%.2f bonus=%.2f escapeProb=%.3f => %s",
-            currentHp, maxHp, difficulty, ballBonus, escapeProb,
-            escapes ? "ESCAPED" : "CONTAINED"));
+        // LOGGER.atInfo().log(String.format(
+        //     "Wobble: hp=%.0f/%.0f diff=%.2f bonus=%.2f escapeProb=%.3f => %s",
+        //     currentHp, maxHp, difficulty, ballBonus, escapeProb,
+        //     escapes ? "ESCAPED" : "CONTAINED"));
 
         if (escapes) {
             fail(context);

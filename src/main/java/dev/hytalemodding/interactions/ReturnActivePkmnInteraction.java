@@ -56,7 +56,7 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
         PkmnCaptureMetadata pkmnMetadata = ball.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
         if (pkmnMetadata == null) { 
             player.sendMessage(Message.raw("Item missing capture metadata"));
-            LOGGER.atInfo().log("Item has no Pkmn Metadata");
+            // LOGGER.atInfo().log("Item has no Pkmn Metadata");
             fail(context); return; }
         
         String npcStatus = pkmnMetadata.getNpcStatus();
@@ -67,7 +67,7 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
         Ref<EntityStore> targetRef = world.getEntityRef(UUID.fromString(npcId));
         if (targetRef == null) { 
             player.sendMessage(Message.raw("Couldn't find entity :("));
-            LOGGER.atInfo().log("Couldn't find entity");
+            // LOGGER.atInfo().log("Couldn't find entity");
             fail(context); 
             return; 
         }

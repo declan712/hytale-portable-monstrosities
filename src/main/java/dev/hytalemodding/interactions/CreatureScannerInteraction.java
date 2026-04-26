@@ -60,7 +60,6 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
         CommandBuffer<EntityStore> commandBuffer = interactionContext.getCommandBuffer();
 
         if (commandBuffer == null) {
-            LOGGER.atInfo().log("CommandBuffer is null");
             fail(interactionContext);
             return;
         }
@@ -73,22 +72,18 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
         Player player = commandBuffer.getComponent(playerRef, Player.getComponentType());
 
         if (player == null) {
-            LOGGER.atInfo().log("Player is null");
             fail(interactionContext);
             return;
         }
 
         ItemStack itemStack = interactionContext.getHeldItem();
         if (itemStack == null) {
-            // LOGGER.atInfo().log("ItemStack is null");
-            // player.sendMessage(Message.raw("ItemStack is null"));
             fail(interactionContext);
             return;
         }
 
         Ref<EntityStore> targetRef = interactionContext.getTargetEntity();
         if (targetRef == null) {
-            // LOGGER.atInfo().log("target ref null");
             player.sendMessage(Message.raw("No target"));
             fail(interactionContext);
             return;

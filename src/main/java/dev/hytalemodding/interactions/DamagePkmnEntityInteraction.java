@@ -172,7 +172,7 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
             Damage damage = new Damage(source, cause, attackDamage);
             damageEffects.addToDamage(damage);
             DamageSystems.executeDamage(targetRef, commandBuffer, damage);
-            LOGGER.atInfo().log("executeDamage: "+String.valueOf(attackDamage));
+            // LOGGER.atInfo().log("executeDamage: "+String.valueOf(attackDamage));
             updateCombatText(targetRef,store,commandBuffer,damage);
         });
         
@@ -231,12 +231,12 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
         // } else 
         if (isPlayerTarget) {
             entityViewerComponent = commandBuffer.getComponent(targetRef, EntityViewer.getComponentType());
-            LOGGER.atInfo().log("use targets entityViewerComponent");
+            // LOGGER.atInfo().log("use targets entityViewerComponent");
             entityViewerComponent.visible.add(targetRef);
             commandBuffer.putComponent(targetRef, EntityViewer.getComponentType(),entityViewerComponent);
 
         } else if (isTamedSource){
-            LOGGER.atInfo().log("use sources owners entityViewerComponent");
+            // LOGGER.atInfo().log("use sources owners entityViewerComponent");
             Ref<EntityStore> owner = getOwnerRef(sourceRef,store,commandBuffer);
             if (owner == null) return;
 
@@ -245,10 +245,10 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
             if (ownerPlayer == null) return;
 
             String ownerName = ownerPlayer.getDisplayName();
-            LOGGER.atInfo().log("show damage text to owner: "+ownerName);
+            // LOGGER.atInfo().log("show damage text to owner: "+ownerName);
 
         } else if (isTamedTarget){
-            LOGGER.atInfo().log("use targets owners entityViewerComponent");
+            // LOGGER.atInfo().log("use targets owners entityViewerComponent");
             Ref<EntityStore> owner = getOwnerRef(targetRef,store,commandBuffer);
             if (owner == null) return;
 
@@ -257,7 +257,7 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
             if (ownerPlayer == null) return;
 
             String ownerName = ownerPlayer.getDisplayName();
-            LOGGER.atInfo().log("show damage text to owner: "+ownerName);
+            // LOGGER.atInfo().log("show damage text to owner: "+ownerName);
         } else {
             return;
         }
@@ -276,26 +276,26 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
     ) {
         PkmnStatsComponent pkmnStats = commandBuffer.getComponent(ref,PkmnStatsComponent.getComponentType());
         if (pkmnStats == null) { 
-            LOGGER.atInfo().log("pkmnStats NULL => no owner"); 
+            // LOGGER.atInfo().log("pkmnStats NULL => no owner"); 
             return null;
         }
         String ownerId = pkmnStats.getOwnerUuid();
         if (ownerId == null)  { 
-            LOGGER.atInfo().log("ownerUuid NULL"); 
+            // LOGGER.atInfo().log("ownerUuid NULL"); 
             return null;
         }
         Ref<EntityStore> ownerRef = store.getExternalData().getRefFromUUID(UUID.fromString(ownerId));
         if(ownerRef == null) {
-            LOGGER.atInfo().log("ownerREf NULL"); 
+            // LOGGER.atInfo().log("ownerREf NULL"); 
             return null;
         }
         Player ownerPlayer = store.getComponent(ownerRef, Player.getComponentType());
         if (ownerPlayer == null){
-            LOGGER.atInfo().log("Owner not a player"); 
+            // LOGGER.atInfo().log("Owner not a player"); 
             return null;
         }
         String ownerName = ownerPlayer.getDisplayName();
-        LOGGER.atInfo().log("Owner is "+ownerName); 
+        // LOGGER.atInfo().log("Owner is "+ownerName); 
         return ownerRef;
 
 
