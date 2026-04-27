@@ -1,5 +1,6 @@
 ![](banner.jpg)
 
+[View on CurseForge](https://www.curseforge.com/hytale/mods/portable-monstrosities)
 
 ## ** WIP **
 
