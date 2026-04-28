@@ -1,35 +1,40 @@
 {
   "Parent": "Template_Pkmn",
-  "Model": "NPC/Pkmn/Eevee/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Eevee/Models/Texture.png",
-  "EyeHeight": 0.9,
-  "CrouchOffset": -0.4,
+  "Model": "NPC/Pkmn/Charmeleon/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Charmeleon/Models/Texture.png",
+  "EyeHeight": 1.3,
+  "CrouchOffset": -0.3,
   "HitBox": {
     "Max": {
-      "X": 0.45,
-      "Y": 1.1,
-      "Z": 0.45
+      "X": 0.65,
+      "Y": 2.1,
+      "Z": 0.65
     },
     "Min": {
-      "X": -0.45,
+      "X": -0.65,
       "Y": 0,
-      "Z": -0.45
+      "Z": -0.65
     }
   },
   "Camera": {
     "Pitch": {
       "AngleRange": {
         "Max": 45,
-        "Min": -45
+        "Min": -15
       },
       "TargetNodes": [
         "Head"
       ]
     },
+    "PositionOffset": {
+      "X": 0.5,
+      "Y": 0,
+      "Z": 3
+    },
     "Yaw": {
       "AngleRange": {
-        "Max": 45,
-        "Min": -45
+        "Max": 30,
+        "Min": -30
       },
       "TargetNodes": [
         "Head"
@@ -37,43 +42,119 @@
     }
   },
   "AnimationSets": {
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Charmeleon_Cry"
+        }
+      ]
+    },
     "Idle": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Idle.blockyanim",
-          "Speed": 0.6
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Idle.blockyanim",
+          "BlendingDuration": 0.2,
+          "SoundEventId": "SFX_Raptor_Cave_Idle"
         }
       ]
+    },
+    "IdlePassive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Right.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Left.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Left.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Right.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Roar.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Around.blockyanim",
+          "Looping": false,
+          "Weight": 5
+        }
+      ],
+      "NextAnimationDelay": {
+        "Min": 2,
+        "Max": 10
+      }
     },
     "Walk": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Walk.blockyanim",
-          "Speed": 1.4
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "WalkPassive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Right.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Left.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Left.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Right.blockyanim",
+          "Looping": false,
+          "Weight": 1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Around.blockyanim",
+          "Looping": false,
+          "Weight": 1
         }
       ]
     },
     "WalkBackward": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 1
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.5
         }
       ]
     },
     "Run": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Run.blockyanim",
-          "SoundEventId": "SFX_Fox_Run",
-          "Speed": 1.1
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Run.blockyanim"
         }
       ]
     },
     "Crouch": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Crouch.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch.blockyanim",
           "BlendingDuration": 0.1
         }
       ]
@@ -81,16 +162,16 @@
     "CrouchWalk": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Crouch_Walk.blockyanim",
-          "BlendingDuration": 0.1,
-          "Speed": 1.2
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch_Walk.blockyanim",
+          "Speed": 0.9,
+          "BlendingDuration": 0.1
         }
       ]
     },
     "CrouchWalkBackward": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch_Walk_Backward.blockyanim",
           "BlendingDuration": 0.1
         }
       ]
@@ -98,111 +179,145 @@
     "Jump": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Jump.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump.blockyanim",
           "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
+          "Speed": 0.8,
+          "Looping": false
         }
       ]
     },
     "JumpWalk": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Jump.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump.blockyanim",
           "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
+          "Speed": 0.8,
+          "Looping": false
         }
       ]
     },
     "JumpRun": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Jump_Far.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump_Far.blockyanim",
           "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
+          "Speed": 0.8,
+          "Looping": false
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump_Far2.blockyanim",
+          "BlendingDuration": 0.1,
+          "Speed": 0.8,
+          "Looping": false
         }
       ]
     },
     "Fall": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Fall.blockyanim",
-          "BlendingDuration": 0.4
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "FallFar": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Fall_Far.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Damage/Hurt.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
+        },
+        {
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Damage/Hurt2.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
         }
       ]
     },
     "Alerted": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Alerted.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Alerted.blockyanim",
           "Looping": false,
-          "SoundEventId": "SFX_Fox_Alerted"
+          "BlendingDuration": 0.1,
+          "SoundEventId": "SFX_Pkmn_Charmeleon_Cry"
         }
       ]
     },
-    "FlyIdle": {
+    "Laydown": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Fly/Fly_Idle.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Laydown.blockyanim",
+          "Looping": false
         }
       ]
     },
-    "Fly": {
+    "Sleep": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Fly/Fly.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Sleep.blockyanim"
         }
       ]
     },
-    "FlyBackward": {
+    "Wake": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Fly/Fly_Backward.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Wake.blockyanim",
+          "Looping": false
         }
       ]
     },
-    "FlyFast": {
+    "Death": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Fly/Fly_Fast.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Damage/Death.blockyanim",
+          "Looping": false
         }
       ]
     },
     "SwimIdle": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim_Idle.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Idle.blockyanim"
         }
       ]
     },
     "Swim": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim.blockyanim",
+          "Speed": 1.2
         }
       ]
     },
     "SwimBackward": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim_Backward.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Backward.blockyanim"
         }
       ]
     },
     "SwimFast": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim_Fast.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Fast.blockyanim"
         }
       ]
     },
     "SwimJump": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim_Jump.blockyanim",
-          "BlendingDuration": 0.4,
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Jump.blockyanim",
           "Looping": false,
           "Speed": 0.8
         }
@@ -211,46 +326,42 @@
     "SwimFloat": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim_Idle.blockyanim"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Idle.blockyanim"
         }
       ]
     },
     "SwimSink": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Fall.blockyanim",
-          "Speed": 0.6
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Fall.blockyanim"
         }
       ]
     },
     "SwimDive": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim.blockyanim",
-          "Speed": 0.8
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim.blockyanim"
         }
       ]
     },
     "SwimDiveBackward": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim_Backward.blockyanim",
-          "Speed": 0.9
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Backward.blockyanim"
         }
       ]
     },
     "SwimDiveFast": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Swim/Swim_Fast.blockyanim",
-          "Speed": 0.8
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Fast.blockyanim"
         }
       ]
     },
     "FluidIdle": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Idle.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Idle.blockyanim",
           "Speed": 0.6
         }
       ]
@@ -258,7 +369,7 @@
     "FluidWalk": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Walk.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk.blockyanim",
           "Speed": 0.6
         }
       ]
@@ -266,7 +377,7 @@
     "FluidWalkBackward": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Walk_Backward.blockyanim",
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk_Backward.blockyanim",
           "Speed": 0.6
         }
       ]
@@ -274,106 +385,52 @@
     "FluidRun": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Run.blockyanim",
-          "Speed": 0.6
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Run.blockyanim",
+          "Speed": 0.5
         }
       ]
     },
-    "Hurt": {
+    "FlyIdle": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Damage/Hurt.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "SoundEventId": "SFX_Fox_Hurt"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly_Idle.blockyanim"
         }
       ]
     },
-    "Death": {
+    "Fly": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Damage/Death.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Fox_Death"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly.blockyanim"
         }
       ]
     },
-    "Laydown": {
+    "FlyBackward": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Laydown.blockyanim",
-          "Looping": false
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly_Backward.blockyanim"
         }
       ]
     },
-    "Sleep": {
+    "FlyFast": {
       "Animations": [
         {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Sleep.blockyanim",
-          "SoundEventId": "SFX_Fox_Sleep"
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Wake.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false
-        }
-      ]
-    },
-    "TiltHead": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Fox/Animations/Flavor/Tilt_Head.blockyanim"
-        }
-      ]
-    },
-    "Threaten": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Fox/Animations/Flavor/Threaten.blockyanim",
-          "SoundEventId": "SFX_Fox_Alerted"
-        }
-      ]
-    },
-    "Dig": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Fox/Animations/Default/Crouch_Walk.blockyanim",
-          "Speed": 2
-        }
-      ]
-    },
-    "Howl": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Fox/Animations/Flavor/Threaten.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Fox_Alerted"
+          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly_Fast.blockyanim"
         }
       ]
     }
   },
+  "MinScale": 0.9,
+  "MaxScale": 1.1,
   "IconProperties": {
-    "Scale": 0.6,
+    "Scale": 0.2,
     "Rotation": [
-      0.0,
-      -45.0,
-      0.0
+      0,
+      -45,
+      0
     ],
     "Translation": [
-      19.0,
-      -41.0
+      0,
+      -87
     ]
   }
 }

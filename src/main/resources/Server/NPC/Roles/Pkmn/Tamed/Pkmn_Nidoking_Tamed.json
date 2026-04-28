@@ -1,0 +1,32 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T2_Hide",
+    "Appearance": "Pkmn_Nidoking",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "PoisonType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "AttitudeGroup": "PredatorsBig",
+    "MaxSpeed": 8,
+    "WanderRadius": 30,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AttackDistance": 2.5,
+    "ChaseRelativeSpeed": 0.8,
+    "CombatMovingRelativeSpeed": 0.6,
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Nidoking.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
