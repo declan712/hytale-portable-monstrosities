@@ -1,0 +1,33 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Dratini",
+    "DropList": "Drop_Pkmn_T0_Hide",
+    "Type1": "DragonType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 30,
+    "MaxSpeed": 5.0,
+    "CaptureDifficulty": 0.17,
+    "TameRoleChange": "Pkmn_Dratini_Tamed",
+    "FlockArray": [
+      "Pkmn_Dratini",
+      "Pkmn_Dragonair"
+    ],
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Dratini",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Dratini.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

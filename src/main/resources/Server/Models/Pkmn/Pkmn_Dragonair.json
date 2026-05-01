@@ -1,0 +1,377 @@
+{
+  "Parent": "Template_Pkmn_Snake",
+  "Model": "NPC/Pkmn/Dragonair/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Dragonair/Models/Texture.png",
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      0,
+      -45,
+      0
+    ],
+    "Translation": [
+      0,
+      -32
+    ]
+  },
+  "MinScale": 1.3,
+  "MaxScale": 1.5,
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Idle.blockyanim",
+          "BlendingDuration": 0.4,
+          "SoundEventId": "SFX_Snake_Idle",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Walk.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Walk_Backward.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Run.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Run_Backward.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Sprint.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch.blockyanim",
+          "Speed": 0.5
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "StepWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Step_Walk.blockyanim",
+          "Speed": 1.0,
+          "Looping": false
+        }
+      ]
+    },
+    "StepRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Step_Run.blockyanim",
+          "Speed": 1.2,
+          "Looping": false
+        }
+      ]
+    },
+    "StepSprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Step_Sprint.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Jump.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Jump.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Jump_Run.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpSprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Jump_Run.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.3
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Alerted.blockyanim",
+          "SoundEventId": "SFX_Pkmn_Ekans_Cry"
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.6
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 1
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Jump.blockyanim",
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.6
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 1
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 1
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Idle.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.3
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Walk.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Walk_Backward.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.6
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Run.blockyanim",
+          "BlendingDuration": 0.4,
+          "Speed": 0.6
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Snake_Hurt"
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Damage/Death.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Snake_Death"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Sleep.blockyanim"
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Dragonair/Animations/Default/Wake.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Ekans_Cry"
+        }
+      ]
+    }
+  }
+}

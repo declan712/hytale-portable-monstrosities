@@ -1,0 +1,32 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_Geodude",
+    "Appearance": "Pkmn_Sandslash",
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "GroundType",
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 6.5,
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Sandslash.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

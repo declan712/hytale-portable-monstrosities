@@ -1,0 +1,50 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "DropList": "Drop_Pkmn_Geodude",
+    "Appearance": "Pkmn_Sandslash",
+    "FlockArray": [
+      "Pkmn_Sandshrew",
+      "Pkmn_Sandslash"
+    ],
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn"
+    ],
+    "Type1": "GroundType",
+    "WildLevelMin": 22,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.35,
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "TameRoleChange": "Pkmn_Sandslash_Tamed",
+    "AttitudeGroup": "Predators",
+    "MaxSpeed": 6.5,
+    "FleeIfNotThreatened": true,
+    "FleeRange": 15,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "AlwaysSleepAtNight": false,
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": true,
+    "IsMemory": true,
+    "MemoriesCategory": "Feran",
+    "MemoriesNameOverride": "Sandslash",
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Sandslash.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
