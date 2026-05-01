@@ -55,8 +55,8 @@
               },
               "top": {
                 "offset": {"x": 68, "y": 7},
-                "mirror": {"x": false, "y": false},
-                "angle": 90
+                "mirror": {"x": true, "y": true},
+                "angle": 270
               },
               "bottom": {
                 "offset": {"x": 51, "y": 23},
@@ -106,8 +106,8 @@
                   },
                   "top": {
                     "offset": {"x": 85, "y": 7},
-                    "mirror": {"x": false, "y": false},
-                    "angle": 90
+                    "mirror": {"x": true, "y": true},
+                    "angle": 270
                   },
                   "bottom": {
                     "offset": {"x": 68, "y": 23},
@@ -157,8 +157,8 @@
                       },
                       "top": {
                         "offset": {"x": 102, "y": 7},
-                        "mirror": {"x": false, "y": false},
-                        "angle": 90
+                        "mirror": {"x": true, "y": true},
+                        "angle": 270
                       },
                       "bottom": {
                         "offset": {"x": 85, "y": 23},
@@ -208,8 +208,8 @@
                           },
                           "top": {
                             "offset": {"x": 119, "y": 7},
-                            "mirror": {"x": false, "y": false},
-                            "angle": 90
+                            "mirror": {"x": true, "y": true},
+                            "angle": 270
                           },
                           "bottom": {
                             "offset": {"x": 102, "y": 23},
@@ -259,8 +259,8 @@
                               },
                               "top": {
                                 "offset": {"x": 136, "y": 7},
-                                "mirror": {"x": false, "y": false},
-                                "angle": 90
+                                "mirror": {"x": true, "y": true},
+                                "angle": 270
                               },
                               "bottom": {
                                 "offset": {"x": 119, "y": 23},
@@ -310,8 +310,8 @@
                                   },
                                   "top": {
                                     "offset": {"x": 153, "y": 7},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 90
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 270
                                   },
                                   "bottom": {
                                     "offset": {"x": 136, "y": 23},
@@ -361,8 +361,8 @@
                                       },
                                       "top": {
                                         "offset": {"x": 170, "y": 7},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 90
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 270
                                       },
                                       "bottom": {
                                         "offset": {"x": 153, "y": 23},
@@ -380,7 +380,7 @@
                                       "id": "9",
                                       "name": "Tail7",
                                       "position": {"x": 0, "y": 0, "z": -9},
-                                      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                                      "orientation": {"x": 0.21644, "y": 0, "z": 0, "w": 0.9763},
                                       "shape": {
                                         "type": "box",
                                         "offset": {"x": 0, "y": 0, "z": -8},
@@ -412,8 +412,8 @@
                                           },
                                           "top": {
                                             "offset": {"x": 187, "y": 7},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 90
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 270
                                           },
                                           "bottom": {
                                             "offset": {"x": 170, "y": 23},
@@ -429,105 +429,126 @@
                                       "children": [
                                         {
                                           "id": "10",
-                                          "name": "Neck-Ball2",
-                                          "position": {"x": 0, "y": -0.81178, "z": -12.3177},
-                                          "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                                          "name": "Balls",
+                                          "position": {"x": 0, "y": 1.18822, "z": -11.3177},
+                                          "orientation": {"x": 0.17365, "y": 0, "z": 0, "w": 0.98481},
                                           "shape": {
-                                            "type": "box",
+                                            "type": "none",
                                             "offset": {"x": 0, "y": 0, "z": 0},
-                                            "stretch": {"x": 1.375, "y": 1.375, "z": 1.375},
+                                            "stretch": {"x": 1, "y": 1, "z": 1},
                                             "settings": {
-                                              "isPiece": false,
-                                              "size": {"x": 6, "y": 6, "z": 6}
+                                              "isPiece": false
                                             },
-                                            "textureLayout": {
-                                              "back": {
-                                                "offset": {"x": 118, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "right": {
-                                                "offset": {"x": 100, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "front": {
-                                                "offset": {"x": 106, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "left": {
-                                                "offset": {"x": 100, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "top": {
-                                                "offset": {"x": 112, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "bottom": {
-                                                "offset": {"x": 118, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              }
-                                            },
+                                            "textureLayout": {},
                                             "unwrapMode": "custom",
                                             "visible": true,
                                             "doubleSided": false,
                                             "shadingMode": "flat"
-                                          }
-                                        },
-                                        {
-                                          "id": "11",
-                                          "name": "Neck-Ball3",
-                                          "position": {"x": 0, "y": -0.81178, "z": -19.8177},
-                                          "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
-                                          "shape": {
-                                            "type": "box",
-                                            "offset": {"x": 0, "y": 0, "z": 0},
-                                            "stretch": {"x": 1.125, "y": 1.125, "z": 1.125},
-                                            "settings": {
-                                              "isPiece": false,
-                                              "size": {"x": 6, "y": 6, "z": 6}
-                                            },
-                                            "textureLayout": {
-                                              "back": {
-                                                "offset": {"x": 118, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "right": {
-                                                "offset": {"x": 100, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "front": {
-                                                "offset": {"x": 106, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "left": {
-                                                "offset": {"x": 100, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "top": {
-                                                "offset": {"x": 112, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
-                                              },
-                                              "bottom": {
-                                                "offset": {"x": 118, "y": 0},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "11",
+                                              "name": "Neck-Ball2",
+                                              "position": {"x": 0, "y": 0, "z": 0},
+                                              "orientation": {"x": -0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
+                                              "shape": {
+                                                "type": "box",
+                                                "offset": {"x": 0, "y": 0, "z": 0},
+                                                "stretch": {"x": 1.375, "y": 1.375, "z": 1.375},
+                                                "settings": {
+                                                  "isPiece": false,
+                                                  "size": {"x": 6, "y": 6, "z": 6}
+                                                },
+                                                "textureLayout": {
+                                                  "back": {
+                                                    "offset": {"x": 118, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "right": {
+                                                    "offset": {"x": 100, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "front": {
+                                                    "offset": {"x": 106, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "left": {
+                                                    "offset": {"x": 100, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "top": {
+                                                    "offset": {"x": 112, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "bottom": {
+                                                    "offset": {"x": 118, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  }
+                                                },
+                                                "unwrapMode": "custom",
+                                                "visible": true,
+                                                "doubleSided": false,
+                                                "shadingMode": "flat"
                                               }
                                             },
-                                            "unwrapMode": "custom",
-                                            "visible": true,
-                                            "doubleSided": false,
-                                            "shadingMode": "flat"
-                                          }
+                                            {
+                                              "id": "12",
+                                              "name": "Neck-Ball3",
+                                              "position": {"x": 0, "y": 0, "z": -7.5},
+                                              "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
+                                              "shape": {
+                                                "type": "box",
+                                                "offset": {"x": 0, "y": 0, "z": 0},
+                                                "stretch": {"x": 1.125, "y": 1.125, "z": 1.125},
+                                                "settings": {
+                                                  "isPiece": false,
+                                                  "size": {"x": 6, "y": 6, "z": 6}
+                                                },
+                                                "textureLayout": {
+                                                  "back": {
+                                                    "offset": {"x": 118, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "right": {
+                                                    "offset": {"x": 100, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "front": {
+                                                    "offset": {"x": 106, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "left": {
+                                                    "offset": {"x": 100, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "top": {
+                                                    "offset": {"x": 112, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "bottom": {
+                                                    "offset": {"x": 118, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  }
+                                                },
+                                                "unwrapMode": "custom",
+                                                "visible": true,
+                                                "doubleSided": false,
+                                                "shadingMode": "flat"
+                                              }
+                                            }
+                                          ]
                                         }
                                       ]
                                     }
@@ -544,7 +565,7 @@
               ]
             },
             {
-              "id": "12",
+              "id": "13",
               "name": "Neck",
               "position": {"x": 0, "y": 0, "z": 8},
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -559,8 +580,8 @@
                 "textureLayout": {
                   "back": {
                     "offset": {"x": 51, "y": 7},
-                    "mirror": {"x": false, "y": false},
-                    "angle": 90
+                    "mirror": {"x": true, "y": true},
+                    "angle": 270
                   },
                   "right": {
                     "offset": {"x": 51, "y": 23},
@@ -569,13 +590,13 @@
                   },
                   "front": {
                     "offset": {"x": 51, "y": 23},
-                    "mirror": {"x": false, "y": false},
-                    "angle": 90
+                    "mirror": {"x": true, "y": true},
+                    "angle": 270
                   },
                   "left": {
                     "offset": {"x": 51, "y": 16},
-                    "mirror": {"x": false, "y": false},
-                    "angle": 90
+                    "mirror": {"x": true, "y": true},
+                    "angle": 270
                   },
                   "top": {
                     "offset": {"x": 18, "y": 0},
@@ -595,7 +616,7 @@
               },
               "children": [
                 {
-                  "id": "13",
+                  "id": "14",
                   "name": "Neck2",
                   "position": {"x": 0, "y": 8, "z": 0},
                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -610,8 +631,8 @@
                     "textureLayout": {
                       "back": {
                         "offset": {"x": 34, "y": 7},
-                        "mirror": {"x": false, "y": false},
-                        "angle": 90
+                        "mirror": {"x": true, "y": true},
+                        "angle": 270
                       },
                       "right": {
                         "offset": {"x": 34, "y": 23},
@@ -620,13 +641,13 @@
                       },
                       "front": {
                         "offset": {"x": 34, "y": 23},
-                        "mirror": {"x": false, "y": false},
-                        "angle": 90
+                        "mirror": {"x": true, "y": true},
+                        "angle": 270
                       },
                       "left": {
                         "offset": {"x": 34, "y": 16},
-                        "mirror": {"x": false, "y": false},
-                        "angle": 90
+                        "mirror": {"x": true, "y": true},
+                        "angle": 270
                       },
                       "top": {
                         "offset": {"x": 9, "y": 0},
@@ -646,7 +667,7 @@
                   },
                   "children": [
                     {
-                      "id": "14",
+                      "id": "15",
                       "name": "Neck3",
                       "position": {"x": 0, "y": 8, "z": 0},
                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -666,8 +687,8 @@
                           },
                           "right": {
                             "offset": {"x": 0, "y": 23},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 90
+                            "mirror": {"x": false, "y": false},
+                            "angle": 270
                           },
                           "front": {
                             "offset": {"x": 0, "y": 23},
@@ -697,7 +718,7 @@
                       },
                       "children": [
                         {
-                          "id": "15",
+                          "id": "16",
                           "name": "Neck-Ball",
                           "position": {"x": 0, "y": -5, "z": 6},
                           "orientation": {"x": -0.15212, "y": 0, "z": 0, "w": 0.98836},
@@ -748,7 +769,7 @@
                           }
                         },
                         {
-                          "id": "16",
+                          "id": "17",
                           "name": "Belly",
                           "position": {"x": 0, "y": 6, "z": 0},
                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -767,7 +788,7 @@
                           },
                           "children": [
                             {
-                              "id": "17",
+                              "id": "18",
                               "name": "Chest",
                               "position": {"x": 0, "y": 1, "z": 0},
                               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -786,7 +807,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "18",
+                                  "id": "19",
                                   "name": "Head",
                                   "position": {"x": 0, "y": 1, "z": 0},
                                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -837,7 +858,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "19",
+                                      "id": "20",
                                       "name": "Dot",
                                       "position": {"x": 0, "y": 3.5, "z": 7},
                                       "orientation": {"x": -0.15212, "y": 0, "z": 0, "w": 0.98836},
@@ -888,7 +909,7 @@
                                       }
                                     },
                                     {
-                                      "id": "20",
+                                      "id": "21",
                                       "name": "L-Ear",
                                       "position": {"x": 8.5, "y": 0.5, "z": -1},
                                       "orientation": {"x": -0.04336, "y": -0.10876, "z": -0.00475, "w": 0.99311},
@@ -915,7 +936,7 @@
                                       }
                                     },
                                     {
-                                      "id": "21",
+                                      "id": "22",
                                       "name": "Jaw",
                                       "position": {"x": 0, "y": -7.75, "z": -5},
                                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -966,7 +987,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "22",
+                                          "id": "23",
                                           "name": "Tongue",
                                           "position": {"x": 0, "y": 1.25, "z": -5.25},
                                           "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -993,7 +1014,7 @@
                                           }
                                         },
                                         {
-                                          "id": "23",
+                                          "id": "24",
                                           "name": "Mouth-Back",
                                           "position": {"x": 0, "y": 4, "z": -3.5},
                                           "orientation": {"x": 0.60876, "y": 0, "z": 0, "w": 0.79335},
@@ -1023,8 +1044,8 @@
                                               },
                                               "left": {
                                                 "offset": {"x": 211, "y": 23},
-                                                "mirror": {"x": false, "y": false},
-                                                "angle": 90
+                                                "mirror": {"x": true, "y": true},
+                                                "angle": 270
                                               },
                                               "top": {
                                                 "offset": {"x": 226, "y": 26},
@@ -1046,7 +1067,7 @@
                                       ]
                                     },
                                     {
-                                      "id": "24",
+                                      "id": "25",
                                       "name": "R-Eye",
                                       "position": {"x": -5.75, "y": 0.77607, "z": 6.02629},
                                       "orientation": {"x": 0, "y": 0.60876, "z": 0, "w": 0.79335},
@@ -1081,8 +1102,8 @@
                                           },
                                           "top": {
                                             "offset": {"x": 247, "y": 8},
-                                            "mirror": {"x": true, "y": true},
-                                            "angle": 270
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 90
                                           },
                                           "bottom": {
                                             "offset": {"x": 241, "y": 8},
@@ -1097,7 +1118,7 @@
                                       }
                                     },
                                     {
-                                      "id": "25",
+                                      "id": "26",
                                       "name": "Fangs",
                                       "position": {"x": 0, "y": -5, "z": 5.75},
                                       "orientation": {"x": -0.04362, "y": 0, "z": 0, "w": 0.99905},
@@ -1124,7 +1145,7 @@
                                       }
                                     },
                                     {
-                                      "id": "26",
+                                      "id": "27",
                                       "name": "L-Eye",
                                       "position": {"x": 5.75, "y": 0.77607, "z": 6.02629},
                                       "orientation": {"x": 0, "y": -0.60876, "z": 0, "w": 0.79335},
@@ -1164,8 +1185,8 @@
                                           },
                                           "bottom": {
                                             "offset": {"x": 241, "y": 10},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 270
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 90
                                           }
                                         },
                                         "unwrapMode": "custom",
@@ -1175,7 +1196,7 @@
                                       }
                                     },
                                     {
-                                      "id": "27",
+                                      "id": "28",
                                       "name": "R-Ear",
                                       "position": {"x": -8.5, "y": 0.5, "z": -1},
                                       "orientation": {"x": -0.04336, "y": 0.10876, "z": 0.00475, "w": 0.99311},
@@ -1202,7 +1223,7 @@
                                       }
                                     },
                                     {
-                                      "id": "28",
+                                      "id": "29",
                                       "name": "Nose",
                                       "position": {"x": 0, "y": -1.5, "z": 6},
                                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1262,7 +1283,7 @@
           ]
         },
         {
-          "id": "29",
+          "id": "30",
           "name": "Belly",
           "position": {"x": 0, "y": 19.9472, "z": 7.86007},
           "orientation": {"x": -0.00436, "y": 0, "z": 0, "w": 0.99999},
@@ -1281,7 +1302,7 @@
           },
           "children": [
             {
-              "id": "30",
+              "id": "31",
               "name": "Chest",
               "position": {"x": 0, "y": 16, "z": 0},
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1300,7 +1321,7 @@
               },
               "children": [
                 {
-                  "id": "31",
+                  "id": "32",
                   "name": "L-Arm",
                   "position": {"x": 11, "y": 3, "z": 0},
                   "orientation": {"x": 0.00266, "y": 0.06099, "z": 0.04354, "w": 0.99718},
@@ -1319,7 +1340,7 @@
                   },
                   "children": [
                     {
-                      "id": "32",
+                      "id": "33",
                       "name": "L-Forearm",
                       "position": {"x": 0, "y": -10, "z": 0},
                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1338,7 +1359,7 @@
                       },
                       "children": [
                         {
-                          "id": "33",
+                          "id": "34",
                           "name": "L-Hand",
                           "position": {"x": 0, "y": -10, "z": 0},
                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1357,7 +1378,7 @@
                           },
                           "children": [
                             {
-                              "id": "34",
+                              "id": "35",
                               "name": "L-Attachment",
                               "position": {"x": 0, "y": -3, "z": 0},
                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -1382,7 +1403,7 @@
                   ]
                 },
                 {
-                  "id": "35",
+                  "id": "36",
                   "name": "R-Arm",
                   "position": {"x": -11, "y": 3, "z": 0},
                   "orientation": {"x": 0.00266, "y": -0.06099, "z": -0.04354, "w": 0.99718},
@@ -1401,7 +1422,7 @@
                   },
                   "children": [
                     {
-                      "id": "36",
+                      "id": "37",
                       "name": "R-Forearm",
                       "position": {"x": 0, "y": -10, "z": 0},
                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1420,7 +1441,7 @@
                       },
                       "children": [
                         {
-                          "id": "37",
+                          "id": "38",
                           "name": "R-Hand",
                           "position": {"x": 0, "y": -10, "z": 0},
                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1439,7 +1460,7 @@
                           },
                           "children": [
                             {
-                              "id": "38",
+                              "id": "39",
                               "name": "R-Attachment",
                               "position": {"x": 0, "y": -3, "z": 0},
                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},

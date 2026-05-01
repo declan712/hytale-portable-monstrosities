@@ -21,7 +21,7 @@
     "WildLevelMax": 52,
     "AttractiveItemSetParticles": "Want_Food_Corn",
     "TameRoleChange": "Pkmn_Nidoking_Tamed",
-    "AttitudeGroup": "PredatorsBig",
+    "AttitudeGroup": "Pkmn_Predators",
     "MaxSpeed": 8.5,
     "WanderRadius": 30,
     "ViewRange": 10,
@@ -48,6 +48,13 @@
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Nidoking",
     "_InteractionVars": {
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

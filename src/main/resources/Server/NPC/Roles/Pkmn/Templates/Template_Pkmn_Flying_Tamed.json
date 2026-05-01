@@ -1184,6 +1184,28 @@
 								}
 							]
 						},
+						{"$Comment": "Land on the ground first",
+							"Sensor": {
+								"Type": "InAir"
+							},
+							"Instructions":[
+								{
+								"Sensor": {
+									"Type": "Block",
+									"Range": 30,
+									"MaxHeight": 30,
+									"Reserve": true,
+									"Blocks": "Soil"
+								},
+								"BodyMotion": {
+									"Type": "Land",
+									"SlowDownDistance": 10,
+									"StopDistance": 0.5
+								}
+								}
+							]
+
+						},
 						{
 							"$Comment": "Just a little nap.",
 							"Enabled": {

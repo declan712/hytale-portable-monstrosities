@@ -3,7 +3,7 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Charmeleon",
-    "AttitudeGroup": "Predators",
+    "AttitudeGroup": "PkmnAggressive",
     "FlockArray": [
       "Pkmn_Charizard",
       "Pkmn_Charmeleon",
@@ -46,7 +46,7 @@
             "DamageCalculator": {
               "Type": "Absolute",
               "BaseDamage": {
-                "Physical": 32
+                "Normal": 32
               },
               "RandomPercentageModifier": 0.1
             }
@@ -59,7 +59,7 @@
             "Type": "DamageEntity",
             "DamageCalculator": {
               "BaseDamage": {
-                "Physical": 8
+                "Fire": 8
               }
             },
             "DamageEffects": {

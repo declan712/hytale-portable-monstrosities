@@ -3,6 +3,7 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Nidoqueen",
+    "AttitudeGroup": "Pkmn_PreyBig",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
     ],
@@ -21,33 +22,19 @@
     "WildLevelMax": 52,
     "AttractiveItemSetParticles": "Want_Food_Corn",
     "TameRoleChange": "Pkmn_Nidoqueen_Tamed",
-    "AttitudeGroup": "PredatorsBig",
     "MaxSpeed": 7.6,
-    "WanderRadius": 30,
-    "ViewRange": 10,
-    "HearingRange": 12,
-    "AlertedRange": 14,
-    "AlertedTime": [
-      2,
-      3
-    ],
-    "HardLeashDistance": 60,
-    "LeashDistance": 30,
-    "CombatBehaviorDistance": 3,
-    "CombatBackOffAfterAttack": false,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "ChaseRelativeSpeed": 0.8,
-    "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
-    "DayTimeNapWeight": 0,
-    "TimidDuringDay": true,
-    "DayFlavorAnimation": "IdlePassive",
-    "NightFlavorAnimation": "IdlePassive",
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Nidoqueen",
     "_InteractionVars": {
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

@@ -866,8 +866,7 @@
         {"Actions":[{"Type": "State","State": "Idle"}]}
 			]
 		},
-    {
-      "$Comment": "Leash",
+    {"$Comment": "Leash",
       "Continue": true,
       "Sensor": {
         "Type": "Leash",
@@ -882,8 +881,7 @@
         }
       ]
     },
-    {
-      "$Comment": "Join a flock. This is separate so it can run all the time regardless of the rest of the script",
+    {"$Comment": "Join a flock. This is separate so it can run all the time regardless of the rest of the script",
       "Continue": true,
       "Instructions": [
         {
@@ -954,11 +952,9 @@
         }
       ]
     },
-    {
-      "$Comment": "???",
+    {"$Comment": "Main",
       "Instructions": [
-        {
-          "$Comment": "Idle =>",
+        {"$Comment": "Idle",
           "Sensor": {
             "Type": "State",
             "State": "Idle"
@@ -1484,15 +1480,13 @@
             }
           ]
         },
-        {
-          "$Comment": "Sleep =>",
+        {"$Comment": "Sleep",
           "Sensor": {
             "Type": "State",
             "State": "Sleep"
           },
           "Instructions": [
-            {
-              "$Comment": "Wake up if an enemy attacks a flock member.",
+            {"$Comment": "Wake up if an enemy attacks a flock member.",
               "Enabled": {
                 "Compute": "!isEmptyStringArray(FlockArray)"
               },
@@ -1508,8 +1502,29 @@
                 }
               ]
             },
-            {
-              "$Comment": "Just a little nap.",
+            {"$Comment": "Land on the ground first",
+              "Sensor": {
+                "Type": "InAir"
+              },
+              "Instructions":[
+                {
+                  "Sensor": {
+                    "Type": "Block",
+                    "Range": 30,
+                    "MaxHeight": 30,
+                    "Reserve": true,
+                    "Blocks": "Soil"
+                  },
+                  "BodyMotion": {
+                    "Type": "Land",
+                    "SlowDownDistance": 10,
+                    "StopDistance": 0.5
+                  }
+                }
+              ]
+
+            },
+            {"$Comment": "Just a little nap.",
               "Enabled": {
                 "Compute": "DayTimeNapWeight \u003E 0"
               },
@@ -1563,8 +1578,7 @@
                 }
               ]
             },
-            {
-              "$Comment": "Night-time sleep.",
+            {"$Comment": "Night-time sleep.",
               "Instructions": [
                 {
                   "Reference": "Component_Instruction_Wild_Sleep_State",
@@ -3162,9 +3176,8 @@
         }
       ]
     },
-    {
+    {"$Comment": "Get out of the water! This is separate so it can run all the time regardless of the rest of the script, when in water go straight to panic to get out",
       "Continue": true,
-      "$Comment": "Get out of the water! This is separate so it can run all the time regardless of the rest of the script, when in water go straight to panic to get out",
       "Instructions": [
         {
           "Sensor": {
@@ -3191,8 +3204,7 @@
         }
       ]
     },
-    {
-      "$Comment": "Initialize the produce alarm. This prevents NPCs from producing as soon as they spawn in",
+    {"$Comment": "Initialize the produce alarm. This prevents NPCs from producing as soon as they spawn in",
       "Enabled": {
         "Compute": "!isEmpty(ProduceItem)"
       },
@@ -3210,8 +3222,7 @@
         }
       ]
     },
-    {
-      "$Comment": "Clear the produce alarm when it finishes",
+    {"$Comment": "Clear the produce alarm when it finishes",
       "Continue": true,
       "Enabled": {
         "Compute": "!isEmpty(ProduceItem)"
