@@ -1,8 +1,8 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Pkmn_Flying_Predator",
+  "Reference": "Template_Pkmn_Predator",
   "Modify": {
-    "Appearance": "Pkmn_Koffing",
+    "Appearance": "Pkmn_Ekans",
     "AttitudeGroup": "RocketPkmn",
     "DisableDamageGroups": [
       "Self",
@@ -10,23 +10,25 @@
     ],
     "DropList": "Drop_Pkmn_T0_Hide",
     "Type1": "PoisonType",
-    "FlockArray": [],
-    "WildLevelMin": 10,
-    "WildLevelMax": 35,
-    "MaxSpeed": 3.5,
+    "WildLevelMin": 5,
+    "WildLevelMax": 22,
+    "MaxSpeed": 5.5,
     "CaptureDifficulty": 0.1,
-    "TameRoleChange": "Pkmn_Koffing_Tamed",
+    "TameRoleChange": "Pkmn_Ekans_Tamed",
+    "FlockArray": [],
     "IsMemory": true,
-    "MemoriesCategory": "Elemental",
-    "MemoriesNameOverride": "Koffing",
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Ekans",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    },
-    "Attack": "Root_Pkmn_Attack_Melee"
+    }
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Koffing_Rocket.name",
+      "Value": "server.npcRoles.Pkmn_Ekans_Rocket.name",
       "Description": "Translation key for NPC name display"
     }
   }

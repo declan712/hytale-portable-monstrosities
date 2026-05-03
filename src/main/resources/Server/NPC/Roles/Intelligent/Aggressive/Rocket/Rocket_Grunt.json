@@ -1,8 +1,9 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Trork_Hybrid",
+  "Reference": "Template_Hostile_Trainer",
   "Modify": {
     "Appearance": "Rocket",
+    "CompanionType": "Pkmn_Ekans_Rocket",
     "DropList": "Drop_Outlander_Stalker",
     "MaxHealth": 80,
     "MaxSpeed": 4,
@@ -12,8 +13,8 @@
     "ViewRange": 25,
     "ViewSector": 270,
     "Weapons": [
-      "Weapon_Handgun",
-      "Rocket_Baton"
+      "Rocket_Baton",
+      "Weapon_Handgun"
     ],
     "AttitudeGroup": "Rocket",
     "TargetGroups": [
@@ -31,22 +32,45 @@
     ],
     "AttackDistance": 2.5,
     "AttackSequence": "Component_Instruction_Attack_Sequence_Rocket_Grunt",
-    "RangedAttack": "Trork_Sentry_Spear_Throw",
+    "RangedAttack": "Rocket_Grunt_Shoot",
     "DesiredRangedAttackDistanceRange": [10,20],
     "RangedAttackSequence": "Component_Instruction_Attack_Sequence_Rocket_Grunt_Ranged",
     "IdleMotionComponent": "$Null",
-    "CrouchToAttack": true,
     "IsMemory": true,
     "MemoriesCategory": "Outlander",
     "_InteractionVars": {
+      "Club_Swing_Left_Effect": {
+        "Interactions": [
+          {
+            "Parent": "Club_Swing_Left_Effect",
+            "Effects": {
+              "WorldSoundEventId": "SFX_Club_Steel_Swing"
+            }
+          }
+        ]
+      },
       "Club_Swing_Left_Damage": {
         "Interactions": [
           {
-            "Parent": "Club_Swing_Left_Damage",
+            "Parent": "DamagePkmnParent",
             "DamageCalculator": {
+              "Type": "Absolute",
               "BaseDamage": {
-                "Normal": 17
+                "Normal": 30
               }
+            },
+            "Effects": {
+              "WorldSoundEventId": "SFX_Club_Steel_Impact"
+            }
+          }
+        ]
+      },
+      "Club_Swing_Right_Effect": {
+        "Interactions": [
+          {
+            "Parent": "Club_Swing_Right_Effect",
+            "Effects": {
+              "WorldSoundEventId": "SFX_Club_Steel_Swing"
             }
           }
         ]
@@ -54,11 +78,15 @@
       "Club_Swing_Right_Damage": {
         "Interactions": [
           {
-            "Parent": "Club_Swing_Right_Damage",
+            "Parent": "DamagePkmnParent",
             "DamageCalculator": {
+              "Type": "Absolute",
               "BaseDamage": {
-                "Normal": 19
+                "Normal": 30
               }
+            },
+            "Effects": {
+              "WorldSoundEventId": "SFX_Club_Steel_Impact"
             }
           }
         ]
@@ -67,9 +95,6 @@
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-      "FollowPath": false,
-      "FollowPathRange": 30,
-      "PathShape": "Line",
       "SleepsAtNight": true,
       "LeashDistance": 30,
       "LeashMinPlayerDistance": 10,

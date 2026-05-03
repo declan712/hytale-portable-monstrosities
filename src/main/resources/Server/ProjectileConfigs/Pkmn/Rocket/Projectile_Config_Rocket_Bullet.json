@@ -1,0 +1,74 @@
+{
+  "Model": "Bullet_Blunderbuss",
+  "SpawnRotationOffset": {
+    "Pitch": 0,
+    "Yaw": 0,
+    "Roll": 0
+  },
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 10,
+    "TerminalVelocityAir": 500,
+    "TerminalVelocityWater": 100,
+    "SticksVertically": true,
+    "Bounciness": 0,
+    "RotationMode": "VelocityDamped"
+  },
+  "LaunchForce": 500,
+  "SpawnOffset": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "DefaultValue": {
+            "Interactions": [
+              "Rocket_Bullet_Damage"
+            ]
+          },
+          "Var": "Bullet_Damage",
+          "DefaultOk": true
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User",
+          "Effects": {
+            "LocalSoundEventId": "SFX_GunPvP_Handgun_Bullet_Death",
+            "WorldSoundEventId": "SFX_GunPvP_Handgun_Bullet_Death"
+          }
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0.2,
+          "Effects": {
+            "LocalSoundEventId": "SFX_GunPvP_Handgun_Bullet_Death",
+            "WorldSoundEventId": "SFX_GunPvP_Handgun_Bullet_Death",
+            "Particles": [
+              {
+                "SystemId": "Gun_Impact"
+              }
+            ]
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    }
+  }
+}

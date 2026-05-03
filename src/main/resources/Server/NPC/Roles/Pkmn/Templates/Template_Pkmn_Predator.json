@@ -390,6 +390,12 @@
       "Value": 10,
       "Description": "The range at which the NPC can identify an attacker."
     },
+    "DisableDamageGroups": {
+      "Value":[
+        "Self"
+      ],
+      "Description": "Dont deal? or receive? damage from these groups"
+    },
     "MaxSpeed": {
       "Value": 4,
       "Description": "The maximum walking speed of the NPC."
@@ -594,9 +600,9 @@
     "Compute": "FlockArray"
   },
   "FlockSpawnTypesRandom": true,
-  "DisableDamageGroups": [
-    "Self"
-  ],
+  "DisableDamageGroups": {
+    "Compute": "DisableDamageGroups"
+  },
   "HotbarItems": {
     "Compute": "Weapons"
   },
