@@ -1,0 +1,40 @@
+{
+  "Type": "Projectile",
+  "RunTime": 0.2,
+  "Effects": {
+    "Particles": [
+      {
+        "SystemId": "RifleShooting",
+        "PositionOffset": {
+          "X": 0,
+          "Y": 0.15,
+          "Z": 0.35
+        },
+        "RotationOffset": {
+          "Pitch": 90,
+          "Yaw": 0,
+          "Roll": 0
+        }
+      }
+    ],
+    "WorldSoundEventId": "SFX_Handgun_Fire",
+    "LocalSoundEventId": "SFX_Handgun_Fire",
+    "ItemAnimationId": "Shoot",
+    "ClearAnimationOnFinish": true,
+    "ItemPlayerAnimationsId": "Handgun"
+  },
+  "Config": "Projectile_Config_Rocket_Bullet",
+  "Next": {
+    "Type": "ChangeStat",
+    "StatModifiers": {
+      "Ammo": -1
+    },
+    "Next": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": 0
+      }
+    }
+  }
+}

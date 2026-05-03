@@ -7,28 +7,31 @@
   "$Comment": "Prepare Delay",
   "RunTime": 1,
   "Next": {
-    "Type": "LaunchProjectile",
+    "Type": "Projectile",
     "RunTime": 0,
     "Effects": {
-        "Particles": [
-            {
-                "SystemId": "RifleShooting",
-                "PositionOffset": {
-                "Z": 0.35,
-                "Y": 0.15
-                },
-                "RotationOffset": {
-                "Pitch": 90
-                }
-            }
-        ],
-        "WorldSoundEventId": "SFX_Handgun_Fire",
-        "LocalSoundEventId": "SFX_Handgun_Fire"
+      "Particles": [
+        {
+          "SystemId": "RifleShooting",
+          "PositionOffset": {
+            "X": 0,
+            "Y": 0.15,
+            "Z": 0.35
+          },
+          "RotationOffset": {
+            "Pitch": 90,
+            "Yaw": 0,
+            "Roll": 0
+          }
+        }
+      ],
+      "WorldSoundEventId": "SFX_Handgun_Fire",
+      "LocalSoundEventId": "SFX_Handgun_Fire"
     },
-    "ProjectileId": "Rocket_Bullet",
     "Tags": {
       "AimingReference": []
-    }
+    },
+    "Config": "Projectile_Config_Rocket_Bullet"
   },
-    "Failed": "Gun_Shoot_Fail"
+  "Failed": "Gun_Shoot_Fail"
 }
