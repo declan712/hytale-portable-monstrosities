@@ -32,62 +32,23 @@
     ],
     "MaintainDistanceWhileAlerted": true,
     "DropList": "Drop_Pkmn_Charmeleon",
-    "Attack": "Root_NPC_Pkmn_Charmeleon_Attack",
+    "Attack": "Root_Pkmn_Attack_Melee",
     "AlwaysSleepAtNight": false,
     "IsMemory": true,
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Charmeleon",
     "_InteractionVars": {
-      "Melee_Damage": {
+      "Move_Start_3": {
         "Interactions": [
           {
-            "Parent": "NPC_Attack_Melee_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {
-                "Normal": 32
-              },
-              "RandomPercentageModifier": 0.1
-            }
+            "Parent": "Pkmn_Moves_Flamethrower"
           }
         ]
       },
-      "Flamethrower_Damage":{
+      "Move_Start_1": {
         "Interactions": [
           {
-            "Type": "DamageEntity",
-            "DamageCalculator": {
-              "BaseDamage": {
-                "Fire": 8
-              }
-            },
-            "DamageEffects": {
-              "Knockback": {
-                "Type": "Force",
-                "VelocityConfig": {
-                  "GroundResistance": 0.804,
-                  "GroundResistanceMax": 0.0,
-                  "AirResistance": 0.972,
-                  "AirResistanceMax": 0.028,
-                  "Threshold": 1.0,
-                  "Style": "Exp"
-                },
-                "Direction": {
-                  "X": 1.0,
-                  "Y": 2.0,
-                  "Z": 3.0
-                },
-                "Force": 0.2,
-                "VelocityType": "Set"
-              },
-              "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_Impact",
-              "WorldParticles": [
-                {
-                  "SystemId": "Impact_Sword_Charged"
-                }
-              ]
-            }
+            "Parent": "Pkmn_Moves_Ember"
           }
         ]
       }

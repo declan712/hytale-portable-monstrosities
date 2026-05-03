@@ -38,45 +38,6 @@
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Ivysaur",
     "_InteractionVars": {
-      "Bite_Damage": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Bite_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {"Physical": 30},
-              "RandomPercentageModifier": 0.1
-            }
-          }
-        ]
-      },
-      "Tackle_Damage": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Tackle_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {"Physical": 20},
-              "RandomPercentageModifier": 0.1
-            }
-          }
-        ]
-      },
-      "Scratch_Damage": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Scratch_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {"Physical": 20},
-              "RandomPercentageModifier": 0.1
-            }
-          }
-        ]
-      },
       "Move_Start_1": {
         "Interactions": [
           "Pkmn_Moves_Vine_Whip"

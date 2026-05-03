@@ -37,42 +37,19 @@
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Wartortle",
     "_InteractionVars": {
-      "Bite_Damage": {
+      "Move_Start_1": {
         "Interactions": [
           {
-            "Parent": "Pkmn_Moves_Bite_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {"Physical": 30},
-              "RandomPercentageModifier": 0.1
-            }
+            "Parent": "Pkmn_Moves_Bubble",
+            "$Comment": "Sets animations and delay before hit"
           }
         ]
       },
-      "Tackle_Damage": {
+      "Move_Start_2": {
         "Interactions": [
           {
-            "Parent": "Pkmn_Moves_Tackle_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {"Physical": 20},
-              "RandomPercentageModifier": 0.1
-            }
-          }
-        ]
-      },
-      "Scratch_Damage": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Scratch_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {"Physical": 20},
-              "RandomPercentageModifier": 0.1
-            }
+            "Parent": "Pkmn_Moves_Bubble",
+            "$Comment": "Sets animations and delay before hit"
           }
         ]
       }
