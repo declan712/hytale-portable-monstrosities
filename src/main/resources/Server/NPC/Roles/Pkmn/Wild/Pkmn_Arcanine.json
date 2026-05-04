@@ -1,0 +1,55 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Arcanine",
+    "AttitudeGroup": "Pkmn_PredatorsBig",
+    "DropList": "Drop_Pkmn_T2_Hide",
+    "Type1": "FireType",
+    "WildLevelMin": 30,
+    "WildLevelMax": 55,
+    "MaxSpeed": 9.5,
+    "CaptureDifficulty": 0.29,
+    "TameRoleChange": "Pkmn_Arcanine_Tamed",
+    "FlockArray": [
+      "Pkmn_Growlithe",
+      "Pkmn_Arcanine"
+    ],
+    "IsMemory": true,
+    "MemoriesCategory": "Predator",
+    "MemoriesNameOverride": "Arcanine",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Arcanine.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

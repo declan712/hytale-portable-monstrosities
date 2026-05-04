@@ -1,0 +1,44 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Arcanine",
+    "DropList": "Drop_Pkmn_T2_Hide",
+    "Type1": "FireType",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMountable": true,
+    "MaxSpeed": 9.5,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Arcanine.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

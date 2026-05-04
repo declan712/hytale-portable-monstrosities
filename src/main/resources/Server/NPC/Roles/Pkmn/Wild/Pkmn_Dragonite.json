@@ -1,16 +1,17 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Pkmn_Predator",
+  "Reference": "Template_Pkmn_Flying_Predator",
   "Modify": {
-    "Appearance": "Pkmn_Dragonair",
+    "Appearance": "Pkmn_Dragonite",
     "AttitudeGroup": "PkmnNeutral",
     "DropList": "Drop_Pkmn_T2_Hide",
     "Type1": "DragonType",
-    "WildLevelMin": 30,
-    "WildLevelMax": 55,
-    "MaxSpeed": 7.0,
+    "Type2": "FlyingType",
+    "WildLevelMin": 55,
+    "WildLevelMax": 75,
+    "MaxSpeed": 8.0,
     "CaptureDifficulty": 0.17,
-    "TameRoleChange": "Pkmn_Dragonair_Tamed",
+    "TameRoleChange": "Pkmn_Dragonite_Tamed",
     "FlockArray": [
       "Pkmn_Dratini",
       "Pkmn_Dragonair",
@@ -18,7 +19,7 @@
     ],
     "IsMemory": true,
     "MemoriesCategory": "Reptile",
-    "MemoriesNameOverride": "Dragonair",
+    "MemoriesNameOverride": "Dragonite",
     "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
     },
@@ -28,7 +29,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Dragonair.name",
+      "Value": "server.npcRoles.Pkmn_Dragonite.name",
       "Description": "Translation key for NPC name display"
     }
   }

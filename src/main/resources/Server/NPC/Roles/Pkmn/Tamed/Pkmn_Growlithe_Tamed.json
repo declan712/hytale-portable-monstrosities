@@ -1,0 +1,40 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Growlithe",
+    "DropList": "Drop_Pkmn_T1_Hide",
+    "Type1": "FireType",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "MaxSpeed": 6.0,
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [30,100],
+    "EvolveRoleChange": "Pkmn_Arcanine_Tamed",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Growlithe.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
