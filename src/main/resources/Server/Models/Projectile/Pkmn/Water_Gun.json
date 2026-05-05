@@ -21,11 +21,11 @@
         "Z": 0
       },
       "TargetNodeName": "Handle",
-      "TrailId": "Orb_Trail_White",
+      "TrailId": "Memory_Trail",
       "RotationOffset": {
-        "Yaw": 90,
+        "Yaw": 0,
         "Pitch": 0,
-        "Roll": 45
+        "Roll": 90
       }
     },
     {
@@ -45,20 +45,33 @@
   ],
   "DefaultAttachments": [
     {
-      "Model": "Items/Projectiles/Pkmn/Bubble/Bubble.blockymodel",
-      "Texture": "Items/Projectiles/Pkmn/Bubble/Bubble_Texture.png"
+      "Model": "Items/Projectiles/Iceball.blockymodel",
+      "Texture": "Items/Projectiles/Iceball_Texture.png"
     }
   ],
   "Model": "Items/Projectiles/Projectile.blockymodel",
   "Texture": "Items/Projectiles/Projectile_default.png",
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "Items/Projectiles/Pkmn/Bubble/Float.blockyanim",
-          "Looping": true
-        }
-      ]
+  "Particles": [
+    {
+      "SystemId": "Water_Splash",
+      "TargetEntityPart": "Entity",
+      "Color": "#178cbc"
+    },
+    {
+      "SystemId": "Water_Bubble_Stream",
+      "TargetEntityPart": "Entity",
+      "Color": "#78c5e4",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 180
+      },
+      "Scale": 2
+    },
+    {
+      "SystemId": "Water_Can_Splash",
+      "Color": "#203383",
+      "TargetEntityPart": "Entity",
+      "TargetNodeName": "Handle"
     }
-  }
+  ]
 }

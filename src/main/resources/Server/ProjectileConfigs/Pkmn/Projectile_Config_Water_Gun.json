@@ -1,21 +1,19 @@
 {
-  "Model": "Bubble",
+  "Model": "Water_Gun",
   "Physics": {
     "Type": "Standard",
     "Gravity": 15,
-    "TerminalVelocityAir": 100,
-    "TerminalVelocityWater": 100,
-    "RotationMode": "VelocityRoll",
+    "TerminalVelocityAir": 40,
+    "TerminalVelocityWater": 40,
+    "RotationMode": "VelocityDamped",
     "Bounciness": 0,
     "DensityAir": 2,
     "ComputeYaw": true,
-    "ComputePitch": true,
-    "RotationForce": 0.1,
-    "SpeedRotationFactor": -0.1
+    "ComputePitch": true
   },
-  "LaunchForce": 100,
+  "LaunchForce": 40,
   "SpawnOffset": {
-    "Y": 0,
+    "Y": -0.3,
     "Z": 0
   },
   "Interactions": {
@@ -65,7 +63,7 @@
   },
   "SpawnRotationOffset": {
     "Yaw": 0,
-    "Pitch": -5,
-    "Roll": 45
+    "Pitch": 0,
+    "Roll": 0
   }
 }
