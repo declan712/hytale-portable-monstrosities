@@ -1,0 +1,64 @@
+{
+  "HitBox": {
+    "Max": {
+      "X": 0.05,
+      "Y": 0.05,
+      "Z": 0.05
+    },
+    "Min": {
+      "X": -0.05,
+      "Y": -0.05,
+      "Z": -0.05
+    }
+  },
+  "MinScale": 0.5,
+  "MaxScale": 1.5,
+  "Trails": [
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "TargetNodeName": "Handle",
+      "TrailId": "Orb_Trail_White",
+      "RotationOffset": {
+        "Yaw": 90,
+        "Pitch": 0,
+        "Roll": 45
+      }
+    },
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "TargetNodeName": "Handle",
+      "TrailId": "Wind",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 45,
+        "Roll": 90
+      }
+    }
+  ],
+  "DefaultAttachments": [
+    {
+      "Model": "Items/Projectiles/Pkmn/Bubble/Bubble.blockymodel",
+      "Texture": "Items/Projectiles/Pkmn/Bubble/Bubble_Texture.png"
+    }
+  ],
+  "Model": "Items/Projectiles/Projectile.blockymodel",
+  "Texture": "Items/Projectiles/Projectile_default.png",
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "Items/Projectiles/Pkmn/Bubble/Float.blockyanim",
+          "Looping": true
+        }
+      ]
+    }
+  }
+}

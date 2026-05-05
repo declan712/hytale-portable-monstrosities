@@ -1,0 +1,71 @@
+{
+  "Model": "Bubble",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 15,
+    "TerminalVelocityAir": 100,
+    "TerminalVelocityWater": 100,
+    "RotationMode": "VelocityRoll",
+    "Bounciness": 0,
+    "DensityAir": 2,
+    "ComputeYaw": true,
+    "ComputePitch": true,
+    "RotationForce": 0.1,
+    "SpeedRotationFactor": -0.1
+  },
+  "LaunchForce": 100,
+  "SpawnOffset": {
+    "Y": 0,
+    "Z": 0
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0.1
+      },
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "DefaultValue": {
+            "Interactions": [
+              "Pkmn_Moves_Water_Gun_Damage"
+            ]
+          },
+          "Var": "Water_Gun_Damage"
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Impact",
+            "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Impact"
+          }
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 5,
+          "Effects": {
+            "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Impact",
+            "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Impact"
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    }
+  },
+  "SpawnRotationOffset": {
+    "Yaw": 0,
+    "Pitch": -5,
+    "Roll": 45
+  }
+}
