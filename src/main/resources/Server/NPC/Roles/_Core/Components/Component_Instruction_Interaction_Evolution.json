@@ -117,22 +117,6 @@
                         ]
                     }
                 ]
-            },
-            {
-                "Sensor": {
-                    "Type": "Not",
-                    "Sensor": {
-                        "$Comment": "Check the negative first so we can exit early and avoid the rest of the logic",
-                        "Type": "CanInteract",
-                        "ViewSector": 90
-                    }
-                },
-                "Actions": [
-                    {
-                        "Type": "SetInteractable",
-                        "Interactable": false
-                    }
-                ]
             }
         ]
     },

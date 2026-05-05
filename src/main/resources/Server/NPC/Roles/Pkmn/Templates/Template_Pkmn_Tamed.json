@@ -3746,11 +3746,9 @@
 		}
 	],
 	"InteractionInstruction": {
-		"Enabled": {
-			"Compute": "IsHarvestable || IsMountable || CanEvolve"
-		},
 		"Instructions": [
 			{"$Comment": "Evolve",
+				"Enabled": {"Compute": "CanEvolve"},
 				"$TODO": "combat, alerted, fleeing?",
 				"Sensor": {
 					"Type": "Not",

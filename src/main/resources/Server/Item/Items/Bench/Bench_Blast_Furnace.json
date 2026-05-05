@@ -37,10 +37,10 @@
   },
   "BlockType": {
     "DrawType": "Model",
-    "CustomModel": "Blocks/Benches/Furnace_Simple.blockymodel",
+    "CustomModel": "Blocks/Benches/Blast_Furnace.blockymodel",
     "CustomModelTexture": [
       {
-        "Texture": "Blocks/Benches/Furnace_Simple_Texture.png",
+        "Texture": "Blocks/Benches/Blast_Furnace_Texture_Off.png",
         "Weight": 1
       }
     ],
@@ -223,7 +223,7 @@
           },
           "CustomModelTexture": [
             {
-              "Texture": "Blocks/Benches/Furnace_Texture.png",
+              "Texture": "Blocks/Benches/Blast_Furnace_Texture.png",
               "Weight": 1
             }
           ],
@@ -247,7 +247,7 @@
           },
           "CustomModelTexture": [
             {
-              "Texture": "Blocks/Benches/Furnace_Texture.png",
+              "Texture": "Blocks/Benches/Blast_Furnace_Texture.png",
               "Weight": 1
             }
           ],
@@ -280,23 +280,22 @@
       "Color": "#c88",
       "Radius": 1
     },
-    "Tint": [
-      "#403c3c"
-    ],
     "Material": "Solid",
     "Opacity": "Transparent"
   },
   "IconProperties": {
     "Scale": 0.365,
     "Rotation": [
-      360,
-      327,
-      352
+      22.5,
+      45,
+      22.5
     ],
     "Translation": [
-      15,
-      -33
+      12,
+      -17.4
     ]
   },
-  "Parent": "Bench_Furnace"
+  "Parent": "Bench_Furnace",
+  "Model": "Blocks/Benches/Blast_Furnace.blockymodel",
+  "Texture": "Blocks/Benches/Blast_Furnace_Texture_Off.png"
 }
