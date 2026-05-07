@@ -97,7 +97,7 @@ public class PkmnStatUtils {
         String entityId = targetUuid.getUuid().toString();
         captureMetadata.setNpcEntityUuid(entityId);
 
-        LOGGER.atInfo().log("released NPC with uuid: "+entityId);
+        // LOGGER.atInfo().log("released NPC with uuid: "+entityId);
 
         return ball.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMetadata);
     }
@@ -234,7 +234,7 @@ public class PkmnStatUtils {
         // if (npcComponent == null) return null;
 
         boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
-        if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
+        // if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
 
 
         EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
@@ -290,8 +290,8 @@ public class PkmnStatUtils {
         Player player = store.getComponent(ref, Player.getComponentType());
         if (player != null && baseStats!=PLAYER_BASE_STATS) pkmnStats.setBaseStats(PLAYER_BASE_STATS);
 
-        if ( baseStats[PkmnStat.ATK.index] == 0) { LOGGER.atInfo().log("Entity base ATK is 0"); }
-        if ( baseStats[PkmnStat.DEF.index] == 0) { LOGGER.atInfo().log("Entity base DEF is 0"); }
+        // if ( baseStats[PkmnStat.ATK.index] == 0) { LOGGER.atInfo().log("Entity base ATK is 0"); }
+        // if ( baseStats[PkmnStat.DEF.index] == 0) { LOGGER.atInfo().log("Entity base DEF is 0"); }
         return pkmnStats;
     }
 
@@ -333,7 +333,7 @@ public class PkmnStatUtils {
         if (npcComponent == null) return null;
 
         boolean isDead = store.getComponent(targetRef, DeathComponent.getComponentType()) != null;
-        if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
+        // if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
 
         EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());
         if (stats == null){ 
