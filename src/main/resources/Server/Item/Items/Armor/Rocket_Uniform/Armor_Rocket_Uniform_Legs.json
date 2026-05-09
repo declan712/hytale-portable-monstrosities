@@ -1,0 +1,112 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Armor_Rocket_Uniform_Legs.name",
+    "Description": "portablemonstrosities.items.Armor_Rocket_Uniform_Legs.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Armor_Rocket_Uniform_Legs.png",
+  "Parent": "Armor_Iron_Legs",
+  "Quality": "Common",
+  "ItemLevel": 15,
+  "IconProperties": {
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Scale": 0.415,
+    "Translation": [
+      -1.2,
+      -22.2
+    ]
+  },
+  "Model": "Items/Armors/Rocket_Uniform/Legs.blockymodel",
+  "Texture": "Items/Armors/Rocket_Uniform/Legs.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Pkmn_Leather_T0",
+        "Quantity": 10
+      },
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 8
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Legs"
+        ],
+        "RequiredTierLevel": 1
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes"
+    ],
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.04,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.04,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 6,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Def": [
+        {
+          "Amount": 10,
+          "CalculationType": "Additive"
+        }
+      ],
+      "SpDef": [
+        {
+          "Amount": 10,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageEnhancement": {
+      "Normal": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.05
+        }
+      ]
+    }
+  },
+  "MaxDurability": 100,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "TeamRocket"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "DurabilityLossOnHit": 0.5,
+  "Categories": [
+    "PortableMonstrosities.Equipment"
+  ]
+}

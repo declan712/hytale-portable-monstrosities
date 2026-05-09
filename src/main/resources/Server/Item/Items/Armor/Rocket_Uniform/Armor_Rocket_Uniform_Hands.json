@@ -1,0 +1,108 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Armor_Rocket_Uniform_Hands.name",
+    "Description": "portablemonstrosities.items.Armor_Rocket_Uniform_Hands.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Armor_Rocket_Uniform_Hands.png",
+  "Parent": "Armor_Iron_Hands",
+  "Quality": "Common",
+  "ItemLevel": 15,
+  "IconProperties": {
+    "Scale": 0.645,
+    "Rotation": [
+      21.94,
+      45.565,
+      22.5
+    ],
+    "Translation": [
+      0.7,
+      -2.3
+    ]
+  },
+  "Model": "Items/Armors/Rocket_Uniform/Gloves.blockymodel",
+  "Texture": "Items/Armors/Rocket_Uniform/Gloves.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Pkmn_Leather_T0",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 4
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Armor_Bench",
+        "Type": "Crafting",
+        "Categories": [
+          "Armor_Hands"
+        ],
+        "RequiredTierLevel": 1
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "Armor": {
+    "ArmorSlot": "Hands",
+    "BaseDamageResistance": 0,
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.02,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.02,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 3,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Def": [
+        {
+          "Amount": 5,
+          "CalculationType": "Additive"
+        }
+      ],
+      "SpDef": [
+        {
+          "Amount": 5,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageEnhancement": {
+      "Normal": [
+        {
+          "CalculationType": "Multiplicative",
+          "Amount": 0.05
+        }
+      ]
+    }
+  },
+  "MaxDurability": 120,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Cobalt"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "DurabilityLossOnHit": 0.5,
+  "Categories": [
+    "PortableMonstrosities.Equipment"
+  ]
+}
