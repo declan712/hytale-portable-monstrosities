@@ -1,0 +1,279 @@
+{
+  "Model": "NPC/Pkmn/Tauros/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Tauros/Models/Texture.png",
+  "EyeHeight": 1.25,
+  "CrouchOffset": -0.3,
+  "HitBox": {
+    "Max": {
+      "X": 0.8,
+      "Y": 1.7,
+      "Z": 0.8
+    },
+    "Min": {
+      "X": -0.8,
+      "Y": 0,
+      "Z": -0.8
+    }
+  },
+  "MinScale": 1.2,
+  "MaxScale": 1.2,
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 45,
+        "Min": -15
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Max": 30,
+        "Min": -30
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Idle.blockyanim",
+          "SoundEventId": "SFX_Bison_Idle"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Walk.blockyanim",
+          "SoundEventId": "SFX_Bison_Walk"
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Run.blockyanim",
+          "SoundEventId": "SFX_Bison_Run"
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Run_Backward.blockyanim"
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Sprint.blockyanim"
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "StepWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Step_Walk.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1
+        }
+      ]
+    },
+    "StepRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Step_Run.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Speed": 1.1
+        }
+      ]
+    },
+    "StepSprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Step_Sprint.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.1,
+          "Speed": 1.2
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Jump_Run.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpSprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Jump_Run.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Bison_Alerted"
+        }
+      ]
+    },
+    "Curious": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Flavor/Curious.blockyanim"
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Fly/Fly.blockyanim"
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Bison_Hurt"
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Damage/Death.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Bison_Death"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Laydown.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Sleep.blockyanim"
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Wake.blockyanim",
+          "Looping": false
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false
+        }
+      ]
+    },
+    "Eat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Idle.blockyanim",
+          "Speed": 0.6
+        }
+      ]
+    },
+    "GreetAnimation": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Tauros/Animations/Default/Idle.blockyanim",
+          "Looping": false,
+          "Speed": 1.0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Tauros",
+    "AttitudeGroup": "Pkmn_PreyBig",
+    "DropList": "Drop_Pkmn_T2_Hide",
+    "Type1": "NormalType",
+    "WildLevelMin": 22,
+    "WildLevelMax": 45,
+    "MaxSpeed": 11.0,
+    "CaptureDifficulty": 0.18,
+    "TameRoleChange": "Pkmn_Tauros_Tamed",
+    "FlockArray": [
+      "Pkmn_Tauros"
+    ],
+    "Timid": true,
+    "FleeIfNotThreatened": true,
+    "TimidDuringDay": true,
+    "IsMemory": true,
+    "MemoriesCategory": "Livestock",
+    "MemoriesNameOverride": "Tauros",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Tauros.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
