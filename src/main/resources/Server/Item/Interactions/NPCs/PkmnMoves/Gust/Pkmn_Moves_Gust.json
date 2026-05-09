@@ -1,0 +1,48 @@
+{
+    "Type": "Simple",
+    "Effects": {
+        "ItemAnimationId": "Jump"
+    },
+    "Runtime": 1,
+    "Next": {
+        "Type": "Parallel",
+        "Interactions": [
+            {
+                "Interactions": [
+                    {
+                        "Type": "ChangeStat",
+                        "StatModifiers": {
+                            "MagicCharges": 0
+                        }
+                    },
+                    {
+                        "Type": "Simple",
+                        "RunTime": 0.25,
+                        "Effects": {
+                            "ItemPlayerAnimationsId": "Rifle",
+                            "ItemAnimationId": "ShootFlintlockCharged",
+                            "WorldSoundEventId": "SFX_Pkmn_Move_Gust",
+                            "LocalSoundEventId": "SFX_Pkmn_Move_Gust"
+                        }
+                    }
+                ]
+            },
+            {
+                "Interactions": [
+                    {
+                        "Type": "Simple",
+                        "RunTime": 0.25
+                    },
+                    {
+                        "Type": "Projectile",
+                        "Config": "Projectile_Config_Gust",
+                        "Next": {
+                            "Type": "Simple",
+                            "RunTime": 0.25
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

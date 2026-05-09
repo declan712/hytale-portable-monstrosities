@@ -1,0 +1,132 @@
+{
+  "Model": "Tornado",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 10,
+    "TerminalVelocityAir": 30,
+    "TerminalVelocityWater": 20,
+    "RotationMode": "VelocityDamped",
+    "DensityAir": 1,
+    "ComputeYaw": true,
+    "ComputePitch": true,
+    "Bounciness": 1,
+    "BounceLimit": 3,
+    "BounceCount": 3,
+    "AllowRolling": true
+  },
+  "LaunchForce": 20,
+  "SpawnOffset": {
+    "Y": -0.3,
+    "Z": 0
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0.1
+      },
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "DefaultValue": {
+            "Interactions": [
+              "Pkmn_Moves_Gust_Damage"
+            ]
+          },
+          "Var": "Gust_Damage"
+        },
+        {
+          "Type": "Simple",
+          "RunTime": 0.75,
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Stone_Death",
+                "Color": "#808080",
+                "Scale": 1.5,
+                "PositionOffset": {
+                  "Y": 0.1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User",
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Stone_Death",
+                "Color": "#808080",
+                "Scale": 1.5,
+                "PositionOffset": {
+                  "Y": 0.1
+                }
+              }
+            ]
+          },
+          "RunTime": 0.8
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 1.25,
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Stone_Death",
+                "Color": "#808080",
+                "Scale": 1.5,
+                "PositionOffset": {
+                  "Y": 0.1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    },
+    "ProjectileSpawn": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 5,
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Stone_Death",
+                "Color": "#808080",
+                "Scale": 1.5,
+                "PositionOffset": {
+                  "Y": 0.1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    }
+  },
+  "SpawnRotationOffset": {
+    "Yaw": 0,
+    "Pitch": 0,
+    "Roll": 0
+  }
+}

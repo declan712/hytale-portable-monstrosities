@@ -2,7 +2,7 @@
   "Parent": "DamagePkmnParent",
   "DamageCalculator": {
     "BaseDamage": {
-      "Normal": 35
+      "Psychic": 50
     }
   },
   "DamageEffects": {
@@ -10,13 +10,7 @@
     "LocalSoundEventId": "SFX_Pkmn_Damage",
     "WorldParticles": [
       {
-        "SystemId": "Pkmn_Tackle",
-        "PositionOffset": {
-          "Y": 1
-        },
-        "TargetNodeName": "Chest",
-        "TargetEntityPart": "Entity",
-        "Scale": 0.75
+        "SystemId": "Impact_Sword_Basic"
       }
     ]
   }

@@ -3,52 +3,43 @@
   "$Comment": "Prepare Delay",
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Lunge"
+    "ItemAnimationId": "Alerted"
   },
   "RunTime": 0.25,
   "Next": {
-    "Type": "ApplyForce",
-    "$Comment": "Move at target",
-    "RunTime": 0.425,
+    "Type": "Simple",
+    "RunTime": 0.35,
     "Effects": {
-      "WorldSoundEventId": "SFX_Pkmn_Move_Bite",
-      "LocalSoundEventId": "SFX_Pkmn_Move_Bite",
+      "WorldSoundEventId": "SFX_Pkmn_Move_Confusion",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Confusion",
       "Particles": [
         {
-          "SystemId": "Pkmn_Bite",
+          "SystemId": "Pkmn_Confusion",
           "TargetEntityPart": "Entity",
           "PositionOffset": {
-            "Z": 1.5,
-            "Y": 1
-          }
+            "Z": 0,
+            "Y": 0
+          },
+          "TargetNodeName": "Head"
         }
       ]
     },
-    "Direction": {
-      "Z": -10,
-      "Y": 0.5,
-      "X": 0
-    },
-    "Force": 5,
-    "AdjustVertical": true,
     "Next": {
       "Type": "Selector",
       "Effects": {
         "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
       },
       "$Comment": "Length of Combat",
-      "RunTime": 0.125,
+      "RunTime": 0.65,
       "Selector": {
-        "Id": "Horizontal",
-        "Direction": "ToLeft",
-        "TestLineOfSight": true,
-        "ExtendTop": 0.75,
-        "ExtendBottom": 0.75,
-        "StartDistance": 0.5,
-        "EndDistance": 3,
-        "Length": 30,
-        "RollOffset": 90,
-        "YawStartOffset": -15
+        "Id": "Stab",
+        "StartDistance": 0.1,
+        "EndDistance": 7,
+        "ExtendTop": 1,
+        "ExtendBottom": 1,
+        "ExtendLeft": 1,
+        "ExtendRight": 1,
+        "TestLineOfSight": true
       },
       "HitEntity": {
         "Interactions": [
@@ -57,10 +48,10 @@
             "DefaultOk": true,
             "DefaultValue": {
               "Interactions": [
-                "Pkmn_Moves_Bite_Damage"
+                "Pkmn_Moves_Confusion_Damage"
               ]
             },
-            "Var": "Bite_Damage"
+            "Var": "Confusion_Damage"
           }
         ]
       },

@@ -3,7 +3,7 @@
   "$Comment": "Prepare Delay",
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Lunge"
+    "ItemAnimationId": "ScratchRightQuad"
   },
   "RunTime": 0.25,
   "Next": {
@@ -11,14 +11,14 @@
     "$Comment": "Move at target",
     "RunTime": 0.425,
     "Effects": {
-      "WorldSoundEventId": "SFX_Pkmn_Move_Bite",
-      "LocalSoundEventId": "SFX_Pkmn_Move_Bite",
+      "WorldSoundEventId": "SFX_Pkmn_Move_Low_Kick",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Low_Kick",
       "Particles": [
         {
-          "SystemId": "Pkmn_Bite",
+          "SystemId": "Pkmn_Punch",
           "TargetEntityPart": "Entity",
           "PositionOffset": {
-            "Z": 1.5,
+            "Z": 0.5,
             "Y": 1
           }
         }
@@ -45,7 +45,7 @@
         "ExtendTop": 0.75,
         "ExtendBottom": 0.75,
         "StartDistance": 0.5,
-        "EndDistance": 3,
+        "EndDistance": 3.0,
         "Length": 30,
         "RollOffset": 90,
         "YawStartOffset": -15
@@ -57,10 +57,10 @@
             "DefaultOk": true,
             "DefaultValue": {
               "Interactions": [
-                "Pkmn_Moves_Bite_Damage"
+                "Pkmn_Moves_Rock_Smash_Damage"
               ]
             },
-            "Var": "Bite_Damage"
+            "Var": "Rock_Smash_Damage"
           }
         ]
       },

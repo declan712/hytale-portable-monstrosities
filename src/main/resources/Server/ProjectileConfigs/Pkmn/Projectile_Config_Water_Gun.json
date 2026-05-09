@@ -2,16 +2,18 @@
   "Model": "Water_Gun",
   "Physics": {
     "Type": "Standard",
-    "Gravity": 15,
-    "TerminalVelocityAir": 40,
-    "TerminalVelocityWater": 40,
+    "Gravity": 12,
+    "TerminalVelocityAir": 30,
+    "TerminalVelocityWater": 30,
     "RotationMode": "VelocityDamped",
     "Bounciness": 0,
     "DensityAir": 2,
     "ComputeYaw": true,
-    "ComputePitch": true
+    "ComputePitch": true,
+    "BounceLimit": 1,
+    "BounceCount": 1
   },
-  "LaunchForce": 40,
+  "LaunchForce": 30,
   "SpawnOffset": {
     "Y": -0.3,
     "Z": 0
@@ -36,7 +38,19 @@
           "Entity": "User",
           "Effects": {
             "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Impact",
-            "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Impact"
+            "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Impact",
+            "Particles": [
+              {
+                "SystemId": "Water_Splash",
+                "TargetEntityPart": "Entity",
+                "Color": "#8cb1e0"
+              },
+              {
+                "SystemId": "Water_Can_Splash",
+                "Color": "#82b9d9",
+                "TargetEntityPart": "Entity"
+              }
+            ]
           }
         }
       ]
@@ -48,10 +62,22 @@
       "Interactions": [
         {
           "Type": "Simple",
-          "RunTime": 5,
+          "RunTime": 0.5,
           "Effects": {
             "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Impact",
-            "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Impact"
+            "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Impact",
+            "Particles": [
+              {
+                "SystemId": "Water_Splash",
+                "TargetEntityPart": "Entity",
+                "Color": "#8cb1e0"
+              },
+              {
+                "SystemId": "Water_Can_Splash",
+                "Color": "#82b9d9",
+                "TargetEntityPart": "Entity"
+              }
+            ]
           }
         },
         {
