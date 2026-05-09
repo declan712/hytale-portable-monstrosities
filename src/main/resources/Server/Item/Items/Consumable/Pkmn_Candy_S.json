@@ -1,17 +1,18 @@
 {
+  "Parent": "Pkmn_Candy",
   "TranslationProperties": {
-    "Name": "portablemonstrosities.items.Rare_Candy.name",
-    "Description": "portablemonstrosities.items.Rare_Candy.description"
+    "Name": "portablemonstrosities.items.Pkmn_Candy_S.name",
+    "Description": "portablemonstrosities.items.Pkmn_Candy_S.description"
   },
-  "Quality": "Legendary",
-  "MaxStack": 99,
-  "ItemLevel": 99,
+  "Quality": "Uncommon",
+  "MaxStack": 9999,
+  "ItemLevel": 1,
   "Model": "Items/Consumables/Rare_Candy.blockymodel",
   "Texture": "Items/Consumables/Rare_Candy.png",
   "Categories": [
     "PortableMonstrosities.Items"
   ],
-  "Scale": 1,
+  "Scale": 0.5,
   "PlayerAnimationsId": {
     "Parent": "Item"
   },
@@ -31,7 +32,7 @@
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Plant_Fruit_Apricorn_T7",
+        "ItemId": "Plant_Fruit_Apricorn_T2",
         "Quantity": 3
       }
     ],
@@ -66,9 +67,9 @@
                 "Entity": "Target",
                 "EffectId": {
                   "StatModifiers": {
-                    "Exp": 100
+                    "Exp": 50
                   },
-                  "ValueType": "Percent",
+                  "ValueType": "Absolute",
                   "Parent": "Exp_Gain",
                   "Duration": 0.2
                 },
