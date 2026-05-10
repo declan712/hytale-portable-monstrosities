@@ -8,7 +8,7 @@
       "shape": {
         "type": "none",
         "offset": {"x": 0, "y": 0, "z": 0},
-        "stretch": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
         "settings": {
           "isPiece": false
         },
@@ -55,13 +55,13 @@
               },
               "top": {
                 "offset": {"x": 229, "y": 185},
-                "mirror": {"x": true, "y": true},
-                "angle": 270
+                "mirror": {"x": false, "y": false},
+                "angle": 90
               },
               "bottom": {
                 "offset": {"x": 199, "y": 130},
-                "mirror": {"x": true, "y": true},
-                "angle": 270
+                "mirror": {"x": false, "y": false},
+                "angle": 90
               }
             },
             "unwrapMode": "custom",
@@ -106,13 +106,13 @@
                   },
                   "top": {
                     "offset": {"x": 301, "y": 20},
-                    "mirror": {"x": true, "y": true},
-                    "angle": 270
+                    "mirror": {"x": false, "y": false},
+                    "angle": 90
                   },
                   "bottom": {
                     "offset": {"x": 301, "y": 70},
-                    "mirror": {"x": true, "y": true},
-                    "angle": 270
+                    "mirror": {"x": false, "y": false},
+                    "angle": 90
                   }
                 },
                 "unwrapMode": "custom",
@@ -164,8 +164,8 @@
                         "textureLayout": {
                           "top": {
                             "offset": {"x": 330, "y": 22},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           },
                           "bottom": {
                             "offset": {"x": 301, "y": 68},
@@ -191,7 +191,7 @@
               "shape": {
                 "type": "none",
                 "offset": {"x": 0, "y": 0, "z": 0},
-                "stretch": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false
                 },
@@ -210,7 +210,7 @@
                   "shape": {
                     "type": "none",
                     "offset": {"x": 0, "y": 0, "z": 0},
-                    "stretch": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false
                     },
@@ -258,13 +258,13 @@
                           },
                           "top": {
                             "offset": {"x": 235, "y": 184},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           },
                           "bottom": {
                             "offset": {"x": 157, "y": 135},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           }
                         },
                         "unwrapMode": "custom",
@@ -276,11 +276,11 @@
                     {
                       "id": "9",
                       "name": "Bulb",
-                      "position": {"x": -30, "y": -17, "z": -42},
+                      "position": {"x": 0, "y": -17, "z": -10},
                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": 30, "y": 47.5, "z": 36},
+                        "offset": {"x": 0, "y": 47.5, "z": 0},
                         "stretch": {"x": 1, "y": 1, "z": 1},
                         "settings": {
                           "isPiece": false,
@@ -327,11 +327,11 @@
                         {
                           "id": "10",
                           "name": "Bulb2",
-                          "position": {"x": -21, "y": -17.5, "z": -24},
-                          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                          "position": {"x": 0, "y": -17.5, "z": 0},
+                          "orientation": {"x": 0, "y": 0.38268, "z": 0, "w": 0.92388},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 23, "y": 45, "z": 23},
+                            "offset": {"x": 0, "y": 45, "z": 0},
                             "stretch": {"x": 1, "y": 1, "z": 1},
                             "settings": {
                               "isPiece": false,
@@ -378,11 +378,11 @@
                             {
                               "id": "11",
                               "name": "Bulb3",
-                              "position": {"x": -13, "y": -29, "z": -12},
+                              "position": {"x": 0, "y": -29, "z": 0},
                               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                               "shape": {
                                 "type": "box",
-                                "offset": {"x": 11, "y": 33, "z": 11},
+                                "offset": {"x": 0, "y": 33, "z": 0},
                                 "stretch": {"x": 1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -428,122 +428,419 @@
                               "children": [
                                 {
                                   "id": "12",
-                                  "name": "Leaf--C1",
-                                  "position": {"x": -6, "y": -4, "z": -4},
-                                  "orientation": {"x": 0.11677, "y": -0.94572, "z": -0.07406, "w": -0.29411},
+                                  "name": "L-Leaf",
+                                  "position": {"x": 24.5, "y": 1, "z": -2},
+                                  "orientation": {"x": -0.45451, "y": -0.54168, "z": -0.45451, "w": 0.54168},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 35, "y": 0, "z": 2},
-                                    "stretch": {"x": 1, "y": 1, "z": 2},
+                                    "offset": {"x": -1, "y": 16.5, "z": -0.4996},
+                                    "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
                                     "settings": {
                                       "isPiece": false,
-                                      "size": {"x": 72, "y": 0, "z": 32},
-                                      "isStaticBox": true
+                                      "size": {"x": 62, "y": 31, "z": 1}
                                     },
                                     "textureLayout": {
-                                      "top": {
-                                        "offset": {"x": 352, "y": 396},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 0
-                                      },
-                                      "bottom": {
-                                        "offset": {"x": 352, "y": 364},
-                                        "mirror": {"x": true, "y": false},
+                                      "back": {
+                                        "offset": {"x": 0, "y": 385},
+                                        "mirror": {"x": false, "y": false},
                                         "angle": 0
                                       }
                                     },
                                     "unwrapMode": "custom",
                                     "visible": true,
-                                    "doubleSided": false,
+                                    "doubleSided": true,
                                     "shadingMode": "flat"
-                                  }
-                                },
-                                {
-                                  "id": "13",
-                                  "name": "Leaf--C2",
-                                  "position": {"x": 14, "y": 1, "z": 12},
-                                  "orientation": {"x": 0.04262, "y": -0.24181, "z": -0.06899, "w": 0.96693},
-                                  "shape": {
-                                    "type": "box",
-                                    "offset": {"x": 26, "y": 0, "z": 1},
-                                    "stretch": {"x": 1, "y": 1, "z": 2},
-                                    "settings": {
-                                      "isPiece": false,
-                                      "size": {"x": 72, "y": 0, "z": 32},
-                                      "isStaticBox": true
-                                    },
-                                    "textureLayout": {
-                                      "top": {
-                                        "offset": {"x": 352, "y": 364},
-                                        "mirror": {"x": true, "y": false},
-                                        "angle": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "13",
+                                      "name": "L-Leaf2",
+                                      "position": {"x": 23, "y": 40.5, "z": 0.9996},
+                                      "orientation": {"x": -0.17365, "y": 0, "z": 0, "w": 0.98481},
+                                      "shape": {
+                                        "type": "box",
+                                        "offset": {"x": -23, "y": -4.11307, "z": -8.36609},
+                                        "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
+                                        "settings": {
+                                          "isPiece": false,
+                                          "size": {"x": 62, "y": 31, "z": 1}
+                                        },
+                                        "textureLayout": {
+                                          "back": {
+                                            "offset": {"x": 0, "y": 354},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 0
+                                          }
+                                        },
+                                        "unwrapMode": "custom",
+                                        "visible": true,
+                                        "doubleSided": true,
+                                        "shadingMode": "flat"
                                       },
-                                      "bottom": {
-                                        "offset": {"x": 352, "y": 396},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 0
-                                      }
-                                    },
-                                    "unwrapMode": "custom",
-                                    "visible": true,
-                                    "doubleSided": false,
-                                    "shadingMode": "flat"
-                                  }
-                                },
-                                {
-                                  "id": "14",
-                                  "name": "Leaf--C3",
-                                  "position": {"x": -5, "y": 0, "z": 14},
-                                  "orientation": {"x": 0.083, "y": -0.9469, "z": -0.00136, "w": 0.31062},
-                                  "shape": {
-                                    "type": "box",
-                                    "offset": {"x": 26, "y": 0, "z": 1},
-                                    "stretch": {"x": 1, "y": 1, "z": 2},
-                                    "settings": {
-                                      "isPiece": false,
-                                      "size": {"x": 72, "y": 0, "z": 32},
-                                      "isStaticBox": true
-                                    },
-                                    "textureLayout": {
-                                      "top": {
-                                        "offset": {"x": 352, "y": 396},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 0
-                                      },
-                                      "bottom": {
-                                        "offset": {"x": 352, "y": 364},
-                                        "mirror": {"x": true, "y": false},
-                                        "angle": 0
-                                      }
-                                    },
-                                    "unwrapMode": "custom",
-                                    "visible": true,
-                                    "doubleSided": false,
-                                    "shadingMode": "flat"
-                                  }
+                                      "children": [
+                                        {
+                                          "id": "14",
+                                          "name": "L-Leaf3",
+                                          "position": {"x": 23, "y": 38.64171, "z": 7.58047},
+                                          "orientation": {"x": -0.25882, "y": 0, "z": 0, "w": 0.96593},
+                                          "shape": {
+                                            "type": "box",
+                                            "offset": {"x": -23, "y": -3.20846, "z": -17.25052},
+                                            "stretch": {"x": 1.25, "y": 0.75, "z": 0.625},
+                                            "settings": {
+                                              "isPiece": false,
+                                              "size": {"x": 62, "y": 31, "z": 1}
+                                            },
+                                            "textureLayout": {
+                                              "back": {
+                                                "offset": {"x": 0, "y": 323},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              }
+                                            },
+                                            "unwrapMode": "custom",
+                                            "visible": true,
+                                            "doubleSided": true,
+                                            "shadingMode": "flat"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
                                 },
                                 {
                                   "id": "15",
-                                  "name": "Leaf--C4",
-                                  "position": {"x": 12, "y": 0, "z": -4},
-                                  "orientation": {"x": -0.0639, "y": 0.55663, "z": -0.02209, "w": 0.82801},
+                                  "name": "R-Leaf",
+                                  "position": {"x": -2.75, "y": -3, "z": 22},
+                                  "orientation": {"x": -0.45451, "y": 0.54168, "z": 0.45451, "w": 0.54168},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 35, "y": 0, "z": 2},
-                                    "stretch": {"x": 1, "y": 1, "z": 2},
+                                    "offset": {"x": 23, "y": 38.5, "z": -0.5004},
+                                    "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
                                     "settings": {
                                       "isPiece": false,
-                                      "size": {"x": 72, "y": 0, "z": 32},
-                                      "isStaticBox": true
+                                      "size": {"x": 62, "y": 31, "z": 1}
+                                    },
+                                    "textureLayout": {
+                                      "back": {
+                                        "offset": {"x": 0, "y": 385},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": true,
+                                    "shadingMode": "flat"
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "16",
+                                      "name": "R-Leaf2",
+                                      "position": {"x": -23, "y": -6.5, "z": 0.0004},
+                                      "orientation": {"x": -0.17365, "y": 0, "z": 0, "w": 0.98481},
+                                      "shape": {
+                                        "type": "box",
+                                        "offset": {"x": 23, "y": 39.11307, "z": 7.36609},
+                                        "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
+                                        "settings": {
+                                          "isPiece": false,
+                                          "size": {"x": 62, "y": 31, "z": 1}
+                                        },
+                                        "textureLayout": {
+                                          "back": {
+                                            "offset": {"x": 0, "y": 354},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 0
+                                          }
+                                        },
+                                        "unwrapMode": "custom",
+                                        "visible": true,
+                                        "doubleSided": true,
+                                        "shadingMode": "flat"
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "17",
+                                          "name": "R-Leaf3",
+                                          "position": {"x": -23, "y": -4.58443, "z": -8.15171},
+                                          "orientation": {"x": -0.25882, "y": 0, "z": 0, "w": 0.96593},
+                                          "shape": {
+                                            "type": "box",
+                                            "offset": {"x": 23, "y": 26.36038, "z": 17.987},
+                                            "stretch": {"x": 1.25, "y": 0.75, "z": 0.625},
+                                            "settings": {
+                                              "isPiece": false,
+                                              "size": {"x": 62, "y": 31, "z": 1}
+                                            },
+                                            "textureLayout": {
+                                              "back": {
+                                                "offset": {"x": 0, "y": 323},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              }
+                                            },
+                                            "unwrapMode": "custom",
+                                            "visible": true,
+                                            "doubleSided": true,
+                                            "shadingMode": "flat"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "18",
+                                  "name": "Front-Leaf",
+                                  "position": {"x": 1, "y": 1, "z": 25.25},
+                                  "orientation": {"x": 0, "y": -0.76604, "z": -0.64279, "w": 0},
+                                  "shape": {
+                                    "type": "box",
+                                    "offset": {"x": -1, "y": 16.5, "z": -0.5},
+                                    "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 62, "y": 31, "z": 1}
+                                    },
+                                    "textureLayout": {
+                                      "back": {
+                                        "offset": {"x": 0, "y": 385},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": true,
+                                    "shadingMode": "flat"
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "19",
+                                      "name": "Front-Leaf2",
+                                      "position": {"x": -23, "y": 39.5, "z": 0},
+                                      "orientation": {"x": -0.17365, "y": 0, "z": 0, "w": 0.98481},
+                                      "shape": {
+                                        "type": "box",
+                                        "offset": {"x": 23, "y": -4.11293, "z": -8.36646},
+                                        "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
+                                        "settings": {
+                                          "isPiece": false,
+                                          "size": {"x": 62, "y": 31, "z": 1}
+                                        },
+                                        "textureLayout": {
+                                          "back": {
+                                            "offset": {"x": 0, "y": 354},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 0
+                                          }
+                                        },
+                                        "unwrapMode": "custom",
+                                        "visible": true,
+                                        "doubleSided": true,
+                                        "shadingMode": "flat"
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "20",
+                                          "name": "Front-Leaf3",
+                                          "position": {"x": -23, "y": 38.64157, "z": 7.58084},
+                                          "orientation": {"x": -0.25882, "y": 0, "z": 0, "w": 0.96593},
+                                          "shape": {
+                                            "type": "box",
+                                            "offset": {"x": 23, "y": -3.20816, "z": -17.25078},
+                                            "stretch": {"x": 1.25, "y": 0.75, "z": 0.625},
+                                            "settings": {
+                                              "isPiece": false,
+                                              "size": {"x": 62, "y": 31, "z": 1}
+                                            },
+                                            "textureLayout": {
+                                              "back": {
+                                                "offset": {"x": 0, "y": 323},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              }
+                                            },
+                                            "unwrapMode": "custom",
+                                            "visible": true,
+                                            "doubleSided": true,
+                                            "shadingMode": "flat"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "21",
+                                  "name": "Back-Leaf",
+                                  "position": {"x": 21, "y": -3, "z": -2.75},
+                                  "orientation": {"x": -0.64279, "y": 0, "z": 0, "w": 0.76604},
+                                  "shape": {
+                                    "type": "box",
+                                    "offset": {"x": -23, "y": 38.5, "z": -0.5},
+                                    "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 62, "y": 31, "z": 1}
+                                    },
+                                    "textureLayout": {
+                                      "back": {
+                                        "offset": {"x": 0, "y": 385},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": true,
+                                    "shadingMode": "flat"
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "22",
+                                      "name": "Back-Leaf2",
+                                      "position": {"x": 23, "y": -6.5, "z": 0},
+                                      "orientation": {"x": -0.17365, "y": 0, "z": 0, "w": 0.98481},
+                                      "shape": {
+                                        "type": "box",
+                                        "offset": {"x": -23, "y": 39.11293, "z": 7.36646},
+                                        "stretch": {"x": 1.25, "y": 1.125, "z": 0.625},
+                                        "settings": {
+                                          "isPiece": false,
+                                          "size": {"x": 62, "y": 31, "z": 1}
+                                        },
+                                        "textureLayout": {
+                                          "back": {
+                                            "offset": {"x": 0, "y": 354},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 0
+                                          }
+                                        },
+                                        "unwrapMode": "custom",
+                                        "visible": true,
+                                        "doubleSided": true,
+                                        "shadingMode": "flat"
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "23",
+                                          "name": "Back-Leaf3",
+                                          "position": {"x": 23, "y": -4.58429, "z": -9.40208},
+                                          "orientation": {"x": -0.25882, "y": 0, "z": 0, "w": 0.96593},
+                                          "shape": {
+                                            "type": "box",
+                                            "offset": {"x": -23, "y": 26.36008, "z": 17.98726},
+                                            "stretch": {"x": 1.25, "y": 0.75, "z": 0.625},
+                                            "settings": {
+                                              "isPiece": false,
+                                              "size": {"x": 62, "y": 31, "z": 1}
+                                            },
+                                            "textureLayout": {
+                                              "back": {
+                                                "offset": {"x": 0, "y": 323},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              }
+                                            },
+                                            "unwrapMode": "custom",
+                                            "visible": true,
+                                            "doubleSided": true,
+                                            "shadingMode": "flat"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "24",
+                          "name": "Leaf",
+                          "position": {"x": 25, "y": -11.5, "z": 20},
+                          "orientation": {"x": -0.05283, "y": -0.28622, "z": 0.12139, "w": 0.94898},
+                          "shape": {
+                            "type": "box",
+                            "offset": {"x": 2.5, "y": 0, "z": -0.5},
+                            "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                            "settings": {
+                              "isPiece": false,
+                              "size": {"x": 25, "y": 0, "z": 35}
+                            },
+                            "textureLayout": {
+                              "top": {
+                                "offset": {"x": 136, "y": 381},
+                                "mirror": {"x": true, "y": false},
+                                "angle": 0
+                              },
+                              "bottom": {
+                                "offset": {"x": 136, "y": 416},
+                                "mirror": {"x": true, "y": true},
+                                "angle": 0
+                              }
+                            },
+                            "unwrapMode": "custom",
+                            "visible": true,
+                            "doubleSided": false,
+                            "shadingMode": "flat"
+                          },
+                          "children": [
+                            {
+                              "id": "25",
+                              "name": "Leaf-Mid",
+                              "position": {"x": 18.5, "y": 0, "z": 0.5},
+                              "orientation": {"x": 0, "y": 0, "z": -0.17365, "w": 0.98481},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 25, "y": 0, "z": 35}
+                                },
+                                "textureLayout": {
+                                  "top": {
+                                    "offset": {"x": 111, "y": 381},
+                                    "mirror": {"x": true, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 111, "y": 416},
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "flat"
+                              },
+                              "children": [
+                                {
+                                  "id": "26",
+                                  "name": "Leaf-Tip",
+                                  "position": {"x": 18.5, "y": 0, "z": 0.5},
+                                  "orientation": {"x": 0, "y": 0, "z": -0.23769, "w": 0.97134},
+                                  "shape": {
+                                    "type": "box",
+                                    "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                    "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 25, "y": 0, "z": 35}
                                     },
                                     "textureLayout": {
                                       "top": {
-                                        "offset": {"x": 352, "y": 364},
+                                        "offset": {"x": 86, "y": 381},
                                         "mirror": {"x": true, "y": false},
                                         "angle": 0
                                       },
                                       "bottom": {
-                                        "offset": {"x": 352, "y": 396},
+                                        "offset": {"x": 86, "y": 416},
                                         "mirror": {"x": true, "y": true},
                                         "angle": 0
                                       }
@@ -559,54 +856,21 @@
                           ]
                         },
                         {
-                          "id": "16",
-                          "name": "Leaf--C1",
-                          "position": {"x": 34, "y": -8.5, "z": 19},
-                          "orientation": {"x": -0.00503, "y": -0.28264, "z": 0.11309, "w": 0.95252},
-                          "shape": {
-                            "type": "box",
-                            "offset": {"x": 26, "y": 0, "z": 1},
-                            "stretch": {"x": 1.5, "y": 1.25, "z": 2},
-                            "settings": {
-                              "isPiece": false,
-                              "size": {"x": 72, "y": 0, "z": 32},
-                              "isStaticBox": true
-                            },
-                            "textureLayout": {
-                              "top": {
-                                "offset": {"x": 136, "y": 384},
-                                "mirror": {"x": true, "y": false},
-                                "angle": 0
-                              },
-                              "bottom": {
-                                "offset": {"x": 136, "y": 416},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 0
-                              }
-                            },
-                            "unwrapMode": "custom",
-                            "visible": true,
-                            "doubleSided": false,
-                            "shadingMode": "flat"
-                          }
-                        },
-                        {
-                          "id": "17",
-                          "name": "Leaf--C2",
-                          "position": {"x": 22, "y": -9.5, "z": -24},
+                          "id": "27",
+                          "name": "Leaf2",
+                          "position": {"x": 16, "y": -16.5, "z": -16},
                           "orientation": {"x": 0.03778, "y": 0.48815, "z": 0.10822, "w": 0.8652},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 35, "y": 0, "z": 2},
+                            "offset": {"x": 11.5, "y": 0, "z": 0.5},
                             "stretch": {"x": 1.5, "y": 1.25, "z": 2},
                             "settings": {
                               "isPiece": false,
-                              "size": {"x": 72, "y": 0, "z": 32},
-                              "isStaticBox": true
+                              "size": {"x": 25, "y": 0, "z": 35}
                             },
                             "textureLayout": {
                               "top": {
-                                "offset": {"x": 136, "y": 384},
+                                "offset": {"x": 136, "y": 381},
                                 "mirror": {"x": true, "y": false},
                                 "angle": 0
                               },
@@ -620,21 +884,86 @@
                             "visible": true,
                             "doubleSided": false,
                             "shadingMode": "flat"
-                          }
+                          },
+                          "children": [
+                            {
+                              "id": "28",
+                              "name": "Leaf-Mid2",
+                              "position": {"x": 18.5, "y": 0, "z": -0.5},
+                              "orientation": {"x": 0, "y": 0, "z": -0.17365, "w": 0.98481},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 25, "y": 0, "z": 35}
+                                },
+                                "textureLayout": {
+                                  "top": {
+                                    "offset": {"x": 111, "y": 381},
+                                    "mirror": {"x": true, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 111, "y": 416},
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "flat"
+                              },
+                              "children": [
+                                {
+                                  "id": "29",
+                                  "name": "Leaf-Tip2",
+                                  "position": {"x": 18.5, "y": 0, "z": 0.5},
+                                  "orientation": {"x": 0, "y": 0, "z": -0.23769, "w": 0.97134},
+                                  "shape": {
+                                    "type": "box",
+                                    "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                    "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 25, "y": 0, "z": 35}
+                                    },
+                                    "textureLayout": {
+                                      "top": {
+                                        "offset": {"x": 86, "y": 381},
+                                        "mirror": {"x": true, "y": false},
+                                        "angle": 0
+                                      },
+                                      "bottom": {
+                                        "offset": {"x": 86, "y": 416},
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": false,
+                                    "shadingMode": "flat"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
                         },
                         {
-                          "id": "18",
-                          "name": "Leaf--C3",
-                          "position": {"x": -36, "y": -9.5, "z": 27},
-                          "orientation": {"x": -0.0764, "y": -0.9467, "z": 0.02066, "w": 0.31223},
+                          "id": "30",
+                          "name": "Leaf3",
+                          "position": {"x": -20, "y": -11.5, "z": 22},
+                          "orientation": {"x": -0.06271, "y": -0.9449, "z": 0.06193, "w": 0.31527},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 26, "y": 0, "z": 1},
+                            "offset": {"x": 2.5, "y": 0, "z": -0.5},
                             "stretch": {"x": 1.5, "y": 1.25, "z": 2},
                             "settings": {
                               "isPiece": false,
-                              "size": {"x": 72, "y": 0, "z": 32},
-                              "isStaticBox": true
+                              "size": {"x": 25, "y": 0, "z": 35}
                             },
                             "textureLayout": {
                               "top": {
@@ -643,7 +972,7 @@
                                 "angle": 0
                               },
                               "bottom": {
-                                "offset": {"x": 136, "y": 384},
+                                "offset": {"x": 136, "y": 381},
                                 "mirror": {"x": true, "y": false},
                                 "angle": 0
                               }
@@ -652,21 +981,86 @@
                             "visible": true,
                             "doubleSided": false,
                             "shadingMode": "flat"
-                          }
+                          },
+                          "children": [
+                            {
+                              "id": "31",
+                              "name": "Leaf-Mid3",
+                              "position": {"x": 18.5, "y": 0, "z": -0.5},
+                              "orientation": {"x": 0, "y": 0, "z": -0.17365, "w": 0.98481},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 25, "y": 0, "z": 35}
+                                },
+                                "textureLayout": {
+                                  "top": {
+                                    "offset": {"x": 111, "y": 381},
+                                    "mirror": {"x": true, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 111, "y": 416},
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "flat"
+                              },
+                              "children": [
+                                {
+                                  "id": "32",
+                                  "name": "Leaf-Tip3",
+                                  "position": {"x": 18.5, "y": 0, "z": 0.5},
+                                  "orientation": {"x": 0, "y": 0, "z": -0.23769, "w": 0.97134},
+                                  "shape": {
+                                    "type": "box",
+                                    "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                    "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 25, "y": 0, "z": 35}
+                                    },
+                                    "textureLayout": {
+                                      "top": {
+                                        "offset": {"x": 86, "y": 381},
+                                        "mirror": {"x": true, "y": false},
+                                        "angle": 0
+                                      },
+                                      "bottom": {
+                                        "offset": {"x": 86, "y": 416},
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": false,
+                                    "shadingMode": "flat"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
                         },
                         {
-                          "id": "19",
-                          "name": "Leaf--C4",
-                          "position": {"x": -29, "y": -13.5, "z": -12},
+                          "id": "33",
+                          "name": "Leaf4",
+                          "position": {"x": -16, "y": -16.5, "z": -11},
                           "orientation": {"x": 0.11136, "y": 0.94637, "z": 0.00203, "w": 0.30328},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 35, "y": 0, "z": 2},
+                            "offset": {"x": 11.5, "y": 0, "z": 0.5},
                             "stretch": {"x": 1.5, "y": 1.25, "z": 2},
                             "settings": {
                               "isPiece": false,
-                              "size": {"x": 72, "y": 0, "z": 32},
-                              "isStaticBox": true
+                              "size": {"x": 25, "y": 0, "z": 35}
                             },
                             "textureLayout": {
                               "top": {
@@ -675,7 +1069,7 @@
                                 "angle": 0
                               },
                               "bottom": {
-                                "offset": {"x": 136, "y": 384},
+                                "offset": {"x": 136, "y": 381},
                                 "mirror": {"x": true, "y": false},
                                 "angle": 0
                               }
@@ -684,12 +1078,78 @@
                             "visible": true,
                             "doubleSided": false,
                             "shadingMode": "flat"
-                          }
+                          },
+                          "children": [
+                            {
+                              "id": "34",
+                              "name": "Leaf-Mid4",
+                              "position": {"x": 18.5, "y": 0, "z": 0.5},
+                              "orientation": {"x": 0, "y": 0, "z": -0.17365, "w": 0.98481},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 25, "y": 0, "z": 35}
+                                },
+                                "textureLayout": {
+                                  "top": {
+                                    "offset": {"x": 111, "y": 381},
+                                    "mirror": {"x": true, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 111, "y": 416},
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "flat"
+                              },
+                              "children": [
+                                {
+                                  "id": "35",
+                                  "name": "Leaf-Tip4",
+                                  "position": {"x": 18.5, "y": 0, "z": 0.5},
+                                  "orientation": {"x": 0, "y": 0, "z": -0.23769, "w": 0.97134},
+                                  "shape": {
+                                    "type": "box",
+                                    "offset": {"x": 18.5, "y": 0, "z": -0.5},
+                                    "stretch": {"x": 1.5, "y": 1.25, "z": 2},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 25, "y": 0, "z": 35}
+                                    },
+                                    "textureLayout": {
+                                      "top": {
+                                        "offset": {"x": 86, "y": 381},
+                                        "mirror": {"x": true, "y": false},
+                                        "angle": 0
+                                      },
+                                      "bottom": {
+                                        "offset": {"x": 86, "y": 416},
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": false,
+                                    "shadingMode": "flat"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     },
                     {
-                      "id": "20",
+                      "id": "36",
                       "name": "Neck",
                       "position": {"x": 0, "y": 12, "z": 48},
                       "orientation": {"x": -0.25881, "y": 0, "z": 0, "w": 0.96593},
@@ -724,13 +1184,13 @@
                           },
                           "top": {
                             "offset": {"x": 301, "y": 199},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           },
                           "bottom": {
                             "offset": {"x": 193, "y": 143},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           }
                         },
                         "unwrapMode": "custom",
@@ -740,7 +1200,7 @@
                       },
                       "children": [
                         {
-                          "id": "21",
+                          "id": "37",
                           "name": "Head",
                           "position": {"x": -3.5, "y": 8.65003, "z": 4.14698},
                           "orientation": {"x": 0.17364, "y": 0, "z": 0, "w": 0.98481},
@@ -765,8 +1225,8 @@
                               },
                               "front": {
                                 "offset": {"x": 105, "y": 180},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 270
+                                "mirror": {"x": false, "y": false},
+                                "angle": 90
                               },
                               "left": {
                                 "offset": {"x": 157, "y": 74},
@@ -775,8 +1235,8 @@
                               },
                               "top": {
                                 "offset": {"x": 140, "y": 1},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 270
+                                "mirror": {"x": false, "y": false},
+                                "angle": 90
                               },
                               "bottom": {
                                 "offset": {"x": 79, "y": 136},
@@ -791,7 +1251,7 @@
                           },
                           "children": [
                             {
-                              "id": "22",
+                              "id": "38",
                               "name": "Snout",
                               "position": {"x": -1.5, "y": -0.1, "z": 9},
                               "orientation": {"x": 0.13053, "y": 0, "z": 0, "w": 0.99144},
@@ -806,13 +1266,13 @@
                                 "textureLayout": {
                                   "right": {
                                     "offset": {"x": 55, "y": 52},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 90
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 270
                                   },
                                   "front": {
                                     "offset": {"x": 55, "y": 8},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   },
                                   "left": {
                                     "offset": {"x": 55, "y": 76},
@@ -821,8 +1281,8 @@
                                   },
                                   "top": {
                                     "offset": {"x": 79, "y": 8},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   },
                                   "bottom": {
                                     "offset": {"x": 5, "y": 137},
@@ -837,14 +1297,14 @@
                               },
                               "children": [
                                 {
-                                  "id": "23",
+                                  "id": "39",
                                   "name": "Nose",
                                   "position": {"x": -7, "y": 3, "z": 3},
                                   "orientation": {"x": -0.38268, "y": 0, "z": 0, "w": 0.92388},
                                   "shape": {
                                     "type": "none",
                                     "offset": {"x": 0, "y": 0, "z": 0},
-                                    "stretch": {"x": 0, "y": 0, "z": 0},
+                                    "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false
                                     },
@@ -856,7 +1316,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "24",
+                                      "id": "40",
                                       "name": "Nose--C1",
                                       "position": {"x": 7, "y": -8.5, "z": -5},
                                       "orientation": {"x": -0.36244, "y": 0, "z": 0, "w": 0.93201},
@@ -872,8 +1332,8 @@
                                         "textureLayout": {
                                           "back": {
                                             "offset": {"x": 25, "y": 43},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 270
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 90
                                           },
                                           "right": {
                                             "offset": {"x": 43, "y": 44},
@@ -897,8 +1357,8 @@
                                           },
                                           "bottom": {
                                             "offset": {"x": 43, "y": 19},
-                                            "mirror": {"x": true, "y": true},
-                                            "angle": 270
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 90
                                           }
                                         },
                                         "unwrapMode": "custom",
@@ -908,7 +1368,7 @@
                                       }
                                     },
                                     {
-                                      "id": "25",
+                                      "id": "41",
                                       "name": "Tooth--C2",
                                       "position": {"x": 35, "y": -18.7, "z": -6},
                                       "orientation": {"x": 0.30071, "y": 0, "z": 0, "w": 0.95372},
@@ -924,7 +1384,7 @@
                                         },
                                         "textureLayout": {
                                           "front": {
-                                            "offset": {"x": 6, "y": 376},
+                                            "offset": {"x": 55, "y": 299},
                                             "mirror": {"x": false, "y": false},
                                             "angle": 0
                                           }
@@ -936,7 +1396,7 @@
                                       }
                                     },
                                     {
-                                      "id": "26",
+                                      "id": "42",
                                       "name": "Tooth--C3",
                                       "position": {"x": -20, "y": -18.7, "z": -6},
                                       "orientation": {"x": 0.30071, "y": 0, "z": 0, "w": 0.95372},
@@ -952,7 +1412,7 @@
                                         },
                                         "textureLayout": {
                                           "front": {
-                                            "offset": {"x": 6, "y": 376},
+                                            "offset": {"x": 55, "y": 299},
                                             "mirror": {"x": false, "y": false},
                                             "angle": 0
                                           }
@@ -966,7 +1426,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "27",
+                                  "id": "43",
                                   "name": "L-Eyelid",
                                   "position": {"x": 16.1, "y": 9, "z": 1},
                                   "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
@@ -993,7 +1453,7 @@
                                   }
                                 },
                                 {
-                                  "id": "28",
+                                  "id": "44",
                                   "name": "R-Eyelid",
                                   "position": {"x": -18.1, "y": 9, "z": 1},
                                   "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
@@ -1022,7 +1482,7 @@
                               ]
                             },
                             {
-                              "id": "29",
+                              "id": "45",
                               "name": "Jaw",
                               "position": {"x": -1.5, "y": -18.8, "z": -7.5},
                               "orientation": {"x": 0.08716, "y": 0, "z": 0, "w": 0.99619},
@@ -1037,8 +1497,8 @@
                                 "textureLayout": {
                                   "back": {
                                     "offset": {"x": 95, "y": 83},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   },
                                   "right": {
                                     "offset": {"x": 93, "y": 97},
@@ -1062,8 +1522,8 @@
                                   },
                                   "bottom": {
                                     "offset": {"x": 95, "y": 95},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   }
                                 },
                                 "unwrapMode": "custom",
@@ -1073,14 +1533,14 @@
                               },
                               "children": [
                                 {
-                                  "id": "30",
+                                  "id": "46",
                                   "name": "Jaw2",
                                   "position": {"x": -1, "y": 9.4, "z": 6.2},
                                   "orientation": {"x": -0.04362, "y": 0, "z": 0, "w": 0.99905},
                                   "shape": {
                                     "type": "none",
                                     "offset": {"x": 0, "y": 0, "z": 0},
-                                    "stretch": {"x": 0, "y": 0, "z": 0},
+                                    "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false
                                     },
@@ -1092,7 +1552,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "31",
+                                      "id": "47",
                                       "name": "Jaw2--C1",
                                       "position": {"x": -6, "y": -5.6, "z": 10},
                                       "orientation": {"x": 0.10887, "y": 0, "z": 0, "w": 0.99406},
@@ -1128,8 +1588,8 @@
                                           },
                                           "bottom": {
                                             "offset": {"x": 79, "y": 96},
-                                            "mirror": {"x": true, "y": true},
-                                            "angle": 270
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 90
                                           }
                                         },
                                         "unwrapMode": "custom",
@@ -1141,7 +1601,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "32",
+                                  "id": "48",
                                   "name": "Tongue",
                                   "position": {"x": -1, "y": 9, "z": -4.5},
                                   "orientation": {"x": 0.06976, "y": 0, "z": 0, "w": 0.99756},
@@ -1161,8 +1621,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 49, "y": 167},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 49, "y": 163},
@@ -1192,7 +1652,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "33",
+                                      "id": "49",
                                       "name": "TongueEnd",
                                       "position": {"x": 0, "y": 5.5, "z": 12},
                                       "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -1219,7 +1679,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "34",
+                                          "id": "50",
                                           "name": "TongueEnd2",
                                           "position": {"x": 0, "y": 8, "z": 0},
                                           "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
@@ -1252,14 +1712,14 @@
                               ]
                             },
                             {
-                              "id": "35",
+                              "id": "51",
                               "name": "Crest",
                               "position": {"x": -1.5, "y": 5.64359, "z": 2.75616},
                               "orientation": {"x": 0.46139, "y": 0.33454, "z": 0.18894, "w": 0.79969},
                               "shape": {
                                 "type": "none",
                                 "offset": {"x": 0, "y": 0, "z": 0},
-                                "stretch": {"x": 0, "y": 0, "z": 0},
+                                "stretch": {"x": 1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false
                                 },
@@ -1271,7 +1731,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "36",
+                                  "id": "52",
                                   "name": "L-Crest",
                                   "position": {"x": 4.45079, "y": -8.6226, "z": 24.83681},
                                   "orientation": {"x": 0.01543, "y": -0.44597, "z": -0.11459, "w": 0.88755},
@@ -1301,8 +1761,8 @@
                                       },
                                       "top": {
                                         "offset": {"x": 38, "y": 282},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 90
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 270
                                       },
                                       "bottom": {
                                         "offset": {"x": 92, "y": 260},
@@ -1317,7 +1777,7 @@
                                   }
                                 },
                                 {
-                                  "id": "37",
+                                  "id": "53",
                                   "name": "R-Crest",
                                   "position": {"x": -7.8122, "y": -8.73596, "z": 12.49314},
                                   "orientation": {"x": -0.07332, "y": -0.31524, "z": 0.09749, "w": 0.94114},
@@ -1347,8 +1807,8 @@
                                       },
                                       "top": {
                                         "offset": {"x": 38, "y": 282},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 90
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 270
                                       },
                                       "bottom": {
                                         "offset": {"x": 92, "y": 260},
@@ -1369,7 +1829,7 @@
                       ]
                     },
                     {
-                      "id": "38",
+                      "id": "54",
                       "name": "L-Arm",
                       "position": {"x": 55, "y": 6, "z": 42.7},
                       "orientation": {"x": 0.25671, "y": 0.08757, "z": 0.1193, "w": 0.95509},
@@ -1404,8 +1864,8 @@
                           },
                           "top": {
                             "offset": {"x": 214, "y": 184},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           },
                           "bottom": {
                             "offset": {"x": 242, "y": 206},
@@ -1420,7 +1880,7 @@
                       },
                       "children": [
                         {
-                          "id": "39",
+                          "id": "55",
                           "name": "L-Forearm",
                           "position": {"x": -2.5, "y": -16.6, "z": 2.5},
                           "orientation": {"x": -0.2566, "y": -0.03379, "z": -0.12608, "w": 0.95766},
@@ -1471,7 +1931,7 @@
                           },
                           "children": [
                             {
-                              "id": "40",
+                              "id": "56",
                               "name": "L-Hand",
                               "position": {"x": 1, "y": -15, "z": -1.8},
                               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1506,8 +1966,8 @@
                                   },
                                   "top": {
                                     "offset": {"x": 302, "y": 231},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   },
                                   "bottom": {
                                     "offset": {"x": 270, "y": 278},
@@ -1522,14 +1982,14 @@
                               },
                               "children": [
                                 {
-                                  "id": "41",
+                                  "id": "57",
                                   "name": "L-Attachment",
                                   "position": {"x": 0, "y": 0, "z": 0},
                                   "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
                                   "shape": {
                                     "type": "none",
                                     "offset": {"x": 0, "y": 0, "z": 0},
-                                    "stretch": {"x": 0, "y": 0, "z": 0},
+                                    "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": true
                                     },
@@ -1541,7 +2001,7 @@
                                   }
                                 },
                                 {
-                                  "id": "42",
+                                  "id": "58",
                                   "name": "L-Finger-Claw",
                                   "position": {"x": 13, "y": -2, "z": 15},
                                   "orientation": {"x": 0, "y": 0.86603, "z": 0, "w": 0.5},
@@ -1568,7 +2028,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "43",
+                                      "id": "59",
                                       "name": "L-Finger-Claw2",
                                       "position": {"x": 7, "y": -6, "z": 0},
                                       "orientation": {"x": 0, "y": -0.70711, "z": 0.70711, "w": 0},
@@ -1597,7 +2057,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "44",
+                                  "id": "60",
                                   "name": "L-Finger2-Claw",
                                   "position": {"x": 0, "y": -2, "z": 15},
                                   "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
@@ -1624,7 +2084,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "45",
+                                      "id": "61",
                                       "name": "L-Finger2-Claw2",
                                       "position": {"x": 7, "y": -6, "z": 0},
                                       "orientation": {"x": 0, "y": -0.70711, "z": 0.70711, "w": 0},
@@ -1653,7 +2113,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "46",
+                                  "id": "62",
                                   "name": "L-Finger3-Claw",
                                   "position": {"x": -13, "y": -2, "z": 15},
                                   "orientation": {"x": 0, "y": 0.5, "z": 0, "w": 0.86603},
@@ -1680,7 +2140,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "47",
+                                      "id": "63",
                                       "name": "L-Finger3-Claw2",
                                       "position": {"x": 7, "y": -6, "z": 0},
                                       "orientation": {"x": 0, "y": -0.70711, "z": 0.70711, "w": 0},
@@ -1715,7 +2175,7 @@
                       ]
                     },
                     {
-                      "id": "48",
+                      "id": "64",
                       "name": "R-Arm",
                       "position": {"x": -57, "y": 6, "z": 42.7},
                       "orientation": {"x": 0.25671, "y": -0.08757, "z": -0.1193, "w": 0.95509},
@@ -1750,8 +2210,8 @@
                           },
                           "top": {
                             "offset": {"x": 214, "y": 184},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           },
                           "bottom": {
                             "offset": {"x": 242, "y": 206},
@@ -1766,7 +2226,7 @@
                       },
                       "children": [
                         {
-                          "id": "49",
+                          "id": "65",
                           "name": "R-Forearm",
                           "position": {"x": 2.5, "y": -14.6, "z": 2.5},
                           "orientation": {"x": -0.2566, "y": 0.03379, "z": 0.12608, "w": 0.95766},
@@ -1817,7 +2277,7 @@
                           },
                           "children": [
                             {
-                              "id": "50",
+                              "id": "66",
                               "name": "R-Hand",
                               "position": {"x": -1, "y": -15, "z": -1.8},
                               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -1852,8 +2312,8 @@
                                   },
                                   "top": {
                                     "offset": {"x": 302, "y": 231},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   },
                                   "bottom": {
                                     "offset": {"x": 270, "y": 278},
@@ -1868,14 +2328,14 @@
                               },
                               "children": [
                                 {
-                                  "id": "51",
+                                  "id": "67",
                                   "name": "R-Attachment",
                                   "position": {"x": 0, "y": 0, "z": 0},
                                   "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
                                   "shape": {
                                     "type": "none",
                                     "offset": {"x": 0, "y": 0, "z": 0},
-                                    "stretch": {"x": 0, "y": 0, "z": 0},
+                                    "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": true
                                     },
@@ -1887,7 +2347,7 @@
                                   }
                                 },
                                 {
-                                  "id": "52",
+                                  "id": "68",
                                   "name": "R-Finger-Claw",
                                   "position": {"x": -13, "y": -2, "z": 15},
                                   "orientation": {"x": 0, "y": 0.86603, "z": 0, "w": -0.5},
@@ -1914,7 +2374,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "53",
+                                      "id": "69",
                                       "name": "R-Finger-Claw2",
                                       "position": {"x": -7, "y": -6, "z": 0},
                                       "orientation": {"x": 0, "y": -0.70711, "z": 0.70711, "w": 0},
@@ -1943,7 +2403,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "54",
+                                  "id": "70",
                                   "name": "R-Finger2-Claw",
                                   "position": {"x": 0, "y": -2, "z": 15},
                                   "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
@@ -1970,7 +2430,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "55",
+                                      "id": "71",
                                       "name": "R-Finger2-Claw2",
                                       "position": {"x": -7, "y": -6, "z": 0},
                                       "orientation": {"x": 0, "y": -0.70711, "z": 0.70711, "w": 0},
@@ -1999,7 +2459,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "56",
+                                  "id": "72",
                                   "name": "R-Finger3-Claw",
                                   "position": {"x": 13, "y": -2, "z": 15},
                                   "orientation": {"x": 0, "y": -0.5, "z": 0, "w": 0.86603},
@@ -2026,7 +2486,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "57",
+                                      "id": "73",
                                       "name": "R-Finger3-Claw2",
                                       "position": {"x": -7, "y": -6, "z": 0},
                                       "orientation": {"x": 0, "y": -0.70711, "z": 0.70711, "w": 0},
@@ -2065,7 +2525,7 @@
               ]
             },
             {
-              "id": "58",
+              "id": "74",
               "name": "L-Thigh",
               "position": {"x": 52, "y": 10, "z": -26},
               "orientation": {"x": -0.2566, "y": 0.03379, "z": 0.12608, "w": 0.95766},
@@ -2100,8 +2560,8 @@
                   },
                   "top": {
                     "offset": {"x": 309, "y": 98},
-                    "mirror": {"x": false, "y": false},
-                    "angle": 90
+                    "mirror": {"x": true, "y": true},
+                    "angle": 270
                   },
                   "bottom": {
                     "offset": {"x": 270, "y": 156},
@@ -2116,7 +2576,7 @@
               },
               "children": [
                 {
-                  "id": "59",
+                  "id": "75",
                   "name": "L-Calf",
                   "position": {"x": -4, "y": -4, "z": 8},
                   "orientation": {"x": 0.29813, "y": 0.03925, "z": -0.12449, "w": 0.94556},
@@ -2151,13 +2611,13 @@
                       },
                       "top": {
                         "offset": {"x": 270, "y": 205},
-                        "mirror": {"x": false, "y": false},
-                        "angle": 270
+                        "mirror": {"x": true, "y": true},
+                        "angle": 90
                       },
                       "bottom": {
                         "offset": {"x": 303, "y": 180},
-                        "mirror": {"x": true, "y": true},
-                        "angle": 270
+                        "mirror": {"x": false, "y": false},
+                        "angle": 90
                       }
                     },
                     "unwrapMode": "custom",
@@ -2167,7 +2627,7 @@
                   },
                   "children": [
                     {
-                      "id": "60",
+                      "id": "76",
                       "name": "L-Foot",
                       "position": {"x": 0.8, "y": -10.4, "z": 0},
                       "orientation": {"x": -0.04362, "y": 0, "z": 0, "w": 0.99905},
@@ -2202,8 +2662,8 @@
                           },
                           "top": {
                             "offset": {"x": 302, "y": 231},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           },
                           "bottom": {
                             "offset": {"x": 270, "y": 278},
@@ -2218,7 +2678,7 @@
                       },
                       "children": [
                         {
-                          "id": "61",
+                          "id": "77",
                           "name": "L-Toe-Claw",
                           "position": {"x": 13, "y": -2, "z": 18},
                           "orientation": {"x": 0, "y": 0.25882, "z": 0, "w": 0.96593},
@@ -2245,7 +2705,7 @@
                           },
                           "children": [
                             {
-                              "id": "62",
+                              "id": "78",
                               "name": "L-Toe-Claw2",
                               "position": {"x": 0, "y": -6, "z": -7},
                               "orientation": {"x": 0.5, "y": -0.5, "z": 0.5, "w": 0.5},
@@ -2274,7 +2734,7 @@
                           ]
                         },
                         {
-                          "id": "63",
+                          "id": "79",
                           "name": "L-Toe2-Claw",
                           "position": {"x": 0, "y": -2, "z": 20},
                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -2301,7 +2761,7 @@
                           },
                           "children": [
                             {
-                              "id": "64",
+                              "id": "80",
                               "name": "L-Toe2-Claw2",
                               "position": {"x": 0, "y": -6, "z": -7},
                               "orientation": {"x": 0.5, "y": -0.5, "z": 0.5, "w": 0.5},
@@ -2330,7 +2790,7 @@
                           ]
                         },
                         {
-                          "id": "65",
+                          "id": "81",
                           "name": "L-Toe3-Claw",
                           "position": {"x": -13, "y": -2, "z": 18},
                           "orientation": {"x": 0, "y": -0.25882, "z": 0, "w": 0.96593},
@@ -2357,7 +2817,7 @@
                           },
                           "children": [
                             {
-                              "id": "66",
+                              "id": "82",
                               "name": "L-Toe3-Claw2",
                               "position": {"x": 0, "y": -6, "z": -7},
                               "orientation": {"x": 0.5, "y": -0.5, "z": 0.5, "w": 0.5},
@@ -2392,7 +2852,7 @@
               ]
             },
             {
-              "id": "67",
+              "id": "83",
               "name": "R-Thigh",
               "position": {"x": -54, "y": 10, "z": -26},
               "orientation": {"x": -0.2566, "y": -0.03379, "z": -0.12608, "w": 0.95766},
@@ -2427,8 +2887,8 @@
                   },
                   "top": {
                     "offset": {"x": 309, "y": 98},
-                    "mirror": {"x": false, "y": false},
-                    "angle": 90
+                    "mirror": {"x": true, "y": true},
+                    "angle": 270
                   },
                   "bottom": {
                     "offset": {"x": 270, "y": 156},
@@ -2443,7 +2903,7 @@
               },
               "children": [
                 {
-                  "id": "68",
+                  "id": "84",
                   "name": "R-Calf",
                   "position": {"x": 4, "y": -4, "z": 8},
                   "orientation": {"x": 0.29813, "y": -0.03925, "z": 0.12449, "w": 0.94556},
@@ -2478,13 +2938,13 @@
                       },
                       "top": {
                         "offset": {"x": 270, "y": 205},
-                        "mirror": {"x": false, "y": false},
-                        "angle": 270
+                        "mirror": {"x": true, "y": true},
+                        "angle": 90
                       },
                       "bottom": {
                         "offset": {"x": 303, "y": 180},
-                        "mirror": {"x": true, "y": true},
-                        "angle": 270
+                        "mirror": {"x": false, "y": false},
+                        "angle": 90
                       }
                     },
                     "unwrapMode": "custom",
@@ -2494,7 +2954,7 @@
                   },
                   "children": [
                     {
-                      "id": "69",
+                      "id": "85",
                       "name": "R-Foot",
                       "position": {"x": -0.8, "y": -10.4, "z": 0},
                       "orientation": {"x": -0.04362, "y": 0, "z": 0, "w": 0.99905},
@@ -2529,8 +2989,8 @@
                           },
                           "top": {
                             "offset": {"x": 302, "y": 231},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           },
                           "bottom": {
                             "offset": {"x": 270, "y": 278},
@@ -2545,7 +3005,7 @@
                       },
                       "children": [
                         {
-                          "id": "70",
+                          "id": "86",
                           "name": "R-Toe-Claw",
                           "position": {"x": -13, "y": -2, "z": 18},
                           "orientation": {"x": 0, "y": -0.25882, "z": 0, "w": 0.96593},
@@ -2572,7 +3032,7 @@
                           },
                           "children": [
                             {
-                              "id": "71",
+                              "id": "87",
                               "name": "R-Toe-Claw2",
                               "position": {"x": 0, "y": -6, "z": -7},
                               "orientation": {"x": 0.5, "y": 0.5, "z": -0.5, "w": 0.5},
@@ -2601,7 +3061,7 @@
                           ]
                         },
                         {
-                          "id": "72",
+                          "id": "88",
                           "name": "R-Toe2-Claw",
                           "position": {"x": 0, "y": -2, "z": 20},
                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
@@ -2628,7 +3088,7 @@
                           },
                           "children": [
                             {
-                              "id": "73",
+                              "id": "89",
                               "name": "R-Toe2-Claw2",
                               "position": {"x": 0, "y": -6, "z": -7},
                               "orientation": {"x": 0.5, "y": 0.5, "z": -0.5, "w": 0.5},
@@ -2657,7 +3117,7 @@
                           ]
                         },
                         {
-                          "id": "74",
+                          "id": "90",
                           "name": "R-Toe3-Claw",
                           "position": {"x": 13, "y": -2, "z": 18},
                           "orientation": {"x": 0, "y": 0.25882, "z": 0, "w": 0.96593},
@@ -2684,7 +3144,7 @@
                           },
                           "children": [
                             {
-                              "id": "75",
+                              "id": "91",
                               "name": "R-Toe3-Claw2",
                               "position": {"x": 0, "y": -6, "z": -7},
                               "orientation": {"x": 0.5, "y": 0.5, "z": -0.5, "w": 0.5},
