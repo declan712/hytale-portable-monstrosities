@@ -90,33 +90,19 @@
     "Secondary": {
       "Interactions": [
         {
-          "Type": "Selector",
-          "Selector": {
-            "Id": "Stab",
-            "EndDistance": 3,
-            "ExtendTop": 0.25,
-            "ExtendBottom": 0.25,
-            "ExtendLeft": 0.25,
-            "ExtendRight": 0.25,
-            "StartDistance": 1
+          "Type": "ApplyEffect",
+          "Entity": "Owner",
+          "EffectId": {
+            "StatModifiers": {
+              "Exp": 100
+            },
+            "ValueType": "Percent",
+            "Parent": "Exp_Gain",
+            "Duration": 0.2
           },
-          "HitEntity": {
-            "Interactions": [
-              {
-                "Type": "ApplyEffect",
-                "Entity": "Target",
-                "Next": {
-                  "Type": "ModifyInventory",
-                  "AdjustHeldItemQuantity": -1
-                },
-                "EffectId": "Pkmn_Evolving"
-              }
-            ]
-          },
-          "IgnoreOwner": true,
-          "RunTime": 0.1,
-          "Effects": {
-            "ItemAnimationId": "Interact"
+          "Next": {
+            "Type": "ModifyInventory",
+            "AdjustHeldItemQuantity": -1
           }
         }
       ]
