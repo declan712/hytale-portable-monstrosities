@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
-    "Appearance": "Pkmn_Diglett",
+    "Appearance": "Pkmn_Dugtrio",
     "DropList": "Drop_Pkmn_T1_Hide",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
@@ -22,7 +22,22 @@
     "CombatBackOffAfterAttack": false,
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
+    "MemoriesNameOverride": "Dugtrio",
     "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
