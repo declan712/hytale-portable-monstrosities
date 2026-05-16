@@ -14,19 +14,15 @@ import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3f;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
-import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
-import com.hypixel.hytale.server.core.modules.entity.component.EntityScaleComponent;
-import com.hypixel.hytale.server.core.modules.entity.component.PersistentModel;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.item.ItemComponent;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatValue;
-import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
@@ -35,13 +31,13 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
+import com.hypixel.hytale.server.npc.validators.NPCRoleValidator;
 
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.util.PkmnStatUtils;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,15 +104,14 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
         if (deathComponent != null) { fail(context); return; }
 
         // Get tamed role
-        String wildRoleId = NPCPlugin.get().getName(npcEntity.getRoleIndex());
-        String tameRoleId = PkmnStatUtils.resolveTameRole(wildRoleId);
+        // String wildRoleId = NPCPlugin.get().getName(npcEntity.getRoleIndex());
 
         // Get stats
         EntityStatMap statMap = store.getComponent(targetRef, EntityStatMap.getComponentType());
         if (statMap == null) { fail(context); return; }
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
         EntityStatValue lvlV = statMap.get(assetMap.getIndex("Lvl"));
-        float currentLvl = (lvlV != null) ? lvlV.get() : 1f;
+        // float currentLvl = (lvlV != null) ? lvlV.get() : 1f;
 
 
 
@@ -127,18 +122,26 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
         Vector3d pos = transform.getPosition();
 
         // set owner
-        String ownerUuid = null;
-        if (throwerRef != null) {
-            Player player = store.getComponent(throwerRef, Player.getComponentType());
-            if (player != null) ownerUuid = player.getUuid().toString();
-        }
+        // String ownerUuid = null;
+        // if (throwerRef != null) {
+        //     Player player = store.getComponent(throwerRef, Player.getComponentType());
+        //     if (player != null) ownerUuid = player.getUuid().toString();
+        // }
 
         PkmnStatsComponent pkmnStats = store.getComponent(
             targetRef, PkmnStatsComponent.getComponentType());
 
-        // set owned to prevent a second projectile hit from triggering again
+        // Guard: if capture is already in progress (sentinel) or owned by someone else, bail out.
+        if (pkmnStats != null) {
+            Player catcher = throwerRef != null ? store.getComponent(throwerRef, Player.getComponentType()) : null;
+            if (PkmnStatUtils.hasOtherOwner(pkmnStats.getOwnerUuid(), catcher)) {
+                fail(context); return;
+            }
+        }
+
+        // Lock immediately to block any concurrent capture attempt on the same target.
         if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
-        pkmnStats.setOwnerUuid(ownerUuid);
+        pkmnStats.setOwnerUuid(PkmnStatUtils.CAPTURING_SENTINEL);
         commandBuffer.putComponent(targetRef, PkmnStatsComponent.getComponentType(), pkmnStats);
 
 
@@ -146,8 +149,7 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
     
         ItemStack ball         = new ItemStack(captureItemId, 1);
 
-        CapturedNPCMetadata npcMeta = 
-            PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,ball,fullIcon);
+        CapturedNPCMetadata npcMeta = PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,ball,fullIcon);
 
         ItemStack withNpc      = ball.withMetadata(CapturedNPCMetadata.KEYED_CODEC,  npcMeta);
         ItemStack capturedBall = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta);

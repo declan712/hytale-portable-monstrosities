@@ -47,6 +47,8 @@ public class PkmnStatUtils {
     private static final String SPECIES_ICON_SUFFIX = ".png";
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
     public static final int[] PLAYER_BASE_STATS = {100,30,60,20,80,75};
+    // ID to set as owner while capture in progress to prevent multiple interactions
+    public static final String CAPTURING_SENTINEL = "CAPTURING";
     public static final float PLAYER_HP_BONUS_FACTOR = 0.5f;
     public static final int DEAULT_STAT_MAX = 50;
 
@@ -744,6 +746,8 @@ public class PkmnStatUtils {
         @Nullable Player player
     ){
         if (owner == null || owner.isBlank())   return false;
+        // Sentinel set at the start of a capture — block all concurrent attempts.
+        if (CAPTURING_SENTINEL.equals(owner))   return true;
         if(player == null)                      return true;
         String playerId = player.getUuid().toString();
         if(playerId == null)                    return true;
@@ -758,7 +762,18 @@ public class PkmnStatUtils {
     @Nonnull
     public static String resolveTameRole(@Nullable String wildRoleId) {
         if (wildRoleId == null || wildRoleId.isBlank()) return "";
-        return wildRoleId.endsWith("_Tamed") ? wildRoleId : wildRoleId + "_Tamed";
+
+        String tameRoleSuffix =  wildRoleId.endsWith("_Tamed") ? wildRoleId : wildRoleId + "_Tamed";
+        String tameRolePrefix =  wildRoleId.startsWith("_Tamed") ? wildRoleId : "Tamed_" + wildRoleId ;
+
+        boolean isValidRoleSuffix = NPCPlugin.get().hasRoleName(tameRoleSuffix);
+        boolean isValidRolePrefix = NPCPlugin.get().hasRoleName(tameRolePrefix);
+
+        LOGGER.atInfo().log("isValidRole("+tameRoleSuffix+"): "+isValidRoleSuffix);
+        LOGGER.atInfo().log("isValidRole("+tameRolePrefix+"): "+isValidRolePrefix);
+        if (isValidRoleSuffix) return tameRoleSuffix;
+        if (isValidRolePrefix) return tameRolePrefix;
+        return wildRoleId;
     }
 
     /**

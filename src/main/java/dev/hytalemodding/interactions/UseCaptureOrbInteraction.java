@@ -421,8 +421,8 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         if (store == null) return null;
 
-        NPCEntity npcComponent = (NPCEntity)
-            commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
+        if(!targetRef.isValid()) return null;
+        NPCEntity npcComponent = commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
         if (npcComponent == null) return null;
 
         DeathComponent deathComponent = (DeathComponent)
@@ -465,11 +465,15 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             pkmnStats.setBaseStats(PkmnBaseStatList.fromMap(species));
         }
 
-        PkmnCaptureMetadata captureMetadata = 
-            PkmnStatUtils.captureMetadata(commandBuffer, targetRef);
+        // Lock this target immediately so any concurrent capture attempt
+        // (e.g. a second projectile hitting the same frame) sees hasOtherOwner=true
+        // and bails out.  The real ownerUuid is written below once we have it.
+        pkmnStats.setOwnerUuid(PkmnStatUtils.CAPTURING_SENTINEL);
+        commandBuffer.putComponent(targetRef, PkmnStatsComponent.getComponentType(), pkmnStats);
 
-        CapturedNPCMetadata npcMeta = 
-            PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,sourceItem,this.fullIcon);
+        PkmnCaptureMetadata captureMetadata = PkmnStatUtils.captureMetadata(commandBuffer, targetRef);
+
+        CapturedNPCMetadata npcMeta = PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,sourceItem,this.fullIcon);
 
 
 

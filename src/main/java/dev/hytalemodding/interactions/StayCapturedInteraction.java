@@ -77,6 +77,11 @@ public class StayCapturedInteraction extends SimpleInstantInteraction {
         Ref<EntityStore> targetRef = context.getTargetEntity();
         if (targetRef == null) { fail(context); return; }
 
+        // The target may have already been removed by a concurrent capture
+        // (e.g. first ball succeeded while this wobble sequence was still running).
+        // Accessing an invalidated ref throws IllegalStateException, so fail cleanly.
+        if (!targetRef.isValid()) { fail(context); return; }
+
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         if (store == null) { fail(context); return; }
 
