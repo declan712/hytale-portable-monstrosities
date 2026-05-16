@@ -1,0 +1,26 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "DropList": "Drop_Pkmn_T1_Grass",
+    "Appearance": "Pkmn_Gloom",
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "CanEvolve": true,
+    "IsMountable": false,
+    "EvolveRequiredLevel": [45,100],
+    "EvolveRoleChange": "Pkmn_Vileplume_Tamed",
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "Gloom",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Gloom.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
