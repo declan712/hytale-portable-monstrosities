@@ -2,38 +2,44 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "Appearance": "Pkmn_Vulpix",
-    "DropList": "Drop_Pkmn_T0_Hide",
+    "Appearance": "Pkmn_Ninetales",
+    "DropList": "Drop_Pkmn_T2_Hide",
     "AttractiveItemSet": [
       "Food_Kebab_Fruit"
     ],
     "Type1": "FireType",
-    "IsMountable": false,
-    "CanEvolve": true,
-    "EvolveRequiredLevel": [1,100],
-    "EvolveRequiredItem": ["Rock_Gem_Fire_Stone"],
-    "EvolveRoleChange": "Pkmn_Ninetales_Tamed",
+    "IsMountable": true,
+    "MountAnchorX":0,
+    "MountAnchorY":1,
+    "MountAnchorZ":0,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "MaxSpeed": 6.5,
+    "MaxSpeed": 10,
     "WanderRadius": 10,
     "ViewRange": 12,
     "HearingRange": 8,
     "AbsoluteDetectionRange": 2,
     "AlertedRange": 18,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
+    "AttackDistance": 3,
     "CombatBehaviorDistance": 6,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
-    "MemoriesNameOverride": "Vulpix",
+    "MemoriesNameOverride": "Ninetales",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
     "_InteractionVars": {
-      "Move_Start_3": {
+      "Move_Start_1": {
         "Interactions": [
           {
             "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
           }
         ]
       }
@@ -41,7 +47,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Vulpix.name",
+      "Value": "server.npcRoles.Pkmn_Ninetales.name",
       "Description": "Translation key for NPC name display"
     }
   }

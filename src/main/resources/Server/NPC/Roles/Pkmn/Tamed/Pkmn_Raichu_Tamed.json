@@ -8,6 +8,7 @@
     ],
     "Type1": "ElectricType",
     "AttractiveItemSetParticles": "Want_Food_Corn",
+    "IsMountable": false,
     "MaxSpeed": 11,
     "WanderRadius": 10,
     "ViewRange": 12,
@@ -17,7 +18,24 @@
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Raichu",
-    "_InteractionVars": {},
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thundershock",
+            "$Comment": "Sets animations and delay before hit"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thundershock",
+            "$Comment": "Sets animations and delay before hit"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     }

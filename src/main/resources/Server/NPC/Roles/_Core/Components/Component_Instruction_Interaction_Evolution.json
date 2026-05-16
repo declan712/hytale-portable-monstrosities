@@ -18,13 +18,12 @@
             "Description": "Whether this NPC can be evolved."
         },
         "EvolveRequiredItem": {
-            "Value": [
-                "Plant_Fruit_Apricorn"
-            ],
+            "Value": [],
+            "TypeHint": "String",
             "Description": "The list of items that are deemed attractive (there's a chance targets holding them will be followed)."
         },
         "EvolveRequiredLevel": {
-            "Value": [16,100],
+            "Value": [1,100],
             "Description": "The level required to evolve this NPC."
         },
         "EvolveRoleChange": {
@@ -55,6 +54,21 @@
                 "TreeMode": true,
                 "Instructions": [
                     {
+                        "$Comment": "Check if evolution item needed/held",
+                        "Enabled": {"Compute": "!isEmptyStringArray(EvolveRequiredItem)"},
+                        "InvertTreeModeResult": true,
+                        "Sensor": {
+                            "Type": "Not",
+                            "Sensor":{
+                                "Type": "Target",
+                                "TargetSlot": "InteractionTarget",
+                                "Filters": [{"Type": "ItemInHand","Items": {"Compute":"EvolveRequiredItem"}}]
+                                
+                            }
+                        },
+                        "Actions": [{"Type": "SetInteractable","Interactable": false}]
+                    },
+                    {
                         "InvertTreeModeResult": true,
                         "Sensor": {
                             "Type": "Not",
@@ -62,7 +76,7 @@
 								"Type": "Self",
 								"Filters": [
 									{
-										"Type": "Stat",
+                                        "Type": "Stat",
 										"Stat": "Lvl",
 										"StatTarget": "Value",
 										"RelativeTo": "Lvl",
@@ -90,7 +104,28 @@
                         "Sensor": {"Type": "HasInteracted"},
                         "Instructions": [
                             {
-                                "Sensor": {"Type": "Any"},
+                                "$Comment": "Remove held item",
+                                "Enabled": {"Compute": "!isEmptyStringArray(EvolveRequiredItem)"},
+                                "Continue": true,
+                                "Sensor": {
+                                    "Type": "And",
+                                    "Sensors": [
+                                        {"Type": "Any","Once": true},
+                                        {
+                                            "Type": "Target",
+                                            "TargetSlot": "InteractionTarget",
+                                            "Filters": [{
+                                                "Type": "ItemInHand",
+                                                "Hand": "Main",
+                                                "Items": {"Compute":"EvolveRequiredItem"}
+                                            }]
+                                        }
+                                    ]
+                                },
+                                "Actions": [{"Type": "Inventory","UseTarget": true,"Operation": "RemoveHeldItem"}]
+                            },
+                            {
+                                "Sensor": {"Type": "Any","Once":true},
                                 "Actions":[
                                     {
                                         "Type": "ApplyEntityEffect",

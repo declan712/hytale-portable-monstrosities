@@ -38,9 +38,8 @@
             "Description": "The role the NPC will change into when it's evolved."
         },
         "EvolveRequiredItem": {
-            "Value": [
-                "Plant_Fruit_Apricorn"
-            ],
+            "Value": [],
+			"TypeHint": "String",
             "Description": "The list of items that are deemed attractive (there's a chance targets holding them will be followed)."
         },
 		"IsPettable": {
@@ -3747,6 +3746,10 @@
 	],
 	"InteractionInstruction": {
 		"Instructions": [
+			{
+				"Continue": true,
+				"Actions": [{"Type": "LockOnInteractionTarget","TargetSlot": "InteractionTarget"}]
+			},
 			{"$Comment": "Evolve",
 				"Enabled": {"Compute": "CanEvolve"},
 				"$TODO": "combat, alerted, fleeing?",

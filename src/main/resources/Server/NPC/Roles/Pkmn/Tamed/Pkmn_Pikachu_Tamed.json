@@ -7,8 +7,12 @@
       "Food_Kebab_Fruit"
     ],
     "Type1": "ElectricType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [1,100],
+    "EvolveRequiredItem": ["Rock_Gem_Thunder_Stone"],
+    "EvolveRoleChange": "Pkmn_Raichu_Tamed",
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "MaxHealth": 38,
     "MaxSpeed": 8,
     "WanderRadius": 10,
     "ViewRange": 12,
@@ -18,7 +22,16 @@
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Pikachu",
-    "_InteractionVars": {},
+    "_InteractionVars": {
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thundershock",
+            "$Comment": "Sets animations and delay before hit"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     }
