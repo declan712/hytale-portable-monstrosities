@@ -620,6 +620,7 @@
     "Compute": "BreathesInWater"
   },
   "KnockbackScale": 0.5,
+  "InitialMotionController": "Dive",
   "MotionControllerList": [
     {
       "Type": "Walk",
@@ -1358,15 +1359,6 @@
                   "Weight": 10,
                   "Instructions": [
                     {
-                      "Continue": true,
-                      "Actions": [
-                        {
-                          "Type": "Crouch",
-                          "Crouch": true
-                        }
-                      ]
-                    },
-                    {
                       "Reference": "Component_Instruction_Leash_To_Flock_Leader",
                       "Modify": {
                         "Enabled": {
@@ -1696,21 +1688,6 @@
                     "Type": "State",
                     "State": "Combat.Message"
                   }
-                }
-              ]
-            },
-            {
-              "Sensor": {
-                "Type": "ReadPosition",
-                "Slot": "SteppedBlock",
-                "Range": {
-                  "Compute": "BlockStepDetectionRange"
-                }
-              },
-              "Actions": [
-                {
-                  "Type": "State",
-                  "State": "Search.Investigate"
                 }
               ]
             },
@@ -2574,118 +2551,6 @@
                 {
                   "Type": "State",
                   "State": "Combat.Message"
-                }
-              ]
-            },
-            {
-              "$Comment": "Investigate the location where a BlockSet was disturbed",
-              "Sensor": {
-                "Type": "State",
-                "State": ".Investigate"
-              },
-              "Instructions": [
-                {
-                  "Sensor": {
-                    "Reference": "Component_Sensor_Lost_Target_Detection",
-                    "Modify": {
-                      "ViewRange": {
-                        "Compute": "ViewRange / 2"
-                      },
-                      "ViewSector": {
-                        "Compute": "ViewSector"
-                      },
-                      "HearingRange": {
-                        "Compute": "HearingRange / 2"
-                      },
-                      "AbsoluteDetectionRange": {
-                        "Compute": "AbsoluteDetectionRange"
-                      },
-                      "TargetSlot": "LockedTarget"
-                    }
-                  },
-                  "Actions": [
-                    {
-                      "Type": "State",
-                      "State": "Combat.Message"
-                    }
-                  ]
-                },
-                {
-                  "Sensor": {
-                    "Reference": "Component_Sensor_Standard_Detection",
-                    "Modify": {
-                      "ViewRange": {
-                        "Compute": "ViewRange / 2"
-                      },
-                      "ViewSector": {
-                        "Compute": "ViewSector"
-                      },
-                      "HearingRange": {
-                        "Compute": "HearingRange / 2"
-                      },
-                      "AbsoluteDetectionRange": {
-                        "Compute": "AbsoluteDetectionRange"
-                      },
-                      "Attitudes": [
-                        "Hostile",
-                        "Neutral"
-                      ]
-                    }
-                  },
-                  "Actions": [
-                    {
-                      "Type": "State",
-                      "State": "Alerted"
-                    }
-                  ]
-                },
-                {
-                  "Continue": true,
-                  "Sensor": {
-                    "Type": "ReadPosition",
-                    "Slot": "SteppedBlock",
-                    "Range": 3
-                  },
-                  "ActionsBlocking": true,
-                  "Actions": [
-                    {
-                      "Type": "SpawnParticles",
-                      "Offset": [
-                        0,
-                        2.1,
-                        0
-                      ],
-                      "ParticleSystem": "Question"
-                    },
-                    {
-                      "Type": "Timeout",
-                      "Delay": {
-                        "Compute": "ConfusedTimeRange"
-                      }
-                    },
-                    {
-                      "Type": "State",
-                      "State": ".Prowl"
-                    }
-                  ]
-                },
-                {
-                  "Continue": true,
-                  "Sensor": {
-                    "Type": "ReadPosition",
-                    "Slot": "SteppedBlock",
-                    "Range": {
-                      "Compute": "BlockStepDetectionRange"
-                    }
-                  },
-                  "BodyMotion": {
-                    "Type": "Seek",
-                    "RelativeSpeed": {
-                      "Compute": "BlockStepDetectionRelativeSpeed"
-                    },
-                    "SlowDownDistance": 4,
-                    "StopDistance": 2
-                  }
                 }
               ]
             },
