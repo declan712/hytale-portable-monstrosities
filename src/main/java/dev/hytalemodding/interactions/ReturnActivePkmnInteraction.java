@@ -63,7 +63,12 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
         if(npcStatus != "Active"){ fail(context); return; }
         
         String npcId = pkmnMetadata.getNpcEntityUuid();
-
+        if (npcId == null) {
+            LOGGER.atInfo().log("npcId is NULL");
+            fail(context); 
+            return; 
+        }
+        
         Ref<EntityStore> targetRef = world.getEntityRef(UUID.fromString(npcId));
         if (targetRef == null) { 
             player.sendMessage(Message.raw("Couldn't find entity :("));

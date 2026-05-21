@@ -769,8 +769,8 @@ public class PkmnStatUtils {
         boolean isValidRoleSuffix = NPCPlugin.get().hasRoleName(tameRoleSuffix);
         boolean isValidRolePrefix = NPCPlugin.get().hasRoleName(tameRolePrefix);
 
-        LOGGER.atInfo().log("isValidRole("+tameRoleSuffix+"): "+isValidRoleSuffix);
-        LOGGER.atInfo().log("isValidRole("+tameRolePrefix+"): "+isValidRolePrefix);
+        // LOGGER.atInfo().log("isValidRole("+tameRoleSuffix+"): "+isValidRoleSuffix);
+        // LOGGER.atInfo().log("isValidRole("+tameRolePrefix+"): "+isValidRolePrefix);
         if (isValidRoleSuffix) return tameRoleSuffix;
         if (isValidRolePrefix) return tameRolePrefix;
         return wildRoleId;

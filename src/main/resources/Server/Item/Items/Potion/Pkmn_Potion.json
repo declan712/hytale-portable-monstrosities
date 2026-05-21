@@ -67,6 +67,99 @@
           "Failed": "Block_Secondary"
         }
       ]
+    },
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Tool_Watering_Can_Water",
+            "LocalSoundEventId": "SFX_Tool_Watering_Can_Water",
+            "ItemAnimationId": "Shoot",
+            "Particles": [
+              {
+                "SystemId": "Smoke_Gastly",
+                "TargetEntityPart": "PrimaryItem",
+                "PositionOffset": {
+                  "Z": 0.35
+                },
+                "Scale": 0.25
+              },
+              {
+                "SystemId": "Smoke_Gastly",
+                "TargetEntityPart": "PrimaryItem",
+                "PositionOffset": {
+                  "Z": 1
+                },
+                "Scale": 0.5
+              },
+              {
+                "SystemId": "Smoke_Gastly",
+                "TargetEntityPart": "PrimaryItem",
+                "PositionOffset": {
+                  "Z": 1.5,
+                  "Y": -0.5
+                },
+                "Scale": 1
+              }
+            ],
+            "ItemPlayerAnimationsId": {
+              "Parent": "Handgun"
+            }
+          },
+          "RunTime": 0.1,
+          "Next": {
+            "Type": "Selector",
+            "RunTime": 0.1,
+            "Selector": {
+              "Id": "Stab",
+              "StartDistance": 0.2,
+              "EndDistance": 4.5,
+              "ExtendTop": 0.5,
+              "ExtendBottom": 0.5,
+              "ExtendLeft": 0.5,
+              "ExtendRight": 0.5,
+              "TestLineOfSight": true
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "ApplyEffect",
+                  "Entity": "Target",
+                  "EffectId": {
+                    "ApplicationEffects": {
+                      "ModelVFXId": "VFX_Pkmn_Stat_Up",
+                      "LocalSoundEventId": "SFX_Pkmn_Potion",
+                      "WorldSoundEventId": "SFX_Pkmn_Potion",
+                      "Particles": [
+                        {
+                          "SystemId": "Effect_Heal",
+                          "TargetEntityPart": "Entity",
+                          "Color": "#22ff00",
+                          "TargetNodeName": "Pelvis"
+                        }
+                      ]
+                    },
+                    "ValueType": "Absolute",
+                    "RemovalBehavior": "Duration",
+                    "StatModifiers": {
+                      "Health": 20
+                    },
+                    "StatusEffectIcon": "UI/StatusEffects/Health_Potion.png",
+                    "OverlapBehavior": "Ignore",
+                    "Duration": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "RequireNewClick": true,
+      "Cooldown": {
+        "Id": "UsePotion",
+        "Cooldown": 1.25
+      }
     }
   },
   "InteractionVars": {
