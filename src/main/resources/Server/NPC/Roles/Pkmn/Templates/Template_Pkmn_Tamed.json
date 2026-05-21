@@ -109,7 +109,7 @@
 			"Description": "The range at which an NPC will react to other NPCs and players, depending on the attitude towards them, in blocks. Should be higher than AbsoluteDetectionRange."
 		},
 		"LeashDistance": {
-			"Value": 400,
+			"Value": 40,
 			"Description": "The range at which an NPC will start to want to return to their spawn point, in blocks."
 		},
 		"SummonerLeashRange": {
@@ -155,7 +155,7 @@
 			"Description": "The maximum climb height, in blocks."
 		},
 		"AttitudeGroup": {
-			"Value": "Predators",
+			"Value": "PkmnTamed",
 			"Description": "The attitude group this NPC belongs to."
 		},
 		"PlayerDefaultAttitude": {
@@ -813,19 +813,13 @@
 						}
 					]
 				},
-                {"$Comment": "If master attacks, pkmn attacks",
+                {"$Comment": "Become hostile to anything attacking or attacked by master",
                     "Continue": true,
                     "Sensor": {
                         "Type": "Or",
                         "Sensors": [
-                            {
-                                "Type": "InflictedDamage",
-                                "Target": "FlockLeader"
-                            },
-                            {
-                                "Type": "FlockCombatDamage",
-                                "LeaderOnly": true
-                            }
+                            {"Type": "InflictedDamage","Target": "FlockLeader"},
+                            {"Type": "FlockCombatDamage","LeaderOnly": true}
                         ]
                     },
                     "Actions": [
@@ -840,14 +834,14 @@
                     "Sensor": {
                         "Type": "And",
                         "Sensors": [
-                            {
+                            {"$Comment":"No target already in attack range",
                                 "Type": "Not",
                                 "Sensor": {
                                     "Type": "Target",
                                     "Range": {"Compute": "CombatBehaviorDistance"}
                                 }
                             },
-                            {
+                            {"$Comment":"Leader damage",
                                 "Type": "Or",
                                 "Sensors": [
                                     {"Type": "InflictedDamage","Target": "FlockLeader"},
@@ -892,7 +886,7 @@
 				}
 			]
 		},
-		{
+		{"$Comment": "Main",
 			"Instructions": [
 				{"$Comment": "Idle",
 					"Sensor": {
@@ -1883,7 +1877,7 @@
 						}
 					]
 				},
-								{"$Comment": "Combat action evaluator logic. Replaces other combat state if enabled.",
+				{"$Comment": "Combat action evaluator logic. Replaces other combat state if enabled.",
                     "Enabled": {"Compute": "UseCombatActionEvaluator"},
                     "Sensor": {"Type": "State","State": "Combat"},
                     "Instructions": [
