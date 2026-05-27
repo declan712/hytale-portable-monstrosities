@@ -61,6 +61,7 @@ public class PkmnStatsComponent implements Component<EntityStore> {
     /** Secondary type, can be null */
     @Nullable
     private String type2 = null;
+    private boolean shiny = false;
 
     public PkmnStatsComponent() {
     }
@@ -76,6 +77,7 @@ public class PkmnStatsComponent implements Component<EntityStore> {
         experience = clone.experience;
         type1 = clone.type1;
         type2 = clone.type2;
+        shiny = clone.shiny;
     }
 
     @Nonnull
@@ -125,6 +127,10 @@ public class PkmnStatsComponent implements Component<EntityStore> {
             .append(new KeyedCodec<>("Type2", Codec.STRING),
                     (data, value) -> data.type2 = (value != null && !value.isEmpty()) ? value : null,
                     data -> data.type2)
+            .add()
+            .append(new KeyedCodec<>("Shiny", Codec.BOOLEAN),
+                    (data, value) -> data.shiny = value,
+                    data -> data.shiny)
             .add()
             .build();
 
@@ -216,6 +222,14 @@ public class PkmnStatsComponent implements Component<EntityStore> {
         this.type2 = (v != null && !v.isEmpty()) ? v : null;
     }
 
+    public boolean getShiny() {
+        return shiny;
+    }
+
+    public void setShiny(boolean v) {
+        this.shiny = v;
+    }
+
 
     public enum PkmnStat {
         HP(0),
@@ -223,7 +237,9 @@ public class PkmnStatsComponent implements Component<EntityStore> {
         DEF(2),
         SPATK(3),
         SPDEF(4),
-        SPD(5);
+        SPD(5),
+        LVL(6),
+        EXP(7);
 
         public int index;
 

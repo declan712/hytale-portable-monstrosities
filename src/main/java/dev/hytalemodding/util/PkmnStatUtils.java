@@ -1,6 +1,8 @@
 package dev.hytalemodding.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -172,13 +174,63 @@ public class PkmnStatUtils {
         commandBuffer.putComponent(targetRef, EntityStatMap.getComponentType(), stats);
     }
 
+    public static Map<String, Object> getState(
+        @Nonnull Store<EntityStore> store, 
+        @Nonnull Ref<EntityStore> ref
+    ){
+        boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
+        if (isDead) {
+            LOGGER.atInfo().log("NPC is dead");
+            return null;
+        }
+        EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
+        if (stats == null){ 
+            LOGGER.atInfo().log("Entity has no EntityStatMap"); 
+            return null;
+        }
+        IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
+        int             lvlIdx = assetMap.getIndex("Lvl");
+        int             expIdx = assetMap.getIndex("Exp");
+
+        int             healthIdx = DefaultEntityStatTypes.getHealth();
+        int hp        = (int) stats.get(healthIdx).get(); //float
+        int hpMax     = (int) stats.get(healthIdx).getMax(); //float
+        int lvl       = (int) stats.get(lvlIdx).get(); //float
+        int exp       = (int) stats.get(expIdx).get(); //float
+
+        String roleId = "";
+        NPCEntity npcEntity = store.getComponent(ref,NPCEntity.getComponentType());
+        if(npcEntity!=null)  roleId = npcEntity.getRoleName();
+
+        Map<String, Object> state = new HashMap<String, Object>();
+        state.put("HP", hp);
+        state.put("HP_MAX", hpMax);
+        state.put("LVL", lvl);
+        state.put("EXP", exp);
+        state.put("ROLEID", roleId);
+        return state;
+    }
+
+
+    public static int[] getCurrentStats(
+        @Nonnull Store<EntityStore> store, 
+        @Nonnull Ref<EntityStore> ref
+    ){
+        return _getCurrentStats(store,ref);
+    }
     public static int[] getCurrentStats(
         @Nonnull CommandBuffer<EntityStore>  commandBuffer, 
         @Nonnull Ref<EntityStore> ref
     ){
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         if (store == null) return null;
+        return _getCurrentStats(store,ref);
+    }
 
+    public static int[] _getCurrentStats(
+        @Nonnull Store<EntityStore> store, 
+        @Nonnull Ref<EntityStore> ref
+    ){
         boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
         if (isDead) {
             LOGGER.atInfo().log("NPC is dead");
@@ -220,7 +272,7 @@ public class PkmnStatUtils {
         var spDef     = (int) stats.get(spDefIdx).get();
         var spd       = (int) stats.get(spdIdx).get();
 
-        int[] statArray = {health,atk,def,spAtk,spDef,spd};
+        int[] statArray = {health,atk,def,spAtk,spDef,spd,lvl,exp};
         return statArray;
     }
 
@@ -407,6 +459,8 @@ public class PkmnStatUtils {
         captureMetadata.setNickname(pkmnStats.getNickname());
         captureMetadata.setOwnerUuid(pkmnStats.getOwnerUuid());
         captureMetadata.setNpcStatus(isDead?"Fainted":"Healthy");
+        captureMetadata.setShiny(pkmnStats.getShiny());
+        captureMetadata.setRoleId(roleId);
         return captureMetadata;
     }
 
@@ -493,6 +547,7 @@ public class PkmnStatUtils {
         if(metaNickname!=null && !metaNickname.isBlank()) pkmnStats.setNickname(metaNickname);
         if(metaOwnerUuid!=null && !metaOwnerUuid.isBlank()) pkmnStats.setOwnerUuid(metaOwnerUuid);
         pkmnStats.setBaseStats(metaBaseStats);
+        pkmnStats.setShiny(metadata.getShiny());
 
         // LOGGER.atInfo().log("GetPkmnStats.fromMetadata: Lvl="+String.valueOf(metaLevel));
         // LOGGER.atInfo().log("GetPkmnStats.fromMetadata: Lvl="+String.valueOf(pkmnStats.getLevel()));

@@ -31,6 +31,7 @@ public class PkmnCaptureMetadata {
     private float maxHp = 0f;
     private float modelScale  = 1f;
 
+    private String npcRoleId;
     private String npcEntityUuid;
     private String npcStatus;
 
@@ -41,6 +42,7 @@ public class PkmnCaptureMetadata {
     @Nullable private String nature;
     @Nullable private String nickname;
     @Nullable private String ownerUuid;
+    private boolean shiny;
     private int  level      = 1;
     private long experience = 0L;
 
@@ -57,6 +59,8 @@ public class PkmnCaptureMetadata {
         this.ownerUuid="";
         this.level=1;
         this.experience=0;
+        this.shiny=false;
+        this.npcRoleId="Pkmn_Bulbasaur_Tamed";
     }
 
     // get/set
@@ -98,6 +102,12 @@ public class PkmnCaptureMetadata {
 
     @Nullable public String getNpcStatus()           { return npcStatus; }
     public void setNpcStatus(String v)               { this.npcStatus = v; }
+
+    @Nullable public String getRoleId()           { return npcRoleId; }
+    public void setRoleId(String v)               { this.npcRoleId = v; }
+
+    @Nullable public boolean getShiny()           { return shiny; }
+    public void setShiny(boolean v)               { this.shiny = v; }
 
 
     public String toString(){
@@ -187,6 +197,16 @@ public class PkmnCaptureMetadata {
             (o, v) -> o.npcStatus = v,
             o -> o.npcStatus,
             (o, p) -> o.npcStatus = p.npcStatus
+        ).add()
+        .appendInherited(new KeyedCodec<>("NpcRoleId", Codec.STRING),
+            (o, v) -> o.npcRoleId = v,
+            o -> o.npcRoleId,
+            (o, p) -> o.npcRoleId = p.npcRoleId
+        ).add()
+        .appendInherited(new KeyedCodec<>("Shiny", Codec.BOOLEAN),
+            (o, v) -> o.shiny = v,
+            o -> o.shiny,
+            (o, p) -> o.shiny = p.shiny
         ).add()
         .build();
 
