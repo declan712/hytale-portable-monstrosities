@@ -59,18 +59,8 @@
       "HeadAccessory"
     ],
     "DamageResistance": {
-      "Physical": [
-        {
-          "Amount": 0.064,
-          "CalculationType": "Multiplicative"
-        }
-      ],
-      "Projectile": [
-        {
-          "Amount": 0.064,
-          "CalculationType": "Multiplicative"
-        }
-      ]
+      "Physical":    [{"Amount": 0.064, "CalculationType": "Percent"}],
+      "Projectile":  [{"Amount": 0.064, "CalculationType": "Percent"}]
     },
     "StatModifiers": {
       "Health": [
@@ -93,11 +83,7 @@
       ]
     },
     "DamageClassEnhancement": {
-      "Signature": [
-        {
-          "Amount": 0.03,
-          "CalculationType": "Multiplicative"
-        }
+      "Signature": [{"Amount": 0.03,"CalculationType": "Multiplicative"}
       ]
     }
   },

@@ -49,18 +49,8 @@
     "ArmorSlot": "Hands",
     "BaseDamageResistance": 0,
     "DamageResistance": {
-      "Physical": [
-        {
-          "Amount": 0.02,
-          "CalculationType": "Multiplicative"
-        }
-      ],
-      "Projectile": [
-        {
-          "Amount": 0.02,
-          "CalculationType": "Multiplicative"
-        }
-      ]
+      "Physical": [{"Amount": 0.02,"CalculationType": "Percent"}],
+      "Projectile": [{"Amount": 0.02,"CalculationType": "Percent"}]
     },
     "StatModifiers": {
       "Health": [
