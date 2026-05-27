@@ -1,20 +1,21 @@
 {
   "Environments": [
     "Env_Zone0",
-    "Env_Zone0_Cold",
     "Env_Zone0_Temperate",
     "Env_Zone0_Warm",
     "Env_Zone1_Shores",
     "Env_Zone2_Shores",
-    "Env_Zone3_Shores",
     "Env_Zone4_Shores"
   ],
   "NPCs": [
     {"Id": "Pkmn_Magikarp",  "Weight": 50,    "SpawnFluidTag": "Water",   "Flock": "Group_Small"},
     {"Id": "Pkmn_Magikarp",  "Weight": 25,    "SpawnFluidTag": "Water",   "Flock": "Group_Medium"},
-    {"Id": "Pkmn_Gyarados",  "Weight": 0.005, "SpawnFluidTag": "Water"},
-    {"Id": "Pkmn_Vaporeon",  "Weight": 0.25},
+    {"Id": "Pkmn_Goldeen",   "Weight": 25,    "SpawnFluidTag": "Water",   "Flock": "Group_Small"},
+    {"Id": "Pkmn_Shellder",  "Weight": 15,    "SpawnFluidTag": "Water",   "Flock": "Group_Small"},
+    {"Id": "Pkmn_Krabby",    "Weight": 10,    "SpawnFluidTag": "Water",   "Flock": "Group_Small"},
+    {"Id": "Pkmn_Gyarados",  "Weight": 0.01,  "SpawnFluidTag": "Water"},
     {"Id": "Pkmn_Lapras",    "Weight": 0.05,  "SpawnFluidTag": "Water"},
+    {"Id": "Pkmn_Vaporeon",  "Weight": 0.25,  "SpawnBlockSet": "Sand"},
     {"Id": "Pkmn_Squirtle",  "Weight": 1.5,   "SpawnBlockSet": "Sand",    "Flock": "Group_Small"},
     {"Id": "Pkmn_Wartortle", "Weight": 1,     "SpawnBlockSet": "Sand"},
     {"Id": "Pkmn_Blastoise", "Weight": 0.05,  "SpawnBlockSet": "Sand"}

@@ -18,7 +18,28 @@
   },
   "MinScale": 0.9,
   "MaxScale": 1,
-  "AnimationSets": {},
+  "AnimationSets": {
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Venomoth_Cry"
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template/Animations/Default/Alerted.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Venomoth_Cry"
+        }
+      ]
+    }
+  },
   "IconProperties": {
     "Scale": 0.3,
     "Rotation": [
