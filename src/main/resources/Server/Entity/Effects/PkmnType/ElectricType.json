@@ -1,34 +1,10 @@
 {
   "Name": "entityEffects.PkmnType.Electric.name",
   "DamageResistance": {
-    "Electric": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": 0.5
-      }
-    ],
-    "Flying": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": 0.5
-      }
-    ],
-    "Steel": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": 0.5
-      }
-    ],
-    "Ground": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": -1.0
-      }
-    ]
+    "Electric": [{"CalculationType": "Percent","Amount": 0.5}],
+    "Flying":   [{"CalculationType": "Percent","Amount": 0.5}],
+    "Steel":    [{"CalculationType": "Percent","Amount": 0.5}],
+    "Ground":   [{"CalculationType": "Percent","Amount": -1.0}]
   },
   "Infinite": true,
   "OverlapBehavior": "Overwrite",

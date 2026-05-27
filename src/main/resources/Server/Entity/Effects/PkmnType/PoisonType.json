@@ -1,12 +1,12 @@
 {
   "Name": "entityEffects.PkmnType.Poison.name",
   "DamageResistance": {
-    "Grass":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Fighting":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Poison":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Bug":        [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Ground":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0 }],
-    "Psychic":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0 }]
+    "Grass":      [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Fighting":   [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Poison":     [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Bug":        [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Ground":     [{ "CalculationType": "Percent", "Amount": -1.0 }],
+    "Psychic":    [{ "CalculationType": "Percent", "Amount": -1.0 }]
   },
   "Infinite": true,
   "OverlapBehavior": "Overwrite",

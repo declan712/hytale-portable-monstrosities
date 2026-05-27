@@ -1,12 +1,12 @@
 {
   "Name": "entityEffects.PkmnType.Bug.name",
   "DamageResistance": {
-    "Fire":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
-    "Flying":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
-    "Rock":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
-    "Ground":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Grass":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }]
+    "Fire":     [{ "CalculationType": "Percent", "Amount":  -1.0}],
+    "Flying":   [{ "CalculationType": "Percent", "Amount":  -1.0}],
+    "Rock":     [{ "CalculationType": "Percent", "Amount":  -1.0}],
+    "Ground":   [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Fighting": [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Grass":    [{ "CalculationType": "Percent", "Amount":  0.5 }]
   },
   "Infinite": true,
   "OverlapBehavior": "Overwrite",

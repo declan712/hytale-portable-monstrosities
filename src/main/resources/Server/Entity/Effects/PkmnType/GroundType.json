@@ -1,48 +1,12 @@
 {
   "Name": "entityEffects.PkmnType.Ground.name",
   "DamageResistance": {
-    "Water": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": -1.0
-      }
-    ],
-    "Grass": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": -1.0
-      }
-    ],
-    "Electric": [
-      {
-        "Target": "Max",
-        "CalculationType": "Multiplicative",
-        "Amount": 1.0
-      }
-    ],
-    "Ice": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": -1.0
-      }
-    ],
-    "Poison": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": 0.5
-      }
-    ],
-    "Rock": [
-      {
-        "Target": "Min",
-        "CalculationType": "Multiplicative",
-        "Amount": 0.5
-      }
-    ]
+    "Water":    [{"CalculationType": "Percent","Amount": -1.0}],
+    "Grass":    [{"CalculationType": "Percent","Amount": -1.0}],
+    "Electric": [{"CalculationType": "Percent","Amount": 1.0}],
+    "Ice":      [{"CalculationType": "Percent","Amount": -1.0}],
+    "Poison":   [{"CalculationType": "Percent","Amount": 0.5}],
+    "Rock":     [{"CalculationType": "Percent","Amount": 0.5}]
   },
   "Infinite": true,
   "OverlapBehavior": "Overwrite",

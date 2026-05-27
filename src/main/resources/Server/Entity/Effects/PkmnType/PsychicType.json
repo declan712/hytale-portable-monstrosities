@@ -1,11 +1,11 @@
 {
   "Name": "entityEffects.PkmnType.Psychic.name",
   "DamageResistance": {
-    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Psychic":  [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.5 }],
-    "Bug":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
-    "Ghost":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}],
-    "Dark":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  -1.0}]
+    "Fighting": [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Psychic":  [{ "CalculationType": "Percent", "Amount":  0.5 }],
+    "Bug":      [{ "CalculationType": "Percent", "Amount":  -1.0}],
+    "Ghost":    [{ "CalculationType": "Percent", "Amount":  -1.0}],
+    "Dark":     [{ "CalculationType": "Percent", "Amount":  -1.0}]
   },
   "Infinite": true,
   "OverlapBehavior": "Overwrite",

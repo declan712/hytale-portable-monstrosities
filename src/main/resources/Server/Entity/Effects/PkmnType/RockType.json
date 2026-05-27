@@ -1,15 +1,15 @@
 {
   "Name": "entityEffects.PkmnType.Rock.name",
   "DamageResistance": {
-    "Water":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
-    "Normal":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
-    "Fire":     [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
-    "Grass":    [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
-    "Ice":      [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
-    "Fighting": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
-    "Poison":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }],
-    "Ground":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": -1.0}],
-    "Flying":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount": 0.5 }]
+    "Water":    [{ "CalculationType": "Percent", "Amount": -1.0}],
+    "Normal":   [{ "CalculationType": "Percent", "Amount": 0.5 }],
+    "Fire":     [{ "CalculationType": "Percent", "Amount": 0.5 }],
+    "Grass":    [{ "CalculationType": "Percent", "Amount": -1.0}],
+    "Ice":      [{ "CalculationType": "Percent", "Amount": -1.0}],
+    "Fighting": [{ "CalculationType": "Percent", "Amount": -1.0}],
+    "Poison":   [{ "CalculationType": "Percent", "Amount": 0.5 }],
+    "Ground":   [{ "CalculationType": "Percent", "Amount": -1.0}],
+    "Flying":   [{ "CalculationType": "Percent", "Amount": 0.5 }]
   },
   "Infinite": true,
   "OverlapBehavior": "Overwrite",

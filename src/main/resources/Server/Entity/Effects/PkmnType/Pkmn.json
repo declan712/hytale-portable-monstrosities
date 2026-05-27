@@ -1,8 +1,8 @@
 {
   "Name": "entityEffects.Pkmn.name",
   "DamageResistance": {
-    "Physical":   [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.8 }],
-    "Projectile": [{ "Target": "Min","CalculationType": "Multiplicative", "Amount":  0.8 }]
+    "Physical":   [{ "CalculationType": "Percent", "Amount":  0.8 }],
+    "Projectile": [{ "CalculationType": "Percent", "Amount":  0.8 }]
   },
   "Infinite": true,
   "OverlapBehavior": "Overwrite",
