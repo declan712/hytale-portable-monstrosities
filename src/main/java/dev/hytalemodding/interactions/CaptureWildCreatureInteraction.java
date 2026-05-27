@@ -10,8 +10,11 @@ import com.hypixel.hytale.component.Holder;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import com.hypixel.hytale.math.vector.Rotation3f;
+import com.hypixel.hytale.math.vector.Rotation3fc;
+// import com.hypixel.hytale.math.vector.Vector3d;
+import com.hypixel.hytale.math.vector.Vector3dUtil;
+// import com.hypixel.hytale.math.vector.Vector3f;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
@@ -38,6 +41,11 @@ import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.util.PkmnStatUtils;
 
 import javax.annotation.Nonnull;
+
+import org.joml.Vector3d;
+import org.joml.Vector3dc;
+import org.joml.Vector3f;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,6 +128,7 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
             targetRef, EntityModule.get().getTransformComponentType());
         if (transform == null) { fail(context); return; }
         Vector3d pos = transform.getPosition();
+        Vector3dc  poasdfs = Vector3dUtil.ALL_ONES;
 
         // set owner
         // String ownerUuid = null;
@@ -162,7 +171,7 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
             List<ItemStack> items = new ArrayList<>();
             items.add(finalBall);
             Holder<EntityStore>[] drops = ItemComponent.generateItemDrops(
-                runStore, items, dropPos, new Vector3f());
+                runStore, items, dropPos, Rotation3f.ZERO);
             commandBuffer.addEntities(drops, AddReason.SPAWN);
         });
 

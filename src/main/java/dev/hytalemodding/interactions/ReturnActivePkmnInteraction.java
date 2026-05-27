@@ -19,6 +19,7 @@ import com.hypixel.hytale.server.core.inventory.InventoryComponent;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
@@ -40,11 +41,14 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
 
         World world = commandBuffer.getExternalData().getWorld();
 
-        Ref<EntityStore> playerRef = context.getOwningEntity();
-        if(playerRef == null) { fail(context); return; }
+        Ref<EntityStore> ownerRef = context.getOwningEntity();
+        if(ownerRef == null) { fail(context); return; }
 
-        Player player = commandBuffer.getComponent(playerRef, Player.getComponentType());
+        Player player = commandBuffer.getComponent(ownerRef, Player.getComponentType());
         if(player == null) { fail(context); return; }
+
+        PlayerRef playerRef= commandBuffer.getComponent(ownerRef, PlayerRef.getComponentType());
+        if(playerRef == null) { fail(context); return; }
 
         ItemStack ball = context.getHeldItem();
         if(ball == null) { fail(context); return; }
@@ -55,7 +59,7 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
 
         PkmnCaptureMetadata pkmnMetadata = ball.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
         if (pkmnMetadata == null) { 
-            player.sendMessage(Message.raw("Item missing capture metadata"));
+            playerRef.sendMessage(Message.raw("Item missing capture metadata"));
             // LOGGER.atInfo().log("Item has no Pkmn Metadata");
             fail(context); return; }
         
@@ -71,7 +75,7 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
         
         Ref<EntityStore> targetRef = world.getEntityRef(UUID.fromString(npcId));
         if (targetRef == null) { 
-            player.sendMessage(Message.raw("Couldn't find entity :("));
+            playerRef.sendMessage(Message.raw("Couldn't find entity :("));
             // LOGGER.atInfo().log("Couldn't find entity");
             fail(context); 
             return; 
@@ -94,7 +98,7 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
         }
 
 
-        var hotbar = store.getComponent(playerRef, InventoryComponent.Hotbar.getComponentType());
+        var hotbar = store.getComponent(ownerRef, InventoryComponent.Hotbar.getComponentType());
         var slot = hotbar.getActiveSlot();
         var inventory = hotbar.getInventory();
         inventory.replaceItemStackInSlot(slot, ball, modifiedBall);

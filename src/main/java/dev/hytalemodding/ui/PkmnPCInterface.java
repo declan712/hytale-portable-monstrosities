@@ -14,8 +14,8 @@ import com.hypixel.hytale.server.core.universe.PlayerRef;
  */
 public class PkmnPCInterface extends CustomUIHud {
     
-    public PkmnPCInterface(PlayerRef playerRef) {
-        super(playerRef);
+    public PkmnPCInterface(PlayerRef playerRef, String key) {
+        super(playerRef,key);
     }
 
     // public void build(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder uiEventBuilder, @Nonnull Store<EntityStore> store) {

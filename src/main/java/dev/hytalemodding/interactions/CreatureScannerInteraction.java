@@ -68,13 +68,11 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
 
 
-        Ref<EntityStore> playerRef = interactionContext.getEntity();
-        Player player = commandBuffer.getComponent(playerRef, Player.getComponentType());
-
-        if (player == null) {
-            fail(interactionContext);
-            return;
-        }
+        Ref<EntityStore> ref = interactionContext.getEntity();
+        // Player player = commandBuffer.getComponent(ref, Player.getComponentType());
+        // if (player == null) { fail(interactionContext); return; }
+        PlayerRef playerRef = commandBuffer.getComponent(ref, PlayerRef.getComponentType());
+        if (playerRef == null) { fail(interactionContext); return;}
 
         ItemStack itemStack = interactionContext.getHeldItem();
         if (itemStack == null) {
@@ -84,20 +82,20 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
 
         Ref<EntityStore> targetRef = interactionContext.getTargetEntity();
         if (targetRef == null) {
-            player.sendMessage(Message.raw("No target"));
+            playerRef.sendMessage(Message.raw("No target"));
             fail(interactionContext);
             return;
         }
         // Check if target is a pkmn
         NPCEntity npcEntity = store.getComponent(targetRef,NPCEntity.getComponentType());
         if(npcEntity==null){
-            player.sendMessage(Message.raw("That's not an NPC..."));
+            playerRef.sendMessage(Message.raw("That's not an NPC..."));
             fail(interactionContext);
             return;
         }
         String roleName = npcEntity.getRoleName();
         if(!PkmnStatUtils.filterByRoleName(roleName)) {
-            player.sendMessage(Message.raw("That's not a pkmn, its a "+roleName));
+            playerRef.sendMessage(Message.raw("That's not a pkmn, its a "+roleName));
             fail(interactionContext);
             return;
         }
@@ -108,9 +106,9 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
         PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(pkmnMeta);
 
                 
-        player.sendMessage(Message.raw(pokemonSpecies+", the something Pkmn."));
-        player.sendMessage(Message.raw("Lvl: "+String.valueOf((int) pkmnMeta.getLevel())));
-        player.sendMessage(Message.raw("Exp: "+String.valueOf((int) pkmnMeta.getExperience())));
+        playerRef.sendMessage(Message.raw(pokemonSpecies+", the <insert here> Pokemon."));
+        playerRef.sendMessage(Message.raw("Lvl: "+String.valueOf((int) pkmnMeta.getLevel())));
+        playerRef.sendMessage(Message.raw("Exp: "+String.valueOf((int) pkmnMeta.getExperience())));
         // [0] HP
         // [1] Attack
         // [2] Defense
@@ -130,12 +128,12 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
         var spdef   = String.valueOf((int) pkmnStats.calcEffectiveStat(4) );
         var spd     = String.valueOf((int) pkmnStats.calcEffectiveStat(5) );
 
-        player.sendMessage(Message.raw("HP: "+hp+"/"+maxHp+"    ( +"+String.valueOf(ivs[0])+" )"  ));
-        player.sendMessage(Message.raw("Atk: "+atk+"    ( +"+String.valueOf(ivs[1])+" )"  ));
-        player.sendMessage(Message.raw("Def: "+def+"    ( +"+String.valueOf(ivs[2])+" )"  ));
-        player.sendMessage(Message.raw("Sp.Atk: "+spatk+"   ( +"+String.valueOf(ivs[3])+" )"  ));
-        player.sendMessage(Message.raw("Sp.Def: "+spdef+"   ( +"+String.valueOf(ivs[4])+" )"  ));
-        player.sendMessage(Message.raw("Spd: "+spd+"    ( +"+String.valueOf(ivs[5])+" )"  ));
+        playerRef.sendMessage(Message.raw("HP: "+hp+"/"+maxHp+"    ( +"+String.valueOf(ivs[0])+" )"  ));
+        playerRef.sendMessage(Message.raw("Atk: "+atk+"    ( +"+String.valueOf(ivs[1])+" )"  ));
+        playerRef.sendMessage(Message.raw("Def: "+def+"    ( +"+String.valueOf(ivs[2])+" )"  ));
+        playerRef.sendMessage(Message.raw("Sp.Atk: "+spatk+"   ( +"+String.valueOf(ivs[3])+" )"  ));
+        playerRef.sendMessage(Message.raw("Sp.Def: "+spdef+"   ( +"+String.valueOf(ivs[4])+" )"  ));
+        playerRef.sendMessage(Message.raw("Spd: "+spd+"    ( +"+String.valueOf(ivs[5])+" )"  ));
 
         // player.sendMessage(Message.raw("IVs: [a,b,c,d,e,f]"));
         // player.sendMessage(Message.raw("EVs: [a,b,c,d,e,f]"));
@@ -151,7 +149,7 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
                 PlayerRef owner = store.getComponent(ownerRef, PlayerRef.getComponentType());
                 if (owner != null) {
                     String username = owner.getUsername();
-                    player.sendMessage(Message.raw("owned by: "+username));
+                    playerRef.sendMessage(Message.raw("owned by: "+username));
                 }
             }
         }
@@ -167,12 +165,12 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
         IndexedLookupTableAssetMap<String, EntityEffect> effectMap = EntityEffect.getAssetMap();
         Int2ObjectMap<ActiveEntityEffect> activeEffects = effectControllerComponent.getActiveEffects();
         if(activeEffects != null && !activeEffects.isEmpty()){
-            player.sendMessage(Message.raw("Active effects:"));
+            playerRef.sendMessage(Message.raw("Active effects:"));
             for(ActiveEntityEffect activeEffect : activeEffects.values()){
                 int idx = activeEffect.getEntityEffectIndex();
                 EntityEffect effect = effectMap.getAsset(idx);
                 String effectId = effect.getId();
-                player.sendMessage(Message.raw("  - "+effectId));
+                playerRef.sendMessage(Message.raw("  - "+effectId));
                 // player.sendMessage(Message.raw("  - "+activeEffect.toString()));
             }
         }
@@ -184,7 +182,7 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
 
 
 
-        String playerUuid = player.getUuid().toString();
+        String playerUuid = playerRef.getUuid().toString();
 
         String displayName = PkmnStatUtils.displayNameOf(roleName);
         PkmnStatUtils.setPkmnNameplate(commandBuffer, targetRef, roleName, pkmnStats);
@@ -194,7 +192,7 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
         String bottomText = "Lvl: "+pkmnStats.getLevel()+", IVs:"+pkmnStats.getIvs().toString()+", Base stats:"+pkmnStats.getBaseStats().toString();
 
 
-        notifyPlayer(player.getPlayerRef(),topText,bottomText);
+        notifyPlayer(playerRef,topText,bottomText);
         next(interactionContext);
         return;
     }

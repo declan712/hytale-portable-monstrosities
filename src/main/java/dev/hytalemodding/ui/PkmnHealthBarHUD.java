@@ -19,7 +19,9 @@ public class PkmnHealthBarHUD extends CustomUIHud {
 //    }
 
 
-    public PkmnHealthBarHUD(@NonNullDecl PlayerRef playerRef,
+    public PkmnHealthBarHUD(
+        @NonNullDecl PlayerRef playerRef,
+        @NonNullDecl String key,
         String name,
         int level,
         int currentHealth,
@@ -29,11 +31,14 @@ public class PkmnHealthBarHUD extends CustomUIHud {
         this.pkmnLvl = level;
         this.pkmnHp = currentHealth;
         this.pkmnMaxHp = maxHealth;
-        super(playerRef);
+        super(playerRef,key);
         // this.file = file;
     }
-    public PkmnHealthBarHUD(@NonNullDecl PlayerRef playerRef) {
-        super(playerRef);
+    public PkmnHealthBarHUD(
+        @NonNullDecl PlayerRef playerRef,
+        @NonNullDecl String key
+    ) {
+        super(playerRef,key);
         // this.file = file;
     }
 

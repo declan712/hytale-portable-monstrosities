@@ -4,6 +4,12 @@ import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
+import org.joml.Vector3d;
+import org.joml.Vector3dc;
+import org.joml.Vector3f;
+import org.joml.Vector3fc;
+import org.joml.Vector3i;
+
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.AddReason;
 import com.hypixel.hytale.component.CommandBuffer;
@@ -13,9 +19,10 @@ import com.hypixel.hytale.component.RemoveReason;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.math.util.ChunkUtil;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
-import com.hypixel.hytale.math.vector.Vector3i;
+import com.hypixel.hytale.math.vector.Rotation3f;
+// import com.hypixel.hytale.math.vector.Vector3d;
+// import com.hypixel.hytale.math.vector.Vector3f;
+// import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.Message;
@@ -141,7 +148,7 @@ public class SpawnPkmnTombstoneInteration extends SimpleInstantInteraction {
             ModelAsset modelAsset = ModelAsset.getAssetMap().getAsset(tombstoneModelId);
             Model model = Model.createScaledModel(modelAsset, 0.85f);
 
-            holder.addComponent(TransformComponent.getComponentType(), new TransformComponent(npcPos, new Vector3f(0, 0, 0)));
+            holder.addComponent(TransformComponent.getComponentType(), new TransformComponent((Vector3dc) npcPos,Rotation3f.ZERO));
             holder.addComponent(PersistentModel.getComponentType(), new PersistentModel(model.toReference()));
             holder.addComponent(ModelComponent.getComponentType(), new ModelComponent(model));
             holder.addComponent(BoundingBox.getComponentType(), new BoundingBox(model.getBoundingBox()));

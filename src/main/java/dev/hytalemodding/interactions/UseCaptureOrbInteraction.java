@@ -15,9 +15,12 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.function.consumer.TriConsumer;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.math.util.ChunkUtil;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
-import com.hypixel.hytale.math.vector.Vector3i;
+import com.hypixel.hytale.math.vector.Rotation3f;
+import com.hypixel.hytale.math.vector.Rotation3fc;
+import com.hypixel.hytale.math.vector.Vector3dUtil;
+// import com.hypixel.hytale.math.vector.Vector3d;
+// import com.hypixel.hytale.math.vector.Vector3f;
+// import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.protocol.BlockPosition;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
@@ -58,6 +61,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bson.BsonDocument;
+import org.joml.Vector3d;
+import org.joml.Vector3dc;
+import org.joml.Vector3f;
+import org.joml.Vector3i;
+import org.joml.Vector3ic;
 
 /**
  * UseCaptureOrbInteraction<br>
@@ -328,7 +336,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                         world,
                         world.getEntityStore().getStore(),
                         new Vector3d(pos.x, pos.y, pos.z),
-                        new Vector3d().assign(Vector3d.FORWARD)
+                        new Vector3d(Vector3dUtil.FORWARD)
                     ));
                     inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
                     context.getState().state = InteractionState.Finished;
@@ -521,8 +529,8 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         if (store == null) return;
         List<ItemStack> itemsToDrop = new ArrayList<>();
         itemsToDrop.add(capturedBall);
-        Vector3f rotation = new Vector3f();
-        Holder<EntityStore>[] drops = ItemComponent.generateItemDrops(store,itemsToDrop,impactPos,rotation);
+        Holder<EntityStore>[] drops = ItemComponent.generateItemDrops(
+            store,itemsToDrop,impactPos,Rotation3f.ZERO);
         commandBuffer.addEntities(drops, AddReason.SPAWN);
         return;
     }
@@ -553,7 +561,13 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         Vector3d spawnPos = new Vector3d(pos.x + 0.5, pos.y, pos.z + 0.5);
         if (context.getClientState() != null) {
             BlockFace face = BlockFace.fromProtocolFace(context.getClientState().blockFace);
-            if (face != null) spawnPos.add(face.getDirection());
+            Vector3ic faceDirection = face.getDirection();
+
+            if (face != null) spawnPos.add(
+                faceDirection.x(),
+                faceDirection.y(),
+                faceDirection.z()
+            );
         }
 
         String roleId    = existingMeta.getNpcNameKey();
@@ -562,9 +576,20 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         PkmnCaptureMetadata captureMetadata = (PkmnCaptureMetadata)
             item.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
 
+
+            // spawnEntity(
+            //       @Nonnull Store<EntityStore> store, 
+            //       int roleIndex, 
+            //       @Nonnull Vector3dc position, 
+            //       @Nullable Rotation3fc rotation, 
+            //       @Nullable Model spawnModel, 
+            //       @Nullable TriConsumer<NPCEntity, 
+            //       Ref<EntityStore>, 
+            //       Store<EntityStore>> postSpawn
+            // )
         commandBuffer.run(store -> {
             var pair = NPCPlugin.get().spawnEntity(
-                store, roleIndex, spawnPos, Vector3f.ZERO, 
+                store, roleIndex, spawnPos, Rotation3f.ZERO, 
                 (Model)  null,
                 (TriConsumer<NPCEntity, Ref<EntityStore>, Store<EntityStore>>) null
             );

@@ -6,6 +6,10 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.joml.Vector3d;
+import org.joml.Vector3f;
+import org.joml.Vector4d;
+
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -14,9 +18,6 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.math.hitdetection.HitDetectionBuffer;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
-import com.hypixel.hytale.math.vector.Vector4d;
 import com.hypixel.hytale.protocol.CombatTextUpdate;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
@@ -241,10 +242,13 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
             if (owner == null) return;
 
             entityViewerComponent = commandBuffer.getComponent(owner, EntityViewer.getComponentType());
-            Player ownerPlayer = store.getComponent(owner, Player.getComponentType());
-            if (ownerPlayer == null) return;
+            // Player ownerPlayer = store.getComponent(owner, Player.getComponentType());
+            // if (ownerPlayer == null) return;
 
-            String ownerName = ownerPlayer.getDisplayName();
+            // PlayerRef ownerPlayerRef = commandBuffer.getComponent(owner, PlayerRef.getComponentType());
+            // if (ownerPlayerRef == null) return;
+
+            // String ownerName = ownerPlayerRef.getUsername();
             // LOGGER.atInfo().log("show damage text to owner: "+ownerName);
 
         } else if (isTamedTarget){
@@ -253,10 +257,13 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
             if (owner == null) return;
 
             entityViewerComponent = commandBuffer.getComponent(owner, EntityViewer.getComponentType());
-            Player ownerPlayer = store.getComponent(owner, Player.getComponentType());
-            if (ownerPlayer == null) return;
+            // Player ownerPlayer = store.getComponent(owner, Player.getComponentType());
+            // if (ownerPlayer == null) return;
 
-            String ownerName = ownerPlayer.getDisplayName();
+            // PlayerRef ownerPlayerRef = commandBuffer.getComponent(owner, PlayerRef.getComponentType());
+            // if (ownerPlayerRef == null) return;
+
+            // String ownerName = ownerPlayerRef.getUsername();
             // LOGGER.atInfo().log("show damage text to owner: "+ownerName);
         } else {
             return;
@@ -294,7 +301,9 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
             // LOGGER.atInfo().log("Owner not a player"); 
             return null;
         }
-        String ownerName = ownerPlayer.getDisplayName();
+        // PlayerRef ownerPlayerRef = commandBuffer.getComponent(ownerRef, PlayerRef.getComponentType());
+        // if (ownerPlayerRef == null) return null;
+        // String ownerName = ownerPlayerRef.getUsername();
         // LOGGER.atInfo().log("Owner is "+ownerName); 
         return ownerRef;
 
@@ -308,7 +317,7 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
         @Nullable Float hitAngleDeg, 
         @Nonnull EntityTrackerSystems.EntityViewer viewer
     ) {
-        CombatTextUIComponent combatText = new CombatTextUIComponent();
+        // CombatTextUIComponent combatText = new CombatTextUIComponent();
         CombatTextUpdate update = new CombatTextUpdate(hitAngleDeg == null ? 0.0F : hitAngleDeg, Integer.toString((int)Math.floor((double)damageAmount)));
         viewer.queueUpdate(ref, update);
     }

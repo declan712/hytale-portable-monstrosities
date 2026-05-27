@@ -4,13 +4,12 @@ import java.util.HashMap;
 
 import javax.annotation.Nonnull;
 
-import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.Component;
 import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
+// import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
 import dev.hytalemodding.PortableMonstrosities;
 
@@ -41,17 +40,17 @@ public class PkmnStorageComponent implements Component<EntityStore> {
 
     private HashMap<Integer,Box> boxes;
     private Integer maxBoxes = 16;
-    private Integer slotsPerBox = 30;
+    // private Integer slotsPerBox = 30;
 
     private class BoxSlot {
-        public String name;
-        public PkmnCaptureMetadata pkmnMetadata;
-        public CapturedNPCMetadata npcMetadata;
-        public String slotIcon;
+        // public String name;
+        // public PkmnCaptureMetadata pkmnMetadata;
+        // public CapturedNPCMetadata npcMetadata;
+        // public String slotIcon;
     }
 
     private class Box {
-        public String name;
+        // public String name;
         public HashMap<Integer,BoxSlot> slots;
     }
 
