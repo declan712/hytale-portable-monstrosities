@@ -1,0 +1,34 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Lightning_Strikes",
+      "PositionOffset": {
+        "X": 0,
+        "Y": -1,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "Storm_Cloud",
+      "Attractors": [
+        {
+          "Radius": 0.5,
+          "RadialTangentAcceleration": -10,
+          "RadialTangentImpulse": 10,
+          "TrailPositionMultiplier": 0.664,
+          "DampingMultiplier": {
+            "X": 0.2,
+            "Y": 0.2,
+            "Z": 0.2
+          }
+        }
+      ],
+      "EmitOffset": {
+        "X": {
+          "Min": 0.5,
+          "Max": 0.5
+        }
+      }
+    }
+  ]
+}
