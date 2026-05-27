@@ -1,5 +1,4 @@
 package dev.hytalemodding.interactions;
-import java.util.Collection;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
@@ -10,7 +9,6 @@ import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.CommandBuffer;
-import com.hypixel.hytale.component.ComponentAccessor;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
@@ -22,8 +20,6 @@ import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffec
 import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
 import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
-import com.hypixel.hytale.server.core.entity.entities.Player;
-import com.hypixel.hytale.server.core.entity.nameplate.Nameplate;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
@@ -182,7 +178,7 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
 
 
 
-        String playerUuid = playerRef.getUuid().toString();
+        // String playerUuid = playerRef.getUuid().toString();
 
         String displayName = PkmnStatUtils.displayNameOf(roleName);
         PkmnStatUtils.setPkmnNameplate(commandBuffer, targetRef, roleName, pkmnStats);

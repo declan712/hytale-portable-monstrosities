@@ -17,7 +17,6 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
-import com.hypixel.hytale.math.hitdetection.HitDetectionBuffer;
 import com.hypixel.hytale.protocol.CombatTextUpdate;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
@@ -27,13 +26,10 @@ import com.hypixel.hytale.server.core.modules.debug.DebugUtils;
 import com.hypixel.hytale.server.core.modules.entity.damage.*;
 import com.hypixel.hytale.server.core.modules.entity.tracker.EntityTrackerSystems;
 import com.hypixel.hytale.server.core.modules.entity.tracker.EntityTrackerSystems.EntityViewer;
-import com.hypixel.hytale.server.core.modules.entityui.asset.CombatTextUIComponent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.none.SelectInteraction;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.DamageEntityInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageCalculator;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageEffects;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
@@ -207,10 +203,10 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
         // TODO: show if either source or target is player or Tamed
         boolean shouldShowCombatText = false;
 
-        PlayerRef sourcePlayerRef = (PlayerRef)commandBuffer.getComponent(sourceRef, PlayerRef.getComponentType());
+        // PlayerRef sourcePlayerRef = (PlayerRef)commandBuffer.getComponent(sourceRef, PlayerRef.getComponentType());
         PlayerRef targetPlayerRef = (PlayerRef)commandBuffer.getComponent(targetRef, PlayerRef.getComponentType());
 
-        boolean isPlayerSource = sourcePlayerRef!=null  && sourcePlayerRef.isValid();
+        // boolean isPlayerSource = sourcePlayerRef!=null  && sourcePlayerRef.isValid();
         boolean isPlayerTarget = targetPlayerRef!=null  && targetPlayerRef.isValid();
 
         NPCEntity sourceNpc = commandBuffer.getComponent(sourceRef, NPCEntity.getComponentType());

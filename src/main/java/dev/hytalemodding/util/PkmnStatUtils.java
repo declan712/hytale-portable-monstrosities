@@ -131,24 +131,24 @@ public class PkmnStatUtils {
         EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());
         if (stats == null) return;
 
-        IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
-        int             lvlIdx = assetMap.getIndex("Lvl");
-        int             expIdx = assetMap.getIndex("Exp");
-        int             atkIdx = assetMap.getIndex("Atk");
-        int             defIdx = assetMap.getIndex("Def");
-        int             spAtkIdx = assetMap.getIndex("SpAtk");
-        int             spDefIdx = assetMap.getIndex("SpDef");
-        int             spdIdx = assetMap.getIndex("Spd");
+        // IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
+        // int             lvlIdx = assetMap.getIndex("Lvl");
+        // int             expIdx = assetMap.getIndex("Exp");
+        // int             atkIdx = assetMap.getIndex("Atk");
+        // int             defIdx = assetMap.getIndex("Def");
+        // int             spAtkIdx = assetMap.getIndex("SpAtk");
+        // int             spDefIdx = assetMap.getIndex("SpDef");
+        // int             spdIdx = assetMap.getIndex("Spd");
 
         int             healthIdx = DefaultEntityStatTypes.getHealth();
-        EntityStatValue health    = stats.get(healthIdx);
-        EntityStatValue lvl       = stats.get(lvlIdx);
-        EntityStatValue exp       = stats.get(expIdx);
-        EntityStatValue atk       = stats.get(atkIdx);
-        EntityStatValue def       = stats.get(defIdx);
-        EntityStatValue spAtk     = stats.get(spAtkIdx);
-        EntityStatValue spDef     = stats.get(spDefIdx);
-        EntityStatValue spd       = stats.get(spdIdx);
+        // EntityStatValue health    = stats.get(healthIdx);
+        // EntityStatValue lvl       = stats.get(lvlIdx);
+        // EntityStatValue exp       = stats.get(expIdx);
+        // EntityStatValue atk       = stats.get(atkIdx);
+        // EntityStatValue def       = stats.get(defIdx);
+        // EntityStatValue spAtk     = stats.get(spAtkIdx);
+        // EntityStatValue spDef     = stats.get(spDefIdx);
+        // EntityStatValue spd       = stats.get(spdIdx);
 
 
         EntityScaleComponent scaleComponent = store.getComponent(
@@ -287,7 +287,7 @@ public class PkmnStatUtils {
         // store.getComponent(ref, NPCEntity.getComponentType());
         // if (npcComponent == null) return null;
 
-        boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
+        // boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
         // if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
 
 
@@ -300,32 +300,32 @@ public class PkmnStatUtils {
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
         int             lvlIdx = assetMap.getIndex("Lvl");
         int             expIdx = assetMap.getIndex("Exp");
-        int             atkIdx = assetMap.getIndex("Atk");
-        int             defIdx = assetMap.getIndex("Def");
-        int             spAtkIdx = assetMap.getIndex("SpAtk");
-        int             spDefIdx = assetMap.getIndex("SpDef");
-        int             spdIdx = assetMap.getIndex("Spd");
+        // int             atkIdx = assetMap.getIndex("Atk");
+        // int             defIdx = assetMap.getIndex("Def");
+        // int             spAtkIdx = assetMap.getIndex("SpAtk");
+        // int             spDefIdx = assetMap.getIndex("SpDef");
+        // int             spdIdx = assetMap.getIndex("Spd");
 
         int             healthIdx = DefaultEntityStatTypes.getHealth();
         EntityStatValue health    = stats.get(healthIdx);
         EntityStatValue lvl       = stats.get(lvlIdx);
         EntityStatValue exp       = stats.get(expIdx);
-        EntityStatValue atk       = stats.get(atkIdx);
-        EntityStatValue def       = stats.get(defIdx);
-        EntityStatValue spAtk     = stats.get(spAtkIdx);
-        EntityStatValue spDef     = stats.get(spDefIdx);
-        EntityStatValue spd       = stats.get(spdIdx);
+        // EntityStatValue atk       = stats.get(atkIdx);
+        // EntityStatValue def       = stats.get(defIdx);
+        // EntityStatValue spAtk     = stats.get(spAtkIdx);
+        // EntityStatValue spDef     = stats.get(spDefIdx);
+        // EntityStatValue spd       = stats.get(spdIdx);
 
         if (health == null) return null;
-        float currentHp = isDead?0:health.get();
-        float maxHp     = health.getMax();
+        // float currentHp = isDead?0:health.get();
+        // float maxHp     = health.getMax();
         float currentExp = exp.get();
         float currentLvl = lvl.get();
-        float currentAtk =   atk.get();
-        float currentDef =   def.get();
-        float currentSpAtk = spAtk.get();
-        float currentSpDef = spDef.get();
-        float currentSpd =   spd.get();
+        // float currentAtk =   atk.get();
+        // float currentDef =   def.get();
+        // float currentSpAtk = spAtk.get();
+        // float currentSpDef = spDef.get();
+        // float currentSpd =   spd.get();
 
         PkmnStatsComponent pkmnStats = store.getComponent(ref, PkmnStatsComponent.getComponentType());
         if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
@@ -397,32 +397,32 @@ public class PkmnStatUtils {
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
         int             lvlIdx = assetMap.getIndex("Lvl");
         int             expIdx = assetMap.getIndex("Exp");
-        int             atkIdx = assetMap.getIndex("Atk");
-        int             defIdx = assetMap.getIndex("Def");
-        int             spAtkIdx = assetMap.getIndex("SpAtk");
-        int             spDefIdx = assetMap.getIndex("SpDef");
-        int             spdIdx = assetMap.getIndex("Spd");
+        // int             atkIdx = assetMap.getIndex("Atk");
+        // int             defIdx = assetMap.getIndex("Def");
+        // int             spAtkIdx = assetMap.getIndex("SpAtk");
+        // int             spDefIdx = assetMap.getIndex("SpDef");
+        // int             spdIdx = assetMap.getIndex("Spd");
 
         int             healthIdx = DefaultEntityStatTypes.getHealth();
         EntityStatValue health    = stats.get(healthIdx);
         EntityStatValue lvl       = stats.get(lvlIdx);
         EntityStatValue exp       = stats.get(expIdx);
-        EntityStatValue atk       = stats.get(atkIdx);
-        EntityStatValue def       = stats.get(defIdx);
-        EntityStatValue spAtk     = stats.get(spAtkIdx);
-        EntityStatValue spDef     = stats.get(spDefIdx);
-        EntityStatValue spd       = stats.get(spdIdx);
+        // EntityStatValue atk       = stats.get(atkIdx);
+        // EntityStatValue def       = stats.get(defIdx);
+        // EntityStatValue spAtk     = stats.get(spAtkIdx);
+        // EntityStatValue spDef     = stats.get(spDefIdx);
+        // EntityStatValue spd       = stats.get(spdIdx);
 
         if (health == null) return null;
         float currentHp = isDead?0:health.get();
         float maxHp     = health.getMax();
         float currentExp = exp.get();
         float currentLvl = lvl.get();
-        float currentAtk =   atk.get();
-        float currentDef =   def.get();
-        float currentSpAtk = spAtk.get();
-        float currentSpDef = spDef.get();
-        float currentSpd =   spd.get();
+        // float currentAtk =   atk.get();
+        // float currentDef =   def.get();
+        // float currentSpAtk = spAtk.get();
+        // float currentSpDef = spDef.get();
+        // float currentSpd =   spd.get();
 
         // TODO: do something with size
         float scale = 1f;
@@ -432,7 +432,7 @@ public class PkmnStatUtils {
 
 
         String roleId = NPCPlugin.get().getName(npcComponent.getRoleIndex());
-        int[] baseStats = PkmnBaseStatList.fromMap(toDisplayName(roleId));
+        // int[] baseStats = PkmnBaseStatList.fromMap(toDisplayName(roleId));
 
         PkmnStatsComponent pkmnStats = (PkmnStatsComponent)
             store.getComponent(targetRef, PkmnStatsComponent.getComponentType());
@@ -528,9 +528,9 @@ public class PkmnStatUtils {
      */
     public static PkmnStatsComponent fromMetadata(@Nonnull PkmnCaptureMetadata metadata){
         PkmnStatsComponent pkmnStats = new PkmnStatsComponent();
-        var metaMaxHp           = metadata.getMaxHp();
-        var metaCurrentHp       = metadata.getCurrentHp();
-        var metaModelScale      = metadata.getModelScale();
+        // var metaMaxHp           = metadata.getMaxHp();
+        // var metaCurrentHp       = metadata.getCurrentHp();
+        // var metaModelScale      = metadata.getModelScale();
         var metaEVs             = metadata.getEvs();
         var metaIVs             = metadata.getIvs();
         var metaNature          = metadata.getNature();

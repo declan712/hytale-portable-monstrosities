@@ -1,6 +1,5 @@
 package dev.hytalemodding.interactions;
 
-import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -11,9 +10,6 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.math.vector.Rotation3f;
-import com.hypixel.hytale.math.vector.Rotation3fc;
-// import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3dUtil;
 // import com.hypixel.hytale.math.vector.Vector3f;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
@@ -25,17 +21,12 @@ import com.hypixel.hytale.server.core.modules.entity.component.TransformComponen
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.item.ItemComponent;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
-import com.hypixel.hytale.server.core.modules.entitystats.EntityStatValue;
-import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.npc.NPCPlugin;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
-import com.hypixel.hytale.server.npc.validators.NPCRoleValidator;
-
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.util.PkmnStatUtils;
@@ -43,9 +34,6 @@ import dev.hytalemodding.util.PkmnStatUtils;
 import javax.annotation.Nonnull;
 
 import org.joml.Vector3d;
-import org.joml.Vector3dc;
-import org.joml.Vector3f;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,8 +105,8 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
         // Get stats
         EntityStatMap statMap = store.getComponent(targetRef, EntityStatMap.getComponentType());
         if (statMap == null) { fail(context); return; }
-        IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
-        EntityStatValue lvlV = statMap.get(assetMap.getIndex("Lvl"));
+        // IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
+        // EntityStatValue lvlV = statMap.get(assetMap.getIndex("Lvl"));
         // float currentLvl = (lvlV != null) ? lvlV.get() : 1f;
 
 
@@ -128,7 +116,6 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
             targetRef, EntityModule.get().getTransformComponentType());
         if (transform == null) { fail(context); return; }
         Vector3d pos = transform.getPosition();
-        Vector3dc  poasdfs = Vector3dUtil.ALL_ONES;
 
         // set owner
         // String ownerUuid = null;

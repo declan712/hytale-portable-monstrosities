@@ -26,11 +26,8 @@ import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
-import au.ellie.hyui.builders.GroupBuilder;
 import au.ellie.hyui.builders.HudBuilder;
 import au.ellie.hyui.builders.HyUIHud;
-import au.ellie.hyui.builders.LabelBuilder;
-import au.ellie.hyui.uiparser.UIParseResult;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 
 import dev.hytalemodding.ui.PkmnPartySlot;

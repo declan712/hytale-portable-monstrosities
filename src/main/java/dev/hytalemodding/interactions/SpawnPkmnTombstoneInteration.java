@@ -1,13 +1,9 @@
 package dev.hytalemodding.interactions;
 
-import java.util.UUID;
-
 import javax.annotation.Nonnull;
 
 import org.joml.Vector3d;
 import org.joml.Vector3dc;
-import org.joml.Vector3f;
-import org.joml.Vector3fc;
 import org.joml.Vector3i;
 
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -25,16 +21,10 @@ import com.hypixel.hytale.math.vector.Rotation3f;
 // import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
-import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.asset.type.model.config.Model;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
-import com.hypixel.hytale.server.core.entity.entities.BlockEntity;
-import com.hypixel.hytale.server.core.entity.entities.Player;
-import com.hypixel.hytale.server.core.inventory.InventoryComponent;
-import com.hypixel.hytale.server.core.inventory.ItemStack;
-import com.hypixel.hytale.server.core.modules.block.BlockModule;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.BoundingBox;
 import com.hypixel.hytale.server.core.modules.entity.component.Interactable;
@@ -48,11 +38,8 @@ import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHa
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
-import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
-import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
-
 import dev.hytalemodding.components.FaintedPkmnComponent;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
@@ -67,7 +54,7 @@ import dev.hytalemodding.util.PkmnStatUtils;
 
 public class SpawnPkmnTombstoneInteration extends SimpleInstantInteraction {
     public  static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
-    private String tombstoneItemId = "Pkmn_Tombstone";
+    // private String tombstoneItemId = "Pkmn_Tombstone";
     private String tombstoneModelId = "Fainted_Pkmn";
 
     @Override
@@ -119,12 +106,12 @@ public class SpawnPkmnTombstoneInteration extends SimpleInstantInteraction {
             pkmnMeta.setNpcStatus("Fainted");
             pkmnMeta.setNpcEntityUuid(entityId);
 
-        CapturedNPCMetadata npcMeta = 
-            PkmnStatUtils.getNpcMetadata(commandBuffer,ownerRef,null,null);
+        // CapturedNPCMetadata npcMeta = 
+        //     PkmnStatUtils.getNpcMetadata(commandBuffer,ownerRef,null,null);
 
-        ItemStack tombstone = new ItemStack(tombstoneItemId, 1)
-                .withMetadata(CapturedNPCMetadata.KEYED_CODEC, npcMeta)
-                .withMetadata(PkmnCaptureMetadata.KEYED_CODEC, pkmnMeta);
+        // ItemStack tombstone = new ItemStack(tombstoneItemId, 1)
+        //         .withMetadata(CapturedNPCMetadata.KEYED_CODEC, npcMeta)
+        //         .withMetadata(PkmnCaptureMetadata.KEYED_CODEC, pkmnMeta);
 
 
         FaintedPkmnComponent faintedPkmnComponent = new FaintedPkmnComponent();

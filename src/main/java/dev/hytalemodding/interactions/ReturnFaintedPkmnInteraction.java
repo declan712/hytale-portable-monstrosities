@@ -1,7 +1,5 @@
 package dev.hytalemodding.interactions;
 
-import java.util.UUID;
-
 import javax.annotation.Nonnull;
 
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -12,22 +10,18 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
-import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
-import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
-import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
 import dev.hytalemodding.components.FaintedPkmnComponent;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
-import dev.hytalemodding.util.PkmnStatUtils;
 
 public class ReturnFaintedPkmnInteraction extends SimpleInstantInteraction {
     public  static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
@@ -47,7 +41,7 @@ public class ReturnFaintedPkmnInteraction extends SimpleInstantInteraction {
         CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
         if (commandBuffer == null) { fail(context); return; }
 
-        World world = commandBuffer.getExternalData().getWorld();
+        // World world = commandBuffer.getExternalData().getWorld();
 
         Ref<EntityStore> playerRef = context.getOwningEntity();
         if(playerRef == null) { fail(context); return; }

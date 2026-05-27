@@ -20,7 +20,6 @@ import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
-import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
@@ -39,7 +38,7 @@ public class HealAllPkmnInteraction extends SimpleInstantInteraction{
         CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
         if (commandBuffer == null) { fail(context, "No commandBuffer"); return; }
 
-        World world = commandBuffer.getExternalData().getWorld();
+        // World world = commandBuffer.getExternalData().getWorld();
 
         Ref<EntityStore> playerRef = context.getOwningEntity();
         if(playerRef == null) { fail(context, "No owning entity"); return; }
@@ -120,7 +119,7 @@ public class HealAllPkmnInteraction extends SimpleInstantInteraction{
         @Nonnull ItemStack itemstack,
         @Nonnull CommandBuffer<EntityStore> commandBuffer
     ){
-        String itemId = itemstack.getItemId();
+        // String itemId = itemstack.getItemId();
         PkmnCaptureMetadata captureMetadata = itemstack.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
         if(captureMetadata==null) return itemstack;
         captureMetadata.setNpcStatus("Healthy");
@@ -171,9 +170,9 @@ public class HealAllPkmnInteraction extends SimpleInstantInteraction{
         return (itemId.startsWith(statePrefix) && itemId.endsWith(stateSuffix));
     }
 
-    private static void fail(@Nonnull InteractionContext context) {
-        context.getState().state = InteractionState.Failed;
-    }
+    // private static void fail(@Nonnull InteractionContext context) {
+    //     context.getState().state = InteractionState.Failed;
+    // }
 
         private static void fail(@Nonnull InteractionContext context, String logMessage) {
         // if(logMessage != null) {  LOGGER.atInfo().log(logMessage); }

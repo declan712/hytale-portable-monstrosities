@@ -14,11 +14,10 @@ import com.hypixel.hytale.server.core.modules.entity.tracker.NetworkId;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import dev.hytalemodding.components.FaintedPkmnComponent;
-import dev.hytalemodding.components.PkmnStatsComponent;
 
 public class AddNetworkIdToMyEntitySystem extends HolderSystem<EntityStore> {
 
-    private final ComponentType<EntityStore, PkmnStatsComponent> pkmnStatsComponentType = PkmnStatsComponent.getComponentType();
+    // private final ComponentType<EntityStore, PkmnStatsComponent> pkmnStatsComponentType = PkmnStatsComponent.getComponentType();
     private final ComponentType<EntityStore, FaintedPkmnComponent> faintedPkmnComponentType = FaintedPkmnComponent.getComponentType();
     private final ComponentType<EntityStore, NetworkId> networkIdComponentType = NetworkId.getComponentType();
     private final Query<EntityStore> query = Query.and(this.faintedPkmnComponentType, Query.not(this.networkIdComponentType));
