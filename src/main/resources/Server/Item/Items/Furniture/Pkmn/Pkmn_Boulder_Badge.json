@@ -1,0 +1,71 @@
+{
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Pkmn_Boulder_Badge.name"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Furniture.Containers",
+    "PortableMonstrosities.Furniture"
+  ],
+  "Set": "Furniture_Pkmn",
+  "BlockType": {
+    "BlockParticleSetId": "Metal",
+    "BlockSoundSetId": "Metal",
+    "CustomModel": "Blocks/Decorative_Sets/Pkmn/Boulder_Badge/Model.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Decorative_Sets/Pkmn/Boulder_Badge/Texture.png",
+        "Weight": 1
+      }
+    ],
+    "DrawType": "Model",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Woods",
+        "DropList": {
+          "Container": {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Pkmn_Boulder_Badge",
+              "QuantityMin": 1,
+              "QuantityMax": 1
+            }
+          }
+        }
+      }
+    },
+    "HitboxType": "Painting",
+    "Material": "Empty",
+    "Opacity": "Transparent",
+    "Support": {
+      "North": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "NESW",
+    "ParticleColor": "#625c5a"
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 1.2,
+    "Rotation": [
+      330,
+      330,
+      0
+    ],
+    "Translation": [
+      -9.5,
+      -7
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "ItemLevel": 5,
+  "MaxStack": 10,
+  "Icon": "Icons/ItemsGenerated/Pkmn_Boulder_Badge.png"
+}
