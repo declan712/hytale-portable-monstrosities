@@ -1,0 +1,288 @@
+{
+  "Parent": "Template_Pkmn",
+  "Model": "NPC/Pkmn/Template_Ghost/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Template_Ghost/Models/Texture.png",
+  "EyeHeight": 0.45,
+  "HitBox": {
+    "Max": {
+      "X": 0.4,
+      "Y": 0.9,
+      "Z": 0.4
+    },
+    "Min": {
+      "X": -0.4,
+      "Y": 0,
+      "Z": -0.4
+    }
+  },
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 180,
+        "Min": -180
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Max": 180,
+        "Min": -180
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Run.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Alerted.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Haunter_Cry"
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Run.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Run.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Jump.blockyanim"
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Run.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "FluidWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Run.blockyanim",
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Damage/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Haunter_Cry"
+        }
+      ]
+    },
+    "Despawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Ghost/Animations/Default/Despawn.blockyanim",
+          "Looping": false
+        }
+      ]
+    }
+  },
+  "MinScale": 0.9,
+  "MaxScale": 1.1,
+  "IconProperties": {
+    "Scale": 0.4,
+    "Rotation": [
+      15,
+      306,
+      357
+    ],
+    "Translation": [
+      2,
+      -37
+    ]
+  }
+}

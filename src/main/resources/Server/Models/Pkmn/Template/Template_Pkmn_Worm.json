@@ -1,0 +1,81 @@
+{
+  "Parent": "Scarak_Louse",
+  "Model": "NPC/Pkmn/Template_Worm/Models/Model.blockymodel",
+  "Texture": "NPC/Pkmn/Template_Worm/Models/Texture.png",
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Worm/Animations/Default/Idle.blockyanim"
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Worm/Animations/Default/Walk.blockyanim",
+          "Speed": 2.5
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Worm/Animations/Default/Walk_Backward.blockyanim"
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Worm/Animations/Default/Run.blockyanim",
+          "Speed": 1.5
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Worm/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.3
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Worm/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.3
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Pkmn/Template_Worm/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.3
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Scarak_Louse/Animations/Default/Alerted.blockyanim",
+          "BlendingDuration": 0.2,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Caterpie_Cry"
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Beast/Scarak_Louse/Animations/Default/Spawn.blockyanim",
+          "BlendingDuration": 0,
+          "Looping": false,
+          "SoundEventId": "SFX_Pkmn_Caterpie_Cry"
+        }
+      ]
+    }
+  }
+}
