@@ -1,0 +1,25 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Ponyta",
+    "Type1": "FireType",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "MaxSpeed": 9,
+    "IsMountable": false,
+    "CanEvolve": "true",
+    "EvolveRequiredLevel": [
+      40,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Rapidash_Tamed"
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Ponyta.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

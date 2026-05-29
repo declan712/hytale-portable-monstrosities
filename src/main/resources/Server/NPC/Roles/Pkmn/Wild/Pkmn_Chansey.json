@@ -1,0 +1,29 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Chansey",
+    "Type1": "NormalType",
+    "IsMemory": true,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "BaseStats": [
+      250,
+      5,
+      5,
+      35,
+      105,
+      50
+    ],
+    "CaptureDifficulty": 0.575,
+    "TameRoleChange": "Pkmn_Chansey_Tamed",
+    "MaxSpeed": 5
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Chansey.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Drowzee",
+    "Type1": "PsychicType",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "MaxSpeed": 4.2,
+    "IsMountable": false,
+    "CanEvolve": "true",
+    "EvolveRequiredLevel": [
+      26,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Hypno_Tamed"
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Drowzee.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

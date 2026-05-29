@@ -1,0 +1,29 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Mew",
+    "Type1": "PsychicType",
+    "IsMemory": true,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "BaseStats": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "CaptureDifficulty": 0.325,
+    "TameRoleChange": "Pkmn_Mew_Tamed",
+    "MaxSpeed": 10
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Mew.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

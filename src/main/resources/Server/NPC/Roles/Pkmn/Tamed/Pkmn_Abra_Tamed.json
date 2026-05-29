@@ -1,0 +1,25 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Tamed",
+  "Modify": {
+    "Appearance": "Pkmn_Abra",
+    "Type1": "PsychicType",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "MaxSpeed": 9,
+    "IsMountable": false,
+    "CanEvolve": "true",
+    "EvolveRequiredLevel": [
+      16,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Kadabra_Tamed"
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Abra.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

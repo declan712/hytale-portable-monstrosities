@@ -1,0 +1,30 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Rhyhorn",
+    "Type1": "GroundType",
+    "IsMemory": true,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "Type2": "RockType",
+    "BaseStats": [
+      80,
+      85,
+      95,
+      30,
+      30,
+      25
+    ],
+    "CaptureDifficulty": 0.75,
+    "TameRoleChange": "Pkmn_Rhyhorn_Tamed",
+    "MaxSpeed": 2.5
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Rhyhorn.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

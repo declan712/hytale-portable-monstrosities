@@ -1,0 +1,30 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Pkmn_Predator",
+  "Modify": {
+    "Appearance": "Pkmn_Paras",
+    "Type1": "BugType",
+    "IsMemory": true,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "Type2": "GrassType",
+    "BaseStats": [
+      35,
+      70,
+      55,
+      45,
+      55,
+      25
+    ],
+    "CaptureDifficulty": 0.85,
+    "TameRoleChange": "Pkmn_Paras_Tamed",
+    "MaxSpeed": 2.5
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pkmn_Paras.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
