@@ -33,7 +33,9 @@ import com.hypixel.hytale.server.core.entity.LivingEntity;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.inventory.Inventory;
+import com.hypixel.hytale.server.core.inventory.InventoryComponent;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
+import com.hypixel.hytale.server.core.inventory.InventoryComponent.Hotbar;
 import com.hypixel.hytale.server.core.modules.block.BlockModule;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.EntityScaleComponent;
@@ -52,6 +54,7 @@ import com.hypixel.hytale.server.npc.NPCPlugin;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
+import dev.hytalemodding.components.PkmnCoopBlock;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.util.PkmnBaseStatList;
 import dev.hytalemodding.util.PkmnStatUtils;
@@ -258,7 +261,9 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         }
 
         LivingEntity livingEntity = (LivingEntity) caster;
+        Hotbar hotbarComponent    = commandBuffer.getComponent(ref, InventoryComponent.Hotbar.getComponentType());
         Inventory    inventory    = livingEntity.getInventory();
+        byte activeHotbarSlot     = hotbarComponent.getActiveSlot();
         byte         hotbarSlot   = inventory.getActiveHotbarSlot();
 
         CapturedNPCMetadata existingMeta = (CapturedNPCMetadata)
@@ -297,10 +302,8 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
 
         PkmnCaptureMetadata existingCaptureMeta = item.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
             // LOGGER.atInfo().log("NPC IS not?");
-        if(existingCaptureMeta == null ){
-            fail(context);
-            return;
-        }
+        if(existingCaptureMeta == null ){ fail(context); return; }
+        
         String npcStatus = existingCaptureMeta.getNpcStatus();
         if (npcStatus==null) npcStatus="Healthy";
         if(npcStatus == "Fainted"){
@@ -325,20 +328,25 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                 .withMetadata(PkmnCaptureMetadata.KEYED_CODEC, existingCaptureMeta)
                 .withState("Active");
 
+
+        // spawn into coop
         if (blockRef != null && blockRef.isValid()) {
             Store<ChunkStore> chunkStore         = world.getChunkStore().getStore();
-            CoopBlock         coopBlock = (CoopBlock) chunkStore.getComponent(blockRef, CoopBlock.getComponentType());
+            PkmnCoopBlock coopBlock = (PkmnCoopBlock) chunkStore.getComponent(blockRef, PkmnCoopBlock.getComponentType());
             if (coopBlock != null) {
-                WorldTimeResource worldTime = (WorldTimeResource)
-                    commandBuffer.getResource(WorldTimeResource.getResourceType());
+                WorldTimeResource worldTime = commandBuffer.getResource(WorldTimeResource.getResourceType());
                 if (coopBlock.tryPutResident(existingMeta, worldTime)) {
-                    world.execute(() -> coopBlock.ensureSpawnResidentsInWorld(
-                        world,
-                        world.getEntityStore().getStore(),
-                        new Vector3d(pos.x, pos.y, pos.z),
-                        new Vector3d(Vector3dUtil.FORWARD)
-                    ));
-                    inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
+                    world.execute(() -> {
+                        coopBlock.ensureSpawnResidentsInWorld(
+                            world,
+                            world.getEntityStore().getStore(),
+                            new Vector3d(pos.x, pos.y, pos.z),
+                            new Vector3d(Vector3dUtil.FORWARD)
+                        );
+                    });
+                    // TODO: return withState default
+                    hotbarComponent.getInventory().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
+                    // inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
                     context.getState().state = InteractionState.Finished;
                 } else {
                     // LOGGER.atInfo().log("Unable to add new resident to coop");
@@ -347,7 +355,8 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                 return;
             }
         }
-        
+
+        // spawn in world
         spawnCapturedCreature(
             world, 
             commandBuffer, 
@@ -618,7 +627,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                 commandBuffer.putComponent(
                     newEntityRef, EntityModule.get().getEntityScaleComponentType(), scaleComponent);
             }
-            
 
             commandBuffer.putComponent(newEntityRef,PkmnStatsComponent.getComponentType(),pkmnStats);
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
+import javax.annotation.Nonnull;
 
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
@@ -29,7 +29,6 @@ import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 import au.ellie.hyui.builders.HudBuilder;
 import au.ellie.hyui.builders.HyUIHud;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
-
 import dev.hytalemodding.ui.PkmnPartySlot;
 import dev.hytalemodding.util.PkmnStatUtils;
 
@@ -92,10 +91,10 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
 
 
     private void updateSlots(
-        @NonNullDecl HudBuilder hud,
-        @NonNullDecl List<PkmnPartySlot> party,
-        @NonNullDecl List<PkmnPartySlot> oldParty,
-        @NonNullDecl String playerKey
+        @Nonnull HudBuilder hud,
+        @Nonnull List<PkmnPartySlot> party,
+        @Nonnull List<PkmnPartySlot> oldParty,
+        @Nonnull String playerKey
     ){
         // HudBuilder hud = builderCache.getOrDefault(playerKey, initialBuilder);
         if(partiesEqual(oldParty, party)) return;
@@ -183,8 +182,8 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
     }
 
     private void setSlots(
-        @NonNullDecl HudBuilder hud,
-        @NonNullDecl List<PkmnPartySlot> party
+        @Nonnull HudBuilder hud,
+        @Nonnull List<PkmnPartySlot> party
     ) {
 
         for (var i = 1; i <= MAX_SLOTS; i++) {
@@ -235,11 +234,11 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
 
     @Override
     protected void execute(
-            @NonNullDecl CommandContext context, 
-            @NonNullDecl Store<EntityStore> store, 
-            @NonNullDecl Ref<EntityStore> ref, 
-            @NonNullDecl PlayerRef playerRef,
-            @NonNullDecl World world
+            @Nonnull CommandContext context, 
+            @Nonnull Store<EntityStore> store, 
+            @Nonnull Ref<EntityStore> ref, 
+            @Nonnull PlayerRef playerRef,
+            @Nonnull World world
         ) {
             Ref<EntityStore> sender = context.senderAsPlayerRef();
             if (sender == null || !sender.isValid()) return;
@@ -255,8 +254,19 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
                 for (CustomUIHud customHud : customHuds.values()) {
                     LOGGER.atInfo().log("    - "+customHud.getKey());
                 }
-
             }
+
+            // CustomUIHud partyHUD = hudManager.getCustomHud(PkmnPartyHUD.HUD_KEY);
+            // if (partyHUD != null) {
+            //     playerRef.sendMessage(Message.raw("HUD exists"));
+            //     hudManager.removeCustomHud(playerRef, PkmnPartyHUD.HUD_KEY);
+            //     return;
+            // }
+            // playerRef.sendMessage(Message.raw("HUD does not exist"));
+            // PkmnPartyHUD newHUD = new PkmnPartyHUD(playerRef, context,store,ref,world);
+            // hudManager.addCustomHud(playerRef,newHUD);
+            // return;
+            
             
 
             HyUIHud existingHud = hudCache.getOrDefault(playerKey,null);
@@ -275,49 +285,29 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
             HudBuilder hud = HudBuilder.hudForPlayer(playerRef)
                 .fromUIFile("Pages/"+UI_FILE)
                 .enablePersistentElementEdits(true)
-                .withRefreshRate(2000);
+                .withRefreshRate(1000);
 
             setSlots(hud,initialParty);
 
             hud.onRefresh(hyUIHud->{
-                // var time = world.getTick();
-                // hyUIHud.editById("#Pkmn1 #PkmnName",LabelBuilder.class, e -> {
-                //     e.withText("counter: "+String.valueOf(time));
-                // }).updatePage(true);
-
-
                 world.execute(()->{
                     List<PkmnPartySlot> oldParty = partyCache.getOrDefault(playerKey, new ArrayList<PkmnPartySlot>());
                     List<PkmnPartySlot> newParty = buildPartyFromInventory(store,ref,world,hotbar,storage,backpack);
                     updateSlots(hud, newParty, oldParty, playerKey);
-
                     hyUIHud.update(hud);
-                    hyUIHud.refreshOrRerender(true,false);
-                    
-                    // hud.updateExisting(hyUIHud);
-                    // context.sendMessage(Message.raw("Try to update: "+hyUIHud.getKey()));
-                    // hyUIHud.
-                    // context.sendMessage(Message.raw("slots updated"));
-                    // context.sendMessage(Message.raw("."));
                 });
-                hyUIHud.update(hud);
-                hyUIHud.refreshOrRerender(true,false);
-
-                // context.sendMessage(Message.raw("hud updated"));
             });
             builderCache.put(playerKey, hud);
             HyUIHud huh = hud.show();
-            // .show(playerRef);
             context.sendMessage(Message.raw("HUD Key = "+huh.getKey()));
             hudCache.put(playerKey,huh);
-            // context.sendMessage(Message.raw(huh.name));
     }
 
 
     private static List<PkmnPartySlot> buildPartyFromInventory(
-        @NonNullDecl Store<EntityStore> store,
-        @NonNullDecl Ref<EntityStore> playerRef,
-        @NonNullDecl World world,
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> playerRef,
+        @Nonnull World world,
         InventoryComponent.Hotbar hotbar,
         InventoryComponent.Storage storage,
         InventoryComponent.Backpack backpack
@@ -336,9 +326,9 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
 
 
     private static void collectFromContainer(
-        @NonNullDecl ItemContainer container,
-        @NonNullDecl List<PkmnPartySlot> party,
-        @NonNullDecl World world
+        @Nonnull ItemContainer container,
+        @Nonnull List<PkmnPartySlot> party,
+        @Nonnull World world
     ) {
         container.forEach((slot, itemStack) -> {
             if(validItems.contains(itemStack.getItemId())){
@@ -351,7 +341,7 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
 
     private static PkmnPartySlot tryExtractSlot(
         ItemStack item, 
-        @NonNullDecl World world
+        @Nonnull World world
     ) {
         
         if (item == null) return null;

@@ -4,7 +4,7 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
+import javax.annotation.Nonnull;
 
 import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -224,7 +224,7 @@ public class CreatureScannerInteraction extends SimpleInstantInteraction {
 
 
     private void notifyPlayer(
-        @NonNullDecl PlayerRef playerRef,
+        @Nonnull PlayerRef playerRef,
         @Nullable String topText,
         @Nullable String bottomText
     ) {

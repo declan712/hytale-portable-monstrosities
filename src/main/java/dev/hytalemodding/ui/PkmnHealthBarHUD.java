@@ -1,6 +1,6 @@
 package dev.hytalemodding.ui;
 
-import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
+import javax.annotation.Nonnull;
 
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.player.hud.CustomUIHud;
@@ -13,15 +13,15 @@ public class PkmnHealthBarHUD extends CustomUIHud {
     private int pkmnLvl;
     private int pkmnHp;
     private int pkmnMaxHp;
-//    public TestUIHUD(@NonNullDecl PlayerRef playerRef, String file) {
+//    public TestUIHUD(@Nonnull PlayerRef playerRef, String file) {
 //       super(playerRef);
 //       this.file = file;
 //    }
 
 
     public PkmnHealthBarHUD(
-        @NonNullDecl PlayerRef playerRef,
-        @NonNullDecl String key,
+        @Nonnull PlayerRef playerRef,
+        @Nonnull String key,
         String name,
         int level,
         int currentHealth,
@@ -35,8 +35,8 @@ public class PkmnHealthBarHUD extends CustomUIHud {
         // this.file = file;
     }
     public PkmnHealthBarHUD(
-        @NonNullDecl PlayerRef playerRef,
-        @NonNullDecl String key
+        @Nonnull PlayerRef playerRef,
+        @Nonnull String key
     ) {
         super(playerRef,key);
         // this.file = file;
@@ -49,11 +49,11 @@ public class PkmnHealthBarHUD extends CustomUIHud {
     //     uiEventBuilder.addEventBinding(CustomUIEventBindingType.ValueChanged, "#MyInput", EventData.of("@MyInput", "#MyInput.Value"), false);
     // }
 
-//    protected void build(@NonNullDecl UICommandBuilder uiCommandBuilder) {
+//    protected void build(@Nonnull UICommandBuilder uiCommandBuilder) {
 //       uiCommandBuilder.append("Pages/" + this.file);
 //    }
     @Override
-    protected void build(@NonNullDecl UICommandBuilder uiCommandBuilder) {
+    protected void build(@Nonnull UICommandBuilder uiCommandBuilder) {
         uiCommandBuilder.append("Pages/" + this.file);
 
         if(pkmnName == null) pkmnName="pkmn";
@@ -69,17 +69,17 @@ public class PkmnHealthBarHUD extends CustomUIHud {
     }
 
 
-    public void updateName(String newText,@NonNullDecl UICommandBuilder uiCommandBuilder) {
+    public void updateName(String newText,@Nonnull UICommandBuilder uiCommandBuilder) {
         uiCommandBuilder.set("#PkmnName.TextSpans", Message.raw(newText));
         update(false, uiCommandBuilder); // false = don't clear existing UI
     }
 
-    public void updateLevel(String newText,@NonNullDecl UICommandBuilder uiCommandBuilder) {
+    public void updateLevel(String newText,@Nonnull UICommandBuilder uiCommandBuilder) {
         uiCommandBuilder.set("#PkmnLevel.TextSpans", Message.raw(newText));
         update(false, uiCommandBuilder); // false = don't clear existing UI
     }
 
-    public void updateHealth(String newText,@NonNullDecl UICommandBuilder uiCommandBuilder) {
+    public void updateHealth(String newText,@Nonnull UICommandBuilder uiCommandBuilder) {
         uiCommandBuilder.set("#PkmnHp.TextSpans", Message.raw(newText));
         update(false, uiCommandBuilder); // false = don't clear existing UI
     }
@@ -103,17 +103,17 @@ public class PkmnHealthBarHUD extends CustomUIHud {
 // import com.hypixel.hytale.server.core.entity.entities.player.hud.CustomUIHud;
 // import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 // import com.hypixel.hytale.server.core.universe.PlayerRef;
-// import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
+// import javax.annotation.Nonnull;
 
 // public class TestUIHUD extends CustomUIHud {
 //    private final String file;
 
-//    public TestUIHUD(@NonNullDecl PlayerRef playerRef, String file) {
+//    public TestUIHUD(@Nonnull PlayerRef playerRef, String file) {
 //       super(playerRef);
 //       this.file = file;
 //    }
 
-//    protected void build(@NonNullDecl UICommandBuilder uiCommandBuilder) {
+//    protected void build(@Nonnull UICommandBuilder uiCommandBuilder) {
 //       uiCommandBuilder.append("Pages/" + this.file);
 //    }
 // }

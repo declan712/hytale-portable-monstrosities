@@ -1,16 +1,21 @@
 package dev.hytalemodding;
 
+import com.hypixel.hytale.builtin.adventure.farming.component.CoopResidentComponent;
+import com.hypixel.hytale.builtin.adventure.farming.states.CoopBlock;
 import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import dev.hytalemodding.commands.PkmnHudTestCommand;
 // import dev.hytalemodding.commands.PkmnPartyHudCommand;
 // import dev.hytalemodding.commands.PkmnTestCommand;
 import dev.hytalemodding.components.FaintedPkmnComponent;
+import dev.hytalemodding.components.PkmnCoopBlock;
+import dev.hytalemodding.components.PkmnCoopBlock.PkmnCoopResident;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.components.PkmnStorageComponent;
 import dev.hytalemodding.events.InitPlayerStatsEvent;
@@ -37,6 +42,8 @@ public class PortableMonstrosities extends JavaPlugin {
     private ComponentType<EntityStore, PkmnStatsComponent> pkmnStatsComponent;
     private ComponentType<EntityStore, FaintedPkmnComponent> faintedPkmnComponent;
     private ComponentType<EntityStore, PkmnStorageComponent> pkmnStorageComponent;
+    private ComponentType<ChunkStore, PkmnCoopBlock> pkmnCoopBlockComponent;
+    
     // private ComponentType<EntityStore, PkmnCaptureMetadata> pkmnCaptureMetadata;
 
 
@@ -80,6 +87,10 @@ public class PortableMonstrosities extends JavaPlugin {
                 .registerComponent(FaintedPkmnComponent.class,"faintedPkmnComponent", FaintedPkmnComponent.CODEC);
         this.pkmnStorageComponent = this.getEntityStoreRegistry()
                 .registerComponent(PkmnStorageComponent.class,"pkmnStorageComponent", PkmnStorageComponent.CODEC);
+
+        this.pkmnCoopBlockComponent = this.getChunkStoreRegistry()
+                .registerComponent(PkmnCoopBlock.class,"PkmnCoop", PkmnCoopBlock.CODEC);
+
         // this.pkmnCaptureMetadata = this.getEntityStoreRegistry()
         //         .registerComponent(PkmnCaptureMetadata.class,"kmnCapture", PkmnCaptureMetadata.CODEC);
 
@@ -96,6 +107,9 @@ public class PortableMonstrosities extends JavaPlugin {
     }
     public ComponentType<EntityStore, PkmnStorageComponent> getPkmnStorageComponentType() {
         return this.pkmnStorageComponent;
+    }
+    public ComponentType<ChunkStore, PkmnCoopBlock> getPkmnCoopBlockComponentType() {
+        return this.pkmnCoopBlockComponent;
     }
     // public ComponentType<EntityStore, PokmnCaptureMetadata> getPkmnCaptureMetadataType() {
     //     return this.pkmnCaptureMetadata;

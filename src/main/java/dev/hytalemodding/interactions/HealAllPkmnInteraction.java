@@ -174,7 +174,7 @@ public class HealAllPkmnInteraction extends SimpleInstantInteraction{
     //     context.getState().state = InteractionState.Failed;
     // }
 
-        private static void fail(@Nonnull InteractionContext context, String logMessage) {
+    private static void fail(@Nonnull InteractionContext context, String logMessage) {
         // if(logMessage != null) {  LOGGER.atInfo().log(logMessage); }
         context.getState().state = InteractionState.Failed;
     }
