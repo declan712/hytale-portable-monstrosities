@@ -3,7 +3,6 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Charmeleon",
-    "AttitudeGroup": "Predators",
     "AttractiveItemSet": [
       "Ingredient_Powder_Boom"
     ],
@@ -12,47 +11,22 @@
     "IsMountable": false,
     "EvolveRequiredLevel": [36,100],
     "EvolveRoleChange": "Pkmn_Charizard_Tamed",
-    "MaxHealth": 100,
-    "MaxSpeed": 10,
+    "MaxSpeed": 8,
     "WanderRadius": 12,
     "DropList": "Drop_Pkmn_Charmeleon",
-    "Attack": "Root_NPC_Pkmn_Charmeleon_Attack",
+    "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Flamethrower_Damage":{
+      "Move_Start_3": {
         "Interactions": [
           {
-            "Type": "DamageEntity",
-            "DamageCalculator": {
-              "BaseDamage": {
-                "Physical": 8
-              }
-            },
-            "DamageEffects": {
-              "Knockback": {
-                "Type": "Force",
-                "VelocityConfig": {
-                  "GroundResistance": 0.804,
-                  "GroundResistanceMax": 0.0,
-                  "AirResistance": 0.972,
-                  "AirResistanceMax": 0.028,
-                  "Threshold": 1.0,
-                  "Style": "Exp"
-                },
-                "Direction": {
-                  "X": 1.0,
-                  "Y": 2.0,
-                  "Z": 3.0
-                },
-                "Force": 0.2,
-                "VelocityType": "Set"
-              },
-              "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_Impact",
-              "WorldParticles": [
-                {
-                  "SystemId": "Impact_Sword_Charged"
-                }
-              ]
-            }
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
           }
         ]
       }

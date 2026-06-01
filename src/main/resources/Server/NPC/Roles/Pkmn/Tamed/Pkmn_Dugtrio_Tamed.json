@@ -9,8 +9,7 @@
     ],
     "Type1": "GroundType",
     "IsMountable": false,
-    "MaxHealth": 38,
-    "MaxSpeed": 8,
+    "MaxSpeed": 12,
     "WanderRadius": 10,
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2.5,
@@ -21,6 +20,20 @@
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
     },
     "MemoriesNameOverride": "Dugtrio",
     "NameTranslationKey": {

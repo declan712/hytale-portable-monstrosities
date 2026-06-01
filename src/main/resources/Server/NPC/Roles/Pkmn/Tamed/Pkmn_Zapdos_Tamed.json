@@ -4,12 +4,18 @@
   "Modify": {
     "Appearance": "Pkmn_Zapdos",
     "Type1": "ElectricType",
+    "Type2": "FlyingType",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "FlyingType",
     "MaxSpeed": 10,
-    "IsMountable": false
+    "IsMountable": true,
+    "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thundershock"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Thundershock"}]}
+    }
   },
   "Parameters": {
     "NameTranslationKey": {

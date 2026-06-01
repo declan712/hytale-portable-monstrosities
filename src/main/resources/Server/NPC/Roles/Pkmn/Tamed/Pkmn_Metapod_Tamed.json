@@ -12,9 +12,7 @@
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
     ],
-    "AttitudeGroup": "Prey",
-    "MaxHealth": 20,
-    "MaxSpeed": 1,
+    "MaxSpeed": 3,
     "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2,
@@ -22,6 +20,12 @@
     "CombatMovingRelativeSpeed": 0.6,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
+    },
+    "_InteractionVars":{
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]}
     }
   },
   "Parameters": {

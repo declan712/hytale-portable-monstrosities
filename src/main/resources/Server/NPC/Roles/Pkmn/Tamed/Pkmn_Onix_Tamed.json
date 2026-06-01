@@ -4,12 +4,17 @@
   "Modify": {
     "Appearance": "Pkmn_Onix",
     "Type1": "RockType",
+    "Type2": "GroundType",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "GroundType",
     "MaxSpeed": 7,
-    "IsMountable": false
+    "IsMountable": true,
+    "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]}
+    }
   },
   "Parameters": {
     "NameTranslationKey": {

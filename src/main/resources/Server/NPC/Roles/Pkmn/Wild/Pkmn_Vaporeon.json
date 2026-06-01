@@ -13,7 +13,6 @@
     "CaptureDifficulty": 0.4,
     "AttractiveItemSetParticles": "Want_Food_Corn",
     "TameRoleChange": "Pkmn_Vaporeon_Tamed",
-    "MaxHealth": 130,
     "MaxSpeed": 6.5,
     "WanderRadius": 10,
     "ViewRange": 12,
@@ -59,14 +58,7 @@
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Vaporeon",
     "_InteractionVars": {
-      "Move_Start_1": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Bubble",
-            "$Comment": "Sets animations and delay before hit"
-          }
-        ]
-      }
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bubble"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
@@ -74,7 +66,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Eevee.name",
+      "Value": "server.npcRoles.Pkmn_Vaporeon.name",
       "Description": "Translation key for NPC name display"
     }
   }

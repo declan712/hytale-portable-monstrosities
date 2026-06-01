@@ -3,7 +3,6 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Lickitung",
-    "AttitudeGroup": "PreyBig",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
     ],
@@ -11,11 +10,10 @@
     "IsMountable": false,
     "WanderRadius": 6,
     "DropList": "Drop_Toad_Rhino",
-    "MaxSpeed": 8,
+    "MaxSpeed": 3,
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 6,
     "CombatBehaviorDistance": 8,
-    "MaxHealth": 124,
     "_InteractionVars": {
       "Move_Start_1": {
         "Interactions": [
@@ -77,6 +75,20 @@
             }
           }
         ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
       }
     },
     "NameTranslationKey": {
@@ -85,7 +97,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Toad_Rhino.name",
+      "Value": "server.npcRoles.Pkmn_Lickitung.name",
       "Description": "Translation key for NPC name display"
     }
   }

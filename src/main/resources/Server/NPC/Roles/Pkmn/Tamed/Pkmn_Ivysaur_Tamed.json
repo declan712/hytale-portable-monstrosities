@@ -8,30 +8,18 @@
     "EvolveRoleChange": "Pkmn_Venusaur_Tamed",
     "Type1": "GrassType",
     "Type2": "PoisonType",
-    "AttitudeGroup": "Predators",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
     ],
     "IsMountable": false,
-    "MaxHealth": 100,
-    "MaxSpeed": 8,
+    "MaxSpeed": 6,
     "WanderRadius": 12,
     "Attack": "Root_Pkmn_Attack_Melee",
     "DropList": "Drop_Pkmn_T1_Grass",
     "_InteractionVars": {
-      "Melee_Damage": {
+      "Move_Start_1": {
         "Interactions": [
-          {
-            "Parent": "NPC_Attack_Melee_Damage",
-            "$Comment": "Sets damage and onhit effects",
-            "DamageCalculator": {
-              "Type": "Absolute",
-              "BaseDamage": {
-                "Physical": 28
-              },
-              "RandomPercentageModifier": 0.1
-            }
-          }
+          "Pkmn_Moves_Vine_Whip"
         ]
       }
     },

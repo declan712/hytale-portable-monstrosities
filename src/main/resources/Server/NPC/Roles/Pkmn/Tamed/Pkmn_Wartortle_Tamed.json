@@ -3,7 +3,6 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Wartortle",
-    "AttitudeGroup": "Predators",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn"
     ],
@@ -13,11 +12,14 @@
     "EvolveRequiredLevel": [36,100],
     "EvolveRoleChange": "Pkmn_Blastoise_Tamed",
     "MaxHealth": 100,
-    "MaxSpeed": 8,
+    "MaxSpeed": 5.8,
     "WanderRadius": 12,
     "Attack": "Root_Pkmn_Attack_Melee",
     "DropList": "Drop_Pkmn_T0_Chitin",
     "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bubble"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

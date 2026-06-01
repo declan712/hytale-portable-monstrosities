@@ -4,12 +4,18 @@
   "Modify": {
     "Appearance": "Pkmn_Moltres",
     "Type1": "FireType",
+    "Type2": "FlyingType",
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "FlyingType",
     "MaxSpeed": 9,
-    "IsMountable": false
+    "IsMountable": true,
+    "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
+    }
   },
   "Parameters": {
     "NameTranslationKey": {

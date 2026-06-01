@@ -12,15 +12,24 @@
     "IsMountable": false,
     "EvolveRequiredLevel": [20,100],
     "EvolveRoleChange": "Pkmn_Raticate_Tamed",
-    "AttitudeGroup": "Prey",
-    "MaxHealth": 21,
-    "MaxSpeed": 10,
+    "MaxSpeed": 7.2,
     "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2,
     "ChaseRelativeSpeed": 0.6,
     "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Rat_Default",
+              "ItemAnimationId": "Bite"
+            }
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

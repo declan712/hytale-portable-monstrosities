@@ -3,7 +3,7 @@
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Pidgey",
-    "MaxSpeed": 5,
+    "MaxSpeed": 5.6,
     "MountAnchorX":0,
     "MountAnchorY":0.75,
     "MountAnchorZ":0.25,
@@ -21,6 +21,7 @@
     "EvolveRoleChange": "Pkmn_Pidgeotto_Tamed",
     "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

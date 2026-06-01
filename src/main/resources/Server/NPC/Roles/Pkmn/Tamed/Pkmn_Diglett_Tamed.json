@@ -13,8 +13,7 @@
     "IsMountable": false,
     "EvolveRequiredLevel": [26,100],
     "EvolveRoleChange": "Pkmn_Dugtrio_Tamed",
-    "MaxHealth": 38,
-    "MaxSpeed": 8,
+    "MaxSpeed": 9.5,
     "WanderRadius": 10,
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2.5,
@@ -25,6 +24,13 @@
     "ChaseRelativeSpeed": 1,
     "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

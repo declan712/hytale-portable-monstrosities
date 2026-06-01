@@ -3,8 +3,7 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Squirtle",
-    "MaxSpeed": 2,
-    "MaxHealth": 50,
+    "MaxSpeed": 4.3,
     "MountAnchorX":0,
     "MountAnchorY":0.5,
     "MountAnchorZ":0.25,
@@ -17,6 +16,9 @@
     "Attack": "Root_Pkmn_Attack_Melee",
     "DropList": "Drop_Pkmn_T0_Chitin",
     "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bubble"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

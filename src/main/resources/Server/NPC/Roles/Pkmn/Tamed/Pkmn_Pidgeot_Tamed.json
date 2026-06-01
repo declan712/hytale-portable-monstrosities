@@ -3,7 +3,7 @@
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Pidgeot",
-    "MaxSpeed": 12,
+    "MaxSpeed": 10.0,
     "MountAnchorX":0,
     "MountAnchorY":0.75,
     "MountAnchorZ":0.25,
@@ -19,10 +19,12 @@
     "IsMountable": true,
     "Attack": "Root_Pkmn_Attack_Melee",
     "MemoriesNameOverride": "Pidgeot",
-    "_InteractionVars": {
-    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
+    },
+    "_InteractionVars": {
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]}
     }
   },
   "Parameters": {

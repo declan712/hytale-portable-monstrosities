@@ -10,11 +10,23 @@
     "Type1": "NormalType",
     "IsMountable": true,
     "WanderRadius": 20,
+    "MaxSpeed": 9.7,
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2.5,
     "ChaseRelativeSpeed": 0.6,
     "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Rat_Default",
+              "ItemAnimationId": "Bite"
+            }
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

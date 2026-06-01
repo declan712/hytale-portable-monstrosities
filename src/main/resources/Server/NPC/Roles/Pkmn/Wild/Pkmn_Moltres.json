@@ -12,10 +12,10 @@
     "WildLevelMin": 50,
     "WildLevelMax": 55,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Pidgeot_Tamed",
+    "TameRoleChange": "Pkmn_Moltres_Tamed",
     "IsTameable": false,
     "DropList": "Drop_Pkmn_T2_Hide",
-    "MaxSpeed": 8.5,
+    "MaxSpeed": 9,
     "Timid": false,
     "IsMemory": true,
     "MemoriesNameOverride": "Moltres",
@@ -23,6 +23,10 @@
       "Compute": "NameTranslationKey"
     },
     "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
     }
   },
   "Parameters": {

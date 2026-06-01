@@ -4,7 +4,7 @@
   "Modify": {
     "Appearance": "Pkmn_Graveler",
     "DropList": "Drop_Pkmn_Geodude",
-    "MaxSpeed": 8,
+    "MaxSpeed": 3.5,
     "Type1": "RockType",
     "Type2": "GroundType",
     "CanEvolve": true,
@@ -20,6 +20,22 @@
     ],
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
+    },
+    "_InteractionVars": {
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
     }
   },
   "Parameters": {

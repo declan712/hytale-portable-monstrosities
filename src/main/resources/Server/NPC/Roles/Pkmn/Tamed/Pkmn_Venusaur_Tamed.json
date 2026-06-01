@@ -3,7 +3,6 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Venusaur",
-    "AttitudeGroup": "Prey",
     "FlockArray": [
       "Pkmn_Bulbasaur",
       "Pkmn_Ivysaur",
@@ -19,7 +18,6 @@
     "MountAnchorX": 0,
     "MountAnchorY": 2,
     "MountAnchorZ": -1,
-    "MaxHealth": 400,
     "MaxSpeed": 8,
     "WanderRadius": 12,
     "Attack": "Root_Pkmn_Attack_Melee",
@@ -28,6 +26,7 @@
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Venusaur",
     "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Vine_Whip"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

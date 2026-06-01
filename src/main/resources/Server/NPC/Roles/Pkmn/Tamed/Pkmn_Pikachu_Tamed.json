@@ -13,7 +13,7 @@
     "EvolveRequiredItem": ["Rock_Gem_Thunder_Stone"],
     "EvolveRoleChange": "Pkmn_Raichu_Tamed",
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "MaxSpeed": 8,
+    "MaxSpeed": 9,
     "WanderRadius": 10,
     "ViewRange": 12,
     "HearingRange": 8,
@@ -23,14 +23,7 @@
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Pikachu",
     "_InteractionVars": {
-      "Move_Start_4": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Thundershock",
-            "$Comment": "Sets animations and delay before hit"
-          }
-        ]
-      }
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Thundershock"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
