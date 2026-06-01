@@ -883,7 +883,17 @@
                         {"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
                         {"Type": "State","State": "Combat"}
                     ]
-                }
+                },
+				{"$Comment": "Get over here",
+					"Sensor": {"Type": "Leash","Range": {"Compute": "SummonerLeashRange"}},
+					"BodyMotion": {
+						"Type": "Seek",
+						"SlowDownDistance": 0.5,
+						"StopDistance": 0.2,
+						"RelativeSpeed": 2.0,
+						"UsePathfinder": true
+					}
+				}
 			]
 		},
 		{"$Comment": "Get out of the water",

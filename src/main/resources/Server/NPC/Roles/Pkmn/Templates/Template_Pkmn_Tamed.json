@@ -844,7 +844,17 @@
                         {"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
                         {"Type": "State","State": "Combat"}
                     ]
-                }
+                },
+				{"$Comment": "Get over here",
+					"Sensor": {"Type": "Leash","Range": {"Compute": "SummonerLeashRange"}},
+					"BodyMotion": {
+						"Type": "Seek",
+						"SlowDownDistance": 0.5,
+						"StopDistance": 0.2,
+						"RelativeSpeed": 2.0,
+						"UsePathfinder": true
+					}
+				}
 			]
 		},
 		{"$Comment": "Get out of the water",
@@ -2786,25 +2796,15 @@
 						"State": "ReturnHome"
 					},
 					"Instructions": [
-						{
-							"$Comment": "Switch to flee state if any flock member engages a target TODO switch to attack if you are very close and can attack? otherwise flee.",
-							"Enabled": {
-								"Compute": "!isEmptyStringArray(FlockArray)"
-							},
+						{"$Comment": "Switch to flee state if any flock member engages a target TODO switch to attack if you are very close and can attack? otherwise flee.",
+							"Enabled": {"Compute": "!isEmptyStringArray(FlockArray)"},
 							"Sensor": {
 								"Type": "Beacon",
 								"Message": "Flock_Attack",
 								"TargetSlot": "LockedTarget",
-								"Range": {
-									"Compute": "HearingRange"
-								}
+								"Range": {"Compute": "HearingRange"}
 							},
-							"Actions": [
-								{
-									"Type": "State",
-									"State": "Alerted"
-								}
-							]
+							"Actions": [{"Type": "State","State": "Alerted"}]
 						},
 						{
 							"Reference": "Component_Instruction_Damage_Check",
@@ -2848,30 +2848,17 @@
 								}
 							]
 						},
-						{
-							"Sensor": {
-								"$Comment": "TODO: make them walk home, expose walking speed?",
-								"Type": "Leash",
-								"Range": {
-									"Compute": "LeashDistance * 0.3"
-								}
-							},
+						{"$Comment": "TODO: make them walk home, expose walking speed?",
+							"Sensor": {"Type": "Leash","Range": {"Compute": "LeashDistance * 0.3"}},
 							"BodyMotion": {
 								"Type": "Seek",
 								"SlowDownDistance": 1,
 								"StopDistance": 0.1,
-								"RelativeSpeed": 1.0,
+								"RelativeSpeed": 2.0,
 								"UsePathfinder": true
 							}
 						},
-						{
-							"Actions": [
-								{
-									"Type": "State",
-									"State": "Idle"
-								}
-							]
-						}
+						{"Actions": [{"Type": "State","State": "Idle"}]}
 					]
 				},
 				{"$Comment": "Flee",

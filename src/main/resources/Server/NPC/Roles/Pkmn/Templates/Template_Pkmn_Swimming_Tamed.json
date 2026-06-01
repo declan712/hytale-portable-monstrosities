@@ -788,9 +788,7 @@
 			"Instructions": [
 				{"$Comment": "Join player flock",
                     "Continue": true,
-                    "Sensor": {
-                        "Type": "Any"
-                    },
+                    "Sensor": {"Type": "Any"},
                     "Instructions": [
                         {
                             "Sensor": {"Type": "Player","Range": 30},
@@ -803,31 +801,15 @@
 					"Sensor": {
 						"Type": "And",
 						"Sensors": [
-							{
-								"Type": "FlockLeader"
-							},
-							{
-								"Type": "Self",
-								"Filters": [
-									{
-										"Type": "Flock",
-										"FlockStatus": "Follower"
-									}
-								]
-							}
+							{"Type": "FlockLeader"},
+							{"Type": "Self","Filters": [{"Type": "Flock","FlockStatus": "Follower"}]}
 						]
 					},
 					"Actions": [
 						{
 							"Type": "Timeout",
-							"Delay": [
-								0.5,
-								2
-							],
-							"Action": {
-								"Type": "SetLeashPosition",
-								"ToTarget": true
-							}
+							"Delay": [0.5,2],
+							"Action": {"Type": "SetLeashPosition","ToTarget": true}
 						}
 					]
 				},
@@ -872,7 +854,17 @@
                         {"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
                         {"Type": "State","State": "Combat"}
                     ]
-                }
+                },
+				{"$Comment": "Get over here",
+					"Sensor": {"Type": "Leash","Range": {"Compute": "SummonerLeashRange"}},
+					"BodyMotion": {
+						"Type": "Seek",
+						"SlowDownDistance": 0.5,
+						"StopDistance": 0.2,
+						"RelativeSpeed": 2.0,
+						"UsePathfinder": true
+					}
+				}
 			]
 		},
 		{"$Comment": "Get out of the water",
@@ -883,24 +875,11 @@
 					"Sensor": {
 						"Type": "And",
 						"Sensors": [
-							{
-								"Type": "InWater"
-							},
-							{
-								"Type": "Not",
-								"Sensor": {
-									"Type": "State",
-									"State": "Panic"
-								}
-							}
+							{"Type": "InWater"},
+							{"Type": "Not","Sensor": {"Type": "MotionController","MotionController": "Dive"}}
 						]
 					},
-					"Actions": [
-						{
-							"Type": "State",
-							"State": "Panic"
-						}
-					]
+					"Actions": [{"Type": "State","State": "Panic"}]
 				}
 			]
 		},
@@ -3211,19 +3190,13 @@
 								}
 							]
 						},
-						{
-							"Sensor": {
-								"$Comment": "TODO: make them walk home, expose walking speed?",
-								"Type": "Leash",
-								"Range": {
-									"Compute": "LeashDistance * 0.3"
-								}
-							},
+						{"$Comment": "TODO: make them walk home, expose walking speed?",
+							"Sensor": {"Type": "Leash","Range": {"Compute": "LeashDistance * 0.3"}},
 							"BodyMotion": {
 								"Type": "Seek",
 								"SlowDownDistance": 1,
 								"StopDistance": 0.1,
-								"RelativeSpeed": 1.0,
+								"RelativeSpeed": 2.0,
 								"UsePathfinder": true
 							}
 						},
