@@ -1,10 +1,11 @@
 {
+  "Parent": "Pokeball",
   "TranslationProperties": {
     "Name": "portablemonstrosities.items.Pokeball_Apricorn.name",
     "Description": "portablemonstrosities.items.Pokeball_Apricorn.description"
   },
-  "Quality": "Uncommon",
-  "ItemLevel": 20,
+  "Quality": "Common",
+  "ItemLevel": 1,
   "Model": "Items/Pokeball_Apricorn/Model.blockymodel",
   "Texture": "Items/Pokeball_Apricorn/Texture.png",
   "MaxStack": 99,
@@ -50,12 +51,12 @@
       -11
     ]
   },
-  "Scale": 0.8,
+  "Scale": 1.25,
   "Light": {
     "Radius": 0,
     "Color": "#003"
   },
-  "Parent": "Pokeball",
+
   "BlockType": {
     "CustomModel": "Items/Pokeball_Apricorn/Model.blockymodel",
     "CustomModelTexture": [
@@ -63,7 +64,7 @@
         "Texture": "Items/Pokeball_Apricorn/Texture.png"
       }
     ],
-    "CustomModelScale": 0.4,
+    "CustomModelScale": 0.6,
     "RandomRotation": "YawStep1",
     "Material": "Empty",
     "BlockSoundSetId": "Metal",
@@ -78,7 +79,7 @@
     "State": {
       "Definitions": {
         "Produce_Ready": {
-          "CustomModelScale": 0.5,
+          "CustomModelScale": 0.75,
           "CustomModelAnimation": "Items/Pokeball/Wobble_Once.blockyanim",
           "Looping": true
         }
@@ -260,7 +261,7 @@
   "State": {
     "Active": {
       "Animation": "Items/Pokeball/Open.blockyanim",
-      "Model": "Items/Pokeball_Great/Pokeball_Great.blockymodel",
+      "Model": "Items/Pokeball_Apricorn/Model.blockymodel",
       "DropOnDeath": false,
       "TranslationProperties": {
         "Name": "portablemonstrosities.items.Pokeball_Apricorn.nameFull",
