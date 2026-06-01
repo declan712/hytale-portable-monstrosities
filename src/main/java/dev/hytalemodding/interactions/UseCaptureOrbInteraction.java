@@ -1,5 +1,6 @@
 package dev.hytalemodding.interactions;
 
+import com.hypixel.hytale.builtin.adventure.farming.config.FarmingCoopAsset;
 import com.hypixel.hytale.builtin.adventure.farming.states.CoopBlock;
 import com.hypixel.hytale.builtin.tagset.TagSetPlugin;
 import com.hypixel.hytale.builtin.tagset.config.NPCGroup;
@@ -36,6 +37,8 @@ import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent.Hotbar;
+import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
+import com.hypixel.hytale.server.core.inventory.container.SimpleItemContainer;
 import com.hypixel.hytale.server.core.modules.block.BlockModule;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.EntityScaleComponent;
@@ -56,8 +59,11 @@ import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnCoopBlock;
 import dev.hytalemodding.components.PkmnStatsComponent;
+import dev.hytalemodding.components.PkmnCoopBlock.PkmnCoopResident;
 import dev.hytalemodding.util.PkmnBaseStatList;
 import dev.hytalemodding.util.PkmnStatUtils;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nonnull;
@@ -332,27 +338,53 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         // spawn into coop
         if (blockRef != null && blockRef.isValid()) {
             Store<ChunkStore> chunkStore         = world.getChunkStore().getStore();
-            PkmnCoopBlock coopBlock = (PkmnCoopBlock) chunkStore.getComponent(blockRef, PkmnCoopBlock.getComponentType());
+
+            CoopBlock coopBlock = (CoopBlock) chunkStore.getComponent(blockRef, CoopBlock.getComponentType());
+
             if (coopBlock != null) {
-                WorldTimeResource worldTime = commandBuffer.getResource(WorldTimeResource.getResourceType());
-                if (coopBlock.tryPutResident(existingMeta, worldTime)) {
-                    world.execute(() -> {
-                        coopBlock.ensureSpawnResidentsInWorld(
-                            world,
-                            world.getEntityStore().getStore(),
-                            new Vector3d(pos.x, pos.y, pos.z),
-                            new Vector3d(Vector3dUtil.FORWARD)
-                        );
-                    });
-                    // TODO: return withState default
-                    hotbarComponent.getInventory().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
-                    // inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
-                    context.getState().state = InteractionState.Finished;
-                } else {
-                    // LOGGER.atInfo().log("Unable to add new resident to coop");
-                    fail(context);
-                }
-                return;
+                // LOGGER.atInfo().log("is coopblock");
+                // if(chunkStore.getComponent(blockRef, PkmnCoopBlock.getPkmnComponentType())==null){
+                //     LOGGER.atInfo().log("no existing PkmnCoopBlock");
+                //     FarmingCoopAsset coopAsset = coopBlock.getCoopAsset();
+                //     if(coopAsset != null){
+                //         String coopID = coopAsset.getId();
+                //         LOGGER.atInfo().log("coopAsset:"+coopID);
+                //         if (coopID=="Coop_Pokeball"){
+                //             LOGGER.atInfo().log("trying to add PkmnCoopBlock");
+                //             ItemContainer coopContainer = new SimpleItemContainer((short)5);
+                //             chunkStore.putComponent(blockRef, 
+                //                 PkmnCoopBlock.getPkmnComponentType(),
+                //                 new PkmnCoopBlock("Coop_Pokeball",new ObjectArrayList<PkmnCoopResident>(),coopContainer)
+                //             );
+                //         }
+                //     }
+                // }
+                // PkmnCoopBlock pkmnCoopBlock = (PkmnCoopBlock) chunkStore.getComponent(blockRef, PkmnCoopBlock.getPkmnComponentType());
+                // if(coopBlock!=null){
+                    // LOGGER.atInfo().log("PkmnCoopBlock found");
+                    WorldTimeResource worldTime = commandBuffer.getResource(WorldTimeResource.getResourceType());
+                    if (coopBlock.tryPutResident(existingMeta, worldTime)) {
+                        // LOGGER.atInfo().log("PkmnCoopBlock.tryPutResident");
+                        world.execute(() -> {
+                            // LOGGER.atInfo().log("PkmnCoopBlock.ensureSpawnResidentsInWorld");
+                            coopBlock.ensureSpawnResidentsInWorld(
+                                world,
+                                world.getEntityStore().getStore(),
+                                new Vector3d(pos.x, pos.y, pos.z),
+                                new Vector3d(Vector3dUtil.FORWARD)
+                            );
+                        });
+                        // TODO: return withState default
+                        hotbarComponent.getInventory().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
+                        // inventory.getHotbar().replaceItemStackInSlot((short) hotbarSlot, item, emptyBall);
+                        context.getState().state = InteractionState.Finished;
+                    } else {
+                        LOGGER.atInfo().log("Unable to add new resident to coop");
+                        fail(context);
+                    }
+                    return;
+                // }
+                // LOGGER.atInfo().log("PkmnCoopBlock still null");
             }
         }
 
