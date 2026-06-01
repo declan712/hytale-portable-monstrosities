@@ -155,7 +155,7 @@
 			"Description": "The maximum climb height, in blocks."
 		},
 		"AttitudeGroup": {
-			"Value": "Predators",
+			"Value": "PkmnTamed",
 			"Description": "The attitude group this NPC belongs to."
 		},
 		"PlayerDefaultAttitude": {
@@ -186,7 +186,7 @@
 		},
 		"FoodItemSet": {
 			"Value": [
-				"Aures_Wolf_Treat"
+				"Food_Wildmeat_Raw"
 			],
 			"Description": "The list of dropped items that this NPC will occasionally seek out to munch on."
 		},
@@ -768,6 +768,7 @@
 	},
 	"Instructions": [
 		{"$Comment": "Init — runs once on spawn to set Pokémon stats, then transitions to Idle",
+			"Continue": true,
 			"Sensor": {"Type": "State","State": "Init"},
 			"Instructions": [
 				{
@@ -782,7 +783,7 @@
 				{"Actions":[{"Type": "State","State": "Idle"}]}
 			]
 		},
-		{"$Comment": "This is separate so it can run all the time regardless of the rest of the script",
+		{"$Comment": "Good soldiers follow orders",
 			"Continue": true,
 			"Instructions": [
 				{"$Comment": "Join player flock",
@@ -835,14 +836,8 @@
                     "Sensor": {
                         "Type": "Or",
                         "Sensors": [
-                            {
-                                "Type": "InflictedDamage",
-                                "Target": "FlockLeader"
-                            },
-                            {
-                                "Type": "FlockCombatDamage",
-                                "LeaderOnly": true
-                            }
+                            {"Type": "InflictedDamage","Target": "FlockLeader"},
+                            {"Type": "FlockCombatDamage","LeaderOnly": true}
                         ]
                     },
                     "Actions": [
@@ -857,14 +852,14 @@
                     "Sensor": {
                         "Type": "And",
                         "Sensors": [
-                            {
+                            {"$Comment":"No target already in attack range",
                                 "Type": "Not",
                                 "Sensor": {
                                     "Type": "Target",
                                     "Range": {"Compute": "CombatBehaviorDistance"}
                                 }
                             },
-                            {
+                            {"$Comment":"Leader damage",
                                 "Type": "Or",
                                 "Sensors": [
                                     {"Type": "InflictedDamage","Target": "FlockLeader"},
@@ -874,13 +869,13 @@
                         ]
                     },
                     "Actions": [
-                        {"Type": "SetMarkedTarget"},
+                        {"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
                         {"Type": "State","State": "Combat"}
                     ]
                 }
 			]
 		},
-		{"$Comment": "This is separate so it can run all the time regardless of the rest of the script, when in water go straight to panic to get out",
+		{"$Comment": "Get out of the water",
 			"Continue": true,
             "Enabled": {"Compute": "!BreathesInWater"},
 			"Instructions": [
@@ -909,7 +904,7 @@
 				}
 			]
 		},
-		{
+		{"$Comment": "Main",
 			"Instructions": [
 				{"$Comment": "Idle",
 					"Sensor": {
@@ -1255,25 +1250,13 @@
 						}
 					]
 				},
-				{"$Comment": "Used when receiving something like a flock beacon that may potentially result in the NPC becoming alerted but could also be discarded with a random chance.",
-					"Sensor": {
-						"Type": "State",
-						"State": "Alerted"
-					},
+				{"$Comment": "Alerted",
+					"Sensor": {"Type": "State","State": "Alerted"},
 					"Instructions": [
 						{"$Comment": "Play the alerted animation when entering the state",
 							"Continue": true,
-							"Sensor": {
-								"Type": "Any",
-								"Once": true
-							},
-							"Actions": [
-								{
-									"Type": "PlayAnimation",
-									"Slot": "Status",
-									"Animation": "Happy"
-								}
-							]
+							"Sensor": {"Type": "Any","Once": true},
+							"Actions": [{"Type": "PlayAnimation","Slot": "Status","Animation": "Happy"}]
 						},
 						{"$Comment": "Starting a timer to get out of alerted state if nothing else got us out of there. TODO: expose the timer duration",
 							"Continue": true,
@@ -1305,35 +1288,18 @@
 						},
 						{"$Comment": "Watching a target always, if we have any",
 							"Continue": true,
-							"Sensor": {
-								"Type": "Target",
-								"Range": {
-									"Compute": "AlertedRange"
-								}
-							},
-							"HeadMotion": {
-								"Type": "Watch"
-							}
+							"Sensor": {"Type": "Target","Range": {"Compute": "AlertedRange"}},
+							"HeadMotion": {"Type": "Watch"}
 						},
-						{"$Comment": "If the target gets too close, flee for a bit",
+						{"$Comment": "If hostile target gets too close, kill",
 							"Continue": true,
+							"Enabled": {"Compute": "!Timid"},
 							"Sensor": {
 								"Type": "Target",
-								"Range": {
-									"Compute": "AlertedActionRange * randomInRange(0.3, 0.7)"
-								}
+								"Range": {"Compute": "AlertedActionRange * randomInRange(0.3, 0.7)"},
+								"Filters": [{"Type": "Attitude","Attitudes": ["Hostile"]}]
 							},
-							"BodyMotion": {
-								"Type": "Flee",
-								"RelativeSpeed": 0.5,
-								"StopDistance": {
-									"Compute": "AlertedActionRange"
-								},
-								"SlowDownDistance": {
-									"Compute": "AlertedActionRange * 0.25"
-								},
-								"RelaxedMoveConstraints": false
-							}
+							"Actions": [{"Type": "State","State": "Combat"}]
 						},
 						{"$Comment": "If target is reasonably close, the NPC will react instead of just staring",
 							"Continue": true,
@@ -1349,11 +1315,10 @@
 								]
 							},
 							"Instructions": [
-								{
+								{"$Comment": "If the target is holding an item deemed very attractive, always follow it",
 									"Enabled": {
 										"Compute": "!isEmptyStringArray(LovedItems)"
 									},
-									"$Comment": "If the target is holding an item deemed very attractive, always follow it",
 									"Sensor": {
 										"Type": "Target",
 										"Filters": [
@@ -1399,8 +1364,15 @@
 										}
 									]
 								},
-								{
-									"$Comment": "Threatening actions that will cause the NPC to flee",
+								{"$Comment": "If hostile target gets too close, kill",
+									"Enabled": {"Compute": "!Timid"},
+									"Sensor": {"Type": "Target","Filters": [{"Type": "Attitude","Attitudes": ["Hostile"]}]},
+									"Actions": [
+										{"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
+										{"Type": "State","State": "Combat"}
+									]
+								},
+								{"$Comment": "Threatening actions that will cause the NPC to flee",
 									"Sensor": {
 										"Type": "Or",
 										"Sensors": [
@@ -1486,9 +1458,8 @@
 										}
 									]
 								},
-								{
+								{"$Comment": "Starting a second timer to try and turn friendly. TODO: compute it as % of alerted timer",
 									"Continue": true,
-									"$Comment": "Starting a second timer to try and turn friendly. TODO: compute it as % of alerted timer",
 									"Sensor": {
 										"Type": "Target",
 										"Filters": [
@@ -1514,8 +1485,7 @@
 										}
 									]
 								},
-								{
-									"$Comment": "Execute random behaviors towards friendly and revered.",
+								{"$Comment": "Execute random behaviors towards friendly and revered.",
 									"Type": "Random",
 									"ExecuteFor": [
 										15,
@@ -1640,18 +1610,24 @@
 								}
 							]
 						},
-						{
-							"Sensor": {
-								"Type": "State",
-								"State": ".TimerEnd"
-							},
+						{"$Comment": "Timer ended",
+							"Sensor": {"Type": "State","State": ".TimerEnd"},
 							"Instructions": [
-								{
-									"Enabled": {
-										"Compute": "!Timid"
-									},
+								{"$Comment": "Timer ended, hostile target hasn't left yet, kill it",
+									"Enabled": {"Compute": "!Timid"},
 									"Sensor": {
-										"$Comment": "Timer ended, we still have a target and it's a friendly one and we are not timid",
+										"Type": "Target",
+										"Range": {"Compute": "AlertedRange"},
+										"Filters": [{"Type": "Attitude","Attitudes": ["Hostile"]}]
+									},
+									"Actions": [
+										{"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
+										{"Type": "State","State": "Combat"}
+									]
+								},
+								{"$Comment": "Timer ended, we still have a target and it's a friendly one and we are not timid",
+									"Enabled": {"Compute": "!Timid"},
+									"Sensor": {
 										"Type": "Target",
 										"Range": {
 											"Compute": "AlertedRange"
@@ -1679,12 +1655,9 @@
 										}
 									]
 								},
-								{
-									"Enabled": {
-										"Compute": "Timid"
-									},
+								{"$Comment": "Timer ended, I am timid and the target is staring me down, stranger danger, flee",
+									"Enabled": {"Compute": "Timid"},
 									"Sensor": {
-										"$Comment": "Timer ended, I am timid and the target is staring me down, stranger danger, flee",
 										"Type": "Target",
 										"Range": {
 											"Compute": "AlertedRange"
@@ -1711,9 +1684,8 @@
 										}
 									]
 								},
-								{
+								{"$Comment": "Timer ended, target seems uninterested and is assumed to be harmless, ignore for a while",
 									"Sensor": {
-										"$Comment": "Timer ended, target seems uninterested and is assumed to be harmless, ignore for a while",
 										"Type": "Target",
 										"Range": {
 											"Compute": "AlertedRange"
@@ -1733,8 +1705,7 @@
 										}
 									]
 								},
-								{
-									"$Comment": "There is no target, so just go idle",
+								{"$Comment": "There is no target, so just go idle",
 									"Actions": [
 										{
 											"Type": "State",
@@ -1900,7 +1871,7 @@
 						}
 					]
 				},
-								{"$Comment": "Combat action evaluator logic. Replaces other combat state if enabled.",
+				{"$Comment": "Combat action evaluator logic. Replaces other combat state if enabled.",
                     "Enabled": {"Compute": "UseCombatActionEvaluator"},
                     "Sensor": {"Type": "State","State": "Combat"},
                     "Instructions": [
@@ -2179,38 +2150,25 @@
                     "Enabled": {"Compute": "!UseCombatActionEvaluator"},
                     "Sensor": {"Type": "State","State": "Combat"},
                     "Instructions": [
-                        {
+                        {"$Comment": "Flock leader",
                             "TreeMode": true,
                             "Instructions": [
                                 {
                                     "Continue": true,
-                                    "Sensor": {
-                                        "Type": "FlockLeader"
-                                    },
-                                    "Actions": [
-                                        {
-                                            "Type": "SetMarkedTarget",
-                                            "TargetSlot": "LeaderSlot"
-                                        }
-                                    ]
+                                    "Sensor": {"Type": "FlockLeader"},
+                                    "Actions": [{"Type": "SetMarkedTarget","TargetSlot": "LeaderSlot"}]
                                 },
-                                {
+                                {"$Comment": "DISABLED: Go idle if leader not in range",
+									"Enabled": false,
                                     "Sensor": {
                                         "Type": "Not",
                                         "Sensor": {
                                             "Type": "Target",
                                             "TargetSlot": "LeaderSlot",
-                                            "Range": {
-                                                "Compute": "SummonerLeashRange"
-                                            }
+                                            "Range": {"Compute": "SummonerLeashRange"}
                                         }
                                     },
-                                    "Actions": [
-                                        {
-                                            "Type": "State",
-                                            "State": "Idle"
-                                        }
-                                    ]
+                                    "Actions": [{"Type": "State","State": "Idle"}]
                                 }
                             ]
                         },

@@ -186,7 +186,7 @@
 		},
 		"FoodItemSet": {
 			"Value": [
-				"Aures_Wolf_Treat"
+				"Food_Wildmeat_Raw"
 			],
 			"Description": "The list of dropped items that this NPC will occasionally seek out to munch on."
 		},
@@ -558,7 +558,7 @@
 	"DefaultPlayerAttitude": {
 		"Compute": "PlayerDefaultAttitude"
 	},
-	"DefaultNPCAttitude": "Ignore",
+	"DefaultNPCAttitude": "Neutral",
 	"AttitudeGroup": {
 		"Compute": "AttitudeGroup"
 	},
@@ -767,7 +767,7 @@
 				{"Actions":[{"Type": "State","State": "Idle"}]}
 			]
 		},
-		{"$Comment": "This is separate so it can run all the time regardless of the rest of the script",
+		{"$Comment": "Good soldiers follow orders",
 			"Continue": true,
 			"Instructions": [
 				{"$Comment": "Join player flock",
@@ -785,16 +785,11 @@
 					"Sensor": {
 						"Type": "And",
 						"Sensors": [
-							{
-								"Type": "FlockLeader"
-							},
+							{"Type": "FlockLeader"},
 							{
 								"Type": "Self",
 								"Filters": [
-									{
-										"Type": "Flock",
-										"FlockStatus": "Follower"
-									}
+									{"Type": "Flock","FlockStatus": "Follower"}
 								]
 							}
 						]
@@ -802,13 +797,8 @@
 					"Actions": [
 						{
 							"Type": "Timeout",
-							"Delay": [
-								0.5,
-								2
-							],
-							"Action": {
-								"Type": "SetLeashPosition",
-								"ToTarget": true
+							"Delay": [0.5,2],
+							"Action": {"Type": "SetLeashPosition","ToTarget": true
 							}
 						}
 					]
@@ -851,13 +841,13 @@
                         ]
                     },
                     "Actions": [
-                        {"Type": "SetMarkedTarget"},
+                        {"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
                         {"Type": "State","State": "Combat"}
                     ]
                 }
 			]
 		},
-		{"$Comment": "This is separate so it can run all the time regardless of the rest of the script, when in water go straight to panic to get out",
+		{"$Comment": "Get out of the water",
 			"Continue": true,
             "Enabled": {"Compute": "!BreathesInWater"},
 			"Instructions": [
@@ -865,24 +855,11 @@
 					"Sensor": {
 						"Type": "And",
 						"Sensors": [
-							{
-								"Type": "InWater"
-							},
-							{
-								"Type": "Not",
-								"Sensor": {
-									"Type": "State",
-									"State": "Panic"
-								}
-							}
+							{"Type": "InWater"},
+							{"Type": "Not","Sensor": {"Type": "State","State": "Panic"}}
 						]
 					},
-					"Actions": [
-						{
-							"Type": "State",
-							"State": "Panic"
-						}
-					]
+					"Actions": [{"Type": "State","State": "Panic"}]
 				}
 			]
 		},
@@ -902,9 +879,7 @@
 								"Type": "Beacon",
 								"Message": "Flock_Attack",
 								"TargetSlot": "LockedTarget",
-								"Range": {
-									"Compute": "HearingRange"
-								}
+								"Range": {"Compute": "HearingRange"}
 							},
 							"Actions": [
 								{
@@ -1132,8 +1107,7 @@
 						"State": "Sleep"
 					},
 					"Instructions": [
-						{
-							"$Comment": "Wake up if an enemy attacks a flock member.",
+						{"$Comment": "Wake up if an enemy attacks a flock member.",
 							"Enabled": {
 								"Compute": "!isEmptyStringArray(FlockArray)"
 							},
@@ -1149,8 +1123,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Just a little nap.",
+						{"$Comment": "Just a little nap.",
 							"Enabled": {
 								"Compute": "DayTimeNapWeight > 0"
 							},
@@ -1204,8 +1177,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Night-time sleep.",
+						{"$Comment": "Night-time sleep.",
 							"Instructions": [
 								{
 									"Reference": "Component_Instruction_Wild_Sleep_State",
@@ -1232,40 +1204,20 @@
 						}
 					]
 				},
-				{"$Comment": "Used when receiving something like a flock beacon that may potentially result in the NPC becoming alerted but could also be discarded with a random chance.",
-					"Sensor": {
-						"Type": "State",
-						"State": "Alerted"
-					},
+				{"$Comment": "Alerted",
+					"Sensor": {"Type": "State","State": "Alerted"},
 					"Instructions": [
 						{"$Comment": "Play the alerted animation when entering the state",
 							"Continue": true,
-							"Sensor": {
-								"Type": "Any",
-								"Once": true
-							},
-							"Actions": [
-								{
-									"Type": "PlayAnimation",
-									"Slot": "Status",
-									"Animation": "Happy"
-								}
-							]
+							"Sensor": {"Type": "Any","Once": true},
+							"Actions": [{"Type": "PlayAnimation","Slot": "Status","Animation": "Happy"}]
 						},
 						{"$Comment": "Starting a timer to get out of alerted state if nothing else got us out of there. TODO: expose the timer duration",
 							"Continue": true,
 							"ActionsBlocking": true,
 							"Actions": [
-								{
-									"Type": "Timeout",
-									"Delay": {
-										"Compute": "AlertedTimeoutGiveUp"
-									}
-								},
-								{
-									"Type": "State",
-									"State": ".TimerEnd"
-								}
+								{"Type": "Timeout","Delay": {"Compute": "AlertedTimeoutGiveUp"}},
+								{"Type": "State","State": ".TimerEnd"}
 							]
 						},
 						{"$Comment": "Check for damage",
@@ -1275,70 +1227,41 @@
 									"Flee.Switch",
 									"Panic"
 								],
-								"AlertedRange": {
-									"Compute": "AlertedRange"
-								}
+								"AlertedRange": {"Compute": "AlertedRange"}
 							}
 						},
 						{"$Comment": "Watching a target always, if we have any",
 							"Continue": true,
-							"Sensor": {
-								"Type": "Target",
-								"Range": {
-									"Compute": "AlertedRange"
-								}
-							},
-							"HeadMotion": {
-								"Type": "Watch"
-							}
+							"Sensor": {"Type": "Target","Range": {"Compute": "AlertedRange"}},
+							"HeadMotion": {"Type": "Watch"}
 						},
-						{"$Comment": "If the target gets too close, flee for a bit",
+						{"$Comment": "If hostile target gets too close, kill",
 							"Continue": true,
+							"Enabled": {"Compute": "!Timid"},
 							"Sensor": {
 								"Type": "Target",
-								"Range": {
-									"Compute": "AlertedActionRange * randomInRange(0.3, 0.7)"
-								}
+								"Range": {"Compute": "AlertedActionRange * randomInRange(0.3, 0.7)"},
+								"Filters": [{"Type": "Attitude","Attitudes": ["Hostile"]}]
+
 							},
-							"BodyMotion": {
-								"Type": "Flee",
-								"RelativeSpeed": 0.5,
-								"StopDistance": {
-									"Compute": "AlertedActionRange"
-								},
-								"SlowDownDistance": {
-									"Compute": "AlertedActionRange * 0.25"
-								},
-								"RelaxedMoveConstraints": false
-							}
+							"Actions": [{"Type": "State","State": "Combat"}]
 						},
 						{"$Comment": "If target is reasonably close, the NPC will react instead of just staring",
 							"Continue": true,
 							"Sensor": {
 								"Type": "Target",
-								"Range": {
-									"Compute": "AlertedActionRange"
-								},
-								"Filters": [
-									{
-										"Type": "LineOfSight"
-									}
-								]
+								"Range": {"Compute": "AlertedActionRange"},
+								"Filters": [{"Type": "LineOfSight"}]
 							},
 							"Instructions": [
-								{
-									"Enabled": {
-										"Compute": "!isEmptyStringArray(LovedItems)"
-									},
-									"$Comment": "If the target is holding an item deemed very attractive, always follow it",
+								{"$Comment": "If the target is holding an item deemed very attractive, always follow it",
+									"Enabled": {"Compute": "!isEmptyStringArray(LovedItems)"},
 									"Sensor": {
 										"Type": "Target",
 										"Filters": [
 											{
 												"Type": "ItemInHand",
-												"Items": {
-													"Compute": "LovedItems"
-												}
+												"Items": {"Compute": "LovedItems"}
 											},
 											{
 												"Type": "Not",
@@ -1353,8 +1276,7 @@
 										]
 									},
 									"Actions": [
-										{
-											"$Comment": "TODO: check what particle systems are offsetting off of and potentially expose it to compute",
+										{"$Comment": "TODO: check what particle systems are offsetting off of and potentially expose it to compute",
 											"Type": "SpawnParticles",
 											"Offset": [
 												0,
@@ -1366,9 +1288,7 @@
 										{
 											"Type": "OverrideAttitude",
 											"Attitude": "Friendly",
-											"Duration": {
-												"Compute": "FriendlyOverrideTimeWithAttractiveItem"
-											}
+											"Duration": {"Compute": "FriendlyOverrideTimeWithAttractiveItem"}
 										},
 										{
 											"Type": "State",
@@ -1376,8 +1296,15 @@
 										}
 									]
 								},
-								{
-									"$Comment": "Threatening actions that will cause the NPC to flee",
+								{"$Comment": "If hostile target gets too close, kill",
+									"Enabled": {"Compute": "!Timid"},
+									"Sensor": {"Type": "Target","Filters": [{"Type": "Attitude","Attitudes": ["Hostile"]}]},
+									"Actions": [
+										{"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
+										{"Type": "State","State": "Combat"}
+									]
+								},
+								{"$Comment": "Threatening actions that will cause the NPC to flee",
 									"Sensor": {
 										"Type": "Or",
 										"Sensors": [
@@ -1387,21 +1314,9 @@
 													{
 														"Type": "Or",
 														"Filters": [
-															{
-																"Type": "Attitude",
-																"Attitudes": [
-																	"Hostile"
-																]
-															},
-															{
-																"Type": "Combat"
-															},
-															{
-																"Type": "ItemInHand",
-																"Items": [
-																	"*Weapon*"
-																]
-															}
+															{"Type": "Attitude","Attitudes": ["Hostile"]},
+															{"Type": "Combat"},
+															{"Type": "ItemInHand","Items": ["*Weapon*"]}
 														]
 													}
 												]
@@ -1409,63 +1324,27 @@
 											{
 												"Type": "Target",
 												"Filters": [
-													{
-														"Type": "Not",
-														"Filter": {
-															"Type": "Attitude",
-															"Attitudes": [
-																"Friendly"
-															]
-														}
-													},
-													{
-														"Type": "MovementState",
-														"State": "Sprinting"
-													}
+													{"Type": "Not","Filter": {"Type": "Attitude","Attitudes": ["Friendly"]}},
+													{"Type": "MovementState","State": "Sprinting"}
 												]
 											},
 											{
-												"Enabled": {
-													"Compute": "Timid"
-												},
+												"Enabled": {"Compute": "Timid"},
 												"Type": "Target",
-												"Filters": [
-													{
-														"Type": "MovementState",
-														"State": "Sprinting"
-													}
-												]
+												"Filters": [{"Type": "MovementState","State": "Sprinting"}]
 											},
 											{
+												"Enabled": {"Compute": "Timid"},
 												"Type": "Target",
-												"Range": {
-													"Compute": "AbsoluteDetectionRange"
-												},
-												"Filters": [
-													{
-														"Type": "Not",
-														"Filter": {
-															"Type": "Attitude",
-															"Attitudes": [
-																"Friendly",
-																"Ignore"
-															]
-														}
-													}
-												]
+												"Range": {"Compute": "AbsoluteDetectionRange"},
+												"Filters": [{"Type": "Not","Filter": {"Type": "Attitude","Attitudes": ["Friendly","Ignore"]}}]
 											}
 										]
 									},
-									"Actions": [
-										{
-											"Type": "State",
-											"State": "Flee.Switch"
-										}
-									]
+									"Actions": [{"Type": "State","State": "Flee.Switch"}]
 								},
-								{
+								{"$Comment": "Starting a second timer to try and turn friendly. TODO: compute it as % of alerted timer",
 									"Continue": true,
-									"$Comment": "Starting a second timer to try and turn friendly. TODO: compute it as % of alerted timer",
 									"Sensor": {
 										"Type": "Target",
 										"Filters": [
@@ -1491,13 +1370,9 @@
 										}
 									]
 								},
-								{
-									"$Comment": "Execute random behaviors towards friendly and revered.",
+								{"$Comment": "Execute random behaviors towards friendly and revered.",
 									"Type": "Random",
-									"ExecuteFor": [
-										15,
-										20
-									],
+									"ExecuteFor": [15,20],
 									"Sensor": {
 										"Type": "Target",
 										"Filters": [
@@ -1512,92 +1387,47 @@
 									},
 									"Instructions": [
 										{
-											"Enabled": {
-												"Compute": "!isEmptyStringArray(AttractiveItems)"
-											},
-											"Weight": {
-												"Compute": "WeightFollowItem"
-											},
+											"Enabled": {"Compute": "!isEmptyStringArray(AttractiveItems)"},
+											"Weight": {"Compute": "WeightFollowItem"},
 											"$Comment": "TODO: change this to a weight-based decision to avoid the whole flock chasing the item",
 											"Sensor": {
 												"Type": "Target",
 												"Filters": [
 													{
 														"Type": "ItemInHand",
-														"Items": {
-															"Compute": "AttractiveItems"
-														}
+														"Items": {"Compute": "AttractiveItems"}
 													}
 												]
 											},
-											"Actions": [
-												{
-													"Type": "State",
-													"State": "Curious.Item"
-												}
-											]
+											"Actions": [{"Type": "State","State": "Curious.Item"}]
 										},
 										{
-											"Enabled": {
-												"Compute": "WeightGreet > 0"
-											},
-											"Weight": {
-												"Compute": "WeightGreet"
-											},
-											"Actions": [
-												{
-													"Type": "State",
-													"State": "Curious.Greet"
-												}
-											]
+											"Enabled": {"Compute": "WeightGreet > 0"},
+											"Weight": {"Compute": "WeightGreet"},
+											"Actions": [{"Type": "State","State": "Curious.Greet"}]
 										},
-										{
-											"$Comment": "NPC will approach player and stop at a distance, following them like this for a while",
-											"Enabled": {
-												"Compute": "WeightFollow > 0"
-											},
-											"Weight": {
-												"Compute": "WeightFollow"
-											},
-											"Actions": [
-												{
-													"Type": "State",
-													"State": "Curious.Follow"
-												}
-											]
+										{"$Comment": "NPC will approach player and stop at a distance, following them like this for a while",
+											"Enabled": {"Compute": "WeightFollow > 0"},
+											"Weight": {"Compute": "WeightFollow"},
+											"Actions": [{"Type": "State","State": "Curious.Follow"}]
 										},
-										{
-											"$Comment": "We override the attitude here and go to idle - this way the alerted state won't be triggered right away",
-											"Enabled": {
-												"Compute": "WeightIgnore > 0"
-											},
-											"Weight": {
-												"Compute": "WeightIgnore"
-											},
-											"Sensor": {
-												"Type": "Target"
-											},
+										{"$Comment": "We override the attitude here and go to idle - this way the alerted state won't be triggered right away",
+											"Enabled": {"Compute": "WeightIgnore > 0"},
+											"Weight": {"Compute": "WeightIgnore"},
+											"Sensor": {"Type": "Target"},
 											"ActionsBlocking": true,
 											"Actions": [
 												{
 													"Type": "OverrideAttitude",
 													"Attitude": "Ignore",
-													"Duration": {
-														"Compute": "IgnoreOverrideTime"
-													}
+													"Duration": {"Compute": "IgnoreOverrideTime"}
 												},
-												{
-													"Type": "State",
-													"State": "Idle"
-												}
+												{"Type": "State","State": "Idle"}
 											]
 										},
-										{
-											"$Comment": "Fallback if weights are misconfigured",
+										{"$Comment": "Fallback if weights are misconfigured",
 											"Weight": 1,
-											"Sensor": {
-												"Type": "Target"
-											},
+											"Sensor": {"Type": "Target"},
 											"ActionsBlocking": true,
 											"Actions": [
 												{
@@ -1617,51 +1447,40 @@
 								}
 							]
 						},
-						{
-							"Sensor": {
-								"Type": "State",
-								"State": ".TimerEnd"
-							},
+						{"$Comment": "Timer ended",
+							"Sensor": {"Type": "State","State": ".TimerEnd"},
 							"Instructions": [
-								{
-									"Enabled": {
-										"Compute": "!Timid"
-									},
+								{"$Comment": "Timer ended, hostile target hasn't left yet, kill it",
+									"Enabled": {"Compute": "!Timid"},
 									"Sensor": {
-										"$Comment": "Timer ended, we still have a target and it's a friendly one and we are not timid",
 										"Type": "Target",
-										"Range": {
-											"Compute": "AlertedRange"
-										},
-										"Filters": [
-											{
-												"Type": "Attitude",
-												"Attitudes": [
-													"Friendly"
-												]
-											}
-										]
+										"Range": {"Compute": "AlertedRange"},
+										"Filters": [{"Type": "Attitude","Attitudes": ["Hostile"]}]
+									},
+									"Actions": [
+										{"Type": "SetMarkedTarget","TargetSlot": "LockedTarget"},
+										{"Type": "State","State": "Combat"}
+									]
+								},
+								{"$Comment": "Timer ended, we still have a target and it's a friendly one and we are not timid",
+									"Enabled": {"Compute": "!Timid"},
+									"Sensor": {
+										"Type": "Target",
+										"Range": {"Compute": "AlertedRange"},
+										"Filters": [{"Type": "Attitude","Attitudes": ["Friendly"]}]
 									},
 									"Actions": [
 										{
 											"Type": "OverrideAttitude",
 											"Attitude": "Ignore",
-											"Duration": {
-												"Compute": "IgnoreOverrideTime"
-											}
+											"Duration": {"Compute": "IgnoreOverrideTime"}
 										},
-										{
-											"Type": "State",
-											"State": "Idle"
-										}
+										{"Type": "State","State": "Idle"}
 									]
 								},
-								{
-									"Enabled": {
-										"Compute": "Timid"
-									},
+								{"$Comment": "Timer ended, I am timid and the target is staring me down, stranger danger, flee",
+									"Enabled": {"Compute": "Timid"},
 									"Sensor": {
-										"$Comment": "Timer ended, I am timid and the target is staring me down, stranger danger, flee",
 										"Type": "Target",
 										"Range": {
 											"Compute": "AlertedRange"
@@ -1681,104 +1500,56 @@
 											}
 										]
 									},
-									"Actions": [
-										{
-											"Type": "State",
-											"State": "Flee"
-										}
-									]
+									"Actions": [{"Type": "State","State": "Flee"}]
 								},
-								{
+								{"$Comment": "Timer ended, target seems uninterested and is assumed to be harmless, ignore for a while",
 									"Sensor": {
-										"$Comment": "Timer ended, target seems uninterested and is assumed to be harmless, ignore for a while",
 										"Type": "Target",
-										"Range": {
-											"Compute": "AlertedRange"
-										}
+										"Range": {"Compute": "AlertedRange"}
 									},
 									"Actions": [
 										{
 											"Type": "OverrideAttitude",
 											"Attitude": "Ignore",
-											"Duration": {
-												"Compute": "IgnoreOverrideTime"
-											}
+											"Duration": {"Compute": "IgnoreOverrideTime"}
 										},
-										{
-											"Type": "State",
-											"State": "Idle"
-										}
+										{"Type": "State","State": "Idle"}
 									]
 								},
-								{
-									"$Comment": "There is no target, so just go idle",
-									"Actions": [
-										{
-											"Type": "State",
-											"State": "Idle"
-										}
-									]
+								{"$Comment": "There is no target, so just go idle",
+									"Actions": [{"Type": "State","State": "Idle"}]
 								}
 							]
 						},
 						{"$Comment": "Timer elapsed and we randomly decide if friendly or not. This has to continue so we can hit the friendly instructions below",
-							"Sensor": {
-								"Type": "State",
-								"State": ".Switch"
-							},
+							"Sensor": {"Type": "State","State": ".Switch"},
 							"Instructions": [
-								{
-									"$Comment": "If the NPC is configured with a different chance to befriend when the target is holding a special item, use that chance",
-									"Enabled": {
-										"Compute": "ChanceToTurnFriendlyWithAttractiveItem > 0"
-									},
+								{"$Comment": "If the NPC is configured with a different chance to befriend when the target is holding a special item, use that chance",
+									"Enabled": {"Compute": "ChanceToTurnFriendlyWithAttractiveItem > 0"},
 									"Sensor": {
 										"Type": "Target",
 										"Filters": [
-											{
-												"Type": "Attitude",
-												"Attitudes": [
-													"Neutral"
-												]
-											},
-											{
-												"Type": "ItemInHand",
-												"Items": {
-													"Compute": "AttractiveItems"
-												}
-											}
+											{"Type": "Attitude","Attitudes": ["Neutral"]},
+											{"Type": "ItemInHand","Items": {"Compute": "AttractiveItems"}}
 										]
 									},
 									"Type": "Random",
-									"ExecuteFor": [
-										15,
-										20
-									],
+									"ExecuteFor": [15,20],
 									"Instructions": [
 										{
-											"Weight": {
-												"Compute": "ChanceToTurnFriendlyWithAttractiveItem"
-											},
-											"Sensor": {
-												"Type": "Target"
-											},
+											"Weight": {"Compute": "ChanceToTurnFriendlyWithAttractiveItem"},
+											"Sensor": {"Type": "Target"},
 											"Actions": [
 												{
 													"$Comment": "TODO: check what particle systems are offsetting off of and potentially expose it to compute",
 													"Type": "SpawnParticles",
-													"Offset": [
-														0,
-														1,
-														0
-													],
+													"Offset": [0,1,0],
 													"ParticleSystem": "Hearts"
 												},
 												{
 													"Type": "OverrideAttitude",
 													"Attitude": "Friendly",
-													"Duration": {
-														"Compute": "FriendlyOverrideTimeWithAttractiveItem"
-													}
+													"Duration": {"Compute": "FriendlyOverrideTimeWithAttractiveItem"}
 												},
 												{
 													"$Comment": "Prevents the next instruction from running as soon as the player is no longer neutral",
@@ -1788,67 +1559,38 @@
 											]
 										},
 										{
-											"Enabled": {
-												"Compute": "ChanceToTurnFriendlyWithAttractiveItem < 100"
-											},
-											"Weight": {
-												"Compute": "100 - ChanceToTurnFriendlyWithAttractiveItem"
-											},
-											"Actions": [
-												{
-													"Type": "State",
-													"State": "Flee"
-												}
+											"Enabled": {"Compute": "ChanceToTurnFriendlyWithAttractiveItem < 100"},
+											"Weight": {"Compute": "100 - ChanceToTurnFriendlyWithAttractiveItem"},
+											"Actions": [{"Type": "State","State": "Flee"}
 											]
 										}
 									]
 								},
-								{
-									"$Comment": "NPC becoming friendly with a player",
+								{"$Comment": "NPC becoming friendly with a player",
 									"Enabled": {
 										"Compute": "ChanceToTurnFriendly > 0"
 									},
 									"Sensor": {
 										"Type": "Target",
-										"Filters": [
-											{
-												"Type": "Attitude",
-												"Attitudes": [
-													"Neutral"
-												]
-											}
-										]
+										"Filters": [{"Type": "Attitude","Attitudes": ["Neutral"]}]
 									},
 									"Type": "Random",
-									"ExecuteFor": [
-										15,
-										20
-									],
+									"ExecuteFor": [15,20],
 									"Instructions": [
 										{
-											"Weight": {
-												"Compute": "ChanceToTurnFriendly"
-											},
-											"Sensor": {
-												"Type": "Target"
-											},
+											"Weight": {"Compute": "ChanceToTurnFriendly"},
+											"Sensor": {"Type": "Target"},
 											"Actions": [
 												{
 													"$Comment": "TODO: check what it is offseting off and potentially expose it to compute",
 													"Type": "SpawnParticles",
-													"Offset": [
-														0,
-														1,
-														0
-													],
+													"Offset": [0,1,0],
 													"ParticleSystem": "Hearts"
 												},
 												{
 													"Type": "OverrideAttitude",
 													"Attitude": "Friendly",
-													"Duration": {
-														"Compute": "FriendlyOverrideTime"
-													}
+													"Duration": {"Compute": "FriendlyOverrideTime"}
 												},
 												{
 													"$Comment": "Prevents the next instruction from running as soon as the player is no longer neutral",
@@ -1858,18 +1600,9 @@
 											]
 										},
 										{
-											"Enabled": {
-												"Compute": "ChanceToTurnFriendly < 100"
-											},
-											"Weight": {
-												"Compute": "100 - ChanceToTurnFriendly"
-											},
-											"Actions": [
-												{
-													"Type": "State",
-													"State": "Flee"
-												}
-											]
+											"Enabled": {"Compute": "ChanceToTurnFriendly < 100"},
+											"Weight": {"Compute": "100 - ChanceToTurnFriendly"},
+											"Actions": [{"Type": "State","State": "Flee"}]
 										}
 									]
 								}
@@ -1886,15 +1619,8 @@
                             "Instructions": [
                                 {
                                     "Continue": true,
-                                    "Sensor": {
-                                        "Type": "FlockLeader"
-                                    },
-                                    "Actions": [
-                                        {
-                                            "Type": "SetMarkedTarget",
-                                            "TargetSlot": "LeaderSlot"
-                                        }
-                                    ]
+                                    "Sensor": {"Type": "FlockLeader"},
+                                    "Actions": [{"Type": "SetMarkedTarget","TargetSlot": "LeaderSlot"}]
                                 },
                                 {
                                     "Sensor": {
@@ -1902,34 +1628,22 @@
                                         "Sensor": {
                                             "Type": "Target",
                                             "TargetSlot": "LeaderSlot",
-                                            "Range": {
-                                                "Compute": "SummonerLeashRange"
-                                            }
+                                            "Range": {"Compute": "SummonerLeashRange"}
                                         }
                                     },
-                                    "Actions": [
-                                        {
-                                            "Type": "State",
-                                            "State": "Idle"
-                                        }
-                                    ]
+                                    "Actions": [{"Type": "State","State": "Idle"}]
                                 }
                             ]
                         },
                         {
                             "Continue": true,
-                            "Sensor": {
-                                "Type": "State",
-                                "State": ".Override"
-                            },
+                            "Sensor": {"Type": "State","State": ".Override"},
                             "Instructions": [
                                 {
                                     "Continue": true,
                                     "Sensor": {
                                         "Type": "Target",
-                                        "Range": {
-                                            "Compute": "AlertedRange"
-                                        }
+                                        "Range": {"Compute": "AlertedRange"}
                                     },
                                     "Actions": [
                                         {
@@ -1939,14 +1653,7 @@
                                         }
                                     ]
                                 },
-                                {
-                                    "Actions": [
-                                        {
-                                            "Type": "State",
-                                            "State": "Combat"
-                                        }
-                                    ]
-                                }
+                                {"Actions": [{"Type": "State","State": "Combat"}]}
                             ]
                         },
                         {
@@ -1956,26 +1663,14 @@
                                     {
                                         "Reference": "Component_Sensor_Standard_Detection",
                                         "Modify": {
-                                            "ViewRange": {
-                                                "Compute": "ViewRange"
-                                            },
-                                            "ViewSector": {
-                                                "Compute": "ViewSector"
-                                            },
-                                            "HearingRange": {
-                                                "Compute": "HearingRange"
-                                            },
-                                            "AbsoluteDetectionRange": {
-                                                "Compute": "AbsoluteDetectionRange"
-                                            },
-                                            "Attitudes": [
-                                                "Hostile"
-                                            ]
+                                            "ViewRange": {"Compute": "ViewRange"},
+                                            "ViewSector": {"Compute": "ViewSector"},
+                                            "HearingRange": {"Compute": "HearingRange"},
+                                            "AbsoluteDetectionRange": {"Compute": "AbsoluteDetectionRange"},
+                                            "Attitudes": ["Hostile"]
                                         }
                                     },
-                                    {
-                                        "Type": "HasHostileTargetMemory"
-                                    }
+                                    {"Type": "HasHostileTargetMemory"}
                                 ]
                             },
                             "Instructions": [
@@ -2156,55 +1851,37 @@
                     "Enabled": {"Compute": "!UseCombatActionEvaluator"},
                     "Sensor": {"Type": "State","State": "Combat"},
                     "Instructions": [
-                        {
+                        {"$Comment": "Flock leader",
                             "TreeMode": true,
                             "Instructions": [
                                 {
                                     "Continue": true,
-                                    "Sensor": {
-                                        "Type": "FlockLeader"
-                                    },
-                                    "Actions": [
-                                        {
-                                            "Type": "SetMarkedTarget",
-                                            "TargetSlot": "LeaderSlot"
-                                        }
-                                    ]
+                                    "Sensor": {"Type": "FlockLeader"},
+                                    "Actions": [{"Type": "SetMarkedTarget","TargetSlot": "LeaderSlot"}]
                                 },
-                                {
+                                {"$Comment": "DISABLED: Go idle if leader not in range",
+									"Enabled": false,
                                     "Sensor": {
                                         "Type": "Not",
                                         "Sensor": {
                                             "Type": "Target",
                                             "TargetSlot": "LeaderSlot",
-                                            "Range": {
-                                                "Compute": "SummonerLeashRange"
-                                            }
+                                            "Range": {"Compute": "SummonerLeashRange"}
                                         }
                                     },
-                                    "Actions": [
-                                        {
-                                            "Type": "State",
-                                            "State": "Idle"
-                                        }
-                                    ]
+                                    "Actions": [{"Type": "State","State": "Idle"}]
                                 }
                             ]
                         },
-                        {
+                        {"$Comment": "Override",
                             "Continue": true,
-                            "Sensor": {
-                                "Type": "State",
-                                "State": ".Override"
-                            },
+                            "Sensor": {"Type": "State","State": ".Override"},
                             "Instructions": [
                                 {
                                     "Continue": true,
                                     "Sensor": {
                                         "Type": "Target",
-                                        "Range": {
-                                            "Compute": "AlertedRange"
-                                        }
+                                        "Range": {"Compute": "AlertedRange"}
                                     },
                                     "Actions": [
                                         {
@@ -2214,21 +1891,11 @@
                                         }
                                     ]
                                 },
-                                {
-                                    "Actions": [
-                                        {
-                                            "Type": "State",
-                                            "State": "Combat"
-                                        }
-                                    ]
-                                }
+                                {"Actions": [{"Type": "State","State": "Combat"}]}
                             ]
                         },
-                        {
-                            "Sensor": {
-                                "Type": "State",
-                                "State": ".Chase"
-                            },
+                        {"$Comment": "Chase",
+                            "Sensor": {"Type": "State","State": ".Chase"},
                             "Instructions": [
                                 {
                                     "Sensor": {
@@ -2270,7 +1937,7 @@
                                 }
                             ]
                         },
-                        {
+                        {"$Comment": "Retreat",
                             "Reference": "Component_Instruction_Combat_Retreat",
                             "Modify": {
                                 "CombatFleeIfTooCloseDistance": {
@@ -2281,7 +1948,7 @@
                                 }
                             }
                         },
-                        {
+                        {"$Comment": "Swap target",
                             "Reference": "Component_Instruction_Combat_Target_Swap",
                             "Modify": {
                                 "TargetSwitchTimer": {
@@ -2292,29 +1959,22 @@
                                 }
                             }
                         },
-                        {
+                        {"$Comment": "In range and lineOfSight",
                             "Continue": true,
                             "Sensor": {
                                 "Type": "Target",
-                                "Range": {
-                                    "Compute": "AttackDistance"
-                                },
-                                "Filters": [
-                                    {
-                                        "Type": "LineOfSight"
-                                    }
-                                ]
+                                "Range": {"Compute": "AttackDistance"},
+                                "Filters": [{"Type": "LineOfSight"}]
                             },
                             "ActionsBlocking": true,
                             "Actions": [
-                                {
-                                    "$Comment": "TODO: Brief delay before attack so NPC can stop moving. Do we  need it?",
+                                {"$Comment": "TODO: Brief delay before attack so NPC can stop moving. Do we  need it?",
                                     "Type": "Timeout",
                                     "Delay": {
                                         "Compute": "CombatAttackPreDelay"
                                     }
                                 },
-                                {
+                                {"$Comment": "Attack",
                                     "Type": "Attack",
                                     "Attack": {
                                         "Compute": "Attack"
@@ -2323,14 +1983,13 @@
                                         "Compute": "AttackPauseRange"
                                     }
                                 },
-                                {
-                                    "$Comment": "Brief delay to prevent the NPC potentially strafing/backing away and missing the shot.",
+                                {"$Comment": "Brief delay to prevent the NPC potentially strafing/backing away and missing the shot.",
                                     "Type": "Timeout",
                                     "Delay": {
                                         "Compute": "CombatAttackPostDelay"
                                     }
                                 },
-                                {
+                                {"$Comment": "Back off timer",
                                     "Type": "TimerStart",
                                     "Name": "Combat_Back_Off",
                                     "StartValueRange": {
@@ -2340,10 +1999,7 @@
                                         "Compute": "CombatBackOffDurationRange"
                                     }
                                 },
-                                {
-                                    "Type": "TimerRestart",
-                                    "Name": "Combat_Back_Off"
-                                }
+                                {"Type": "TimerRestart","Name": "Combat_Back_Off"}
                             ],
                             "HeadMotion": {
                                 "Type": "Aim",
@@ -2359,7 +2015,7 @@
                                 }
                             }
                         },
-                        {
+                        {"$Comment": "Back to Idle",
                             "Continue": true,
                             "Sensor": {
                                 "Type": "And",
@@ -2407,20 +2063,11 @@
                             },
                             "ActionsBlocking": true,
                             "Actions": [
-                                {
-                                    "Type": "Timeout",
-                                    "Delay": [
-                                        5,
-                                        5
-                                    ]
-                                },
-                                {
-                                    "Type": "State",
-                                    "State": "Idle"
-                                }
+                                {"Type": "Timeout","Delay": [5,5]},
+                                {"Type": "State","State": "Idle"}
                             ]
                         },
-                        {
+                        {"$Comment": "Back off",
                             "Reference": "Component_Instruction_Combat_Back_Off",
                             "Modify": {
                                 "TimerName": "Combat_Back_Off",
@@ -2453,7 +2100,7 @@
                                 }
                             }
                         },
-                        {
+                        {"$Comment": "Get closer",
                             "Sensor": {
                                 "Type": "And",
                                 "Sensors": [
@@ -2477,21 +2124,11 @@
                             },
                             "ActionsBlocking": true,
                             "Actions": [
-                                {
-                                    "Type": "Timeout",
-                                    "Delay": [
-                                        0.5,
-                                        0.5
-                                    ]
-                                },
-                                {
-                                    "Type": "State",
-                                    "State": ".Chase"
-                                }
+								{"Type": "Timeout","Delay": [0.5,0.5]},
+                                {"Type": "State","State": ".Chase"}
                             ]
                         },
-                        {
-                            "$Comment": "Execute combat-oriented movement.",
+                        {"$Comment": "Execute combat-oriented movement.",
                             "Type": "Random",
                             "ExecuteFor": [
                                 5,
@@ -2632,15 +2269,8 @@
                                 }
                             ]
                         },
-                        {
-                            "Actions": [
-                                {
-                                    "Type": "State",
-                                    "State": ".Chase"
-                                }
-                            ]
-                        },
-                        {
+                        {"Actions": [{"Type": "State","State": ".Chase"}]},
+                        {"$Comment": "Reset to Idle",
                             "Sensor": {
                                 "Type": "Not",
                                 "Sensor": {
@@ -2651,16 +2281,9 @@
                                 }
                             },
                             "Actions": [
-                                {
-                                    "Type": "ReleaseTarget"
-                                },
-                                {
-                                    "Type": "ResetInstructions"
-                                },
-                                {
-                                    "Type": "State",
-                                    "State": "Idle"
-                                }
+                                {"Type": "ReleaseTarget"},
+                                {"Type": "ResetInstructions"},
+                                {"Type": "State","State": "Idle"}
                             ]
                         }
                     ]
@@ -2855,8 +2478,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "We lost target",
+						{"$Comment": "We lost target",
 							"Sensor": {
 								"Type": "Not",
 								"Sensor": {
@@ -2886,15 +2508,13 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Moving to an attractive item",
+						{"$Comment": "Moving to an attractive item",
 							"Sensor": {
 								"Type": "State",
 								"State": ".Item"
 							},
 							"Instructions": [
-								{
-									"$Comment": "Start a timer after which the NPC will lose interest in the item holder, regardless of range",
+								{"$Comment": "Start a timer after which the NPC will lose interest in the item holder, regardless of range",
 									"Continue": true,
 									"Sensor": {
 										"Type": "Target"
@@ -3048,8 +2668,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Moving to Greet",
+						{"$Comment": "Moving to Greet",
 							"Sensor": {
 								"Type": "State",
 								"State": ".Greet"
@@ -3112,8 +2731,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Moving to follow, stop at half alerted action range and watch a bit. TODO: flee if player sprints towards npc",
+						{"$Comment": "Moving to follow, stop at half alerted action range and watch a bit. TODO: flee if player sprints towards npc",
 							"Sensor": {
 								"Type": "State",
 								"State": ".Follow"
@@ -3257,13 +2875,9 @@
 					]
 				},
 				{"$Comment": "Flee",
-					"Sensor": {
-						"Type": "State",
-						"State": "Flee"
-					},
+					"Sensor": {"Type": "State","State": "Flee"},
 					"Instructions": [
-						{
-							"$Comment": "TODO: Add a state message",
+						{"$Comment": "TODO: Add a state message",
 							"Enabled": {
 								"Compute": "!isEmptyStringArray(FlockArray)"
 							},
@@ -3293,26 +2907,18 @@
 							}
 						},
 						{
-							"Sensor": {
-								"Type": "State",
-								"State": ".Switch"
-							},
+							"Sensor": {"Type": "State","State": ".Switch"},
 							"Instructions": [
 								{
 									"Sensor": {
 										"Type": "Target",
 										"TargetSlot": "LockedTarget",
-										"Range": {
-											"Compute": "AttackRange"
-										}
+										"Range": {"Compute": "AttackRange"}
 									},
 									"Instructions": [
 										{
 											"Continue": true,
-											"Sensor": {
-												"Type": "Target",
-												"Once": true
-											},
+											"Sensor": {"Type": "Target","Once": true},
 											"Actions": [
 												{
 													"$TODO": "Maybe friendly lifestock doesnt override it for player when hit",
@@ -3323,20 +2929,10 @@
 											]
 										},
 										{
-											"Enabled": {
-												"Compute": "AttackWhenStartled"
-											},
+											"Enabled": {"Compute": "AttackWhenStartled"},
 											"Sensor": {
 												"Type": "Target",
-												"Filters": [
-													{
-														"Type": "Not",
-														"Filter": {
-															"Type": "ViewSector",
-															"ViewSector": 270
-														}
-													}
-												]
+												"Filters": [{"Type": "Not","Filter": {"Type": "ViewSector","ViewSector": 270}}]
 											},
 											"ActionsBlocking": true,
 											"Actions": [
@@ -3347,28 +2943,14 @@
 												},
 												{
 													"Type": "Timeout",
-													"Delay": [
-														0.2,
-														0.2
-													]
+													"Delay": [0.2,0.2]
 												},
-												{
-													"Type": "PlayAnimation",
-													"Slot": "Status"
-												},
-												{
-													"Type": "State",
-													"State": ".Attack"
-												}
+												{"Type": "PlayAnimation","Slot": "Status"},
+												{"Type": "State","State": ".Attack"}
 											]
 										},
 										{
-											"Actions": [
-												{
-													"Type": "State",
-													"State": ".Default"
-												}
-											]
+											"Actions": [{"Type": "State","State": ".Default"}]
 										}
 									]
 								},
@@ -3376,85 +2958,47 @@
 									"Sensor": {
 										"Type": "Target",
 										"TargetSlot": "LockedTarget",
-										"Range": {
-											"Compute": "AlertedRange"
-										}
+										"Range": {"Compute": "AlertedRange"}
 									},
-									"Actions": [
-										{
-											"Type": "State",
-											"State": ".Default"
-										}
-									]
+									"Actions": [{"Type": "State","State": ".Default"}]
 								},
 								{
-									"Actions": [
-										{
-											"Type": "State",
-											"State": "Panic"
-										}
-									]
+									"Actions": [{"Type": "State","State": "Panic"}]
 								}
 							]
 						},
 						{
-							"Sensor": {
-								"Type": "State",
-								"State": ".Attack"
-							},
+							"Sensor": {"Type": "State","State": ".Attack"},
 							"ActionsBlocking": true,
 							"Actions": [
 								{
 									"Type": "Attack",
-									"Attack": {
-										"Compute": "Attack"
-									},
-									"AttackPauseRange": [
-										1,
-										2
-									]
+									"Attack": {"Compute": "Attack"},
+									"AttackPauseRange": [1,2]
 								},
 								{
 									"Type": "Timeout",
-									"Delay": [
-										0.3,
-										0.3
-									],
-									"Action": {
-										"Type": "State",
-										"State": ".Default"
-									}
+									"Delay": [0.3,0.3],
+									"Action": {"Type": "State","State": ".Default"}
 								}
 							]
 						},
 						{
 							"Sensor": {
 								"Type": "Target",
-								"Range": {
-									"Compute": "AlertedRange + 3"
-								}
+								"Range": {"Compute": "AlertedRange + 3"}
 							},
 							"BodyMotion": {
 								"Type": "Flee",
-								"SlowDownDistance": {
-									"Compute": "AlertedRange - 3"
-								},
-								"StopDistance": {
-									"Compute": "AlertedRange + 3"
-								},
+								"SlowDownDistance": {"Compute": "AlertedRange - 3"},
+								"StopDistance": {"Compute": "AlertedRange + 3"},
 								"RelativeSpeed": 0.68
 							},
 							"Actions": [
 								{
 									"Type": "Timeout",
-									"Delay": [
-										8,
-										8
-									],
-									"Action": {
-										"Type": "State",
-										"State": ".Switch"
-									}
+									"Delay": [8,8],
+									"Action": {"Type": "State","State": ".Switch"}
 								}
 							]
 						},
@@ -3462,14 +3006,8 @@
 							"Actions": [
 								{
 									"Type": "Timeout",
-									"Delay": [
-										3,
-										6
-									],
-									"Action": {
-										"Type": "State",
-										"State": "Idle"
-									}
+									"Delay": [3,6],
+									"Action": {"Type": "State","State": "Idle"}
 								}
 							]
 						}
@@ -3500,14 +3038,8 @@
 							"Actions": [
 								{
 									"Type": "Timeout",
-									"Delay": [
-										6,
-										12
-									],
-									"Action": {
-										"Type": "State",
-										"State": "Idle"
-									}
+									"Delay": [6,12],
+									"Action": {"Type": "State","State": "Idle"}
 								}
 							]
 						},
@@ -3541,8 +3073,7 @@
 						"State": "$Harvest"
 					},
 					"Instructions": [
-						{
-							"$Comment": "Base harvest logic: particles, sound, alarm (always runs)",
+						{"$Comment": "Base harvest logic: particles, sound, alarm (always runs)",
 							"Continue": true,
 							"Sensor": {
 								"Type": "Any",
@@ -3580,8 +3111,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Drop item only if HarvestDropList is set",
+						{"$Comment": "Drop item only if HarvestDropList is set",
 							"Enabled": {
 								"Compute": "!isEmpty(HarvestDropList)"
 							},
@@ -3613,8 +3143,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Replace Container_Bucket with milk when held",
+						{"$Comment": "Replace Container_Bucket with milk when held",
 							"Enabled": {
 								"Compute": "!isEmpty(HarvestAddItemBucket)"
 							},
@@ -3656,8 +3185,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Replace Deco_Bucket with milk when held",
+						{"$Comment": "Replace Deco_Bucket with milk when held",
 							"Enabled": {
 								"Compute": "!isEmpty(HarvestAddItemDecoBucket)"
 							},
@@ -3699,8 +3227,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "If there are configured attachments for the 'harvested' state, apply them",
+						{"$Comment": "If there are configured attachments for the 'harvested' state, apply them",
 							"Enabled": {
 								"Compute": "IsHarvestable && !isEmpty(HarvestModelSlot)"
 							},
@@ -3708,29 +3235,16 @@
 							"Actions": [
 								{
 									"Type": "ModelAttachment",
-									"Slot": {
-										"Compute": "HarvestModelSlot"
-									},
-									"Attachment": {
-										"Compute": "HarvestModelAttachmentHarvested"
-									}
+									"Slot": {"Compute": "HarvestModelSlot"},
+									"Attachment": {"Compute": "HarvestModelAttachmentHarvested"}
 								}
 							]
 						},
 						{
 							"ActionsBlocking": true,
 							"Actions": [
-								{
-									"Type": "Timeout",
-									"Delay": [
-										2,
-										3
-									]
-								},
-								{
-									"Type": "State",
-									"State": "Flee"
-								}
+								{"Type": "Timeout","Delay": [2,3]},
+								{"Type": "State","State": "Flee"}
 							]
 						}
 					]
