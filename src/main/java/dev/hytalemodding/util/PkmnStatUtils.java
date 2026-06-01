@@ -169,7 +169,7 @@ public class PkmnStatUtils {
 
         apply(store,commandBuffer,targetRef,pkmnStats);
         stats.setStatValue(healthIdx,currentHp);
-        
+        commandBuffer.putComponent(targetRef, PkmnStatsComponent.getComponentType(), pkmnStats);
         commandBuffer.putComponent(targetRef, EntityModule.get().getEntityScaleComponentType(), scaleComponent);
         commandBuffer.putComponent(targetRef, EntityStatMap.getComponentType(), stats);
     }
