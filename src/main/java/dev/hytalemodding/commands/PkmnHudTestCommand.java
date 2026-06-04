@@ -21,6 +21,8 @@ import com.hypixel.hytale.server.core.inventory.InventoryComponent.Hotbar;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent.Storage;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
+import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
+// import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -290,17 +292,41 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
             setSlots(hud,initialParty);
 
             hud.onRefresh(hyUIHud->{
-                world.execute(()->{
-                    List<PkmnPartySlot> oldParty = partyCache.getOrDefault(playerKey, new ArrayList<PkmnPartySlot>());
-                    List<PkmnPartySlot> newParty = buildPartyFromInventory(store,ref,world,hotbar,storage,backpack);
-                    updateSlots(hud, newParty, oldParty, playerKey);
-                    hyUIHud.update(hud);
-                });
+
+
+    // private void safeFullRerender() {
+    //     var store = getStore();
+    //     if (store == null) return;
+
+    //     store.getExternalData().getWorld().execute(this::fullRerender);
+    // }
+
+    // private void fullRerender() {
+    //     UICommandBuilder uiCommandBuilder = new UICommandBuilder();
+    //     delegate.buildFromCommandBuilder(uiCommandBuilder, false, new UIEventBuilder());
+    //     this.update(true, uiCommandBuilder);
+    // }
+
+
+
+            world.execute(()->{
+                List<PkmnPartySlot> oldParty = partyCache.getOrDefault(playerKey, new ArrayList<PkmnPartySlot>());
+                List<PkmnPartySlot> newParty = buildPartyFromInventory(store,ref,world,hotbar,storage,backpack);
+                updateSlots(hud, newParty, oldParty, playerKey);
+                hyUIHud.update(hud);
+                // hyUIHud.refreshOrRerender(true,true);
+
+                UICommandBuilder uiCommandBuilder = new UICommandBuilder();
+                hyUIHud.build(uiCommandBuilder);
+                // delegate.buildFromCommandBuilder(uiCommandBuilder, false, new UIEventBuilder());
+                hyUIHud.update(true, uiCommandBuilder);
+                
             });
-            builderCache.put(playerKey, hud);
-            HyUIHud huh = hud.show();
-            context.sendMessage(Message.raw("HUD Key = "+huh.getKey()));
-            hudCache.put(playerKey,huh);
+        });
+        builderCache.put(playerKey, hud);
+        HyUIHud huh = hud.show();
+        context.sendMessage(Message.raw("HUD Key = "+huh.getKey()));
+        hudCache.put(playerKey,huh);
     }
 
 
