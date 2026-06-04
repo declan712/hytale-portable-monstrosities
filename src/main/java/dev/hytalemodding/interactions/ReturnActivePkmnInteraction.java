@@ -18,7 +18,7 @@ import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -27,10 +27,23 @@ import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.util.PkmnStatUtils;
 
-public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
+public class ReturnActivePkmnInteraction extends SimpleInteraction {
     public  static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
     @Override
+    protected final void tick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        if (firstRun) {
+            this.firstRun(type, context, cooldownHandler);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+        }
+    }
+    
     protected void firstRun(
         InteractionType interactionType, 
         InteractionContext context, 
@@ -115,7 +128,7 @@ public class ReturnActivePkmnInteraction extends SimpleInstantInteraction {
     public static final BuilderCodec<ReturnActivePkmnInteraction> CODEC = BuilderCodec.builder(
         ReturnActivePkmnInteraction.class,
         ReturnActivePkmnInteraction::new,
-        SimpleInstantInteraction.CODEC
+        SimpleInteraction.CODEC
     )
     .build();
     

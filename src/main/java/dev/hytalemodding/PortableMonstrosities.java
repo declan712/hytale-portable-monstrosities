@@ -1,7 +1,7 @@
 package dev.hytalemodding;
 
-import com.hypixel.hytale.builtin.adventure.farming.component.CoopResidentComponent;
-import com.hypixel.hytale.builtin.adventure.farming.states.CoopBlock;
+// import com.hypixel.hytale.builtin.adventure.farming.component.CoopResidentComponent;
+// import com.hypixel.hytale.builtin.adventure.farming.states.CoopBlock;
 import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
@@ -16,7 +16,7 @@ import dev.hytalemodding.commands.PkmnTestCommand;
 // import dev.hytalemodding.commands.PkmnTestCommand;
 import dev.hytalemodding.components.FaintedPkmnComponent;
 import dev.hytalemodding.components.PkmnCoopBlock;
-import dev.hytalemodding.components.PkmnCoopBlock.PkmnCoopResident;
+// import dev.hytalemodding.components.PkmnCoopBlock.PkmnCoopResident;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.components.PkmnStorageComponent;
 import dev.hytalemodding.events.InitPlayerStatsEvent;
@@ -26,7 +26,7 @@ import dev.hytalemodding.interactions.HasOwnerInteraction;
 import dev.hytalemodding.interactions.HealAllPkmnInteraction;
 import dev.hytalemodding.interactions.ReturnActivePkmnInteraction;
 import dev.hytalemodding.interactions.ReturnFaintedPkmnInteraction;
-import dev.hytalemodding.interactions.SpawnPkmnTombstoneInteration;
+import dev.hytalemodding.interactions.SpawnPkmnTombstoneInteraction;
 import dev.hytalemodding.interactions.CreatureScannerInteraction;
 import dev.hytalemodding.interactions.DamagePkmnEntityInteraction;
 import dev.hytalemodding.interactions.FillFluidContainerInteraction;
@@ -74,7 +74,7 @@ public class PortableMonstrosities extends JavaPlugin {
         this.getCodecRegistry(Interaction.CODEC).register("UseCaptureOrb", UseCaptureOrbInteraction.class, UseCaptureOrbInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("ReturnPkmn", ReturnActivePkmnInteraction.class, ReturnActivePkmnInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("ReturnFaintedPkmn", ReturnFaintedPkmnInteraction.class, ReturnFaintedPkmnInteraction.CODEC);
-        this.getCodecRegistry(Interaction.CODEC).register("SpawnPkmnTombstone", SpawnPkmnTombstoneInteration.class, SpawnPkmnTombstoneInteration.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("SpawnPkmnTombstone", SpawnPkmnTombstoneInteraction.class, SpawnPkmnTombstoneInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("SetCreatureNameplate", SetCreatureNameplateInteraction.class, SetCreatureNameplateInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteraction.class, CreatureScannerInteraction.CODEC);
         // this.getCodecRegistry(Interaction.CODEC).register("Bench_Dough_Mixer_Interaction", DoughMixerInteraction.class, DoughMixerInteraction.CODEC);

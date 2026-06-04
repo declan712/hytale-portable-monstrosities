@@ -15,7 +15,7 @@ import com.hypixel.hytale.server.core.modules.entitystats.EntityStatValue;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import javax.annotation.Nonnull;
@@ -42,7 +42,7 @@ import java.util.Random;
  * Defaults to 0.45 if not set<br>
  *<br>
  */
-public class StayCapturedInteraction extends SimpleInstantInteraction {
+public class StayCapturedInteraction extends SimpleInteraction {
 
     protected float ballBonus = 1.0f;
 
@@ -55,7 +55,7 @@ public class StayCapturedInteraction extends SimpleInstantInteraction {
     public static final BuilderCodec<StayCapturedInteraction> CODEC = BuilderCodec.builder(
         StayCapturedInteraction.class,
         StayCapturedInteraction::new,
-        SimpleInstantInteraction.CODEC
+        SimpleInteraction.CODEC
     )
     .appendInherited(
         new KeyedCodec<>("BallBonus", Codec.FLOAT),
@@ -66,6 +66,19 @@ public class StayCapturedInteraction extends SimpleInstantInteraction {
     .build();
 
     @Override
+    protected final void tick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        if (firstRun) {
+            this.firstRun(type, context, cooldownHandler);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+        }
+    }
+    
     protected void firstRun(
         @Nonnull InteractionType type,
         @Nonnull InteractionContext context,
@@ -96,7 +109,7 @@ public class StayCapturedInteraction extends SimpleInstantInteraction {
 
         float difficulty = readCaptureDifficulty(statMap);
         float lvl = readLevel(statMap);
-        float lvlMultiplier = lvl/100 + 0.5f;
+        float lvlMultiplier = lvl/200 + 0.5f;
 
         // Roll
         float escapeProb = lvlMultiplier * computeEscapeProb(currentHp, maxHp, difficulty, ballBonus);

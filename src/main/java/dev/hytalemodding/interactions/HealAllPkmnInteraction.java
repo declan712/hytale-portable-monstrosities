@@ -19,17 +19,30 @@ import com.hypixel.hytale.server.core.inventory.InventoryComponent.Storage;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
 import dev.hytalemodding.components.PkmnCaptureMetadata;
 
-public class HealAllPkmnInteraction extends SimpleInstantInteraction{
+public class HealAllPkmnInteraction extends SimpleInteraction{
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
     
     @Override
+    protected final void tick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        if (firstRun) {
+            this.firstRun(type, context, cooldownHandler);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+        }
+    }
+    
     protected void firstRun(
         InteractionType interactionType, 
         InteractionContext context, 
@@ -182,7 +195,7 @@ public class HealAllPkmnInteraction extends SimpleInstantInteraction{
     public static final BuilderCodec<HealAllPkmnInteraction> CODEC = BuilderCodec.builder(
         HealAllPkmnInteraction.class,
         HealAllPkmnInteraction::new,
-        SimpleInstantInteraction.CODEC
+        SimpleInteraction.CODEC
     )
     .build();
     

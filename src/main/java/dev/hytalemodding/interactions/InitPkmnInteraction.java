@@ -1,6 +1,7 @@
 package dev.hytalemodding.interactions;
 
 import javax.annotation.Nonnull;
+
 import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.CommandBuffer;
@@ -23,12 +24,19 @@ import dev.hytalemodding.components.PkmnCaptureMetadata;
 import dev.hytalemodding.components.PkmnStatsComponent;
 import dev.hytalemodding.util.PkmnStatUtils;
 
-
-public class SetCreatureNameplateInteraction extends SimpleInteraction {
+public class InitPkmnInteraction extends SimpleInteraction {
+    protected int level = 5;
+    protected String type1 = null;
+    protected String type2 = null;
+    protected int[] baseStats = null;
+    protected boolean shiny = false;
+    
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
-        public static final BuilderCodec<SetCreatureNameplateInteraction> CODEC = BuilderCodec.builder(
-        SetCreatureNameplateInteraction.class, 
-        SetCreatureNameplateInteraction::new, 
+
+    //TODO: add values to CODEC
+    public static final BuilderCodec<InitPkmnInteraction> CODEC = BuilderCodec.builder(
+        InitPkmnInteraction.class, 
+        InitPkmnInteraction::new, 
         SimpleInteraction.CODEC
     ).build();
 
@@ -45,7 +53,7 @@ public class SetCreatureNameplateInteraction extends SimpleInteraction {
             super.tick0(firstRun, time, type, context, cooldownHandler);
         }
     }
-    
+
     protected void firstRun(
         @Nonnull InteractionType interactionType,
         @Nonnull InteractionContext interactionContext,
@@ -104,6 +112,10 @@ public class SetCreatureNameplateInteraction extends SimpleInteraction {
 
         PkmnCaptureMetadata metadata = PkmnStatUtils.captureMetadata(commandBuffer,ref);
         PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(metadata);
+        if( baseStats != null){
+            pkmnStats.setBaseStats(baseStats);
+        }
+        pkmnStats.setShiny(shiny);
 
         PkmnStatUtils.apply(store, commandBuffer, ref, pkmnStats);
 
@@ -119,6 +131,4 @@ public class SetCreatureNameplateInteraction extends SimpleInteraction {
     private void fail(@Nonnull InteractionContext interactionContext){
         interactionContext.getState().state = InteractionState.Failed;
     }
-
-
 }

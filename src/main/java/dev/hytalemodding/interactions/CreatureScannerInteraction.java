@@ -4,8 +4,6 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import javax.annotation.Nonnull;
-
 import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.CommandBuffer;
@@ -22,7 +20,7 @@ import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -36,17 +34,30 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 
 
-public class CreatureScannerInteraction extends SimpleInstantInteraction {
+public class CreatureScannerInteraction extends SimpleInteraction {
 
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
     public static final BuilderCodec<CreatureScannerInteraction> CODEC = BuilderCodec.builder(
         CreatureScannerInteraction.class, 
         CreatureScannerInteraction::new, 
-        SimpleInstantInteraction.CODEC
+        SimpleInteraction.CODEC
     ).build();
 
     @Override
+    protected final void tick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        if (firstRun) {
+            this.firstRun(type, context, cooldownHandler);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+        }
+    }
+
     protected void firstRun(
         @Nonnull InteractionType interactionType,
         @Nonnull InteractionContext interactionContext,

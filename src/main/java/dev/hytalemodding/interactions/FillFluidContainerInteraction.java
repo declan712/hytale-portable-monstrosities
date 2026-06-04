@@ -1,5 +1,7 @@
 package dev.hytalemodding.interactions;
 
+import javax.annotation.Nonnull;
+
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
@@ -12,20 +14,33 @@ import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
-public class FillFluidContainerInteraction extends SimpleInstantInteraction {
+public class FillFluidContainerInteraction extends SimpleInteraction {
 
     public static final BuilderCodec<FillFluidContainerInteraction> CODEC = BuilderCodec.builder(
-        FillFluidContainerInteraction.class, FillFluidContainerInteraction::new, SimpleInstantInteraction.CODEC
+        FillFluidContainerInteraction.class, FillFluidContainerInteraction::new, SimpleInteraction.CODEC
     ).build();
 
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
     @Override
+    protected final void tick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        if (firstRun) {
+            this.firstRun(type, context, cooldownHandler);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+        }
+    }
+
     protected void firstRun(InteractionType interactionType, InteractionContext interactionContext, CooldownHandler cooldownHandler) {
         CommandBuffer<EntityStore> commandBuffer = interactionContext.getCommandBuffer();
 

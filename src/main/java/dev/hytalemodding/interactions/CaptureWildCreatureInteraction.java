@@ -22,7 +22,7 @@ import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
 import com.hypixel.hytale.server.core.modules.entity.item.ItemComponent;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
-import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
@@ -49,7 +49,7 @@ import java.util.List;
  *<br>
  *  TODO: combine naming/icon logic of this+UseCaptureOrbInteraction<br>
  */
-public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
+public class CaptureWildCreatureInteraction extends SimpleInteraction {
     protected String captureItemId = "Pokeball";
     protected String fullIcon      = "Icons/Items/Pokeball_Full.png";
 
@@ -60,7 +60,7 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
     public static final BuilderCodec<CaptureWildCreatureInteraction> CODEC = BuilderCodec.builder(
         CaptureWildCreatureInteraction.class,
         CaptureWildCreatureInteraction::new,
-        SimpleInstantInteraction.CODEC
+        SimpleInteraction.CODEC
     )
     .appendInherited(
         new KeyedCodec<>("CaptureItemId", Codec.STRING),
@@ -76,7 +76,21 @@ public class CaptureWildCreatureInteraction extends SimpleInstantInteraction {
     ).add()
     .build();
 
+
     @Override
+    protected final void tick0(
+        boolean firstRun, 
+        float time, 
+        @Nonnull InteractionType type, 
+        @Nonnull InteractionContext context, 
+        @Nonnull CooldownHandler cooldownHandler
+    ) {
+        if (firstRun) {
+            this.firstRun(type, context, cooldownHandler);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+        }
+    }
+
     protected void firstRun(
         @Nonnull InteractionType type,
         @Nonnull InteractionContext context,
