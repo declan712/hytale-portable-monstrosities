@@ -22,6 +22,7 @@ import dev.hytalemodding.components.PkmnStorageComponent;
 import dev.hytalemodding.events.InitPlayerStatsEvent;
 import dev.hytalemodding.interactions.CaptureWildCreatureInteraction;
 import dev.hytalemodding.interactions.StayCapturedInteraction;
+import dev.hytalemodding.interactions.TogglePkmnHUDInteraction;
 import dev.hytalemodding.interactions.HasOwnerInteraction;
 import dev.hytalemodding.interactions.HealAllPkmnInteraction;
 import dev.hytalemodding.interactions.ReturnActivePkmnInteraction;
@@ -66,17 +67,19 @@ public class PortableMonstrosities extends JavaPlugin {
         this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, InitPlayerStatsEvent::onPlayerReady);
 
         // -- Codecs (Interactions)  ----------
-        this.getCodecRegistry(Interaction.CODEC).register("HealAllPkmn", HealAllPkmnInteraction.class, HealAllPkmnInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("DamagePkmnEntity", DamagePkmnEntityInteraction.class, DamagePkmnEntityInteraction.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("SetCreatureNameplate", SetCreatureNameplateInteraction.class, SetCreatureNameplateInteraction.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteraction.class, CreatureScannerInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("HasOwner", HasOwnerInteraction.class, HasOwnerInteraction.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("TogglePkmnHUD", TogglePkmnHUDInteraction.class, TogglePkmnHUDInteraction.CODEC);
+        this.getCodecRegistry(Interaction.CODEC).register("HealAllPkmn", HealAllPkmnInteraction.class, HealAllPkmnInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("StayCaptured", StayCapturedInteraction.class, StayCapturedInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("CaptureWildCreature", CaptureWildCreatureInteraction.class, CaptureWildCreatureInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("UseCaptureOrb", UseCaptureOrbInteraction.class, UseCaptureOrbInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("ReturnPkmn", ReturnActivePkmnInteraction.class, ReturnActivePkmnInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("ReturnFaintedPkmn", ReturnFaintedPkmnInteraction.class, ReturnFaintedPkmnInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("SpawnPkmnTombstone", SpawnPkmnTombstoneInteraction.class, SpawnPkmnTombstoneInteraction.CODEC);
-        this.getCodecRegistry(Interaction.CODEC).register("SetCreatureNameplate", SetCreatureNameplateInteraction.class, SetCreatureNameplateInteraction.CODEC);
-        this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteraction.class, CreatureScannerInteraction.CODEC);
+
         // this.getCodecRegistry(Interaction.CODEC).register("Bench_Dough_Mixer_Interaction", DoughMixerInteraction.class, DoughMixerInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("FillFluidContainer", FillFluidContainerInteraction.class, FillFluidContainerInteraction.CODEC);
 

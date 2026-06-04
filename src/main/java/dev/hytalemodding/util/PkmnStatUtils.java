@@ -14,7 +14,8 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffect;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
-import com.hypixel.hytale.server.core.entity.Entity;
+import com.hypixel.hytale.server.core.asset.type.model.config.Model.ModelReference;
+// import com.hypixel.hytale.server.core.entity.Entity;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.nameplate.Nameplate;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
@@ -30,8 +31,10 @@ import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.Modifier.ModifierTarget;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier.CalculationType;
+// import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
+import com.hypixel.hytale.server.npc.commands.NPCAppearanceCommand;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
 import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
@@ -610,6 +613,43 @@ public class PkmnStatUtils {
         boolean isPkmn = npcEntity != null && filterByRoleName(npcEntity.getRoleName());
         _applyToStatMap(stats, pkmnStats, isPlayer, isPkmn);
         commandBuffer.putComponent(entityRef, EntityStatMap.getComponentType(), stats);
+
+
+        PersistentModel persistentModel = (PersistentModel)
+            commandBuffer.getComponent(entityRef, PersistentModel.getComponentType());
+        if (persistentModel == null) { LOGGER.atInfo().log("persistentModel null"); return; }
+
+        ModelReference modelReference = persistentModel.getModelReference();
+
+        // NPCAppearanceCommand
+        // protected void execute(
+        //     @Nonnull CommandContext context, 
+        //     @Nonnull NPCEntity npc,
+        //     @Nonnull World world, 
+        //     @Nonnull Store<EntityStore> store, 
+        //     @Nonnull Ref<EntityStore> ref
+        // ) {
+        //     ModelAsset model = (ModelAsset)this.modelArg.get(context);
+        //     npc.setAppearance(ref, model, store);
+        // }
+        String modelId = modelReference.getModelAssetId();
+        if(pkmnStats.getShiny() && !modelId.endsWith("_Shiny")){
+            ModelAsset model = ModelAsset.getAssetMap().getAsset(modelId+"_Shiny");
+            // ModelAsset modelAsset = (ModelAsset) ModelAsset.getAssetMap()
+            // .getAsset(persistentModel.getModelReference().getModelAssetId());
+            npcEntity.setAppearance(entityRef, model, commandBuffer);
+            // Map<String,String> randomAttachments = null;
+            // ModelReference modifiedModelRef = new ModelReference("modelAssetId",1f, randomAttachments,true);
+            // ModelReference modifiedModelRef = new ModelReference(modelId+"_Shiny", 1f, randomAttachments);
+            // persistentModel.setModelReference(modifiedModelRef);
+        }
+
+
+
+
+
+        // npcEntity.setAppearance(entityRef, new ModelAsset(), commandBuffer);
+        // commandBuffer.putComponent(entityRef, NPCEntity.getComponentType() );
     }
 
     /**
@@ -804,7 +844,11 @@ public class PkmnStatUtils {
         // Sentinel set at the start of a capture — block all concurrent attempts.
         if (CAPTURING_SENTINEL.equals(owner))   return true;
         if(player == null)                      return true;
-        String playerId = player.getUuid().toString();
+        Ref<EntityStore> ref =  player.getReference();
+        Store<EntityStore> store = ref.getStore();
+        // PlayerRef playerRef = store.getComponent(ref, PlayerRef.getComponentType());
+        String playerId = store.getComponent(ref, UUIDComponent.getComponentType()).toString();
+        // String playerId = player.getUuid().toString();
         if(playerId == null)                    return true;
         return !owner.equals(playerId);
     }
