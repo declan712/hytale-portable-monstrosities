@@ -403,7 +403,7 @@
                                 "unwrapMode": "custom",
                                 "visible": true,
                                 "doubleSided": false,
-                                "shadingMode": "flat"
+                                "shadingMode": "fullbright"
                               }
                             },
                             {
@@ -427,8 +427,8 @@
                                   },
                                   "right": {
                                     "offset": {"x": 91, "y": 66},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 270
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 90
                                   },
                                   "front": {
                                     "offset": {"x": 111, "y": 66},
@@ -645,8 +645,8 @@
                                   },
                                   "right": {
                                     "offset": {"x": 58, "y": 70},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 270
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 90
                                   },
                                   "front": {
                                     "offset": {"x": 58, "y": 66},
@@ -1453,7 +1453,7 @@
                       "id": "35",
                       "name": "L-Arm",
                       "position": {"x": 14, "y": 12, "z": 0},
-                      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                      "orientation": {"x": 0.14981, "y": -0.02642, "z": -0.17163, "w": 0.97335},
                       "shape": {
                         "type": "box",
                         "offset": {"x": 12, "y": -4, "z": 0},
@@ -1503,12 +1503,12 @@
                         {
                           "id": "36",
                           "name": "L-Forearm",
-                          "position": {"x": 12, "y": 0, "z": -4},
-                          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                          "position": {"x": 12, "y": 0, "z": 0},
+                          "orientation": {"x": 0, "y": -0.51877, "z": 0, "w": 0.85491},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 8, "y": 0, "z": 4},
-                            "stretch": {"x": 1.125, "y": 1.125, "z": 1.125},
+                            "offset": {"x": 8, "y": 0, "z": 0},
+                            "stretch": {"x": 1.125, "y": 1, "z": 1.125},
                             "settings": {
                               "isPiece": false,
                               "size": {"x": 16, "y": 8, "z": 8}
@@ -2083,7 +2083,7 @@
                       "id": "52",
                       "name": "R-Arm",
                       "position": {"x": -14, "y": 12, "z": 0},
-                      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                      "orientation": {"x": 0.14981, "y": 0.02642, "z": 0.17163, "w": 0.97335},
                       "shape": {
                         "type": "box",
                         "offset": {"x": -12, "y": -4, "z": 0},
@@ -2133,12 +2133,12 @@
                         {
                           "id": "53",
                           "name": "R-Forearm",
-                          "position": {"x": -12, "y": 0, "z": -4},
-                          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                          "position": {"x": -12, "y": 0, "z": 0},
+                          "orientation": {"x": 0, "y": 0.51877, "z": 0, "w": 0.85491},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": -8, "y": 0, "z": 4},
-                            "stretch": {"x": 1.125, "y": 1.125, "z": 1.125},
+                            "offset": {"x": -8, "y": 0, "z": 0},
+                            "stretch": {"x": 1.125, "y": 1, "z": 1.125},
                             "settings": {
                               "isPiece": false,
                               "size": {"x": 16, "y": 8, "z": 8}
@@ -2874,7 +2874,7 @@
               "id": "72",
               "name": "R-Thigh",
               "position": {"x": -13, "y": -6, "z": 1},
-              "orientation": {"x": -0.2566, "y": -0.12608, "z": -0.03378, "w": 0.95766},
+              "orientation": {"x": -0.23512, "y": -0.31861, "z": -0.08694, "w": 0.91414},
               "shape": {
                 "type": "box",
                 "offset": {"x": 0, "y": -5, "z": 0},
@@ -3587,7 +3587,7 @@
               "id": "91",
               "name": "L-Thigh",
               "position": {"x": 13, "y": -6, "z": 1},
-              "orientation": {"x": -0.2566, "y": 0.12608, "z": 0.03378, "w": 0.95766},
+              "orientation": {"x": -0.23512, "y": 0.31861, "z": 0.08694, "w": 0.91414},
               "shape": {
                 "type": "box",
                 "offset": {"x": 0, "y": -5, "z": 0},
