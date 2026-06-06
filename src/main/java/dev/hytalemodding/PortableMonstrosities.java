@@ -11,7 +11,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import dev.hytalemodding.commands.PkmnHudTestCommand;
-import dev.hytalemodding.commands.PkmnTestCommand;
+import dev.hytalemodding.commands.PkmnCommand.PkmnCommand;
 // import dev.hytalemodding.commands.PkmnPartyHudCommand;
 // import dev.hytalemodding.commands.PkmnTestCommand;
 import dev.hytalemodding.components.FaintedPkmnComponent;
@@ -60,7 +60,7 @@ public class PortableMonstrosities extends JavaPlugin {
         // this.getCommandRegistry().registerCommand(new ExampleCommand("test1", "An example command"));
         this.getCommandRegistry().registerCommand(new PkmnHudTestCommand("pkmnhud", "shows a test hud"));
         // this.getCommandRegistry().registerCommand(new PkmnPartyHudCommand("pkmnparty", "asdf"));
-        this.getCommandRegistry().registerCommand(new PkmnTestCommand("pkmntest","test"));
+        this.getCommandRegistry().registerCommand(new PkmnCommand());
 
         // -- Events ----------
         // this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, ExampleEvent::onPlayerReady);
