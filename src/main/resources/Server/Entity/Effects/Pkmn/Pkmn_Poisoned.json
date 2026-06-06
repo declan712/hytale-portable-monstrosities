@@ -1,0 +1,30 @@
+{
+  "Parent": "Poison",
+  "ApplicationEffects": {
+    "EntityBottomTint": "#923bba",
+    "EntityTopTint": "#ff00f2",
+    "Particles": [
+      {
+        "SystemId": "Effect_Poison",
+        "Color": "#dd00ff",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Head"
+      }
+    ],
+    "ScreenEffect": "ScreenEffects/Poison_T1.png",
+    "LocalSoundEventId": "SFX_Pkmn_Status_Poison",
+    "WorldSoundEventId": "SFX_Pkmn_Status_Poison"
+  },
+  "DamageCalculatorCooldown": 5,
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Poison": 2
+    }
+  },
+  "Duration": 50,
+  "StatusEffectIcon": "Icons/PkmnType/PoisonType.png",
+  "RemovalBehavior": "Duration",
+  "Debuff": true,
+  "OverlapBehavior": "Ignore",
+  "ValueType": "Percent"
+}

@@ -1,0 +1,58 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Breath"
+  },
+  "RunTime": 0.5,
+  "Next": {
+    "Type": "Simple",
+    "Next": {
+      "Type": "Selector",
+      "Effects": {
+        "Particles": [
+          {
+            "SystemId": "Poison_Powder",
+            "TargetEntityPart": "Entity",
+            "TargetNodeName": "Origin"
+          }
+        ],
+        "WorldSoundEventId": "SFX_Pkmn_Move_Poison_Powder",
+        "LocalSoundEventId": "SFX_Pkmn_Move_Poison_Powder",
+        "CameraEffect": {
+          "Type": "CameraShake",
+          "CameraShake": "Impact_Strong",
+          "Intensity": {
+            "Value": 0.5,
+            "AccumulationMode": "Sum"
+          }
+        },
+        "ClearAnimationOnFinish": true
+      },
+      "RunTime": 0.75,
+      "Selector": {
+        "Id": "AOECircle",
+        "Range": 6,
+        "Offset": {
+          "Z": 2
+        }
+      },
+      "HitEntity": {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "DefaultOk": true,
+            "Var": "Poison_Powder_Damage",
+            "DefaultValue": {
+              "Interactions": [
+                "Pkmn_Moves_Poison_Powder_Damage"
+              ]
+            }
+          }
+        ]
+      },
+      "HorizontalSpeedMultiplier": 0.3
+    }
+  }
+}
