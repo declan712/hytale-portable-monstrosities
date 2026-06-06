@@ -42,6 +42,7 @@ import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHa
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.client.SimpleBlockInteraction;
 import com.hypixel.hytale.server.core.modules.time.WorldTimeResource;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
@@ -344,9 +345,14 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         }
         // LOGGER.atInfo().log("NPC state: "+npcStatus);
         
+        PlayerRef playerRef = commandBuffer.getComponent(ref,PlayerRef.getComponentType());
+        if(playerRef!=null){ 
+            existingCaptureMeta.setOwner(playerRef.getUsername());
+        }
         existingCaptureMeta.setNpcStatus("Active");
-        UUIDComponent ownerUuidComponent = commandBuffer.getComponent(ref, UUIDComponent.getComponentType());
-        if (ownerUuidComponent != null) existingCaptureMeta.setOwnerUuid(ownerUuidComponent.getUuid().toString());
+
+        // UUIDComponent ownerUuidComponent = commandBuffer.getComponent(ref, UUIDComponent.getComponentType());
+        // if (ownerUuidComponent != null) existingCaptureMeta.setOwnerUuid(ownerUuidComponent.getUuid().toString());
         
 
         ItemStack blankBall = item.withMetadata((BsonDocument) null);
@@ -526,9 +532,10 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             commandBuffer.getComponent(targetRef, PkmnStatsComponent.getComponentType());
 
         if (pkmnStats != null) {
-            String owner  = pkmnStats.getOwnerUuid();
-            Player player = commandBuffer.getComponent(catcherRef, Player.getComponentType());
-            if (PkmnStatUtils.hasOtherOwner(owner, player)) {
+            String owner  = pkmnStats.getOwner();
+            // Player player = commandBuffer.getComponent(catcherRef, Player.getComponentType());
+            PlayerRef playerRef = commandBuffer.getComponent(catcherRef, PlayerRef.getComponentType());
+            if (PkmnStatUtils.hasOtherOwner(owner, playerRef)) {
                 // LOGGER.atInfo().log("Creature is owned by someone else");
                 return null;
             }
@@ -546,7 +553,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         // Lock this target immediately so any concurrent capture attempt
         // (e.g. a second projectile hitting the same frame) sees hasOtherOwner=true
         // and bails out.  The real ownerUuid is written below once we have it.
-        pkmnStats.setOwnerUuid(PkmnStatUtils.CAPTURING_SENTINEL);
+        pkmnStats.setOwner(PkmnStatUtils.CAPTURING_SENTINEL);
         commandBuffer.putComponent(targetRef, PkmnStatsComponent.getComponentType(), pkmnStats);
 
         PkmnCaptureMetadata captureMetadata = PkmnStatUtils.captureMetadata(commandBuffer, targetRef);

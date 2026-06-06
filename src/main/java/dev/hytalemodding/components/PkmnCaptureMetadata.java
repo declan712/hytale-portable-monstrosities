@@ -41,7 +41,7 @@ public class PkmnCaptureMetadata {
     @Nullable private int[]  ivs;
     @Nullable private String nature;
     @Nullable private String nickname;
-    @Nullable private String ownerUuid;
+    @Nullable private String owner;
     private boolean shiny;
     private int  level      = 1;
     private long experience = 0L;
@@ -56,7 +56,7 @@ public class PkmnCaptureMetadata {
         this.ivs=empty;
         this.nature="";
         this.nickname="";
-        this.ownerUuid="";
+        this.owner="";
         this.level=1;
         this.experience=0;
         this.shiny=false;
@@ -88,8 +88,8 @@ public class PkmnCaptureMetadata {
     @Nullable public String getNickname()          { return nickname; }
     public void              setNickname(String v) { this.nickname = v; }
 
-    @Nullable public String getOwnerUuid()             { return ownerUuid; }
-    public void              setOwnerUuid(String v)    { this.ownerUuid = v; }
+    @Nullable public String getOwner()             { return owner; }
+    public void              setOwner(String v)    { this.owner = v; }
 
     public int  getLevel()              { return level; }
     public void setLevel(int v)         { this.level = v; }
@@ -120,7 +120,7 @@ public class PkmnCaptureMetadata {
             "ivs",           ivs,
             "nature",        nature,
             "nickname",      nickname,
-            "ownerUuid",     ownerUuid,
+            "owner",     owner,
             "level",         level,
             "experience",   experience
             // "ballId",        ballEntityUuid,
@@ -173,10 +173,10 @@ public class PkmnCaptureMetadata {
             o -> o.nickname,
             (o, p) -> o.nickname = p.nickname
         ).add()
-        .appendInherited(new KeyedCodec<>("OwnerUuid", Codec.STRING),
-            (o, v) -> o.ownerUuid = v,
-            o -> o.ownerUuid,
-            (o, p) -> o.ownerUuid = p.ownerUuid
+        .appendInherited(new KeyedCodec<>("Owner", Codec.STRING),
+            (o, v) -> o.owner = v,
+            o -> o.owner,
+            (o, p) -> o.owner = p.owner
         ).add()
         .appendInherited(new KeyedCodec<>("Level", Codec.INTEGER),
             (o, v) -> o.level = v, 

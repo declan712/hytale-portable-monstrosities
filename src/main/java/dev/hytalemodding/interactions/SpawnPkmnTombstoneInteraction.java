@@ -2,8 +2,6 @@ package dev.hytalemodding.interactions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
 import javax.annotation.Nonnull;
 
 import org.joml.Vector3d;
@@ -132,26 +130,28 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
             pkmnMeta.setNpcEntityUuid(entityId);
             pkmnMeta.setCurrentHp(0);
         
-        String ownerUUID =  pkmnMeta.getOwnerUuid();
-        if(ownerUUID!=null){
-            // LOGGER.atInfo().log("OwnerUUID exists");
-            Ref<EntityStore> ownerRef = world.getEntityRef(UUID.fromString(ownerUUID));
-            if(ownerRef!=null && ownerRef.isValid()){
-                // LOGGER.atInfo().log("Owner ref exists and is valid");
-                // LOGGER.atInfo().log("Checking owner inventory for ball matching entity ID: "+entityId);
-                boolean result = returnToPlayer(
-                    context, 
-                    store,
-                    ref,
-                    world,
-                    roleId,
-                    entityId,
-                    pkmnStats,
-                    pkmnMeta,
-                    ownerRef
-                );
-                if(result) return;
+        String ownerUsername =  pkmnMeta.getOwner();
+        if(ownerUsername!=null){
+            PlayerRef playerRef = PkmnStatUtils.findOwner(world, ownerUsername);
+            if(playerRef != null){
+                Ref<EntityStore> ownerRef = playerRef.getReference();
+                if(ownerRef!=null && ownerRef.isValid()){
+                    boolean result = returnToPlayer(
+                        context, 
+                        store,
+                        ref,
+                        world,
+                        roleId,
+                        entityId,
+                        pkmnStats,
+                        pkmnMeta,
+                        ownerRef
+                    );
+                    if(result) return;
+                }
             }
+
+
             // LOGGER.atInfo().log("Unable to return to owner");
         }else{
             // LOGGER.atInfo().log("no OwnerUUID, spawn tombstone instead");
@@ -270,6 +270,8 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
 
         return true;
     }
+
+
 
 
     public record InventorySlotItem(Short slot, ItemStack itemstack, InventoryComponent inventory) {}

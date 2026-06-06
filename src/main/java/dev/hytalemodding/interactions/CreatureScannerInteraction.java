@@ -147,25 +147,11 @@ public class CreatureScannerInteraction extends SimpleInteraction {
         // player.sendMessage(Message.raw("Base: [a,b,c,d,e,f]"));
         // player.sendMessage(Message.raw("Stat: [a,b,c,d,e,f]"));
 
-        String ownerUuid = pkmnStats.getOwnerUuid();
-        World world = store.getExternalData().getWorld();
-
-        if (ownerUuid != null) {
-            Ref<EntityStore> ownerRef = world.getEntityRef(UUID.fromString(ownerUuid));
-            if(ownerRef != null){
-                PlayerRef owner = store.getComponent(ownerRef, PlayerRef.getComponentType());
-                if (owner != null) {
-                    String username = owner.getUsername();
-                    playerRef.sendMessage(Message.raw("owned by: "+username));
-                }
-            }
+        String ownerUsername = pkmnStats.getOwner();
+        if (ownerUsername != null) {
+            playerRef.sendMessage(Message.raw("owned by: "+ownerUsername));
         }
 
-        // PlayerRef ownerRef;
-        // for (int i=0;i<playerRefs.length;i++) {
-        //     playerRefs[i];
-        // }
-        
         
 
         EffectControllerComponent effectControllerComponent = store.getComponent(targetRef,EffectControllerComponent.getComponentType());

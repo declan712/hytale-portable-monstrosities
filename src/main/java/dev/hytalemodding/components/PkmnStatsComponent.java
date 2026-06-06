@@ -45,11 +45,8 @@ public class PkmnStatsComponent implements Component<EntityStore> {
     private String nature;
     @Nullable
     private String nickname;
-    /**
-     * UUID string of the player who first captured this creature, or null if wild
-     */
     @Nullable
-    private String ownerUuid;
+    private String owner;
     private int level = 1;
     private long experience = 0L;
     /**
@@ -72,7 +69,7 @@ public class PkmnStatsComponent implements Component<EntityStore> {
         ivs = clone.ivs;
         nature = clone.nature;
         nickname = clone.nickname;
-        ownerUuid = clone.ownerUuid;
+        owner = clone.owner;
         level = clone.level;
         experience = clone.experience;
         type1 = clone.type1;
@@ -113,8 +110,8 @@ public class PkmnStatsComponent implements Component<EntityStore> {
                     data -> data.nickname)
             .add()
             .append(new KeyedCodec<>("Owner", Codec.STRING),
-                    (data, value) -> data.ownerUuid = value,
-                    data -> data.ownerUuid)
+                    (data, value) -> data.owner = value,
+                    data -> data.owner)
             .add()
             .append(new KeyedCodec<>("Exp", Codec.LONG),
                     (data, value) -> data.experience = value,
@@ -180,12 +177,12 @@ public class PkmnStatsComponent implements Component<EntityStore> {
     }
 
     @Nullable
-    public String getOwnerUuid() {
-        return ownerUuid;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setOwnerUuid(String v) {
-        this.ownerUuid = v;
+    public void setOwner(String v) {
+        this.owner = v;
     }
 
     public int getLevel() {
@@ -286,7 +283,7 @@ public class PkmnStatsComponent implements Component<EntityStore> {
             "ivs", ivs,
             "nature", nature,
             "nickname", nickname,
-            "ownerUuid", ownerUuid,
+            "owner", owner,
             "level", level,
             "experience", experience,
             "type1", type1,

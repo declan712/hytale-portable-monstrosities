@@ -33,6 +33,7 @@ import com.hypixel.hytale.server.core.modules.interaction.interaction.config.non
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageCalculator;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.server.combat.DamageEffects;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.World;
 // import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
@@ -282,28 +283,17 @@ public class DamagePkmnEntityInteraction extends SimpleInteraction{
             // LOGGER.atInfo().log("pkmnStats NULL => no owner"); 
             return null;
         }
-        String ownerId = pkmnStats.getOwnerUuid();
+        String ownerId = pkmnStats.getOwner();
         if (ownerId == null)  { 
             // LOGGER.atInfo().log("ownerUuid NULL"); 
             return null;
         }
-        Ref<EntityStore> ownerRef = store.getExternalData().getRefFromUUID(UUID.fromString(ownerId));
-        if(ownerRef == null) {
-            // LOGGER.atInfo().log("ownerREf NULL"); 
-            return null;
-        }
-        Player ownerPlayer = store.getComponent(ownerRef, Player.getComponentType());
-        if (ownerPlayer == null){
-            // LOGGER.atInfo().log("Owner not a player"); 
-            return null;
-        }
-        // PlayerRef ownerPlayerRef = commandBuffer.getComponent(ownerRef, PlayerRef.getComponentType());
-        // if (ownerPlayerRef == null) return null;
-        // String ownerName = ownerPlayerRef.getUsername();
-        // LOGGER.atInfo().log("Owner is "+ownerName); 
-        return ownerRef;
-
-
+        World world = store.getExternalData().getWorld();
+        if(world==null) return null;
+        PlayerRef playerRef = PkmnStatUtils.findOwner(world, ownerId);
+        // Ref<EntityStore> ownerRef = store.getExternalData().getRefFromUUID(UUID.fromString(ownerId));
+        if(playerRef == null) return null;
+        return playerRef.getReference();
     }
 
 

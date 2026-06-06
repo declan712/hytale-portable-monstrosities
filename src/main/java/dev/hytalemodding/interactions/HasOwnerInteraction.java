@@ -56,8 +56,8 @@ public class HasOwnerInteraction extends SimpleInstantInteraction {
             targetRef, PkmnStatsComponent.getComponentType());
 
         boolean owned = stats != null
-            && stats.getOwnerUuid() != null
-            && !stats.getOwnerUuid().isBlank();
+            && stats.getOwner() != null
+            && !stats.getOwner().isBlank();
 
         if (owned) {
             context.getState().state = InteractionState.Finished;

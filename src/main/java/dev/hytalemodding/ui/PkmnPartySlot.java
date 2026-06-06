@@ -16,6 +16,7 @@ public final class PkmnPartySlot {
     public final int    maxHp;
     /** True if the Pokémon has fainted (hp == 0 or status == "Fainted"). */
     public final boolean fainted;
+    public final boolean active;
     public final String     iconPath;
 
     public PkmnPartySlot(
@@ -24,6 +25,7 @@ public final class PkmnPartySlot {
         int currentHp,
         int maxHp,
         boolean fainted,
+        boolean active,
         String iconPath
     ) {
         this.name      = (name != null && !name.isBlank()) ? name : "???";
@@ -31,13 +33,15 @@ public final class PkmnPartySlot {
         this.currentHp = Math.max(0, currentHp);
         this.maxHp     = Math.max(1, maxHp);
         this.fainted   = fainted || currentHp <= 0;
+        this.active     = active;
         this.iconPath  = iconPath;
     }
 
     /** Convenience: build a slot from raw captured-metadata values. */
     public static PkmnPartySlot of(String name, int level, float currentHp, float maxHp, String npcStatus,String icon) {
         boolean fainted = "Fainted".equals(npcStatus) || currentHp <= 0;
-        return new PkmnPartySlot(name, level, (int) currentHp, (int) maxHp, fainted, icon);
+        boolean active = "Active".equals(npcStatus);
+        return new PkmnPartySlot(name, level, (int) currentHp, (int) maxHp, fainted, active, icon);
     }
     public boolean equals(PkmnPartySlot other){
         if(other==null)                             return false;
@@ -45,6 +49,7 @@ public final class PkmnPartySlot {
         if(this.level != other.level)               return false;
         if(this.maxHp != other.maxHp)               return false;
         if(this.fainted != other.fainted)           return false;
+        if(this.active != other.active)             return false;
         if(!this.name.equals(other.name))           return false;
         if(!this.iconPath.equals(other.iconPath))   return false;
         return true;

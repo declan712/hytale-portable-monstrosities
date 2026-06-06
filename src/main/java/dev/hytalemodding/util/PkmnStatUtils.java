@@ -1,7 +1,9 @@
 package dev.hytalemodding.util;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
@@ -31,6 +33,8 @@ import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.Modifier.ModifierTarget;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier.CalculationType;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.World;
 // import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
@@ -70,7 +74,7 @@ public class PkmnStatUtils {
         @Nonnull String roleName,
         @Nonnull PkmnStatsComponent pkmnStats
     ){
-        String nameplateString = buildNamplateString(roleName,pkmnStats,null);
+        String nameplateString = buildNamplateString(roleName,pkmnStats);
         commandBuffer.putComponent(ref,Nameplate.getComponentType(),new Nameplate(nameplateString));
     }
 
@@ -460,7 +464,7 @@ public class PkmnStatUtils {
         captureMetadata.setIvs(pkmnStats.getIvs());
         captureMetadata.setNature(pkmnStats.getNature());
         captureMetadata.setNickname(pkmnStats.getNickname());
-        captureMetadata.setOwnerUuid(pkmnStats.getOwnerUuid());
+        captureMetadata.setOwner(pkmnStats.getOwner());
         captureMetadata.setNpcStatus(isDead?"Fainted":"Healthy");
         captureMetadata.setShiny(pkmnStats.getShiny());
         captureMetadata.setRoleId(roleId);
@@ -540,7 +544,7 @@ public class PkmnStatUtils {
         var metaExperience      = metadata.getExperience();
         var metaLevel           = metadata.getLevel();
         var metaNickname        = metadata.getNickname();
-        var metaOwnerUuid       = metadata.getOwnerUuid();
+        var metaOwner           = metadata.getOwner();
         var metaBaseStats       = metadata.getBaseStats();
         pkmnStats.setExperience(metaExperience);
         pkmnStats.setLevel(metaLevel);
@@ -548,7 +552,7 @@ public class PkmnStatUtils {
         pkmnStats.setIvs(metaIVs);
         if(metaNature!=null && !metaNature.isBlank()) pkmnStats.setNature(metaNature);
         if(metaNickname!=null && !metaNickname.isBlank()) pkmnStats.setNickname(metaNickname);
-        if(metaOwnerUuid!=null && !metaOwnerUuid.isBlank()) pkmnStats.setOwnerUuid(metaOwnerUuid);
+        if(metaOwner!=null && !metaOwner.isBlank()) pkmnStats.setOwner(metaOwner);
         pkmnStats.setBaseStats(metaBaseStats);
         pkmnStats.setShiny(metadata.getShiny());
 
@@ -829,28 +833,46 @@ public class PkmnStatUtils {
     public static boolean isTamed(@Nonnull String npcRoleId){
         return npcRoleId.endsWith("_Tamed");
     }
+    
+    public static  PlayerRef findOwner(
+        @Nonnull World world,
+        @Nonnull String username
+    ){
+        Collection<PlayerRef> allPlayerRefs = world.getPlayerRefs();
+        List<PlayerRef> matches = new ArrayList<>();
+        allPlayerRefs.forEach(p -> {
+            if( matches.size()>0) return;
+            if (p.getUsername().equals(username)) {
+                matches.add(p);
+            }
 
+        });
+        if(matches.size()>0) return matches.get(0);
+        LOGGER.atInfo().log("Couldnt find player: "+username);
+        return null;
+    }
     /**
      * 
      * @param owner
-     * @param player
+     * @param playerRef
      * @return
      */
     public static boolean hasOtherOwner(
         @Nullable String owner,
-        @Nullable Player player
+        @Nullable PlayerRef playerRef
     ){
         if (owner == null || owner.isBlank())   return false;
         // Sentinel set at the start of a capture — block all concurrent attempts.
         if (CAPTURING_SENTINEL.equals(owner))   return true;
-        if(player == null)                      return true;
-        Ref<EntityStore> ref =  player.getReference();
-        Store<EntityStore> store = ref.getStore();
+        if(playerRef == null)                      return true;
+        String username = playerRef.getUsername();
+        // Ref<EntityStore> ref =  playerRef.getReference();
+        // Store<EntityStore> store = ref.getStore();
         // PlayerRef playerRef = store.getComponent(ref, PlayerRef.getComponentType());
-        String playerId = store.getComponent(ref, UUIDComponent.getComponentType()).toString();
+        // String playerId = store.getComponent(ref, UUIDComponent.getComponentType()).toString();
         // String playerId = player.getUuid().toString();
-        if(playerId == null)                    return true;
-        return !owner.equals(playerId);
+        if(username == null)                    return true;
+        return !owner.equals(username);
     }
 
     /**
@@ -884,8 +906,7 @@ public class PkmnStatUtils {
      */
     public static String buildNamplateString(
         @Nonnull String npcRoleId,
-        @Nonnull PkmnStatsComponent stats,
-        @Nullable String playerUuid
+        @Nonnull PkmnStatsComponent stats
     ){
         String name = speciesFromRole(npcRoleId);
         var nickname = stats.getNickname();

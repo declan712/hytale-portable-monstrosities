@@ -108,7 +108,7 @@ public class ReturnFaintedPkmnInteraction extends SimpleInteraction {
         pkmnMetadata.setExperience(pkmnStats.getExperience());
         pkmnMetadata.setLevel(pkmnMetadata.getLevel());
         pkmnMetadata.setNpcStatus("Fainted");
-        pkmnMetadata.setOwnerUuid(pkmnStats.getOwnerUuid());
+        pkmnMetadata.setOwner(pkmnStats.getOwner());
 
         pkmnMetadata.setNpcEntityUuid(faintedPkmnComponent.getNpcUuid());
 

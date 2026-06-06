@@ -59,10 +59,12 @@ public class TogglePkmnHUDInteraction extends SimpleInstantInteraction {
 
     // ── Layout constants (same as command) ───────────────────────────────────
 
-    private static final String HUD_KEY         = "PkmnParty";
+    // private static final String HUD_KEY         = "PkmnParty";
     private static final int    MAX_SLOTS        = 6;
     private static final String UI_FILE          = "PkmnParty.ui";
     private static final String SLOT_HEALTHY     = "UI/Custom/Pages/Pokeball.png";
+    private static final String SLOT_ACTIVE       = "UI/Custom/Pages/Pokeball_Grey.png";
+    private static final String SLOT_DEAD       = "UI/Custom/Pages/Pokeball_Dead.png";
     private static final String SLOT_EMPTY       = "UI/Custom/Pages/Pokeball_None.png";
     private static final int    ROW_HEIGHT        = 48;
     private static final int    PADDING           = 52;
@@ -188,12 +190,11 @@ public class TogglePkmnHUDInteraction extends SimpleInstantInteraction {
 
             if (party.size() < fi) {
                 hud.editElement(cmds -> cmds.set(idPkmn, false))
-                   .editElement(cmds -> cmds.set(idBall, SLOT_EMPTY));
+                    .editElement(cmds -> cmds.set(idBall, SLOT_EMPTY));
                 continue;
             }
 
-            hud.editElement(cmds -> cmds.set(idPkmn, true))
-               .editElement(cmds -> cmds.set(idBall, SLOT_HEALTHY));
+            hud.editElement(cmds -> cmds.set(idPkmn, true));
 
             PkmnPartySlot pkmn = party.get(fi - 1);
 
@@ -204,11 +205,15 @@ public class TogglePkmnHUDInteraction extends SimpleInstantInteraction {
             final String hpText   = pkmn.currentHp + "/" + pkmn.maxHp;
             final String icon     = pkmn.iconPath;
 
+            if(pkmn.fainted){       hud.editElement(cmds -> cmds.set(idBall, SLOT_DEAD));}
+            else if (pkmn.active){  hud.editElement(cmds -> cmds.set(idBall, SLOT_ACTIVE));}
+            else {                  hud.editElement(cmds -> cmds.set(idBall, SLOT_HEALTHY));}
+
             hud.editElement(cmds -> cmds.set(idName,   name))
-               .editElement(cmds -> cmds.set(idLevel,  level))
-               .editElement(cmds -> cmds.set(idHpBar,  pctHp))
-               .editElement(cmds -> cmds.set(idHpText, hpText))
-               .editElement(cmds -> cmds.set(idIcon,   icon));
+                .editElement(cmds -> cmds.set(idLevel,  level))
+                .editElement(cmds -> cmds.set(idHpBar,  pctHp))
+                .editElement(cmds -> cmds.set(idHpText, hpText))
+                .editElement(cmds -> cmds.set(idIcon,   icon));
         }
     }
 
@@ -250,8 +255,7 @@ public class TogglePkmnHUDInteraction extends SimpleInstantInteraction {
                 }
                 continue;
             } else if (oldPartySize < fi) {
-                hud.editElement(cmds -> cmds.set(idPkmn, true))
-                   .editElement(cmds -> cmds.set(idBall, SLOT_HEALTHY));
+                hud.editElement(cmds -> cmds.set(idPkmn, true));
             }
 
             final PkmnPartySlot pkmn = party.get(fi - 1);
@@ -260,6 +264,12 @@ public class TogglePkmnHUDInteraction extends SimpleInstantInteraction {
                 : PkmnPartySlot.of("", 0, 0, 0, "", "");
 
             if (pkmn.equals(prev)) continue;
+
+            if(pkmn.fainted && !prev.fainted){       hud.editElement(cmds -> cmds.set(idBall, SLOT_DEAD));}
+            else if (pkmn.active && !prev.active){  hud.editElement(cmds -> cmds.set(idBall, SLOT_ACTIVE));}
+            else if (!pkmn.fainted && !pkmn.active && (prev.active || prev.fainted)){ 
+                    hud.editElement(cmds -> cmds.set(idBall, SLOT_HEALTHY));
+            }
 
             if (!pkmn.name.equals(prev.name))
                 hud.editElement(cmds -> cmds.set(idName, pkmn.name));
@@ -332,8 +342,9 @@ public class TogglePkmnHUDInteraction extends SimpleInstantInteraction {
         final boolean isHealthy = "Healthy".equals(status);
         if (!isActive && !isFainted && !isHealthy) return null;
 
-        String roleId = isActive ? captureMeta.getRoleId()
-                                 : (npcMeta != null ? npcMeta.getNpcNameKey() : null);
+        String roleId = isActive 
+                ? captureMeta.getRoleId()
+                : (npcMeta != null ? npcMeta.getNpcNameKey() : null);
         if (roleId == null) return null;
 
         String name = dev.hytalemodding.util.PkmnStatUtils.displayNameOf(roleId);

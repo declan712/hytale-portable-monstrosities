@@ -23,6 +23,7 @@ import com.hypixel.hytale.server.core.modules.entity.item.ItemComponent;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
@@ -143,15 +144,15 @@ public class CaptureWildCreatureInteraction extends SimpleInteraction {
 
         // Guard: if capture is already in progress (sentinel) or owned by someone else, bail out.
         if (pkmnStats != null) {
-            Player catcher = throwerRef != null ? store.getComponent(throwerRef, Player.getComponentType()) : null;
-            if (PkmnStatUtils.hasOtherOwner(pkmnStats.getOwnerUuid(), catcher)) {
+            PlayerRef catcher = throwerRef != null ? store.getComponent(throwerRef, PlayerRef.getComponentType()) : null;
+            if (PkmnStatUtils.hasOtherOwner(pkmnStats.getOwner(), catcher)) {
                 fail(context); return;
             }
         }
 
         // Lock immediately to block any concurrent capture attempt on the same target.
         if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
-        pkmnStats.setOwnerUuid(PkmnStatUtils.CAPTURING_SENTINEL);
+        pkmnStats.setOwner(PkmnStatUtils.CAPTURING_SENTINEL);
         commandBuffer.putComponent(targetRef, PkmnStatsComponent.getComponentType(), pkmnStats);
 
 
