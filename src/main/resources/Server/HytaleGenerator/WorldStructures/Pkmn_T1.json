@@ -1,0 +1,36 @@
+{
+  "Type": "NoiseRange",
+  "Biomes": [
+    {
+      "Biome" : "Pkmn_T1_Base",
+      "Min" : -2,
+      "Max" : 2
+    }
+  ],
+  "DefaultBiome": "Pkmn_T1_Base",
+  "DefaultTransitionDistance": 48,
+  "MaxBiomeEdgeDistance" : 48,
+  "Density": {
+    "Type" : "Imported",
+    "Name" : "Biome-Map"
+	},
+  "Framework" : [
+    {
+      "Type" : "DecimalConstants",
+      "Entries" : [
+        {
+          "Name" : "Base",
+          "Value" : 100
+        },
+        {
+          "Name" : "Water",
+          "Value" : 100
+        },
+        {
+          "Name" : "Bedrock",
+          "Value" : 0
+        }
+      ]
+    }
+  ]
+}

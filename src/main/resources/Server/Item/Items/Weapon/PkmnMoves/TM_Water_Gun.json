@@ -43,6 +43,11 @@
             },
             "0.5": {
               "Type": "Repeat",
+              "Effects": {
+                "ItemPlayerAnimationsId": "Pkmn_Default",
+                "ItemAnimationId": "Breath",
+                "ClearAnimationOnFinish": true
+              },
               "ForkInteractions": {
                 "Interactions": [
                   {
@@ -58,13 +63,7 @@
                           },
                           {
                             "Type": "Simple",
-                            "RunTime": 0.05,
-                            "Effects": {
-                              "ItemPlayerAnimationsId": "Spellbook",
-                              "ItemAnimationId": "CastPushCharged",
-                              "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Launch",
-                              "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Launch"
-                            }
+                            "RunTime": 0.05
                           }
                         ]
                       },
