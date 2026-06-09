@@ -1,0 +1,51 @@
+{
+  "Parent": "Stun",
+  "ApplicationEffects": {
+    "MovementEffects": {
+      "DisableAll": true,
+      "DisableCrouch": true,
+      "DisableJump": true,
+      "DisableSprint": true,
+      "DisableRight": true,
+      "DisableLeft": true,
+      "DisableBackward": true,
+      "DisableForward": true
+    },
+    "AbilityEffects": {
+      "Disabled": [
+        "Primary",
+        "Secondary",
+        "Ability1",
+        "Ability2",
+        "Ability3",
+        "Use"
+      ]
+    },
+    "EntityBottomTint": "#cdcdcd",
+    "EntityTopTint": "#2d2d2d",
+    "Particles": [
+      {
+        "SystemId": "Sleepy",
+        "Color": "#dd00ff",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Head"
+      }
+    ],
+    "LocalSoundEventId": "SFX_Pkmn_Status_Sleep",
+    "WorldSoundEventId": "SFX_Pkmn_Status_Sleep",
+    "EntityAnimationId": "Sleep",
+    "HorizontalSpeedMultiplier": 0
+  },
+  "DamageCalculatorCooldown": 5,
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Normal": 0
+    }
+  },
+  "Duration": 10,
+  "StatusEffectIcon": "Icons/PkmnType/NormalType.png",
+  "RemovalBehavior": "Duration",
+  "Debuff": true,
+  "OverlapBehavior": "Ignore",
+  "ValueType": "Absolute"
+}

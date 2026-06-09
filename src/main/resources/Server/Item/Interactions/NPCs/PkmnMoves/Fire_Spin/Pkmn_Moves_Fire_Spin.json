@@ -1,0 +1,98 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Spin",
+    "Particles": [
+      {
+        "SystemId": "Fire_AoE_Grow2",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Origin",
+        "PositionOffset": {
+          "Y": 0.25
+        }
+      }
+    ]
+  },
+  "RunTime": 0.25,
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 0.2,
+    "Effects": {
+      "WorldSoundEventId": "SFX_Golem_Earth_Spin",
+      "LocalSoundEventId": "SFX_Golem_Earth_Spin"
+    },
+    "Next": {
+      "Type": "Repeat",
+      "Repeat": 10,
+      "ForkInteractions": {
+        "Interactions": [
+          {
+            "Type": "Selector",
+            "Effects": {
+              "Particles": [
+                {
+                  "SystemId": "Fire_Spin",
+                  "TargetEntityPart": "Entity",
+                  "TargetNodeName": "Origin",
+                  "PositionOffset": {
+                    "Y": 0.5
+                  },
+                  "Scale": 1
+                },
+                {
+                  "SystemId": "Fire_Spin",
+                  "TargetEntityPart": "Entity",
+                  "TargetNodeName": "Origin",
+                  "PositionOffset": {
+                    "Y": 0
+                  },
+                  "Scale": 1.5
+                }
+              ],
+              "WorldSoundEventId": "SFX_Pkmn_Move_Fire_Spin",
+              "LocalSoundEventId": "SFX_Pkmn_Move_Fire_Spin",
+              "ClearAnimationOnFinish": true
+            },
+            "RunTime": 0.5,
+            "Selector": {
+              "Id": "AOECylinder",
+              "Range": 6,
+              "Offset": {
+                "Y": 0
+              },
+              "Height": 6
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "Replace",
+                  "DefaultOk": true,
+                  "Var": "Fire_Spin_Damage",
+                  "DefaultValue": {
+                    "Interactions": [
+                      "Pkmn_Moves_Fire_Spin_Damage"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Type": "Simple",
+            "RunTime": 0.5
+          }
+        ]
+      },
+      "Next": {
+        "Type": "Simple",
+        "Effects": {
+          "ClearAnimationOnFinish": true,
+          "ItemAnimationId": "Interact"
+        },
+        "RunTime": 0.1
+      }
+    }
+  }
+}

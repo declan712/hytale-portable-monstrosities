@@ -1,0 +1,42 @@
+{
+  "Type": "Simple",
+  "Next": {
+    "Type": "Parallel",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 9.5,
+            "Next": {
+              "Type": "Simple",
+              "RunTime": 0.5,
+              "Effects": {
+                "ItemAnimationId": "Wake",
+                "ClearAnimationOnFinish": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "ApplyEffect",
+            "EffectId": "Pkmn_Sleeping",
+            "Entity": "Target",
+            "Effects": {
+              "ClearAnimationOnFinish": true
+            }
+          }
+        ]
+      }
+    ],
+    "RunTime": 11
+  },
+  "RunTime": 0.5,
+  "Effects": {
+    "ItemAnimationId": "Laydown"
+  },
+  "HorizontalSpeedMultiplier": 0
+}

@@ -2,7 +2,7 @@
   "Parent": "DamagePkmnParent",
   "DamageCalculator": {
     "BaseDamage": {
-      "Grass": 35
+      "Fire": 5
     }
   },
   "DamageEffects": {
@@ -12,10 +12,11 @@
       "RelativeZ": -5,
       "VelocityY": 5
     },
-    "WorldSoundEventId": "SFX_Spear_Impact",
+    "WorldSoundEventId": "SFX_Pkmn_Damage",
+    "LocalSoundEventId": "SFX_Pkmn_Damage",
     "WorldParticles": [
       {
-        "SystemId": "Impact_Blade_01"
+        "SystemId": "Impact_Sword_Basic"
       }
     ]
   }

@@ -1,0 +1,23 @@
+{
+  "Name": "portablemonstrosities.entityEffects.Pkmn_Attack_Up.name",
+  "ApplicationEffects": {
+    "LocalSoundEventId": "SFX_Pkmn_Stat_Up",
+    "WorldSoundEventId": "SFX_Pkmn_Stat_Up",
+    "ModelVFXId": "VFX_Pkmn_Stat_Up",
+    "ScreenEffect": "ScreenEffects/Daggers.png"
+  },
+  "Duration": 30,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Duration",
+  "ValueType": "Percent",
+  "RawStatModifiers": {
+    "Atk": [
+      {
+        "CalculationType": "Multiplicative",
+        "Amount": 1.2,
+        "Target": "Max"
+      }
+    ]
+  },
+  "StatusEffectIcon": "Icons/PkmnType/UnknownType.png"
+}

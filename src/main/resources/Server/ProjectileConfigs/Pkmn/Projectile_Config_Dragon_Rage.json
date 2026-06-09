@@ -1,0 +1,95 @@
+{
+  "Model": "Eye_Void_Blast",
+  "SpawnRotationOffset": {
+    "Pitch": 2.5,
+    "Yaw": -0.5,
+    "Roll": -50
+  },
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 5,
+    "TerminalVelocityAir": 35,
+    "TerminalVelocityWater": 35,
+    "RotationMode": "VelocityDamped",
+    "SticksVertically": true
+  },
+  "LaunchForce": 35,
+  "SpawnOffset": {
+    "X": -0.15,
+    "Y": -0.25,
+    "Z": -1
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "DefaultValue": {
+            "Interactions": [
+              "Pkmn_Moves_Dragon_Rage_Damage"
+            ]
+          },
+          "Var": "Dragon_Rage_Damage"
+        },
+        {
+          "Type": "Simple",
+          "RunTime": 0.5,
+          "Effects": {
+            "LocalSoundEventId": "SFX_Staff_Flame_Fireball_Impact",
+            "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact",
+            "Particles": [
+              {
+                "SystemId": "VoidImpact",
+                "Scale": 2,
+                "TargetEntityPart": "Entity"
+              },
+              {
+                "SystemId": "Impact_Fire",
+                "TargetEntityPart": "Entity",
+                "Scale": 1
+              }
+            ]
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0.5,
+          "Effects": {
+            "LocalSoundEventId": "SFX_Fireball_Death",
+            "WorldSoundEventId": "SFX_Fireball_Death",
+            "Particles": [
+              {
+                "SystemId": "VoidImpact",
+                "Scale": 2,
+                "TargetEntityPart": "Entity"
+              },
+              {
+                "SystemId": "Impact_Fire",
+                "TargetEntityPart": "Entity",
+                "Scale": 1
+              }
+            ]
+          }
+        },
+        {
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    }
+  }
+}

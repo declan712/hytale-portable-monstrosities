@@ -1,0 +1,68 @@
+{
+  "Parent": "TM_Template",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.TM_Sleep_Powder.name",
+    "Description": "portablemonstrosities.items.TM_Sleep_Powder.description"
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Bench_Pokeball",
+        "Categories": [
+          "Pkmn_TM"
+        ]
+      }
+    ]
+  },
+  "Quality": "Uncommon",
+  "ItemLevel": 20,
+  "Texture": "Items/Weapons/Tm/Grass.png",
+  "PlayerAnimationsId": "Spellbook",
+  "Utility": {
+    "Compatible": true
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Effects": {
+            "ClearAnimationOnFinish": true,
+            "ItemAnimationId": "CastPushCharging"
+          },
+          "AllowIndefiniteHold": true,
+          "DisplayProgress": true,
+          "Next": {
+            "0": {
+              "Type": "Simple"
+            },
+            "0.75": "Pkmn_Moves_Sleep_Powder"
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      231,
+      5,
+      155
+    ],
+    "Translation": [
+      3,
+      -18
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Weapon": {},
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Icon": "Icons/ItemsGenerated/TM_Grass.png"
+}

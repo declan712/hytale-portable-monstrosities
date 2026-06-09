@@ -3,7 +3,7 @@
   "$Comment": "Prepare Delay",
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Spin"
+    "ItemAnimationId": "ScratchRightQuad"
   },
   "RunTime": 0.5,
   "Next": {
@@ -18,35 +18,23 @@
             "TargetNodeName": "Origin"
           }
         ],
-        "WorldSoundEventId": "SFX_Pkmn_Move_Poison_Powder",
-        "LocalSoundEventId": "SFX_Pkmn_Move_Poison_Powder",
-        "CameraEffect": {
-          "Type": "CameraShake",
-          "CameraShake": "Impact_Strong",
-          "Intensity": {
-            "Value": 0.5,
-            "AccumulationMode": "Sum"
-          }
-        },
+        "WorldSoundEventId": "SFX_Gunshot_Awp",
+        "LocalSoundEventId": "SFX_Gunshot_Awp",
         "ClearAnimationOnFinish": true
       },
       "RunTime": 0.75,
       "Selector": {
-        "Id": "AOECircle",
-        "Range": 6,
-        "Offset": {
-          "Z": 2
-        }
+        "Id": "Stab"
       },
       "HitEntity": {
         "Interactions": [
           {
             "Type": "Replace",
             "DefaultOk": true,
-            "Var": "Poison_Powder_Damage",
+            "Var": "Sand_Attack_Effect",
             "DefaultValue": {
               "Interactions": [
-                "Pkmn_Moves_Poison_Powder_Damage"
+                "Pkmn_Moves_Sand_Attack_Effect"
               ]
             }
           }

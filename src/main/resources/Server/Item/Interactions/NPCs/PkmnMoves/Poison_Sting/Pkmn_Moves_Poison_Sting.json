@@ -1,0 +1,44 @@
+{
+  "Type": "Simple",
+  "Runtime": 0.75,
+  "Next": {
+    "Type": "Parallel",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "ChangeStat",
+            "StatModifiers": {
+              "MagicCharges": 0
+            }
+          },
+          {
+            "Type": "Simple",
+            "RunTime": 0.25,
+            "Effects": {
+              "ItemAnimationId": "Spit",
+              "WorldSoundEventId": "SFX_Pkmn_Move_Poison_Sting",
+              "LocalSoundEventId": "SFX_Pkmn_Move_Poison_Sting"
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "RunTime": 0.25
+          },
+          {
+            "Type": "Projectile",
+            "Config": "Projectile_Config_Poison_Sting",
+            "Next": {
+              "Type": "Simple",
+              "RunTime": 0.25
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

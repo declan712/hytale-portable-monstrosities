@@ -1,15 +1,17 @@
 {
-  "Name": "portablemonstrosities.entityEffects.Pkmn_Attack_Down.name",
+  "Name": "portablemonstrosities.entityEffects.Pkmn_Defense_Down.name",
   "ApplicationEffects": {
     "LocalSoundEventId": "SFX_Pkmn_Stat_Down",
-    "WorldSoundEventId": "SFX_Pkmn_Stat_Down"
+    "WorldSoundEventId": "SFX_Pkmn_Stat_Down",
+    "ModelVFXId": "VFX_Pkmn_Stat_Down"
   },
   "Duration": 45,
   "OverlapBehavior": "Overwrite",
   "RemovalBehavior": "Duration",
+  "ValueType": "Absolute",
   "Debuff": true,
   "RawStatModifiers": {
-    "Atk": [
+    "Def": [
       {
         "CalculationType": "Multiplicative",
         "Amount": 0.8,
