@@ -19,25 +19,16 @@
     "HearingRange": 8,
     "AbsoluteDetectionRange": 2,
     "AlertedRange": 18,
-    "AlertedTime": [
-      2,
-      3
-    ],
+    "AlertedTime": [2,3],
     "MaintainDistanceWhileAlerted": false,
-    "ThreatenDelayRange": [
-      2,
-      2
-    ],
+    "ThreatenDelayRange": [2,2],
     "ThreatenAnimation": "Threaten",
     "FleeIfNotThreatened": true,
     "FleeRange": 15,
     "HardLeashDistance": 60,
     "LeashDistance": 30,
     "LeashMinPlayerDistance": 7,
-    "LeashTimer": [
-      4,
-      5
-    ],
+    "LeashTimer": [4,5],
     "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2.5,
     "CombatBehaviorDistance": 6,
@@ -49,29 +40,16 @@
     "AlwaysSleepAtNight": false,
     "NightFlavorAnimation": "Howl",
     "DayTimeNapWeight": 6,
-    "DayTimeNapTimeRange": [
-      10,
-      12
-    ],
+    "DayTimeNapTimeRange": [10,12],
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Flareon",
     "_InteractionVars": {
-      "Move_Start_3": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Flamethrower"
-          }
-        ]
-      },
-      "Move_Start_1": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Ember"
-          }
-        ]
-      }
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
@@ -79,7 +57,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pkmn_Eevee.name",
+      "Value": "server.npcRoles.Pkmn_Flareon.name",
       "Description": "Translation key for NPC name display"
     }
   }

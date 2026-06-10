@@ -24,28 +24,10 @@
     "MaxSpeed": 10,
     "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Flamethrower",
-            "Effects": {
-              "ItemPlayerAnimationsId": "Pkmn_Default",
-              "ItemAnimationId": "Breath"
-            }
-          }
-        ]
-      },
-      "Move_Start_3": {
-        "Interactions": [
-          {
-            "Parent": "Pkmn_Moves_Ember",
-            "Effects": {
-              "ItemPlayerAnimationsId": "Pkmn_Default",
-              "ItemAnimationId": "Spit"
-            }
-          }
-        ]
-      }
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Dragon_Rage"}]}
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
