@@ -1,0 +1,23 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "RunTime": 0.35,
+  "Next": {
+    "Type": "ApplyForce",
+    "RunTime": 0.5,
+    "Effects": {
+      "ItemAnimationId": "Jump"
+    },
+    "Direction": {
+      "Z": 0,
+      "Y": 2,
+      "X": 0
+    },
+    "Force": 5,
+    "Next": {
+      "Type": "Simple",
+      "RunTime": 0.75
+    }
+  },
+  "HorizontalSpeedMultiplier": 0.1
+}

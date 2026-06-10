@@ -2,7 +2,7 @@
   "Parent": "DamagePkmnParent",
   "DamageCalculator": {
     "BaseDamage": {
-      "Fire": 9.5
+      "Electric": 19
     }
   },
   "DamageEffects": {
@@ -17,19 +17,21 @@
         "Style": "Exp"
       },
       "Direction": {
-        "X": 1.0,
-        "Y": 2.0,
-        "Z": 3.0
+        "X": 0,
+        "Y": -1,
+        "Z": 0
       },
       "Force": 0.2,
-      "VelocityType": "Add"
+      "VelocityType": "Set"
     },
-    "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_Impact",
+    "WorldSoundEventId": "SFX_Pkmn_Damage",
     "WorldParticles": [
       {
-        "SystemId": "Impact_Sword_Charged"
+        "SystemId": "Laser_Impact",
+        "Color": "#f8ff00",
+        "Scale": 0.25
       }
     ],
-    "StaminaDrainMultiplier": 0.4
+    "StaminaDrainMultiplier": 1.5
   }
 }

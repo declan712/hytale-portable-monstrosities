@@ -1,0 +1,74 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Pkmn_Bite_Top",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 0,
+        "Roll": 0
+      },
+      "TotalSpawners": 1,
+      "MaxConcurrent": 1,
+      "StartDelay": 0,
+      "SpawnRate": {
+        "Min": 100,
+        "Max": 100
+      },
+      "LifeSpan": {
+        "Min": 0.75,
+        "Max": 0.75
+      },
+      "PositionOffset": {
+        "Z": 0,
+        "Y": 1.5
+      },
+      "InitialVelocity": {
+        "Speed": {
+          "Min": -3,
+          "Max": -3
+        },
+        "Pitch": {
+          "Min": 45,
+          "Max": 45
+        }
+      },
+      "FixedRotation": true
+    },
+    {
+      "SpawnerId": "Pkmn_Bite_Bottom",
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 0,
+        "Roll": 0
+      },
+      "TotalSpawners": 1,
+      "MaxConcurrent": 1,
+      "StartDelay": 0,
+      "SpawnRate": {
+        "Min": 100,
+        "Max": 100
+      },
+      "LifeSpan": {
+        "Min": 0.75,
+        "Max": 0.75
+      },
+      "PositionOffset": {
+        "Z": 0,
+        "Y": -1.5
+      },
+      "InitialVelocity": {
+        "Speed": {
+          "Min": -3,
+          "Max": -3
+        },
+        "Pitch": {
+          "Min": -45,
+          "Max": -45
+        }
+      },
+      "FixedRotation": true
+    }
+  ],
+  "LifeSpan": 0.75,
+  "IsImportant": true
+}

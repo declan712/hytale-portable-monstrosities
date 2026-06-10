@@ -1,0 +1,74 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "ScratchRightQuad"
+  },
+  "RunTime": 0.25,
+  "Next": {
+    "Type": "ApplyForce",
+    "$Comment": "Move at target",
+    "RunTime": 0.425,
+    "Effects": {
+      "WorldSoundEventId": "SFX_Pkmn_Move_Low_Kick",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Low_Kick",
+      "Particles": [
+        {
+          "SystemId": "Pkmn_Shadow_Punch",
+          "TargetEntityPart": "Entity",
+          "PositionOffset": {
+            "Z": 0.5,
+            "Y": 1
+          }
+        }
+      ]
+    },
+    "Direction": {
+      "Z": -10,
+      "Y": 0.5,
+      "X": 0
+    },
+    "Force": 5,
+    "AdjustVertical": true,
+    "Next": {
+      "Type": "Selector",
+      "Effects": {
+        "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
+      },
+      "$Comment": "Length of Combat",
+      "RunTime": 0.125,
+      "Selector": {
+        "Id": "Horizontal",
+        "Direction": "ToLeft",
+        "TestLineOfSight": true,
+        "ExtendTop": 0.75,
+        "ExtendBottom": 0.75,
+        "StartDistance": 0.5,
+        "EndDistance": 3.0,
+        "Length": 30,
+        "RollOffset": 90,
+        "YawStartOffset": -15
+      },
+      "HitEntity": {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "DefaultOk": true,
+            "DefaultValue": {
+              "Interactions": [
+                "Pkmn_Moves_Shadow_Punch_Damage"
+              ]
+            },
+            "Var": "Shadow_Punch_Damage"
+          }
+        ]
+      },
+      "Next": {
+        "Type": "Simple",
+        "$Comment": "Pad the interaction length",
+        "RunTime": 0.2
+      }
+    }
+  }
+}

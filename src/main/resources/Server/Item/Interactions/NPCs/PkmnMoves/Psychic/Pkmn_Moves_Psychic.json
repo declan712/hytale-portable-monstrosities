@@ -1,0 +1,65 @@
+{
+  "Type": "Simple",
+  "$Comment": "Prepare Delay",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "Alerted"
+  },
+  "RunTime": 0.25,
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 0.35,
+    "Effects": {
+      "WorldSoundEventId": "SFX_Pkmn_Move_Confusion",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Confusion",
+      "Particles": [
+        {
+          "SystemId": "Pkmn_Confusion",
+          "TargetEntityPart": "Entity",
+          "PositionOffset": {
+            "Z": 0,
+            "Y": 0
+          },
+          "TargetNodeName": "Head"
+        }
+      ]
+    },
+    "Next": {
+      "Type": "Selector",
+      "Effects": {
+        "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
+      },
+      "$Comment": "Length of Combat",
+      "RunTime": 0.65,
+      "Selector": {
+        "Id": "Stab",
+        "StartDistance": 0.1,
+        "EndDistance": 7,
+        "ExtendTop": 1,
+        "ExtendBottom": 1,
+        "ExtendLeft": 1,
+        "ExtendRight": 1,
+        "TestLineOfSight": true
+      },
+      "HitEntity": {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "DefaultOk": true,
+            "DefaultValue": {
+              "Interactions": [
+                "Pkmn_Moves_Psychic_Damage"
+              ]
+            },
+            "Var": "Psychic_Damage"
+          }
+        ]
+      },
+      "Next": {
+        "Type": "Simple",
+        "$Comment": "Pad the interaction length",
+        "RunTime": 0.2
+      }
+    }
+  }
+}

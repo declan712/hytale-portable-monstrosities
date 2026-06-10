@@ -1,0 +1,23 @@
+{
+  "Parent": "DamagePkmnParent",
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Bug": 120
+    }
+  },
+  "DamageEffects": {
+    "WorldSoundEventId": "SFX_Pkmn_Damage",
+    "LocalSoundEventId": "SFX_Pkmn_Damage",
+    "WorldParticles": [
+      {
+        "SystemId": "Pkmn_Tackle",
+        "PositionOffset": {
+          "Y": 1
+        },
+        "TargetNodeName": "Head",
+        "TargetEntityPart": "Entity",
+        "Scale": 0.75
+      }
+    ]
+  }
+}
