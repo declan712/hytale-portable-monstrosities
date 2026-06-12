@@ -1,0 +1,57 @@
+{
+    "Type": "Simple",
+    "Effects": {
+        "ItemAnimationId": "Breathe"
+    },
+    "Runtime": 3,
+    "Next": {
+        "Type": "Repeat",
+        "ForkInteractions": {
+            "Interactions": [
+                {
+                    "Type": "Parallel",
+                    "Interactions": [
+                        {
+                            "Interactions": [
+                                {
+                                    "Type": "ChangeStat",
+                                    "StatModifiers": {
+                                        "MagicCharges": 0
+                                    }
+                                },
+                                {
+                                    "Type": "Simple",
+                                    "RunTime": 0.25,
+                                    "Effects": {
+                                        "ItemPlayerAnimationsId": "Rifle",
+                                        "ItemAnimationId": "ShootFlintlockCharged",
+                                        "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Launch",
+                                        "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Launch"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Interactions": [
+                                {
+                                    "Type": "Simple",
+                                    "RunTime": 0.25
+                                },
+                                {
+                                    "Type": "Projectile",
+                                    "Config": "Projectile_Config_Bubble",
+                                    "Next": {
+                                        "Type": "Simple",
+                                        "RunTime": 0.25
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "RunTime": 3,
+        "Repeat": 3
+    }
+}
