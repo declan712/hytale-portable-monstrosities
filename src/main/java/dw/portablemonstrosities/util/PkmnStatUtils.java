@@ -10,16 +10,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.hypixel.hytale.logger.HytaleLogger;
-import com.hypixel.hytale.assetstore.AssetPack;
-import com.hypixel.hytale.assetstore.AssetStore;
 import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
-import com.hypixel.hytale.builtin.asseteditor.util.AssetStoreUtil;
 import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
-import com.hypixel.hytale.server.core.asset.AssetModule;
 import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffect;
-import com.hypixel.hytale.server.core.asset.type.item.config.AssetIconProperties;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
 import com.hypixel.hytale.server.core.asset.type.model.config.Model.ModelReference;
 // import com.hypixel.hytale.server.core.entity.Entity;
@@ -38,14 +33,11 @@ import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.Modifier.ModifierTarget;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier;
 import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier.CalculationType;
-import com.hypixel.hytale.server.core.plugin.registry.CodecMapRegistry.Assets;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 // import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.core.util.AssetUtil;
 import com.hypixel.hytale.server.npc.NPCPlugin;
-import com.hypixel.hytale.server.npc.commands.NPCAppearanceCommand;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
 import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
@@ -59,8 +51,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;;
 
 
 public class PkmnStatUtils {
-    private static final String SPECIES_ICON_PREFIX = "Icons/Items/Pokeball/";
-    private static final String SPECIES_ICON_SUFFIX = ".png";
+    // private static final String SPECIES_ICON_PREFIX = "Icons/Items/Pokeball/";
+    // private static final String SPECIES_ICON_SUFFIX = ".png";
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
     public static final int[] PLAYER_BASE_STATS = {100,30,60,20,80,75};
     // ID to set as owner while capture in progress to prevent multiple interactions
@@ -256,16 +248,6 @@ public class PkmnStatUtils {
             LOGGER.atInfo().log("Entity has no EntityStatMap"); 
             return null;
         }
-
-        // // Player
-        // // TODO: check if pkmn or not?
-        // Player player = store.getComponent(ref, Player.getComponentType());
-        // boolean isPlayer = player != null;
-        // if (isPlayer) {
-
-        //     //playerBaseStats
-        // }
-
 
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
         int             lvlIdx = assetMap.getIndex("Lvl");
@@ -585,7 +567,7 @@ public class PkmnStatUtils {
     public static void setCurrentHp(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> entityRef,
-        @Nonnull float hp
+        float hp
     ) {
         EntityStatMap stats = commandBuffer.getComponent(entityRef, EntityStatMap.getComponentType());
         if (stats == null) return;

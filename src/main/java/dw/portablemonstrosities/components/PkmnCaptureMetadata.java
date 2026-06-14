@@ -106,7 +106,7 @@ public class PkmnCaptureMetadata {
     @Nullable public String getRoleId()           { return npcRoleId; }
     public void setRoleId(String v)               { this.npcRoleId = v; }
 
-    @Nullable public boolean getShiny()           { return shiny; }
+    public boolean getShiny()                     { return shiny; }
     public void setShiny(boolean v)               { this.shiny = v; }
 
 

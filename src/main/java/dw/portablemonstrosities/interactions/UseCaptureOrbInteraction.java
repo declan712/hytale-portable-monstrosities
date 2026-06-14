@@ -104,11 +104,16 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull CooldownHandler cooldownHandler
     ) {
         CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
-        assert commandBuffer != null;
+        if(commandBuffer==null) {
+            fail(context);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+            return;
+        }
 
 
         // -- Projectile-hit ----------
         if(type == InteractionType.ProjectileHit){
+
             World world = commandBuffer.getExternalData().getWorld();
             Ref<EntityStore> ownerRef = context.getOwningEntity();
             if(ownerRef==null){
@@ -235,6 +240,11 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         }
 
         ItemStack singleBall = activeItem.withQuantity(1);
+        if(singleBall==null){
+            fail(context);
+            super.tick0(firstRun, time, type, context, cooldownHandler);
+            return;
+        }
         ItemStack capturedBall = tryCaptureIntoItem(commandBuffer, singleBall, targetRef, ref);
         if (capturedBall == null) {
             // LOGGER.atInfo().log("capturedBall NULL");
@@ -474,8 +484,9 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         // Inventory    inventory    = livingEntity.getInventory();
         // ItemStack    inHandItem   = inventory.getActiveHotbarItem();
         // if (inHandItem == null) return false;
-
+        if(inHandItem==null) return false;
         ItemStack singleBall = inHandItem.withQuantity(1);
+        if(singleBall==null) return false;
         ItemStack capturedBall = tryCaptureIntoItem(commandBuffer, singleBall, targetRef, throwerRef);
 
         if (capturedBall == null) return false;
@@ -506,7 +517,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         if (store == null) return null;
 
         if(!targetRef.isValid()) return null;
-        NPCEntity npcComponent = commandBuffer.getComponent(targetRef, NPCEntity.getComponentType());
+        NPCEntity npcComponent = commandBuffer.getComponent(targetRef,NPCEntity.getComponentType());
         if (npcComponent == null) return null;
 
         DeathComponent deathComponent = (DeathComponent)
@@ -629,22 +640,24 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull CapturedNPCMetadata existingMeta,
         @Nonnull ItemStack item,
         @Nonnull ItemContainer itemContainer,
-        @Nonnull byte  hotbarSlot, 
+        byte  hotbarSlot, 
         @Nonnull ItemStack itemToReplace, 
         @Nonnull ItemStack replacementItem
     ) {
 
         // LOGGER.atInfo().log("spawnCapturedCreature");
         Vector3d spawnPos = new Vector3d(pos.x + 0.5, pos.y, pos.z + 0.5);
-        if (context.getClientState() != null) {
-            BlockFace face = BlockFace.fromProtocolFace(context.getClientState().blockFace);
-            Vector3ic faceDirection = face.getDirection();
-
-            if (face != null) spawnPos.add(
-                faceDirection.x(),
-                faceDirection.y(),
-                faceDirection.z()
-            );
+        var clientState  = context.getClientState();
+        if (clientState != null) {
+            BlockFace face = BlockFace.fromProtocolFace(clientState.blockFace);
+            if(face!=null){
+                Vector3ic faceDirection = face.getDirection();
+                if (face != null) spawnPos.add(
+                    faceDirection.x(),
+                    faceDirection.y(),
+                    faceDirection.z()
+                );
+            }
         }
 
         String roleId    = existingMeta.getNpcNameKey();
@@ -676,6 +689,8 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(captureMetadata);
 
             int[] ivs = captureMetadata.getIvs();
+
+            if(ivs == null) ivs = pkmnStats.randomIVs();
             boolean ivsAreZero = true;
             for (int iv : ivs) { if (iv != 0) { ivsAreZero = false; break; } }
             if (ivsAreZero) pkmnStats.setIvs(pkmnStats.randomIVs());

@@ -40,6 +40,7 @@ import com.hypixel.hytale.server.spawning.SpawnTestResult;
 import com.hypixel.hytale.server.spawning.SpawningContext;
 
 import dw.portablemonstrosities.PortableMonstrosities;
+// import dw.portablemonstrosities.components.PkmnCoopBlock.PkmnCoopResident;
 import dw.portablemonstrosities.util.PkmnStatUtils;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 
@@ -199,16 +200,16 @@ public class PkmnCoopBlock extends CoopBlock {
                     spawningContext.setSpawnable((ISpawnableWithModel)roleBuilder);
                     if (spawningContext.set(world, residentSpawnLocation.x, residentSpawnLocation.y, residentSpawnLocation.z) 
                             && spawningContext.canSpawn() == SpawnTestResult.TEST_OK) {
-                        Pair<Ref<EntityStore>, NPCEntity> npcPair = NPCPlugin.get()
-                        .spawnEntity(
+                        Pair<Ref<EntityStore>, NPCEntity> npcPair = 
+                        NPCPlugin.get().spawnEntity(
                             store, npcRoleIndex, spawningContext.newPosition(), 
-                            Rotation3f.IDENTITY, (Model)null, (TriConsumer)null
+                            Rotation3f.IDENTITY, (Model)null, (TriConsumer<NPCEntity, Ref<EntityStore>, Store<EntityStore>>)null
                         );
                         if (npcPair == null) {
                             resident.setPersistentRef((PersistentRef)null);
                             resident.setDeployedToWorld(false);
                         } else {
-                            Ref<EntityStore> npcRef = (Ref)npcPair.first();
+                            Ref<EntityStore> npcRef = (Ref<EntityStore>)npcPair.first();
                             NPCEntity npcComponent = (NPCEntity)npcPair.second();
                             npcComponent.getLeashPoint().set(coopLocation);
                             if (npcRef != null && npcRef.isValid()) {
@@ -242,25 +243,26 @@ public class PkmnCoopBlock extends CoopBlock {
         }
     }
 
-        @Nonnull
-        public static final BuilderCodec<PkmnCoopBlock> CODEC = BuilderCodec
-            .builder(PkmnCoopBlock.class, PkmnCoopBlock::new)
-            .append(new KeyedCodec<>("FarmingCoopId", Codec.STRING, true), 
-                (coop, s) -> coop.coopAssetId = s, 
-                (coop) -> coop.coopAssetId)
-            .add()
-            .append(new KeyedCodec<>("Residents", 
-                    new ArrayCodec<>(PkmnCoopBlock.PkmnCoopResident.CODEC, 
-                    (x$0) -> new PkmnCoopResident[x$0])
-                ), 
-                (coop, residents) -> coop.residents = new ArrayList<>(Arrays.asList(residents)), 
-                (coop) -> (PkmnCoopResident[])coop.residents.toArray((x$0) -> new PkmnCoopResident[x$0]))
-            .add()
-            .append(new KeyedCodec<>("Storage", ItemContainer.CODEC), 
-                (coop, storage) -> coop.itemContainer = storage, 
-                (coop) -> coop.itemContainer)
-            .add()
-            .build();
+    @Nonnull
+    public static final BuilderCodec<PkmnCoopBlock> CODEC = BuilderCodec
+        .builder(PkmnCoopBlock.class, PkmnCoopBlock::new)
+        .append(new KeyedCodec<>("FarmingCoopId", Codec.STRING, true), 
+            (coop, s) -> coop.coopAssetId = s, 
+            (coop) -> coop.coopAssetId)
+        .add()
+        // .append(new KeyedCodec<>("Residents", new ArrayCodec(CoopBlock.CoopResident.CODEC, (x$0) -> new CoopResident[x$0])), 
+        //     (coop, residents) -> coop.residents = new ArrayList(Arrays.asList(residents)), 
+        //     (coop) -> (CoopResident[])coop.residents.toArray((x$0) -> new CoopResident[x$0]))
+        // .add()
+        .append(new KeyedCodec<>("Residents", new ArrayCodec<>(PkmnCoopBlock.PkmnCoopResident.CODEC, (x$0) -> new PkmnCoopResident[x$0])), 
+            (coop, residents) -> coop.residents = new ArrayList<>(Arrays.asList(residents)), 
+            (coop) -> (PkmnCoopResident[])coop.residents.toArray((x$0) -> new PkmnCoopResident[x$0]))
+        .add()
+        .append(new KeyedCodec<>("Storage", ItemContainer.CODEC), 
+            (coop, storage) -> coop.itemContainer = storage, 
+            (coop) -> coop.itemContainer)
+        .add()
+        .build();
         
         
         // BuilderCodec
@@ -337,7 +339,6 @@ public class PkmnCoopBlock extends CoopBlock {
                 (coop) -> coop.lastProduced)
             .add()
             .build();
-        
 
     }
 }

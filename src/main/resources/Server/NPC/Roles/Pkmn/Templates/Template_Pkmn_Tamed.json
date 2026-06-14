@@ -1172,7 +1172,7 @@
 										"_ExportStates": [
 											"Panic",
 											"Panic",
-											"Flee.Switch",
+											"Combat.Override",
 											"Idle"
 										],
 										"HearingRange": {
@@ -1195,7 +1195,7 @@
 										"_ExportStates": [
 											"Panic",
 											"Panic",
-											"Flee.Switch",
+											"Combat.Override",
 											"Idle"
 										],
 										"HearingRange": {
@@ -1234,7 +1234,7 @@
 							"Reference": "Component_Instruction_Damage_Check",
 							"Modify": {
 								"_ExportStates": [
-									"Flee.Switch",
+									"Combat.Override",
 									"Panic"
 								],
 								"AlertedRange": {"Compute": "AlertedRange"}
@@ -1351,7 +1351,7 @@
 											}
 										]
 									},
-									"Actions": [{"Type": "State","State": "Flee.Switch"}]
+									"Actions": [{"Type": "State","State": "Combat.Override"}]
 								},
 								{"$Comment": "Starting a second timer to try and turn friendly. TODO: compute it as % of alerted timer",
 									"Continue": true,
@@ -2319,8 +2319,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "If getting to the target takes too long, ignore and go to idle. This is also how long it will follow if this is triggered,TODO: mb could be a bit longer for the follow? ",
+						{"$Comment": "If getting to the target takes too long, ignore and go to idle. This is also how long it will follow if this is triggered,TODO: mb could be a bit longer for the follow? ",
 							"Sensor": {
 								"Type": "And",
 								"Sensors": [
@@ -2360,8 +2359,7 @@
 								}
 							]
 						},
-						{
-							"$Comment": "Check if there are any potential threats nearby and flee. TODO: add more tirggers to flee",
+						{"$Comment": "Check if there are any potential threats nearby and flee. TODO: add more tirggers to flee",
 							"Sensor": {
 								"Reference": "Component_Sensor_Standard_Detection",
 								"Modify": {
@@ -2393,7 +2391,7 @@
 							"Reference": "Component_Instruction_Damage_Check",
 							"Modify": {
 								"_ExportStates": [
-									"Flee.Switch",
+									"Combat.Override",
 									"Panic"
 								],
 								"AlertedRange": {
@@ -2401,8 +2399,7 @@
 								}
 							}
 						},
-						{
-							"$Comment": "TODO: mb potentially move secnsor component for curious, or for alerted - with parameters to be mor forgiving",
+						{"$Comment": "TODO: mb potentially move secnsor component for curious, or for alerted - with parameters to be mor forgiving",
 							"Sensor": {
 								"Type": "Or",
 								"Sensors": [
@@ -2412,21 +2409,9 @@
 											{
 												"Type": "Or",
 												"Filters": [
-													{
-														"Type": "Attitude",
-														"Attitudes": [
-															"Hostile"
-														]
-													},
-													{
-														"Type": "Combat"
-													},
-													{
-														"Type": "ItemInHand",
-														"Items": [
-															"*Weapon*"
-														]
-													}
+													{"Type": "Attitude","Attitudes": ["Hostile"]},
+													{"Type": "Combat"},
+													{"Type": "ItemInHand","Items": ["*Weapon*"]}
 												]
 											}
 										]
@@ -2436,57 +2421,30 @@
 										"Filters": [
 											{
 												"Type": "Not",
-												"Filter": {
-													"Type": "Attitude",
-													"Attitudes": [
-														"Friendly"
-													]
-												}
+												"Filter": {"Type": "Attitude","Attitudes": ["Friendly"]}
 											},
-											{
-												"Type": "MovementState",
-												"State": "Sprinting"
-											}
+											{"Type": "MovementState","State": "Sprinting"}
 										]
 									},
 									{
-										"Enabled": {
-											"Compute": "Timid"
-										},
+										"Enabled": {"Compute": "Timid"},
 										"Type": "Target",
 										"Filters": [
-											{
-												"Type": "MovementState",
-												"State": "Sprinting"
-											}
+											{"Type": "MovementState","State": "Sprinting"}
 										]
 									},
 									{
 										"Type": "Target",
-										"Range": {
-											"Compute": "AbsoluteDetectionRange"
-										},
+										"Range": {"Compute": "AbsoluteDetectionRange"},
 										"Filters": [
 											{
 												"Type": "Not",
-												"Filter": {
-													"Type": "Attitude",
-													"Attitudes": [
-														"Friendly",
-														"Ignore"
-													]
-												}
-											}
+												"Filter": {"Type": "Attitude","Attitudes": ["Friendly","Ignore"]}}
 										]
 									}
 								]
 							},
-							"Actions": [
-								{
-									"Type": "State",
-									"State": "Flee.Switch"
-								}
-							]
+							"Actions": [{"Type": "State","State": "Flee.Switch"}]
 						},
 						{"$Comment": "We lost target",
 							"Sensor": {
@@ -2885,7 +2843,7 @@
 							"Reference": "Component_Instruction_Damage_Check",
 							"Modify": {
 								"_ExportStates": [
-									"Flee.Switch",
+									"Combat.Override",
 									"Panic"
 								],
 								"AlertedRange": {
