@@ -3,24 +3,51 @@
   "Model": "NPC/Pkmn/Ponyta/Models/Model.blockymodel",
   "Texture": "NPC/Pkmn/Ponyta/Models/Texture.png",
   "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Ponyta/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Ponyta_Cry"
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Ponyta/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Ponyta_Cry"
-        }
-      ]
-    }
+    "Alerted":                {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Alerted.blockyanim",               "Looping": false, "SoundEventId": "SFX_Pkmn_Ponyta_Cry" }]},
+    "Spawn":                  {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Spawn.blockyanim",                 "Looping": false,"SoundEventId": "SFX_Pkmn_Ponyta_Cry", "BlendingDuration": 0}]},
+    "Bite_Leap":              {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Attacks/Bite_Leap.blockyanim",             "Looping": false  }]},
+    "Breath":                 {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Attacks/Breath.blockyanim",                "Looping": false  }]},
+    "Scratch_Left_Moving":    {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Attacks/Scratch_Left_Moving.blockyanim",   "Looping": false  }]},
+    "Scratch_Left":           {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Attacks/Scratch_Left.blockyanim",          "Looping": false  }]},
+    "Scratch_Right_Moving":   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Attacks/Scratch_Right_Moving.blockyanim",  "Looping": false  }]},
+    "Scratch_Right":          {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Attacks/Scratch_Right.blockyanim",         "Looping": false  }]},
+    "Tackle":                 {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Attacks/Tackle.blockyanim",                "Looping": false  }]},
+    "Death":                  {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Damage/Death.blockyanim",                  "Looping": false  }]},
+    "Hurt":                   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Damage/Hurt.blockyanim",                   "Looping": false  }]},
+    "Hurt2":                  {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Damage/Hurt2.blockyanim",                  "Looping": false  }]},
+    "Crouch_Walk_Backward":   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Crouch_Walk_Backward.blockyanim",  "Looping": true   }]},
+    "Crouch_Walk":            {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Crouch_Walk.blockyanim",           "Looping": true   }]},
+    "Crouch":                 {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Crouch.blockyanim",                "Looping": false  }]},
+    "Fall_Far":               {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Fall_Far.blockyanim",              "Looping": true   }]},
+    "Fall":                   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Fall.blockyanim",                  "Looping": true   }]},
+    "Idle":                   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Idle.blockyanim",                  "Looping": true   }]},
+    "Jump_Far":               {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Jump_Far.blockyanim",              "Looping": false  }]},
+    "Jump":                   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Jump.blockyanim",                  "Looping": false  }]},
+    "Laydown":                {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Laydown.blockyanim",               "Looping": false  }]},
+    "Run":                    {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Run.blockyanim",                   "Looping": true   }]},
+    "Sleep":                  {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Sleep.blockyanim",                 "Looping": true   }]},
+    "Wake":                   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Wake.blockyanim",                  "Looping": false  }]},
+    "Walk_Backward":          {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Walk_Backward.blockyanim",         "Looping": true   }]},
+    "Walk":                   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Default/Walk.blockyanim",                  "Looping": true   }]},
+    "Curious":                {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Flavor/Curious.blockyanim",                "Looping": false  }]},
+    "Eat":                    {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Flavor/Eat.blockyanim",                    "Looping": false  }]},
+    "Look_Around":            {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Flavor/Look_Around.blockyanim",            "Looping": false  }]},
+    "Look_Left":              {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Flavor/Look_Left.blockyanim",              "Looping": false  }]},
+    "Look_Right":             {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Flavor/Look_Right.blockyanim",             "Looping": false  }]},
+    "Neigh":                  {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Flavor/Neigh.blockyanim",                  "Looping": false  }]},
+    "Fly_Backward":           {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Fly/Fly_Backward.blockyanim",              "Looping": true   }]},
+    "Fly_Fast":               {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Fly/Fly_Fast.blockyanim",                  "Looping": true   }]},
+    "Fly_Idle":               {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Fly/Fly_Idle.blockyanim",                  "Looping": true   }]},
+    "Fly":                    {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Fly/Fly.blockyanim",                       "Looping": true   }]},
+    "Swim_Backward":          {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Backward.blockyanim",            "Looping": true   }]},
+    "Swim_Dive_Backward":     {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Dive_Backward.blockyanim",       "Looping": true   }]},
+    "Swim_Dive_Fast":         {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Dive_Fast.blockyanim",           "Looping": true   }]},
+    "Swim_Dive":              {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Dive.blockyanim",                "Looping": true   }]},
+    "Swim_Fast":              {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Fast.blockyanim",                "Looping": true   }]},
+    "Swim_Float":             {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Float.blockyanim",               "Looping": true   }]},
+    "Swim_Idle":              {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Idle.blockyanim",                "Looping": true   }]},
+    "Swim_Jump":              {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Jump.blockyanim",                "Looping": false  }]},
+    "Swim_Sink":              {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim_Sink.blockyanim",                "Looping": true   }]},
+    "Swim":                   {"Animations": [{"Animation": "NPC/Pkmn/Ponyta/Animations/Swim/Swim.blockyanim",                     "Looping": true   }]}
   }
-}
+}                                 
