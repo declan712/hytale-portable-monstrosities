@@ -15,7 +15,7 @@
       "LocalSoundEventId": "SFX_Pkmn_Move_Bite",
       "Particles": [
         {
-          "SystemId": "Fire_Fang",
+          "SystemId": "Pkmn_Fire_Fang",
           "TargetEntityPart": "Entity",
           "PositionOffset": {
             "Z": 1.5,
@@ -34,7 +34,8 @@
     "Next": {
       "Type": "Selector",
       "Effects": {
-        "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
+        "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact",
+        "LocalSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
       },
       "$Comment": "Length of Combat",
       "RunTime": 0.125,

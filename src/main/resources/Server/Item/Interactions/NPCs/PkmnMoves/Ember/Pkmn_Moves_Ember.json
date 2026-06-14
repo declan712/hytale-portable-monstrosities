@@ -1,15 +1,11 @@
 {
   "Type": "Simple",
-  "Effects": {
-    "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Spit"
-  },
   "$Comment": "Prepare Delay",
-  "RunTime": 0.5,
+  "RunTime": 0.25,
   "Next": {
     "Type": "Simple",
     "$Comment": "Charge Delay",
-    "RunTime": 0.5,
+    "RunTime": 0.25,
     "Effects": {
       "ClearAnimationOnFinish": true,
       "ClearSoundEventOnFinish": true,
@@ -41,11 +37,15 @@
           "Interactions": [
             {
               "Type": "Simple",
-              "RunTime": 0.2
+              "RunTime": 0.2,
+                "Effects": {
+                "ItemPlayerAnimationsId": "Pkmn_Default",
+                "ItemAnimationId": "Spit"
+              }
             },
             {
               "Parent": "Pkmn_Moves_Ember_Projectile_Base",
-              "Config": "Projectile_Config_Fireball_Charged_3"
+              "Config": "Projectile_Config_Ember"
             }
           ]
         },

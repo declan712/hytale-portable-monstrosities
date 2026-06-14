@@ -1,0 +1,23 @@
+{
+  "Type": "Simple",
+  "RunTime": 2,
+  "Effects": {
+    "WorldSoundEventId": "SFX_Pkmn_Move_Solar_Beam_Part1",
+    "LocalSoundEventId": "SFX_Pkmn_Move_Solar_Beam_Part1",
+    "Particles": [
+      {
+        "SystemId": "Hyper_Beam_Charging",
+        "Scale": 1,
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Head",
+        "Color": "#fff996",
+        "PositionOffset": {
+          "Z": 0.3
+        }
+      }
+    ],
+    "ItemPlayerAnimationsId": "Pkmn_Default",
+    "ItemAnimationId": "ThrowLift",
+    "ClearAnimationOnFinish": false
+  }
+}

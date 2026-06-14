@@ -4,8 +4,8 @@
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
     "ItemAnimationId": "Alert",
-    "WorldSoundEventId": "SFX_Pkmn_Move_Thundershock",
-    "LocalSoundEventId": "SFX_Pkmn_Move_Thundershock",
+    "WorldSoundEventId": "SFX_Pkmn_Move_Thunder_Part1",
+    "LocalSoundEventId": "SFX_Pkmn_Move_Thunder_Part1",
     "ClearAnimationOnFinish": true
   },
   "Next": {
@@ -27,6 +27,8 @@
                   "Type": "Simple",
                   "RunTime": 0.2,
                   "Effects": {
+                    "WorldSoundEventId": "SFX_Pkmn_Move_Thunder_Part2",
+                    "LocalSoundEventId": "SFX_Pkmn_Move_Thunder_Part2",
                     "Particles": [
                       {
                         "SystemId": "Lightning2",

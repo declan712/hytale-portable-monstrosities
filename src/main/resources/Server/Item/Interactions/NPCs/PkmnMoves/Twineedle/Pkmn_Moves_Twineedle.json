@@ -11,25 +11,21 @@
           "Type": "Parallel",
           "Interactions": [
             {
-              "Interactions": [
-                {
-                  "Type": "Projectile",
-                  "Config": "Projectile_Config_Twineedle",
-                  "Next": {
-                    "Type": "Simple",
-                    "RunTime": 0.25
-                  }
-                },
-                {
-                  "Type": "Simple",
-                  "RunTime": 0.25,
-                  "Effects": {
-                    "ItemAnimationId": "Spit",
-                    "WorldSoundEventId": "SFX_Pkmn_Move_Poison_Sting",
-                    "LocalSoundEventId": "SFX_Pkmn_Move_Poison_Sting"
-                  }
-                }
-              ]
+              "Type": "Projectile",
+              "Config": "Projectile_Config_Twineedle",
+              "Next": {
+                "Type": "Simple",
+                "RunTime": 0.25
+              }
+            },
+            {
+              "Type": "Simple",
+              "RunTime": 0.25,
+              "Effects": {
+                "ItemAnimationId": "Spit",
+                "WorldSoundEventId": "SFX_Pkmn_Move_Twineedle_1hit",
+                "LocalSoundEventId": "SFX_Pkmn_Move_Twineedle_1hit"
+              }
             }
           ]
         }

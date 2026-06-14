@@ -1,0 +1,50 @@
+{
+  "Parent": "TM_Template",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.TM_Aurora_Beam.name",
+    "Description": "portablemonstrosities.items.TM_Aurora_Beam.description"
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "TM_Blank",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Bench_Pokeball",
+        "Categories": [
+          "Pkmn_TM"
+        ]
+      }
+    ]
+  },
+  "Texture": "Items/Weapons/Tm/Ice.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Effects": {
+            "ItemPlayerAnimationsId": "Spellbook",
+            "ClearAnimationOnFinish": true,
+            "ItemAnimationId": "CastPushCharging"
+          },
+          "AllowIndefiniteHold": true,
+          "DisplayProgress": true,
+          "Next": {
+            "0": {"Type": "Simple"},
+            "0.75": "Pkmn_Moves_Aurora_Beam"
+          }
+        }
+      ]
+    }
+  },
+  "Icon": "Icons/ItemsGenerated/TM_Ice.png"
+}

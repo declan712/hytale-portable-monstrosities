@@ -1,11 +1,15 @@
 {
     "Type": "Simple",
     "Effects": {
-        "ItemAnimationId": "Breathe"
+        "ItemAnimationId": "Alerted"
     },
-    "Runtime": 3,
+    "Runtime": 0.75,
     "Next": {
         "Type": "Repeat",
+        "Effects": {
+            "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Beam_Part1",
+            "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Beam_Part1"
+        },
         "ForkInteractions": {
             "Interactions": [
                 {
@@ -14,19 +18,11 @@
                         {
                             "Interactions": [
                                 {
-                                    "Type": "ChangeStat",
-                                    "StatModifiers": {
-                                        "MagicCharges": 0
-                                    }
-                                },
-                                {
                                     "Type": "Simple",
-                                    "RunTime": 0.25,
+                                    "RunTime": 0.15,
                                     "Effects": {
-                                        "ItemPlayerAnimationsId": "Rifle",
-                                        "ItemAnimationId": "ShootFlintlockCharged",
-                                        "WorldSoundEventId": "SFX_Pkmn_Move_Bubble_Launch",
-                                        "LocalSoundEventId": "SFX_Pkmn_Move_Bubble_Launch"
+                                        "ItemPlayerAnimationsId": "Pkmn_Default",
+                                        "ItemAnimationId": "Spit"
                                     }
                                 }
                             ]
@@ -35,14 +31,14 @@
                             "Interactions": [
                                 {
                                     "Type": "Simple",
-                                    "RunTime": 0.25
+                                    "RunTime": 0.15
                                 },
                                 {
                                     "Type": "Projectile",
-                                    "Config": "Projectile_Config_Bubble",
+                                    "Config": "Projectile_Config_Bubblebeam",
                                     "Next": {
                                         "Type": "Simple",
-                                        "RunTime": 0.25
+                                        "RunTime": 0.15
                                     }
                                 }
                             ]
@@ -51,7 +47,7 @@
                 }
             ]
         },
-        "RunTime": 3,
-        "Repeat": 3
+        "RunTime": 2,
+        "Repeat": 10
     }
 }

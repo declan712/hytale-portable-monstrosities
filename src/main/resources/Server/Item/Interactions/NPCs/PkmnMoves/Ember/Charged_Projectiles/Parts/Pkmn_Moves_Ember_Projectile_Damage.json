@@ -1,5 +1,5 @@
 {
-  "Parent": "DamageEntityParent",
+  "Parent": "DamagePkmnParent",
   "DamageCalculator": {
     "BaseDamage": {
       "Fire": 40
@@ -23,6 +23,13 @@
       },
       "Force": 5.5,
       "VelocityType": "Add"
-    }
+    },
+    "WorldSoundEventId": "SFX_Pkmn_Damage",
+    "LocalSoundEventId": "SFX_Pkmn_Damage",
+    "WorldParticles": [
+      {
+        "SystemId": "Impact_Sword_Basic"
+      }
+    ]
   }
 }

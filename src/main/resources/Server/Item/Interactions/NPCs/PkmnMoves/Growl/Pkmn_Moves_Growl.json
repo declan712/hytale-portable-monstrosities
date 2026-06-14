@@ -3,47 +3,39 @@
   "$Comment": "Prepare Delay",
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Alerted"
+    "ItemAnimationId": "Alerted",
+    "RunTime": 0.35
   },
-  "RunTime": 0.25,
   "Next": {
     "Type": "Selector",
-    "Effects": {
-      "ItemPlayerAnimationsId": "Pkmn_Default",
-      "ItemAnimationId": "Alerted"
-    },
     "$Comment": "Length of Combat",
     "RunTime": 0.125,
     "Selector": {
-    "Id": "Horizontal",
-    "Direction": "ToLeft",
-    "TestLineOfSight": true,
-    "ExtendTop": 0.75,
-    "ExtendBottom": 0.75,
-    "StartDistance": 0.5,
-    "EndDistance": 4.5,
-    "Length": 30,
-    "RollOffset": 90,
-    "YawStartOffset": -15
+      "Id": "AOECircle",
+      "Range": 5,
+      "Offset": {
+        "Z": -5,
+        "Y": 0.5
+      }
     },
     "HitEntity": {
-    "Interactions": [
+      "Interactions": [
         {
-        "Type": "Replace",
-        "DefaultOk": true,
-        "DefaultValue": {
-          "Interactions": [
-            "Pkmn_Moves_Growl_Effect"
-          ]
-        },
-        "Var": "Growl_Effect"
+          "Type": "Replace",
+          "DefaultOk": true,
+          "DefaultValue": {
+            "Interactions": [
+              "Pkmn_Moves_Growl_Effect"
+            ]
+          },
+          "Var": "Growl_Effect"
         }
-    ]
+      ]
     },
     "Next": {
-    "Type": "Simple",
-    "$Comment": "Pad the interaction length",
-    "RunTime": 0.2
+      "Type": "Simple",
+      "$Comment": "Pad the interaction length",
+      "RunTime": 0.2
     }
   }
 }

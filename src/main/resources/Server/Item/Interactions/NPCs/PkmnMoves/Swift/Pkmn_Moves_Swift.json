@@ -1,0 +1,41 @@
+{
+  "Type": "Simple",
+  "Runtime": 0.75,
+  "Next": {
+    "Type": "Repeat",
+    "RunTime": 0.55,
+    "Repeat": 2,
+    "ForkInteractions": {
+      "Interactions": [
+        {
+          "Type": "Parallel",
+          "Interactions": [
+            {
+              "Type": "Projectile",
+              "Config": "Projectile_Config_Swift",
+              "Next": {
+                "Type": "Simple",
+                "RunTime": 0.25
+              }
+            },
+            {
+              "Type": "Simple",
+              "RunTime": 0.25,
+              "Effects": {
+                "ItemAnimationId": "Spit",
+                "WorldSoundEventId": "SFX_Pkmn_Move_Swift",
+                "LocalSoundEventId": "SFX_Pkmn_Move_Swift"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+
+
+
+
+
+

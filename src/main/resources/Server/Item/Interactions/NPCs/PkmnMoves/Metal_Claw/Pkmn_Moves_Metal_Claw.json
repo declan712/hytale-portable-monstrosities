@@ -3,7 +3,9 @@
   "$Comment": "Prepare Delay",
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "ScratchRightQuad"
+    "ItemAnimationId": "ScratchRightQuad",
+    "WorldSoundEventId": "SFX_Pkmn_Move_Metal_Claw_Part1",
+    "LocalSoundEventId": "SFX_Pkmn_Move_Metal_Claw_Part1"
   },
   "RunTime": 0.25,
   "Next": {
@@ -11,8 +13,8 @@
     "$Comment": "Move at target",
     "RunTime": 0.425,
     "Effects": {
-      "WorldSoundEventId": "SFX_Pkmn_Move_Slash",
-      "LocalSoundEventId": "SFX_Pkmn_Move_Slash",
+      "WorldSoundEventId": "SFX_Pkmn_Move_Metal_Claw_Part2",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Metal_Claw_Part2",
       "Particles": [
         {
           "SystemId": "Pkmn_Metal_Claw",

@@ -13,13 +13,20 @@
       "Effects": {
         "Particles": [
           {
-            "SystemId": "Poison_Powder",
+            "SystemId": "Sand_Attack",
             "TargetEntityPart": "Entity",
-            "TargetNodeName": "Origin"
+            "TargetNodeName": "R-Foot",
+            "RotationOffset": {
+              "Pitch": 160
+            },
+            "PositionOffset": {
+              "Z": 0,
+              "Y": 0.5
+            }
           }
         ],
-        "WorldSoundEventId": "SFX_Gunshot_Awp",
-        "LocalSoundEventId": "SFX_Gunshot_Awp",
+        "WorldSoundEventId": "SFX_Pkmn_Move_Sand_Attack",
+        "LocalSoundEventId": "SFX_Pkmn_Move_Sand_Attack",
         "ClearAnimationOnFinish": true
       },
       "RunTime": 0.75,

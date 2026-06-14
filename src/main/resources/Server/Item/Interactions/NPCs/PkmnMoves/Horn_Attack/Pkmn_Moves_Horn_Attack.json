@@ -3,62 +3,86 @@
   "$Comment": "Prepare Delay",
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Tackle"
+    "ItemAnimationId": "Tackle",
+    "Particles": [
+      {
+        "SystemId": "Pkmn_Horn_Attack",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Head",
+        "PositionOffset": {
+          "Y": 0.25,
+          "Z": 0.25
+        },
+        "RotationOffset": {
+          "Pitch": 0,
+          "Yaw": 0
+        }
+      }
+    ]
   },
   "RunTime": 0.25,
   "Next": {
-    "Type": "ApplyForce",
-    "$Comment": "Move at target",
-    "RunTime": 0.425,
-    "Effects": {
-        "WorldSoundEventId": "SFX_Pkmn_Move_Tackle",
-        "LocalSoundEventId": "SFX_Pkmn_Move_Tackle"
-      },
-    "Direction": {
-      "Z": -10,
-      "Y": 0.5,
-      "X": 0
-    },
-    "Force": 5,
-    "AdjustVertical": true,
-    "Next": {
-      "Type": "Selector",
-      "Effects": {
-        "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
-      },
-      "$Comment": "Length of Combat",
-      "RunTime": 0.125,
-      "Selector": {
-        "Id": "Horizontal",
-        "Direction": "ToLeft",
-        "TestLineOfSight": true,
-        "ExtendTop": 0.75,
-        "ExtendBottom": 0.75,
-        "StartDistance": 0.5,
-        "EndDistance": 4,
-        "Length": 30,
-        "RollOffset": 90,
-        "YawStartOffset": -15
-      },
-      "HitEntity": {
+    "Type": "Parallel",
+    "Interactions": [
+      {
         "Interactions": [
           {
-            "Type": "Replace",
-            "DefaultOk": true,
-            "DefaultValue": {
-              "Interactions": [
-                "Pkmn_Moves_Horn_Attack_Damage"
-              ]
+            "Type": "ApplyForce",
+            "$Comment": "Move at target",
+            "RunTime": 0.425,
+            "Direction": {
+              "Z": -10,
+              "Y": 0.5,
+              "X": 0
             },
-            "Var": "Horn_Attack_Damage"
+            "Force": 1.25,
+            "AdjustVertical": true,
+            "Effects": {
+              "WorldSoundEventId": "SFX_Pkmn_Move_Horn_Attack",
+              "LocalSoundEventId": "SFX_Pkmn_Move_Horn_Attack"
+            },
+            "HorizontalSpeedMultiplier": 2,
+            "Duration": 0.35,
+            "ChangeVelocityType": "Add"
           }
         ]
       },
-      "Next": {
-        "Type": "Simple",
-        "$Comment": "Pad the interaction length",
-        "RunTime": 0.2
+      {
+        "Interactions": [
+          {
+            "Type": "Selector",
+            "Effects": {
+              "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
+            },
+            "$Comment": "Length of Combat",
+            "RunTime": 0.425,
+            "Selector": {
+              "Id": "Stab",
+              "EndDistance": 3,
+              "ExtendTop": 1.25,
+              "ExtendBottom": 1.25,
+              "ExtendLeft": 1.25,
+              "ExtendRight": 1.25,
+              "TestLineOfSight": true,
+              "StartDistance": 0.01
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "Replace",
+                  "DefaultOk": true,
+                  "DefaultValue": {
+                    "Interactions": [
+                      "Pkmn_Moves_Horn_Attack_Damage"
+                    ]
+                  },
+                  "Var": "Horn_Attack_Damage"
+                }
+              ]
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

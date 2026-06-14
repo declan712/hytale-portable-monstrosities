@@ -1,0 +1,35 @@
+{
+  "Parent": "DamagePkmnParent",
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Ice": 9.0
+    }
+  },
+  "DamageEffects": {
+    "Knockback": {
+      "Type": "Force",
+      "VelocityConfig": {
+        "GroundResistance": 0.804,
+        "GroundResistanceMax": 0.0,
+        "AirResistance": 0.972,
+        "AirResistanceMax": 0.028,
+        "Threshold": 1.0,
+        "Style": "Exp"
+      },
+      "Direction": {
+        "X": 1.0,
+        "Y": 2.0,
+        "Z": 3.0
+      },
+      "Force": 0.2,
+      "VelocityType": "Add"
+    },
+    "WorldSoundEventId": "SFX_Pkmn_Move_Ice_Beam_Part2",
+    "WorldParticles": [
+      {
+        "SystemId": "Impact_Sword_Charged"
+      }
+    ],
+    "StaminaDrainMultiplier": 0.4
+  }
+}

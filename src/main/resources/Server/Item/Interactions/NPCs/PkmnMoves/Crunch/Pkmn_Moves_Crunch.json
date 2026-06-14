@@ -11,18 +11,8 @@
     "$Comment": "Move at target",
     "RunTime": 0.425,
     "Effects": {
-      "WorldSoundEventId": "SFX_Pkmn_Move_Bite",
-      "LocalSoundEventId": "SFX_Pkmn_Move_Bite",
-      "Particles": [
-        {
-          "SystemId": "Pkmn_Bite",
-          "TargetEntityPart": "Entity",
-          "PositionOffset": {
-            "Z": 1.5,
-            "Y": 1
-          }
-        }
-      ]
+      "WorldSoundEventId": "SFX_Pkmn_Move_Crunch",
+      "LocalSoundEventId": "SFX_Pkmn_Move_Crunch"
     },
     "Direction": {
       "Z": -10,
@@ -32,43 +22,64 @@
     "Force": 5,
     "AdjustVertical": true,
     "Next": {
-      "Type": "Selector",
-      "Effects": {
-        "WorldSoundEventId": "SFX_NPC_Unarmed_Swing"
-      },
-      "$Comment": "Length of Combat",
-      "RunTime": 0.125,
-      "Selector": {
-        "Id": "Horizontal",
-        "Direction": "ToLeft",
-        "TestLineOfSight": true,
-        "ExtendTop": 0.75,
-        "ExtendBottom": 0.75,
-        "StartDistance": 0.5,
-        "EndDistance": 3,
-        "Length": 30,
-        "RollOffset": 90,
-        "YawStartOffset": -15
-      },
-      "HitEntity": {
+      "Type": "Repeat",
+      "ForkInteractions": {
         "Interactions": [
           {
-            "Type": "Replace",
-            "DefaultOk": true,
-            "DefaultValue": {
+            "Type": "Selector",
+            "Effects": {
+              "WorldSoundEventId": "SFX_NPC_Unarmed_Swing",
+              "Particles": [
+                {
+                  "SystemId": "Pkmn_Bite",
+                  "TargetEntityPart": "Entity",
+                  "PositionOffset": {
+                    "Z": 1.5,
+                    "Y": 1
+                  }
+                }
+              ],
+              "ItemAnimationId": "Bite",
+              "ClearAnimationOnFinish": false,
+              "ItemPlayerAnimationsId": "Pkmn_Default"
+            },
+            "$Comment": "Length of Combat",
+            "RunTime": 0.125,
+            "Selector": {
+              "Id": "Horizontal",
+              "Direction": "ToLeft",
+              "TestLineOfSight": true,
+              "ExtendTop": 0.75,
+              "ExtendBottom": 0.75,
+              "StartDistance": 0.5,
+              "EndDistance": 3,
+              "Length": 30,
+              "RollOffset": 90,
+              "YawStartOffset": -15
+            },
+            "HitEntity": {
               "Interactions": [
-                "Pkmn_Moves_Crunch_Damage"
+                {
+                  "Type": "Replace",
+                  "DefaultOk": true,
+                  "DefaultValue": {
+                    "Interactions": [
+                      "Pkmn_Moves_Crunch_Damage"
+                    ]
+                  },
+                  "Var": "Crunch_Damage"
+                }
               ]
             },
-            "Var": "Crunch_Damage"
+            "Next": {
+              "Type": "Simple",
+              "$Comment": "Pad the interaction length",
+              "RunTime": 0.2
+            }
           }
         ]
       },
-      "Next": {
-        "Type": "Simple",
-        "$Comment": "Pad the interaction length",
-        "RunTime": 0.2
-      }
+      "Repeat": 2
     }
   }
 }
