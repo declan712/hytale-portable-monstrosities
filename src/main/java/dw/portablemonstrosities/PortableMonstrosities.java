@@ -18,6 +18,7 @@ import dw.portablemonstrosities.components.PkmnStatsComponent;
 import dw.portablemonstrosities.components.PkmnStorageComponent;
 import dw.portablemonstrosities.events.InitPlayerStatsEvent;
 import dw.portablemonstrosities.interactions.CaptureWildCreatureInteraction;
+import dw.portablemonstrosities.interactions.ChanceInteraction;
 import dw.portablemonstrosities.interactions.CreatureScannerInteraction;
 import dw.portablemonstrosities.interactions.DamagePkmnEntityInteraction;
 import dw.portablemonstrosities.interactions.FillFluidContainerInteraction;
@@ -64,6 +65,7 @@ public class PortableMonstrosities extends JavaPlugin {
         this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, InitPlayerStatsEvent::onPlayerReady);
 
         // -- Codecs (Interactions)  ----------
+        this.getCodecRegistry(Interaction.CODEC).register("Chance", ChanceInteraction.class, ChanceInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("DamagePkmnEntity", DamagePkmnEntityInteraction.class, DamagePkmnEntityInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("SetCreatureNameplate", SetCreatureNameplateInteraction.class, SetCreatureNameplateInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("CreatureScan", CreatureScannerInteraction.class, CreatureScannerInteraction.CODEC);

@@ -10,5 +10,9 @@ public class PkmnCommand extends AbstractCommandCollection {
             "Set the player as the owner of the target NPC"));
         addSubCommand(new RestoreLostPkmnCommand("restore",
             "Returns the Pokemon to the currently held ball, even if it has despawned"));
+        addSubCommand(new AlterPkmnCommand("alter",
+            "Alter the metadata of the target Pokemon"));
+        addSubCommand(new PkmnStatsUICommand("stats",
+            "View Pokemon stats UI"));
     }
 }
