@@ -1,0 +1,517 @@
+$C = "../Common.ui";
+
+Group {
+LayoutMode: Top;
+// Anchor: (Left:16, Width: 288, Height: 340);
+
+    Group {
+        LayoutMode: Top;
+        Background: (TexturePath: "../Common/ContainerFullPatch.png", Border: 20);
+        Anchor: (Top: 0, Left: 0, Width:288);
+        Padding: (Full: 8);
+
+        Group #Balls {
+            LayoutMode: Left;
+            Anchor: (Top: 0, Left: 0, Height: 24, Width: 24);
+            AssetImage {
+                Anchor: (Top:0, Left: 0, Width: 24, Height:24);
+                AssetPath: "UI/Custom/Pages/Pokeball_None.png";
+            }
+            AssetImage {
+                Anchor: (Top:0, Left: 0, Width: 24, Height:24);
+                AssetPath: "UI/Custom/Pages/Pokeball_None.png";
+            }
+            AssetImage {
+                Anchor: (Top:0, Left: 0, Width: 24, Height:24);
+                AssetPath: "UI/Custom/Pages/Pokeball_None.png";
+            }
+            AssetImage {
+                Anchor: (Top:0, Left: 0, Width: 24, Height:24);
+                AssetPath: "UI/Custom/Pages/Pokeball_None.png";
+            }
+            AssetImage {
+                Anchor: (Top:0, Left: 0, Width: 24, Height:24);
+                AssetPath: "UI/Custom/Pages/Pokeball_None.png";
+            }
+            AssetImage {
+                Anchor: (Top:0, Left: 0, Width: 24, Height:24);
+                AssetPath: "UI/Custom/Pages/Pokeball_None.png";
+            }
+        }
+
+        $C.@ContentSeparator #Sep0 {}
+        
+        Group #Pkmn1 {
+            LayoutMode: Left;
+            Anchor: (Width: 256, Height: 48);
+
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 48, Height:48);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+
+            Group #Details {
+                LayoutMode: Top;
+                Anchor: (Left:0, Top:0, Width: 208, Height: 48);
+
+                Group #Name {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 24);
+
+                    Label #PkmnName {
+                        Anchor: (Width: 144, Left: 0, Top: 0);
+                        Text: "Bulbasaur";
+                        Style: (FontSize: 16, TextColor: $C.@ColorDefault, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Label #PkmnLevel {
+                        Anchor: (Width: 64, Right: 0);
+                        Text: "Lv 100";
+                        Style: (TextColor: #aaaaaa, FontSize: 16);
+                    }
+                }
+
+                Group #Health {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+                    Background: (Color: #484058);
+                    Padding: (Full: 2);
+
+                    Label {
+                        Anchor: (Width: 24, Left: 0, Bottom: 0);
+                        Text: "HP";
+                        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Group {
+                        Anchor: (Left: 0, Width: 128, Height: 14);
+                        Padding: (Full: 2);
+                        OutlineColor: #f8f8f8;
+                        OutlineSize: 2;
+
+                        ProgressBar #HealthBar {
+                            Anchor: (Left: 0, Width: 124, Height: 10);
+                            Alignment: Horizontal;
+                            Direction: End;
+                            Value: 0.75;
+                            // Background: (Color: #484058);
+                            Background: (TexturePath: "Pkmn_Hp_Bg.png");
+                            BarTexturePath: "Pkmn_Hp.png";
+                            // Bar: (Color: #4a7caa);
+                            // OutlineColor: #f8f8f8;
+                            // OutlineSize: 2;
+                            // EffectTexturePath: "Pkmn_Hp_Half.png";
+                            // EffectWidth: 128;
+                            // EffectHeight: 14;
+                        }
+                    }
+
+                    Label #HealthText {
+                        Anchor: (Width: 50, Left: 4, Bottom: 2);
+                        Text: "150/200";
+                        Style: (TextColor: #aaaaaa, FontSize: 12);
+                    }
+                }
+            }
+        }
+
+        $C.@ContentSeparator #Sep1 {}
+        
+        Group #Pkmn2 {
+            LayoutMode: Left;
+            Anchor: (Width: 256, Height: 48);
+
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 48, Height:48);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+
+            Group #Details {
+                LayoutMode: Top;
+                Anchor: (Left:0, Top:0, Width: 208, Height: 48);
+
+                Group #Name {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 24);
+
+                    Label  #PkmnName {
+                        Anchor: (Width: 144, Left: 0, Top: 0);
+                        Text: "Bulbasaur";
+                        Style: (FontSize: 16, TextColor: $C.@ColorDefault, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Label #PkmnLevel {
+                        Anchor: (Width: 64, Right: 0);
+                        Text: "Lv 100";
+                        Style: (TextColor: #aaaaaa, FontSize: 16);
+                    }
+                }
+
+                Group #Health {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+                    Background: (Color: #484058);
+                    Padding: (Full: 2);
+
+                    Label {
+                        Anchor: (Width: 24, Left: 0, Bottom: 0);
+                        Text: "HP";
+                        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Group {
+                        Anchor: (Left: 0, Width: 128, Height: 14);
+                        Padding: (Full: 2);
+                        OutlineColor: #f8f8f8;
+                        OutlineSize: 2;
+
+                        ProgressBar #HealthBar {
+                            Anchor: (Left: 0, Width: 124, Height: 10);
+                            Alignment: Horizontal;
+                            Direction: End;
+                            Value: 0.75;
+                            // Background: (Color: #484058);
+                            Background: (TexturePath: "Pkmn_Hp_Bg.png");
+                            BarTexturePath: "Pkmn_Hp.png";
+                            // Bar: (Color: #4a7caa);
+                            // OutlineColor: #f8f8f8;
+                            // OutlineSize: 2;
+                            // EffectTexturePath: "Pkmn_Hp_Half.png";
+                            // EffectWidth: 128;
+                            // EffectHeight: 14;
+                        }
+                    }
+
+                    Label #HealthText {
+                        Anchor: (Width: 50, Left: 4, Bottom: 2);
+                        Text: "150/200";
+                        Style: (TextColor: #aaaaaa, FontSize: 12);
+                    }
+                }
+            }
+        }
+
+        $C.@ContentSeparator #Sep2 {}
+        
+        Group #Pkmn3 {
+            LayoutMode: Left;
+            Anchor: (Width: 256, Height: 48);
+
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 48, Height:48);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+
+            Group #Details {
+                LayoutMode: Top;
+                Anchor: (Left:0, Top:0, Width: 208, Height: 48);
+
+                Group #Name {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 24);
+
+                    Label  #PkmnName {
+                        Anchor: (Width: 144, Left: 0, Top: 0);
+                        Text: "Bulbasaur";
+                        Style: (FontSize: 16, TextColor: $C.@ColorDefault, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Label #PkmnLevel {
+                        Anchor: (Width: 64, Right: 0);
+                        Text: "Lv 100";
+                        Style: (TextColor: #aaaaaa, FontSize: 16);
+                    }
+                }
+
+                Group #Health {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+                    Background: (Color: #484058);
+                    Padding: (Full: 2);
+
+                    Label {
+                        Anchor: (Width: 24, Left: 0, Bottom: 0);
+                        Text: "HP";
+                        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Group {
+                        Anchor: (Left: 0, Width: 128, Height: 14);
+                        Padding: (Full: 2);
+                        OutlineColor: #f8f8f8;
+                        OutlineSize: 2;
+
+                        ProgressBar #HealthBar {
+                            Anchor: (Left: 0, Width: 124, Height: 10);
+                            Alignment: Horizontal;
+                            Direction: End;
+                            Value: 0.75;
+                            // Background: (Color: #484058);
+                            Background: (TexturePath: "Pkmn_Hp_Bg.png");
+                            BarTexturePath: "Pkmn_Hp.png";
+                            // Bar: (Color: #4a7caa);
+                            // OutlineColor: #f8f8f8;
+                            // OutlineSize: 2;
+                            // EffectTexturePath: "Pkmn_Hp_Half.png";
+                            // EffectWidth: 128;
+                            // EffectHeight: 14;
+                        }
+                    }
+
+                    Label #HealthText {
+                        Anchor: (Width: 50, Left: 4, Bottom: 2);
+                        Text: "150/200";
+                        Style: (TextColor: #aaaaaa, FontSize: 12);
+                    }
+                }
+            }
+        }
+
+        $C.@ContentSeparator #Sep3 {}
+        
+        Group #Pkmn4 {
+            LayoutMode: Left;
+            Anchor: (Width: 256, Height: 48);
+
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 48, Height:48);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+
+            Group #Details {
+                LayoutMode: Top;
+                Anchor: (Left:0, Top:0, Width: 208, Height: 48);
+
+                Group #Name {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 24);
+
+                    Label  #PkmnName {
+                        Anchor: (Width: 144, Left: 0, Top: 0);
+                        Text: "Bulbasaur";
+                        Style: (FontSize: 16, TextColor: $C.@ColorDefault, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Label #PkmnLevel {
+                        Anchor: (Width: 64, Right: 0);
+                        Text: "Lv 100";
+                        Style: (TextColor: #aaaaaa, FontSize: 16);
+                    }
+                }
+
+                Group #Health {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+                    Background: (Color: #484058);
+                    Padding: (Full: 2);
+
+                    Label {
+                        Anchor: (Width: 24, Left: 0, Bottom: 0);
+                        Text: "HP";
+                        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Group {
+                        Anchor: (Left: 0, Width: 128, Height: 14);
+                        Padding: (Full: 2);
+                        OutlineColor: #f8f8f8;
+                        OutlineSize: 2;
+
+                        ProgressBar #HealthBar {
+                            Anchor: (Left: 0, Width: 124, Height: 10);
+                            Alignment: Horizontal;
+                            Direction: End;
+                            Value: 0.75;
+                            // Background: (Color: #484058);
+                            Background: (TexturePath: "Pkmn_Hp_Bg.png");
+                            BarTexturePath: "Pkmn_Hp.png";
+                            // Bar: (Color: #4a7caa);
+                            // OutlineColor: #f8f8f8;
+                            // OutlineSize: 2;
+                            // EffectTexturePath: "Pkmn_Hp_Half.png";
+                            // EffectWidth: 128;
+                            // EffectHeight: 14;
+                        }
+                    }
+
+                    Label #HealthText {
+                        Anchor: (Width: 50, Left: 4, Bottom: 2);
+                        Text: "150/200";
+                        Style: (TextColor: #aaaaaa, FontSize: 12);
+                    }
+                }
+            }
+        }
+
+        $C.@ContentSeparator #Sep4 {}
+        
+        Group #Pkmn5 {
+            LayoutMode: Left;
+            Anchor: (Width: 256, Height: 48);
+
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 48, Height:48);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+
+            Group #Details {
+                LayoutMode: Top;
+                Anchor: (Left:0, Top:0, Width: 208, Height: 48);
+
+                Group #Name {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 24);
+
+                    Label  #PkmnName {
+                        Anchor: (Width: 144, Left: 0, Top: 0);
+                        Text: "Bulbasaur";
+                        Style: (FontSize: 16, TextColor: $C.@ColorDefault, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Label #PkmnLevel {
+                        Anchor: (Width: 64, Right: 0);
+                        Text: "Lv 100";
+                        Style: (TextColor: #aaaaaa, FontSize: 16);
+                    }
+                }
+
+                Group #Health {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+                    Background: (Color: #484058);
+                    Padding: (Full: 2);
+
+                    Label {
+                        Anchor: (Width: 24, Left: 0, Bottom: 0);
+                        Text: "HP";
+                        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Group {
+                        Anchor: (Left: 0, Width: 128, Height: 14);
+                        Padding: (Full: 2);
+                        OutlineColor: #f8f8f8;
+                        OutlineSize: 2;
+
+                        ProgressBar #HealthBar {
+                            Anchor: (Left: 0, Width: 124, Height: 10);
+                            Alignment: Horizontal;
+                            Direction: End;
+                            Value: 0.75;
+                            // Background: (Color: #484058);
+                            Background: (TexturePath: "Pkmn_Hp_Bg.png");
+                            BarTexturePath: "Pkmn_Hp.png";
+                            // Bar: (Color: #4a7caa);
+                            // OutlineColor: #f8f8f8;
+                            // OutlineSize: 2;
+                            // EffectTexturePath: "Pkmn_Hp_Half.png";
+                            // EffectWidth: 128;
+                            // EffectHeight: 14;
+                        }
+                    }
+
+                    Label #HealthText {
+                        Anchor: (Width: 50, Left: 4, Bottom: 2);
+                        Text: "150/200";
+                        Style: (TextColor: #aaaaaa, FontSize: 12);
+                    }
+                }
+            }
+        }
+
+        $C.@ContentSeparator #Sep5 {}
+        
+        Group #Pkmn6 {
+            LayoutMode: Left;
+            Anchor: (Width: 256, Height: 48);
+
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 48, Height:48);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+
+            Group #Details {
+                LayoutMode: Top;
+                Anchor: (Left:0, Top:0, Width: 208, Height: 48);
+
+                Group #Name {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 24);
+
+                    Label  #PkmnName {
+                        Anchor: (Width: 144, Left: 0, Top: 0);
+                        Text: "Bulbasaur";
+                        Style: (FontSize: 16, TextColor: $C.@ColorDefault, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Label #PkmnLevel {
+                        Anchor: (Width: 64, Right: 0);
+                        Text: "Lv 100";
+                        Style: (TextColor: #aaaaaa, FontSize: 16);
+                    }
+                }
+
+                Group #Health {
+                    LayoutMode: Left;
+                    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+                    Background: (Color: #484058);
+                    Padding: (Full: 2);
+
+                    Label {
+                        Anchor: (Width: 24, Left: 0, Bottom: 0);
+                        Text: "HP";
+                        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+                        MaskTexturePath: $C.@TextHighlightGradientMask;
+                    }
+
+                    Group {
+                        Anchor: (Left: 0, Width: 128, Height: 14);
+                        Padding: (Full: 2);
+                        OutlineColor: #f8f8f8;
+                        OutlineSize: 2;
+
+                        ProgressBar #HealthBar {
+                            Anchor: (Left: 0, Width: 124, Height: 10);
+                            Alignment: Horizontal;
+                            Direction: End;
+                            Value: 0.75;
+                            // Background: (Color: #484058);
+                            Background: (TexturePath: "Pkmn_Hp_Bg.png");
+                            BarTexturePath: "Pkmn_Hp.png";
+                            // Bar: (Color: #4a7caa);
+                            // OutlineColor: #f8f8f8;
+                            // OutlineSize: 2;
+                            // EffectTexturePath: "Pkmn_Hp_Half.png";
+                            // EffectWidth: 128;
+                            // EffectHeight: 14;
+                        }
+                    }
+
+                    Label #HealthText {
+                        Anchor: (Width: 50, Left: 4, Bottom: 2);
+                        Text: "150/200";
+                        Style: (TextColor: #aaaaaa, FontSize: 12);
+                    }
+                }
+            }
+        }
+
+
+
+
+
+    }
+
+
+}

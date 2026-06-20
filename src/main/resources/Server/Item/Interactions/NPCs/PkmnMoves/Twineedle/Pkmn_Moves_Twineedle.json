@@ -3,7 +3,6 @@
   "Runtime": 0.75,
   "Next": {
     "Type": "Repeat",
-    "RunTime": 0.55,
     "Repeat": 2,
     "ForkInteractions": {
       "Interactions": [
@@ -11,31 +10,31 @@
           "Type": "Parallel",
           "Interactions": [
             {
-              "Type": "Projectile",
-              "Config": "Projectile_Config_Twineedle",
-              "Next": {
-                "Type": "Simple",
-                "RunTime": 0.25
-              }
+              "Interactions": [
+                {
+                  "Type": "Projectile",
+                  "Config": "Projectile_Config_Twineedle",
+                  "RunTime": 0.45
+                }
+              ]
             },
             {
-              "Type": "Simple",
-              "RunTime": 0.25,
-              "Effects": {
-                "ItemAnimationId": "Spit",
-                "WorldSoundEventId": "SFX_Pkmn_Move_Twineedle_1hit",
-                "LocalSoundEventId": "SFX_Pkmn_Move_Twineedle_1hit"
-              }
+              "Interactions": [
+                {
+                  "Type": "Simple",
+                  "RunTime": 0.45,
+                  "Effects": {
+                    "ItemAnimationId": "Spit",
+                    "WorldSoundEventId": "SFX_Pkmn_Move_Twineedle_1hit",
+                    "LocalSoundEventId": "SFX_Pkmn_Move_Twineedle_1hit"
+                  }
+                }
+              ]
             }
-          ]
+          ],
+          "RunTime": 0.75
         }
       ]
     }
   }
 }
-
-
-
-
-
-

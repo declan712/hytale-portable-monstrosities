@@ -1,17 +1,35 @@
 {
-  "Parent": "DamagePkmnParent",
-  "DamageCalculator": {
-    "BaseDamage": {
-      "Poison": 15
+  "Type": "Parallel",
+  "Interactions": [
+    {
+      "Interactions": [
+        {
+          "Type": "Chance",
+          "Chance": 0.2,
+          "Next": "Pkmn_Moves_Poison_Sting_Effect"
+        }
+      ]
+    },
+    {
+      "Interactions": [
+        {
+          "Parent": "DamagePkmnParent",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Poison": 15
+            }
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Pkmn_Damage",
+            "LocalSoundEventId": "SFX_Pkmn_Damage",
+            "WorldParticles": [
+              {
+                "SystemId": "Impact_Sword_Basic"
+              }
+            ]
+          }
+        }
+      ]
     }
-  },
-  "DamageEffects": {
-    "WorldSoundEventId": "SFX_Pkmn_Damage",
-    "LocalSoundEventId": "SFX_Pkmn_Damage",
-    "WorldParticles": [
-      {
-        "SystemId": "Impact_Sword_Basic"
-      }
-    ]
-  }
+  ]
 }
