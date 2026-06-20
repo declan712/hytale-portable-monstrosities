@@ -1,21 +1,20 @@
 {
   "RenderMode": "BlendAdd",
-  "ParticleRotationInfluence": "None",
+  "ParticleRotationInfluence": "BillboardVelocity",
   "LinearFiltering": true,
-  "LightInfluence": 0.0,
   "ParticleRotateWithSpawner": true,
-  "MaxConcurrentParticles": 30,
+  "MaxConcurrentParticles": 200,
   "ParticleLifeSpan": {
-    "Min": 1.2,
-    "Max": 1.5
+    "Min": 0.6,
+    "Max": 0.7
   },
   "SpawnRate": {
-    "Min": 30,
-    "Max": 40
+    "Min": 50,
+    "Max": 100
   },
   "Particle": {
-    "Texture": "Particles/Textures/Circles/Circle_Glow.png",
-    "ScaleRatioConstraint": "OneToOne",
+    "Texture": "Particles/Textures/Ice/SnowParticle2.png",
+    "ScaleRatioConstraint": "None",
     "SoftParticles": "Require",
     "Animation": {
       "0": {
@@ -29,12 +28,12 @@
             "Max": 0.2
           }
         },
-        "Opacity": 0.0,
-        "Color": "#e400ff"
+        "Opacity": 0.2,
+        "Color": "#dcfff0"
       },
-      "20": {
+      "5": {
         "Opacity": 1.0,
-        "Color": "#001bff",
+        "Color": "#c0e0ff",
         "Scale": {
           "X": {
             "Min": 1,
@@ -46,19 +45,13 @@
           }
         }
       },
-      "40": {
-        "Color": "#ffd700"
-      },
-      "60": {
-        "Color": "#f800ff"
-      },
-      "80": {
+      "95": {
         "Opacity": 0.7,
-        "Color": "#003cff"
+        "Color": "#7aa8ff"
       },
       "100": {
         "Opacity": 0.0,
-        "Color": "#ffd700",
+        "Color": "#74abff",
         "Scale": {
           "X": {
             "Min": 1,
@@ -72,21 +65,16 @@
       }
     },
     "InitialAnimationFrame": {
-      "Opacity": 0.892,
+      "Opacity": 0.432,
+      "Color": "#d6fffc",
       "Scale": {
         "X": {
           "Min": 0.5,
-          "Max": 0.7
+          "Max": 1
         },
         "Y": {
           "Min": 0.5,
-          "Max": 0.7
-        }
-      },
-      "Rotation": {
-        "Z": {
-          "Min": -180,
-          "Max": 180
+          "Max": 1
         }
       }
     }
@@ -94,13 +82,14 @@
   "SpawnBurst": false,
   "InitialVelocity": {
     "Speed": {
-      "Min": 4.0,
-      "Max": 8.0
+      "Min": 15,
+      "Max": 15
     }
   },
   "UseEmitDirection": false,
   "ParticleCollision": {
     "BlockType": "Solid",
     "Action": "Expire"
-  }
+  },
+  "LightInfluence": 0
 }

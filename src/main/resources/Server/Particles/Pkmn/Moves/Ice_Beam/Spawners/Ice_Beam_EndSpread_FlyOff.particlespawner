@@ -4,17 +4,17 @@
   "LinearFiltering": false,
   "LightInfluence": 0.0,
   "ParticleRotateWithSpawner": false,
-  "MaxConcurrentParticles": 50,
+  "MaxConcurrentParticles": 200,
   "ParticleLifeSpan": {
-    "Min": 0.4,
-    "Max": 0.6
+    "Min": 0.6,
+    "Max": 0.8
   },
   "SpawnRate": {
-    "Min": 50,
-    "Max": 50
+    "Min": 10,
+    "Max": 30
   },
   "Particle": {
-    "Texture": "Particles/Textures/Rnd/Totem_Heal_Circle3.png",
+    "Texture": "Particles/Textures/Smoke/Sparks_Cloud.png",
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
@@ -28,93 +28,91 @@
             "Max": 1
           }
         },
-        "Opacity": 0.472,
-        "Color": "#00ffc3"
+        "Opacity": 0.472
       },
       "10": {
         "Opacity": 0.828,
-        "Color": "#9bff52",
+        "Color": "#1922bd",
         "Scale": {
           "X": {
             "Min": 1.5,
-            "Max": 1.5
-          },
-          "Y": {
-            "Max": 1.5,
-            "Min": 1.5
-          }
-        }
-      },
-      "50": {},
-      "70": {
-        "Scale": {
-          "X": {
-            "Min": 2,
             "Max": 2
           },
           "Y": {
             "Max": 2,
-            "Min": 2
+            "Min": 1.5
           }
         }
       },
-      "90": {
-        "Opacity": 0.792
+      "50": {
+        "Color": "#67c1d6"
       },
-      "100": {
-        "Opacity": 0.108,
+      "70": {
         "Scale": {
           "X": {
-            "Min": 2,
+            "Min": 1.5,
             "Max": 2
           },
           "Y": {
-            "Min": 2,
-            "Max": 2
+            "Max": 2,
+            "Min": 1.5
           }
         },
-        "Color": "#ff5029"
+        "Opacity": 0.788
+      },
+      "80": {
+        "Opacity": 0.248
+      },
+      "100": {
+        "Opacity": 0,
+        "Scale": {
+          "X": {
+            "Min": 1.5,
+            "Max": 2.5
+          },
+          "Y": {
+            "Min": 1.5,
+            "Max": 2.5
+          }
+        },
+        "Color": "#101983"
       }
     },
     "InitialAnimationFrame": {
-      "Opacity": 0.556,
+      "Opacity": 0.94,
       "Scale": {
         "X": {
-          "Min": 0.05,
-          "Max": 0.05
+          "Min": 0.06,
+          "Max": 0.1
         },
         "Y": {
-          "Min": 0.05,
-          "Max": 0.05
+          "Min": 0.06,
+          "Max": 0.1
         }
       }
     },
-    "SoftParticles": "Enable",
+    "SoftParticles": "Disable",
     "UVOption": "RandomFlipU"
   },
   "SpawnBurst": false,
   "InitialVelocity": {
     "Speed": {
-      "Min": 6,
-      "Max": 7
+      "Min": 16,
+      "Max": 20
     },
     "Yaw": {
-      "Min": -5,
-      "Max": 5
-    },
-    "Pitch": {
-      "Min": -5,
-      "Max": 5
+      "Min": -20,
+      "Max": 20
     }
   },
   "UseEmitDirection": false,
   "TrailSpawnerPositionMultiplier": 1,
   "TrailSpawnerRotationMultiplier": 1,
   "UVMotion": {
-    "Texture": "Particles/Textures/UVMotion/FlowMapSmoke.png",
-    "Scale": 0.16,
-    "Strength": 2.2,
-    "SpeedY": 0.64,
+    "Texture": "Particles/Textures/UVMotion/FlowMapThorus.png",
+    "Scale": 0.32,
+    "Strength": 3.8,
+    "SpeedY": 0.08,
     "StrengthCurveType": "IncreaseLinear"
   },
   "EmitOffset": {
@@ -124,21 +122,13 @@
   },
   "Attractors": [
     {
-      "RadialAcceleration": 11,
-      "RadialAxis": {
-        "Z": 1
-      },
       "DampingMultiplier": {
-        "Z": 1,
+        "Z": 0.9,
         "Y": 0.9,
-        "X": 1
+        "X": 0.9
       },
-      "Position": {
-        "Z": 2
-      },
-      "Radius": 1,
-      "LinearAcceleration": {
-        "Y": 5
+      "LinearImpulse": {
+        "Y": 4
       }
     }
   ]

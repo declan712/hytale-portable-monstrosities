@@ -1,0 +1,233 @@
+{
+  "RenderMode": "Erosion",
+  "ParticleRotationInfluence": "None",
+  "LinearFiltering": false,
+  "LightInfluence": 0.0,
+  "ParticleRotateWithSpawner": false,
+  "MaxConcurrentParticles": 20,
+  "ParticleLifeSpan": {
+    "Min": 0.6,
+    "Max": 0.6
+  },
+  "SpawnRate": {
+    "Min": 20,
+    "Max": 30
+  },
+  "Particle": {
+    "Texture": "Particles/Textures/Ice/Snowflake.png",
+    "ScaleRatioConstraint": "None",
+    "Animation": {
+      "0": {
+        "FrameIndex": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Scale": {
+          "X": {
+            "Min": 1.5,
+            "Max": 1.5
+          },
+          "Y": {
+            "Min": 1.5,
+            "Max": 1.5
+          }
+        },
+        "Opacity": 0.472,
+        "Rotation": {
+          "Z": {
+            "Min": -180,
+            "Max": 180
+          },
+          "Y": {
+            "Min": -180,
+            "Max": 180
+          },
+          "X": {
+            "Min": -180,
+            "Max": 180
+          }
+        },
+        "Color": "#65e7ee"
+      },
+      "25": {
+        "Opacity": 0.828,
+        "Scale": {
+          "X": {
+            "Min": 1.5,
+            "Max": 1.5
+          },
+          "Y": {
+            "Max": 1.5,
+            "Min": 1.5
+          }
+        },
+        "Rotation": {
+          "Z": {
+            "Min": -180,
+            "Max": 180
+          },
+          "Y": {
+            "Min": -180,
+            "Max": 180
+          },
+          "X": {
+            "Min": -180,
+            "Max": 180
+          }
+        },
+        "Color": "#526bbb",
+        "FrameIndex": {
+          "Min": 1,
+          "Max": 1
+        }
+      },
+      "50": {
+        "Scale": {
+          "X": {
+            "Min": 1.5,
+            "Max": 2
+          },
+          "Y": {
+            "Max": 2,
+            "Min": 1.5
+          }
+        },
+        "Rotation": {
+          "Z": {
+            "Min": -180,
+            "Max": 180
+          },
+          "Y": {
+            "Min": -180,
+            "Max": 180
+          },
+          "X": {
+            "Min": -180,
+            "Max": 180
+          }
+        },
+        "Color": "#9ac6c9",
+        "FrameIndex": {
+          "Min": 2,
+          "Max": 2
+        }
+      },
+      "90": {
+        "Opacity": 1,
+        "Rotation": {
+          "X": {
+            "Max": 360
+          }
+        },
+        "Color": "#cccbef"
+      },
+      "100": {
+        "Opacity": 0.204,
+        "Scale": {
+          "X": {
+            "Min": 2,
+            "Max": 2
+          },
+          "Y": {
+            "Min": 2,
+            "Max": 2
+          }
+        },
+        "Rotation": {
+          "Z": {
+            "Min": -180,
+            "Max": 180
+          },
+          "Y": {
+            "Min": -180,
+            "Max": 180
+          },
+          "X": {
+            "Min": -180,
+            "Max": 180
+          }
+        },
+        "Color": "#849bc3",
+        "FrameIndex": {
+          "Min": 3,
+          "Max": 3
+        }
+      }
+    },
+    "InitialAnimationFrame": {
+      "Opacity": 0.792,
+      "FrameIndex": {
+        "Min": 0,
+        "Max": 0
+      },
+      "Scale": {
+        "X": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Y": {
+          "Min": 1,
+          "Max": 1
+        }
+      },
+      "Color": "#ffffff",
+      "Rotation": {
+        "Z": {
+          "Min": -180,
+          "Max": 180
+        },
+        "Y": {
+          "Min": -180,
+          "Max": 180
+        },
+        "X": {
+          "Min": -180,
+          "Max": 180
+        }
+      }
+    },
+    "SoftParticles": "Require",
+    "UseSpriteBlending": true,
+    "FrameSize": {
+      "Width": 32,
+      "Height": 32
+    }
+  },
+  "SpawnBurst": false,
+  "InitialVelocity": {
+    "Speed": {
+      "Min": 20,
+      "Max": 20
+    },
+    "Yaw": {
+      "Min": -2,
+      "Max": 2
+    },
+    "Pitch": {
+      "Min": -2,
+      "Max": 2
+    }
+  },
+  "TrailSpawnerPositionMultiplier": 1,
+  "TrailSpawnerRotationMultiplier": 1,
+  "UVMotion": {
+    "Texture": "Particles/Textures/UVMotion/FlowMapSmoke.png",
+    "Scale": 0.44,
+    "Strength": 0.8,
+    "SpeedY": 0.64,
+    "StrengthCurveType": "DecreaseLinear"
+  },
+  "Attractors": [
+    {
+      "DampingMultiplier": {
+        "Y": 1,
+        "Z": 1,
+        "X": 1
+      }
+    }
+  ],
+  "VelocityStretchMultiplier": 1,
+  "ParticleCollision": {
+    "ParticleRotationInfluence": "Velocity"
+  }
+}

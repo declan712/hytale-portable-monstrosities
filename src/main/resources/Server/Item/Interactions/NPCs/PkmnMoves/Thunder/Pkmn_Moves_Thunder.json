@@ -3,10 +3,25 @@
   "$Comment": "Prepare Delay",
   "Effects": {
     "ItemPlayerAnimationsId": "Pkmn_Default",
-    "ItemAnimationId": "Alert",
+    "ItemAnimationId": "Alerted",
     "WorldSoundEventId": "SFX_Pkmn_Move_Thunder_Part1",
     "LocalSoundEventId": "SFX_Pkmn_Move_Thunder_Part1",
-    "ClearAnimationOnFinish": true
+    "Particles": [
+      {
+        "SystemId": "Thunder",
+        "TargetEntityPart": "Entity",
+        "RotationOffset": {
+          "Pitch": -90,
+          "Yaw": 90,
+          "Roll": 90
+        },
+        "PositionOffset": {
+          "Y": 3,
+          "Z": 5
+        },
+        "Scale": 1
+      }
+    ]
   },
   "Next": {
     "Type": "Repeat",
@@ -33,17 +48,15 @@
                       {
                         "SystemId": "Lightning2",
                         "TargetEntityPart": "Entity",
-                        "RotationOffset": {
-                          "Pitch": -90,
-                          "Yaw": 90,
-                          "Roll": 90
-                        },
+                        "Scale": 4,
                         "PositionOffset": {
-                          "Y": 0.75,
-                          "Z": 1
+                          "Z": 5,
+                          "Y": 5
                         },
-                        "Color": "#fff800",
-                        "Scale": 1
+                        "RotationOffset": {
+                          "Pitch": 180
+                        },
+                        "Color": "#fff9b0"
                       }
                     ]
                   }

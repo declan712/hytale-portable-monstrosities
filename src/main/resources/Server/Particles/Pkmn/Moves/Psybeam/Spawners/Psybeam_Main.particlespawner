@@ -14,14 +14,10 @@
     "Max": 300
   },
   "Particle": {
-    "Texture": "Particles/Textures/Rnd/Placing2.png",
+    "Texture": "Particles/Textures/Circles/Ring_Trail.png",
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
-        "FrameIndex": {
-          "Min": 0,
-          "Max": 3
-        },
         "Scale": {
           "X": {
             "Min": 1,
@@ -40,24 +36,24 @@
         "Color": "#3fff2f",
         "Scale": {
           "X": {
-            "Min": 2,
-            "Max": 2
+            "Min": 1.25,
+            "Max": 1.25
           },
           "Y": {
-            "Max": 2,
-            "Min": 2
+            "Max": 1.25,
+            "Min": 1.25
           }
         }
       },
       "70": {
         "Scale": {
           "X": {
-            "Min": 3,
-            "Max": 3
+            "Min": 1.5,
+            "Max": 1.5
           },
           "Y": {
-            "Max": 3,
-            "Min": 3
+            "Max": 1.5,
+            "Min": 1.5
           }
         }
       },
@@ -68,43 +64,39 @@
         "Opacity": 0.204,
         "Scale": {
           "X": {
-            "Min": 6,
-            "Max": 6
+            "Min": 2,
+            "Max": 2
           },
           "Y": {
-            "Min": 6,
-            "Max": 6
+            "Min": 2,
+            "Max": 2
           }
         },
         "Color": "#ff29e3"
       }
     },
     "InitialAnimationFrame": {
-      "Opacity": 0.94,
-      "FrameIndex": {
-        "Min": 0,
-        "Max": 3
-      },
+      "Opacity": 0.76,
       "Scale": {
         "X": {
-          "Min": 0.2,
-          "Max": 0.3
+          "Min": 0.1,
+          "Max": 0.1
         },
         "Y": {
-          "Min": 0.2,
-          "Max": 0.3
+          "Min": 0.1,
+          "Max": 0.1
         }
       },
       "Rotation": {
         "Z": {
           "Min": -180.0,
           "Max": -180.0
+        },
+        "Y": {
+          "Min": -180,
+          "Max": 180
         }
       }
-    },
-    "FrameSize": {
-      "Width": 32,
-      "Height": 32
     },
     "SoftParticles": "Require"
   },

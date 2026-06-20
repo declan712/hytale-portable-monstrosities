@@ -15,14 +15,13 @@
     }
   },
   "ParticleRotationInfluence": "Billboard",
-  "LinearFiltering": false,
   "LightInfluence": 0,
   "ParticleRotateWithSpawner": true,
   "TrailSpawnerPositionMultiplier": 1,
   "TrailSpawnerRotationMultiplier": 1,
   "MaxConcurrentParticles": 100,
   "ParticleLifeSpan": {
-    "Min": 0.6,
+    "Min": 1,
     "Max": 1
   },
   "SpawnRate": {
@@ -30,8 +29,8 @@
     "Max": 100
   },
   "TotalParticles": {
-    "Min": 100,
-    "Max": 100
+    "Min": 25,
+    "Max": 25
   },
   "InitialVelocity": {
     "Speed": {
@@ -51,16 +50,19 @@
     {
       "RadialAxis": {
         "Y": 10
+      },
+      "LinearAcceleration": {
+        "Y": -15
       }
     }
   ],
   "Particle": {
-    "Texture": "Particles/Textures/Fire/Fire_Small.png",
+    "Texture": "Particles/Textures/Shapes/Mud_Bubble.png",
     "FrameSize": {
       "Width": 32,
       "Height": 32
     },
-    "ScaleRatioConstraint": "None",
+    "ScaleRatioConstraint": "OneToOne",
     "Animation": {
       "0": {
         "FrameIndex": {
@@ -83,29 +85,40 @@
             "Max": 0
           }
         },
-        "Color": "#fff6f6",
         "Opacity": 0
       },
-      "8": {
-        "Color": "#fffff9",
+      "20": {
         "Opacity": 1,
         "Rotation": {
           "Z": {
             "Min": -360,
             "Max": 360
           }
+        },
+        "FrameIndex": {
+          "Min": 1,
+          "Max": 1
         }
       },
-      "30": {
-        "Color": "#ffcf5c",
-        "Opacity": 1
+      "40": {
+        "Opacity": 1,
+        "FrameIndex": {
+          "Min": 2,
+          "Max": 2
+        }
       },
-      "50": {
-        "Color": "#fe9c07"
+      "60": {
+        "FrameIndex": {
+          "Min": 3,
+          "Max": 3
+        }
       },
-      "70": {
+      "80": {
         "Opacity": 0.2,
-        "Color": "#d14d00"
+        "FrameIndex": {
+          "Min": 4,
+          "Max": 4
+        }
       },
       "100": {
         "Scale": {
@@ -118,8 +131,11 @@
             "Max": 0.38
           }
         },
-        "Color": "#840a00",
-        "Opacity": 0
+        "Opacity": 0,
+        "FrameIndex": {
+          "Max": 4,
+          "Min": 4
+        }
       }
     },
     "InitialAnimationFrame": {
@@ -131,21 +147,26 @@
       },
       "Scale": {
         "X": {
-          "Min": 0.4,
-          "Max": 0.5
+          "Min": 0.3,
+          "Max": 0.3
         },
         "Y": {
-          "Min": 0.4,
-          "Max": 0.5
+          "Min": 0.3,
+          "Max": 0.3
         }
       },
-      "Opacity": 1,
-      "Color": "#fff6f6",
+      "Opacity": 0.956,
+      "Color": "#c95fff",
       "FrameIndex": {
         "Min": 0,
         "Max": 0
       }
-    }
+    },
+    "UseSpriteBlending": true
   },
-  "SpawnBurst": true
+  "SpawnBurst": true,
+  "ParticleCollision": {
+    "BlockType": "Solid",
+    "Action": "Expire"
+  }
 }

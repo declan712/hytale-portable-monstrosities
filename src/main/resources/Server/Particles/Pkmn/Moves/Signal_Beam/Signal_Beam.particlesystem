@@ -1,0 +1,52 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Signal_Beam_Main",
+      "PositionOffset": {
+        "Z": -2.5,
+        "Y": 0
+      },
+      "RotationOffset": {
+        "Pitch": 180
+      }
+    },
+    {
+      "SpawnerId": "Signal_Beam_Sparks_End",
+      "PositionOffset": {
+        "Z": -2,
+        "Y": 0
+      },
+      "RotationOffset": {
+        "Pitch": 180
+      }
+    },
+    {
+      "SpawnerId": "Signal_Beam_CoreThin",
+      "RotationOffset": {
+        "Pitch": 180
+      },
+      "Attractors": [
+        {
+          "RadialAxis": {
+            "Z": 10
+          },
+          "Radius": 2,
+          "RadialAcceleration": 100,
+          "RadialImpulse": 100,
+          "DampingMultiplier": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
+          }
+        }
+      ],
+      "PositionOffset": {
+        "Z": -2,
+        "Y": 0,
+        "X": 0
+      }
+    }
+  ],
+  "CullDistance": 100.0,
+  "IsImportant": false
+}
