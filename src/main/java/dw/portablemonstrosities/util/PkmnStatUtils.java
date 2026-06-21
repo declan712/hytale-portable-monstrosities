@@ -191,7 +191,7 @@ public class PkmnStatUtils {
         }
         EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
         if (stats == null){ 
-            LOGGER.atInfo().log("Entity has no EntityStatMap"); 
+            LOGGER.atInfo().log("Unable to get current entity state: Entity has no EntityStatMap"); 
             return null;
         }
         IndexedLookupTableAssetMap<String, EntityStatType> assetMap = EntityStatType.getAssetMap();
@@ -245,7 +245,7 @@ public class PkmnStatUtils {
 
         EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
         if (stats == null){ 
-            LOGGER.atInfo().log("Entity has no EntityStatMap"); 
+            LOGGER.atInfo().log("Unable to get current stats: Entity has no EntityStatMap"); 
             return null;
         }
 
@@ -289,7 +289,7 @@ public class PkmnStatUtils {
 
         EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
         if (stats == null){ 
-            LOGGER.atInfo().log("Entity has no EntityStatMap"); 
+            LOGGER.atInfo().log("Unable to get PkmnStatsComponent: Entity has no EntityStatMap"); 
             return null;
         }
 
