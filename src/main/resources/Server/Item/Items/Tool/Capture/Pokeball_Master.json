@@ -1,28 +1,28 @@
 {
   "Parent": "Pokeball",
   "TranslationProperties": {
-    "Name": "portablemonstrosities.items.Pokeball_Ultra.name",
-    "Description": "portablemonstrosities.items.Pokeball_Ultra.description"
+    "Name": "portablemonstrosities.items.Pokeball_Master.name",
+    "Description": "portablemonstrosities.items.Pokeball_Master.description"
   },
-  "Quality": "Rare",
-  "ItemLevel": 50,
-  "Model": "Items/Pokeball_Ultra/Pokeball_Ultra.blockymodel",
-  "Texture": "Items/Pokeball_Ultra/Pokeball_Ultra.png",
-  "Icon": "Icons/ItemsGenerated/Pokeball_Ultra.png",
+  "Quality": "Legendary",
+  "ItemLevel": 99,
+  "Model": "Items/Pokeball_Master/Pokeball_Master.blockymodel",
+  "Texture": "Items/Pokeball_Master/Pokeball_Master.png",
+  "Icon": "Icons/ItemsGenerated/Pokeball_Master.png",
   "MaxStack": 99,
   "Recipe": {
     "TimeSeconds": 4,
     "Input": [
       {
         "Quantity": 10,
-        "ItemId": "Plant_Fruit_Apricorn_T4"
+        "ItemId": "Plant_Fruit_Apricorn_T7"
       },
       {
         "ItemId": "Ingredient_Life_Essence",
-        "Quantity": 10
+        "Quantity": 100
       },
       {
-        "ItemId": "Ingredient_Bar_Pkmn_T3",
+        "ItemId": "Ingredient_Bar_Pkmn_T7",
         "Quantity": 1
       }
     ],
@@ -59,7 +59,7 @@
       "Interactions": [
         {
           "Type": "Projectile",
-          "Config": "Projectile_Config_Pokeball_Ultra"
+          "Config": "Projectile_Config_Pokeball_Master"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "Interactions": [
         {
           "Type": "StayCaptured",
-          "BallBonus": 2.0
+          "BallBonus": 9999
         }
       ]
     },
@@ -75,24 +75,20 @@
       "Interactions": [
         {
           "Type": "UseCaptureOrb",
-          "FullIcon": "Icons/Items/Pokeball_Full_Ultra.png",
-          "AcceptedNpcGroups": [
-            "Pkmn_Tamed"
-          ],
-          "CaptureItemId": "Pokeball_Ultra"
+          "FullIcon": "Icons/Items/Pokeball_Full_Master.png",
+          "AcceptedNpcGroups": ["Pkmn_Tamed"],
+          "CaptureItemId": "Pokeball_Master"
         }
       ]
     },
     "Capture_Escape_Effect": {
-      "Interactions": [
-        "Pokeball_Escape_Ultra"
-      ]
+      "Interactions": ["Pokeball_Escape_Master"]
     },
     "Capture_Effect": {
       "Interactions": [
         {
           "Type": "ApplyEffect",
-          "EffectId": "Captured_Ultraball",
+          "EffectId": "Captured_Masterball",
           "Entity": "Target",
           "Next": {
             "Type": "Simple",
@@ -119,15 +115,12 @@
         {
           "Type": "CaptureWildCreature",
           "RunTime": 0.2,
-          "CaptureItemId": "Pokeball_Ultra",
-          "FullIcon": "Icons/Items/Pokeball_Full_Ultra.png",
+          "CaptureItemId": "Pokeball_Master",
+          "FullIcon": "Icons/Items/Pokeball_Full_Master.png",
           "Next": {
             "Type": "RemoveEntity",
             "Entity": "Target",
-            "Next": {
-              "Type": "RemoveEntity",
-              "Entity": "User"
-            }
+            "Next": {"Type": "RemoveEntity","Entity": "User"}
           },
           "Effects": {
             "WorldSoundEventId": "SFX_Pkmn_Confirm",
@@ -141,7 +134,7 @@
         {
           "Type": "AddItem",
           "Quantity": 1,
-          "ItemId": "Pokeball_Ultra",
+          "ItemId": "Pokeball_Master",
           "Next": {
             "Type": "ModifyInventory",
             "AdjustHeldItemQuantity": -1
@@ -157,10 +150,10 @@
     }
   },
   "BlockType": {
-    "CustomModel": "Items/Pokeball_Ultra/Pokeball_Ultra.blockymodel",
+    "CustomModel": "Items/Pokeball_Master/Pokeball_Master.blockymodel",
     "CustomModelTexture": [
       {
-        "Texture": "Items/Pokeball_Ultra/Pokeball_Ultra.png"
+        "Texture": "Items/Pokeball_Master/Pokeball_Master.png"
       }
     ],
     "CustomModelScale": 0.4,
@@ -199,7 +192,7 @@
     },
     "Gathering": {
       "Soft": {
-        "ItemId": "Pokeball_Ultra"
+        "ItemId": "Pokeball_Master"
       }
     }
   },
@@ -214,11 +207,11 @@
           "RunTime": 0.05,
           "Next": {
             "Type": "UseCaptureOrb",
-            "FullIcon": "Icons/Items/Pokeball_Ultra_Full.png",
+            "FullIcon": "Icons/Items/Pokeball_Master_Full.png",
             "AcceptedNpcGroups": [
               "Pkmn_Tamed"
             ],
-            "CaptureItemId": "Pokeball_Ultra",
+            "CaptureItemId": "Pokeball_Master",
             "RunTime": 0.05,
             "HorizontalSpeedMultiplier": 0.7,
             "Failed": {
@@ -232,7 +225,7 @@
                         "Interactions": [
                           {
                             "Type": "Projectile",
-                            "Config": "Projectile_Config_Pokeball_Ultra"
+                            "Config": "Projectile_Config_Pokeball_Master"
                           }
                         ]
                       },
@@ -258,13 +251,13 @@
   "State": {
     "Active": {
       "Animation": "Items/Pokeball/Open.blockyanim",
-      "Model": "Items/Pokeball_Ultra/Pokeball_Ultra.blockymodel",
+      "Model": "Items/Pokeball_Master/Pokeball_Master.blockymodel",
       "DropOnDeath": false,
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Pokeball_Ultra.nameFull",
-        "Description": "portablemonstrosities.items.Pokeball_Ultra.description"
+        "Name": "portablemonstrosities.items.Pokeball_Master.nameFull",
+        "Description": "portablemonstrosities.items.Pokeball_Master.description"
       },
-      "Icon": "Icons/Items/Pokeball_Ultra_Open.png",
+      "Icon": "Icons/Items/Pokeball_Master_Open.png",
       "Interactions": {
         "Primary": {
           "Interactions": [
@@ -276,11 +269,11 @@
               "RunTime": 0.05,
               "Next": {
                 "Type": "UseCaptureOrb",
-                "FullIcon": "Icons/Items/Pokeball_Ultra_Full.png",
+                "FullIcon": "Icons/Items/Pokeball_Master_Full.png",
                 "AcceptedNpcGroups": [
                   "Pkmn_Tamed"
                 ],
-                "CaptureItemId": "Pokeball_Ultra",
+                "CaptureItemId": "Pokeball_Master",
                 "RunTime": 0,
                 "HorizontalSpeedMultiplier": 0.5,
                 "Failed": {
@@ -348,7 +341,7 @@
                         {
                           "Type": "AddItem",
                           "Quantity": 1,
-                          "ItemId": "Pokeball_Ultra",
+                          "ItemId": "Pokeball_Master",
                           "Next": {
                             "Type": "ModifyInventory",
                             "AdjustHeldItemQuantity": -1
@@ -377,10 +370,10 @@
     "Fainted": {
       "DropOnDeath": false,
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Pokeball_Ultra.nameFainted",
-        "Description": "portablemonstrosities.items.Pokeball_Ultrat.description"
+        "Name": "portablemonstrosities.items.Pokeball_Master.nameFainted",
+        "Description": "portablemonstrosities.items.Pokeball_Mastert.description"
       },
-      "Icon": "Icons/Items/Pokeball_Ultra_Dead.png",
+      "Icon": "Icons/Items/Pokeball_Master_Dead.png",
       "Interactions": {
         "Primary": {
           "Interactions": [
@@ -405,10 +398,10 @@
     "Full": {
       "DropOnDeath": false,
       "TranslationProperties": {
-        "Name": "portablemonstrosities.items.Pokeball_Ultra.nameFull",
-        "Description": "portablemonstrosities.items.Pokeball_Ultra.description"
+        "Name": "portablemonstrosities.items.Pokeball_Master.nameFull",
+        "Description": "portablemonstrosities.items.Pokeball_Master.description"
       },
-      "Icon": "Icons/Items/Pokeball_Ultra_Full.png",
+      "Icon": "Icons/Items/Pokeball_Master_Full.png",
       "Interactions": {
         "Primary": {
           "Interactions": [
@@ -420,11 +413,11 @@
               "RunTime": 0.05,
               "Next": {
                 "Type": "UseCaptureOrb",
-                "FullIcon": "Icons/Items/Pokeball_Ultra_Full.png",
+                "FullIcon": "Icons/Items/Pokeball_Master_Full.png",
                 "AcceptedNpcGroups": [
                   "Pkmn_Tamed"
                 ],
-                "CaptureItemId": "Pokeball_Ultra",
+                "CaptureItemId": "Pokeball_Master",
                 "RunTime": 0.05,
                 "HorizontalSpeedMultiplier": 0.7
               }
