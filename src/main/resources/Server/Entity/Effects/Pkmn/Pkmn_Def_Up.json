@@ -1,0 +1,35 @@
+{
+  "Name": "portablemonstrosities.entityEffects.Def_Up.name",
+  "ApplicationEffects": {
+    "EntityBottomTint": "#423f01",
+    "EntityTopTint": "#dcbd64",
+    "Particles": [
+      {
+        "SystemId": "Block_Gem_Sparks",
+        "Color": "#c9c357",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": "Head"
+      }
+    ],
+    "LocalSoundEventId": "SFX_Pkmn_Stat_Up",
+    "WorldSoundEventId": "SFX_Pkmn_Stat_Up"
+  },
+  "Duration": 30,
+  "OverlapBehavior": "Ignore",
+  "RemovalBehavior": "Duration",
+  "ValueType": "Percent",
+  "StatusEffectIcon": "UI/Textures/Icons/Stats/Def_Up.png",
+  "DamageResistance": {
+    "Physical":   [{"CalculationType": "Percent","Amount": 0.2}],
+    "Projectile": [{"CalculationType": "Percent","Amount": 0.2}]
+  },
+  "RawStatModifiers": {
+    "Def": [
+      {
+        "CalculationType": "Multiplicative",
+        "Amount": 1.4,
+        "Target": "Max"
+      }
+    ]
+  }
+}
