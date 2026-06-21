@@ -1,0 +1,94 @@
+{
+  "Particle": {
+    "Texture": "Particles/Textures/Basic/Glow_Noise.png",
+    "Animation": {
+      "0": {
+        "Opacity": 1,
+        "Color": "#3c00ff",
+        "Scale": {
+          "X": {
+            "Min": 1,
+            "Max": 1
+          },
+          "Y": {
+            "Max": 1,
+            "Min": 1
+          }
+        }
+      },
+      "100": {
+        "Opacity": 0,
+        "Color": "#8600ff",
+        "Rotation": {
+          "X": {
+            "Min": -180,
+            "Max": 180
+          },
+          "Y": {
+            "Max": 180,
+            "Min": -180
+          },
+          "Z": {
+            "Max": 180,
+            "Min": -180
+          }
+        },
+        "Scale": {
+          "X": {
+            "Min": 2,
+            "Max": 2
+          },
+          "Y": {
+            "Max": 2,
+            "Min": 2
+          }
+        }
+      }
+    },
+    "InitialAnimationFrame": {
+      "Opacity": 0.5,
+      "Scale": {
+        "X": {
+          "Min": 10,
+          "Max": 10
+        },
+        "Y": {
+          "Max": 10,
+          "Min": 10
+        }
+      },
+      "Rotation": {
+        "X": {
+          "Min": -180,
+          "Max": 180
+        },
+        "Y": {
+          "Min": -180,
+          "Max": 180
+        },
+        "Z": {
+          "Min": -180,
+          "Max": 180
+        }
+      },
+      "Color": "#939eff"
+    }
+  },
+  "RenderMode": "BlendAdd",
+  "LinearFiltering": true,
+  "ParticleRotationInfluence": "Billboard",
+  "TotalParticles": {
+    "Min": 10,
+    "Max": 10
+  },
+  "SpawnRate": {
+    "Min": 10,
+    "Max": 10
+  },
+  "ParticleLifeSpan": {
+    "Min": 1,
+    "Max": 2
+  },
+  "MaxConcurrentParticles": 2,
+  "LightInfluence": 0
+}
