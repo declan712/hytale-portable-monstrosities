@@ -7,8 +7,9 @@
   "Icon": "Icons/ItemsGenerated/Plant_Sapling_Apricorn.png",
   "Categories": [
     "Blocks.Plants",
-    "PortableMonstrosities.Items"
+    "PortableMonstrosities.Food"
   ],
+  "SubCategory": "Seeds",
   "Interactions": {
     "Primary": "Block_Primary",
     "Secondary": "Block_Secondary"
@@ -19,11 +20,11 @@
     "Input": [
       {
         "ItemId": "Ingredient_Life_Essence_Concentrated",
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "ItemId": "Plant_Fruit_Apricorn_T1",
-        "Quantity": 1
+        "Quantity": 2
       }
     ],
     "OutputQuantity": 1,
@@ -60,7 +61,7 @@
       "Stages": {
         "Default": [
           {
-            "Block": "Plant_Sapling_Apricorn",
+            "Block": "Plant_Sapling_Apricorn_T1",
             "Duration": {
               "Min": 40000,
               "Max": 60000
@@ -70,7 +71,7 @@
           {
             "Prefabs": [
               {
-                "Path": "Trees/Apricorn/Apricorn_Stage0.prefab.json",
+                "Path": "Trees/Apricorn/T1/Apricorn_T1_Stage0.prefab.json",
                 "Weight": 1
               }
             ],
@@ -87,7 +88,7 @@
           {
             "Prefabs": [
               {
-                "Path": "Trees/Apricorn/Apricorn_Stage1.prefab.json",
+                "Path": "Trees/Apricorn/T1/Apricorn_T1_Stage1.prefab.json",
                 "Weight": 1
               }
             ],
@@ -104,7 +105,7 @@
           {
             "Prefabs": [
               {
-                "Path": "Trees/Apricorn/Apricorn_Stage2.prefab.json",
+                "Path": "Trees/Apricorn/T1/Apricorn_T1_Stage2.prefab.json",
                 "Weight": 1
               }
             ],
@@ -121,7 +122,7 @@
           {
             "Prefabs": [
               {
-                "Path": "Trees/Apricorn/Apricorn_StageFinal.prefab.json",
+                "Path": "Trees/Apricorn/T1/Apricorn_T1_StageFinal.prefab.json",
                 "Weight": 1
               }
             ],
