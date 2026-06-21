@@ -1,9 +1,26 @@
 {
-  "Type": "ApplyEffect",
-  "RunTime": 0.2,
-  "Effects": {
-    "WorldSoundEventId": "SFX_Pkmn_Potion",
-    "LocalSoundEventId": "SFX_Pkmn_Potion"
-  },
-  "EffectId": "Pkmn_Harden"
-}
+    "Type": "EffectCondition",
+    "Failed": {
+      "RunTime": 0.2,
+      "Type": "ApplyEffect",
+      "Effects": {
+        "WorldSoundEventId": "SFX_Pkmn_Move_Harden",
+        "LocalSoundEventId": "SFX_Pkmn_Move_Harden"
+      },
+      "Entity": "User",
+      "EffectId": "Pkmn_Def_Up"
+    },
+    "EntityEffectIds": [
+      "Pkmn_Def_Up"
+    ],
+    "Next": {
+      "Type": "ClearEntityEffect",
+      "EntityEffectId": "Pkmn_Def_Up",
+      "Next": {
+        "RunTime": 0.1,
+        "Type": "ApplyEffect",
+        "Entity": "User",
+        "EffectId": "Pkmn_Def_Up2"
+      }
+    }
+  }

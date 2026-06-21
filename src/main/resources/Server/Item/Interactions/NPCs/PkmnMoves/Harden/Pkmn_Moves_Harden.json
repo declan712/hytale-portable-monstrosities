@@ -6,14 +6,50 @@
     "ItemAnimationId": "Alerted"
   },
   "RunTime": 0.5,
+  "HorizontalSpeedMultiplier": 0.1,
   "Next": {
-    "RunTime": 0.2,
-    "Type": "ApplyEffect",
-    "Effects": {
-      "WorldSoundEventId": "SFX_Pkmn_Move_Harden",
-      "LocalSoundEventId": "SFX_Pkmn_Move_Harden"
+    "Type": "EffectCondition",
+    "Failed": {
+      "RunTime": 0.2,
+      "Type": "ApplyEffect",
+      "Effects": {
+        "WorldSoundEventId": "SFX_Pkmn_Move_Harden",
+        "LocalSoundEventId": "SFX_Pkmn_Move_Harden"
+      },
+      "Entity": "User",
+      "EffectId": "Pkmn_Harden"
     },
-    "EffectId": "Pkmn_Harden"
-  },
-  "HorizontalSpeedMultiplier": 0.1
+    "EntityEffectIds": [
+      "Pkmn_Harden"
+    ],
+    "Next": {
+      "Type": "ClearEntityEffect",
+      "EntityEffectId": "Pkmn_Harden",
+      "Next": {
+        "RunTime": 0.2,
+        "Type": "ApplyEffect",
+        "Effects": {
+          "WorldSoundEventId": "SFX_Pkmn_Move_Harden",
+          "LocalSoundEventId": "SFX_Pkmn_Move_Harden"
+        },
+        "Entity": "User",
+        "EffectId": {
+          "Parent": "Pkmn_Harden",
+          "Name": "portablemonstrosities.entityEffects.Def_Up2.name",
+          "StatusEffectIcon": "UI/Textures/Icons/Stats/Def_Up2.png",
+          "RawStatModifiers": {
+            "Def": [
+              {
+                "CalculationType": "Multiplicative",
+                "Amount": 1.4,
+                "Target": "Max"
+              }
+            ]
+          },
+          "ValueType": "Absolute",
+          "Duration": 30
+        }
+      }
+    }
+  }
 }
