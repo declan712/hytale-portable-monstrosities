@@ -9,7 +9,6 @@
   "Model": "Items/Pokeball_Ultra/Pokeball_Ultra.blockymodel",
   "Texture": "Items/Pokeball_Ultra/Pokeball_Ultra.png",
   "Icon": "Icons/ItemsGenerated/Pokeball_Ultra.png",
-  "MaxStack": 99,
   "Recipe": {
     "TimeSeconds": 4,
     "Input": [
@@ -84,9 +83,7 @@
       ]
     },
     "Capture_Escape_Effect": {
-      "Interactions": [
-        "Pokeball_Escape_Ultra"
-      ]
+      "Interactions": ["Pokeball_Escape_Ultra"]
     },
     "Capture_Effect": {
       "Interactions": [
@@ -337,7 +334,8 @@
                       "LocalSoundEventId": "SFX_Pkmn_Bump",
                       "ItemAnimationId": "Interact",
                       "ClearAnimationOnFinish": true
-                    }
+                    },
+                    "Next": {"Type": "TogglePkmnHUD"}
                   },
                   "2": {
                     "Type": "Replace",
@@ -391,14 +389,7 @@
             }
           ]
         },
-        "Secondary": {
-          "Interactions": [
-            {
-              "Type": "SendMessage",
-              "Message": "CANT DO THAT EITHER, STILL DEAD"
-            }
-          ]
-        }
+        "Secondary": {"Interactions": [{"Type": "TogglePkmnHUD"}]}
       },
       "Variant": true
     },
@@ -435,14 +426,7 @@
             "Cooldown": 1.0
           }
         },
-        "Secondary": {
-          "Interactions": [
-            {
-              "Type": "SendMessage",
-              "Message": "RIGHT CLICK"
-            }
-          ]
-        }
+        "Secondary": {"Interactions": [{"Type": "TogglePkmnHUD"}]}
       },
       "Variant": true
     }

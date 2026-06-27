@@ -340,7 +340,8 @@
                       "LocalSoundEventId": "SFX_Pkmn_Bump",
                       "ItemAnimationId": "Interact",
                       "ClearAnimationOnFinish": true
-                    }
+                    },
+                    "Next": {"Type": "TogglePkmnHUD"}
                   },
                   "2": {
                     "Type": "Replace",
@@ -394,14 +395,7 @@
             }
           ]
         },
-        "Secondary": {
-          "Interactions": [
-            {
-              "Type": "SendMessage",
-              "Message": "CANT DO THAT EITHER, STILL DEAD"
-            }
-          ]
-        }
+        "Secondary": {"Interactions": [{"Type": "TogglePkmnHUD"}]}
       },
       "Variant": true
     },
@@ -438,14 +432,7 @@
             "Cooldown": 1.5
           }
         },
-        "Secondary": {
-          "Interactions": [
-            {
-              "Type": "SendMessage",
-              "Message": "RIGHT CLICK"
-            }
-          ]
-        }
+        "Secondary": {"Interactions": [{"Type": "TogglePkmnHUD"}]}
       },
       "Variant": true
     }
