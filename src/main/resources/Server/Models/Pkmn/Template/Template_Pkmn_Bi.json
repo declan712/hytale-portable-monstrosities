@@ -41,383 +41,145 @@
       ]
     }
   },
-  "AnimationSets": {
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Charmeleon_Cry"
-        }
-      ]
-    },
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Idle.blockyanim",
-          "BlendingDuration": 0.2,
-          "SoundEventId": "SFX_Raptor_Cave_Idle"
-        }
-      ]
-    },
-    "IdlePassive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Right.blockyanim",
-          "Looping": false,
-          "Weight": 5
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Left.blockyanim",
-          "Looping": false,
-          "Weight": 5
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Left.blockyanim",
-          "Looping": false,
-          "Weight": 5
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Right.blockyanim",
-          "Looping": false,
-          "Weight": 5
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Roar.blockyanim",
-          "Looping": false,
-          "Weight": 1
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Around.blockyanim",
-          "Looping": false,
-          "Weight": 5
-        }
-      ],
-      "NextAnimationDelay": {
-        "Min": 2,
-        "Max": 10
-      }
-    },
-    "Walk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "WalkPassive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Right.blockyanim",
-          "Looping": false,
-          "Weight": 1
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Sniff_Left.blockyanim",
-          "Looping": false,
-          "Weight": 1
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Left.blockyanim",
-          "Looping": false,
-          "Weight": 1
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Right.blockyanim",
-          "Looping": false,
-          "Weight": 1
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Flavor/Look_Around.blockyanim",
-          "Looping": false,
-          "Weight": 1
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.5
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Run.blockyanim"
-        }
-      ]
-    },
-    "Crouch": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "CrouchWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch_Walk.blockyanim",
-          "Speed": 0.9,
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "CrouchWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Crouch_Walk_Backward.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "Jump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Speed": 0.8,
-          "Looping": false
-        }
-      ]
-    },
-    "JumpWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Speed": 0.8,
-          "Looping": false
-        }
-      ]
-    },
-    "JumpRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump_Far.blockyanim",
-          "BlendingDuration": 0.1,
-          "Speed": 0.8,
-          "Looping": false
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Jump_Far2.blockyanim",
-          "BlendingDuration": 0.1,
-          "Speed": 0.8,
-          "Looping": false
-        }
-      ]
-    },
-    "Fall": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Fall.blockyanim",
-          "BlendingDuration": 0.4,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FallFar": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Fall_Far.blockyanim",
-          "BlendingDuration": 0.4,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Hurt": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Damage/Hurt.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0.1
-        },
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Damage/Hurt2.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0.1,
-          "SoundEventId": "SFX_Pkmn_Charmeleon_Cry"
-        }
-      ]
-    },
-    "Laydown": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Laydown.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Sleep": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Sleep.blockyanim"
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Wake.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Death": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Damage/Death.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "SwimIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Idle.blockyanim"
-        }
-      ]
-    },
-    "Swim": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim.blockyanim",
-          "Speed": 1.2
-        }
-      ]
-    },
-    "SwimBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Backward.blockyanim"
-        }
-      ]
-    },
-    "SwimFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Fast.blockyanim"
-        }
-      ]
-    },
-    "SwimJump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Jump.blockyanim",
-          "Looping": false,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimFloat": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Idle.blockyanim"
-        }
-      ]
-    },
-    "SwimSink": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Fall.blockyanim"
-        }
-      ]
-    },
-    "SwimDive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim.blockyanim"
-        }
-      ]
-    },
-    "SwimDiveBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Backward.blockyanim"
-        }
-      ]
-    },
-    "SwimDiveFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Swim/Swim_Fast.blockyanim"
-        }
-      ]
-    },
-    "FluidIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Idle.blockyanim",
-          "Speed": 0.6
-        }
-      ]
-    },
-    "FluidWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk.blockyanim",
-          "Speed": 0.6
-        }
-      ]
-    },
-    "FluidWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.6
-        }
-      ]
-    },
-    "FluidRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Default/Run.blockyanim",
-          "Speed": 0.5
-        }
-      ]
-    },
-    "FlyIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly_Idle.blockyanim"
-        }
-      ]
-    },
-    "Fly": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly.blockyanim"
-        }
-      ]
-    },
-    "FlyBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly_Backward.blockyanim"
-        }
-      ]
-    },
-    "FlyFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Raptor_Cave/Animations/Fly/Fly_Fast.blockyanim"
-        }
-      ]
-    }
+  "AnimationSets":{
+    "Bite":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Bite.blockyanim",                        "Looping": false     }]},
+    "Bite_Moving":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Bite_Moving.blockyanim",                 "Looping": false     }]},
+    "Breath":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Breath.blockyanim",                      "Looping": false     }]},
+    "GroundSlam":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Ground_Slam.blockyanim",                 "Looping": false     }]},
+    "GroundSlamMoving":          {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Ground_Slam_Moving.blockyanim",          "Looping": false     }]},
+    "ScratchLeft":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Scratch_Left.blockyanim",                "Looping": false     }]},
+    "ScratchLeftMoving":         {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Scratch_Left_Moving.blockyanim",         "Looping": false     }]},
+    "ScratchRight":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Scratch_Right.blockyanim",               "Looping": false     }]},
+    "ScratchRightMoving":        {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Scratch_Right_Moving.blockyanim",        "Looping": false     }]},
+    "Spin":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Spin.blockyanim",                        "Looping": false     }]},
+    "SpinHeavy":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Spin_Heavy.blockyanim",                  "Looping": false     }]},
+    "Stomp":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Stomp.blockyanim",                       "Looping": false     }]},
+    "SwingLeft":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Swing_Left.blockyanim",                  "Looping": false     }]},
+    "SwingLeftMoving":           {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Swing_Left_Moving.blockyanim",           "Looping": false     }]},
+    "SwingRight":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Swing_Right.blockyanim",                 "Looping": false     }]},
+    "SwingRightMoving":          {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Swing_Right_Moving.blockyanim",          "Looping": false     }]},
+    "ThrowLift":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Throw_Lift.blockyanim",                  "Looping": false     }]},
+    "ThrowLiftFirstPerson":      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Throw_Lift_FirstPerson.blockyanim",      "Looping": false     }]},
+    "ThrowRelease":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Attacks/Throw_Release.blockyanim",               "Looping": false     }]},
+    "ClimbDown":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Down.blockyanim",                    "Looping": false     }]},
+    "ClimbDownFPS":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Down_FPS.blockyanim",                "Looping": false     }]},
+    "ClimbIdle":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Idle.blockyanim",                    "Looping": false     }]},
+    "ClimbIdleFPS":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Idle_FPS.blockyanim",                "Looping": false     }]},
+    "ClimbLeft":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Left.blockyanim",                    "Looping": false     }]},
+    "ClimbLeftFPS":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Left_FPS.blockyanim",                "Looping": false     }]},
+    "ClimbRight":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Right.blockyanim",                   "Looping": false     }]},
+    "ClimbRightFPS":             {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Right_FPS.blockyanim",               "Looping": false     }]},
+    "ClimbUp":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Up.blockyanim",                      "Looping": false     }]},
+    "ClimbUpFPS":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Climb/Climb_Up_FPS.blockyanim",                  "Looping": false     }]},
+    "Death":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Death.blockyanim",                        "Looping": false     }]},
+    "Hurt":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Hurt.blockyanim",                         "Looping": false     }]},
+    "HurtBurn":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Burn/Hurt_Burn.blockyanim",               "Looping": false     }]},
+    "Death2":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Default/Death2.blockyanim",               "Looping": false     }]},
+    "Hurt2":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Default/Hurt2.blockyanim",                "Looping": false     }]},
+    "Hurt3":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Default/Hurt3.blockyanim",                "Looping": false     }]},
+    "Hurt4":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Default/Hurt4.blockyanim",                "Looping": false     }]},
+    "DeathDrown":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Drown/Death_Drown.blockyanim",            "Looping": false     }]},
+    "HurtDrown":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Drown/Hurt_Drown.blockyanim",             "Looping": false     }]},
+    "DeathFall":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Fall/Death_Fall.blockyanim",              "Looping": false     }]},
+    "DeathFall2":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Fall/Death_Fall2.blockyanim",             "Looping": false     }]},
+    "HurtFall":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Fall/Hurt_Fall.blockyanim",               "Looping": false     }]},
+    "HurtFall2":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Fall/Hurt_Fall2.blockyanim",              "Looping": false     }]},
+    "DeathFly":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Fly/Death_Fly.blockyanim",                "Looping": false     }]},
+    "DeathFlyImpact":            {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Damage/Fly/Death_Fly_Impact.blockyanim",         "Looping": false     }]},
+    "DashBackward":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Dash/Dash_Backward.blockyanim",                  "Looping": false     }]},
+    "DashForward":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Dash/Dash_Forward.blockyanim",                   "Looping": false     }]},
+    "DashLeft":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Dash/Dash_Left.blockyanim",                      "Looping": false     }]},
+    "DashRight":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Dash/Dash_Right.blockyanim",                     "Looping": false     }]},
+    "Alerted":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Alerted.blockyanim",                     "Looping": false     }]},
+    "Crouch":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Crouch.blockyanim",                      "Looping": false     }]},
+    "CrouchFPS":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Crouch_FPS.blockyanim",                  "Looping": false     }]},
+    "CrouchWalk":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Crouch_Walk.blockyanim",                 "Looping": true      }]},
+    "CrouchWalkBackward":        {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Crouch_Walk_Backward.blockyanim",        "Looping": true      }]},
+    "CrouchWalkBackwardFPS":     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Crouch_Walk_Backward_FPS.blockyanim",    "Looping": true      }]},
+    "CrouchWalkFPS":             {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Crouch_Walk_FPS.blockyanim",             "Looping": true      }]},
+    "DashBack":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Dash_Back.blockyanim",                   "Looping": false     }]},
+    "DashFront":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Dash_Front.blockyanim",                  "Looping": false     }]},
+    "Fall":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Fall.blockyanim",                        "Looping": false     }]},
+    "Fall2":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Fall2.blockyanim",                       "Looping": false     }]},
+    "Fall2FPS":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Fall2_FPS.blockyanim",                   "Looping": false     }]},
+    "FallFar":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Fall_Far.blockyanim",                    "Looping": false     }]},
+    "FallFarFPS":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Fall_Far_FPS.blockyanim",                "Looping": false     }]},
+    "FallFPS":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Fall_FPS.blockyanim",                    "Looping": false     }]},
+    "Idle":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Idle.blockyanim",                        "Looping": true      }]},
+    "IdleFPS":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Idle_FPS.blockyanim",                    "Looping": true      }]},
+    "Interact":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Interact.blockyanim",                    "Looping": false     }]},
+    "InteractFPS":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Interact_FPS.blockyanim",                "Looping": false     }]},
+    "Jump":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump.blockyanim",                        "Looping": false     }]},
+    "JumpCrouch":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Crouch.blockyanim",                 "Looping": false     }]},
+    "JumpCrouchFPS":             {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Crouch_FPS.blockyanim",             "Looping": false     }]},
+    "JumpFar":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Far.blockyanim",                    "Looping": false     }]},
+    "JumpFar2":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Far2.blockyanim",                   "Looping": false     }]},
+    "JumpFar2FPS":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Far2_FPS.blockyanim",               "Looping": false     }]},
+    "JumpFarFPS":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Far_FPS.blockyanim",                "Looping": false     }]},
+    "JumpFPS":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_FPS.blockyanim",                    "Looping": false     }]},
+    "JumpRun":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Run.blockyanim",                    "Looping": true      }]},
+    "JumpRun2":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Jump_Run2.blockyanim",                   "Looping": true      }]},
+    "Laydown":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Laydown.blockyanim",                     "Looping": false     }]},
+    "Run":                       {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Run.blockyanim",                         "Looping": true      }]},
+    "RunBackward":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Run_Backward.blockyanim",                "Looping": true      }]},
+    "RunBackwardFPS":            {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Run_Backward_FPS.blockyanim",            "Looping": true      }]},
+    "RunFPS":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Run_FPS.blockyanim",                     "Looping": true      }]},
+    "RunSlow":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Run_Slow.blockyanim",                    "Looping": true      }]},
+    "RunSlowFPS":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Run_Slow_FPS.blockyanim",                "Looping": true      }]},
+    "SitGround":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Sit_Ground.blockyanim",                  "Looping": false     }]},
+    "Sleep":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Sleep.blockyanim",                       "Looping": true      }]},
+    "Sleep2":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Sleep2.blockyanim",                      "Looping": true      }]},
+    "Spawn":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Spawn.blockyanim",                       "Looping": false     }]},
+    "Spawn2":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Spawn2.blockyanim",                      "Looping": false     }]},
+    "Sprint":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Sprint.blockyanim",                      "Looping": true      }]},
+    "SprintFPS":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Sprint_FPS.blockyanim",                  "Looping": true      }]},
+    "StepCrouchWalk":            {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Crouch_Walk.blockyanim",            "Looping": false     }]},
+    "StepCrouchWalk2":           {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Crouch_Walk2.blockyanim",           "Looping": false     }]},
+    "StepRun":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Run.blockyanim",                    "Looping": false     }]},
+    "StepRun2":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Run2.blockyanim",                   "Looping": false     }]},
+    "StepSprint":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Sprint.blockyanim",                 "Looping": false     }]},
+    "StepSprint2":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Sprint2.blockyanim",                "Looping": false     }]},
+    "StepWalk":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Walk.blockyanim",                   "Looping": false     }]},
+    "StepWalk2":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Step_Walk2.blockyanim",                  "Looping": false     }]},
+    "Wake":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Wake.blockyanim",                        "Looping": false     }]},
+    "Walk":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Walk.blockyanim",                        "Looping": true      }]},
+    "WalkBackward":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Walk_Backward.blockyanim",               "Looping": true      }]},
+    "WalkBackwardFPS":           {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Walk_Backward_FPS.blockyanim",           "Looping": true      }]},
+    "WalkFPS":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Default/Walk_FPS.blockyanim",                    "Looping": true      }]},
+    "Eat":                       {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Eat.blockyanim",                          "Looping": false     }]},
+    "EatFinish":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Eat_Finish.blockyanim",                   "Looping": false     }]},
+    "GreetFrog":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Greet_Frog.blockyanim",                   "Looping": false     }]},
+    "Hunch":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Hunch.blockyanim",                        "Looping": false     }]},
+    "LookAround":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Look_Around.blockyanim",                  "Looping": false     }]},
+    "LookAround2":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Look_Around2.blockyanim",                 "Looping": false     }]},
+    "LookDown":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Look_Down.blockyanim",                    "Looping": false     }]},
+    "LookLeft":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Look_Left.blockyanim",                    "Looping": false     }]},
+    "LookRight":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Look_Right.blockyanim",                   "Looping": false     }]},
+    "LookUp":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Look_Up.blockyanim",                      "Looping": false     }]},
+    "Scared":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Scared.blockyanim",                       "Looping": false     }]},
+    "Sniff":                     {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Sniff.blockyanim",                        "Looping": false     }]},
+    "SniffGround":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Flavor/Sniff_Ground.blockyanim",                 "Looping": false     }]},
+    "Fly":                       {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly.blockyanim",                             "Looping": true      }]},
+    "FlyBackward":               {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Backward.blockyanim",                    "Looping": true      }]},
+    "FlyBackwardFPS":            {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Backward_FPS.blockyanim",                "Looping": true      }]},
+    "FlyCrouch":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Crouch.blockyanim",                      "Looping": true      }]},
+    "FlyCrouchBackward":         {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Crouch_Backward.blockyanim",             "Looping": true      }]},
+    "FlyCrouchIdle":             {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Crouch_Idle.blockyanim",                 "Looping": true      }]},
+    "FlyFast":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Fast.blockyanim",                        "Looping": true      }]},
+    "FlyFastFPS":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Fast_FPS.blockyanim",                    "Looping": true      }]},
+    "FlyFPS":                    {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_FPS.blockyanim",                         "Looping": true      }]},
+    "FlyIdle":                   {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Idle.blockyanim",                        "Looping": true      }]},
+    "FlyIdleFPS":                {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Fly/Fly_Idle_FPS.blockyanim",                    "Looping": true      }]},
+    "Swim":                      {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim.blockyanim",                           "Looping": true      }]},
+    "SwimBackward":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Backward.blockyanim",                  "Looping": true      }]},
+    "SwimDive":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Dive.blockyanim",                      "Looping": true      }]},
+    "SwimDiveBackward":          {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Dive_Backward.blockyanim",             "Looping": true      }]},
+    "SwimDiveFast":              {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Dive_Fast.blockyanim",                 "Looping": true      }]},
+    "SwimFast":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Fast.blockyanim",                      "Looping": true      }]},
+    "SwimFloat":                 {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Float.blockyanim",                     "Looping": true      }]},
+    "SwimIdle":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Idle.blockyanim",                      "Looping": true      }]},
+    "SwimJump":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Jump.blockyanim",                      "Looping": false     }]},
+    "SwimSink":                  {"Animations":[{"Animation":"NPC/Pkmn/Template_Bi/Animations/Swim/Swim_Sink.blockyanim",                      "Looping": true      }]}
   },
   "MinScale": 0.9,
   "MaxScale": 1.1,
