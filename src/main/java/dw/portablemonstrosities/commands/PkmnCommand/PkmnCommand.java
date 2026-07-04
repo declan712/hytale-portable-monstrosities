@@ -6,6 +6,8 @@ import com.hypixel.hytale.server.core.command.system.basecommands.AbstractComman
 public class PkmnCommand extends AbstractCommandCollection {
     public PkmnCommand () {
         super("pkmn", "Pkmn commands");
+        addSubCommand(new PkmnHelpUICommand("help",
+            "Display help screen"));
         addSubCommand(new ClaimOwnershipCommand("claim",
             "Set the player as the owner of the target NPC"));
         addSubCommand(new RestoreLostPkmnCommand("restore",

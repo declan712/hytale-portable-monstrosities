@@ -75,16 +75,19 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
         "*Pokeball_Apricorn_State_Full",
         "*Pokeball_Great_State_Full",
         "*Pokeball_Ultra_State_Full",
+        "*Pokeball_Master_State_Full",
 
         "*Pokeball_State_Active",
         "*Pokeball_Apricorn_State_Active",
         "*Pokeball_Great_State_Active",
         "*Pokeball_Ultra_State_Active",
+        "*Pokeball_Master_State_Active",
         
         "*Pokeball_State_Fainted",
         "*Pokeball_Apricorn_State_Fainted",
         "*Pokeball_Great_State_Fainted",
-        "*Pokeball_Ultra_State_Fainted"
+        "*Pokeball_Ultra_State_Fainted",
+        "*Pokeball_Master_State_Fainted"
     );
 
     public PkmnHudTestCommand(String name, String description) {

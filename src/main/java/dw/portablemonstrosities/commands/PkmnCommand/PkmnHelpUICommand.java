@@ -1,47 +1,26 @@
 package dw.portablemonstrosities.commands.PkmnCommand;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 import javax.annotation.Nonnull;
 
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
-import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
-import com.hypixel.hytale.server.core.entity.entities.Player;
-import com.hypixel.hytale.server.core.entity.entities.player.hud.CustomUIHud;
-import com.hypixel.hytale.server.core.entity.entities.player.hud.HudManager;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent.Backpack;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent.Hotbar;
 import com.hypixel.hytale.server.core.inventory.InventoryComponent.Storage;
-import com.hypixel.hytale.server.core.inventory.ItemStack;
-import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
-import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
-// import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
-
-import au.ellie.hyui.builders.HudBuilder;
-import au.ellie.hyui.builders.HyUIHud;
 import au.ellie.hyui.builders.PageBuilder;
-import dw.portablemonstrosities.components.PkmnCaptureMetadata;
-import dw.portablemonstrosities.ui.PkmnPartySlot;
-import dw.portablemonstrosities.util.PkmnStatUtils;
 
-import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
-
-public class PkmnStatsUICommand extends AbstractPlayerCommand {
+public class PkmnHelpUICommand extends AbstractPlayerCommand {
     
     public static final String HUD_KEY  = "PkmnParty";
     public static final int    MAX_SLOTS = 6;
-    private static final String UI_FILE  = "PkmnStatsPage.ui";
+    private static final String UI_FILE  = "PkmnHelpPage.ui";
 
     private static final List<String> validItems = List.of(
         "*Pokeball_State_Full",
@@ -63,7 +42,7 @@ public class PkmnStatsUICommand extends AbstractPlayerCommand {
         "*Pokeball_Master_State_Fainted"
     );
     
-    public PkmnStatsUICommand(String name, String description) {
+    public PkmnHelpUICommand(String name, String description) {
         super(name,description);
     }
 
