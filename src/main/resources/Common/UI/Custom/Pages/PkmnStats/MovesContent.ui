@@ -1,0 +1,214 @@
+$C = "../../Common.ui";
+$P = "../Pkmn.ui";
+
+
+// @MoveTabStyle = TabStyleState(
+//     Anchor: (Width: 37, Height: 30, Left: 4),
+//     IconAnchor: (Width: 22, Height: 22),
+//     Padding: (Horizontal: 8),
+//     TooltipStyle: $C.@DefaultTextTooltipStyle,
+//     IconOpacity: 0.4);
+
+// @MovesTabsStyle = TabNavigationStyle(
+//     TabStyle: (
+//         Default: @MoveTabStyle,
+//         Hovered: (...@MoveTabStyle, IconOpacity: 0.6),
+//         Pressed: (...@MoveTabStyle, IconOpacity: 0.8)
+//     ),
+//     SelectedTabStyle: (
+//         Default: (
+//         ...@MoveTabStyle,
+//         IconOpacity: 1,
+//         Background: (TexturePath: "../../Common/HeaderTabSelectedBackground.png", Border: 7),
+//         ContentMaskTexturePath: "../../Common/SelectedIconGradient.png"
+//         )
+//     )
+// );
+
+@MovesContent = Group {
+    Visible: false;
+    LayoutMode: Left;
+    Padding: (Horizontal: 4, Vertical:2);
+
+    // $C.@SimpleContainer #MoveDetails {
+    Group #MoveDetails {
+        LayoutMode: Top;
+        // Padding: (Horizontal: 4, Vertical:2);
+        Anchor: (Top: 0, Left: 0, Width: 224, Height: 224);
+
+        Group { // power
+            // Padding: (Horizontal: 8, Vertical:2);
+            Anchor: (Top: 4);
+            LayoutMode: Left;
+            $P.@FieldLabel  { Text: "Power"; }
+            $P.@FieldContainer { 
+                FlexWeight: 1;
+                $P.@FieldValue { Text: "40"; }
+                Group { FlexWeight: 1; } // Spacer
+                AssetImage {
+                    Anchor: (Width: 24, Height:24);
+                    AssetPath: "UI/Textures/Icons/DamagePhysical.png";
+                }
+            }
+        }
+        $C.@ContentSeparator {}
+        Group { // hits
+            // Padding: (Horizontal: 8, Vertical:2);
+            Anchor: (Top: 4);
+            LayoutMode: Left;
+            $P.@FieldLabel  { Text: "Hits"; }
+            $P.@FieldContainer { $P.@FieldValue { Text: "1"; } }
+        }
+        $C.@ContentSeparator {}
+        Group { // crit chance
+            // Padding: (Horizontal: 8, Vertical:2);
+            Anchor: (Top: 4);
+            LayoutMode: Left;
+            $P.@FieldLabel  { Text: "Crit"; }
+            $P.@FieldContainer { $P.@FieldValue { Text: "10%"; } }
+        }
+        $C.@ContentSeparator {}
+        Group { // range
+            // Padding: (Horizontal: 8, Vertical:2);
+            Anchor: (Top: 4);
+            LayoutMode: Left;
+            $P.@FieldLabel  { Text: "Range"; }
+            $P.@FieldContainer { $P.@FieldValue { Text: "5m"; } }
+        }
+        $C.@ContentSeparator {}
+        Group { // description
+            Anchor: (Top: 4);
+            LayoutMode: Top;
+            $P.@FieldLabel  { 
+                Anchor: (Left: 0, Right:0);
+                Text: "Description"; 
+            }
+            $P.@FieldContainer { 
+                Anchor: (Full: 0);
+                $P.@FieldValueWrap { 
+                    Text: "An almost invisibly fast attack that is certain to strike first."; 
+                } 
+            }
+        }
+
+    }
+
+
+    Group #MoveList {
+        LayoutMode: Top;
+        Padding: (Horizontal: 8, Vertical:4);
+
+        $C.@SecondaryButton #Move1{
+            LayoutMode: Left;
+            Padding: (Horizontal: 8, Vertical:8);
+            Anchor: (Top: 4, Left: 12, Width: 320, Height: 48);
+            AssetImage {
+                Anchor: (Left: 0, Width: 64, Height:24);
+                AssetPath: "UI/Textures/Icons/Types/NormalType.png";
+            }
+            Label {
+                Text: "Quick Attack";
+                Anchor: (Left: 8);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
+            }
+            Group { FlexWeight: 1; } // Spacer
+            Label {
+                Text: "40";
+                Anchor: (Left: 0);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
+            }
+            $C.@TertiaryButton {
+                Anchor: (Left: 16, Width: 32);
+                Group {
+                    Anchor: (Width: 32, Height: 32);
+                    Background: "../Pkmn/Pokeball.png";
+                }
+            }
+        }
+
+        $C.@SecondaryButton #Move2 {
+            LayoutMode: Left;
+            Padding: (Horizontal: 8, Vertical:8);
+            Anchor: (Top: 8, Left: 12, Width: 320, Height: 48);
+            AssetImage {
+                Anchor: (Left: 0, Width: 64, Height:24);
+                AssetPath: "UI/Textures/Icons/Types/NormalType.png";
+            }
+            Label {
+                Text: "Quick Attack";
+                Anchor: (Left: 8);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
+            }
+            Group { FlexWeight: 1; } // Spacer
+            Label {
+                Text: "40";
+                Anchor: (Left: 0);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
+            }
+            $C.@TertiaryButton {
+                Anchor: (Left: 16, Width: 32);
+                Group {
+                    Anchor: (Width: 32, Height: 32);
+                    Background: "../Pkmn/Pokeball.png";
+                }
+            }
+        }
+
+        $C.@SecondaryButton #Move3 {
+            LayoutMode: Left;
+            Padding: (Horizontal: 8, Vertical:8);
+            Anchor: (Top: 8, Left: 12, Width: 320, Height: 48);
+            AssetImage {
+                Anchor: (Left: 0, Width: 64, Height:24);
+                AssetPath: "UI/Textures/Icons/Types/NormalType.png";
+            }
+            Label {
+                Text: "Quick Attack";
+                Anchor: (Left: 8);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
+            }
+            Group { FlexWeight: 1; } // Spacer
+            Label {
+                Text: "40";
+                Anchor: (Left: 0);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
+            }
+            $C.@TertiaryButton {
+                Anchor: (Left: 16, Width: 32);
+                Group {
+                    Anchor: (Width: 32, Height: 32);
+                    Background: "../Pkmn/Pokeball.png";
+                }
+            }
+        }
+
+        $C.@SecondaryButton  #Move4 {
+            LayoutMode: Left;
+            Padding: (Horizontal: 8, Vertical:8);
+            Anchor: (Top: 8, Left: 12, Width: 320, Height: 48);
+            AssetImage {
+                Anchor: (Left: 0, Width: 64, Height:24);
+                AssetPath: "UI/Textures/Icons/Types/NormalType.png";
+            }
+            Label {
+                Text: "Quick Attack";
+                Anchor: (Left: 8);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
+            }
+            Group { FlexWeight: 1; } // Spacer
+            Label {
+                Text: "40";
+                Anchor: (Left: 0);
+                Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
+            }
+            $C.@TertiaryButton {
+                Anchor: (Left: 16, Width: 32);
+                Group {
+                    Anchor: (Width: 32, Height: 32);
+                    Background: "../Pkmn/Pokeball.png";
+                }
+            }
+        }
+
+    }
+};

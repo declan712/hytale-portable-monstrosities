@@ -9,45 +9,42 @@ Group {
     LayoutMode: Top;
     Anchor: (Height: 600, Width: 600);
 
+    TabNavigation {
+        Style: $C.@HeaderTabsStyle;
+        SelectedTab: "TabFirst";
+        Anchor: (Height: 66, Left: 2, Right: 0);
+
+        TabButton {
+            Icon: "Pkmn/Pokeball.png";
+            TooltipText: "Tab One";
+            Id: "TabFirst";
+        }
+
+        TabButton {
+            Icon: "Pkmn/Pokeball_Grey.png";
+            TooltipText: "Tab Two";
+            Id: "TabSecond";
+        }
+
+        TabButton {
+            Icon: "Pkmn/Pokeball_Dead.png";
+            TooltipText: "Tab Three";
+            Id: "TabThird";
+        }
+
+        TabButton {
+            Icon: "Pkmn/Pokeball_None.png";
+            TooltipText: "Tab Four";
+            Id: "TabFourth";
+        }
+    }
 
     $C.@DecoratedContainer {
         #Title {
             Group {
                 LayoutMode: Left;
                 Padding: (Horizontal: 32, Vertical:4);
-
-                TabNavigation {
-                    Style: $C.@HeaderTabsStyle;
-                    SelectedTab: "TabFirst";
-                    Anchor: (Height: 66, Left: 2, Right: 0);
-
-                    TabButton {
-                        Icon: "Pkmn/Tab_Summary.png";
-                        TooltipText: "Summary";
-                        Id: "TabSummary";
-                    }
-
-                    TabButton {
-                        Icon: "Pkmn/Tab_Stats.png";
-                        TooltipText: "Stats";
-                        Id: "TabStats";
-                    }
-
-                    TabButton {
-                        Icon: "Pkmn/Tab_Moves.png";
-                        TooltipText: "Moves";
-                        Id: "TabMoves";
-                    }
-
-                    TabButton {
-                        Icon: "Pkmn/Pokeball_Dead.png";
-                        TooltipText: "Tab Four";
-                        Id: "TabFourth";
-                    }
-                }
-
-                Group { FlexWeight: 1; } // Spacer
-
+                
                 Label  {
                     Anchor: (Left:8);
                     Text: "Lv5";
@@ -64,7 +61,7 @@ Group {
                     Style: (TextColor: #ffffff, FontSize: 16);
                 }
                 
-                Group { FlexWeight: 3; } // Spacer
+                Group { FlexWeight: 1; } // Spacer
 
                 CompactTextField #RenameInput {
                     CollapsedWidth: 24;
@@ -86,7 +83,7 @@ Group {
         #Content {
 
             $Overview.@OverviewContent #OverviewContent {
-                Visible: true;
+                Visible: false;
             }
 
             $Stats.@StatsContent #StatsContent {
@@ -94,7 +91,7 @@ Group {
             }
 
             $Moves.@MovesContent #MovesContent {
-                Visible: false;
+                Visible: true;
             }
 
         }

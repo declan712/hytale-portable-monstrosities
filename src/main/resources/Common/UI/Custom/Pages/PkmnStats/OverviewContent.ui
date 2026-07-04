@@ -1,0 +1,89 @@
+$C = "../../Common.ui";
+$P = "../Pkmn.ui";
+
+@OverviewContent = Group {
+    LayoutMode: Top;
+
+    Group #Top{
+        Padding: (Full: 8);
+        LayoutMode: Left;
+
+        $C.@SimpleContainer #Portait {
+            Padding: (Horizontal: 48, Vertical:2);
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 160, Height:160);
+                Padding: (Full: 8);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+        }
+
+        Group #TopRight {
+            LayoutMode: Top;
+            Anchor: (Top: 0, Right:0);
+            Padding: (Full: 8);
+
+            Group #Row1 {
+                Padding: (Horizontal: 8, Vertical:2);
+                LayoutMode: Left;
+                $P.@FieldLabel  { Text: "No"; }
+                $P.@FieldContainer { $P.@FieldValue { Text: "001"; } }
+            }
+
+            Group #Row2 {
+                Padding: (Horizontal: 8, Vertical:2);
+                LayoutMode: Left;
+                $P.@FieldLabel  { Text: "NAME"; }
+                $P.@FieldContainer { $P.@FieldValue { Text: "BULBASAUR"; } }
+            }
+
+            Group #Row3 {
+                Padding: (Horizontal: 8, Vertical:2);
+                LayoutMode: Left;
+                $P.@FieldLabel  { Text: "Type"; }
+                $P.@FieldContainer {
+                    AssetImage {
+                        Anchor: (Left: 0, Width: 64, Height:24);
+                        AssetPath: "UI/Textures/Icons/Types/GrassType.png";
+                    }
+                    AssetImage {
+                        Anchor: (Left: 8, Width: 64, Height:24);
+                        AssetPath: "UI/Textures/Icons/Types/PoisonType.png";
+                    }
+                }
+            }
+
+            Group #Row4 {
+                Padding: (Horizontal: 8, Vertical:2);
+                LayoutMode: Left;
+                $P.@FieldLabel  { Text: "OT"; }
+                $P.@FieldContainer { $P.@FieldValue { Text: "Declan"; } }
+            }
+
+            Group #Row5 {
+                Padding: (Horizontal: 8, Vertical:2);
+                LayoutMode: Left;
+                $P.@FieldLabel  { Text: "IDNo"; }
+                $P.@FieldContainer { $P.@FieldValue { Text: "27727"; } }
+            }
+
+            Group #Row6 {
+                Padding: (Horizontal: 8, Vertical:2);
+                LayoutMode: Left;
+                $P.@FieldLabel  { Text: "ITEM"; }
+                $P.@FieldContainer { $P.@FieldValue { Text: "NONE"; } }
+            }
+
+        }
+
+    }
+    $P.@FieldLabel  { 
+        Anchor: (Top: 0, Left: 8, Width: 128);
+        Text: "Trainer Memo"; 
+    }
+    $P.@FieldContainer { 
+        LayoutMode: Top;
+        Anchor: (Full:0);
+        $P.@FieldValue { Text: "DOCILE nature."; } 
+        $P.@FieldValue { Text: "Met in PALLET TOWN at Lv 5."; } 
+    }
+};

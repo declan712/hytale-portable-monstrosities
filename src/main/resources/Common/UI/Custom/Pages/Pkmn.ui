@@ -1,0 +1,106 @@
+$C = "../Common.ui";
+
+@CustomContainer = Group {
+    Background: (TexturePath: "Pkmn/CustomSimpleContainer.png", Border: 4);
+    Padding: 12;
+};
+
+@CustomContainerDark = Group {
+    Background: (TexturePath: "Pkmn/CustomSimpleContainerDark.png", Border: 4);
+    Padding: 12;
+};
+
+@FieldLabel = Label {
+    Padding: (Horizontal: 4, Vertical:2);
+    Anchor: (Top: 0, Left: 0, Width: 64);
+    Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, HorizontalAlignment: Center, RenderBold: true);
+    Background: (TexturePath: "Pkmn/CustomSimpleContainerDark.png", Border: 4);
+};
+
+@FieldContainer = Group {
+    LayoutMode: Left;
+    Background: (TexturePath: "Pkmn/CustomSimpleContainer.png", Border: 4);
+    Anchor: (Top: 0, Left: 8, Width: 154);
+    Padding: (Horizontal: 4, Vertical:2);
+};
+
+@FieldValue = Label {
+    Style: (TextColor: #222222, FontSize: 16, VerticalAlignment: Center);
+};
+@FieldValueWrap = Label {
+    Style: (TextColor: #222222, FontSize: 16, VerticalAlignment: Center, Wrap: true);
+};
+
+@PkmnHP = Group {
+    LayoutMode: Left;
+    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+    Background: (Color: #484058);
+    Padding: (Full: 2);
+
+    Label {
+        Anchor: (Width: 24, Left: 0, Bottom: 0);
+        Text: "HP";
+        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+        MaskTexturePath: $C.@TextHighlightGradientMask;
+    }
+
+    Group {
+        Anchor: (Left: 0, Width: 128, Height: 14);
+        Padding: (Full: 2);
+        OutlineColor: #f8f8f8;
+        OutlineSize: 2;
+
+        ProgressBar #HealthBar {
+            Anchor: (Left: 0, Width: 124, Height: 10);
+            Alignment: Horizontal;
+            Direction: End;
+            Value: 0.75;
+            Background: (TexturePath: "Pkmn/Pkmn_Hp_Bg.png");
+            BarTexturePath: "Pkmn/Pkmn_Hp.png";
+        }
+    }
+
+    Label #HealthText {
+        Anchor: (Width: 50, Left: 4, Bottom: 2);
+        Text: "150/200";
+        Style: (TextColor: #aaaaaa, FontSize: 12);
+    }
+};
+
+@PkmnExp = Group {
+    LayoutMode: Left;
+    Anchor: (Left:0, Top: 0, Width: 208, Height: 20);
+    Background: (Color: #484058);
+    Padding: (Full: 2);
+
+    Label {
+        Anchor: (Width: 24, Left: 0, Bottom: 0);
+        Text: "EXP";
+        Style: (TextColor: #f8b040, FontSize: 12, RenderBold: true);
+        MaskTexturePath: $C.@TextHighlightGradientMask;
+    }
+
+    Group {
+        Anchor: (Left: 0, Width: 128, Height: 14);
+        Padding: (Full: 2);
+        OutlineColor: #f8f8f8;
+        OutlineSize: 2;
+
+        ProgressBar #ExpBar {
+            Anchor: (Left: 0, Width: 124, Height: 10);
+            Alignment: Horizontal;
+            Direction: End;
+            Value: 0.5;
+            // Background: (Color: #484058);
+            Background: (TexturePath: "Pkmn/Pkmn_Hp_Bg.png");
+            //BarTexturePath: "Pkmn/Pkmn_Hp.png";
+            Bar: #50a0e8;
+        }
+    }
+
+    Label #ExpText {
+        Anchor: (Width: 64, Left: 4, Bottom: 2);
+        Text: "1000/2000";
+        Style: (TextColor: #aaaaaa, FontSize: 8);
+    }
+};

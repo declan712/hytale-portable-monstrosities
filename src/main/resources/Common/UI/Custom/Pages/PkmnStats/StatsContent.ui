@@ -1,0 +1,117 @@
+$C = "../../Common.ui";
+$P = "../Pkmn.ui";
+
+@StatsContent = Group {
+    Visible: false;
+    LayoutMode: Left;
+
+    Group #LeftSide {
+        LayoutMode: Top;
+
+        $C.@SimpleContainer #Portait {
+            Padding: (Horizontal: 48, Vertical:2);
+            AssetImage #PkmnIcon{
+                Anchor: (Top:0, Left: 0, Width: 160, Height:160);
+                Padding: (Full: 8);
+                AssetPath: "Icons/ModelsGenerated/Pkmn_Bulbasaur.png";
+            }
+        }
+
+        $C.@ContentSeparator {}
+
+        $P.@PkmnHP #Health {}
+
+        $P.@PkmnExp #Exp {}
+    }
+
+    Group #Stats {
+        LayoutMode: Top;
+        Anchor: (Top: 0, Right:0);
+        Padding: (Full: 8);
+
+        Group #RowAttack {
+            Padding: (Horizontal: 8, Vertical:2);
+            LayoutMode: Left;
+            $P.@FieldLabel  {
+                Anchor: (Top: 0, Left: 0, Width: 96);
+                Text: "ATTACK";
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "10"; }
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "15/31"; }
+            }
+        }
+
+        Group #RowDefense {
+            Padding: (Horizontal: 8, Vertical:2);
+            LayoutMode: Left;
+            $P.@FieldLabel  {
+                Anchor: (Top: 0, Left: 0, Width: 96);
+                Text: "DEFENSE";
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "10"; }
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "15/31"; }
+            }
+        }
+
+        Group #RowSpAtk {
+            Padding: (Horizontal: 8, Vertical:2);
+            LayoutMode: Left;
+            $P.@FieldLabel  {
+                Anchor: (Top: 0, Left: 0, Width: 96);
+                Text: "SP.ATK";
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "10"; }
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "15/31"; }
+            }
+        }
+
+        Group #RowSpDef {
+            Padding: (Horizontal: 8, Vertical:2);
+            LayoutMode: Left;
+            $P.@FieldLabel  {
+                Anchor: (Top: 0, Left: 0, Width: 96);
+                Text: "SP.DEF";
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "10"; }
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "15/31"; }
+            }
+        }
+
+        Group #RowSpeed {
+            Padding: (Horizontal: 8, Vertical:2);
+            LayoutMode: Left;
+            $P.@FieldLabel  {
+                Anchor: (Top: 0, Left: 0, Width: 96);
+                Text: "SPEED";
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "10"; }
+            }
+            $P.@FieldContainer {
+                Anchor: (Top: 0, Left: 8, Width: 64);
+                $P.@FieldValue { Text: "15/31"; }
+            }
+        }
+    }
+};
