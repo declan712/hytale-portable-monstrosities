@@ -1,42 +1,212 @@
 {
   "Type": "NoiseRange",
-  "Biomes": [
+    "Biomes": [
     {
-      "Biome" : "Oceans",
-      "Min" : -1,
-      "Max" : -0.5
-    },{
-      "Biome" : "Pkmn_T1_Base",
-      "Min" : -0.5,
-      "Max" : 0.5
-    },{
-    "Biome" : "Oceans",
-      "Min" : 0.5,
-      "Max" : 1
+      "Biome": "Ocean_Cold",
+      "Min": -1.0,
+      "Max": -0.563565033
+    },
+    {
+      "Biome": "Ocean_Temperate",
+      "Min": -0.563565033,
+      "Max": -0.439079691
+    },
+    {
+      "Biome": "Ocean_Deep",
+      "Min": -0.439079691,
+      "Max": -0.414182623
+    },
+    {
+      "Biome": "Ocean_Warm",
+      "Min": -0.414182623,
+      "Max": -0.337216802
+    },
+    {
+      "Biome": "Ocean_Tropical",
+      "Min": -0.337216802,
+      "Max": 0.0
+    },
+    {
+      "Biome": "Alpine_Tundra",
+      "Min": 0.0,
+      "Max": 0.061254645
+    },
+    {
+      "Biome": "Forest_Tundra",
+      "Min": 0.061254645,
+      "Max": 0.173737249
+    },
+    {
+      "Biome": "Boreal_Woodland",
+      "Min": 0.173737249,
+      "Max": 0.231612344
+    },
+    {
+      "Biome": "Cold_Forest",
+      "Min": 0.231612344,
+      "Max": 0.279990878
+    },
+    {
+      "Biome": "Montane_Heath",
+      "Min": 0.279990878,
+      "Max": 0.297411903
+    },
+    {
+      "Biome": "Basalt_Barrens",
+      "Min": 0.297411903,
+      "Max": 0.306053865
+    },
+    {
+      "Biome": "Purple_Heath",
+      "Min": 0.306053865,
+      "Max": 0.314794082
+    },
+    {
+      "Biome": "Redwood_Forest",
+      "Min": 0.314794082,
+      "Max": 0.34369507
+    },
+    {
+      "Biome": "Rust_Barrens",
+      "Min": 0.34369507,
+      "Max": 0.367013742
+    },
+    {
+      "Biome": "Pkmn_T1_Base",
+      "Min": 0.367013742,
+      "Max": 0.380498465
+    },
+    {
+      "Biome": "Leafwood",
+      "Min": 0.380498465,
+      "Max": 0.418611369
+    },
+    {
+      "Biome": "Amber_Forest",
+      "Min": 0.418611369,
+      "Max": 0.443471705
+    },
+    {
+      "Biome": "Greenwood",
+      "Min": 0.443471705,
+      "Max": 0.494026823
+    },
+    {
+      "Biome": "Swamp",
+      "Min": 0.494026823,
+      "Max": 0.525148784
+    },
+    {
+      "Biome": "Mediterranean_Woodland",
+      "Min": 0.525148784,
+      "Max": 0.541520808
+    },
+    {
+      "Biome": "Steppe",
+      "Min": 0.541520808,
+      "Max": 0.559311481
+    },
+    {
+      "Biome": "Wooded_Steppe",
+      "Min": 0.559311481,
+      "Max": 0.568543839
+    },
+    {
+      "Biome": "Reed_Marsh",
+      "Min": 0.568543839,
+      "Max": 0.577498905
+    },
+    {
+      "Biome": "Savannah",
+      "Min": 0.577498905,
+      "Max": 0.610676224
+    },
+    {
+      "Biome": "Dry_Tropical_Woodland",
+      "Min": 0.610676224,
+      "Max": 0.613717777
+    },
+    {
+      "Biome": "Tropical_Woodland",
+      "Min": 0.613717777,
+      "Max": 0.618117321
+    },
+    {
+      "Biome": "Tropical_Forest",
+      "Min": 0.618117321,
+      "Max": 0.621080886
+    },
+    {
+      "Biome": "Jungle",
+      "Min": 0.621080886,
+      "Max": 0.622662939
+    },
+    {
+      "Biome": "Xeric_Scrub",
+      "Min": 0.622662939,
+      "Max": 0.656781072
+    },
+    {
+      "Biome": "Desert",
+      "Min": 0.656781072,
+      "Max": 1.0
     }
   ],
-  "DefaultBiome": "Pkmn_T1_Base",
-  "DefaultTransitionDistance": 48,
-  "MaxBiomeEdgeDistance" : 48,
+  "DefaultBiome": "Ocean_Deep",
+  "DefaultTransitionDistance": 64,
+  "MaxBiomeEdgeDistance": 64,
   "Density": {
-    "Type" : "Imported",
-    "Name" : "Biome-Map"
-	},
-  "Framework" : [
+    "Type": "Imported",
+    "Name": "BiomeBlending"
+  },
+  "SpawnPositions": {
+    "Type": "Imported",
+    "Name": "Spawns"
+  },
+  "Framework": [
     {
-      "Type" : "DecimalConstants",
-      "Entries" : [
+      "Type": "Positions",
+      "Entries": [
         {
-          "Name" : "Base",
-          "Value" : 100
+          "Name": "Spawns",
+          "Positions": {
+            "Type": "List",
+            "ExportAs": "Spawns",
+            "Positions": [
+              {
+                "X": 0,
+                "Y": 80,
+                "Z": 0
+              },
+              {
+                "X": 30,
+                "Y": 80,
+                "Z": 0
+              },
+              {
+                "X": 10,
+                "Y": 80,
+                "Z": 20
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Type": "DecimalConstants",
+      "Entries": [
+        {
+          "Name": "Base",
+          "Value": 62
         },
         {
-          "Name" : "Water",
-          "Value" : 100
+          "Name": "Water",
+          "Value": 62
         },
         {
-          "Name" : "Bedrock",
-          "Value" : 0
+          "Name": "Bedrock",
+          "Value": 0
         }
       ]
     }
