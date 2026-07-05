@@ -37,6 +37,11 @@ import dw.portablemonstrosities.util.PkmnStatUtils;
 
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
 
+//*
+// Get current held item,
+// IF item is ball with pkmn, display stats page
+// 
+//  */
 public class PkmnStatsUICommand extends AbstractPlayerCommand {
     
     public static final String HUD_KEY  = "PkmnParty";

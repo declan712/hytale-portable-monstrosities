@@ -160,7 +160,7 @@ public class CaptureWildCreatureInteraction extends SimpleInteraction {
     
         ItemStack ball         = new ItemStack(captureItemId, 1);
 
-        CapturedNPCMetadata npcMeta = PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,ball,fullIcon);
+        CapturedNPCMetadata npcMeta = PkmnStatUtils.getNpcMetadataFromBall(commandBuffer,targetRef,ball,fullIcon);
 
         ItemStack withNpc      = ball.withMetadata(CapturedNPCMetadata.KEYED_CODEC,  npcMeta);
         ItemStack capturedBall = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta);

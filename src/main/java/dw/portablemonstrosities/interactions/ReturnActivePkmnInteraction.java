@@ -94,11 +94,8 @@ public class ReturnActivePkmnInteraction extends SimpleInteraction {
             return; 
         }
 
-        PkmnCaptureMetadata captureMeta = 
-                PkmnStatUtils.captureMetadata(commandBuffer, targetRef);
-
-        CapturedNPCMetadata npcMeta = 
-            PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,ball,null);
+        PkmnCaptureMetadata captureMeta =  PkmnStatUtils.captureMetadata(commandBuffer, targetRef);
+        CapturedNPCMetadata npcMeta =  PkmnStatUtils.getNpcMetadataFromBall(commandBuffer,targetRef,ball,null);
 
         ItemStack modifiedBall = ball
                 .withMetadata(CapturedNPCMetadata.KEYED_CODEC,npcMeta)

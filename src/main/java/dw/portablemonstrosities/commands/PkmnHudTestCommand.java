@@ -378,7 +378,8 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
         final PkmnCaptureMetadata captureMeta = item.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
         if (captureMeta == null) return null;
 
-        final CapturedNPCMetadata npcMeta = item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
+        final CapturedNPCMetadata npcMeta = 
+            item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
 
         // skip empty/uncaptured balls
         final String status = captureMeta.getNpcStatus();

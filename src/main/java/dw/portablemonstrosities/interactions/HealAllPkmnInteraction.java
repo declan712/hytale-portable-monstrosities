@@ -24,6 +24,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.metadata.CapturedNPCMetadata;
 
 import dw.portablemonstrosities.components.PkmnCaptureMetadata;
+import dw.portablemonstrosities.util.PkmnStatUtils;
 
 public class HealAllPkmnInteraction extends SimpleInteraction{
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
@@ -147,8 +148,12 @@ public class HealAllPkmnInteraction extends SimpleInteraction{
                 // "FullItemIcon": "Icons/ModelsGenerated/Fainted_Pkmn.png"
         // npcMetadata.setNpcNameKey(tameRoleId);
         // npcMetadata.setIconPath("Icons/Items/"+itemId+"_Full/Fainted_Pkmn.png");
-        npcMetadata.setIconPath("Icons/Items/Pokeball/"+npcRole+".png");
-        npcMetadata.setFullItemIcon("Icons/Items/Pokeball/"+npcRole+".png");
+
+        // npcMetadata.setIconPath("Icons/Items/Pokeball/"+npcRole+".png");
+        // npcMetadata.setFullItemIcon("Icons/Items/Pokeball/"+npcRole+".png");
+        String wildRole = PkmnStatUtils.getWildRole(npcRole);
+        npcMetadata.setIconPath("Icons/ModelsGenerated/"+wildRole+".png");
+        npcMetadata.setFullItemIcon("Icons/ModelsGenerated/"+wildRole+".png");
 
         ItemStack healedItem = itemstack
             .withMetadata(CapturedNPCMetadata.KEYED_CODEC, npcMetadata)

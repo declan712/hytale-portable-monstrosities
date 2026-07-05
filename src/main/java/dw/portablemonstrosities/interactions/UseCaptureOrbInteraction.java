@@ -569,7 +569,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
 
         PkmnCaptureMetadata captureMetadata = PkmnStatUtils.captureMetadata(commandBuffer, targetRef);
 
-        CapturedNPCMetadata npcMeta = PkmnStatUtils.getNpcMetadata(commandBuffer,targetRef,sourceItem,this.fullIcon);
+        CapturedNPCMetadata npcMeta = PkmnStatUtils.getNpcMetadataFromBall(commandBuffer,targetRef,sourceItem,this.fullIcon);
 
 
 

@@ -468,7 +468,7 @@ public class PkmnStatUtils {
      * @param fullIcon
      * @return
      */
-    public static CapturedNPCMetadata getNpcMetadata(
+    public static CapturedNPCMetadata getNpcMetadataFromBall(
         @Nonnull CommandBuffer<EntityStore> commandBuffer,
         @Nonnull Ref<EntityStore> targetRef,
         ItemStack sourceItem,
@@ -483,28 +483,29 @@ public class PkmnStatUtils {
 
         CapturedNPCMetadata npcMeta = new CapturedNPCMetadata();
         if(sourceItem !=null){
-        npcMeta = (CapturedNPCMetadata)
-            sourceItem.getFromMetadataOrDefault("CapturedEntity", CapturedNPCMetadata.CODEC);
+            npcMeta = sourceItem.getFromMetadataOrDefault("CapturedEntity", CapturedNPCMetadata.CODEC);
         }
         npcMeta.setNpcNameKey(tameRoleId);
 
-        // Icon
-        PersistentModel persistentModel = (PersistentModel)
-            commandBuffer.getComponent(targetRef, PersistentModel.getComponentType());
-        if (persistentModel == null){ 
-            LOGGER.atInfo().log("persistentModel null");
-            return null;
+        // ── Icon ────
+        PersistentModel persistentModel = commandBuffer.getComponent(targetRef, PersistentModel.getComponentType());
+        if (persistentModel != null){ 
+            ModelAsset modelAsset = ModelAsset.getAssetMap().getAsset(persistentModel.getModelReference().getModelAssetId());
+            // LOGGER.atInfo().log("persistentModel null");
+            // return null;
+            if (modelAsset != null) {
+                npcMeta.setIconPath(modelAsset.getIcon());
+                npcMeta.setFullItemIcon(modelAsset.getIcon());
+            } else if (fullIcon != null) {
+                npcMeta.setFullItemIcon(fullIcon);
+                npcMeta.setIconPath(fullIcon);
+            }
+        } else {
+            String wildRole = PkmnStatUtils.getWildRole(roleId);
+            npcMeta.setIconPath("Icons/ModelsGenerated/"+wildRole+".png");
+            npcMeta.setFullItemIcon("Icons/ModelsGenerated/"+wildRole+".png");
         }
 
-        ModelAsset modelAsset = (ModelAsset) ModelAsset.getAssetMap().getAsset(
-            persistentModel.getModelReference().getModelAssetId());
-        if (modelAsset != null) {
-            npcMeta.setIconPath(modelAsset.getIcon());
-            npcMeta.setFullItemIcon(modelAsset.getIcon());
-        } else if (fullIcon != null) {
-            npcMeta.setFullItemIcon(fullIcon);
-            npcMeta.setIconPath(fullIcon);
-        }
         return npcMeta;
         // AssetStore assetStore = ModelAsset.getAssetStore();
         // var asdf = ModelAsset.
@@ -853,6 +854,7 @@ public class PkmnStatUtils {
         LOGGER.atInfo().log("Couldnt find player: "+username);
         return null;
     }
+    
     /**
      * 
      * @param owner
@@ -897,6 +899,18 @@ public class PkmnStatUtils {
         if (isValidRoleSuffix) return tameRoleSuffix;
         if (isValidRolePrefix) return tameRolePrefix;
         return wildRoleId;
+    }
+
+    /**
+     * 
+     * @param tameRoleId
+     * @return
+     */
+    @Nonnull
+    public static String getWildRole(@Nullable String tameRoleId) {
+        String wildRole =  tameRoleId.endsWith("_Tamed") ? tameRoleId.replace("_Tamed", "") : tameRoleId ;
+        wildRole =  wildRole.startsWith("Tamed_") ? wildRole.replace("Tamed_", "") : wildRole;
+        return wildRole;
     }
 
     /**
