@@ -1,0 +1,106 @@
+{
+	"$NodeId":	"Exported.Density-2c973b7a-58e9-4b67-ae36-7b4078c909be",
+	"Type":	"Exported",
+	"ExportAs":	"Caves",
+	"SingleInstance":	true,
+	"Skip":	false,
+	"Inputs":	[{
+			"$NodeId":	"Cache.Density-86e7da68-e166-4225-bde4-d0e01c59f7a9",
+			"Type":	"Cache",
+			"ExportAs":	"",
+			"Skip":	false,
+			"Capacity":	3,
+			"Inputs":	[{
+					"$NodeId":	"CurveMapper.Density-b23b4064-9d01-413f-bad9-67c1382420e4",
+					"Type":	"CurveMapper",
+					"Skip":	false,
+					"Curve":	{
+						"$NodeId":	"ManualCurve-9be10443-172e-4ddb-96ed-395dd3eda823",
+						"Type":	"Manual",
+						"Points":	[{
+								"$NodeId":	"CurvePoint-3ccb3f1d-a64e-440f-a0eb-9f09e89ab6dd",
+								"In":	0.1,
+								"Out":	1
+							}, {
+								"$NodeId":	"CurvePoint-8e5323cb-cfba-46db-9552-5a2902b59456",
+								"In":	0.3,
+								"Out":	-1
+							}, {
+								"$NodeId":	"CurvePoint-9a1ee551-0010-4b56-9c3f-2bea469c0c93",
+								"In":	0.5,
+								"Out":	1
+							}]
+					},
+					"Inputs":	[{
+							"$NodeId":	"SimplexNoise3DDensityNode-2a39c728-aa2d-4c0c-ad4c-83411c72a6cb",
+							"Type":	"SimplexNoise3D",
+							"Skip":	false,
+							"Lacunarity":	2,
+							"Persistence":	0.5,
+							"Octaves":	4,
+							"ScaleXZ":	150,
+							"ScaleY":	100,
+							"Seed":	"Caves"
+						}]
+				}]
+		}],
+	"$NodeEditorMetadata":	{
+		"$Nodes":	{
+			"Exported.Density-2c973b7a-58e9-4b67-ae36-7b4078c909be":	{
+				"$Position":	{
+					"$x":	1010,
+					"$y":	45
+				},
+				"$Title":	"[ROOT] Exported Density"
+			},
+			"Cache.Density-86e7da68-e166-4225-bde4-d0e01c59f7a9":	{
+				"$Position":	{
+					"$x":	1692,
+					"$y":	45
+				}
+			},
+			"CurveMapper.Density-b23b4064-9d01-413f-bad9-67c1382420e4":	{
+				"$Position":	{
+					"$x":	2312,
+					"$y":	43
+				}
+			},
+			"ManualCurve-9be10443-172e-4ddb-96ed-395dd3eda823":	{
+				"$Position":	{
+					"$x":	2932,
+					"$y":	80
+				}
+			},
+			"CurvePoint-3ccb3f1d-a64e-440f-a0eb-9f09e89ab6dd":	{
+				"$Position":	{
+					"$x":	3562,
+					"$y":	-229
+				}
+			},
+			"CurvePoint-8e5323cb-cfba-46db-9552-5a2902b59456":	{
+				"$Position":	{
+					"$x":	3559,
+					"$y":	-75
+				}
+			},
+			"CurvePoint-9a1ee551-0010-4b56-9c3f-2bea469c0c93":	{
+				"$Position":	{
+					"$x":	3562,
+					"$y":	78
+				}
+			},
+			"SimplexNoise3DDensityNode-2a39c728-aa2d-4c0c-ad4c-83411c72a6cb":	{
+				"$Position":	{
+					"$x":	2936,
+					"$y":	-289
+				}
+			}
+		},
+		"$FloatingNodes":	[],
+		"$Links":	{
+		},
+		"$Groups":	[],
+		"$Comments":	[],
+		"$WorkspaceID":	"HytaleGenerator - Density"
+	}
+}
