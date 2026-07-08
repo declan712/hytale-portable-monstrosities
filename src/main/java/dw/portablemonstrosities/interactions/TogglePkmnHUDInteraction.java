@@ -91,94 +91,14 @@ public class TogglePkmnHUDInteraction extends SimpleInstantInteraction {
         Storage  storage  = store.getComponent(ref, InventoryComponent.Storage.getComponentType());
         Backpack backpack = store.getComponent(ref, InventoryComponent.Backpack.getComponentType());
 
-        // ── Build and show HUD via PkmnPartyHUD ───────────────────────────────
-        
         HyUIHud hud = PkmnPartyHUD.createAndShowHud(
             context,
             hotbar,
             storage,
             backpack
         );
-        
-        // HudBuilder hud = HudBuilder.hudForPlayer(playerRef)
-        //     .fromUIFile("Pages/PkmnParty.ui")
-        //     .enablePersistentElementEdits(true)
-        //     .withRefreshRate(500);
-
-        // setSlots(hud, PkmnPartyHUD.buildPartyFromInventory(
-        //     store, ref, world, hotbar, storage, backpack));
-
-        // hud.onRefresh(hyUIHud -> {
-        //     world.execute(() -> {
-        //         List<PkmnPartySlot> oldParty = PkmnPartyHUD.partyCache.getOrDefault(playerRef.toString(), new ArrayList<>());
-        //         List<PkmnPartySlot> newParty = PkmnPartyHUD.buildPartyFromInventory(
-        //             store, ref, world, hotbar, storage, backpack);
-        //         PkmnPartyHUD.updateSlots(hud, newParty, oldParty, playerRef.toString());
-        //         hyUIHud.update(hud);
-
-        //         UICommandBuilder uiCommandBuilder = new UICommandBuilder();
-        //         hyUIHud.build(uiCommandBuilder);
-        //         hyUIHud.update(true, uiCommandBuilder);
-        //     });
-        // });
-
-        // PkmnPartyHUD.builderCache.put(playerRef.toString(), hud);
-        // HyUIHud liveHud = hud.show();
-        // PkmnPartyHUD.hudCache.put(playerRef.toString(), liveHud);
-
         context.getState().state = InteractionState.Finished;
     }
-
-    // ── Slot helpers (identical logic to PkmnHudTestCommand) ─────────────────
-
-    /**
-     * Full (re-)render of all slots – used when the HUD is first shown.
-     */
-    private static void setSlots(
-        @Nonnull HudBuilder hud,
-        @Nonnull List<PkmnPartySlot> party
-    ) {
-        for (int i = 1; i <= 6; i++) {
-            final int fi = i;
-
-            final String idPkmn   = "#Pkmn" + fi + ".Visible";
-            final String idName   = "#Pkmn" + fi + " #PkmnName.Text";
-            final String idLevel  = "#Pkmn" + fi + " #PkmnLevel.Text";
-            final String idHpBar  = "#Pkmn" + fi + " #HealthBar.Value";
-            final String idHpText = "#Pkmn" + fi + " #HealthText.Text";
-            final String idIcon   = "#Pkmn" + fi + " #PkmnIcon.AssetPath";
-            final String idBall   = "#Balls[" + (fi - 1) + "].AssetPath";
-
-            if (party.size() < fi) {
-                hud.editElement(cmds -> cmds.set(idPkmn, false))
-                    .editElement(cmds -> cmds.set(idBall, "UUI/Custom/Pages/Pkmn/Pokeball_None.png"));
-                continue;
-            }
-
-            hud.editElement(cmds -> cmds.set(idPkmn, true));
-
-            PkmnPartySlot pkmn = party.get(fi - 1);
-
-            final String name     = pkmn.name;
-            final String level    = "Lv." + pkmn.level;
-            final float  pctHp    = Math.max(0f, Math.min(1f,
-                (float) pkmn.currentHp / (float) pkmn.maxHp));
-            final String hpText   = pkmn.currentHp + "/" + pkmn.maxHp;
-            final String icon     = pkmn.iconPath;
-
-            if(pkmn.fainted){       hud.editElement(cmds -> cmds.set(idBall, "UI/Custom/Pages/Pkmn/Pokeball_Dead.png"));}
-            else if (pkmn.active){  hud.editElement(cmds -> cmds.set(idBall, "UI/Custom/Pages/Pkmn/Pokeball_Grey.png"));}
-            else {                  hud.editElement(cmds -> cmds.set(idBall, "UI/Custom/Pages/Pkmn/Pokeball.png"));}
-
-            hud.editElement(cmds -> cmds.set(idName,   name))
-                .editElement(cmds -> cmds.set(idLevel,  level))
-                .editElement(cmds -> cmds.set(idHpBar,  pctHp))
-                .editElement(cmds -> cmds.set(idHpText, hpText))
-                .editElement(cmds -> cmds.set(idIcon,   icon));
-        }
-    }
-
-    // ── Utilities ────────────────────────────────────────────────────────────
 
     private static void fail(@Nonnull InteractionContext context) {
         context.getState().state = InteractionState.Failed;

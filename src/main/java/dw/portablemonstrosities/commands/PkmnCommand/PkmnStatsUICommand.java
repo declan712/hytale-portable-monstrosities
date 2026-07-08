@@ -33,6 +33,7 @@ import au.ellie.hyui.builders.HyUIHud;
 import au.ellie.hyui.builders.PageBuilder;
 import dw.portablemonstrosities.components.PkmnCaptureMetadata;
 import dw.portablemonstrosities.ui.PkmnPartySlot;
+import dw.portablemonstrosities.ui.PkmnStatsPage;
 import dw.portablemonstrosities.util.PkmnStatUtils;
 
 import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayerCommand;
@@ -43,31 +44,7 @@ import com.hypixel.hytale.server.core.command.system.basecommands.AbstractPlayer
 // 
 //  */
 public class PkmnStatsUICommand extends AbstractPlayerCommand {
-    
-    public static final String HUD_KEY  = "PkmnParty";
-    public static final int    MAX_SLOTS = 6;
-    private static final String UI_FILE  = "PkmnStatsPage.ui";
 
-    private static final List<String> validItems = List.of(
-        "*Pokeball_State_Full",
-        "*Pokeball_Apricorn_State_Full",
-        "*Pokeball_Great_State_Full",
-        "*Pokeball_Ultra_State_Full",
-        "*Pokeball_Master_State_Full",
-
-        "*Pokeball_State_Active",
-        "*Pokeball_Apricorn_State_Active",
-        "*Pokeball_Great_State_Active",
-        "*Pokeball_Ultra_State_Active",
-        "*Pokeball_Master_State_Active",
-        
-        "*Pokeball_State_Fainted",
-        "*Pokeball_Apricorn_State_Fainted",
-        "*Pokeball_Great_State_Fainted",
-        "*Pokeball_Ultra_State_Fainted",
-        "*Pokeball_Master_State_Fainted"
-    );
-    
     public PkmnStatsUICommand(String name, String description) {
         super(name,description);
     }
@@ -81,22 +58,9 @@ public class PkmnStatsUICommand extends AbstractPlayerCommand {
         @Nonnull World world
     ) {
 
-    Hotbar   hotbar   = store.getComponent(ref, InventoryComponent.Hotbar.getComponentType());
-    Storage  storage  = store.getComponent(ref, InventoryComponent.Storage.getComponentType());
-    Backpack backpack = store.getComponent(ref, InventoryComponent.Backpack.getComponentType());
-    // List<PkmnPartySlot> initialParty = buildPartyFromInventory(store,ref,world,hotbar,storage,backpack);
-
-    PageBuilder page = PageBuilder.detachedPage()
-    .fromUIFile("Pages/"+UI_FILE)
-    .enablePersistentElementEdits(true);
-    // .withRefreshRate(1000);
-
-
-    page.open(playerRef, store);
-
-
-
-
+        PkmnStatsPage page = new PkmnStatsPage();
+        page.fill(store,ref,playerRef,world);
+        page.open(playerRef, store);
     }
 
 }
