@@ -43,7 +43,7 @@ $P = "../Pkmn.ui";
             $P.@FieldLabel  { Text: "Power"; }
             $P.@FieldContainer { 
                 FlexWeight: 1;
-                $P.@FieldValue { Text: "40"; }
+                $P.@FieldValue #Power { Text: "40"; }
                 Group { FlexWeight: 1; } // Spacer
                 AssetImage {
                     Anchor: (Width: 24, Height:24);
@@ -57,7 +57,7 @@ $P = "../Pkmn.ui";
             Anchor: (Top: 4);
             LayoutMode: Left;
             $P.@FieldLabel  { Text: "Hits"; }
-            $P.@FieldContainer { $P.@FieldValue { Text: "1"; } }
+            $P.@FieldContainer { $P.@FieldValue #Hits { Text: "1"; } }
         }
         $C.@ContentSeparator {}
         Group { // crit chance
@@ -65,7 +65,7 @@ $P = "../Pkmn.ui";
             Anchor: (Top: 4);
             LayoutMode: Left;
             $P.@FieldLabel  { Text: "Crit"; }
-            $P.@FieldContainer { $P.@FieldValue { Text: "10%"; } }
+            $P.@FieldContainer { $P.@FieldValue #Crit{ Text: "10%"; } }
         }
         $C.@ContentSeparator {}
         Group { // range
@@ -73,7 +73,7 @@ $P = "../Pkmn.ui";
             Anchor: (Top: 4);
             LayoutMode: Left;
             $P.@FieldLabel  { Text: "Range"; }
-            $P.@FieldContainer { $P.@FieldValue { Text: "5m"; } }
+            $P.@FieldContainer { $P.@FieldValue #Range{ Text: "5m"; } }
         }
         $C.@ContentSeparator {}
         Group { // description
@@ -85,7 +85,7 @@ $P = "../Pkmn.ui";
             }
             $P.@FieldContainer { 
                 Anchor: (Full: 0);
-                $P.@FieldValueWrap { 
+                $P.@FieldValueWrap #Description{ 
                     Text: "An almost invisibly fast attack that is certain to strike first."; 
                 } 
             }
@@ -102,22 +102,22 @@ $P = "../Pkmn.ui";
             LayoutMode: Left;
             Padding: (Horizontal: 8, Vertical:8);
             Anchor: (Top: 4, Left: 12, Width: 320, Height: 48);
-            AssetImage {
+            AssetImage #MoveType {
                 Anchor: (Left: 0, Width: 64, Height:24);
                 AssetPath: "UI/Textures/Icons/Types/NormalType.png";
             }
-            Label {
+            Label #MoveName {
                 Text: "Quick Attack";
                 Anchor: (Left: 8);
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
             }
             Group { FlexWeight: 1; } // Spacer
-            Label {
+            Label #MovePower {
                 Text: "40";
                 Anchor: (Left: 0);
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
             }
-            $C.@TertiaryButton {
+            $C.@TertiaryButton #MoveButton {
                 Anchor: (Left: 16, Width: 32);
                 Group {
                     Anchor: (Width: 32, Height: 32);
@@ -140,12 +140,12 @@ $P = "../Pkmn.ui";
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
             }
             Group { FlexWeight: 1; } // Spacer
-            Label {
+            Label #MovePower {
                 Text: "40";
                 Anchor: (Left: 0);
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
             }
-            $C.@TertiaryButton {
+            $C.@TertiaryButton #MoveButton {
                 Anchor: (Left: 16, Width: 32);
                 Group {
                     Anchor: (Width: 32, Height: 32);
@@ -168,12 +168,12 @@ $P = "../Pkmn.ui";
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
             }
             Group { FlexWeight: 1; } // Spacer
-            Label {
+            Label #MovePower {
                 Text: "40";
                 Anchor: (Left: 0);
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
             }
-            $C.@TertiaryButton {
+            $C.@TertiaryButton #MoveButton {
                 Anchor: (Left: 16, Width: 32);
                 Group {
                     Anchor: (Width: 32, Height: 32);
@@ -196,12 +196,12 @@ $P = "../Pkmn.ui";
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center);
             }
             Group { FlexWeight: 1; } // Spacer
-            Label {
+            Label #MovePower {
                 Text: "40";
                 Anchor: (Left: 0);
                 Style: (TextColor: #ffffff, FontSize: 16, VerticalAlignment: Center, RenderBold: true);
             }
-            $C.@TertiaryButton {
+            $C.@TertiaryButton #MoveButton {
                 Anchor: (Left: 16, Width: 32);
                 Group {
                     Anchor: (Width: 32, Height: 32);

@@ -59,7 +59,11 @@ public class PkmnStatsUICommand extends AbstractPlayerCommand {
     ) {
 
         PkmnStatsPage page = new PkmnStatsPage();
-        page.fill(store,ref,playerRef,world);
+        boolean res = page.fill(store,ref,playerRef,world);
+        if (!res) {
+            playerRef.sendMessage(Message.raw("Unable to populate stats page"));
+            return;
+        }
         page.open(playerRef, store);
     }
 

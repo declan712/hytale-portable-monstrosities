@@ -8,7 +8,7 @@ $P = "../Pkmn.ui";
         Padding: (Full: 8);
         LayoutMode: Left;
 
-        $C.@SimpleContainer #Portait {
+        $C.@SimpleContainer #Portrait {
             Padding: (Horizontal: 48, Vertical:2);
             AssetImage #PkmnIcon{
                 Anchor: (Top:0, Left: 0, Width: 160, Height:160);
@@ -26,14 +26,14 @@ $P = "../Pkmn.ui";
                 Padding: (Horizontal: 8, Vertical:2);
                 LayoutMode: Left;
                 $P.@FieldLabel  { Text: "No"; }
-                $P.@FieldContainer { $P.@FieldValue { Text: "001"; } }
+                $P.@FieldContainer { $P.@FieldValue #DexNum { Text: "???"; } }
             }
 
             Group #Row2 {
                 Padding: (Horizontal: 8, Vertical:2);
                 LayoutMode: Left;
                 $P.@FieldLabel  { Text: "NAME"; }
-                $P.@FieldContainer { $P.@FieldValue { Text: "BULBASAUR"; } }
+                $P.@FieldContainer { $P.@FieldValue #Name { Text: "-"; } }
             }
 
             Group #Row3 {
@@ -41,11 +41,11 @@ $P = "../Pkmn.ui";
                 LayoutMode: Left;
                 $P.@FieldLabel  { Text: "Type"; }
                 $P.@FieldContainer {
-                    AssetImage {
+                    AssetImage #Type1 {
                         Anchor: (Left: 0, Width: 64, Height:24);
                         AssetPath: "UI/Textures/Icons/Types/GrassType.png";
                     }
-                    AssetImage {
+                    AssetImage #Type2 {
                         Anchor: (Left: 8, Width: 64, Height:24);
                         AssetPath: "UI/Textures/Icons/Types/PoisonType.png";
                     }
@@ -56,21 +56,21 @@ $P = "../Pkmn.ui";
                 Padding: (Horizontal: 8, Vertical:2);
                 LayoutMode: Left;
                 $P.@FieldLabel  { Text: "OT"; }
-                $P.@FieldContainer { $P.@FieldValue { Text: "Declan"; } }
+                $P.@FieldContainer { $P.@FieldValue #Owner { Text: "-"; } }
             }
 
             Group #Row5 {
                 Padding: (Horizontal: 8, Vertical:2);
                 LayoutMode: Left;
                 $P.@FieldLabel  { Text: "IDNo"; }
-                $P.@FieldContainer { $P.@FieldValue { Text: "27727"; } }
+                $P.@FieldContainer { $P.@FieldValue #ID { Text: "-"; } }
             }
 
             Group #Row6 {
                 Padding: (Horizontal: 8, Vertical:2);
                 LayoutMode: Left;
                 $P.@FieldLabel  { Text: "ITEM"; }
-                $P.@FieldContainer { $P.@FieldValue { Text: "NONE"; } }
+                $P.@FieldContainer { $P.@FieldValue #HeldItem { Text: "-"; } }
             }
 
         }
@@ -80,10 +80,10 @@ $P = "../Pkmn.ui";
         Anchor: (Top: 0, Left: 8, Width: 128);
         Text: "Trainer Memo"; 
     }
-    $P.@FieldContainer { 
+    $P.@FieldContainer #Memo { 
         LayoutMode: Top;
         Anchor: (Full:0);
-        $P.@FieldValue { Text: "DOCILE nature."; } 
-        $P.@FieldValue { Text: "Met in PALLET TOWN at Lv 5."; } 
+        $P.@FieldValue #MemoLine1 { Text: "- nature."; } 
+        $P.@FieldValue #MemoLine2 { Text: "Met in - at Lv -."; } 
     }
 };

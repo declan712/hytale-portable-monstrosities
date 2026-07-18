@@ -16,51 +16,51 @@ Group {
                 LayoutMode: Left;
                 Padding: (Horizontal: 32, Vertical:4);
 
-                TabNavigation {
+                TabNavigation #Tabs {
                     Style: $C.@HeaderTabsStyle;
-                    SelectedTab: "TabFirst";
+                    SelectedTab: "overview";
                     Anchor: (Height: 66, Left: 2, Right: 0);
 
-                    TabButton {
-                        Icon: "Pkmn/Tab_Summary.png";
-                        TooltipText: "Summary";
-                        Id: "TabSummary";
+                    TabButton #Overview {
+                        Icon: "Pkmn/Tab_Overview.png";
+                        TooltipText: "Overview";
+                        Id: "overview";
                     }
 
-                    TabButton {
+                    TabButton #Stats {
                         Icon: "Pkmn/Tab_Stats.png";
                         TooltipText: "Stats";
-                        Id: "TabStats";
+                        Id: "stats";
                     }
 
-                    TabButton {
+                    TabButton #Moves {
                         Icon: "Pkmn/Tab_Moves.png";
                         TooltipText: "Moves";
-                        Id: "TabMoves";
+                        Id: "moves";
                     }
 
-                    TabButton {
+                    TabButton #Other {
                         Icon: "Pkmn/Pokeball_Dead.png";
                         TooltipText: "Tab Four";
-                        Id: "TabFourth";
+                        Id: "other";
                     }
                 }
 
                 Group { FlexWeight: 1; } // Spacer
 
-                Label  {
+                Label #Level {
                     Anchor: (Left:8);
-                    Text: "Lv5";
+                    Text: "Lv-";
                     Style: (TextColor: #ffffff, FontSize: 16);
                 }
-                Label  {
+                Label  #Species {
                     Anchor: (Left:8);
-                    Text: "Bulbasaur";
+                    Text: "-";
                     Style: (TextColor: #ffffff, FontSize: 16);
                 }
-                Label  {
+                Label  #Sex {
                     Anchor: (Left:8);
-                    Text: "M";
+                    Text: "-";
                     Style: (TextColor: #ffffff, FontSize: 16);
                 }
                 
@@ -86,15 +86,15 @@ Group {
         #Content {
 
             $Overview.@OverviewContent #OverviewContent {
-                Visible: true;
+                // Visible: true;
             }
 
             $Stats.@StatsContent #StatsContent {
-                Visible: false;
+                // Visible: false;
             }
 
             $Moves.@MovesContent #MovesContent {
-                Visible: false;
+                // Visible: false;
             }
 
         }

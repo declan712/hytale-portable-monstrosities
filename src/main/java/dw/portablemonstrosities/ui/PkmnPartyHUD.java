@@ -316,7 +316,7 @@ public class PkmnPartyHUD {
     ) {
         container.forEach((slot, itemStack) -> {
             if (party.size() >= 6) return;
-            if (PkmnPartyUtil.isValidPartyItem(itemStack.getItemId())) {
+            if (PkmnPartyUtil.isValidPokeball(itemStack.getItemId())) {
                 PkmnPartySlot s = PkmnPartyUtil.tryExtractSlot(itemStack, world);
                 if (s != null) party.add(s);
             }

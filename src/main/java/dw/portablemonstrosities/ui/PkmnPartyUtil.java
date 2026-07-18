@@ -124,7 +124,7 @@ public class PkmnPartyUtil {
     /**
      * Checks if an item ID represents a valid party member item.
      */
-    public static boolean isValidPartyItem(String itemId) {
+    public static boolean isValidPokeball(String itemId) {
         return VALID_ITEMS.contains(itemId);
     }
 }
