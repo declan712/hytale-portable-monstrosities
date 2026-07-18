@@ -1,27 +1,76 @@
 {
-  "Parent": "Template_Pkmn_Worm",
-  "Model": "NPC/Pkmn/Victreebel/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Victreebel/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Victreebel.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Victreebel_Cry"
+    "Parent": "Template_Pkmn_Worm",
+    "Model": "NPC/Pkmn/Victreebel/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Victreebel/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Victreebel.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Victreebel_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Victreebel_Cry"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Victreebel/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Victreebel_Cry"
-        }
-      ]
     }
-  }
 }

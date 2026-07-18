@@ -1,64 +1,336 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Venonat/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Venonat/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Venonat.png",
-  "EyeHeight": 0.7,
-  "CrouchOffset": -0.2,
-  "HitBox": {
-    "Max": {
-      "X": 0.45,
-      "Y": 0.9,
-      "Z": 0.45
+    "Parent": "Template_Pkmn_Bi",
+    "HitBox": {
+        "Max": {
+            "X": 0.45,
+            "Y": 0.9,
+            "Z": 0.45
+        },
+        "Min": {
+            "X": -0.45,
+            "Y": 0,
+            "Z": -0.45
+        }
     },
-    "Min": {
-      "X": -0.45,
-      "Y": 0,
-      "Z": -0.45
+    "Model": "NPC/Pkmn/Venonat/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Venonat/Models/Texture.png",
+    "EyeHeight": 0.7,
+    "CrouchOffset": -0.2,
+    "MinScale": 0.9,
+    "MaxScale": 1,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Venonat.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Critter/Meerkat/Animations/Default/Alerted.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Venonat_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Critter/Meerkat/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Venonat_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Spawn.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Walk.blockyanim",
+                    "BlendingDuration": 0.1
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "DeathDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Death_Drown.blockyanim"
+                }
+            ]
+        },
+        "DeathFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Death_Fly.blockyanim"
+                }
+            ]
+        },
+        "DeathFlyImpact": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Death_Fly_Impact.blockyanim"
+                }
+            ]
+        },
+        "DeathSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Death_Swim.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "HurtDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Hurt_Drown.blockyanim"
+                }
+            ]
+        },
+        "HurtFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Hurt_Fly.blockyanim"
+                }
+            ]
+        },
+        "HurtSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Damage/Hurt_Swim.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Covered": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Flavor/Covered.blockyanim"
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Flavor/Curious.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venonat/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
+        }
+    },
+    "IconProperties": {
+        "Scale": 0.3,
+        "Rotation": [
+            0,
+            303,
+            0
+        ],
+        "Translation": [
+            0,
+            -46
+        ]
     }
-  },
-  "MinScale": 0.9,
-  "MaxScale": 1,
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Critter/Meerkat/Animations/Default/Alerted.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Venonat_Cry"
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Critter/Meerkat/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Venonat_Cry"
-        }
-      ]
-    },
-    "Walk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Venonat/Animations/Default/Walk.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    }
-  },
-  "IconProperties": {
-    "Scale": 0.3,
-    "Rotation": [
-      0,
-      303,
-      0
-    ],
-    "Translation": [
-      0,
-      -46
-    ]
-  }
 }

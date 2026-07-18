@@ -1,27 +1,27 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Mew/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Mew/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Mew.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Mew/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Mew_Cry"
+    "Parent": "Template_Pkmn_Bi",
+    "Model": "NPC/Pkmn/Mew/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Mew/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Mew.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Mew/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Mew_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Mew/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Mew_Cry"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Mew/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Mew_Cry"
-        }
-      ]
     }
-  }
 }

@@ -1,27 +1,432 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Jigglypuff/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Jigglypuff/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Jigglypuff.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Jigglypuff_Cry"
+    "Parent": "Template_Pkmn_Bi",
+    "Model": "NPC/Pkmn/Jigglypuff/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Jigglypuff/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Jigglypuff.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Jigglypuff_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Jigglypuff_Cry"
+                }
+            ]
+        },
+        "ScratchLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Attacks/Scratch_Left.blockyanim"
+                }
+            ]
+        },
+        "ScratchLeftMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Attacks/Scratch_Left_Moving.blockyanim"
+                }
+            ]
+        },
+        "ScratchRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Attacks/Scratch_Right.blockyanim"
+                }
+            ]
+        },
+        "ScratchRightMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Attacks/Scratch_Right_Moving.blockyanim"
+                }
+            ]
+        },
+        "ClimbDown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Climb/Climb_Down.blockyanim"
+                }
+            ]
+        },
+        "ClimbIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Climb/Climb_Idle.blockyanim"
+                }
+            ]
+        },
+        "ClimbLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Climb/Climb_Left.blockyanim"
+                }
+            ]
+        },
+        "ClimbRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Climb/Climb_Right.blockyanim"
+                }
+            ]
+        },
+        "ClimbUp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Climb/Climb_Up.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Fall2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Fall2.blockyanim"
+                }
+            ]
+        },
+        "FallFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Fall_Far.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Jump_Run.blockyanim"
+                }
+            ]
+        },
+        "JumpRun2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Jump_Run2.blockyanim"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Spawn2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Spawn2.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepRun2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Step_Run2.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepSprint2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Step_Sprint2.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "StepWalk2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Step_Walk2.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Eat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Flavor/Eat.blockyanim"
+                }
+            ]
+        },
+        "EatFinish": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Flavor/Eat_Finish.blockyanim"
+                }
+            ]
+        },
+        "GreetFrog": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Flavor/Greet_Frog.blockyanim"
+                }
+            ]
+        },
+        "Hunch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Flavor/Hunch.blockyanim"
+                }
+            ]
+        },
+        "Scared": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Flavor/Scared.blockyanim"
+                }
+            ]
+        },
+        "Sniff": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Flavor/Sniff.blockyanim"
+                }
+            ]
+        },
+        "SniffGround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Flavor/Sniff_Ground.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Dive.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Dive_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Dive_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Jigglypuff/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Jigglypuff/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Jigglypuff_Cry"
-        }
-      ]
     }
-  }
 }

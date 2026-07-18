@@ -1,27 +1,279 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Hitmonlee/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Hitmonlee/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Hitmonlee.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Hitmonlee_Cry"
+    "Parent": "Template_Pkmn_Bi",
+    "Model": "NPC/Pkmn/Hitmonlee/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Hitmonlee/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Hitmonlee.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Hitmonlee_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Hitmonlee_Cry"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "BiteMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Attacks/Bite_Moving.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Damage/Hurt2.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "FallFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Fall_Far.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Jump_Far.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Jump_Far2.blockyanim"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "LookAround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Flavor/Look_Around.blockyanim"
+                }
+            ]
+        },
+        "LookLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Flavor/Look_Left.blockyanim"
+                }
+            ]
+        },
+        "LookRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Flavor/Look_Right.blockyanim"
+                }
+            ]
+        },
+        "Roar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Flavor/Roar.blockyanim"
+                }
+            ]
+        },
+        "SniffLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Flavor/Sniff_Left.blockyanim"
+                }
+            ]
+        },
+        "SniffRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Flavor/Sniff_Right.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Hitmonlee/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Hitmonlee/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Hitmonlee_Cry"
-        }
-      ]
     }
-  }
 }

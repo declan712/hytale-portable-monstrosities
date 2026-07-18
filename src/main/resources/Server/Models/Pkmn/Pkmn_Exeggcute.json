@@ -1,27 +1,148 @@
 {
-  "Parent": "Template_Pkmn_Ghost",
-  "Model": "NPC/Pkmn/Exeggcute/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Exeggcute/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Exeggcute.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Exeggcute_Cry"
+    "Parent": "Template_Pkmn_Ghost",
+    "Model": "NPC/Pkmn/Exeggcute/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Exeggcute/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Exeggcute.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Exeggcute_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Exeggcute_Cry"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Fall.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Hurt.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Jump.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "Despawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Despawn.blockyanim"
+                }
+            ]
+        },
+        "Idle2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Idles/Idle2.blockyanim"
+                }
+            ]
+        },
+        "Idle3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Exeggcute/Animations/Idles/Idle3.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Exeggcute/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Exeggcute_Cry"
-        }
-      ]
     }
-  }
 }

@@ -1,351 +1,448 @@
 {
-  "Parent": "Template_Pkmn",
-  "Model": "NPC/Pkmn/Gastly/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Gastly/Models/Texture.png",
-  "EyeHeight": 0.45,
-  "HitBox": {
-    "Max": {
-      "X": 0.4,
-      "Y": 0.9,
-      "Z": 0.4
-    },
-    "Min": {
-      "X": -0.4,
-      "Y": 0,
-      "Z": -0.4
-    }
-  },
-  "Camera": {
-    "Pitch": {
-      "AngleRange": {
-        "Max": 180,
-        "Min": -180
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    },
-    "Yaw": {
-      "AngleRange": {
-        "Max": 180,
-        "Min": -180
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    }
-  },
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
+    "Parent": "Template_Pkmn",
+    "Camera": {
+        "Pitch": {
+            "AngleRange": {
+                "Max": 180,
+                "Min": -180
+            },
+            "TargetNodes": [
+                "Head"
+            ]
+        },
+        "Yaw": {
+            "AngleRange": {
+                "Max": 180,
+                "Min": -180
+            },
+            "TargetNodes": [
+                "Head"
+            ]
         }
-      ]
     },
-    "Walk": {
-      "Animations": [
+    "Light": {
+        "Color": "#308",
+        "Radius": 1
+    },
+    "Particles": [
         {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "Head",
+            "PositionOffset": {
+                "Y": 0.25,
+                "X": 0.25,
+                "Z": 0.15
+            }
+        },
         {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": 0.25,
+                "X": -0.25,
+                "Z": 0.15
+            },
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "Head"
+        },
         {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Jump": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": 0.25,
+                "X": 0
+            },
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "Head"
+        },
         {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
-        }
-      ]
-    },
-    "JumpWalk": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": 0.25
+            },
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "Head"
+        },
         {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
-        }
-      ]
-    },
-    "JumpRun": {
-      "Animations": [
+            "SystemId": "Spectre_Void_Body",
+            "TargetNodeName": "Head",
+            "PositionOffset": {
+                "X": 0
+            },
+            "Scale": 2
+        },
         {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
+            "SystemId": "Smoke_Gastly",
+            "TargetNodeName": "Head",
+            "Scale": 0.75,
+            "RotationOffset": {
+                "Yaw": 0,
+                "Pitch": 90,
+                "Roll": 180
+            },
+            "PositionOffset": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0.25
+            }
         }
-      ]
-    },
-    "Fall": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Fall.blockyanim",
-          "BlendingDuration": 0.4
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Gastly_Cry"
-        }
-      ]
-    },
-    "FlyIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Fly": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FlyBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FlyFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Swim": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimJump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
-        }
-      ]
-    },
-    "SwimFloat": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "SwimSink": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "SwimDive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimDiveBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimDiveFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FluidIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "FluidWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FluidWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FluidRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Hurt": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Damage/Hurt.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Gastly_Cry"
-        }
-      ]
-    },
-    "Despawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Void/Spectre_Void/Animations/Default/Despawn.blockyanim",
-          "Looping": false
-        }
-      ]
-    }
-  },
-  "Particles": [
-    {
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "Head",
-      "PositionOffset": {
-        "Y": 0.25,
-        "X": 0.25,
-        "Z": 0.15
-      }
-    },
-    {
-      "PositionOffset": {
-        "Y": 0.25,
-        "X": -0.25,
-        "Z": 0.15
-      },
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "Head"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0.25,
-        "X": 0
-      },
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "Head"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0.25
-      },
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "Head"
-    },
-    {
-      "SystemId": "Spectre_Void_Body",
-      "TargetNodeName": "Head",
-      "PositionOffset": {
-        "X": 0
-      },
-      "Scale": 2
-    },
-    {
-      "SystemId": "Smoke_Gastly",
-      "TargetNodeName": "Head",
-      "Scale": 0.75,
-      "RotationOffset": {
-        "Yaw": 0,
-        "Pitch": 90,
-        "Roll": 180
-      },
-      "PositionOffset": {
-        "X": 0,
-        "Y": 0,
-        "Z": 0.25
-      }
-    }
-  ],
-  "Light": {
-    "Color": "#308",
-    "Radius": 1
-  },
-  "MinScale": 0.8,
-  "MaxScale": 1,
-  "IconProperties": {
-    "Scale": 0.5,
-    "Rotation": [
-      347,
-      342,
-      360
     ],
-    "Translation": [
-      -3,
-      -49
-    ]
-  },
-  "Icon": "Icons/ModelsGenerated/Pkmn_Gastly.png"
+    "HitBox": {
+        "Max": {
+            "X": 0.4,
+            "Y": 0.9,
+            "Z": 0.4
+        },
+        "Min": {
+            "X": -0.4,
+            "Y": 0,
+            "Z": -0.4
+        }
+    },
+    "Model": "NPC/Pkmn/Gastly/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Gastly/Models/Texture.png",
+    "EyeHeight": 0.45,
+    "MinScale": 0.8,
+    "MaxScale": 1,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Gastly.png",
+    "AnimationSets": {
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Jump.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Fall.blockyanim",
+                    "BlendingDuration": 0.4
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Fall.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Gastly_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Alerted.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Jump.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimDive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimDiveBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimDiveFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FluidIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "FluidWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FluidWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FluidRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Damage/Hurt.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Hurt.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Gastly_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Spawn.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Despawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Void/Spectre_Void/Animations/Default/Despawn.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Default/Despawn.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "Idle2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Idles/Idle2.blockyanim"
+                }
+            ]
+        },
+        "Idle3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Gastly/Animations/Idles/Idle3.blockyanim"
+                }
+            ]
+        }
+    },
+    "IconProperties": {
+        "Scale": 0.5,
+        "Rotation": [
+            347,
+            342,
+            360
+        ],
+        "Translation": [
+            -3,
+            -49
+        ]
+    }
 }

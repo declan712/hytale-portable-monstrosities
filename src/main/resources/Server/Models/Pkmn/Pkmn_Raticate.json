@@ -1,9 +1,5 @@
 {
     "Parent": "Template_Pkmn_Quad",
-    "Model": "NPC/Pkmn/Raticate/Models/Model.blockymodel",
-    "Texture": "NPC/Pkmn/Raticate/Models/Texture.png",
-    "EyeHeight": 0.5,
-    "CrouchOffset": -0.1,
     "HitBox": {
         "Max": {
             "X": 0.4,
@@ -16,7 +12,12 @@
             "Z": -0.4
         }
     },
+    "Model": "NPC/Pkmn/Raticate/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Raticate/Models/Texture.png",
+    "EyeHeight": 0.5,
+    "CrouchOffset": -0.1,
     "MinScale": 0.75,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Raticate.png",
     "AnimationSets": {
         "Idle": {
             "Animations": [
@@ -75,9 +76,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Pkmn/Raticate/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.8,
                     "BlendingDuration": 0.1,
-                    "Looping": false,
-                    "Speed": 0.8
+                    "Looping": false
                 }
             ]
         },
@@ -85,9 +86,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Pkmn/Raticate/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.6,
                     "BlendingDuration": 0.1,
-                    "Looping": false,
-                    "Speed": 0.6
+                    "Looping": false
                 }
             ]
         },
@@ -95,9 +96,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Pkmn/Raticate/Animations/Default/Jump_Far.blockyanim",
+                    "Speed": 0.6,
                     "BlendingDuration": 0.1,
-                    "Looping": false,
-                    "Speed": 0.6
+                    "Looping": false
                 }
             ]
         },
@@ -202,9 +203,15 @@
                     "Animation": "NPC/Pkmn/Raticate/Animations/Flavor/Flee.blockyanim"
                 }
             ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Raticate/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
         }
     },
-    "Icon": "Icons/ModelsGenerated/Pkmn_Raticate.png",
     "IconProperties": {
         "Scale": 0.4,
         "Rotation": [

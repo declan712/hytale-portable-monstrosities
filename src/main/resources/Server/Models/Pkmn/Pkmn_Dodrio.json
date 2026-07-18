@@ -1,27 +1,298 @@
 {
-  "Parent": "Template_Pkmn_Flying",
-  "Model": "NPC/Pkmn/Dodrio/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Dodrio/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Dodrio.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Dodrio_Cry"
+    "Parent": "Template_Pkmn_Flying",
+    "Model": "NPC/Pkmn/Dodrio/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Dodrio/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Dodrio.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Dodrio_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Dodrio_Cry"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Crow": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Crow.blockyanim"
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Curious.blockyanim"
+                }
+            ]
+        },
+        "Eat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Eat.blockyanim"
+                }
+            ]
+        },
+        "FleeHappy": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Flee_Happy.blockyanim"
+                }
+            ]
+        },
+        "FleeScared": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Flee_Scared.blockyanim"
+                }
+            ]
+        },
+        "LookAround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Look_Around.blockyanim"
+                }
+            ]
+        },
+        "Search": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Search.blockyanim"
+                }
+            ]
+        },
+        "Stare": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Stare.blockyanim"
+                }
+            ]
+        },
+        "Stare2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Stare2.blockyanim"
+                }
+            ]
+        },
+        "Stare3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Stare3.blockyanim"
+                }
+            ]
+        },
+        "Stare4": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Stare4.blockyanim"
+                }
+            ]
+        },
+        "Threaten": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Flavor/Threaten.blockyanim"
+                }
+            ]
+        },
+        "DrillPeck": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Fly/Drill_Peck.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Attacks/Bite/Bite.blockyanim"
+                }
+            ]
+        },
+        "BiteMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Dodrio/Animations/Attacks/Bite/Bite_Moving.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Dodrio/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Dodrio_Cry"
-        }
-      ]
     }
-  }
 }

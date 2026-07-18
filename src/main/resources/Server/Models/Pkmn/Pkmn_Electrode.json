@@ -1,27 +1,148 @@
 {
-  "Parent": "Template_Pkmn_Ghost",
-  "Model": "NPC/Pkmn/Electrode/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Electrode/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Electrode.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Electrode/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Electrode_Cry"
+    "Parent": "Template_Pkmn_Ghost",
+    "Model": "NPC/Pkmn/Electrode/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Electrode/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Electrode.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Electrode_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Electrode_Cry"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Fall.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Hurt.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Jump.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "Despawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Default/Despawn.blockyanim"
+                }
+            ]
+        },
+        "Idle2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Idles/Idle2.blockyanim"
+                }
+            ]
+        },
+        "Idle3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Electrode/Animations/Idles/Idle3.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Electrode/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Electrode_Cry"
-        }
-      ]
     }
-  }
 }

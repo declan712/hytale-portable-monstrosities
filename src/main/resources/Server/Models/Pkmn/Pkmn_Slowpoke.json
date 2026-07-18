@@ -1,27 +1,321 @@
 {
-  "Parent": "Template_Pkmn_Quad",
-  "Model": "NPC/Pkmn/Slowpoke/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Slowpoke/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Slowpoke.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Slowpoke_Cry"
+    "Parent": "Template_Pkmn_Quad",
+    "Model": "NPC/Pkmn/Slowpoke/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Slowpoke/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Slowpoke.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Slowpoke_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Slowpoke_Cry"
+                }
+            ]
+        },
+        "BiteLeap": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Attacks/Bite_Leap.blockyanim"
+                }
+            ]
+        },
+        "Breath": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Attacks/Breath.blockyanim"
+                }
+            ]
+        },
+        "ScratchLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Attacks/Scratch_Left.blockyanim"
+                }
+            ]
+        },
+        "ScratchLeftMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Attacks/Scratch_Left_Moving.blockyanim"
+                }
+            ]
+        },
+        "ScratchRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Attacks/Scratch_Right.blockyanim"
+                }
+            ]
+        },
+        "ScratchRightMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Attacks/Scratch_Right_Moving.blockyanim"
+                }
+            ]
+        },
+        "Tackle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Attacks/Tackle.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Damage/Hurt2.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "FallFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Fall_Far.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Jump_Far.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "LookAround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Flavor/Look_Around.blockyanim"
+                }
+            ]
+        },
+        "LookLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Flavor/Look_Left.blockyanim"
+                }
+            ]
+        },
+        "LookRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Flavor/Look_Right.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Dive.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Dive_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Dive_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Slowpoke/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Slowpoke/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Slowpoke_Cry"
-        }
-      ]
     }
-  }
 }

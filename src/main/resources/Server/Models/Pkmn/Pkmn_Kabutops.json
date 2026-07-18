@@ -1,27 +1,1000 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Kabutops/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Kabutops/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Kabutops.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Kabutops_Cry"
+    "Parent": "Template_Pkmn_Bi",
+    "Model": "NPC/Pkmn/Kabutops/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Kabutops/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Kabutops.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Kabutops_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Kabutops_Cry"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "BiteMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Bite_Moving.blockyanim"
+                }
+            ]
+        },
+        "Breath": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Breath.blockyanim"
+                }
+            ]
+        },
+        "GroundSlam": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Ground_Slam.blockyanim"
+                }
+            ]
+        },
+        "GroundSlamMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Ground_Slam_Moving.blockyanim"
+                }
+            ]
+        },
+        "ScratchLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Scratch_Left.blockyanim"
+                }
+            ]
+        },
+        "ScratchLeftMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Scratch_Left_Moving.blockyanim"
+                }
+            ]
+        },
+        "ScratchRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Scratch_Right.blockyanim"
+                }
+            ]
+        },
+        "ScratchRightMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Scratch_Right_Moving.blockyanim"
+                }
+            ]
+        },
+        "Spin": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Spin.blockyanim"
+                }
+            ]
+        },
+        "SpinHeavy": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Spin_Heavy.blockyanim"
+                }
+            ]
+        },
+        "Stomp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Stomp.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingLeftMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Swing_Left_Moving.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "SwingRightMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Swing_Right_Moving.blockyanim"
+                }
+            ]
+        },
+        "ThrowLift": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Throw_Lift.blockyanim"
+                }
+            ]
+        },
+        "ThrowLiftFirstperson": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Throw_Lift_FirstPerson.blockyanim"
+                }
+            ]
+        },
+        "ThrowRelease": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Attacks/Throw_Release.blockyanim"
+                }
+            ]
+        },
+        "ClimbDown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Down.blockyanim"
+                }
+            ]
+        },
+        "ClimbDownFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Down_FPS.blockyanim"
+                }
+            ]
+        },
+        "ClimbIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Idle.blockyanim"
+                }
+            ]
+        },
+        "ClimbIdleFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Idle_FPS.blockyanim"
+                }
+            ]
+        },
+        "ClimbLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Left.blockyanim"
+                }
+            ]
+        },
+        "ClimbLeftFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Left_FPS.blockyanim"
+                }
+            ]
+        },
+        "ClimbRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Right.blockyanim"
+                }
+            ]
+        },
+        "ClimbRightFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Right_FPS.blockyanim"
+                }
+            ]
+        },
+        "ClimbUp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Up.blockyanim"
+                }
+            ]
+        },
+        "ClimbUpFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Climb/Climb_Up_FPS.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Default/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Default/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "DashBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Dash/Dash_Backward.blockyanim"
+                }
+            ]
+        },
+        "DashForward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Dash/Dash_Forward.blockyanim"
+                }
+            ]
+        },
+        "DashLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Dash/Dash_Left.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Dash_Left.blockyanim"
+                }
+            ]
+        },
+        "DashRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Dash/Dash_Right.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Dash_Right.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Crouch_FPS.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackwardFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Crouch_Walk_Backward_FPS.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Crouch_Walk_FPS.blockyanim"
+                }
+            ]
+        },
+        "DashBack": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Dash_Back.blockyanim"
+                }
+            ]
+        },
+        "DashFront": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Dash_Front.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Fall2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Fall2.blockyanim"
+                }
+            ]
+        },
+        "Fall2Fps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Fall2_FPS.blockyanim"
+                }
+            ]
+        },
+        "FallFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Fall_Far.blockyanim"
+                }
+            ]
+        },
+        "FallFarFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Fall_Far_FPS.blockyanim"
+                }
+            ]
+        },
+        "FallFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Fall_FPS.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "IdleFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Idle_FPS.blockyanim"
+                }
+            ]
+        },
+        "Interact": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Interact.blockyanim"
+                }
+            ]
+        },
+        "InteractFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Interact_FPS.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpCrouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Crouch.blockyanim"
+                }
+            ]
+        },
+        "JumpCrouchFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Crouch_FPS.blockyanim"
+                }
+            ]
+        },
+        "JumpFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Far.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Far2.blockyanim"
+                }
+            ]
+        },
+        "JumpFar2Fps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Far2_FPS.blockyanim"
+                }
+            ]
+        },
+        "JumpFarFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Far_FPS.blockyanim"
+                }
+            ]
+        },
+        "JumpFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_FPS.blockyanim"
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Run.blockyanim"
+                }
+            ]
+        },
+        "JumpRun2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Jump_Run2.blockyanim"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "RunBackwardFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Run_Backward_FPS.blockyanim"
+                }
+            ]
+        },
+        "RunFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Run_FPS.blockyanim"
+                }
+            ]
+        },
+        "RunSlow": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Run_Slow.blockyanim"
+                }
+            ]
+        },
+        "RunSlowFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Run_Slow_FPS.blockyanim"
+                }
+            ]
+        },
+        "SitGround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Sit_Ground.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Sleep2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Sleep2.blockyanim"
+                }
+            ]
+        },
+        "Spawn2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Spawn2.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "SprintFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Sprint_FPS.blockyanim"
+                }
+            ]
+        },
+        "StepCrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "StepCrouchWalk2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Crouch_Walk2.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepRun2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Run2.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepSprint2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Sprint2.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "StepWalk2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Step_Walk2.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "WalkBackwardFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Walk_Backward_FPS.blockyanim"
+                }
+            ]
+        },
+        "WalkFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Walk_FPS.blockyanim"
+                }
+            ]
+        },
+        "Eat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Eat.blockyanim"
+                }
+            ]
+        },
+        "EatFinish": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Eat_Finish.blockyanim"
+                }
+            ]
+        },
+        "GreetFrog": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Greet_Frog.blockyanim"
+                }
+            ]
+        },
+        "Hunch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Hunch.blockyanim"
+                }
+            ]
+        },
+        "LookAround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Look_Around.blockyanim"
+                }
+            ]
+        },
+        "LookAround2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Look_Around2.blockyanim"
+                }
+            ]
+        },
+        "LookDown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Look_Down.blockyanim"
+                }
+            ]
+        },
+        "LookLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Look_Left.blockyanim"
+                }
+            ]
+        },
+        "LookRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Look_Right.blockyanim"
+                }
+            ]
+        },
+        "LookUp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Look_Up.blockyanim"
+                }
+            ]
+        },
+        "Scared": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Scared.blockyanim"
+                }
+            ]
+        },
+        "Sniff": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Sniff.blockyanim"
+                }
+            ]
+        },
+        "SniffGround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Flavor/Sniff_Ground.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyBackwardFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Backward_FPS.blockyanim"
+                }
+            ]
+        },
+        "FlyCrouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Crouch.blockyanim"
+                }
+            ]
+        },
+        "FlyCrouchBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Crouch_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyCrouchIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Crouch_Idle.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyFastFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Fast_FPS.blockyanim"
+                }
+            ]
+        },
+        "FlyFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_FPS.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "FlyIdleFps": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Fly/Fly_Idle_FPS.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Dive.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Dive_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Dive_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
+        },
+        "HurtBurn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Burn/Hurt_Burn.blockyanim"
+                }
+            ]
+        },
+        "Death2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Default/Death2.blockyanim"
+                }
+            ]
+        },
+        "Hurt2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Default/Hurt2.blockyanim"
+                }
+            ]
+        },
+        "Hurt3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Default/Hurt3.blockyanim"
+                }
+            ]
+        },
+        "Hurt4": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Default/Hurt4.blockyanim"
+                }
+            ]
+        },
+        "DeathDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Drown/Death_Drown.blockyanim"
+                }
+            ]
+        },
+        "HurtDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Drown/Hurt_Drown.blockyanim"
+                }
+            ]
+        },
+        "DeathFall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Fall/Death_Fall.blockyanim"
+                }
+            ]
+        },
+        "DeathFall2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Fall/Death_Fall2.blockyanim"
+                }
+            ]
+        },
+        "HurtFall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Fall/Hurt_Fall.blockyanim"
+                }
+            ]
+        },
+        "HurtFall2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Fall/Hurt_Fall2.blockyanim"
+                }
+            ]
+        },
+        "DeathFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Fly/Death_Fly.blockyanim"
+                }
+            ]
+        },
+        "DeathFlyImpact": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Kabutops/Animations/Damage/Fly/Death_Fly_Impact.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Kabutops/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Kabutops_Cry"
-        }
-      ]
     }
-  }
 }

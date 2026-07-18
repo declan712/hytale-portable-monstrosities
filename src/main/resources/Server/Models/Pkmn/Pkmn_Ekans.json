@@ -1,25 +1,186 @@
 {
-  "Parent": "Template_Pkmn_Snake",
-  "Model": "NPC/Pkmn/Ekans/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Ekans/Models/Model_Textures/Ekans.png",
-  "DefaultAttachments": [
-    {
-      "Model": "NPC/Beast/Snake/Models/Attachments/Rattle.blockymodel",
-      "Texture": "NPC/Beast/Snake/Models/Attachments/Rattle_Rattle.png"
-    }
-  ],
-  "Icon": "Icons/ModelsGenerated/Pkmn_Ekans.png",
-  "IconProperties": {
-    "Scale": 0.4,
-    "Rotation": [
-      0,
-      -45,
-      0
+    "Parent": "Template_Pkmn_Snake",
+    "Model": "NPC/Pkmn/Ekans/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Ekans/Models/Model_Textures/Ekans.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Ekans.png",
+    "DefaultAttachments": [
+        {
+        "Model": "NPC/Beast/Snake/Models/Attachments/Rattle.blockymodel",
+        "Texture": "NPC/Beast/Snake/Models/Attachments/Rattle_Rattle.png"
+        }
     ],
-    "Translation": [
-      0,
-      -32
-    ]
-  },
-  "AnimationSets": {}
+    "AnimationSets": {
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Jump_Run.blockyanim"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Ekans/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        }
+    },
+    "IconProperties": {
+        "Scale": 0.4,
+        "Rotation": [
+            0,
+            -45,
+            0
+        ],
+        "Translation": [
+            0,
+            -32
+        ]
+    }
 }

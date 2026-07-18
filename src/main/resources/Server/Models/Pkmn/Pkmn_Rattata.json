@@ -1,220 +1,227 @@
 {
-  "Parent": "Template_Pkmn_Quad",
-  "Model": "NPC/Pkmn/Rattata/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Rattata/Models/Texture.png",
-  "EyeHeight": 0.5,
-  "CrouchOffset": -0.1,
-  "HitBox": {
-    "Max": {
-      "X": 0.4,
-      "Y": 0.7,
-      "Z": 0.4
-    },
-    "Min": {
-      "X": -0.4,
-      "Y": 0,
-      "Z": -0.4
-    }
-  },
-  "MinScale": 0.75,
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Walk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Walk.blockyanim"
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Walk_Backward.blockyanim"
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Run.blockyanim"
-        }
-      ]
-    },
-    "Crouch": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Crouch.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false
-        }
-      ]
-    },
-    "CrouchWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Crouch_Walk.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "CrouchWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Crouch_Walk_Backward.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "Jump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "JumpWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.6
-        }
-      ]
-    },
-    "JumpRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Jump_Far.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.6
-        }
-      ]
-    },
-    "Fall": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Fall.blockyanim",
-          "BlendingDuration": 0.4,
-          "Looping": true
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Rattata_Cry"
-        }
-      ]
-    },
-    "Curious": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Curious.blockyanim",
-          "SoundEventId": "SFX_Pkmn_Rattata_Cry"
-        }
-      ]
-    },
-    "Hurt": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Damage/Hurt.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "SoundEventId": "SFX_Rat_Hurt"
-        }
-      ]
-    },
-    "Death": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Damage/Death.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Rat_Death"
-        }
-      ]
-    },
-    "Laydown": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Laydown.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Sleep": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Sleep.blockyanim"
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Wake.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Rattata_Cry"
-        }
-      ]
-    },
-    "IdlePassive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Sniff.blockyanim"
+    "Parent": "Template_Pkmn_Quad",
+    "HitBox": {
+        "Max": {
+            "X": 0.4,
+            "Y": 0.7,
+            "Z": 0.4
         },
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Sniff_Stand.blockyanim"
-        },
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Itch.blockyanim"
+        "Min": {
+            "X": -0.4,
+            "Y": 0,
+            "Z": -0.4
         }
-      ],
-      "NextAnimationDelay": {
-        "Max": 10,
-        "Min": 2
-      }
     },
-    "Flee": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Flee.blockyanim"
+    "Model": "NPC/Pkmn/Rattata/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Rattata/Models/Texture.png",
+    "EyeHeight": 0.5,
+    "CrouchOffset": -0.1,
+    "MinScale": 0.75,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Rattata.png",
+    "AnimationSets": {
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Crouch.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Crouch_Walk.blockyanim",
+                    "BlendingDuration": 0.1
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Crouch_Walk_Backward.blockyanim",
+                    "BlendingDuration": 0.1
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.8,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.6,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Jump_Far.blockyanim",
+                    "Speed": 0.6,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Fall.blockyanim",
+                    "BlendingDuration": 0.4,
+                    "Looping": true
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Rattata_Cry"
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Curious.blockyanim",
+                    "SoundEventId": "SFX_Pkmn_Rattata_Cry"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Damage/Hurt.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Rat_Hurt"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Damage/Death.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Rat_Death"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Rattata_Cry"
+                }
+            ]
+        },
+        "IdlePassive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Sniff.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Sniff_Stand.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Itch.blockyanim"
+                }
+            ],
+            "NextAnimationDelay": {
+                "Max": 10,
+                "Min": 2
+            }
+        },
+        "Flee": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Flavor/Flee.blockyanim"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Rattata/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
         }
-      ]
+    },
+    "IconProperties": {
+        "Scale": 0.4,
+        "Rotation": [
+            0,
+            321,
+            0
+        ],
+        "Translation": [
+            0,
+            -43
+        ]
     }
-  },
-  "Icon": "Icons/ModelsGenerated/Pkmn_Rattata.png",
-  "IconProperties": {
-    "Scale": 0.4,
-    "Rotation": [
-      0,
-      321,
-      0
-    ],
-    "Translation": [
-      0,
-      -43
-    ]
-  }
 }

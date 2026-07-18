@@ -1,374 +1,437 @@
 {
-  "Parent": "Template_Pkmn",
-  "Model": "NPC/Pkmn/Haunter/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Haunter/Models/Texture.png",
-  "EyeHeight": 0.45,
-  "HitBox": {
-    "Max": {
-      "X": 0.4,
-      "Y": 0.9,
-      "Z": 0.4
-    },
-    "Min": {
-      "X": -0.4,
-      "Y": 0,
-      "Z": -0.4
-    }
-  },
-  "Camera": {
-    "Pitch": {
-      "AngleRange": {
-        "Max": 180,
-        "Min": -180
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    },
-    "Yaw": {
-      "AngleRange": {
-        "Max": 180,
-        "Min": -180
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    }
-  },
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
+    "Parent": "Template_Pkmn",
+    "Camera": {
+        "Pitch": {
+            "AngleRange": {
+                "Max": 180,
+                "Min": -180
+            },
+            "TargetNodes": [
+                "Head"
+            ]
+        },
+        "Yaw": {
+            "AngleRange": {
+                "Max": 180,
+                "Min": -180
+            },
+            "TargetNodes": [
+                "Head"
+            ]
         }
-      ]
     },
-    "Walk": {
-      "Animations": [
+    "Light": {
+        "Color": "#308",
+        "Radius": 1
+    },
+    "Particles": [
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "R-Horn"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": 0
+            },
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "L-Horn"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Jump": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": 0.25
+            },
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "R-Hand"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
-        }
-      ]
-    },
-    "JumpWalk": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": 0.25
+            },
+            "SystemId": "Spectre_Void_Hands",
+            "TargetNodeName": "L-Hand"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
-        }
-      ]
-    },
-    "JumpRun": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": 0,
+                "Z": 0
+            },
+            "SystemId": "Spectre_Void_Tail",
+            "TargetNodeName": "Chest"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
-        }
-      ]
-    },
-    "Fall": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": -0.4,
+                "Z": 0.1
+            },
+            "RotationOffset": {
+                "Pitch": 0,
+                "Roll": 0,
+                "Yaw": 0
+            },
+            "SystemId": "Spectre_Void_Arms",
+            "TargetNodeName": "R-Arm"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Fall.blockyanim",
-          "BlendingDuration": 0.4
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
+            "PositionOffset": {
+                "Y": -0.4,
+                "Z": 0.1
+            },
+            "RotationOffset": {
+                "Pitch": -10,
+                "Roll": 0,
+                "Yaw": 0
+            },
+            "SystemId": "Spectre_Void_Arms",
+            "TargetNodeName": "L-Arm"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Haunter_Cry"
-        }
-      ]
-    },
-    "FlyIdle": {
-      "Animations": [
+            "SystemId": "Spectre_Void_Body",
+            "TargetNodeName": "Chest"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Fly": {
-      "Animations": [
+            "PositionOffset": {
+                "X": 0.125
+            },
+            "SystemId": "Spectre_Void_Head",
+            "TargetNodeName": "Head"
+        },
         {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
+            "PositionOffset": {
+                "X": -0.125,
+                "Y": 0,
+                "Z": 0
+            },
+            "SystemId": "Spectre_Void_Head",
+            "TargetNodeName": "Head"
         }
-      ]
-    },
-    "FlyBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FlyFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Swim": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimJump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
-        }
-      ]
-    },
-    "SwimFloat": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "SwimSink": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "SwimDive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimDiveBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "SwimDiveFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FluidIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "FluidWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FluidWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "FluidRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Hurt": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Damage/Hurt.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Haunter_Cry"
-        }
-      ]
-    },
-    "Despawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Haunter/Animations/Default/Despawn.blockyanim",
-          "Looping": false
-        }
-      ]
-    }
-  },
-  "Particles": [
-    {
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "R-Horn"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0
-      },
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "L-Horn"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0.25
-      },
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "R-Hand"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0.25
-      },
-      "SystemId": "Spectre_Void_Hands",
-      "TargetNodeName": "L-Hand"
-    },
-    {
-      "PositionOffset": {
-        "Y": 0,
-        "Z": 0
-      },
-      "SystemId": "Spectre_Void_Tail",
-      "TargetNodeName": "Chest"
-    },
-    {
-      "PositionOffset": {
-        "Y": -0.4,
-        "Z": 0.1
-      },
-      "RotationOffset": {
-        "Pitch": 0,
-        "Roll": 0,
-        "Yaw": 0
-      },
-      "SystemId": "Spectre_Void_Arms",
-      "TargetNodeName": "R-Arm"
-    },
-    {
-      "PositionOffset": {
-        "Y": -0.4,
-        "Z": 0.1
-      },
-      "RotationOffset": {
-        "Pitch": -10,
-        "Roll": 0,
-        "Yaw": 0
-      },
-      "SystemId": "Spectre_Void_Arms",
-      "TargetNodeName": "L-Arm"
-    },
-    {
-      "SystemId": "Spectre_Void_Body",
-      "TargetNodeName": "Chest"
-    },
-    {
-      "PositionOffset": {
-        "X": 0.125
-      },
-      "SystemId": "Spectre_Void_Head",
-      "TargetNodeName": "Head"
-    },
-    {
-      "PositionOffset": {
-        "X": -0.125,
-        "Y": 0,
-        "Z": 0
-      },
-      "SystemId": "Spectre_Void_Head",
-      "TargetNodeName": "Head"
-    }
-  ],
-  "Light": {
-    "Color": "#308",
-    "Radius": 1
-  },
-  "MinScale": 0.9,
-  "MaxScale": 1.1,
-  "Icon": "Icons/ModelsGenerated/Pkmn_Haunter.png",
-  "IconProperties": {
-    "Scale": 0.4,
-    "Rotation": [
-      15,
-      306,
-      357
     ],
-    "Translation": [
-      2,
-      -37
-    ]
-  }
+    "HitBox": {
+        "Max": {
+            "X": 0.4,
+            "Y": 0.9,
+            "Z": 0.4
+        },
+        "Min": {
+            "X": -0.4,
+            "Y": 0,
+            "Z": -0.4
+        }
+    },
+    "Model": "NPC/Pkmn/Haunter/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Haunter/Models/Texture.png",
+    "EyeHeight": 0.45,
+    "MinScale": 0.9,
+    "MaxScale": 1.1,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Haunter.png",
+    "AnimationSets": {
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Idle.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Run.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Fall.blockyanim",
+                    "BlendingDuration": 0.4
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Fall.blockyanim"
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Haunter_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Jump.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimDive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimDiveBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "SwimDiveFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FluidIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "FluidWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FluidWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "FluidRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Run.blockyanim",
+                    "Speed": 0.8
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Damage/Hurt.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Haunter_Cry"
+                }
+            ]
+        },
+        "Despawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Default/Despawn.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "Idle2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Idles/Idle2.blockyanim"
+                }
+            ]
+        },
+        "Idle3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Haunter/Animations/Idles/Idle3.blockyanim"
+                }
+            ]
+        }
+    },
+    "IconProperties": {
+        "Scale": 0.4,
+        "Rotation": [
+            15,
+            306,
+            357
+        ],
+        "Translation": [
+            2,
+            -37
+        ]
+    }
 }

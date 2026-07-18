@@ -1,195 +1,367 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Blastoise/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Blastoise/Models/Texture.png",
-  "EyeHeight": 0.9,
-  "CrouchOffset": -0.2,
-  "HitBox": {
-    "Max": {
-      "X": 1,
-      "Y": 1.8,
-      "Z": 1
+    "Parent": "Template_Pkmn_Bi",
+    "Camera": {
+        "Pitch": {
+            "AngleRange": {
+                "Max": 45,
+                "Min": -15
+            },
+            "TargetNodes": [
+                "Head"
+            ]
+        },
+        "Yaw": {
+            "AngleRange": {
+                "Max": 30,
+                "Min": -30
+            },
+            "TargetNodes": [
+                "Head"
+            ]
+        },
+        "PositionOffset": {
+            "X": 0.55,
+            "Y": 0.2,
+            "Z": 3.4
+        }
     },
-    "Min": {
-      "X": -1,
-      "Y": 0,
-      "Z": -1
+    "HitBox": {
+        "Max": {
+            "X": 1,
+            "Y": 1.8,
+            "Z": 1
+        },
+        "Min": {
+            "X": -1,
+            "Y": 0,
+            "Z": -1
+        }
+    },
+    "Model": "NPC/Pkmn/Blastoise/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Blastoise/Models/Texture.png",
+    "EyeHeight": 0.9,
+    "CrouchOffset": -0.2,
+    "MinScale": 1.3,
+    "MaxScale": 1.6,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Blastoise.png",
+    "AnimationSets": {
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.8,
+                    "SoundEventId": "SFX_Pkmn_Large_Walk",
+                    "FootstepIntervals": [
+                        50,
+                        100
+                    ]
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.8,
+                    "SoundEventId": "SFX_Pkmn_Large_Walk",
+                    "FootstepIntervals": [
+                        50,
+                        100
+                    ]
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Run.blockyanim",
+                    "Speed": 0.6,
+                    "SoundEventId": "SFX_Pkmn_Large_Walk",
+                    "FootstepIntervals": [
+                        50,
+                        100
+                    ]
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Template_Bi/Animations/Default/Sprint.blockyanim",
+                    "Speed": 0.75,
+                    "SoundEventId": "SFX_Pkmn_Large_Walk",
+                    "FootstepIntervals": [
+                        50,
+                        100
+                    ]
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Blastoise_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Blastoise_Cry"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Laydown.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Wake.blockyanim"
+                }
+            ]
+        },
+        "Spin": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Spin.blockyanim"
+                }
+            ]
+        },
+        "SpinHeavy": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Spin_Heavy.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackwards": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Breath": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Breath.blockyanim"
+                }
+            ]
+        },
+        "GroundSlam": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Ground_Slam.blockyanim"
+                }
+            ]
+        },
+        "GroundSlamMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Ground_Slam_Moving.blockyanim"
+                }
+            ]
+        },
+        "Shoot": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Shoot.blockyanim"
+                }
+            ]
+        },
+        "Stomp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Stomp.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingLeftMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Swing_Left_Moving.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "SwingRightMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Swing_Right_Moving.blockyanim"
+                }
+            ]
+        },
+        "ClimbDown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Climb/Climb_Down.blockyanim"
+                }
+            ]
+        },
+        "ClimbIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Climb/Climb_Idle.blockyanim"
+                }
+            ]
+        },
+        "ClimbLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Climb/Climb_Left.blockyanim"
+                }
+            ]
+        },
+        "ClimbRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Climb/Climb_Right.blockyanim"
+                }
+            ]
+        },
+        "ClimbUp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Climb/Climb_Up.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Death2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Damage/Death2.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Damage/Hurt2.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Fall2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Fall2.blockyanim"
+                }
+            ]
+        },
+        "FallFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Fall_Far.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Jump_Far.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Jump_Far2.blockyanim"
+                }
+            ]
+        }
+    },
+    "IconProperties": {
+        "Scale": 0.15,
+        "Rotation": [
+            0,
+            -45,
+            0
+        ],
+        "Translation": [
+            5,
+            -75
+        ]
     }
-  },
-  "MinScale": 1.3,
-  "MaxScale": 1.6,
-  "Camera": {
-    "Pitch": {
-      "AngleRange": {
-        "Max": 45,
-        "Min": -15
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    },
-    "Yaw": {
-      "AngleRange": {
-        "Max": 30,
-        "Min": -30
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    },
-    "PositionOffset": {
-      "X": 0.55,
-      "Y": 0.2,
-      "Z": 3.4
-    }
-  },
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Walk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Walk.blockyanim",
-          "Speed": 0.8,
-          "FootstepIntervals": [
-            50,
-            100
-          ],
-          "SoundEventId": "SFX_Pkmn_Large_Walk"
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.8,
-          "FootstepIntervals": [
-            50,
-            100
-          ],
-          "SoundEventId": "SFX_Pkmn_Large_Walk"
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Run.blockyanim",
-          "Speed": 0.6,
-          "FootstepIntervals": [
-            50,
-            100
-          ],
-          "SoundEventId": "SFX_Pkmn_Large_Walk"
-        }
-      ]
-    },
-    "Sprint": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Template_Bi/Animations/Default/Sprint.blockyanim",
-          "Speed": 0.75,
-          "FootstepIntervals": [
-            50,
-            100
-          ],
-          "SoundEventId": "SFX_Pkmn_Large_Walk"
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Blastoise_Cry"
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Spawn.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0,
-          "SoundEventId": "SFX_Pkmn_Blastoise_Cry"
-        }
-      ]
-    },
-    "Laydown": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Laydown.blockyanim"
-        }
-      ]
-    },
-    "Sleep": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Sleep.blockyanim"
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Wake.blockyanim"
-        }
-      ]
-    },
-    "Spin": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Spin.blockyanim"
-        }
-      ]
-    },
-    "SpinHeavy": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Attacks/Spin_Heavy.blockyanim"
-        }
-      ]
-    },
-    "Crouch": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Crouch.blockyanim"
-        }
-      ]
-    },
-    "CrouchWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Crouch_Walk.blockyanim"
-        }
-      ]
-    },
-    "CrouchWalkBackwards": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Blastoise/Animations/Default/Crouch_Walk_Backward.blockyanim"
-        }
-      ]
-    }
-  },
-  "IconProperties": {
-    "Scale": 0.15,
-    "Rotation": [
-      0,
-      -45,
-      0
-    ],
-    "Translation": [
-      5,
-      -75
-    ]
-  },
-  "Icon": "Icons/ModelsGenerated/Pkmn_Blastoise.png"
 }

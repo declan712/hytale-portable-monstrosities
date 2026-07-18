@@ -1,56 +1,335 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Venomoth/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Venomoth/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Venomoth.png",
-  "EyeHeight": 0.7,
-  "CrouchOffset": -0.2,
-  "HitBox": {
-    "Max": {
-      "X": 0.45,
-      "Y": 0.9,
-      "Z": 0.45
-    },
-    "Min": {
-      "X": -0.45,
-      "Y": 0,
-      "Z": -0.45
-    }
-  },
-  "MinScale": 0.9,
-  "MaxScale": 1,
-  "AnimationSets": {
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Template/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Venomoth_Cry"
+    "Parent": "Template_Pkmn_Bi",
+    "HitBox": {
+        "Max": {
+            "X": 0.45,
+            "Y": 0.9,
+            "Z": 0.45
+        },
+        "Min": {
+            "X": -0.45,
+            "Y": 0,
+            "Z": -0.45
         }
-      ]
     },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Template/Animations/Default/Alerted.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Venomoth_Cry"
+    "Model": "NPC/Pkmn/Venomoth/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Venomoth/Models/Texture.png",
+    "EyeHeight": 0.7,
+    "CrouchOffset": -0.2,
+    "MinScale": 0.9,
+    "MaxScale": 1,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Venomoth.png",
+    "AnimationSets": {
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Template/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Venomoth_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Spawn.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Template/Animations/Default/Alerted.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Venomoth_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "DeathDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Death_Drown.blockyanim"
+                }
+            ]
+        },
+        "DeathFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Death_Fly.blockyanim"
+                }
+            ]
+        },
+        "DeathFlyImpact": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Death_Fly_Impact.blockyanim"
+                }
+            ]
+        },
+        "DeathSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Death_Swim.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "HurtDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Hurt_Drown.blockyanim"
+                }
+            ]
+        },
+        "HurtFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Hurt_Fly.blockyanim"
+                }
+            ]
+        },
+        "HurtSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Damage/Hurt_Swim.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Covered": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Flavor/Covered.blockyanim"
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Flavor/Curious.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venomoth/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
         }
-      ]
+    },
+    "IconProperties": {
+        "Scale": 0.3,
+        "Rotation": [
+            0,
+            303,
+            0
+        ],
+        "Translation": [
+            0,
+            -46
+        ]
     }
-  },
-  "IconProperties": {
-    "Scale": 0.3,
-    "Rotation": [
-      0,
-      303,
-      0
-    ],
-    "Translation": [
-      0,
-      -46
-    ]
-  }
 }

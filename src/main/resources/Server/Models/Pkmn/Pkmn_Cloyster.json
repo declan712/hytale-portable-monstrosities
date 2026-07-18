@@ -1,27 +1,580 @@
 {
-  "Parent": "Template_Pkmn_Swimming",
-  "Model": "NPC/Pkmn/Cloyster/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Cloyster/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Cloyster.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Cloyster_Cry"
+    "Parent": "Template_Pkmn_Swimming",
+    "Model": "NPC/Pkmn/Cloyster/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Cloyster/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Cloyster.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Cloyster_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Cloyster_Cry"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "BiteMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Bite_Moving.blockyanim"
+                }
+            ]
+        },
+        "Breath": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Breath.blockyanim"
+                }
+            ]
+        },
+        "GroundSlam": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Ground_Slam.blockyanim"
+                }
+            ]
+        },
+        "GroundSlamMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Ground_Slam_Moving.blockyanim"
+                }
+            ]
+        },
+        "ScratchLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Scratch_Left.blockyanim"
+                }
+            ]
+        },
+        "ScratchLeftMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Scratch_Left_Moving.blockyanim"
+                }
+            ]
+        },
+        "ScratchRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Scratch_Right.blockyanim"
+                }
+            ]
+        },
+        "ScratchRightMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Scratch_Right_Moving.blockyanim"
+                }
+            ]
+        },
+        "Spin": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Spin.blockyanim"
+                }
+            ]
+        },
+        "SpinHeavy": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Spin_Heavy.blockyanim"
+                }
+            ]
+        },
+        "Stomp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Stomp.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingLeftMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Swing_Left_Moving.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "SwingRightMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Swing_Right_Moving.blockyanim"
+                }
+            ]
+        },
+        "ThrowLift": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Throw_Lift.blockyanim"
+                }
+            ]
+        },
+        "ThrowLiftFirstperson": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Throw_Lift_FirstPerson.blockyanim"
+                }
+            ]
+        },
+        "ThrowRelease": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Attacks/Throw_Release.blockyanim"
+                }
+            ]
+        },
+        "ClimbDown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Climb/Climb_Down.blockyanim"
+                }
+            ]
+        },
+        "ClimbIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Climb/Climb_Idle.blockyanim"
+                }
+            ]
+        },
+        "ClimbLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Climb/Climb_Left.blockyanim"
+                }
+            ]
+        },
+        "ClimbRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Climb/Climb_Right.blockyanim"
+                }
+            ]
+        },
+        "ClimbUp": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Climb/Climb_Up.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Fall2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Fall2.blockyanim"
+                }
+            ]
+        },
+        "FallFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Fall_Far.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Jump_Far.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Jump_Run.blockyanim"
+                }
+            ]
+        },
+        "JumpRun2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Jump_Run2.blockyanim"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Spawn2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Spawn2.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepRun2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Step_Run2.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepSprint2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Step_Sprint2.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "StepWalk2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Step_Walk2.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Curious.blockyanim"
+                }
+            ]
+        },
+        "Eat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Eat.blockyanim"
+                }
+            ]
+        },
+        "EatFinish": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Eat_Finish.blockyanim"
+                }
+            ]
+        },
+        "Greetanimation": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/GreetAnimation.blockyanim"
+                }
+            ]
+        },
+        "GreetFrog": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Greet_Frog.blockyanim"
+                }
+            ]
+        },
+        "Happy": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Happy.blockyanim"
+                }
+            ]
+        },
+        "Hunch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Hunch.blockyanim"
+                }
+            ]
+        },
+        "Scared": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Scared.blockyanim"
+                }
+            ]
+        },
+        "Sniff": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Sniff.blockyanim"
+                }
+            ]
+        },
+        "SniffGround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Sniff_Ground.blockyanim"
+                }
+            ]
+        },
+        "Threaten": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Threaten.blockyanim"
+                }
+            ]
+        },
+        "TiltHead": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Flavor/Tilt_Head.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Dive.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Dive_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Dive_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Cloyster/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Cloyster/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Cloyster_Cry"
-        }
-      ]
     }
-  }
 }

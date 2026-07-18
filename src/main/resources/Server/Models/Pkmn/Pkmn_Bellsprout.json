@@ -1,158 +1,191 @@
 {
-  "Parent": "Template_Pkmn_Bi",
-  "Model": "NPC/Pkmn/Bellsprout/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Bellsprout/Models/Texture.png",
-  "EyeHeight": 0.7,
-  "MinScale": 0.4,
-  "MaxScale": 0.6,
-  "HitBox": {
-    "Max": {
-      "X": 0.4,
-      "Y": 1.7,
-      "Z": 0.4
+    "Parent": "Template_Pkmn_Bi",
+    "Camera": {
+        "Pitch": {
+            "TargetNodes": [
+                "Head"
+            ]
+        },
+        "Yaw": {
+            "TargetNodes": [
+                "Head"
+            ]
+        }
     },
-    "Min": {
-      "X": -0.4,
-      "Y": 0,
-      "Z": -0.4
+    "HitBox": {
+        "Max": {
+            "X": 0.4,
+            "Y": 1.7,
+            "Z": 0.4
+        },
+        "Min": {
+            "X": -0.4,
+            "Y": 0,
+            "Z": -0.4
+        }
+    },
+    "Model": "NPC/Pkmn/Bellsprout/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Bellsprout/Models/Texture.png",
+    "EyeHeight": 0.7,
+    "MinScale": 0.4,
+    "MaxScale": 0.6,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Bellsprout.png",
+    "AnimationSets": {
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.8,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.8,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.8,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Fall.blockyanim",
+                    "BlendingDuration": 0.4
+                },
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
+                    "Speed": 0.3
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Template/Animations/Default/Spawn.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Bellsprout_Cry"
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
+                    "Speed": 1.2,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Bellsprout_Cry"
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
+                    "Speed": 0.5,
+                    "Looping": false
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
+                    "Speed": 1.0,
+                    "Looping": false
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "Spit": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Bellsprout/Animations/Attacks/Spit.blockyanim"
+                }
+            ]
+        }
+    },
+    "IconProperties": {
+        "Scale": 0.25,
+        "Rotation": [
+            9,
+            325,
+            0
+        ],
+        "Translation": [
+            18,
+            -72
+        ]
     }
-  },
-  "Camera": {
-    "Pitch": {
-      "TargetNodes": [
-        "Head"
-      ]
-    },
-    "Yaw": {
-      "TargetNodes": [
-        "Head"
-      ]
-    }
-  },
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Walk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Walk.blockyanim"
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Walk_Backward.blockyanim"
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Run.blockyanim"
-        }
-      ]
-    },
-    "Jump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "JumpWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "JumpRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "Fall": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Fall.blockyanim",
-          "BlendingDuration": 0.4
-        }
-      ]
-    },
-    "Sleep": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
-          "Speed": 0.3
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Template/Animations/Default/Spawn.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Bellsprout_Cry"
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
-          "Looping": false,
-          "Speed": 1.2,
-          "SoundEventId": "SFX_Pkmn_Bellsprout_Cry"
-        }
-      ]
-    },
-    "Laydown": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
-          "Looping": false,
-          "Speed": 0.5
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Snapdragon/Animations/Default/Idle.blockyanim",
-          "Looping": false,
-          "Speed": 1.0
-        }
-      ]
-    }
-  },
-  "Icon": "Icons/ModelsGenerated/Pkmn_Bellsprout.png",
-  "IconProperties": {
-    "Scale": 0.25,
-    "Rotation": [
-      9,
-      325,
-      0
-    ],
-    "Translation": [
-      18,
-      -72
-    ]
-  }
 }

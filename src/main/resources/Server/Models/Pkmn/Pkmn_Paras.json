@@ -1,27 +1,270 @@
 {
-  "Parent": "Template_Pkmn_Worm",
-  "Model": "NPC/Pkmn/Paras/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Paras/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Paras.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Paras/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Paras_Cry"
+    "Parent": "Template_Pkmn_Worm",
+    "Model": "NPC/Pkmn/Paras/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Paras/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Paras.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Paras_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Paras_Cry"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Crouch_Walk_Left.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Crouch_Walk_Right.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "RunLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Run_Left.blockyanim"
+                }
+            ]
+        },
+        "RunRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Run_Right.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "SprintRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Sprint_Run.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "WalkLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Walk_Left.blockyanim"
+                }
+            ]
+        },
+        "WalkRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Default/Walk_Right.blockyanim"
+                }
+            ]
+        },
+        "DanceRave": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Emotes/Dance_Rave.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimDeath": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Swim/Swim_Death.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimHurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Swim/Swim_Hurt.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Paras/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Paras/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Paras_Cry"
-        }
-      ]
     }
-  }
 }

@@ -1,27 +1,227 @@
 {
-  "Parent": "Template_Pkmn_Swimming",
-  "Model": "NPC/Pkmn/Seaking/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Seaking/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Seaking.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Seaking/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Seaking_Cry"
+    "Parent": "Template_Pkmn_Swimming",
+    "Model": "NPC/Pkmn/Seaking/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Seaking/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Seaking.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Seaking_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Seaking_Cry"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "DeathFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Damage/Death_Fly.blockyanim"
+                }
+            ]
+        },
+        "DeathFlyImpact": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Damage/Death_Fly_Impact.blockyanim"
+                }
+            ]
+        },
+        "DeathSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Damage/Death_Swim.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "HurtFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Damage/Hurt_Fly.blockyanim"
+                }
+            ]
+        },
+        "HurtSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Damage/Hurt_Swim.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Bubble": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Flavor/Bubble.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Seaking/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Seaking/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Seaking_Cry"
-        }
-      ]
     }
-  }
 }

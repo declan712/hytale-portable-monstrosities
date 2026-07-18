@@ -1,379 +1,512 @@
 {
-  "Parent": "Template_Pkmn_Quad",
-  "Model": "NPC/Pkmn/Venusaur/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Venusaur/Models/Texture.png",
-  "EyeHeight": 0.9,
-  "CrouchOffset": -0.2,
-  "HitBox": {
-    "Max": {
-      "X": 1,
-      "Y": 1.8,
-      "Z": 1
-    },
-    "Min": {
-      "X": -1,
-      "Y": 0,
-      "Z": -1
-    }
-  },
-  "MinScale": 1.3,
-  "MaxScale": 1.6,
-  "Camera": {
-    "Pitch": {
-      "AngleRange": {
-        "Max": 45,
-        "Min": -15
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    },
-    "Yaw": {
-      "AngleRange": {
-        "Max": 30,
-        "Min": -30
-      },
-      "TargetNodes": [
-        "Head"
-      ]
-    },
-    "PositionOffset": {
-      "X": 0.55,
-      "Y": 0.2,
-      "Z": 3.4
-    }
-  },
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Spawn.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0,
-          "SoundEventId": "SFX_Pkmn_Venusaur_Cry"
-        }
-      ]
-    },
-    "Walk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk.blockyanim",
-          "FootstepIntervals": [
-            50,
-            100
-          ],
-          "SoundEventId": "SFX_Pkmn_Large_Walk"
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk_Backward.blockyanim",
-          "FootstepIntervals": [
-            50,
-            100
-          ],
-          "SoundEventId": "SFX_Pkmn_Large_Walk"
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Run.blockyanim",
-          "FootstepIntervals": [
-            50,
-            100
-          ],
-          "SoundEventId": "SFX_Pkmn_Large_Walk"
-        }
-      ]
-    },
-    "Crouch": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Crouch.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "CrouchWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Crouch_Walk.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "CrouchWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Crouch_Walk_Backward.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": true
-        }
-      ]
-    },
-    "Jump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Jump.blockyanim",
-          "Speed": 0.8,
-          "Looping": false,
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "JumpFar": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Jump_Far.blockyanim",
-          "Speed": 0.8,
-          "Looping": false,
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "Fall": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Fall.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0.4
-        }
-      ]
-    },
-    "FallFar": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Fall_Far.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0.4
-        }
-      ]
-    },
-    "Hurt": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Fall.blockyanim",
-          "Looping": false,
-          "BlendingDuration": 0.1
+    "Parent": "Template_Pkmn_Quad",
+    "Camera": {
+        "Pitch": {
+            "AngleRange": {
+                "Max": 45,
+                "Min": -15
+            },
+            "TargetNodes": [
+                "Head"
+            ]
         },
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Damage/Hurt2.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Venusaur_Cry"
-        }
-      ]
-    },
-    "Laydown": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Laydown.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Sleep": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Sleep.blockyanim"
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Wake.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Death": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Damage/Death.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "SwimIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Idle.blockyanim"
-        }
-      ]
-    },
-    "Swim": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim.blockyanim"
-        }
-      ]
-    },
-    "SwimBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Backward.blockyanim"
-        }
-      ]
-    },
-    "SwimFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Fast.blockyanim"
-        }
-      ]
-    },
-    "SwimJump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Jump.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "SwimFloat": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Float.blockyanim"
-        }
-      ]
-    },
-    "SwimSink": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Sink.blockyanim"
-        }
-      ]
-    },
-    "SwimDive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Dive.blockyanim"
-        }
-      ]
-    },
-    "SwimDiveFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Dive_Fast.blockyanim"
-        }
-      ]
-    },
-    "SwimDiveBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Dive_Backward.blockyanim"
-        }
-      ]
-    },
-    "FluidIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Idle.blockyanim",
-          "Speed": 0.6
-        }
-      ]
-    },
-    "FluidWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk.blockyanim",
-          "Speed": 0.6
-        }
-      ]
-    },
-    "FluidWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk_Backward.blockyanim",
-          "Speed": 0.6
-        }
-      ]
-    },
-    "FluidRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Run.blockyanim",
-          "Speed": 0.6
-        }
-      ]
-    },
-    "FlyIdle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly_Idle.blockyanim"
-        }
-      ]
-    },
-    "Fly": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly.blockyanim"
-        }
-      ]
-    },
-    "FlyFast": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly_Fast.blockyanim"
-        }
-      ]
-    },
-    "FlyBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly_Backward.blockyanim"
-        }
-      ]
-    },
-    "IdlePassive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Flavor/Look_Left.blockyanim"
+        "Yaw": {
+            "AngleRange": {
+                "Max": 30,
+                "Min": -30
+            },
+            "TargetNodes": [
+                "Head"
+            ]
         },
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Flavor/Look_Right.blockyanim"
-        },
-        {
-          "Animation": "NPC/Wildlife/Trillodon/Animations/Flavor/Look_Around.blockyanim"
+        "PositionOffset": {
+            "X": 0.55,
+            "Y": 0.2,
+            "Z": 3.4
         }
-      ],
-      "NextAnimationDelay": {
-        "Max": 10,
-        "Min": 2
-      }
+    },
+    "HitBox": {
+        "Max": {
+            "X": 1,
+            "Y": 1.8,
+            "Z": 1
+        },
+        "Min": {
+            "X": -1,
+            "Y": 0,
+            "Z": -1
+        }
+    },
+    "Model": "NPC/Pkmn/Venusaur/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Venusaur/Models/Texture.png",
+    "EyeHeight": 0.9,
+    "CrouchOffset": -0.2,
+    "MinScale": 1.3,
+    "MaxScale": 1.6,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Venusaur.png",
+    "AnimationSets": {
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Venusaur_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Spawn.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk.blockyanim",
+                    "SoundEventId": "SFX_Pkmn_Large_Walk",
+                    "FootstepIntervals": [
+                        50,
+                        100
+                    ]
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk_Backward.blockyanim",
+                    "SoundEventId": "SFX_Pkmn_Large_Walk",
+                    "FootstepIntervals": [
+                        50,
+                        100
+                    ]
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Run.blockyanim",
+                    "SoundEventId": "SFX_Pkmn_Large_Walk",
+                    "FootstepIntervals": [
+                        50,
+                        100
+                    ]
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Crouch.blockyanim",
+                    "BlendingDuration": 0.1
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Crouch_Walk.blockyanim",
+                    "BlendingDuration": 0.1
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Crouch_Walk_Backward.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": true
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.8,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Jump_Far.blockyanim",
+                    "Speed": 0.8,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Jump_Far.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Fall.blockyanim",
+                    "BlendingDuration": 0.4,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "FallFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Fall_Far.blockyanim",
+                    "BlendingDuration": 0.4,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Fall_Far.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Fall.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Damage/Hurt2.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Venusaur_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Sleep.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Fast.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimJump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Float.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Sink.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
+        },
+        "SwimDive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Dive.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Dive.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Dive_Fast.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Dive_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimDiveBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Swim/Swim_Dive_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Swim/Swim_Dive_Backward.blockyanim"
+                }
+            ]
+        },
+        "FluidIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Idle.blockyanim",
+                    "Speed": 0.6
+                }
+            ]
+        },
+        "FluidWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk.blockyanim",
+                    "Speed": 0.6
+                }
+            ]
+        },
+        "FluidWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Walk_Backward.blockyanim",
+                    "Speed": 0.6
+                }
+            ]
+        },
+        "FluidRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Default/Run.blockyanim",
+                    "Speed": 0.6
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly_Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly_Fast.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Fly/Fly_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "IdlePassive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Flavor/Look_Left.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Flavor/Look_Right.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Wildlife/Trillodon/Animations/Flavor/Look_Around.blockyanim"
+                }
+            ],
+            "NextAnimationDelay": {
+                "Max": 10,
+                "Min": 2
+            }
+        },
+        "Hurt2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Damage/Hurt2.blockyanim"
+                }
+            ]
+        },
+        "LookAround": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Flavor/Look_Around.blockyanim"
+                }
+            ]
+        },
+        "LookLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Flavor/Look_Left.blockyanim"
+                }
+            ]
+        },
+        "LookRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Venusaur/Animations/Flavor/Look_Right.blockyanim"
+                }
+            ]
+        }
+    },
+    "IconProperties": {
+        "Scale": 0.15,
+        "Rotation": [
+            14,
+            30,
+            8
+        ],
+        "Translation": [
+            -5,
+            -69
+        ]
     }
-  },
-  "Icon": "Icons/ModelsGenerated/Pkmn_Venusaur.png",
-  "IconProperties": {
-    "Scale": 0.15,
-    "Rotation": [
-      14,
-      30,
-      8
-    ],
-    "Translation": [
-      -5,
-      -69
-    ]
-  }
 }

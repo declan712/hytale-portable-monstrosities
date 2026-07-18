@@ -1,59 +1,162 @@
 {
-  "Parent": "Template_Pkmn_Ghost",
-  "Model": "NPC/Pkmn/Magnemite/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Magnemite/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Magnemite.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Magnemite_Cry"
+    "Parent": "Template_Pkmn_Ghost",
+    "Model": "NPC/Pkmn/Magnemite/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Magnemite/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Magnemite.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Magnemite_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Magnemite_Cry"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Idle.blockyanim",
+                    "Looping": true
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Idle.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Walk.blockyanim",
+                    "Looping": true
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Walk.blockyanim"
+                }
+            ]
+        },
+        "Walk_Backward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Walk.blockyanim",
+                    "Looping": true
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Walk.blockyanim",
+                    "Looping": true
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Fall.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Hurt.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Jump.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "Despawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Despawn.blockyanim"
+                }
+            ]
+        },
+        "Idle2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Idles/Idle2.blockyanim"
+                }
+            ]
+        },
+        "Idle3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Magnemite/Animations/Idles/Idle3.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Magnemite_Cry"
-        }
-      ]
-    },
-    "Idle":{
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Idle.blockyanim",
-          "Looping": true
-        }
-      ]
-    },
-    "Walk":{
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Walk.blockyanim",
-          "Looping": true
-        }
-      ]
-    },
-    "Walk_Backward":{
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Walk.blockyanim",
-          "Looping": true
-        }
-      ]
-    },
-    "Run":{
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Magnemite/Animations/Default/Walk.blockyanim",
-          "Looping": true
-        }
-      ]
     }
-  }
 }

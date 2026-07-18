@@ -1,21 +1,5 @@
 {
     "Parent": "Template_Pkmn_Flying",
-    "Model": "NPC/Pkmn/Fearow/Models/Model.blockymodel",
-    "Texture": "NPC/Pkmn/Fearow/Models/Texture.png",
-    "EyeHeight": 0.8,
-    "CrouchOffset": -0.2,
-    "HitBox": {
-        "Max": {
-            "X": 0.4,
-            "Y": 0.95,
-            "Z": 0.4
-        },
-        "Min": {
-            "X": -0.4,
-            "Y": 0,
-            "Z": -0.4
-        }
-    },
     "Camera": {
         "Pitch": {
             "AngleRange": {
@@ -36,11 +20,31 @@
             ]
         }
     },
+    "HitBox": {
+        "Max": {
+            "X": 0.4,
+            "Y": 0.95,
+            "Z": 0.4
+        },
+        "Min": {
+            "X": -0.4,
+            "Y": 0,
+            "Z": -0.4
+        }
+    },
+    "Model": "NPC/Pkmn/Fearow/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Fearow/Models/Texture.png",
+    "EyeHeight": 0.8,
+    "CrouchOffset": -0.2,
+    "Icon": "Icons/ModelsGenerated/Pkmn_Fearow.png",
     "AnimationSets": {
         "Idle": {
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Idle.blockyanim"
                 }
             ]
         },
@@ -48,6 +52,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Walk.blockyanim"
                 }
             ]
         },
@@ -55,6 +62,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Walk_Backward.blockyanim"
                 }
             ]
         },
@@ -62,6 +72,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Run.blockyanim"
                 }
             ]
         },
@@ -69,6 +82,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Run_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Run_Backward.blockyanim"
                 }
             ]
         },
@@ -76,6 +92,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Sprint.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Sprint.blockyanim"
                 }
             ]
         },
@@ -84,6 +103,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Crouch.blockyanim",
                     "BlendingDuration": 0.1
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Crouch.blockyanim"
                 }
             ]
         },
@@ -92,6 +114,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Crouch_Walk.blockyanim",
                     "BlendingDuration": 0.1
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Crouch_Walk.blockyanim"
                 }
             ]
         },
@@ -100,6 +125,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Crouch_Walk_Backward.blockyanim",
                     "BlendingDuration": 0.1
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Crouch_Walk_Backward.blockyanim"
                 }
             ]
         },
@@ -107,9 +135,12 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Step_Walk.blockyanim",
-                    "BlendingDuration": 0.1,
                     "Speed": 0.8,
+                    "BlendingDuration": 0.1,
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Step_Walk.blockyanim"
                 }
             ]
         },
@@ -119,6 +150,9 @@
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Step_Run.blockyanim",
                     "BlendingDuration": 0.1,
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Step_Run.blockyanim"
                 }
             ]
         },
@@ -128,6 +162,9 @@
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Step_Sprint.blockyanim",
                     "BlendingDuration": 0.1,
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Step_Sprint.blockyanim"
                 }
             ]
         },
@@ -135,6 +172,10 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Jump.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Jump.blockyanim",
+                    "Looping": false
                 }
             ]
         },
@@ -173,6 +214,10 @@
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Alerted.blockyanim",
                     "Looping": false,
                     "SoundEventId": "SFX_Pkmn_Fearow_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Alerted.blockyanim",
+                    "Looping": false
                 }
             ]
         },
@@ -180,6 +225,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Fly/Fly_Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Fly/Fly_Idle.blockyanim"
                 }
             ]
         },
@@ -192,6 +240,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Fly/Fly_Glide.blockyanim",
                     "Weight": 1
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Fly/Fly.blockyanim"
                 }
             ]
         },
@@ -199,6 +250,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Fly/Fly_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Fly/Fly_Backward.blockyanim"
                 }
             ]
         },
@@ -211,6 +265,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Fly/Fly_Glide.blockyanim",
                     "Weight": 3
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Fly/Fly_Fast.blockyanim"
                 }
             ]
         },
@@ -219,6 +276,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Swim/Swim_Idle.blockyanim",
                     "Speed": 0.5
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Swim/Swim_Idle.blockyanim"
                 }
             ]
         },
@@ -226,6 +286,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Swim/Swim.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Swim/Swim.blockyanim"
                 }
             ]
         },
@@ -233,6 +296,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Swim/Swim_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Swim/Swim_Backward.blockyanim"
                 }
             ]
         },
@@ -240,6 +306,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Swim/Swim_Fast.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Swim/Swim_Fast.blockyanim"
                 }
             ]
         },
@@ -254,6 +323,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Swim/Swim_Float.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Swim/Swim_Float.blockyanim"
                 }
             ]
         },
@@ -261,6 +333,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Swim/Swim_Sink.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Swim/Swim_Sink.blockyanim"
                 }
             ]
         },
@@ -323,6 +398,10 @@
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Hurt.blockyanim",
                     "BlendingDuration": 0.1,
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
                 }
             ]
         },
@@ -332,6 +411,10 @@
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Death.blockyanim",
                     "BlendingDuration": 0.2,
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Death.blockyanim",
+                    "Looping": false
                 }
             ]
         },
@@ -339,6 +422,10 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Laydown.blockyanim",
                     "Looping": false
                 }
             ]
@@ -348,6 +435,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Sleep.blockyanim",
                     "Speed": 0.75
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Sleep.blockyanim"
                 }
             ]
         },
@@ -355,6 +445,10 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Wake.blockyanim",
                     "Looping": false
                 }
             ]
@@ -366,6 +460,10 @@
                     "BlendingDuration": 0,
                     "Looping": false,
                     "SoundEventId": "SFX_Pkmn_Fearow_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Default/Spawn.blockyanim",
+                    "Looping": false
                 }
             ]
         },
@@ -373,6 +471,9 @@
             "Animations": [
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Flavor/Eat.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Flavor/Eat.blockyanim"
                 }
             ]
         },
@@ -389,6 +490,9 @@
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Hurt_Fly.blockyanim",
                     "BlendingDuration": 0.1,
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Hurt_Fly.blockyanim"
                 }
             ]
         },
@@ -397,6 +501,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Death_Fly.blockyanim",
                     "BlendingDuration": 0.6
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Death_Fly.blockyanim"
                 }
             ]
         },
@@ -406,15 +513,21 @@
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Death_Fly_Impact.blockyanim",
                     "BlendingDuration": 0.05,
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Death_Fly_Impact.blockyanim"
                 }
             ]
         },
         "HurtSwim": {
             "Animations": [
                 {
-                    "Looping": false,
+                    "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Hurt_Swim.blockyanim",
                     "BlendingDuration": 0.1,
-                    "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Hurt_Swim.blockyanim"
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Hurt_Swim.blockyanim"
                 }
             ]
         },
@@ -423,6 +536,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Death_Swim.blockyanim",
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Death_Swim.blockyanim"
                 }
             ]
         },
@@ -431,6 +547,9 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Hurt_Drown.blockyanim",
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Hurt_Drown.blockyanim"
                 }
             ]
         },
@@ -439,11 +558,86 @@
                 {
                     "Animation": "NPC/Flying_Wildlife/Hawk/Animations/Damage/Death_Drown.blockyanim",
                     "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Damage/Death_Drown.blockyanim"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "BiteMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Attacks/Bite_Moving.blockyanim"
+                }
+            ]
+        },
+        "Glide": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Attacks/Glide.blockyanim"
+                }
+            ]
+        },
+        "Peck": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Attacks/Peck.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Flavor/Peck.blockyanim"
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Flavor/Curious.blockyanim"
+                }
+            ]
+        },
+        "Eat2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Flavor/Eat2.blockyanim"
+                }
+            ]
+        },
+        "Eat3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Flavor/Eat3.blockyanim"
+                }
+            ]
+        },
+        "HopGlide": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Flavor/Hop_Glide.blockyanim"
+                }
+            ]
+        },
+        "LookLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Flavor/Look_Left.blockyanim"
+                }
+            ]
+        },
+        "FlyGlide": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Fearow/Animations/Fly/Fly_Glide.blockyanim"
                 }
             ]
         }
     },
-    "Icon": "Icons/ModelsGenerated/Pkmn_Fearow.png",
     "IconProperties": {
         "Scale": 0.2,
         "Rotation": [

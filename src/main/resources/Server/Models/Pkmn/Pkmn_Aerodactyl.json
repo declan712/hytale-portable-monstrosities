@@ -1,27 +1,357 @@
 {
-  "Parent": "Template_Pkmn_Flying",
-  "Model": "NPC/Pkmn/Aerodactyl/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Aerodactyl/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Aerodactyl.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Aerodactyl_Cry"
+    "Parent": "Template_Pkmn_Flying",
+    "Model": "NPC/Pkmn/Aerodactyl/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Aerodactyl/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Aerodactyl.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Aerodactyl_Cry"
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Aerodactyl_Cry"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "BiteMoving": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Attacks/Bite_Moving.blockyanim"
+                }
+            ]
+        },
+        "Glide": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Attacks/Glide.blockyanim"
+                }
+            ]
+        },
+        "Peck": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Attacks/Peck.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Flavor/Peck.blockyanim"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "DeathDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Death_Drown.blockyanim"
+                }
+            ]
+        },
+        "DeathFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Death_Fly.blockyanim"
+                }
+            ]
+        },
+        "DeathFlyImpact": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Death_Fly_Impact.blockyanim"
+                }
+            ]
+        },
+        "DeathSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Death_Swim.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "HurtDrown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Hurt_Drown.blockyanim"
+                }
+            ]
+        },
+        "HurtFly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Hurt_Fly.blockyanim"
+                }
+            ]
+        },
+        "HurtSwim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Damage/Hurt_Swim.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "RunBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Run_Backward.blockyanim"
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Sprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Step_Run.blockyanim"
+                }
+            ]
+        },
+        "StepSprint": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Step_Sprint.blockyanim"
+                }
+            ]
+        },
+        "StepWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Step_Walk.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Flavor/Curious.blockyanim"
+                }
+            ]
+        },
+        "Eat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Flavor/Eat.blockyanim"
+                }
+            ]
+        },
+        "Eat2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Flavor/Eat2.blockyanim"
+                }
+            ]
+        },
+        "Eat3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Flavor/Eat3.blockyanim"
+                }
+            ]
+        },
+        "HopGlide": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Flavor/Hop_Glide.blockyanim"
+                }
+            ]
+        },
+        "LookLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Flavor/Look_Left.blockyanim"
+                }
+            ]
+        },
+        "Fly": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Fly/Fly.blockyanim"
+                }
+            ]
+        },
+        "FlyBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Fly/Fly_Backward.blockyanim"
+                }
+            ]
+        },
+        "FlyFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Fly/Fly_Fast.blockyanim"
+                }
+            ]
+        },
+        "FlyGlide": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Fly/Fly_Glide.blockyanim"
+                }
+            ]
+        },
+        "FlyIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Fly/Fly_Idle.blockyanim"
+                }
+            ]
+        },
+        "Swim": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Swim/Swim.blockyanim"
+                }
+            ]
+        },
+        "SwimBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Swim/Swim_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwimFast": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Swim/Swim_Fast.blockyanim"
+                }
+            ]
+        },
+        "SwimFloat": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Swim/Swim_Float.blockyanim"
+                }
+            ]
+        },
+        "SwimIdle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Swim/Swim_Idle.blockyanim"
+                }
+            ]
+        },
+        "SwimSink": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Aerodactyl/Animations/Swim/Swim_Sink.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Aerodactyl/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Aerodactyl_Cry"
-        }
-      ]
     }
-  }
 }

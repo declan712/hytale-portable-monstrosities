@@ -1,221 +1,318 @@
 {
-  "Parent": "Template_Pkmn_Quad",
-  "Model": "NPC/Pkmn/NidoranM/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/NidoranM/Models/Texture.png",
-  "EyeHeight": 0.5,
-  "CrouchOffset": -0.1,
-  "HitBox": {
-    "Max": {
-      "X": 0.4,
-      "Y": 0.7,
-      "Z": 0.4
-    },
-    "Min": {
-      "X": -0.4,
-      "Y": 0,
-      "Z": -0.4
-    }
-  },
-  "MinScale": 0.6,
-  "MaxScale": 0.8,
-  "AnimationSets": {
-    "Idle": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Idle.blockyanim"
-        }
-      ]
-    },
-    "Walk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Walk.blockyanim"
-        }
-      ]
-    },
-    "WalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Walk_Backward.blockyanim"
-        }
-      ]
-    },
-    "Run": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Run.blockyanim"
-        }
-      ]
-    },
-    "Crouch": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Crouch.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false
-        }
-      ]
-    },
-    "CrouchWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Crouch_Walk.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "CrouchWalkBackward": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Crouch_Walk_Backward.blockyanim",
-          "BlendingDuration": 0.1
-        }
-      ]
-    },
-    "Jump": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.8
-        }
-      ]
-    },
-    "JumpWalk": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Jump.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.6
-        }
-      ]
-    },
-    "JumpRun": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Jump_Far.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "Speed": 0.6
-        }
-      ]
-    },
-    "Fall": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Fall.blockyanim",
-          "BlendingDuration": 0.4,
-          "Looping": true
-        }
-      ]
-    },
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_NidoranM_Cry"
-        }
-      ]
-    },
-    "Curious": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Flavor/Curious.blockyanim",
-          "SoundEventId": "SFX_Pkmn_NidoranM_Cry"
-        }
-      ]
-    },
-    "Hurt": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Damage/Hurt.blockyanim",
-          "BlendingDuration": 0.1,
-          "Looping": false,
-          "SoundEventId": "SFX_Rat_Hurt"
-        }
-      ]
-    },
-    "Death": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Damage/Death.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Rat_Death"
-        }
-      ]
-    },
-    "Laydown": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Laydown.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Sleep": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Sleep.blockyanim"
-        }
-      ]
-    },
-    "Wake": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Wake.blockyanim",
-          "Looping": false
-        }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_NidoranM_Cry"
-        }
-      ]
-    },
-    "IdlePassive": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Flavor/Sniff.blockyanim"
+    "Parent": "Template_Pkmn_Quad",
+    "HitBox": {
+        "Max": {
+            "X": 0.4,
+            "Y": 0.7,
+            "Z": 0.4
         },
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Flavor/Sniff_Stand.blockyanim"
-        },
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Flavor/Itch.blockyanim"
+        "Min": {
+            "X": -0.4,
+            "Y": 0,
+            "Z": -0.4
         }
-      ],
-      "NextAnimationDelay": {
-        "Max": 10,
-        "Min": 2
-      }
     },
-    "Flee": {
-      "Animations": [
-        {
-          "Animation": "NPC/Beast/Rat/Animations/Flavor/Flee.blockyanim"
+    "Model": "NPC/Pkmn/NidoranM/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/NidoranM/Models/Texture.png",
+    "EyeHeight": 0.5,
+    "CrouchOffset": -0.1,
+    "MinScale": 0.6,
+    "MaxScale": 0.8,
+    "Icon": "Icons/ModelsGenerated/Pkmn_NidoranM.png",
+    "AnimationSets": {
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Crouch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Crouch.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Crouch.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Crouch_Walk.blockyanim",
+                    "BlendingDuration": 0.1
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Crouch_Walk.blockyanim"
+                }
+            ]
+        },
+        "CrouchWalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Crouch_Walk_Backward.blockyanim",
+                    "BlendingDuration": 0.1
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Crouch_Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.8,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpWalk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Jump.blockyanim",
+                    "Speed": 0.6,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "JumpRun": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Jump_Far.blockyanim",
+                    "Speed": 0.6,
+                    "BlendingDuration": 0.1,
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Fall.blockyanim",
+                    "BlendingDuration": 0.4,
+                    "Looping": true
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_NidoranM_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Curious": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Flavor/Curious.blockyanim",
+                    "SoundEventId": "SFX_Pkmn_NidoranM_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Flavor/Curious.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Damage/Hurt.blockyanim",
+                    "BlendingDuration": 0.1,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Rat_Hurt"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Damage/Death.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Rat_Death"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Damage/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Laydown": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Laydown.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Sleep": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Sleep.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Sleep.blockyanim"
+                }
+            ]
+        },
+        "Wake": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Wake.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_NidoranM_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Spawn.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "IdlePassive": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Flavor/Sniff.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Flavor/Sniff_Stand.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Flavor/Itch.blockyanim"
+                }
+            ],
+            "NextAnimationDelay": {
+                "Max": 10,
+                "Min": 2
+            }
+        },
+        "Flee": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Beast/Rat/Animations/Flavor/Flee.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Flavor/Flee.blockyanim"
+                }
+            ]
+        },
+        "Bite": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Attacks/Bite.blockyanim"
+                }
+            ]
+        },
+        "JumpFar": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Default/Jump_Far.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Itch": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Flavor/Itch.blockyanim"
+                }
+            ]
+        },
+        "Sniff": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Flavor/Sniff.blockyanim"
+                }
+            ]
+        },
+        "SniffStand": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/NidoranM/Animations/Flavor/Sniff_Stand.blockyanim"
+                }
+            ]
         }
-      ]
+    },
+    "IconProperties": {
+        "Scale": 0.4,
+        "Rotation": [
+            0,
+            321,
+            0
+        ],
+        "Translation": [
+            0,
+            -43
+        ]
     }
-  },
-  "IconProperties": {
-    "Scale": 0.4,
-    "Rotation": [
-      0,
-      321,
-      0
-    ],
-    "Translation": [
-      0,
-      -43
-    ]
-  },
-  "Icon": "Icons/ModelsGenerated/Pkmn_NidoranM.png"
 }

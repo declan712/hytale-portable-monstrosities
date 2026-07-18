@@ -1,27 +1,148 @@
 {
-  "Parent": "Template_Pkmn_Ghost",
-  "Model": "NPC/Pkmn/Muk/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Muk/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Muk.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Muk/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Muk_Cry"
+    "Parent": "Template_Pkmn_Ghost",
+    "Model": "NPC/Pkmn/Muk/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Muk/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Muk.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Muk_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Muk_Cry"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Fall.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Hurt.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Jump.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "Despawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Default/Despawn.blockyanim"
+                }
+            ]
+        },
+        "Idle2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Idles/Idle2.blockyanim"
+                }
+            ]
+        },
+        "Idle3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Muk/Animations/Idles/Idle3.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Muk/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Muk_Cry"
-        }
-      ]
     }
-  }
 }

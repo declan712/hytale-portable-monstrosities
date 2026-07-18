@@ -1,27 +1,148 @@
 {
-  "Parent": "Template_Pkmn_Ghost",
-  "Model": "NPC/Pkmn/Voltorb/Models/Model.blockymodel",
-  "Texture": "NPC/Pkmn/Voltorb/Models/Texture.png",
-  "Icon": "Icons/ModelsGenerated/Pkmn_Voltorb.png",
-  "AnimationSets": {
-    "Alerted": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Alerted.blockyanim",
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Voltorb_Cry"
+    "Parent": "Template_Pkmn_Ghost",
+    "Model": "NPC/Pkmn/Voltorb/Models/Model.blockymodel",
+    "Texture": "NPC/Pkmn/Voltorb/Models/Texture.png",
+    "Icon": "Icons/ModelsGenerated/Pkmn_Voltorb.png",
+    "AnimationSets": {
+        "Alerted": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Alerted.blockyanim",
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Voltorb_Cry"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Alerted.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Spawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Spawn.blockyanim",
+                    "BlendingDuration": 0,
+                    "Looping": false,
+                    "SoundEventId": "SFX_Pkmn_Voltorb_Cry"
+                }
+            ]
+        },
+        "Death": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Death.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Fall": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Fall.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Fall.blockyanim"
+                }
+            ]
+        },
+        "Hurt": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Hurt.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Damage/Hurt.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Idle": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Idle.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Idle.blockyanim"
+                }
+            ]
+        },
+        "Jump": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Jump.blockyanim",
+                    "Looping": false
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Jump.blockyanim",
+                    "Looping": false
+                }
+            ]
+        },
+        "Run": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Run.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Run.blockyanim"
+                }
+            ]
+        },
+        "Walk": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Walk.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Walk.blockyanim"
+                }
+            ]
+        },
+        "WalkBackward": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Walk_Backward.blockyanim"
+                },
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Walk_Backward.blockyanim"
+                }
+            ]
+        },
+        "SwingLeft": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Attacks/Swing_Left.blockyanim"
+                }
+            ]
+        },
+        "SwingRight": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Attacks/Swing_Right.blockyanim"
+                }
+            ]
+        },
+        "Despawn": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Despawn.blockyanim"
+                }
+            ]
+        },
+        "Idle2": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Idles/Idle2.blockyanim"
+                }
+            ]
+        },
+        "Idle3": {
+            "Animations": [
+                {
+                    "Animation": "NPC/Pkmn/Voltorb/Animations/Idles/Idle3.blockyanim"
+                }
+            ]
         }
-      ]
-    },
-    "Spawn": {
-      "Animations": [
-        {
-          "Animation": "NPC/Pkmn/Voltorb/Animations/Default/Spawn.blockyanim",
-          "BlendingDuration": 0,
-          "Looping": false,
-          "SoundEventId": "SFX_Pkmn_Voltorb_Cry"
-        }
-      ]
     }
-  }
 }
