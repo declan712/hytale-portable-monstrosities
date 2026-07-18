@@ -60,8 +60,8 @@
               },
               "bottom": {
                 "offset": {"x": 96, "y": 179},
-                "mirror": {"x": true, "y": true},
-                "angle": 90
+                "mirror": {"x": false, "y": false},
+                "angle": 270
               }
             },
             "unwrapMode": "custom",
@@ -111,8 +111,8 @@
                   },
                   "bottom": {
                     "offset": {"x": 124, "y": 149},
-                    "mirror": {"x": true, "y": true},
-                    "angle": 270
+                    "mirror": {"x": false, "y": false},
+                    "angle": 90
                   }
                 },
                 "unwrapMode": "custom",
@@ -193,8 +193,8 @@
                           },
                           "right": {
                             "offset": {"x": 0, "y": 254},
-                            "mirror": {"x": false, "y": false},
-                            "angle": 270
+                            "mirror": {"x": true, "y": true},
+                            "angle": 90
                           },
                           "front": {
                             "offset": {"x": 114, "y": 229},
@@ -285,8 +285,8 @@
                               },
                               "right": {
                                 "offset": {"x": 148, "y": 246},
-                                "mirror": {"x": false, "y": false},
-                                "angle": 270
+                                "mirror": {"x": true, "y": true},
+                                "angle": 90
                               },
                               "front": {
                                 "offset": {"x": 124, "y": 246},
@@ -295,8 +295,8 @@
                               },
                               "left": {
                                 "offset": {"x": 124, "y": 205},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 270
+                                "mirror": {"x": false, "y": false},
+                                "angle": 90
                               },
                               "top": {
                                 "offset": {"x": 148, "y": 205},
@@ -494,8 +494,8 @@
                                           },
                                           "right": {
                                             "offset": {"x": 210, "y": 230},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 90
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 270
                                           },
                                           "front": {
                                             "offset": {"x": 158, "y": 206},
@@ -679,8 +679,8 @@
                                       },
                                       "top": {
                                         "offset": {"x": 32, "y": 5},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 270
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 90
                                       },
                                       "bottom": {
                                         "offset": {"x": 36, "y": 105},
@@ -1581,8 +1581,8 @@
                                   },
                                   "top": {
                                     "offset": {"x": 135, "y": 51},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 90
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 270
                                   },
                                   "bottom": {
                                     "offset": {"x": 181, "y": 135},
@@ -1821,8 +1821,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 121, "y": 85},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 121, "y": 85},
@@ -1872,8 +1872,8 @@
                                           },
                                           "right": {
                                             "offset": {"x": 121, "y": 85},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 270
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 90
                                           },
                                           "front": {
                                             "offset": {"x": 121, "y": 85},
@@ -2025,8 +2025,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 121, "y": 85},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 121, "y": 85},
@@ -2076,8 +2076,8 @@
                                           },
                                           "right": {
                                             "offset": {"x": 121, "y": 85},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 270
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 90
                                           },
                                           "front": {
                                             "offset": {"x": 121, "y": 85},
@@ -2357,8 +2357,8 @@
                                   },
                                   "bottom": {
                                     "offset": {"x": 181, "y": 145},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 90
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 270
                                   }
                                 },
                                 "unwrapMode": "custom",
@@ -2369,6 +2369,25 @@
                               "children": [
                                 {
                                   "id": "60",
+                                  "name": "R-Attachment",
+                                  "position": {"x": 3.75, "y": -9, "z": 0},
+                                  "orientation": {"x": 0.52612, "y": -0.4997, "z": -0.5547, "w": 0.4072},
+                                  "shape": {
+                                    "type": "none",
+                                    "offset": {"x": 0, "y": 0, "z": 0},
+                                    "stretch": {"x": 1, "y": 1, "z": 1},
+                                    "settings": {
+                                      "isPiece": true
+                                    },
+                                    "textureLayout": {},
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": false,
+                                    "shadingMode": "flat"
+                                  }
+                                },
+                                {
+                                  "id": "61",
                                   "name": "R-Thumb",
                                   "position": {"x": 1.74698, "y": 0.99733, "z": 7.82176},
                                   "orientation": {"x": 0.38038, "y": -0.00353, "z": 0.28368, "w": 0.88024},
@@ -2383,23 +2402,23 @@
                                     "textureLayout": {
                                       "back": {
                                         "offset": {"x": 115, "y": 90},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 90
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 270
                                       },
                                       "right": {
                                         "offset": {"x": 132, "y": 73},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 90
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 270
                                       },
                                       "front": {
                                         "offset": {"x": 121, "y": 85},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 270
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 90
                                       },
                                       "left": {
                                         "offset": {"x": 121, "y": 73},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 270
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 90
                                       },
                                       "top": {
                                         "offset": {"x": 121, "y": 69},
@@ -2419,7 +2438,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "61",
+                                      "id": "62",
                                       "name": "R-Thumb2",
                                       "position": {"x": 0.05326, "y": 1.12598, "z": 3.60324},
                                       "orientation": {"x": 0.32144, "y": 0, "z": 0, "w": 0.94693},
@@ -2434,23 +2453,23 @@
                                         "textureLayout": {
                                           "back": {
                                             "offset": {"x": 115, "y": 90},
-                                            "mirror": {"x": true, "y": true},
-                                            "angle": 90
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 270
                                           },
                                           "right": {
                                             "offset": {"x": 132, "y": 73},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 90
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 270
                                           },
                                           "front": {
                                             "offset": {"x": 121, "y": 85},
-                                            "mirror": {"x": true, "y": true},
-                                            "angle": 270
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 90
                                           },
                                           "left": {
                                             "offset": {"x": 121, "y": 73},
-                                            "mirror": {"x": true, "y": true},
-                                            "angle": 270
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 90
                                           },
                                           "top": {
                                             "offset": {"x": 121, "y": 69},
@@ -2470,7 +2489,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "62",
+                                          "id": "63",
                                           "name": "L-Claw-Inner11",
                                           "position": {"x": 0.1033, "y": 0.64826, "z": 3.57126},
                                           "orientation": {"x": 0, "y": 0, "z": -0.70711, "w": 0.70711},
@@ -2489,7 +2508,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "63",
+                                              "id": "64",
                                               "name": "L-Claw-Inner--C1",
                                               "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -2517,7 +2536,7 @@
                                               }
                                             },
                                             {
-                                              "id": "64",
+                                              "id": "65",
                                               "name": "L-Claw-Inner12",
                                               "position": {"x": 0, "y": 0, "z": -5},
                                               "orientation": {"x": -0.0923, "y": 0.0923, "z": -0.70106, "w": 0.70106},
@@ -2536,7 +2555,7 @@
                                               },
                                               "children": [
                                                 {
-                                                  "id": "65",
+                                                  "id": "66",
                                                   "name": "L-Claw-Inner--C1",
                                                   "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                                   "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -2572,7 +2591,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "66",
+                                  "id": "67",
                                   "name": "R-Finger",
                                   "position": {"x": -1.35302, "y": -6.80267, "z": 4.92176},
                                   "orientation": {"x": 0.41159, "y": -0.4422, "z": 0.52493, "w": 0.59958},
@@ -2592,8 +2611,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 121, "y": 85},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 115, "y": 85},
@@ -2623,7 +2642,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "67",
+                                      "id": "68",
                                       "name": "R-Finger2",
                                       "position": {"x": 0.10326, "y": 0.79461, "z": 4.56806},
                                       "orientation": {"x": 0.27983, "y": 0, "z": 0, "w": 0.96005},
@@ -2643,8 +2662,8 @@
                                           },
                                           "right": {
                                             "offset": {"x": 121, "y": 85},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 270
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 90
                                           },
                                           "front": {
                                             "offset": {"x": 115, "y": 85},
@@ -2674,7 +2693,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "68",
+                                          "id": "69",
                                           "name": "L-Claw-Inner7",
                                           "position": {"x": 0.0033, "y": 0.42576, "z": 3.72982},
                                           "orientation": {"x": 0, "y": 0, "z": -0.70711, "w": 0.70711},
@@ -2693,7 +2712,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "69",
+                                              "id": "70",
                                               "name": "L-Claw-Inner--C1",
                                               "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -2721,7 +2740,7 @@
                                               }
                                             },
                                             {
-                                              "id": "70",
+                                              "id": "71",
                                               "name": "L-Claw-Inner8",
                                               "position": {"x": 0, "y": 0, "z": -5},
                                               "orientation": {"x": -0.0923, "y": 0.0923, "z": -0.70106, "w": 0.70106},
@@ -2740,7 +2759,7 @@
                                               },
                                               "children": [
                                                 {
-                                                  "id": "71",
+                                                  "id": "72",
                                                   "name": "L-Claw-Inner--C1",
                                                   "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                                   "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -2776,7 +2795,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "72",
+                                  "id": "73",
                                   "name": "R-Finger3",
                                   "position": {"x": -1.15302, "y": -7.00267, "z": -6.07824},
                                   "orientation": {"x": 0.5034, "y": -0.56706, "z": 0.4263, "w": 0.49325},
@@ -2796,8 +2815,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 121, "y": 85},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 115, "y": 85},
@@ -2827,7 +2846,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "73",
+                                      "id": "74",
                                       "name": "R-Finger4",
                                       "position": {"x": -0.06533, "y": 0.72279, "z": 4.53684},
                                       "orientation": {"x": 0.30071, "y": 0, "z": 0, "w": 0.95372},
@@ -2847,8 +2866,8 @@
                                           },
                                           "right": {
                                             "offset": {"x": 121, "y": 85},
-                                            "mirror": {"x": false, "y": false},
-                                            "angle": 270
+                                            "mirror": {"x": true, "y": true},
+                                            "angle": 90
                                           },
                                           "front": {
                                             "offset": {"x": 115, "y": 85},
@@ -2878,7 +2897,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "74",
+                                          "id": "75",
                                           "name": "L-Claw-Inner9",
                                           "position": {"x": 0.38471, "y": 0.26714, "z": 3.50129},
                                           "orientation": {"x": 0, "y": 0, "z": -0.70711, "w": 0.70711},
@@ -2897,7 +2916,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "75",
+                                              "id": "76",
                                               "name": "L-Claw-Inner--C1",
                                               "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -2925,7 +2944,7 @@
                                               }
                                             },
                                             {
-                                              "id": "76",
+                                              "id": "77",
                                               "name": "L-Claw-Inner10",
                                               "position": {"x": 0, "y": 0, "z": -5},
                                               "orientation": {"x": -0.0923, "y": 0.0923, "z": -0.70106, "w": 0.70106},
@@ -2944,7 +2963,7 @@
                                               },
                                               "children": [
                                                 {
-                                                  "id": "77",
+                                                  "id": "78",
                                                   "name": "L-Claw-Inner--C1",
                                                   "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                                   "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -2990,7 +3009,7 @@
               ]
             },
             {
-              "id": "78",
+              "id": "79",
               "name": "Tail",
               "position": {"x": 0, "y": -0.225, "z": -5.35048},
               "orientation": {"x": 0.84339, "y": 0, "z": 0, "w": 0.5373},
@@ -3030,8 +3049,8 @@
                   },
                   "bottom": {
                     "offset": {"x": 171, "y": 70},
-                    "mirror": {"x": false, "y": false},
-                    "angle": 270
+                    "mirror": {"x": true, "y": true},
+                    "angle": 90
                   }
                 },
                 "unwrapMode": "custom",
@@ -3041,7 +3060,7 @@
               },
               "children": [
                 {
-                  "id": "79",
+                  "id": "80",
                   "name": "Tail6",
                   "position": {"x": 0, "y": 14.54715, "z": -28.03463},
                   "orientation": {"x": -0.51877, "y": 0, "z": 0, "w": 0.85491},
@@ -3081,8 +3100,8 @@
                       },
                       "bottom": {
                         "offset": {"x": 171, "y": 70},
-                        "mirror": {"x": false, "y": false},
-                        "angle": 270
+                        "mirror": {"x": true, "y": true},
+                        "angle": 90
                       }
                     },
                     "unwrapMode": "custom",
@@ -3092,7 +3111,7 @@
                   },
                   "children": [
                     {
-                      "id": "80",
+                      "id": "81",
                       "name": "Tail2",
                       "position": {"x": 0, "y": 8.74715, "z": -18.93463},
                       "orientation": {"x": -0.44228, "y": 0, "z": 0, "w": 0.89688},
@@ -3132,8 +3151,8 @@
                           },
                           "bottom": {
                             "offset": {"x": 226, "y": 47},
-                            "mirror": {"x": true, "y": true},
-                            "angle": 270
+                            "mirror": {"x": false, "y": false},
+                            "angle": 90
                           }
                         },
                         "unwrapMode": "custom",
@@ -3143,7 +3162,7 @@
                       },
                       "children": [
                         {
-                          "id": "81",
+                          "id": "82",
                           "name": "Tail3",
                           "position": {"x": 0, "y": 3.75, "z": -16.00001},
                           "orientation": {"x": 0.40275, "y": 0, "z": 0, "w": 0.91531},
@@ -3183,8 +3202,8 @@
                               },
                               "bottom": {
                                 "offset": {"x": 251, "y": 42},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 270
+                                "mirror": {"x": false, "y": false},
+                                "angle": 90
                               }
                             },
                             "unwrapMode": "custom",
@@ -3194,7 +3213,7 @@
                           },
                           "children": [
                             {
-                              "id": "82",
+                              "id": "83",
                               "name": "Tail4",
                               "position": {"x": 0, "y": -4.2614, "z": -19.13026},
                               "orientation": {"x": 0.2706, "y": 0.65328, "z": 0.2706, "w": 0.65328},
@@ -3229,7 +3248,7 @@
               ]
             },
             {
-              "id": "83",
+              "id": "84",
               "name": "L-Thigh",
               "position": {"x": 18, "y": 0.375, "z": -0.15048},
               "orientation": {"x": 0.03312, "y": 0.29006, "z": 0.49403, "w": 0.81896},
@@ -3280,7 +3299,7 @@
               },
               "children": [
                 {
-                  "id": "84",
+                  "id": "85",
                   "name": "L-Calf",
                   "position": {"x": 0, "y": -14.85048, "z": 2.375},
                   "orientation": {"x": 0.60876, "y": 0, "z": 0, "w": 0.79335},
@@ -3331,7 +3350,7 @@
                   },
                   "children": [
                     {
-                      "id": "85",
+                      "id": "86",
                       "name": "L-Heel",
                       "position": {"x": 0, "y": -7.04231, "z": 4.69582},
                       "orientation": {"x": -0.23769, "y": 0, "z": 0, "w": 0.97134},
@@ -3372,7 +3391,7 @@
                       },
                       "children": [
                         {
-                          "id": "86",
+                          "id": "87",
                           "name": "L-Foot",
                           "position": {"x": 0, "y": -4.16139, "z": 1.13024},
                           "orientation": {"x": 0.0654, "y": 0, "z": 0, "w": 0.99786},
@@ -3423,7 +3442,7 @@
                           },
                           "children": [
                             {
-                              "id": "87",
+                              "id": "88",
                               "name": "L-Toe-Back",
                               "position": {"x": 0, "y": 0.75, "z": -12.3},
                               "orientation": {"x": 0, "y": -0.99619, "z": -0.08716, "w": 0},
@@ -3443,8 +3462,8 @@
                                   },
                                   "right": {
                                     "offset": {"x": 181, "y": 181},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 270
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 90
                                   },
                                   "front": {
                                     "offset": {"x": 173, "y": 177},
@@ -3474,7 +3493,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "88",
+                                  "id": "89",
                                   "name": "L-Toe-Back2",
                                   "position": {"x": 0.13025, "y": 1.4886, "z": 7.3},
                                   "orientation": {"x": 0.36244, "y": 0, "z": 0, "w": 0.93201},
@@ -3494,8 +3513,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 189, "y": 165},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 270
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 173, "y": 177},
@@ -3525,7 +3544,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "89",
+                                      "id": "90",
                                       "name": "L-Claw-Inner5",
                                       "position": {"x": 0, "y": 0.32441, "z": 3.98728},
                                       "orientation": {"x": 0, "y": 0, "z": -0.70711, "w": 0.70711},
@@ -3544,7 +3563,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "90",
+                                          "id": "91",
                                           "name": "L-Claw-Inner--C1",
                                           "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                           "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -3572,7 +3591,7 @@
                                           }
                                         },
                                         {
-                                          "id": "91",
+                                          "id": "92",
                                           "name": "L-Claw-Inner6",
                                           "position": {"x": 0, "y": 0, "z": -5},
                                           "orientation": {"x": -0.0923, "y": 0.0923, "z": -0.70106, "w": 0.70106},
@@ -3591,7 +3610,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "92",
+                                              "id": "93",
                                               "name": "L-Claw-Inner--C1",
                                               "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -3627,10 +3646,10 @@
                               ]
                             },
                             {
-                              "id": "93",
+                              "id": "94",
                               "name": "L-Toe-Inner",
                               "position": {"x": -4.5, "y": 0.75, "z": 9.25},
-                              "orientation": {"x": -0.04361, "y": -0.23747, "z": -0.00095, "w": 0.97042},
+                              "orientation": {"x": -0.04361, "y": -0.23747, "z": -0.00095, "w": 0.97041},
                               "shape": {
                                 "type": "box",
                                 "offset": {"x": 0, "y": -0.75, "z": 5},
@@ -3678,7 +3697,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "94",
+                                  "id": "95",
                                   "name": "L-Toe-Inner2",
                                   "position": {"x": 0, "y": 1.75, "z": 7.5},
                                   "orientation": {"x": 0.36244, "y": 0, "z": 0, "w": 0.93201},
@@ -3698,8 +3717,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 189, "y": 165},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 270
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 173, "y": 177},
@@ -3729,7 +3748,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "95",
+                                      "id": "96",
                                       "name": "L-Claw-Inner",
                                       "position": {"x": 0, "y": 0.07441, "z": 3.98728},
                                       "orientation": {"x": 0, "y": 0, "z": -0.70711, "w": 0.70711},
@@ -3748,7 +3767,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "96",
+                                          "id": "97",
                                           "name": "L-Claw-Inner--C1",
                                           "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                           "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -3776,7 +3795,7 @@
                                           }
                                         },
                                         {
-                                          "id": "97",
+                                          "id": "98",
                                           "name": "L-Claw-Inner2",
                                           "position": {"x": 0, "y": 0, "z": -5},
                                           "orientation": {"x": -0.0923, "y": 0.0923, "z": -0.70106, "w": 0.70106},
@@ -3795,7 +3814,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "98",
+                                              "id": "99",
                                               "name": "L-Claw-Inner--C1",
                                               "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -3831,7 +3850,7 @@
                               ]
                             },
                             {
-                              "id": "99",
+                              "id": "100",
                               "name": "L-Toe-Outer",
                               "position": {"x": 4, "y": 0.25, "z": 9},
                               "orientation": {"x": -0.04353, "y": 0.19491, "z": 0.00285, "w": 0.97985},
@@ -3851,8 +3870,8 @@
                                   },
                                   "right": {
                                     "offset": {"x": 189, "y": 165},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   },
                                   "front": {
                                     "offset": {"x": 173, "y": 177},
@@ -3882,7 +3901,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "100",
+                                  "id": "101",
                                   "name": "L-Toe-Outer2",
                                   "position": {"x": 0, "y": 1.75, "z": 7.75},
                                   "orientation": {"x": 0.36244, "y": 0, "z": 0, "w": 0.93201},
@@ -3902,8 +3921,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 189, "y": 165},
-                                        "mirror": {"x": true, "y": true},
-                                        "angle": 270
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 173, "y": 177},
@@ -3933,7 +3952,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "101",
+                                      "id": "102",
                                       "name": "L-Claw-Inner3",
                                       "position": {"x": 0, "y": 0.57441, "z": 3.98728},
                                       "orientation": {"x": 0, "y": 0, "z": -0.70711, "w": 0.70711},
@@ -3952,7 +3971,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "102",
+                                          "id": "103",
                                           "name": "L-Claw-Inner--C1",
                                           "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                           "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -3980,7 +3999,7 @@
                                           }
                                         },
                                         {
-                                          "id": "103",
+                                          "id": "104",
                                           "name": "L-Claw-Inner4",
                                           "position": {"x": 0, "y": 0, "z": -5},
                                           "orientation": {"x": -0.0923, "y": 0.0923, "z": -0.70106, "w": 0.70106},
@@ -3999,7 +4018,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "104",
+                                              "id": "105",
                                               "name": "L-Claw-Inner--C1",
                                               "position": {"x": 0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -4043,7 +4062,7 @@
               ]
             },
             {
-              "id": "105",
+              "id": "106",
               "name": "R-Thigh",
               "position": {"x": -18, "y": 0.375, "z": -0.15048},
               "orientation": {"x": 0.03312, "y": -0.29006, "z": -0.49403, "w": 0.81896},
@@ -4094,7 +4113,7 @@
               },
               "children": [
                 {
-                  "id": "106",
+                  "id": "107",
                   "name": "R-Calf",
                   "position": {"x": 0, "y": -7.85048, "z": 1.375},
                   "orientation": {"x": 0.60876, "y": 0, "z": 0, "w": 0.79335},
@@ -4145,7 +4164,7 @@
                   },
                   "children": [
                     {
-                      "id": "107",
+                      "id": "108",
                       "name": "R-Heel",
                       "position": {"x": 0, "y": -7.04231, "z": 4.69582},
                       "orientation": {"x": -0.23769, "y": 0, "z": 0, "w": 0.97134},
@@ -4186,7 +4205,7 @@
                       },
                       "children": [
                         {
-                          "id": "108",
+                          "id": "109",
                           "name": "R-Foot",
                           "position": {"x": 0, "y": -4.16139, "z": 1.13024},
                           "orientation": {"x": 0.0654, "y": 0, "z": 0, "w": 0.99786},
@@ -4206,8 +4225,8 @@
                               },
                               "right": {
                                 "offset": {"x": 181, "y": 165},
-                                "mirror": {"x": false, "y": false},
-                                "angle": 270
+                                "mirror": {"x": true, "y": true},
+                                "angle": 90
                               },
                               "front": {
                                 "offset": {"x": 154, "y": 165},
@@ -4216,8 +4235,8 @@
                               },
                               "left": {
                                 "offset": {"x": 181, "y": 165},
-                                "mirror": {"x": false, "y": false},
-                                "angle": 270
+                                "mirror": {"x": true, "y": true},
+                                "angle": 90
                               },
                               "top": {
                                 "offset": {"x": 162, "y": 145},
@@ -4237,7 +4256,7 @@
                           },
                           "children": [
                             {
-                              "id": "109",
+                              "id": "110",
                               "name": "R-Toe-Back",
                               "position": {"x": 0, "y": 0.75, "z": -12.3},
                               "orientation": {"x": 0, "y": 0.99619, "z": 0.08716, "w": 0},
@@ -4257,8 +4276,8 @@
                                   },
                                   "right": {
                                     "offset": {"x": 181, "y": 181},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 270
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 90
                                   },
                                   "front": {
                                     "offset": {"x": 165, "y": 177},
@@ -4288,7 +4307,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "110",
+                                  "id": "111",
                                   "name": "R-Toe-Back2",
                                   "position": {"x": -0.13025, "y": 1.4886, "z": 7.3},
                                   "orientation": {"x": 0.36244, "y": 0, "z": 0, "w": 0.93201},
@@ -4308,8 +4327,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 181, "y": 181},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 165, "y": 177},
@@ -4339,7 +4358,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "111",
+                                      "id": "112",
                                       "name": "R-Claw-Inner5",
                                       "position": {"x": 0, "y": 0.32441, "z": 3.98728},
                                       "orientation": {"x": 0, "y": 0, "z": 0.70711, "w": 0.70711},
@@ -4358,7 +4377,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "112",
+                                          "id": "113",
                                           "name": "R-Claw-Inner--C1",
                                           "position": {"x": -0.09996, "y": -0.04429, "z": -5.00098},
                                           "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -4386,7 +4405,7 @@
                                           }
                                         },
                                         {
-                                          "id": "113",
+                                          "id": "114",
                                           "name": "R-Claw-Inner6",
                                           "position": {"x": 0, "y": 0, "z": -5},
                                           "orientation": {"x": -0.0923, "y": -0.0923, "z": 0.70106, "w": 0.70106},
@@ -4405,7 +4424,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "114",
+                                              "id": "115",
                                               "name": "R-Claw-Inner--C1",
                                               "position": {"x": -0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -4441,10 +4460,10 @@
                               ]
                             },
                             {
-                              "id": "115",
+                              "id": "116",
                               "name": "R-Toe-Inner",
                               "position": {"x": 4.5, "y": 0.75, "z": 9.25},
-                              "orientation": {"x": -0.04361, "y": 0.23747, "z": 0.00095, "w": 0.97042},
+                              "orientation": {"x": -0.04361, "y": 0.23747, "z": 0.00095, "w": 0.97041},
                               "shape": {
                                 "type": "box",
                                 "offset": {"x": 0, "y": -0.75, "z": 5},
@@ -4461,8 +4480,8 @@
                                   },
                                   "right": {
                                     "offset": {"x": 181, "y": 181},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 270
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 90
                                   },
                                   "front": {
                                     "offset": {"x": 165, "y": 177},
@@ -4471,8 +4490,8 @@
                                   },
                                   "left": {
                                     "offset": {"x": 189, "y": 165},
-                                    "mirror": {"x": true, "y": true},
-                                    "angle": 270
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 90
                                   },
                                   "top": {
                                     "offset": {"x": 173, "y": 165},
@@ -4492,7 +4511,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "116",
+                                  "id": "117",
                                   "name": "R-Toe-Inner2",
                                   "position": {"x": 0, "y": 1.75, "z": 7.5},
                                   "orientation": {"x": 0.36244, "y": 0, "z": 0, "w": 0.93201},
@@ -4512,8 +4531,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 181, "y": 181},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 165, "y": 177},
@@ -4543,7 +4562,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "117",
+                                      "id": "118",
                                       "name": "R-Claw-Inner",
                                       "position": {"x": 0, "y": 0.07441, "z": 3.98728},
                                       "orientation": {"x": 0, "y": 0, "z": 0.70711, "w": 0.70711},
@@ -4562,7 +4581,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "118",
+                                          "id": "119",
                                           "name": "R-Claw-Inner--C1",
                                           "position": {"x": -0.09996, "y": -0.04429, "z": -5.00098},
                                           "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -4590,7 +4609,7 @@
                                           }
                                         },
                                         {
-                                          "id": "119",
+                                          "id": "120",
                                           "name": "R-Claw-Inner2",
                                           "position": {"x": 0, "y": 0, "z": -5},
                                           "orientation": {"x": -0.0923, "y": -0.0923, "z": 0.70106, "w": 0.70106},
@@ -4609,7 +4628,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "120",
+                                              "id": "121",
                                               "name": "R-Claw-Inner--C1",
                                               "position": {"x": -0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -4645,7 +4664,7 @@
                               ]
                             },
                             {
-                              "id": "121",
+                              "id": "122",
                               "name": "R-Toe-Outer",
                               "position": {"x": -4, "y": 0.25, "z": 9},
                               "orientation": {"x": -0.04353, "y": -0.19491, "z": -0.00285, "w": 0.97985},
@@ -4665,8 +4684,8 @@
                                   },
                                   "right": {
                                     "offset": {"x": 181, "y": 181},
-                                    "mirror": {"x": false, "y": false},
-                                    "angle": 270
+                                    "mirror": {"x": true, "y": true},
+                                    "angle": 90
                                   },
                                   "front": {
                                     "offset": {"x": 165, "y": 177},
@@ -4696,7 +4715,7 @@
                               },
                               "children": [
                                 {
-                                  "id": "122",
+                                  "id": "123",
                                   "name": "R-Toe-Outer2",
                                   "position": {"x": 0, "y": 1.75, "z": 7.75},
                                   "orientation": {"x": 0.36244, "y": 0, "z": 0, "w": 0.93201},
@@ -4716,8 +4735,8 @@
                                       },
                                       "right": {
                                         "offset": {"x": 181, "y": 181},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 270
+                                        "mirror": {"x": true, "y": true},
+                                        "angle": 90
                                       },
                                       "front": {
                                         "offset": {"x": 165, "y": 177},
@@ -4747,7 +4766,7 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "123",
+                                      "id": "124",
                                       "name": "R-Claw-Inner3",
                                       "position": {"x": 0, "y": 0.57441, "z": 3.98728},
                                       "orientation": {"x": 0, "y": 0, "z": 0.70711, "w": 0.70711},
@@ -4766,7 +4785,7 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "124",
+                                          "id": "125",
                                           "name": "R-Claw-Inner--C1",
                                           "position": {"x": -0.09996, "y": -0.04429, "z": -5.00098},
                                           "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
@@ -4794,7 +4813,7 @@
                                           }
                                         },
                                         {
-                                          "id": "125",
+                                          "id": "126",
                                           "name": "R-Claw-Inner4",
                                           "position": {"x": 0, "y": 0, "z": -5},
                                           "orientation": {"x": -0.0923, "y": -0.0923, "z": 0.70106, "w": 0.70106},
@@ -4813,7 +4832,7 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "126",
+                                              "id": "127",
                                               "name": "R-Claw-Inner--C1",
                                               "position": {"x": -0.09996, "y": -0.04429, "z": -5.00098},
                                               "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
