@@ -1,0 +1,318 @@
+# Index: Server/Item/Items
+
+- [Armor](#armor)/
+- [Bench](#bench)/
+- [Consumable](#consumable)/
+- [Container](#container)/
+- [Fluid](#fluid)/
+- [Furniture](#furniture)/
+- [Ingredient](#ingredient)/
+- [Ore](#ore)/
+- [Plant](#plant)/
+- [Portal](#portal)/
+- [Potion](#potion)/
+- [Rock](#rock)/
+- [Soil](#soil)/
+- [Tool](#tool)/
+- [Weapon](#weapon)/
+- [Other](#other)
+
+## Armor
+- Armor_Pkmn_Shell_Chest.json
+- Armor_Pkmn_Shell_Hands.json
+- Armor_Pkmn_Shell_Head.json
+- Armor_Pkmn_Shell_Legs.json
+- Armor_Rocket_Uniform_Chest.json
+- Armor_Rocket_Uniform_Hands.json
+- Armor_Rocket_Uniform_Head.json
+- Armor_Rocket_Uniform_Legs.json
+
+## Bench
+- Bench_Dough_Mixer.json
+- Bench_Pkmn_PC.json
+
+## Consumable
+- Food_Pizza_Pepperoni.json
+- Pkmn_Candy.json
+- Pkmn_Candy_L.json
+- Pkmn_Candy_S.json
+- Pkmn_Candy_XL.json
+- Pkmn_Candy_XS.json
+- Pkmn_Candy_XXL.json
+- Pkmn_Candy_XXS.json
+- Rare_Candy.json
+
+## Container
+- Container_Tank.json
+
+## Fluid
+- Molten_Copper.json
+- Molten_Copper.json
+- Molten_Copper_Source.json
+
+## Furniture
+- Pkmn_Healing_Table.json
+
+## Ingredient
+
+### Ingots
+- Ingredient_Bar_Pkmn_T0.json
+- Ingredient_Bar_Pkmn_T1.json
+- Ingredient_Bar_Pkmn_T2.json
+- Ingredient_Bar_Pkmn_T3.json
+- Ingredient_Bar_Pkmn_T4.json
+- Ingredient_Bar_Pkmn_T5.json
+- Ingredient_Bar_Pkmn_T6.json
+- Ingredient_Bar_Pkmn_T7.json
+- Ingredient_Bar_Pokemetal.json
+### Chitin
+- Ingredient_Pkmn_Chitin_T0.json
+- Ingredient_Pkmn_Chitin_T1.json
+- Ingredient_Pkmn_Chitin_T2.json
+- Ingredient_Pkmn_Chitin_T3.json
+- Ingredient_Pkmn_Chitin_T4.json
+- Ingredient_Pkmn_Chitin_T5.json
+- Ingredient_Pkmn_Chitin_T6.json
+- Ingredient_Pkmn_Chitin_T7.json
+### Cloth
+- Ingredient_Bolt_Pkmn_T0.json
+- Ingredient_Bolt_Pkmn_T1.json
+- Ingredient_Bolt_Pkmn_T2.json
+- Ingredient_Bolt_Pkmn_T3.json
+- Ingredient_Bolt_Pkmn_T4.json
+- Ingredient_Bolt_Pkmn_T5.json
+- Ingredient_Bolt_Pkmn_T6.json
+- Ingredient_Bolt_Pkmn_T7.json
+- Ingredient_Fabric_Scrap_Pkmn_T0.json
+- Ingredient_Fabric_Scrap_Pkmn_T1.json
+- Ingredient_Fabric_Scrap_Pkmn_T2.json
+- Ingredient_Fabric_Scrap_Pkmn_T3.json
+- Ingredient_Fabric_Scrap_Pkmn_T4.json
+- Ingredient_Fabric_Scrap_Pkmn_T5.json
+- Ingredient_Fabric_Scrap_Pkmn_T6.json
+- Ingredient_Fabric_Scrap_Pkmn_T7.json
+### Hide
+- Ingredient_Hide_Pkmn_Charizard.json
+- Ingredient_Hide_Pkmn_Charmander.json
+- Ingredient_Hide_Pkmn_Charmeleon.json
+- Ingredient_Pkmn_Hide_T0.json
+- Ingredient_Pkmn_Hide_T1.json
+- Ingredient_Pkmn_Hide_T2.json
+- Ingredient_Pkmn_Hide_T3.json
+- Ingredient_Pkmn_Hide_T4.json
+- Ingredient_Pkmn_Hide_T5.json
+- Ingredient_Pkmn_Hide_T6.json
+- Ingredient_Pkmn_Hide_T7.json
+- Ingredient_Pizza_Dough.json
+### Leather
+- Ingredient_Leather_Pkmn_Charizard.json
+- Ingredient_Leather_Pkmn_Charmander.json
+- Ingredient_Leather_Pkmn_Charmeleon.json
+- Ingredient_Pkmn_Leather_T0.json
+- Ingredient_Pkmn_Leather_T1.json
+- Ingredient_Pkmn_Leather_T2.json
+- Ingredient_Pkmn_Leather_T3.json
+- Ingredient_Pkmn_Leather_T4.json
+- Ingredient_Pkmn_Leather_T5.json
+- Ingredient_Pkmn_Leather_T6.json
+- Ingredient_Pkmn_Leather_T7.json
+
+## Ore
+- Ore_Pkmn_T0.json
+- Ore_Pkmn_T1.json
+- Ore_Pkmn_T2.json
+- Ore_Pkmn_T3.json
+- Ore_Pkmn_T4.json
+- Ore_Pkmn_T5.json
+- Ore_Pkmn_T6.json
+- Ore_Pkmn_T7.json
+- Ore_Pokemetal.json
+- Ore_Pokemetal_Basalt.json
+- Ore_Pokemetal_Marble.json
+- Ore_Pokemetal_Stone.json
+
+## Plant
+- Crop/
+    - Apricorn/
+        - Plant_Crop_Apricorn_Block.json
+        - Plant_Crop_Apricorn_Block_Wall.json
+        - Plant_Crop_Apricorn_Block.json
+        - Plant_Crop_Apricorn_Block_Wall.json
+        - Plant_Crop_Apricorn_T0_Block.json
+        - Plant_Crop_Apricorn_T0_Block_Wall.json
+        - Plant_Crop_Apricorn_T1_Block.json
+        - Plant_Crop_Apricorn_T1_Block_Wall.json
+        - Plant_Crop_Apricorn_T2_Block.json
+        - Plant_Crop_Apricorn_T2_Block_Wall.json
+        - Plant_Crop_Apricorn_T3_Block.json
+        - Plant_Crop_Apricorn_T3_Block_Wall.json
+        - Plant_Crop_Apricorn_T4_Block.json
+        - Plant_Crop_Apricorn_T4_Block_Wall.json
+        - Plant_Crop_Apricorn_T5_Block.json
+        - Plant_Crop_Apricorn_T5_Block_Wall.json
+        - Plant_Crop_Apricorn_T6_Block.json
+        - Plant_Crop_Apricorn_T6_Block_Wall.json
+        - Plant_Crop_Apricorn_T7_Block.json
+        - Plant_Crop_Apricorn_T7_Block_Wall.json
+    - Pkmn_Berry/
+        - Crop/
+            - Plant_Crop_Berry_Chesto_Block.json
+            - Plant_Crop_Berry_Nanab_Block.json
+            - Plant_Crop_Berry_Oran_Block.json
+            - Plant_Crop_Berry_Pecha_Block.json
+            - Plant_Crop_Berry_Pinap_Block.json
+            - Plant_Crop_Berry_Razz_Block.json
+            - Plant_Crop_Berry_Sitrus_Block.json
+        - Seeds/
+            - Plant_Seeds_Berry_Chesto.json
+            - Plant_Seeds_Berry_Nanab.json
+            - Plant_Seeds_Berry_Oran.json
+            - Plant_Seeds_Berry_Pecha.json
+            - Plant_Seeds_Berry_Pinap.json
+            - Plant_Seeds_Berry_Razz.json
+            - Plant_Seeds_Berry_Sitrus.json
+        - Plant_Berry_Chesto.json
+        - Plant_Berry_Nanab.json
+        - Plant_Berry_Oran.json
+        - Plant_Berry_Pecha.json
+        - Plant_Berry_Pinap.json
+        - Plant_Berry_Razz.json
+        - Plant_Berry_Sitrus.json
+- Fruit/
+    - Plant_Fruit_Apricorn.json
+    - Plant_Fruit_Apricorn_T0.json
+    - Plant_Fruit_Apricorn_T1.json
+    - Plant_Fruit_Apricorn_T2.json
+    - Plant_Fruit_Apricorn_T3.json
+    - Plant_Fruit_Apricorn_T4.json
+    - Plant_Fruit_Apricorn_T5.json
+    - Plant_Fruit_Apricorn_T6.json
+    - Plant_Fruit_Apricorn_T7.json
+- Plant_Sapling_Apricorn.json
+- Plant_Sapling_Apricorn_T0.json
+- Plant_Sapling_Apricorn_T1.json
+- Plant_Sapling_Apricorn_T2.json
+- Plant_Sapling_Apricorn_T3.json
+- Plant_Sapling_Apricorn_T4.json
+- Plant_Sapling_Apricorn_T5.json
+- Plant_Sapling_Apricorn_T6.json
+- Plant_Sapling_Apricorn_T7.json
+
+## Portal
+- Pkmn_Secret_Base_Enter.json
+- Pkmn_Secret_Base_Exit.json
+- PortalKey_Pkmn_Zone0.json
+- PortalKey_Pkmn_Zone1.json
+- PortalKey_Pkmn_Zone2.json
+- PortalKey_Pkmn_Zone3.json
+
+## Potion
+- Pkmn_Potion.json
+- Pkmn_Potion_Hyper.json
+- Pkmn_Potion_Max.json
+- Pkmn_Potion_Super.json
+- Pkmn_Revive.json
+- Pkmn_Revive_Max.json
+- White_Monster.json
+
+## Rock
+- Gem
+    - Rock_Gem_Fire_Stone.json
+    - Rock_Gem_Moon_Stone.json
+    - Rock_Gem_Thunder_Stone.json
+    - Rock_Gem_Water_Stone.json
+
+## Soil
+- Soil_Dirt_Red.json
+- Soil_Dirt_Red_Dry.json
+- Soil_Grass_Red.json
+- Soil_Grass_Red_Dry.json
+
+## Tool
+- Capture/
+    - Pokeball.json
+    - Pokeball_Apricorn.json
+    - Pokeball_Great.json
+    - Pokeball_Master.json
+    - Pokeball_Ultra.json
+- Pickaxe/
+    - Tool_Pickaxe_Pokemetal.json
+- Pkmn_Pokedex.json
+
+## Weapon
+- Greatsword/
+    - Nightblood.json
+    - Simoso.json
+- PkmnMoves/
+    - HM_Flash.json
+    - HM_Fly.json
+    - HM_Surf.json
+    - TM_Aurora_Beam.json
+    - TM_Bite.json
+    - TM_Blank.json
+    - TM_Bubble.json
+    - TM_Bubblebeam.json
+    - TM_Confusion.json
+    - TM_Crunch.json
+    - TM_Double_Kick.json
+    - TM_Dragon_Rage.json
+    - TM_Earthquake.json
+    - TM_Ember.json
+    - TM_Fire_Fang.json
+    - TM_Fire_Punch.json
+    - TM_Fire_Spin.json
+    - TM_Gust.json
+    - TM_Harden.json
+    - TM_Horn_Attack.json
+    - TM_Hydro_Pump.json
+    - TM_Hyper_Beam.json
+    - TM_Hyper_Fang.json
+    - TM_Ice_Beam.json
+    - TM_Ice_Punch.json
+    - TM_Lick.json
+    - TM_Megahorn.json
+    - TM_Metal_Claw.json
+    - TM_Peck.json
+    - TM_Poison_Fang.json
+    - TM_Poison_Powder.json
+    - TM_Poison_Sting.json
+    - TM_Psybeam.json
+    - TM_Psychic.json
+    - TM_Rage.json
+    - TM_Razor_Leaf.json
+    - TM_Rock_Smash.json
+    - TM_Rock_Throw.json
+    - TM_Sand_Attack.json
+    - TM_Scratch.json
+    - TM_Shadow_Punch.json
+    - TM_Signal_Beam.json
+    - TM_Skull_Bash.json
+    - TM_Slash.json
+    - TM_Sleep_Powder.json
+    - TM_Solar_Beam.json
+    - TM_Superpower.json
+    - TM_Swift.json
+    - TM_Tackle.json
+    - TM_Tail_Whip.json
+    - TM_Template.json
+    - TM_Test.json
+    - TM_Thunder.json
+    - TM_Thunderbolt.json
+    - TM_Thundershock.json
+    - TM_Twineedle.json
+    - TM_Water_Gun.json
+    - TM_Wing_Attack.json
+- Shield/
+    - Pkmn_Shield_Shell.json
+- Whip/
+    - Weapon_Pkmn_Vine_Whip.json
+- Pkmn_Ember.json
+- Rocket_Baton.json
+- Rocket_Handgun.json
+
+
+## Other
+
+- Exp_Particle.json
+- PkmnEgg.json
+- Pkmn_Tombstone.json
