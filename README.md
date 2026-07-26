@@ -2,42 +2,19 @@
 
 [View on CurseForge](https://www.curseforge.com/hytale/mods/portable-monstrosities)
 
-## ** WIP **
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/scaled-1680-/image-1782899684136.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/scaled-1680-/image-1782900717053.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/scaled-1680-/image-1782900725292.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/scaled-1680-/image-1782900720400.png)
 
-
-![](https://media.forgecdn.net/attachments/description/null/description_3a7b40c5-a630-44c5-81ef-ca60445ba9ec.png)
-
-- Throwable capture item which has a chance to tame an NPC it hits, make sure to weaken them first to increase your chances.
-- NPCs spawn with random level (range set via NPCRole json), levelling currently affects HP only 
-- Some NPCs can evolve if they've reached the required level
-- Added several new elemental damage types:
-    - Poison
-    - Psychic
-    - Rock
-    - Steel
-    - Water
-    - Bug
-    - Dark
-    - Dragon
-    - Electric
-    - Fighting
-    - Fire
-    - Flying
-    - Ghost
-    - Grass
-    - Ground
-    - Ice
-    - Normal
-- NPCs have slots for two elemental types, which give them resistances and weaknesses to attacks
-- NPCs have slots for four attack, set in NPCRole json
 
 NPCs added (incomplete)
 
 <details>
-  
-This is just whatever generated icons I already had, some are missing and some are old
 
-![](https://media.forgecdn.net/attachments/description/null/description_9522c01d-b745-462c-83e6-0f04d80291cc.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/jnkhytale2026-07-08-20-26-41.png)
+
+<!-- ![](https://media.forgecdn.net/attachments/description/null/description_9522c01d-b745-462c-83e6-0f04d80291cc.png)
 ![](https://media.forgecdn.net/attachments/description/null/description_07c768e4-3569-4a24-8081-699abc12387d.png)
 ![](https://media.forgecdn.net/attachments/description/null/description_468dd179-f4bd-4ce4-a512-7efa1f78e3e0.png)
 ![](https://media.forgecdn.net/attachments/description/null/description_9ae3d159-ace4-4e3d-b5b5-93acc01dc6f0.png)
@@ -71,8 +48,105 @@ This is just whatever generated icons I already had, some are missing and some
 ![](https://media.forgecdn.net/attachments/description/null/description_83c68711-5404-4afa-a67b-734a2843e209.png)
 ![](https://media.forgecdn.net/attachments/description/null/description_4bd4bf37-dad6-4000-a1ae-b51545a4608c.png)
 ![](https://media.forgecdn.net/attachments/description/null/description_ad0f78a6-255d-4fd7-b4a2-284ac2878a08.png)
-![](https://media.forgecdn.net/attachments/description/null/description_2c784188-7620-4adc-8952-ad4923ba3f64.png)
-  
+![](https://media.forgecdn.net/attachments/description/null/description_2c784188-7620-4adc-8952-ad4923ba3f64.png) -->
+
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/rocket-james.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/rocket-jessie.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/rocket.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-bulbasaur.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-metapod.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-butterfree.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-kakuna.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-beedrill.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-pidgeotto.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-pidgeot.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-ratticate.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-fearow.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-ekans.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-arbok.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-pikachu.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-raichu.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-sandslash.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-nidoranf.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-nidorina.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-nidoqueen.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-nidoranm.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-nidorino.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-nidoking.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-clefairy.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-clefable.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-vulpix.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-ninetales.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-zubat.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-golbat.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-oddish.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-gloom.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-vileplume.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-paras.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-parasect.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-venonat.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-venomoth.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-dugtrio.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-meowth.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-psyduck.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-golduck.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-growlithe.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-arcanine.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-abra.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-kadabra.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-machop.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-machoke.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-machamp.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-victreebel.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-geodude.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-graveler.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-golem.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-ponyta.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-rapidash.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-magnemite.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-magneton.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-doduo.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-dodrio.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-dewgong.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-muk.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-shellder.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-cloyster.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-gastly.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-gengar.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-onix.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-drowzee.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-krabby.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-kingler.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-voltorb.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-electrode.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-cubone.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-koffing.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-weezing.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-horsea.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-seadra.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-goldeen.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-staryu.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-starmie.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-scyther.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-jynx.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/qzSpkmn-electabuzz.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/qFSpkmn-magmar.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-tauros.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-gyarados.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-04/pkmn-lapras.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-omanyte.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-omastar.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-kabuto.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-snorlax.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-articuno.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-zapdos.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-moltres.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-dratini.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-dragonair.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-05/pkmn-dragonite.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-mewtwo.png)
+![](https://declanw.net/bookstack/uploads/images/gallery/2026-07/pkmn-mew.png)
+
 </details>
 
 ----
@@ -123,7 +197,3 @@ This is just whatever generated icons I already had, some are missing and some
 - Pizza
 
 ----
-
-WORLDGEN V2
-
-TODO: add some pictures of new biomes + structures
