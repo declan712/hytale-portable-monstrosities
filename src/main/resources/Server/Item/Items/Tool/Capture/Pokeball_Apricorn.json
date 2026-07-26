@@ -8,9 +8,10 @@
   "ItemLevel": 1,
   "Model": "Items/Pokeball_Apricorn/Model.blockymodel",
   "Texture": "Items/Pokeball_Apricorn/Texture.png",
+  "Icon": "Icons/ItemsGenerated/Pokeball_Apricorn.png",
   "MaxStack": 99,
   "Recipe": {
-    "TimeSeconds": 2,
+    "TimeSeconds": 1,
     "Input": [
       {
         "Quantity": 1,
@@ -133,7 +134,7 @@
                         "Interactions": [
                           {
                             "Type": "Projectile",
-                            "Config": "Projectile_Config_Pokeball_Base"
+                            "Config": "Projectile_Config_Pokeball_Apricorn"
                           }
                         ]
                       },
@@ -161,7 +162,7 @@
       "Interactions": [
         {
           "Type": "Projectile",
-          "Config": "Projectile_Config_Pokeball_Base"
+          "Config": "Projectile_Config_Pokeball_Apricorn"
         }
       ]
     },
@@ -187,14 +188,14 @@
     },
     "Capture_Escape_Effect": {
       "Interactions": [
-        "Pokeball_Escape"
+        "Pokeball_Escape_Apricorn"
       ]
     },
     "Capture_Effect": {
       "Interactions": [
         {
           "Type": "ApplyEffect",
-          "EffectId": "Captured",
+          "EffectId": "Captured_Apricornball",
           "Entity": "Target",
           "Next": {
             "Type": "Simple",
@@ -352,7 +353,7 @@
                         {
                           "Type": "AddItem",
                           "Quantity": 1,
-                          "ItemId": "Pokeball_Great",
+                          "ItemId": "Pokeball_Apricorn",
                           "Next": {
                             "Type": "ModifyInventory",
                             "AdjustHeldItemQuantity": -1
@@ -436,6 +437,5 @@
       },
       "Variant": true
     }
-  },
-  "Icon": "Icons/ItemsGenerated/Pokeball_Apricorn.png"
+  }
 }
