@@ -22,11 +22,11 @@
         {
           "id": "2",
           "name": "Pelvis",
-          "position": {"x": 0, "y": 39, "z": -17},
+          "position": {"x": 0, "y": 42.75, "z": -17},
           "orientation": {"x": -0.5, "y": 0, "z": 0, "w": 0.86603},
           "shape": {
             "type": "box",
-            "offset": {"x": 0, "y": -2.5, "z": -3.7},
+            "offset": {"x": 0, "y": -2.25, "z": -3.26699},
             "stretch": {"x": 1, "y": 1, "z": 1},
             "settings": {
               "isPiece": false,
@@ -73,11 +73,11 @@
             {
               "id": "3",
               "name": "Pelvis-Spike",
-              "position": {"x": 0, "y": 21.5, "z": 9.7},
+              "position": {"x": 0, "y": 21.25, "z": 9.26699},
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
               "shape": {
                 "type": "box",
-                "offset": {"x": 0, "y": 4, "z": 0},
+                "offset": {"x": 0, "y": 4.25, "z": 0.43301},
                 "stretch": {"x": 1.125, "y": 1.125, "z": 1.125},
                 "settings": {
                   "isPiece": false,
@@ -119,7 +119,7 @@
                 {
                   "id": "4",
                   "name": "Pelvis-Spike2",
-                  "position": {"x": 0, "y": 4, "z": 0},
+                  "position": {"x": 0, "y": 3.75, "z": -0.43301},
                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                   "shape": {
                     "type": "none",
@@ -142,7 +142,7 @@
                       "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
                       "shape": {
                         "type": "quad",
-                        "offset": {"x": 0, "y": 7, "z": 0},
+                        "offset": {"x": -0.43301, "y": 7.25, "z": 0},
                         "stretch": {"x": 0.875, "y": 0.875, "z": 1},
                         "settings": {
                           "isPiece": false,
@@ -162,19 +162,47 @@
                         "doubleSided": true,
                         "shadingMode": "flat"
                       }
+                    },
+                    {
+                      "id": "6",
+                      "name": "Spike2--C2",
+                      "position": {"x": 0, "y": 0, "z": 0},
+                      "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": 0.43301, "y": 7.25, "z": 0},
+                        "stretch": {"x": 0.875, "y": 0.875, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 12, "y": 16},
+                          "normal": "+Z",
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 136, "y": 400},
+                            "mirror": {"x": true, "y": false},
+                            "angle": 0
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat"
+                      }
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "6",
+              "id": "7",
               "name": "Belly",
-              "position": {"x": 0, "y": 5.5, "z": 14.5},
+              "position": {"x": 0, "y": 5.25, "z": 14.06699},
               "orientation": {"x": 0.60876, "y": 0, "z": 0, "w": 0.79335},
               "shape": {
                 "type": "box",
-                "offset": {"x": -0.5, "y": 15.5, "z": 6},
+                "offset": {"x": 0, "y": 15.98296, "z": 5.87059},
                 "stretch": {"x": 1.125, "y": 1.25, "z": 1},
                 "settings": {
                   "isPiece": false,
@@ -209,13 +237,13 @@
               },
               "children": [
                 {
-                  "id": "7",
+                  "id": "8",
                   "name": "Chest",
-                  "position": {"x": 0.5, "y": 4.25, "z": -13},
+                  "position": {"x": 0, "y": 3.76704, "z": -12.87059},
                   "orientation": {"x": 0.02181, "y": 0, "z": 0, "w": 0.99976},
                   "shape": {
                     "type": "box",
-                    "offset": {"x": 0, "y": 9.5, "z": 13.4},
+                    "offset": {"x": 0, "y": 9.97686, "z": 13.24966},
                     "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false,
@@ -255,13 +283,13 @@
                   },
                   "children": [
                     {
-                      "id": "8",
+                      "id": "9",
                       "name": "Back-Spike3",
-                      "position": {"x": 0, "y": 8, "z": -21.15},
+                      "position": {"x": 0, "y": 7.52314, "z": -20.99966},
                       "orientation": {"x": -0.60876, "y": 0, "z": 0, "w": 0.79335},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": 0, "y": 4, "z": 0},
+                        "offset": {"x": 0, "y": 4.26864, "z": 0.4217},
                         "stretch": {"x": 1.125, "y": 1, "z": 1.125},
                         "settings": {
                           "isPiece": false,
@@ -301,9 +329,9 @@
                       },
                       "children": [
                         {
-                          "id": "9",
+                          "id": "10",
                           "name": "Back-Spike4",
-                          "position": {"x": 0, "y": 4, "z": 0},
+                          "position": {"x": 0, "y": 3.73136, "z": -0.4217},
                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                           "shape": {
                             "type": "none",
@@ -320,13 +348,13 @@
                           },
                           "children": [
                             {
-                              "id": "10",
+                              "id": "11",
                               "name": "Spike2--C1",
                               "position": {"x": 0, "y": 0, "z": 0},
                               "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
                               "shape": {
                                 "type": "quad",
-                                "offset": {"x": 0, "y": 7, "z": 0},
+                                "offset": {"x": -0.4217, "y": 7.26864, "z": 0},
                                 "stretch": {"x": 0.875, "y": 0.875, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -346,19 +374,47 @@
                                 "doubleSided": true,
                                 "shadingMode": "flat"
                               }
+                            },
+                            {
+                              "id": "12",
+                              "name": "Spike2--C2",
+                              "position": {"x": 0, "y": 0, "z": 0},
+                              "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+                              "shape": {
+                                "type": "quad",
+                                "offset": {"x": 0.4217, "y": 7.26864, "z": 0},
+                                "stretch": {"x": 0.875, "y": 0.875, "z": 1},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 12, "y": 16},
+                                  "normal": "+Z",
+                                  "isStaticBox": true
+                                },
+                                "textureLayout": {
+                                  "front": {
+                                    "offset": {"x": 136, "y": 400},
+                                    "mirror": {"x": true, "y": false},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": true,
+                                "shadingMode": "flat"
+                              }
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      "id": "11",
+                      "id": "13",
                       "name": "Back-Spike",
-                      "position": {"x": 0, "y": -7.25, "z": -23.4},
+                      "position": {"x": 0, "y": -7.72686, "z": -23.24966},
                       "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": 0, "y": 3.5, "z": 0},
+                        "offset": {"x": 0, "y": 3.65034, "z": 0.47686},
                         "stretch": {"x": 1.125, "y": 0.875, "z": 1.125},
                         "settings": {
                           "isPiece": false,
@@ -398,9 +454,9 @@
                       },
                       "children": [
                         {
-                          "id": "12",
+                          "id": "14",
                           "name": "Back-Spike2",
-                          "position": {"x": 0, "y": 2.5, "z": 0},
+                          "position": {"x": 0, "y": 2.34966, "z": -0.47686},
                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                           "shape": {
                             "type": "none",
@@ -417,13 +473,13 @@
                           },
                           "children": [
                             {
-                              "id": "13",
+                              "id": "15",
                               "name": "Spike2--C1",
                               "position": {"x": 0, "y": 0, "z": 0},
                               "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
                               "shape": {
                                 "type": "quad",
-                                "offset": {"x": 0, "y": 7, "z": 0},
+                                "offset": {"x": -0.47686, "y": 7.15034, "z": 0},
                                 "stretch": {"x": 0.875, "y": 0.875, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -443,19 +499,47 @@
                                 "doubleSided": true,
                                 "shadingMode": "flat"
                               }
+                            },
+                            {
+                              "id": "16",
+                              "name": "Spike2--C2",
+                              "position": {"x": 0, "y": 0, "z": 0},
+                              "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+                              "shape": {
+                                "type": "quad",
+                                "offset": {"x": 0.47686, "y": 7.15034, "z": 0},
+                                "stretch": {"x": 0.875, "y": 0.875, "z": 1},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 12, "y": 16},
+                                  "normal": "+Z",
+                                  "isStaticBox": true
+                                },
+                                "textureLayout": {
+                                  "front": {
+                                    "offset": {"x": 136, "y": 400},
+                                    "mirror": {"x": true, "y": false},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": true,
+                                "shadingMode": "flat"
+                              }
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      "id": "14",
+                      "id": "17",
                       "name": "Neck",
-                      "position": {"x": 0, "y": 11, "z": -18.75},
+                      "position": {"x": 0, "y": 10.52314, "z": -18.59966},
                       "orientation": {"x": 0.19508, "y": 0, "z": 0, "w": 0.98079},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": 0, "y": 19.5, "z": 7},
+                        "offset": {"x": 0, "y": 19.88303, "z": 6.67862},
                         "stretch": {"x": 0.85, "y": 1, "z": 1},
                         "settings": {
                           "isPiece": false,
@@ -500,110 +584,13 @@
                       },
                       "children": [
                         {
-                          "id": "15",
-                          "name": "Neck-Spike3",
-                          "position": {"x": 0, "y": 9.25, "z": -6.15},
-                          "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
-                          "shape": {
-                            "type": "box",
-                            "offset": {"x": 0, "y": 4, "z": 0},
-                            "stretch": {"x": 1.125, "y": 1, "z": 1.125},
-                            "settings": {
-                              "isPiece": false,
-                              "size": {"x": 8, "y": 8, "z": 12}
-                            },
-                            "textureLayout": {
-                              "back": {
-                                "offset": {"x": 115, "y": 396},
-                                "mirror": {"x": false, "y": false},
-                                "angle": 0
-                              },
-                              "right": {
-                                "offset": {"x": 115, "y": 404},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 270
-                              },
-                              "front": {
-                                "offset": {"x": 115, "y": 404},
-                                "mirror": {"x": false, "y": false},
-                                "angle": 180
-                              },
-                              "left": {
-                                "offset": {"x": 115, "y": 416},
-                                "mirror": {"x": false, "y": true},
-                                "angle": 270
-                              },
-                              "top": {
-                                "offset": {"x": 123, "y": 416},
-                                "mirror": {"x": false, "y": false},
-                                "angle": 180
-                              }
-                            },
-                            "unwrapMode": "custom",
-                            "visible": true,
-                            "doubleSided": false,
-                            "shadingMode": "flat"
-                          },
-                          "children": [
-                            {
-                              "id": "16",
-                              "name": "Neck-Spike4",
-                              "position": {"x": 0, "y": 4, "z": 0},
-                              "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
-                              "shape": {
-                                "type": "none",
-                                "offset": {"x": 0, "y": 0, "z": 0},
-                                "stretch": {"x": 1, "y": 1, "z": 1},
-                                "settings": {
-                                  "isPiece": false
-                                },
-                                "textureLayout": {},
-                                "unwrapMode": "custom",
-                                "visible": true,
-                                "doubleSided": false,
-                                "shadingMode": "flat"
-                              },
-                              "children": [
-                                {
-                                  "id": "17",
-                                  "name": "Spike2--C1",
-                                  "position": {"x": 0, "y": -1, "z": 0},
-                                  "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
-                                  "shape": {
-                                    "type": "quad",
-                                    "offset": {"x": 0, "y": 7, "z": 0},
-                                    "stretch": {"x": 0.875, "y": 0.75, "z": 1},
-                                    "settings": {
-                                      "isPiece": false,
-                                      "size": {"x": 12, "y": 16},
-                                      "normal": "+Z",
-                                      "isStaticBox": true
-                                    },
-                                    "textureLayout": {
-                                      "front": {
-                                        "offset": {"x": 124, "y": 400},
-                                        "mirror": {"x": false, "y": false},
-                                        "angle": 0
-                                      }
-                                    },
-                                    "unwrapMode": "custom",
-                                    "visible": true,
-                                    "doubleSided": true,
-                                    "shadingMode": "flat"
-                                  }
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
                           "id": "18",
-                          "name": "Neck-Spike",
-                          "position": {"x": 0, "y": -7.75, "z": -6.15},
+                          "name": "Neck-Spike3",
+                          "position": {"x": 0, "y": 8.86697, "z": -5.82862},
                           "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 0, "y": 4, "z": 0},
+                            "offset": {"x": 0, "y": 4.32138, "z": 0.38303},
                             "stretch": {"x": 1.125, "y": 1, "z": 1.125},
                             "settings": {
                               "isPiece": false,
@@ -644,8 +631,8 @@
                           "children": [
                             {
                               "id": "19",
-                              "name": "Neck-Spike2",
-                              "position": {"x": 0, "y": 4, "z": 0},
+                              "name": "Neck-Spike4",
+                              "position": {"x": 0, "y": 3.67862, "z": -0.38303},
                               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                               "shape": {
                                 "type": "none",
@@ -668,7 +655,7 @@
                                   "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
                                   "shape": {
                                     "type": "quad",
-                                    "offset": {"x": 0, "y": 7, "z": 0},
+                                    "offset": {"x": -0.38303, "y": 7.32138, "z": 0},
                                     "stretch": {"x": 0.875, "y": 0.75, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -688,15 +675,168 @@
                                     "doubleSided": true,
                                     "shadingMode": "flat"
                                   }
+                                },
+                                {
+                                  "id": "21",
+                                  "name": "Spike2--C2",
+                                  "position": {"x": 0, "y": -1, "z": 0},
+                                  "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+                                  "shape": {
+                                    "type": "quad",
+                                    "offset": {"x": 0.38303, "y": 7.32138, "z": 0},
+                                    "stretch": {"x": 0.875, "y": 0.75, "z": 1},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 12, "y": 16},
+                                      "normal": "+Z",
+                                      "isStaticBox": true
+                                    },
+                                    "textureLayout": {
+                                      "front": {
+                                        "offset": {"x": 136, "y": 400},
+                                        "mirror": {"x": true, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": true,
+                                    "shadingMode": "flat"
+                                  }
                                 }
                               ]
                             }
                           ]
                         },
                         {
-                          "id": "21",
+                          "id": "22",
+                          "name": "Neck-Spike",
+                          "position": {"x": 0, "y": -8.13303, "z": -5.82862},
+                          "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
+                          "shape": {
+                            "type": "box",
+                            "offset": {"x": 0, "y": 4.32138, "z": 0.38303},
+                            "stretch": {"x": 1.125, "y": 1, "z": 1.125},
+                            "settings": {
+                              "isPiece": false,
+                              "size": {"x": 8, "y": 8, "z": 12}
+                            },
+                            "textureLayout": {
+                              "back": {
+                                "offset": {"x": 115, "y": 396},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "right": {
+                                "offset": {"x": 115, "y": 404},
+                                "mirror": {"x": true, "y": true},
+                                "angle": 270
+                              },
+                              "front": {
+                                "offset": {"x": 115, "y": 404},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 180
+                              },
+                              "left": {
+                                "offset": {"x": 115, "y": 416},
+                                "mirror": {"x": false, "y": true},
+                                "angle": 270
+                              },
+                              "top": {
+                                "offset": {"x": 123, "y": 416},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 180
+                              }
+                            },
+                            "unwrapMode": "custom",
+                            "visible": true,
+                            "doubleSided": false,
+                            "shadingMode": "flat"
+                          },
+                          "children": [
+                            {
+                              "id": "23",
+                              "name": "Neck-Spike2",
+                              "position": {"x": 0, "y": 3.67862, "z": -0.38303},
+                              "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                              "shape": {
+                                "type": "none",
+                                "offset": {"x": 0, "y": 0, "z": 0},
+                                "stretch": {"x": 1, "y": 1, "z": 1},
+                                "settings": {
+                                  "isPiece": false
+                                },
+                                "textureLayout": {},
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "flat"
+                              },
+                              "children": [
+                                {
+                                  "id": "24",
+                                  "name": "Spike2--C1",
+                                  "position": {"x": 0, "y": -1, "z": 0},
+                                  "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
+                                  "shape": {
+                                    "type": "quad",
+                                    "offset": {"x": -0.38303, "y": 7.32138, "z": 0},
+                                    "stretch": {"x": 0.875, "y": 0.75, "z": 1},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 12, "y": 16},
+                                      "normal": "+Z",
+                                      "isStaticBox": true
+                                    },
+                                    "textureLayout": {
+                                      "front": {
+                                        "offset": {"x": 124, "y": 400},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": true,
+                                    "shadingMode": "flat"
+                                  }
+                                },
+                                {
+                                  "id": "25",
+                                  "name": "Spike2--C2",
+                                  "position": {"x": 0, "y": -1, "z": 0},
+                                  "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+                                  "shape": {
+                                    "type": "quad",
+                                    "offset": {"x": 0.38303, "y": 7.32138, "z": 0},
+                                    "stretch": {"x": 0.875, "y": 0.75, "z": 1},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 12, "y": 16},
+                                      "normal": "+Z",
+                                      "isStaticBox": true
+                                    },
+                                    "textureLayout": {
+                                      "front": {
+                                        "offset": {"x": 136, "y": 400},
+                                        "mirror": {"x": true, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": true,
+                                    "shadingMode": "flat"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "26",
                           "name": "Neck2",
-                          "position": {"x": 0, "y": 22.5, "z": -8.5},
+                          "position": {"x": 0, "y": 22.11697, "z": -8.17862},
                           "orientation": {"x": -0.25883, "y": 0, "z": 0, "w": 0.96592},
                           "shape": {
                             "type": "none",
@@ -713,13 +853,13 @@
                           },
                           "children": [
                             {
-                              "id": "22",
+                              "id": "27",
                               "name": "Neck--C1",
                               "position": {"x": 0, "y": -34, "z": 4},
                               "orientation": {"x": 0.04362, "y": 0, "z": 0, "w": 0.99905},
                               "shape": {
                                 "type": "box",
-                                "offset": {"x": 0, "y": 6.5, "z": 1},
+                                "offset": {"x": 0, "y": 6.98297, "z": 0.87062},
                                 "stretch": {"x": 1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -765,13 +905,13 @@
                               }
                             },
                             {
-                              "id": "23",
+                              "id": "28",
                               "name": "L-Cheek2",
                               "position": {"x": 20.75, "y": -24, "z": 3.25},
                               "orientation": {"x": -0.17497, "y": -0.43379, "z": 0.08629, "w": 0.87964},
                               "shape": {
                                 "type": "box",
-                                "offset": {"x": 0, "y": -0.5, "z": -10},
+                                "offset": {"x": 0.08588, "y": -0.01186, "z": -9.93411},
                                 "stretch": {"x": 1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -816,13 +956,13 @@
                               }
                             },
                             {
-                              "id": "24",
+                              "id": "29",
                               "name": "Head",
                               "position": {"x": 0, "y": -11.4, "z": 8.9},
                               "orientation": {"x": -0.08716, "y": 0, "z": 0, "w": 0.99619},
                               "shape": {
                                 "type": "box",
-                                "offset": {"x": 0, "y": -9.3, "z": 11.3},
+                                "offset": {"x": 0, "y": -8.8, "z": 11.30003},
                                 "stretch": {"x": 1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -867,13 +1007,13 @@
                               },
                               "children": [
                                 {
-                                  "id": "25",
+                                  "id": "30",
                                   "name": "L-Eyebrow--C1",
-                                  "position": {"x": 23.5, "y": 15.50965, "z": 9.57471},
+                                  "position": {"x": 23.5, "y": 15.00965, "z": 9.57468},
                                   "orientation": {"x": 0.10794, "y": -0.12975, "z": -0.01421, "w": 0.98555},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": -8, "y": -5, "z": -2.5},
+                                    "offset": {"x": -8.028, "y": -4.51185, "z": -2.60451},
                                     "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -882,33 +1022,33 @@
                                     },
                                     "textureLayout": {
                                       "back": {
-                                        "offset": {"x": 127, "y": 370},
-                                        "mirror": {"x": false, "y": false},
+                                        "offset": {"x": 141, "y": 370},
+                                        "mirror": {"x": true, "y": false},
                                         "angle": 0
                                       },
                                       "right": {
-                                        "offset": {"x": 102, "y": 370},
+                                        "offset": {"x": 141, "y": 370},
                                         "mirror": {"x": false, "y": false},
                                         "angle": 0
                                       },
                                       "front": {
-                                        "offset": {"x": 166, "y": 370},
-                                        "mirror": {"x": false, "y": false},
+                                        "offset": {"x": 180, "y": 370},
+                                        "mirror": {"x": true, "y": false},
                                         "angle": 0
                                       },
                                       "left": {
-                                        "offset": {"x": 141, "y": 370},
+                                        "offset": {"x": 102, "y": 370},
                                         "mirror": {"x": false, "y": false},
                                         "angle": 0
                                       },
                                       "top": {
-                                        "offset": {"x": 141, "y": 370},
-                                        "mirror": {"x": true, "y": true},
+                                        "offset": {"x": 127, "y": 370},
+                                        "mirror": {"x": false, "y": true},
                                         "angle": 0
                                       },
                                       "bottom": {
-                                        "offset": {"x": 155, "y": 345},
-                                        "mirror": {"x": true, "y": false},
+                                        "offset": {"x": 141, "y": 345},
+                                        "mirror": {"x": false, "y": false},
                                         "angle": 0
                                       }
                                     },
@@ -919,13 +1059,13 @@
                                   }
                                 },
                                 {
-                                  "id": "26",
+                                  "id": "31",
                                   "name": "Snout",
-                                  "position": {"x": 0, "y": 1.7, "z": 13.5},
+                                  "position": {"x": 0, "y": 1.2, "z": 13.49997},
                                   "orientation": {"x": 0.04362, "y": 0, "z": 0, "w": 0.99905},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": -4, "z": 6.7},
+                                    "offset": {"x": 0, "y": -3.5019, "z": 6.65646},
                                     "stretch": {"x": 1.125, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -965,13 +1105,13 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "27",
+                                      "id": "32",
                                       "name": "Horn",
-                                      "position": {"x": 0, "y": 7, "z": -4.35},
-                                      "orientation": {"x": -0.42262, "y": 0, "z": 0, "w": 0.90631},
+                                      "position": {"x": 0, "y": 5.7519, "z": -1.30646},
+                                      "orientation": {"x": -0.34202, "y": 0, "z": 0, "w": 0.93969},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": -0.24264, "z": 4.30152},
+                                        "offset": {"x": 0, "y": 0.16692, "z": 4.58834},
                                         "stretch": {"x": 1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -1016,13 +1156,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "28",
+                                          "id": "33",
                                           "name": "Horn2--C1",
-                                          "position": {"x": 0, "y": 0.24264, "z": -4.30152},
+                                          "position": {"x": 0, "y": -0.16692, "z": -4.58834},
                                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                                           "shape": {
                                             "type": "box",
-                                            "offset": {"x": 0, "y": -0.24264, "z": 20.30152},
+                                            "offset": {"x": 0, "y": 0.16692, "z": 20.58834},
                                             "stretch": {"x": 1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -1068,13 +1208,13 @@
                                           }
                                         },
                                         {
-                                          "id": "29",
+                                          "id": "34",
                                           "name": "Horn3--C2",
-                                          "position": {"x": 0, "y": 0.24264, "z": -2.30152},
+                                          "position": {"x": 0, "y": -0.16692, "z": -2.58834},
                                           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                                           "shape": {
                                             "type": "box",
-                                            "offset": {"x": 0, "y": -0.24264, "z": 32.30152},
+                                            "offset": {"x": 0, "y": 0.16692, "z": 32.58834},
                                             "stretch": {"x": 1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -1122,13 +1262,13 @@
                                       ]
                                     },
                                     {
-                                      "id": "30",
+                                      "id": "35",
                                       "name": "Nose",
-                                      "position": {"x": 0, "y": -1.1, "z": -0.1},
+                                      "position": {"x": 0, "y": -1.5981, "z": -0.05646},
                                       "orientation": {"x": 0.04362, "y": 0, "z": 0, "w": 0.99905},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": 0.3, "z": 8},
+                                        "offset": {"x": 0, "y": 0.79241, "z": 7.91321},
                                         "stretch": {"x": 1.125, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -1168,13 +1308,13 @@
                                       }
                                     },
                                     {
-                                      "id": "31",
+                                      "id": "36",
                                       "name": "Teeth-Top",
-                                      "position": {"x": 0, "y": -9.4, "z": 1.05},
+                                      "position": {"x": 0, "y": -9.8981, "z": 1.09354},
                                       "orientation": {"x": -0.01309, "y": 0, "z": 0, "w": 0.99991},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": 0, "z": 0},
+                                        "offset": {"x": 0, "y": 0.49907, "z": -0.03049},
                                         "stretch": {"x": 1, "y": 0.5, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -1206,13 +1346,13 @@
                                   ]
                                 },
                                 {
-                                  "id": "32",
+                                  "id": "37",
                                   "name": "Jaw",
-                                  "position": {"x": 0, "y": -14.5, "z": -17.5},
+                                  "position": {"x": 0, "y": -15, "z": -17.50003},
                                   "orientation": {"x": 0.17363, "y": 0, "z": 0, "w": 0.98481},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": -0.6, "z": 13.9},
+                                    "offset": {"x": 0, "y": -0.13014, "z": 13.72904},
                                     "stretch": {"x": 0.9, "y": 1.125, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1252,13 +1392,13 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "33",
+                                      "id": "38",
                                       "name": "Jaw2",
-                                      "position": {"x": 0, "y": -1.05, "z": 12.55},
+                                      "position": {"x": 0, "y": -1.51986, "z": 12.72096},
                                       "orientation": {"x": -0.04361, "y": 0, "z": 0, "w": 0.99905},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": -0.8, "z": 6.2},
+                                        "offset": {"x": 0, "y": -0.31703, "z": 6.07063},
                                         "stretch": {"x": 1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -1298,13 +1438,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "34",
+                                          "id": "39",
                                           "name": "Teeth-Bot-Front",
-                                          "position": {"x": 0.7, "y": 3.7, "z": 5},
+                                          "position": {"x": 0.7, "y": 2.21703, "z": 5.12937},
                                           "orientation": {"x": -0.02618, "y": 0, "z": 0, "w": 0.99966},
                                           "shape": {
                                             "type": "box",
-                                            "offset": {"x": 0, "y": 0, "z": -2},
+                                            "offset": {"x": 0, "y": 0.48908, "z": -2.10391},
                                             "stretch": {"x": 0.8, "y": -0.675, "z": 0.55},
                                             "settings": {
                                               "isPiece": false,
@@ -1334,13 +1474,13 @@
                                           }
                                         },
                                         {
-                                          "id": "35",
+                                          "id": "40",
                                           "name": "Teeth-Bot-Back",
-                                          "position": {"x": 0.7, "y": 4.2, "z": -10.4},
+                                          "position": {"x": 0.7, "y": 3.71703, "z": -10.27063},
                                           "orientation": {"x": -0.02618, "y": 0, "z": 0, "w": 0.99966},
                                           "shape": {
                                             "type": "box",
-                                            "offset": {"x": 0, "y": 0, "z": -1},
+                                            "offset": {"x": 0, "y": 0.48908, "z": -1.10391},
                                             "stretch": {"x": 1.7, "y": -0.375, "z": 0.6},
                                             "settings": {
                                               "isPiece": false,
@@ -1363,17 +1503,84 @@
                                             "doubleSided": true,
                                             "shadingMode": "flat"
                                           }
+                                        },
+                                        {
+                                          "id": "41",
+                                          "name": "Teeth-Bot-Front2",
+                                          "position": {"x": -0.7, "y": 2.21703, "z": 5.12937},
+                                          "orientation": {"x": -0.02618, "y": 0, "z": 0, "w": 0.99966},
+                                          "shape": {
+                                            "type": "box",
+                                            "offset": {"x": 0, "y": 0.48908, "z": -2.10391},
+                                            "stretch": {"x": 0.8, "y": -0.675, "z": 0.55},
+                                            "settings": {
+                                              "isPiece": false,
+                                              "size": {"x": 31, "y": 16, "z": 23}
+                                            },
+                                            "textureLayout": {
+                                              "right": {
+                                                "offset": {"x": 324, "y": 201},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              },
+                                              "front": {
+                                                "offset": {"x": 324, "y": 201},
+                                                "mirror": {"x": true, "y": false},
+                                                "angle": 0
+                                              },
+                                              "left": {
+                                                "offset": {"x": 347, "y": 201},
+                                                "mirror": {"x": true, "y": false},
+                                                "angle": 0
+                                              }
+                                            },
+                                            "unwrapMode": "custom",
+                                            "visible": true,
+                                            "doubleSided": true,
+                                            "shadingMode": "flat"
+                                          }
+                                        },
+                                        {
+                                          "id": "42",
+                                          "name": "Teeth-Bot-Back2",
+                                          "position": {"x": -0.7, "y": 3.71703, "z": -10.27063},
+                                          "orientation": {"x": -0.02618, "y": 0, "z": 0, "w": 0.99966},
+                                          "shape": {
+                                            "type": "box",
+                                            "offset": {"x": 0, "y": 0.48908, "z": -1.10391},
+                                            "stretch": {"x": 1.7, "y": -0.375, "z": 0.6},
+                                            "settings": {
+                                              "isPiece": false,
+                                              "size": {"x": 15, "y": 16, "z": 23}
+                                            },
+                                            "textureLayout": {
+                                              "right": {
+                                                "offset": {"x": 351, "y": 237},
+                                                "mirror": {"x": true, "y": false},
+                                                "angle": 0
+                                              },
+                                              "left": {
+                                                "offset": {"x": 327, "y": 237},
+                                                "mirror": {"x": true, "y": false},
+                                                "angle": 0
+                                              }
+                                            },
+                                            "unwrapMode": "custom",
+                                            "visible": true,
+                                            "doubleSided": true,
+                                            "shadingMode": "flat"
+                                          }
                                         }
                                       ]
                                     },
                                     {
-                                      "id": "36",
+                                      "id": "43",
                                       "name": "Mouth-Inner",
-                                      "position": {"x": 0, "y": -0.5, "z": 0},
+                                      "position": {"x": 0, "y": -0.96986, "z": 0.17096},
                                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                                       "shape": {
                                         "type": "quad",
-                                        "offset": {"x": 0, "y": 0, "z": 0},
+                                        "offset": {"x": 0, "y": 0.46986, "z": -0.17096},
                                         "stretch": {"x": 0.85, "y": 1.125, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -1396,13 +1603,13 @@
                                   ]
                                 },
                                 {
-                                  "id": "37",
+                                  "id": "44",
                                   "name": "L-Eye",
-                                  "position": {"x": 15.85, "y": 0.10965, "z": 6.77471},
+                                  "position": {"x": 15.85, "y": -0.39035, "z": 6.77468},
                                   "orientation": {"x": 0, "y": 0.51877, "z": 0, "w": 0.85491},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": 0, "z": 0},
+                                    "offset": {"x": -0.00003, "y": 0.5, "z": 0.00002},
                                     "stretch": {"x": 1.1, "y": 1.225, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1427,13 +1634,13 @@
                                   }
                                 },
                                 {
-                                  "id": "38",
+                                  "id": "45",
                                   "name": "L-Eyelid",
-                                  "position": {"x": 18, "y": 6.30965, "z": 6.87471},
+                                  "position": {"x": 18, "y": 5.80965, "z": 6.87468},
                                   "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": 0, "z": 0},
+                                    "offset": {"x": 0.00003, "y": 0.5, "z": 0},
                                     "stretch": {"x": -1.1, "y": 0.225, "z": 1.2},
                                     "settings": {
                                       "isPiece": false,
@@ -1458,13 +1665,13 @@
                                   }
                                 },
                                 {
-                                  "id": "39",
+                                  "id": "46",
                                   "name": "L-Ear",
-                                  "position": {"x": 17, "y": 11.7, "z": -16.2},
+                                  "position": {"x": 17, "y": 11.2, "z": -16.20003},
                                   "orientation": {"x": -0.14087, "y": -0.21326, "z": -0.16473, "w": 0.95265},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": 10, "z": -2},
+                                    "offset": {"x": -0.12687, "y": 10.45301, "z": -1.83064},
                                     "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1509,13 +1716,13 @@
                                   }
                                 },
                                 {
-                                  "id": "40",
+                                  "id": "47",
                                   "name": "L-Cheek",
-                                  "position": {"x": 19, "y": -9.7, "z": 6.8},
+                                  "position": {"x": 19, "y": -10.2, "z": 6.79997},
                                   "orientation": {"x": 0.22786, "y": -0.07262, "z": 0.27601, "w": 0.93093},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": -9, "z": -8},
+                                    "offset": {"x": 0.24041, "y": -8.62809, "z": -8.23214},
                                     "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1560,13 +1767,13 @@
                                   }
                                 },
                                 {
-                                  "id": "41",
+                                  "id": "48",
                                   "name": "R-Ear",
-                                  "position": {"x": -17, "y": 11.7, "z": -16.2},
+                                  "position": {"x": -17, "y": 11.2, "z": -16.20003},
                                   "orientation": {"x": -0.14087, "y": 0.21326, "z": 0.16473, "w": 0.95265},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": 10, "z": -2},
+                                    "offset": {"x": 0.12687, "y": 10.45301, "z": -1.83064},
                                     "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1611,13 +1818,13 @@
                                   }
                                 },
                                 {
-                                  "id": "42",
+                                  "id": "49",
                                   "name": "R-Cheek",
-                                  "position": {"x": -19, "y": -9.7, "z": 6.8},
+                                  "position": {"x": -19, "y": -10.2, "z": 6.79997},
                                   "orientation": {"x": 0.22786, "y": 0.07262, "z": -0.27601, "w": 0.93093},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": -9, "z": -8},
+                                    "offset": {"x": -0.24041, "y": -8.62809, "z": -8.23214},
                                     "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1662,13 +1869,13 @@
                                   }
                                 },
                                 {
-                                  "id": "43",
+                                  "id": "50",
                                   "name": "R-Eyebrow--C2",
-                                  "position": {"x": -23.5, "y": 15.50965, "z": 9.57471},
+                                  "position": {"x": -23.5, "y": 15.00965, "z": 9.57468},
                                   "orientation": {"x": 0.10794, "y": 0.12975, "z": 0.01421, "w": 0.98555},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 8, "y": -5, "z": -2.5},
+                                    "offset": {"x": 8.028, "y": -4.51185, "z": -2.60451},
                                     "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1714,13 +1921,13 @@
                                   }
                                 },
                                 {
-                                  "id": "44",
+                                  "id": "51",
                                   "name": "R-Eye",
-                                  "position": {"x": -15.85, "y": 0.10965, "z": 6.77471},
+                                  "position": {"x": -15.85, "y": -0.39035, "z": 6.77468},
                                   "orientation": {"x": 0, "y": -0.51877, "z": 0, "w": 0.85491},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": 0, "z": 0},
+                                    "offset": {"x": 0.00003, "y": 0.5, "z": 0.00002},
                                     "stretch": {"x": 1.1, "y": 1.225, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -1745,13 +1952,13 @@
                                   }
                                 },
                                 {
-                                  "id": "45",
+                                  "id": "52",
                                   "name": "R-Eyelid",
-                                  "position": {"x": -18, "y": 6.30965, "z": 6.87471},
+                                  "position": {"x": -18, "y": 5.80965, "z": 6.87468},
                                   "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0, "y": 0, "z": 0},
+                                    "offset": {"x": -0.00003, "y": 0.5, "z": 0},
                                     "stretch": {"x": -1.1, "y": 0.225, "z": 1.2},
                                     "settings": {
                                       "isPiece": false,
@@ -1778,13 +1985,13 @@
                               ]
                             },
                             {
-                              "id": "46",
+                              "id": "53",
                               "name": "R-Cheek2",
                               "position": {"x": -20.75, "y": -24, "z": 3.25},
                               "orientation": {"x": -0.17497, "y": 0.43379, "z": -0.08629, "w": 0.87964},
                               "shape": {
                                 "type": "box",
-                                "offset": {"x": 0, "y": -0.5, "z": -10},
+                                "offset": {"x": -0.08588, "y": -0.01186, "z": -9.93411},
                                 "stretch": {"x": 1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -1833,13 +2040,13 @@
                       ]
                     },
                     {
-                      "id": "47",
+                      "id": "54",
                       "name": "L-Shoulder",
-                      "position": {"x": 31.5, "y": 7, "z": 1},
+                      "position": {"x": 31.5, "y": 6.52314, "z": 1.15034},
                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": 5.5, "y": -1, "z": -0.5},
+                        "offset": {"x": 5.5, "y": -0.52314, "z": -0.65034},
                         "stretch": {"x": 1, "y": 1, "z": 1},
                         "settings": {
                           "isPiece": false,
@@ -1884,14 +2091,14 @@
                       },
                       "children": [
                         {
-                          "id": "48",
+                          "id": "55",
                           "name": "L-Arm",
-                          "position": {"x": 5.5, "y": -9, "z": -1.5},
+                          "position": {"x": 5.5, "y": -9.47686, "z": -1.34966},
                           "orientation": {"x": -0.05896, "y": 0.18714, "z": 0.39101, "w": 0.89923},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 2.5, "y": -5, "z": 2.5},
-                            "stretch": {"x": 1, "y": 1, "z": 1},
+                            "offset": {"x": 2.88235, "y": -4.67833, "z": 2.48158},
+                            "stretch": {"x": -1, "y": 1, "z": 1},
                             "settings": {
                               "isPiece": false,
                               "size": {"x": 16, "y": 20, "z": 16}
@@ -1935,14 +2142,14 @@
                           },
                           "children": [
                             {
-                              "id": "49",
+                              "id": "56",
                               "name": "L-Forearm",
-                              "position": {"x": 0.5, "y": -7, "z": -2.5},
+                              "position": {"x": 0.11765, "y": -7.32167, "z": -2.48158},
                               "orientation": {"x": -0.21561, "y": -0.08509, "z": -0.01886, "w": 0.97258},
                               "shape": {
                                 "type": "box",
-                                "offset": {"x": -0.5, "y": -16, "z": 2.5},
-                                "stretch": {"x": 1, "y": 1, "z": 1},
+                                "offset": {"x": -0.12666, "y": -15.67274, "z": 2.55932},
+                                "stretch": {"x": -1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false,
                                   "size": {"x": 20, "y": 36, "z": 20}
@@ -1986,14 +2193,14 @@
                               },
                               "children": [
                                 {
-                                  "id": "50",
+                                  "id": "57",
                                   "name": "L-Hand",
-                                  "position": {"x": -0.5, "y": -11.5, "z": -0.5},
+                                  "position": {"x": -0.87334, "y": -11.82726, "z": -0.55932},
                                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": 0.5, "y": -7.5, "z": 0},
-                                    "stretch": {"x": 1, "y": 1, "z": 1},
+                                    "offset": {"x": 0.87334, "y": -7.17274, "z": 0.05932},
+                                    "stretch": {"x": -1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
                                       "size": {"x": 13, "y": 19, "z": 18}
@@ -2037,9 +2244,9 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "51",
+                                      "id": "58",
                                       "name": "L-Attachment",
-                                      "position": {"x": -5.5, "y": -3, "z": 0},
+                                      "position": {"x": -5.87334, "y": -3.32726, "z": -0.05932},
                                       "orientation": {"x": 0.70711, "y": 0, "z": 0, "w": 0.70711},
                                       "shape": {
                                         "type": "none",
@@ -2056,13 +2263,13 @@
                                       }
                                     },
                                     {
-                                      "id": "52",
+                                      "id": "59",
                                       "name": "L-Finger",
-                                      "position": {"x": -1.7, "y": -1.6, "z": 4.8},
+                                      "position": {"x": -2.07334, "y": -1.92726, "z": 4.74068},
                                       "orientation": {"x": 0.52739, "y": 0.04651, "z": -0.41479, "w": 0.74003},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": 0, "z": 5},
+                                        "offset": {"x": 0.02836, "y": 0.32413, "z": 4.62035},
                                         "stretch": {"x": -1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -2107,13 +2314,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "53",
+                                          "id": "60",
                                           "name": "L-Finger-Claw",
-                                          "position": {"x": -0.5, "y": 0, "z": 7.1},
+                                          "position": {"x": -0.52836, "y": -0.32413, "z": 7.47965},
                                           "orientation": {"x": -0.66447, "y": -0.24184, "z": -0.24184, "w": 0.66447},
                                           "shape": {
                                             "type": "quad",
-                                            "offset": {"x": 5, "y": 0, "z": 0},
+                                            "offset": {"x": 4.77769, "y": 0.30906, "z": 0.32413},
                                             "stretch": {"x": -1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -2134,13 +2341,13 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "54",
+                                              "id": "61",
                                               "name": "L-Finger-Claw2",
-                                              "position": {"x": -5, "y": 0, "z": 0},
+                                              "position": {"x": -4.77769, "y": -0.30906, "z": -0.32413},
                                               "orientation": {"x": 0, "y": 0, "z": -0.08716, "w": 0.99619},
                                               "shape": {
                                                 "type": "quad",
-                                                "offset": {"x": 5, "y": 0, "z": 0},
+                                                "offset": {"x": 4.7274, "y": 0.26576, "z": 0.32413},
                                                 "stretch": {"x": -1, "y": 1, "z": 1},
                                                 "settings": {
                                                   "isPiece": false,
@@ -2165,13 +2372,13 @@
                                       ]
                                     },
                                     {
-                                      "id": "55",
+                                      "id": "62",
                                       "name": "L-Finger2",
-                                      "position": {"x": 3.22563, "y": -6.79459, "z": 4.71341},
+                                      "position": {"x": 2.85229, "y": -7.12185, "z": 4.65409},
                                       "orientation": {"x": 0.41263, "y": 0.50911, "z": -0.48705, "w": 0.57734},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0.02781, "y": -0.02493, "z": 6.61171},
+                                        "offset": {"x": -0.07478, "y": 0.40129, "z": 6.37127},
                                         "stretch": {"x": -1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -2216,13 +2423,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "56",
+                                          "id": "63",
                                           "name": "L-Finger2-Claw",
-                                          "position": {"x": -0.02781, "y": 0.52493, "z": 5.48829},
+                                          "position": {"x": 0.07478, "y": 0.09871, "z": 5.72873},
                                           "orientation": {"x": -0.90631, "y": 0, "z": 0, "w": 0.42262},
                                           "shape": {
                                             "type": "quad",
-                                            "offset": {"x": 0.02781, "y": -0.02493, "z": -4.38829},
+                                            "offset": {"x": -0.07478, "y": -0.11471, "z": -3.90723},
                                             "stretch": {"x": -1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -2243,13 +2450,13 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "57",
+                                              "id": "64",
                                               "name": "L-Finger2-Claw2",
-                                              "position": {"x": -0.02781, "y": 0.02493, "z": 4.38829},
+                                              "position": {"x": 0.07478, "y": 0.11471, "z": 3.90723},
                                               "orientation": {"x": 0.45452, "y": -0.54168, "z": -0.45452, "w": 0.54168},
                                               "shape": {
                                                 "type": "quad",
-                                                "offset": {"x": 0.02781, "y": -5.02493, "z": 0.61171},
+                                                "offset": {"x": 0.19976, "y": -4.56677, "z": 0.7143},
                                                 "stretch": {"x": -1, "y": 1, "z": 1},
                                                 "settings": {
                                                   "isPiece": false,
@@ -2274,13 +2481,13 @@
                                       ]
                                     },
                                     {
-                                      "id": "58",
+                                      "id": "65",
                                       "name": "L-Finger3",
-                                      "position": {"x": 3.0622, "y": -7.44625, "z": -3.93692},
+                                      "position": {"x": 2.68886, "y": -7.77351, "z": -3.99624},
                                       "orientation": {"x": 0.49252, "y": 0.57623, "z": -0.41383, "w": 0.50411},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": 0, "z": 5},
+                                        "offset": {"x": -0.0119, "y": 0.42525, "z": 4.73728},
                                         "stretch": {"x": -1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -2325,13 +2532,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "59",
+                                          "id": "66",
                                           "name": "L-Finger3-Claw",
-                                          "position": {"x": 0, "y": 0.5, "z": 5.1},
+                                          "position": {"x": 0.0119, "y": 0.07475, "z": 5.36272},
                                           "orientation": {"x": -0.90631, "y": 0, "z": 0, "w": 0.42262},
                                           "shape": {
                                             "type": "quad",
-                                            "offset": {"x": 0, "y": 0, "z": -5},
+                                            "offset": {"x": -0.0119, "y": -0.07209, "z": -4.50537},
                                             "stretch": {"x": -1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -2352,13 +2559,13 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "60",
+                                              "id": "67",
                                               "name": "L-Finger3-Claw2",
-                                              "position": {"x": 0, "y": 0, "z": 5},
+                                              "position": {"x": 0.0119, "y": 0.07209, "z": 4.50537},
                                               "orientation": {"x": 0.45452, "y": -0.54168, "z": -0.45452, "w": 0.54168},
                                               "shape": {
                                                 "type": "quad",
-                                                "offset": {"x": 0, "y": -5, "z": 0},
+                                                "offset": {"x": 0.15688, "y": -4.5254, "z": 0.0119},
                                                 "stretch": {"x": -1, "y": 1, "z": 1},
                                                 "settings": {
                                                   "isPiece": false,
@@ -2391,13 +2598,13 @@
                       ]
                     },
                     {
-                      "id": "61",
+                      "id": "68",
                       "name": "R-Shoulder",
-                      "position": {"x": -31.5, "y": 7, "z": 1},
+                      "position": {"x": -31.5, "y": 6.52314, "z": 1.15034},
                       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": -5.5, "y": -1, "z": -0.5},
+                        "offset": {"x": -5.5, "y": -0.52314, "z": -0.65034},
                         "stretch": {"x": 1, "y": 1, "z": 1},
                         "settings": {
                           "isPiece": false,
@@ -2405,33 +2612,33 @@
                         },
                         "textureLayout": {
                           "back": {
-                            "offset": {"x": 216, "y": 149},
-                            "mirror": {"x": false, "y": false},
+                            "offset": {"x": 240, "y": 149},
+                            "mirror": {"x": true, "y": false},
                             "angle": 0
                           },
                           "right": {
-                            "offset": {"x": 192, "y": 149},
+                            "offset": {"x": 240, "y": 149},
                             "mirror": {"x": false, "y": false},
                             "angle": 0
                           },
                           "front": {
-                            "offset": {"x": 240, "y": 149},
-                            "mirror": {"x": true, "y": false},
+                            "offset": {"x": 216, "y": 149},
+                            "mirror": {"x": false, "y": false},
                             "angle": 0
                           },
                           "left": {
-                            "offset": {"x": 240, "y": 149},
+                            "offset": {"x": 192, "y": 149},
                             "mirror": {"x": false, "y": false},
                             "angle": 0
                           },
                           "top": {
-                            "offset": {"x": 192, "y": 173},
-                            "mirror": {"x": true, "y": true},
+                            "offset": {"x": 168, "y": 173},
+                            "mirror": {"x": false, "y": true},
                             "angle": 0
                           },
                           "bottom": {
-                            "offset": {"x": 168, "y": 149},
-                            "mirror": {"x": true, "y": false},
+                            "offset": {"x": 144, "y": 149},
+                            "mirror": {"x": false, "y": false},
                             "angle": 0
                           }
                         },
@@ -2442,14 +2649,14 @@
                       },
                       "children": [
                         {
-                          "id": "62",
+                          "id": "69",
                           "name": "R-Arm",
-                          "position": {"x": -5.5, "y": -9, "z": -1.5},
+                          "position": {"x": -5.5, "y": -9.47686, "z": -1.34966},
                           "orientation": {"x": -0.05896, "y": -0.18714, "z": -0.39101, "w": 0.89923},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": -2.5, "y": -5, "z": 2.5},
-                            "stretch": {"x": 1, "y": 1, "z": 1},
+                            "offset": {"x": -2.88235, "y": -4.67833, "z": 2.48158},
+                            "stretch": {"x": -1, "y": 1, "z": 1},
                             "settings": {
                               "isPiece": false,
                               "size": {"x": 16, "y": 20, "z": 16}
@@ -2493,14 +2700,14 @@
                           },
                           "children": [
                             {
-                              "id": "63",
+                              "id": "70",
                               "name": "R-Forearm",
-                              "position": {"x": -0.5, "y": -7, "z": -2.5},
+                              "position": {"x": -0.11765, "y": -7.32167, "z": -2.48158},
                               "orientation": {"x": -0.21561, "y": 0.08509, "z": 0.01886, "w": 0.97258},
                               "shape": {
                                 "type": "box",
-                                "offset": {"x": 0.5, "y": -16, "z": 2.5},
-                                "stretch": {"x": 1, "y": 1, "z": 1},
+                                "offset": {"x": 0.12666, "y": -15.67274, "z": 2.55932},
+                                "stretch": {"x": -1, "y": 1, "z": 1},
                                 "settings": {
                                   "isPiece": false,
                                   "size": {"x": 20, "y": 36, "z": 20}
@@ -2544,14 +2751,14 @@
                               },
                               "children": [
                                 {
-                                  "id": "64",
+                                  "id": "71",
                                   "name": "R-Hand",
-                                  "position": {"x": 0.5, "y": -11.5, "z": -0.5},
+                                  "position": {"x": 0.87334, "y": -11.82726, "z": -0.55932},
                                   "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
                                   "shape": {
                                     "type": "box",
-                                    "offset": {"x": -0.5, "y": -7.5, "z": 0},
-                                    "stretch": {"x": 1, "y": 1, "z": 1},
+                                    "offset": {"x": -0.87334, "y": -7.17274, "z": 0.05932},
+                                    "stretch": {"x": -1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
                                       "size": {"x": 13, "y": 19, "z": 18}
@@ -2595,13 +2802,13 @@
                                   },
                                   "children": [
                                     {
-                                      "id": "65",
+                                      "id": "72",
                                       "name": "R-Finger",
-                                      "position": {"x": 1.7, "y": -1.6, "z": 4.8},
+                                      "position": {"x": 2.07334, "y": -1.92726, "z": 4.74068},
                                       "orientation": {"x": 0.52739, "y": -0.04651, "z": 0.41479, "w": 0.74003},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": 0, "z": 5},
+                                        "offset": {"x": -0.02836, "y": 0.32413, "z": 4.62035},
                                         "stretch": {"x": -1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -2646,13 +2853,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "66",
+                                          "id": "73",
                                           "name": "R-Finger-Claw",
-                                          "position": {"x": 0.5, "y": 0, "z": 7.1},
+                                          "position": {"x": 0.52836, "y": -0.32413, "z": 7.47965},
                                           "orientation": {"x": -0.66447, "y": 0.24184, "z": 0.24184, "w": 0.66447},
                                           "shape": {
                                             "type": "quad",
-                                            "offset": {"x": -5, "y": 0, "z": 0},
+                                            "offset": {"x": -4.77769, "y": 0.30906, "z": 0.32413},
                                             "stretch": {"x": -1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -2673,13 +2880,13 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "67",
+                                              "id": "74",
                                               "name": "R-Finger-Claw2",
-                                              "position": {"x": 5, "y": 0, "z": 0},
+                                              "position": {"x": 4.77769, "y": -0.30906, "z": -0.32413},
                                               "orientation": {"x": 0, "y": 0, "z": 0.08716, "w": 0.99619},
                                               "shape": {
                                                 "type": "quad",
-                                                "offset": {"x": -5, "y": 0, "z": 0},
+                                                "offset": {"x": -4.7274, "y": 0.26576, "z": 0.32413},
                                                 "stretch": {"x": -1, "y": 1, "z": 1},
                                                 "settings": {
                                                   "isPiece": false,
@@ -2704,13 +2911,13 @@
                                       ]
                                     },
                                     {
-                                      "id": "68",
+                                      "id": "75",
                                       "name": "R-Finger2",
-                                      "position": {"x": -3.22563, "y": -6.79459, "z": 4.71341},
+                                      "position": {"x": -2.85229, "y": -7.12185, "z": 4.65409},
                                       "orientation": {"x": 0.41263, "y": -0.50911, "z": 0.48705, "w": 0.57734},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": -0.02781, "y": -0.02493, "z": 6.61171},
+                                        "offset": {"x": 0.07478, "y": 0.40129, "z": 6.37127},
                                         "stretch": {"x": -1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -2755,13 +2962,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "69",
+                                          "id": "76",
                                           "name": "R-Finger2-Claw",
-                                          "position": {"x": 0.02781, "y": 0.52493, "z": 5.48829},
+                                          "position": {"x": -0.07478, "y": 0.09871, "z": 5.72873},
                                           "orientation": {"x": -0.90631, "y": 0, "z": 0, "w": 0.42262},
                                           "shape": {
                                             "type": "quad",
-                                            "offset": {"x": -0.02781, "y": -0.02493, "z": -4.38829},
+                                            "offset": {"x": 0.07478, "y": -0.11471, "z": -3.90723},
                                             "stretch": {"x": -1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -2782,13 +2989,13 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "70",
+                                              "id": "77",
                                               "name": "R-Finger2-Claw2",
-                                              "position": {"x": 0.02781, "y": 0.02493, "z": 4.38829},
+                                              "position": {"x": -0.07478, "y": 0.11471, "z": 3.90723},
                                               "orientation": {"x": 0.45452, "y": 0.54168, "z": 0.45452, "w": 0.54168},
                                               "shape": {
                                                 "type": "quad",
-                                                "offset": {"x": -0.02781, "y": -5.02493, "z": 0.61171},
+                                                "offset": {"x": -0.19976, "y": -4.56677, "z": 0.7143},
                                                 "stretch": {"x": -1, "y": 1, "z": 1},
                                                 "settings": {
                                                   "isPiece": false,
@@ -2813,13 +3020,13 @@
                                       ]
                                     },
                                     {
-                                      "id": "71",
+                                      "id": "78",
                                       "name": "R-Finger3",
-                                      "position": {"x": -3.0622, "y": -7.44625, "z": -3.93692},
+                                      "position": {"x": -2.68886, "y": -7.77351, "z": -3.99624},
                                       "orientation": {"x": 0.49252, "y": -0.57623, "z": 0.41383, "w": 0.50411},
                                       "shape": {
                                         "type": "box",
-                                        "offset": {"x": 0, "y": 0, "z": 5},
+                                        "offset": {"x": 0.0119, "y": 0.42525, "z": 4.73728},
                                         "stretch": {"x": -1, "y": 1, "z": 1},
                                         "settings": {
                                           "isPiece": false,
@@ -2864,13 +3071,13 @@
                                       },
                                       "children": [
                                         {
-                                          "id": "72",
+                                          "id": "79",
                                           "name": "R-Finger3-Claw",
-                                          "position": {"x": 0, "y": 0.5, "z": 5.1},
+                                          "position": {"x": -0.0119, "y": 0.07475, "z": 5.36272},
                                           "orientation": {"x": -0.90631, "y": 0, "z": 0, "w": 0.42262},
                                           "shape": {
                                             "type": "quad",
-                                            "offset": {"x": 0, "y": 0, "z": -5},
+                                            "offset": {"x": 0.0119, "y": -0.07209, "z": -4.50537},
                                             "stretch": {"x": -1, "y": 1, "z": 1},
                                             "settings": {
                                               "isPiece": false,
@@ -2891,13 +3098,13 @@
                                           },
                                           "children": [
                                             {
-                                              "id": "73",
+                                              "id": "80",
                                               "name": "R-Finger3-Claw2",
-                                              "position": {"x": 0, "y": 0, "z": 5},
+                                              "position": {"x": -0.0119, "y": 0.07209, "z": 4.50537},
                                               "orientation": {"x": 0.45452, "y": 0.54168, "z": 0.45452, "w": 0.54168},
                                               "shape": {
                                                 "type": "quad",
-                                                "offset": {"x": 0, "y": -5, "z": 0},
+                                                "offset": {"x": -0.15688, "y": -4.5254, "z": 0.0119},
                                                 "stretch": {"x": -1, "y": 1, "z": 1},
                                                 "settings": {
                                                   "isPiece": false,
@@ -2934,13 +3141,13 @@
               ]
             },
             {
-              "id": "74",
+              "id": "81",
               "name": "R-Thigh",
-              "position": {"x": -34, "y": 14.5, "z": 8.7},
+              "position": {"x": -34.25, "y": 4.25, "z": 5.26699},
               "orientation": {"x": 0.01333, "y": -0.0495, "z": -0.10514, "w": 0.99314},
               "shape": {
                 "type": "box",
-                "offset": {"x": -4.5, "y": -20, "z": -5},
+                "offset": {"x": -7.51118, "y": -11.73964, "z": -4.57328},
                 "stretch": {"x": 1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false,
@@ -2985,13 +3192,13 @@
               },
               "children": [
                 {
-                  "id": "75",
+                  "id": "82",
                   "name": "R-Calf",
-                  "position": {"x": 1.5, "y": -14.5, "z": 4.66987},
+                  "position": {"x": 1.51118, "y": -14.76036, "z": 4.24315},
                   "orientation": {"x": 0.62592, "y": 0, "z": 0, "w": 0.77988},
                   "shape": {
                     "type": "box",
-                    "offset": {"x": 0, "y": -14, "z": -6.16987},
+                    "offset": {"x": -0.01118, "y": -13.52704, "z": -6.3317},
                     "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false,
@@ -3031,13 +3238,13 @@
                   },
                   "children": [
                     {
-                      "id": "76",
+                      "id": "83",
                       "name": "R-Foot",
-                      "position": {"x": -0.34467, "y": -16.70086, "z": -4.62537},
+                      "position": {"x": -0.33349, "y": -17.17382, "z": -4.46354},
                       "orientation": {"x": -0.16502, "y": 0.00239, "z": 0.01287, "w": 0.9862},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": -0.00001, "y": -2.49995, "z": 5.33009},
+                        "offset": {"x": 0.00189, "y": -1.99995, "z": 5.33104},
                         "stretch": {"x": 1.125, "y": 0.75, "z": 1.125},
                         "settings": {
                           "isPiece": false,
@@ -3082,13 +3289,13 @@
                       },
                       "children": [
                         {
-                          "id": "77",
+                          "id": "84",
                           "name": "R-Toe",
-                          "position": {"x": 3, "y": 1.25, "z": 7.36987},
+                          "position": {"x": 2.9981, "y": 0.75, "z": 7.36892},
                           "orientation": {"x": 0.02134, "y": 0.07714, "z": -0.00451, "w": 0.99678},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 0, "y": -1.5, "z": 9.33013},
+                            "offset": {"x": -0.00111, "y": -1.00042, "z": 9.30974},
                             "stretch": {"x": 1, "y": 0.85, "z": 1},
                             "settings": {
                               "isPiece": false,
@@ -3133,13 +3340,13 @@
                           },
                           "children": [
                             {
-                              "id": "78",
+                              "id": "85",
                               "name": "R-Toe-Claw",
-                              "position": {"x": 0.00492, "y": 2.49904, "z": 8.11332},
+                              "position": {"x": 0.00603, "y": 1.99946, "z": 8.13371},
                               "orientation": {"x": 0.17365, "y": 0, "z": 0, "w": 0.98481},
                               "shape": {
                                 "type": "quad",
-                                "offset": {"x": 0, "y": -1.5, "z": 5.33013},
+                                "offset": {"x": -0.00111, "y": -1.03752, "z": 5.14011},
                                 "stretch": {"x": 1, "y": 0.75, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -3160,13 +3367,13 @@
                               },
                               "children": [
                                 {
-                                  "id": "79",
+                                  "id": "86",
                                   "name": "R-Toe-Claw2",
-                                  "position": {"x": 0, "y": -3.5, "z": -9.33013},
+                                  "position": {"x": 0.00111, "y": -3.96248, "z": -9.14011},
                                   "orientation": {"x": -0.08716, "y": 0, "z": 0, "w": 0.99619},
                                   "shape": {
                                     "type": "quad",
-                                    "offset": {"x": 0, "y": 2.5, "z": 9.33013},
+                                    "offset": {"x": -0.00111, "y": 2.98846, "z": 9.22331},
                                     "stretch": {"x": 1, "y": 0.75, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -3191,13 +3398,13 @@
                           ]
                         },
                         {
-                          "id": "80",
+                          "id": "87",
                           "name": "R-Toe2",
-                          "position": {"x": -4.99508, "y": 1.99904, "z": 7.71332},
+                          "position": {"x": -4.99698, "y": 1.49904, "z": 7.71237},
                           "orientation": {"x": 0.02179, "y": -0.04361, "z": 0.00095, "w": 0.99881},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 0, "y": -2.5, "z": 9.33013},
+                            "offset": {"x": 0.00198, "y": -2.00045, "z": 9.3091},
                             "stretch": {"x": 1, "y": 0.75, "z": 1},
                             "settings": {
                               "isPiece": false,
@@ -3242,13 +3449,13 @@
                           },
                           "children": [
                             {
-                              "id": "81",
+                              "id": "88",
                               "name": "R-Toe2-Claw",
-                              "position": {"x": 0, "y": 2, "z": 7.76987},
+                              "position": {"x": -0.00198, "y": 1.50045, "z": 7.7909},
                               "orientation": {"x": 0.17365, "y": 0, "z": 0, "w": 0.98481},
                               "shape": {
                                 "type": "quad",
-                                "offset": {"x": 0, "y": -1.5, "z": 5.33013},
+                                "offset": {"x": 0.00198, "y": -1.03777, "z": 5.13951},
                                 "stretch": {"x": 1, "y": 0.75, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -3269,13 +3476,13 @@
                               },
                               "children": [
                                 {
-                                  "id": "82",
+                                  "id": "89",
                                   "name": "R-Toe2-Claw2",
-                                  "position": {"x": 0, "y": -3.5, "z": -9.33013},
+                                  "position": {"x": -0.00198, "y": -3.96223, "z": -9.13951},
                                   "orientation": {"x": -0.08716, "y": 0, "z": 0, "w": 0.99619},
                                   "shape": {
                                     "type": "quad",
-                                    "offset": {"x": 0, "y": 2.5, "z": 9.33013},
+                                    "offset": {"x": 0.00198, "y": 2.98831, "z": 9.22268},
                                     "stretch": {"x": 1, "y": 0.75, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -3306,13 +3513,13 @@
               ]
             },
             {
-              "id": "83",
+              "id": "90",
               "name": "Tail",
-              "position": {"x": 0, "y": 16.61932, "z": -0.70614},
+              "position": {"x": 0, "y": 16.36932, "z": -1.13915},
               "orientation": {"x": 0.36244, "y": 0, "z": 0, "w": 0.93201},
               "shape": {
                 "type": "box",
-                "offset": {"x": 0, "y": -12.13223, "z": -12.39579},
+                "offset": {"x": 0, "y": -11.65537, "z": -12.24544},
                 "stretch": {"x": 1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false,
@@ -3357,13 +3564,13 @@
               },
               "children": [
                 {
-                  "id": "84",
+                  "id": "91",
                   "name": "Tail2",
-                  "position": {"x": 0, "y": 10.26445, "z": -21.20843},
+                  "position": {"x": 0, "y": 9.78759, "z": -21.35878},
                   "orientation": {"x": 0.13053, "y": 0, "z": 0, "w": 0.99144},
                   "shape": {
                     "type": "box",
-                    "offset": {"x": 0, "y": -10, "z": -12.4},
+                    "offset": {"x": 0, "y": -9.50048, "z": -12.3782},
                     "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false,
@@ -3408,13 +3615,13 @@
                   },
                   "children": [
                     {
-                      "id": "85",
+                      "id": "92",
                       "name": "Tail3",
-                      "position": {"x": 0, "y": 1.91626, "z": -15.69959},
+                      "position": {"x": 0, "y": 1.41674, "z": -15.72139},
                       "orientation": {"x": 0.10888, "y": 0, "z": 0, "w": 0.99406},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": 0, "y": -2.19349, "z": -16.34183},
+                        "offset": {"x": 0, "y": -1.70109, "z": -16.42867},
                         "stretch": {"x": 1, "y": 1, "z": 1},
                         "settings": {
                           "isPiece": false,
@@ -3459,13 +3666,13 @@
                       },
                       "children": [
                         {
-                          "id": "86",
+                          "id": "93",
                           "name": "Tail4",
-                          "position": {"x": 0, "y": 4.38697, "z": -17.31635},
+                          "position": {"x": 0, "y": 3.89457, "z": -17.22951},
                           "orientation": {"x": 0.08716, "y": 0, "z": 0, "w": 0.99619},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 0, "y": -2.87833, "z": -13.28947},
+                            "offset": {"x": 0, "y": -2.40849, "z": -13.4605},
                             "stretch": {"x": 1, "y": 1, "z": 1},
                             "settings": {
                               "isPiece": false,
@@ -3510,9 +3717,9 @@
                           },
                           "children": [
                             {
-                              "id": "87",
+                              "id": "94",
                               "name": "Tail-Tip",
-                              "position": {"x": 0, "y": 2.75666, "z": -16.42107},
+                              "position": {"x": 0, "y": 2.28682, "z": -16.25004},
                               "orientation": {"x": 0.13053, "y": 0, "z": 0, "w": 0.99144},
                               "shape": {
                                 "type": "none",
@@ -3529,13 +3736,13 @@
                               },
                               "children": [
                                 {
-                                  "id": "88",
+                                  "id": "95",
                                   "name": "Tail-Tip--C1",
                                   "position": {"x": 0, "y": -3, "z": -19},
                                   "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
                                   "shape": {
                                     "type": "quad",
-                                    "offset": {"x": 0, "y": 0, "z": 0},
+                                    "offset": {"x": 0.28682, "y": 0.40956, "z": 0},
                                     "stretch": {"x": 1, "y": 1, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -3547,6 +3754,34 @@
                                       "front": {
                                         "offset": {"x": 409, "y": 380},
                                         "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": true,
+                                    "shadingMode": "flat"
+                                  }
+                                },
+                                {
+                                  "id": "96",
+                                  "name": "Tail-Tip--C2",
+                                  "position": {"x": 0, "y": -3, "z": -19},
+                                  "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
+                                  "shape": {
+                                    "type": "quad",
+                                    "offset": {"x": -0.28682, "y": 0.40956, "z": 0},
+                                    "stretch": {"x": 1, "y": 1, "z": 1},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 49, "y": 16},
+                                      "normal": "+Z",
+                                      "isStaticBox": true
+                                    },
+                                    "textureLayout": {
+                                      "front": {
+                                        "offset": {"x": 458, "y": 380},
+                                        "mirror": {"x": true, "y": false},
                                         "angle": 0
                                       }
                                     },
@@ -3567,13 +3802,13 @@
               ]
             },
             {
-              "id": "89",
-              "name": "L-Thigh2",
-              "position": {"x": 34, "y": 14.5, "z": 8.7},
+              "id": "97",
+              "name": "L-Thigh",
+              "position": {"x": 34.25, "y": 4.25, "z": 5.26699},
               "orientation": {"x": 0.01333, "y": 0.0495, "z": 0.10514, "w": 0.99314},
               "shape": {
                 "type": "box",
-                "offset": {"x": 4.5, "y": -20, "z": -5},
+                "offset": {"x": 7.51118, "y": -11.73964, "z": -4.57328},
                 "stretch": {"x": 1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false,
@@ -3618,13 +3853,13 @@
               },
               "children": [
                 {
-                  "id": "90",
+                  "id": "98",
                   "name": "L-Calf",
-                  "position": {"x": -1.5, "y": -14.5, "z": 4.66987},
+                  "position": {"x": -1.51118, "y": -14.76036, "z": 4.24315},
                   "orientation": {"x": 0.62592, "y": 0, "z": 0, "w": 0.77988},
                   "shape": {
                     "type": "box",
-                    "offset": {"x": 0, "y": -14, "z": -6.16987},
+                    "offset": {"x": 0.01118, "y": -13.52704, "z": -6.3317},
                     "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false,
@@ -3664,13 +3899,13 @@
                   },
                   "children": [
                     {
-                      "id": "91",
+                      "id": "99",
                       "name": "L-Foot",
-                      "position": {"x": 0.34467, "y": -16.70086, "z": -4.62537},
+                      "position": {"x": 0.33349, "y": -17.17382, "z": -4.46354},
                       "orientation": {"x": -0.16502, "y": -0.00239, "z": -0.01287, "w": 0.9862},
                       "shape": {
                         "type": "box",
-                        "offset": {"x": 0.00001, "y": -2.49995, "z": 5.33009},
+                        "offset": {"x": -0.00189, "y": -1.99995, "z": 5.33104},
                         "stretch": {"x": 1.125, "y": 0.75, "z": 1.125},
                         "settings": {
                           "isPiece": false,
@@ -3715,13 +3950,13 @@
                       },
                       "children": [
                         {
-                          "id": "92",
+                          "id": "100",
                           "name": "L-Toe",
-                          "position": {"x": -3, "y": 1.25, "z": 7.36987},
+                          "position": {"x": -2.9981, "y": 0.75, "z": 7.36892},
                           "orientation": {"x": 0.02134, "y": -0.07714, "z": 0.00451, "w": 0.99678},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 0, "y": -1.5, "z": 9.33013},
+                            "offset": {"x": 0.00111, "y": -1.00042, "z": 9.30974},
                             "stretch": {"x": 1, "y": 0.85, "z": 1},
                             "settings": {
                               "isPiece": false,
@@ -3766,13 +4001,13 @@
                           },
                           "children": [
                             {
-                              "id": "93",
+                              "id": "101",
                               "name": "L-Toe-Claw",
-                              "position": {"x": -0.00492, "y": 2.49904, "z": 8.11332},
+                              "position": {"x": -0.00603, "y": 1.99946, "z": 8.13371},
                               "orientation": {"x": 0.17365, "y": 0, "z": 0, "w": 0.98481},
                               "shape": {
                                 "type": "quad",
-                                "offset": {"x": 0, "y": -1.5, "z": 5.33013},
+                                "offset": {"x": 0.00111, "y": -1.03752, "z": 5.14011},
                                 "stretch": {"x": 1, "y": 0.75, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -3793,13 +4028,13 @@
                               },
                               "children": [
                                 {
-                                  "id": "94",
+                                  "id": "102",
                                   "name": "L-Toe-Claw2",
-                                  "position": {"x": 0, "y": -3.5, "z": -9.33013},
+                                  "position": {"x": -0.00111, "y": -3.96248, "z": -9.14011},
                                   "orientation": {"x": -0.08716, "y": 0, "z": 0, "w": 0.99619},
                                   "shape": {
                                     "type": "quad",
-                                    "offset": {"x": 0, "y": 2.5, "z": 9.33013},
+                                    "offset": {"x": 0.00111, "y": 2.98846, "z": 9.22331},
                                     "stretch": {"x": 1, "y": 0.75, "z": 1},
                                     "settings": {
                                       "isPiece": false,
@@ -3824,13 +4059,13 @@
                           ]
                         },
                         {
-                          "id": "95",
+                          "id": "103",
                           "name": "L-Toe2",
-                          "position": {"x": 4.99508, "y": 1.99904, "z": 7.71332},
+                          "position": {"x": 4.99698, "y": 1.49904, "z": 7.71237},
                           "orientation": {"x": 0.02179, "y": 0.04361, "z": -0.00095, "w": 0.99881},
                           "shape": {
                             "type": "box",
-                            "offset": {"x": 0, "y": -2.5, "z": 9.33013},
+                            "offset": {"x": -0.00198, "y": -2.00045, "z": 9.3091},
                             "stretch": {"x": 1, "y": 0.75, "z": 1},
                             "settings": {
                               "isPiece": false,
@@ -3875,13 +4110,13 @@
                           },
                           "children": [
                             {
-                              "id": "96",
+                              "id": "104",
                               "name": "L-Toe2-Claw",
-                              "position": {"x": 0, "y": 2, "z": 7.76987},
+                              "position": {"x": 0.00198, "y": 1.50045, "z": 7.7909},
                               "orientation": {"x": 0.17365, "y": 0, "z": 0, "w": 0.98481},
                               "shape": {
                                 "type": "quad",
-                                "offset": {"x": 0, "y": -1.5, "z": 5.33013},
+                                "offset": {"x": -0.00198, "y": -1.03777, "z": 5.13951},
                                 "stretch": {"x": 1, "y": 0.75, "z": 1},
                                 "settings": {
                                   "isPiece": false,
@@ -3902,13 +4137,13 @@
                               },
                               "children": [
                                 {
-                                  "id": "97",
+                                  "id": "105",
                                   "name": "L-Toe2-Claw2",
-                                  "position": {"x": 0, "y": -3.5, "z": -9.33013},
+                                  "position": {"x": 0.00198, "y": -3.96223, "z": -9.13951},
                                   "orientation": {"x": -0.08716, "y": 0, "z": 0, "w": 0.99619},
                                   "shape": {
                                     "type": "quad",
-                                    "offset": {"x": 0, "y": 2.5, "z": 9.33013},
+                                    "offset": {"x": -0.00198, "y": 2.98831, "z": 9.22268},
                                     "stretch": {"x": 1, "y": 0.75, "z": 1},
                                     "settings": {
                                       "isPiece": false,
