@@ -61,44 +61,10 @@
       "Interactions": [
         {
           "$Comment": "Actively guarding with the weapon",
-          "Parent": "Shield_Secondary_Guard_Pkmn",
-          "Effects": {
-            "WorldSoundEventId": "SFX_Shield_T2_Raise",
-            "LocalSoundEventId": "SFX_Shield_T2_Raise_Local"
-          },
+          "Parent": "Weapon_Shield_Secondary_PkmnGuard_Wield",
           "StaminaCost": {
-            "Value": 20,
+            "Value": 5,
             "CostType": "Damage"
-          },
-          "BlockedEffects": {
-            "WorldSoundEventId": "SFX_Shield_T2_Impact"
-          },
-          "AngledWielding": {
-            "Angle": 0,
-            "AngleDistance": 120,
-            "DamageModifiers": {
-              "Physical": 0,
-              "Projectile": 0,
-              "Poison": 0,
-              "Pkmn": 0,
-              "Dark": 0,
-              "Bug": 0,
-              "Electric": 0,
-              "Fighting": 0,
-              "Ghost": 0,
-              "Grass": 0,
-              "Ground": 0,
-              "Ice": 0,
-              "Normal": 0,
-              "Psychic": 0,
-              "Rock": 0,
-              "Steel": 0,
-              "Water": 0
-            },
-            "KnockbackModifiers": {
-              "Physical": 0.25,
-              "Projectile": 0.25
-            }
           }
         }
       ]
@@ -111,7 +77,7 @@
         },
         {
           "$Comment": "Effects and stamina consumed upon a guard bash",
-          "Parent": "Weapon_Shield_Secondary_Guard_Bash",
+          "Parent": "Weapon_Shield_Secondary_PkmnGuard_Bash",
           "Effects": {
             "WorldSoundEventId": "SFX_Shield_T2_Swing",
             "LocalSoundEventId": "SFX_Shield_T2_Swing_Local"
@@ -126,7 +92,7 @@
       "Interactions": [
         {
           "$Comment": "Damage \u0026 Effects on a successful hit with the guard shove attack",
-          "Parent": "Weapon_Shield_Secondary_Guard_Bash_Damage",
+          "Parent": "Weapon_Shield_Secondary_PkmnGuard_Bash_Damage",
           "DamageEffects": {
             "WorldSoundEventId": "SFX_Shield_T2_Impact",
             "LocalSoundEventId": "SFX_Shield_T2_Impact"

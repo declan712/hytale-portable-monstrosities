@@ -1,0 +1,970 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "R-Attachment",
+      "position": {"x": 0, "y": 21, "z": 0},
+      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+      "shape": {
+        "type": "none",
+        "offset": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "unwrapMode": "custom",
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat"
+      },
+      "children": [
+        {
+          "id": "2",
+          "name": "Origin_Projectile",
+          "position": {"x": 0, "y": 80, "z": 0},
+          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+          "shape": {
+            "type": "none",
+            "offset": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
+            "settings": {
+              "isPiece": true
+            },
+            "textureLayout": {},
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "3",
+              "name": "Origin_Item",
+              "position": {"x": 0, "y": -44, "z": 0},
+              "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+              "shape": {
+                "type": "none",
+                "offset": {"x": 0, "y": 0, "z": 0},
+                "stretch": {"x": 1, "y": 1, "z": 1},
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat"
+              },
+              "children": [
+                {
+                  "id": "4",
+                  "name": "Handle",
+                  "position": {"x": 0.00007, "y": -31.75, "z": 0},
+                  "orientation": {"x": -0.5, "y": -0.5, "z": 0.5, "w": 0.5},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": -3, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 23, "y": 5, "z": 5}
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 107, "y": 8},
+                        "mirror": {"x": true, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 87, "y": 8},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 87, "y": 8},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 87, "y": 8},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat"
+                  },
+                  "children": [
+                    {
+                      "id": "5",
+                      "name": "Handle--C1",
+                      "position": {"x": 10, "y": 0, "z": 0},
+                      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                      "shape": {
+                        "type": "box",
+                        "offset": {"x": -7.5, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1.25, "z": 1.25},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 4, "y": 5, "z": 5},
+                          "isStaticBox": true
+                        },
+                        "textureLayout": {
+                          "back": {
+                            "offset": {"x": 86, "y": 8},
+                            "mirror": {"x": true, "y": false},
+                            "angle": 0
+                          },
+                          "front": {
+                            "offset": {"x": 85, "y": 8},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "top": {
+                            "offset": {"x": 85, "y": 8},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "bottom": {
+                            "offset": {"x": 85, "y": 8},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat"
+                      }
+                    },
+                    {
+                      "id": "6",
+                      "name": "Pommel",
+                      "position": {"x": -11.99999, "y": 0, "z": 0},
+                      "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                      "shape": {
+                        "type": "box",
+                        "offset": {"x": -1, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 5, "y": 7, "z": 7}
+                        },
+                        "textureLayout": {
+                          "back": {
+                            "offset": {"x": 94, "y": 0},
+                            "mirror": {"x": true, "y": false},
+                            "angle": 0
+                          },
+                          "right": {
+                            "offset": {"x": 95, "y": 0},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "front": {
+                            "offset": {"x": 89, "y": 0},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "left": {
+                            "offset": {"x": 82, "y": 0},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "top": {
+                            "offset": {"x": 89, "y": 0},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "bottom": {
+                            "offset": {"x": 89, "y": 0},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "reflective"
+                      },
+                      "children": [
+                        {
+                          "id": "7",
+                          "name": "Pommel2",
+                          "position": {"x": -2, "y": 1, "z": 1},
+                          "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                          "shape": {
+                            "type": "box",
+                            "offset": {"x": -2, "y": -1, "z": -1},
+                            "stretch": {"x": 1, "y": 1, "z": 1},
+                            "settings": {
+                              "isPiece": false,
+                              "size": {"x": 3, "y": 5, "z": 5}
+                            },
+                            "textureLayout": {
+                              "back": {
+                                "offset": {"x": 92, "y": 2},
+                                "mirror": {"x": true, "y": false},
+                                "angle": 0
+                              },
+                              "right": {
+                                "offset": {"x": 97, "y": 2},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "front": {
+                                "offset": {"x": 89, "y": 2},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "left": {
+                                "offset": {"x": 82, "y": 2},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "top": {
+                                "offset": {"x": 89, "y": 0},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "bottom": {
+                                "offset": {"x": 89, "y": 2},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              }
+                            },
+                            "unwrapMode": "custom",
+                            "visible": true,
+                            "doubleSided": false,
+                            "shadingMode": "reflective"
+                          },
+                          "children": [
+                            {
+                              "id": "8",
+                              "name": "Pommel3",
+                              "position": {"x": 0, "y": 2, "z": 2},
+                              "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": -2.5, "y": -2, "z": -2},
+                                "stretch": {"x": 1, "y": 1, "z": 1},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 2, "y": 3, "z": 3}
+                                },
+                                "textureLayout": {
+                                  "back": {
+                                    "offset": {"x": 91, "y": 4},
+                                    "mirror": {"x": true, "y": false},
+                                    "angle": 0
+                                  },
+                                  "right": {
+                                    "offset": {"x": 99, "y": 4},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "front": {
+                                    "offset": {"x": 89, "y": 4},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "left": {
+                                    "offset": {"x": 82, "y": 4},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "top": {
+                                    "offset": {"x": 89, "y": 0},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 89, "y": 4},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "flat"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9",
+                      "name": "Blade",
+                      "position": {"x": 13.35317, "y": -3.75861, "z": 0},
+                      "orientation": {"x": -0.04625, "y": 0.70559, "z": -0.70559, "w": 0.04625},
+                      "shape": {
+                        "type": "quad",
+                        "offset": {"x": -36, "y": 0, "z": -0.5},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 81, "y": 32},
+                          "normal": "+Y"
+                        },
+                        "textureLayout": {
+                          "front": {
+                            "offset": {"x": 81, "y": 32},
+                            "mirror": {"x": true, "y": true},
+                            "angle": 0
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat"
+                      },
+                      "children": [
+                        {
+                          "id": "10",
+                          "name": "Blade-Spine",
+                          "position": {"x": 39.06218, "y": 1.15083, "z": -4.54628},
+                          "orientation": {"x": 0.41812, "y": 0.57024, "z": 0.57024, "w": -0.41812},
+                          "shape": {
+                            "type": "box",
+                            "offset": {"x": 0.41421, "y": -4.41421, "z": -1},
+                            "stretch": {"x": 1, "y": 1, "z": 0.8},
+                            "settings": {
+                              "isPiece": false,
+                              "size": {"x": 3, "y": 11, "z": 3}
+                            },
+                            "textureLayout": {
+                              "back": {
+                                "offset": {"x": 118, "y": 14},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 180
+                              },
+                              "right": {
+                                "offset": {"x": 118, "y": 3},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "front": {
+                                "offset": {"x": 115, "y": 14},
+                                "mirror": {"x": false, "y": true},
+                                "angle": 0
+                              },
+                              "left": {
+                                "offset": {"x": 112, "y": 14},
+                                "mirror": {"x": false, "y": true},
+                                "angle": 0
+                              },
+                              "top": {
+                                "offset": {"x": 115, "y": 0},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "bottom": {
+                                "offset": {"x": 112, "y": 0},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              }
+                            },
+                            "unwrapMode": "custom",
+                            "visible": true,
+                            "doubleSided": false,
+                            "shadingMode": "reflective"
+                          },
+                          "children": [
+                            {
+                              "id": "11",
+                              "name": "Blade-Spine2",
+                              "position": {"x": -0.41421, "y": -6.58579, "z": 1},
+                              "orientation": {"x": 0, "y": 0, "z": 0.10887, "w": 0.99406},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": 0.41421, "y": -4.41421, "z": -1},
+                                "stretch": {"x": 1, "y": 1, "z": 0.775},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 3, "y": 11, "z": 3}
+                                },
+                                "textureLayout": {
+                                  "back": {
+                                    "offset": {"x": 118, "y": 14},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 180
+                                  },
+                                  "right": {
+                                    "offset": {"x": 118, "y": 3},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "front": {
+                                    "offset": {"x": 115, "y": 14},
+                                    "mirror": {"x": false, "y": true},
+                                    "angle": 0
+                                  },
+                                  "left": {
+                                    "offset": {"x": 112, "y": 14},
+                                    "mirror": {"x": false, "y": true},
+                                    "angle": 0
+                                  },
+                                  "top": {
+                                    "offset": {"x": 115, "y": 0},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 112, "y": 0},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "reflective"
+                              },
+                              "children": [
+                                {
+                                  "id": "12",
+                                  "name": "Blade-Spine3",
+                                  "position": {"x": -0.88972, "y": -6.43166, "z": 1},
+                                  "orientation": {"x": 0, "y": 0, "z": -0.17365, "w": 0.98481},
+                                  "shape": {
+                                    "type": "box",
+                                    "offset": {"x": -0.08579, "y": -4.66421, "z": -1},
+                                    "stretch": {"x": 1.125, "y": 1.25, "z": 0.75},
+                                    "settings": {
+                                      "isPiece": false,
+                                      "size": {"x": 3, "y": 11, "z": 3}
+                                    },
+                                    "textureLayout": {
+                                      "back": {
+                                        "offset": {"x": 118, "y": 14},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 180
+                                      },
+                                      "right": {
+                                        "offset": {"x": 118, "y": 3},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      },
+                                      "front": {
+                                        "offset": {"x": 115, "y": 14},
+                                        "mirror": {"x": false, "y": true},
+                                        "angle": 0
+                                      },
+                                      "left": {
+                                        "offset": {"x": 112, "y": 14},
+                                        "mirror": {"x": false, "y": true},
+                                        "angle": 0
+                                      },
+                                      "top": {
+                                        "offset": {"x": 115, "y": 0},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      },
+                                      "bottom": {
+                                        "offset": {"x": 112, "y": 0},
+                                        "mirror": {"x": false, "y": false},
+                                        "angle": 0
+                                      }
+                                    },
+                                    "unwrapMode": "custom",
+                                    "visible": true,
+                                    "doubleSided": false,
+                                    "shadingMode": "reflective"
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "13",
+                                      "name": "Blade-Spine4",
+                                      "position": {"x": 0.40833, "y": -6.55282, "z": 1},
+                                      "orientation": {"x": 0, "y": 0, "z": 0.21644, "w": 0.9763},
+                                      "shape": {
+                                        "type": "box",
+                                        "offset": {"x": -0.83579, "y": -6.41421, "z": -1},
+                                        "stretch": {"x": 1.25, "y": 1.25, "z": 0.85},
+                                        "settings": {
+                                          "isPiece": false,
+                                          "size": {"x": 3, "y": 11, "z": 3}
+                                        },
+                                        "textureLayout": {
+                                          "back": {
+                                            "offset": {"x": 118, "y": 14},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 180
+                                          },
+                                          "right": {
+                                            "offset": {"x": 118, "y": 3},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 0
+                                          },
+                                          "front": {
+                                            "offset": {"x": 115, "y": 14},
+                                            "mirror": {"x": false, "y": true},
+                                            "angle": 0
+                                          },
+                                          "left": {
+                                            "offset": {"x": 112, "y": 14},
+                                            "mirror": {"x": false, "y": true},
+                                            "angle": 0
+                                          },
+                                          "top": {
+                                            "offset": {"x": 115, "y": 0},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 0
+                                          },
+                                          "bottom": {
+                                            "offset": {"x": 112, "y": 0},
+                                            "mirror": {"x": false, "y": false},
+                                            "angle": 0
+                                          }
+                                        },
+                                        "unwrapMode": "custom",
+                                        "visible": true,
+                                        "doubleSided": false,
+                                        "shadingMode": "reflective"
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "14",
+                                          "name": "Blade-Spine-Thin",
+                                          "position": {"x": -0.80442, "y": -6.56362, "z": 1},
+                                          "orientation": {"x": 0, "y": 0, "z": 0.10887, "w": 0.99406},
+                                          "shape": {
+                                            "type": "box",
+                                            "offset": {"x": -0.08579, "y": -4.41421, "z": -1},
+                                            "stretch": {"x": 1.125, "y": 1.125, "z": 0.875},
+                                            "settings": {
+                                              "isPiece": false,
+                                              "size": {"x": 2, "y": 8, "z": 2}
+                                            },
+                                            "textureLayout": {
+                                              "back": {
+                                                "offset": {"x": 126, "y": 10},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 180
+                                              },
+                                              "right": {
+                                                "offset": {"x": 126, "y": 2},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              },
+                                              "front": {
+                                                "offset": {"x": 124, "y": 10},
+                                                "mirror": {"x": false, "y": true},
+                                                "angle": 0
+                                              },
+                                              "left": {
+                                                "offset": {"x": 122, "y": 10},
+                                                "mirror": {"x": false, "y": true},
+                                                "angle": 0
+                                              },
+                                              "top": {
+                                                "offset": {"x": 124, "y": 0},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              },
+                                              "bottom": {
+                                                "offset": {"x": 122, "y": 0},
+                                                "mirror": {"x": false, "y": false},
+                                                "angle": 0
+                                              }
+                                            },
+                                            "unwrapMode": "custom",
+                                            "visible": true,
+                                            "doubleSided": false,
+                                            "shadingMode": "reflective"
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "15",
+                                              "name": "Blade-Spine-Thin2",
+                                              "position": {"x": 0.21701, "y": -4.76308, "z": 1},
+                                              "orientation": {"x": 0, "y": 0, "z": 0.13053, "w": 0.99144},
+                                              "shape": {
+                                                "type": "box",
+                                                "offset": {"x": -0.08579, "y": -3.91421, "z": -1},
+                                                "stretch": {"x": 0.875, "y": 1.125, "z": 0.75},
+                                                "settings": {
+                                                  "isPiece": false,
+                                                  "size": {"x": 2, "y": 8, "z": 2}
+                                                },
+                                                "textureLayout": {
+                                                  "back": {
+                                                    "offset": {"x": 126, "y": 10},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 180
+                                                  },
+                                                  "right": {
+                                                    "offset": {"x": 126, "y": 2},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "front": {
+                                                    "offset": {"x": 124, "y": 10},
+                                                    "mirror": {"x": false, "y": true},
+                                                    "angle": 0
+                                                  },
+                                                  "left": {
+                                                    "offset": {"x": 122, "y": 10},
+                                                    "mirror": {"x": false, "y": true},
+                                                    "angle": 0
+                                                  },
+                                                  "top": {
+                                                    "offset": {"x": 124, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  },
+                                                  "bottom": {
+                                                    "offset": {"x": 122, "y": 0},
+                                                    "mirror": {"x": false, "y": false},
+                                                    "angle": 0
+                                                  }
+                                                },
+                                                "unwrapMode": "custom",
+                                                "visible": true,
+                                                "doubleSided": false,
+                                                "shadingMode": "reflective"
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "16",
+                                                  "name": "Blade-Spine-Thin3",
+                                                  "position": {"x": 0.46108, "y": -4.70897, "z": 1},
+                                                  "orientation": {"x": 0, "y": 0, "z": 0.17365, "w": 0.98481},
+                                                  "shape": {
+                                                    "type": "box",
+                                                    "offset": {"x": -0.08579, "y": -3.91421, "z": -1},
+                                                    "stretch": {"x": 1, "y": 1.125, "z": 0.625},
+                                                    "settings": {
+                                                      "isPiece": false,
+                                                      "size": {"x": 2, "y": 8, "z": 2}
+                                                    },
+                                                    "textureLayout": {
+                                                      "back": {
+                                                        "offset": {"x": 126, "y": 10},
+                                                        "mirror": {"x": false, "y": false},
+                                                        "angle": 180
+                                                      },
+                                                      "right": {
+                                                        "offset": {"x": 126, "y": 2},
+                                                        "mirror": {"x": false, "y": false},
+                                                        "angle": 0
+                                                      },
+                                                      "front": {
+                                                        "offset": {"x": 124, "y": 10},
+                                                        "mirror": {"x": false, "y": true},
+                                                        "angle": 0
+                                                      },
+                                                      "left": {
+                                                        "offset": {"x": 122, "y": 10},
+                                                        "mirror": {"x": false, "y": true},
+                                                        "angle": 0
+                                                      },
+                                                      "top": {
+                                                        "offset": {"x": 124, "y": 0},
+                                                        "mirror": {"x": false, "y": false},
+                                                        "angle": 0
+                                                      },
+                                                      "bottom": {
+                                                        "offset": {"x": 122, "y": 0},
+                                                        "mirror": {"x": false, "y": false},
+                                                        "angle": 0
+                                                      }
+                                                    },
+                                                    "unwrapMode": "custom",
+                                                    "visible": true,
+                                                    "doubleSided": false,
+                                                    "shadingMode": "reflective"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "17",
+                      "name": "Crossguard2",
+                      "position": {"x": 10.90225, "y": -0.28792, "z": 0},
+                      "orientation": {"x": 0.96593, "y": -0.25882, "z": 0, "w": 0},
+                      "shape": {
+                        "type": "box",
+                        "offset": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1.05, "z": 1.1},
+                        "settings": {
+                          "isPiece": false,
+                          "size": {"x": 4, "y": 18, "z": 5}
+                        },
+                        "textureLayout": {
+                          "back": {
+                            "offset": {"x": 91, "y": 14},
+                            "mirror": {"x": true, "y": false},
+                            "angle": 0
+                          },
+                          "right": {
+                            "offset": {"x": 91, "y": 14},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "front": {
+                            "offset": {"x": 87, "y": 14},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "left": {
+                            "offset": {"x": 82, "y": 14},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "top": {
+                            "offset": {"x": 97, "y": 27},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          },
+                          "bottom": {
+                            "offset": {"x": 97, "y": 27},
+                            "mirror": {"x": false, "y": false},
+                            "angle": 0
+                          }
+                        },
+                        "unwrapMode": "custom",
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "reflective"
+                      },
+                      "children": [
+                        {
+                          "id": "18",
+                          "name": "Crossguard",
+                          "position": {"x": -0.51217, "y": -9.01664, "z": 1},
+                          "orientation": {"x": 0, "y": 0, "z": 0.17365, "w": 0.98481},
+                          "shape": {
+                            "type": "box",
+                            "offset": {"x": 0.41421, "y": -4.41421, "z": -1},
+                            "stretch": {"x": 1, "y": 1, "z": 1.33286},
+                            "settings": {
+                              "isPiece": false,
+                              "size": {"x": 3, "y": 11, "z": 3}
+                            },
+                            "textureLayout": {
+                              "back": {
+                                "offset": {"x": 118, "y": 14},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 180
+                              },
+                              "right": {
+                                "offset": {"x": 118, "y": 3},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "front": {
+                                "offset": {"x": 115, "y": 14},
+                                "mirror": {"x": false, "y": true},
+                                "angle": 0
+                              },
+                              "left": {
+                                "offset": {"x": 112, "y": 14},
+                                "mirror": {"x": false, "y": true},
+                                "angle": 0
+                              },
+                              "top": {
+                                "offset": {"x": 115, "y": 0},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "bottom": {
+                                "offset": {"x": 112, "y": 0},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              }
+                            },
+                            "unwrapMode": "custom",
+                            "visible": true,
+                            "doubleSided": false,
+                            "shadingMode": "reflective"
+                          },
+                          "children": [
+                            {
+                              "id": "19",
+                              "name": "Crossguard8",
+                              "position": {"x": 0.15982, "y": -5.97161, "z": 1},
+                              "orientation": {"x": 0, "y": 0, "z": 0.19509, "w": 0.98079},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": -0.08579, "y": -2.91421, "z": -1},
+                                "stretch": {"x": 1, "y": 1, "z": 1.33286},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 2, "y": 8, "z": 2}
+                                },
+                                "textureLayout": {
+                                  "back": {
+                                    "offset": {"x": 126, "y": 10},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 180
+                                  },
+                                  "right": {
+                                    "offset": {"x": 126, "y": 2},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "front": {
+                                    "offset": {"x": 124, "y": 10},
+                                    "mirror": {"x": false, "y": true},
+                                    "angle": 0
+                                  },
+                                  "left": {
+                                    "offset": {"x": 122, "y": 10},
+                                    "mirror": {"x": false, "y": true},
+                                    "angle": 0
+                                  },
+                                  "top": {
+                                    "offset": {"x": 124, "y": 0},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 122, "y": 0},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "reflective"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "20",
+                          "name": "Crossguard",
+                          "position": {"x": -0.00457, "y": 8.51704, "z": 1},
+                          "orientation": {"x": 0, "y": 0, "z": -0.99144, "w": 0.13053},
+                          "shape": {
+                            "type": "box",
+                            "offset": {"x": -0.41421, "y": -5.41421, "z": -1},
+                            "stretch": {"x": -1, "y": 1, "z": 1.33286},
+                            "settings": {
+                              "isPiece": false,
+                              "size": {"x": 3, "y": 11, "z": 3}
+                            },
+                            "textureLayout": {
+                              "back": {
+                                "offset": {"x": 118, "y": 14},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 180
+                              },
+                              "right": {
+                                "offset": {"x": 118, "y": 3},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "front": {
+                                "offset": {"x": 115, "y": 14},
+                                "mirror": {"x": false, "y": true},
+                                "angle": 0
+                              },
+                              "left": {
+                                "offset": {"x": 112, "y": 14},
+                                "mirror": {"x": false, "y": true},
+                                "angle": 0
+                              },
+                              "top": {
+                                "offset": {"x": 115, "y": 0},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              },
+                              "bottom": {
+                                "offset": {"x": 112, "y": 0},
+                                "mirror": {"x": false, "y": false},
+                                "angle": 0
+                              }
+                            },
+                            "unwrapMode": "custom",
+                            "visible": true,
+                            "doubleSided": false,
+                            "shadingMode": "reflective"
+                          },
+                          "children": [
+                            {
+                              "id": "21",
+                              "name": "Crossguard7",
+                              "position": {"x": 0.10135, "y": -5.40182, "z": 0},
+                              "orientation": {"x": 0, "y": 0, "z": -0.93969, "w": 0.34202},
+                              "shape": {
+                                "type": "box",
+                                "offset": {"x": 0, "y": 3, "z": 0},
+                                "stretch": {"x": 1, "y": 1, "z": 1.33286},
+                                "settings": {
+                                  "isPiece": false,
+                                  "size": {"x": 2, "y": 8, "z": 2}
+                                },
+                                "textureLayout": {
+                                  "back": {
+                                    "offset": {"x": 126, "y": 10},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 180
+                                  },
+                                  "right": {
+                                    "offset": {"x": 126, "y": 2},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "front": {
+                                    "offset": {"x": 124, "y": 10},
+                                    "mirror": {"x": false, "y": true},
+                                    "angle": 0
+                                  },
+                                  "left": {
+                                    "offset": {"x": 122, "y": 10},
+                                    "mirror": {"x": false, "y": true},
+                                    "angle": 0
+                                  },
+                                  "top": {
+                                    "offset": {"x": 124, "y": 0},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  },
+                                  "bottom": {
+                                    "offset": {"x": 122, "y": 0},
+                                    "mirror": {"x": false, "y": false},
+                                    "angle": 0
+                                  }
+                                },
+                                "unwrapMode": "custom",
+                                "visible": true,
+                                "doubleSided": false,
+                                "shadingMode": "reflective"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "format": "character",
+  "lod": "auto"
+}

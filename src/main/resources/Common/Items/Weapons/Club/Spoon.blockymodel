@@ -61,7 +61,7 @@
                   "id": "4",
                   "name": "Handle",
                   "position": {"x": 0, "y": -20, "z": 0},
-                  "orientation": {"x": -0.5, "y": -0.5, "z": 0.5, "w": 0.5},
+                  "orientation": {"x": 0.5, "y": 0.5, "z": 0.5, "w": 0.5},
                   "shape": {
                     "type": "box",
                     "offset": {"x": 16.5, "y": 0, "z": 0},
@@ -216,8 +216,8 @@
                             "textureLayout": {
                               "back": {
                                 "offset": {"x": 45, "y": 32},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 90
+                                "mirror": {"x": false, "y": false},
+                                "angle": 270
                               },
                               "right": {
                                 "offset": {"x": 11, "y": 12},
@@ -226,8 +226,8 @@
                               },
                               "front": {
                                 "offset": {"x": 45, "y": 32},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 90
+                                "mirror": {"x": false, "y": false},
+                                "angle": 270
                               },
                               "left": {
                                 "offset": {"x": 11, "y": 12},
@@ -236,13 +236,13 @@
                               },
                               "top": {
                                 "offset": {"x": 29, "y": 32},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 90
+                                "mirror": {"x": false, "y": false},
+                                "angle": 270
                               },
                               "bottom": {
                                 "offset": {"x": 48, "y": 32},
-                                "mirror": {"x": true, "y": true},
-                                "angle": 90
+                                "mirror": {"x": false, "y": false},
+                                "angle": 270
                               }
                             },
                             "unwrapMode": "custom",

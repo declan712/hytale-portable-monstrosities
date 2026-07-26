@@ -1,0 +1,120 @@
+{
+  "Parent": "Weapon_Club_Iron",
+  "TranslationProperties": {
+    "Name": "portablemonstrosities.items.Weapon_Spoon.name",
+    "Description": "portablemonstrosities.items.Weapon_Spoon.description"
+  },
+  "Model": "Items/Weapons/Club/Spoon.blockymodel",
+  "Texture": "Items/Weapons/Club/Spoon_Texture.png",
+  "Quality": "Uncommon",
+  "ItemLevel": 10,
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Pokemetal",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Bench_Pokeball",
+        "Categories": [
+          "Pkmn_General"
+        ]
+      }
+    ]
+  },
+  "PlayerAnimationsId": "Club",
+  "Utility": {
+    "Compatible": true
+  },
+  "MaxDurability": 150,
+  "DurabilityLossOnHit": 0.56,
+  "Interactions": {
+    "Primary": "Club_Attack",
+    "Secondary": "Root_Weapon_Generic_Secondary_PkmnGuard"
+  },
+  "InteractionVars": {
+    "Club_Swing_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Club_Swing_Left_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Swing"
+          }
+        }
+      ]
+    },
+    "Club_Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "DamagePkmnParent",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Psychic": 15
+            }
+          },
+          "Effects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Impact"
+          }
+        }
+      ]
+    },
+    "Club_Swing_Right_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Club_Swing_Right_Effect",
+          "Effects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Swing"
+          }
+        }
+      ]
+    },
+    "Club_Swing_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "DamagePkmnParent",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Psychic": 20
+            }
+          },
+          "Effects": {
+            "WorldSoundEventId": "SFX_Club_Steel_Impact"
+          }
+        }
+      ]
+    }
+  },
+  "Categories": [
+    "Items.Weapons",
+    "PortableMonstrosities.Weapons"
+  ],
+  "Weapon":{
+    "StatModifiers": {
+      "SpAtk": [
+        {
+          "Amount": 20,
+          "CalculationType": "Additive"
+        }
+      ]
+    }
+  },
+  "ItemSoundSetId": "ISS_Weapons_Blunt_Small",
+  "IconProperties": {
+    "Scale": 0.6,
+    "Rotation": [
+      308,
+      321,
+      344
+    ],
+    "Translation": [
+      -15,
+      -16
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Weapon_Spoon.png"
+}

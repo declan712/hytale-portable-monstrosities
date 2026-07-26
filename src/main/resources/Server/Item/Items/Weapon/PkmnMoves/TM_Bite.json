@@ -122,41 +122,13 @@
         }
       ]
     },
-    "Secondary": {
-      "RequireNewClick": true,
-      "Rules": {
-        "BlockedBy": [
-          "Primary"
-        ]
-      },
-      "Cooldown": {
-        "Id": "Block",
-        "Cooldown": 0.75
-      },
-      "Interactions": [
-        {
-          "Type": "Replace",
-          "Var": "Guard_Start",
-          "DefaultOk": true,
-          "DefaultValue": {
-            "Interactions": [
-              "Weapon_Sword_Secondary_Guard"
-            ]
-          }
-        }
-      ],
-      "Tags": {
-        "Attack": [
-          "Melee"
-        ]
-      }
-    }
+    "Secondary": "Root_Weapon_Generic_Secondary_PkmnGuard"
   },
   "InteractionVars": {
     "Guard_Wield": {
       "Interactions": [
         {
-          "Parent": "Weapon_Sword_Secondary_Guard_Wield",
+          "Parent": "Weapon_Generic_Secondary_PkmnGuard_Wield",
           "Effects": {
             "ItemPlayerAnimationsId": "Sword",
             "ItemAnimationId": "Guard",
