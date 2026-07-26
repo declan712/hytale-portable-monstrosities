@@ -1,0 +1,55 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemAnimationId": "SpinRightStabDashCharging"
+  },
+  "RunTime": 0.5,
+  "Next": {
+    "Type": "Parallel",
+    "$Comment": "Make sure this parallel interaction is needed and can\u0027t be optimized away",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "Var": "Dash_Stab_Force",
+            "DefaultOk": true,
+            "DefaultValue": {
+              "Interactions": [
+                "Weapon_Scyther_Blade_Dash_Stab_Force"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "Var": "Dash_Stab_Selector",
+            "DefaultOk": true,
+            "DefaultValue": {
+              "Interactions": [
+                "Weapon_Scyther_Blade_Dash_Stab_Selector"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Replace",
+            "Var": "Dash_Stab_Effect",
+            "DefaultOk": true,
+            "DefaultValue": {
+              "Interactions": [
+                "Weapon_Scyther_Blade_Dash_Stab_Effect"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

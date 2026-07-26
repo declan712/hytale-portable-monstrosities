@@ -1,0 +1,115 @@
+{
+  "Type": "Wielding",
+  "Effects": {
+    "ItemAnimationId": "Guard",
+    "ClearAnimationOnFinish": true,
+    "WorldSoundEventId": "SFX_Light_Melee_T2_Block",
+    "LocalSoundEventId": "SFX_Sword_T2_Block_Local"
+  },
+  "Forks": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "Replace",
+          "Var": "Guard_Bash",
+          "DefaultOk": true,
+          "DefaultValue": {
+            "Interactions": [
+              "Weapon_Sword_Secondary_PkmnGuard_Bash"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "AngledWielding": {
+    "Angle": 0,
+    "AngleDistance": 120,
+    "DamageModifiers": {
+      "Physical": 0.25,
+      "Projectile": 0.25,
+      "Pkmn": 0.25,
+      "Bug": 0.25,
+      "Dark": 0.25,
+      "Dragon": 0.25,
+      "Electric": 0.25,
+      "Fighting": 0.25,
+      "Fire": 0.25,
+      "Flying": 0.25,
+      "Ghost": 0.25,
+      "Grass": 0.25,
+      "Ground": 0.25,
+      "Ice": 0.25,
+      "Normal": 0.25,
+      "Poison": 0.25,
+      "Psychic": 0.25,
+      "Rock": 0.25,
+      "Steel": 0.25,
+      "Water": 0.25
+    },
+    "KnockbackModifiers": {
+      "Physical": 0.25,
+      "Projectile": 0.25,
+      "Pkmn": 0.25,
+      "Bug": 0.25,
+      "Dark": 0.25,
+      "Dragon": 0.25,
+      "Electric": 0.25,
+      "Fighting": 0.25,
+      "Fire": 0.25,
+      "Flying": 0.25,
+      "Ghost": 0.25,
+      "Grass": 0.25,
+      "Ground": 0.25,
+      "Ice": 0.25,
+      "Normal": 0.25,
+      "Poison": 0.25,
+      "Psychic": 0.25,
+      "Rock": 0.25,
+      "Steel": 0.25,
+      "Water": 0.25
+    }
+  },
+  "StaminaCost": {
+    "Value": 7,
+    "CostType": "Damage"
+  },
+  "CancelOnOtherClick": false,
+  "Failed": {
+    "Type": "Replace",
+    "Var": "Guard_Break",
+    "DefaultOk": true,
+    "DefaultValue": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "Shield_Shatter"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Light_Melee_T2_Guard_Break",
+            "LocalSoundEventId": "SFX_Light_Melee_T2_Guard_Break"
+          }
+        }
+      ]
+    }
+  },
+  "BlockedEffects": {
+    "WorldSoundEventId": "SFX_Light_Melee_T2_Guard_Hit",
+    "WorldParticles": [
+      {
+        "SystemId": "Shield_Block"
+      }
+    ]
+  },
+  "Next": {
+    "$Comment": "Standard regen delay upon ending guarding on all weapons",
+    "Type": "ChangeStat",
+    "Behaviour": "Set",
+    "StatModifiers": {
+      "StaminaRegenDelay": -1
+    }
+  }
+}

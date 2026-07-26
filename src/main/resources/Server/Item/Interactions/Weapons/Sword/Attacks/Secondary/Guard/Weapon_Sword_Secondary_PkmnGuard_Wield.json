@@ -3,8 +3,8 @@
   "Effects": {
     "ItemAnimationId": "Guard",
     "ClearAnimationOnFinish": true,
-    "WorldSoundEventId": "SFX_Shield_T2_Raise",
-    "LocalSoundEventId": "SFX_Shield_T2_Raise_Local"
+    "WorldSoundEventId": "SFX_Light_Melee_T2_Block",
+    "LocalSoundEventId": "SFX_Sword_T2_Block_Local"
   },
   "Forks": {
     "Primary": {
@@ -15,7 +15,7 @@
           "DefaultOk": true,
           "DefaultValue": {
             "Interactions": [
-              "Weapon_Shield_Secondary_Guard_Bash"
+              "Weapon_Sword_Secondary_PkmnGuard_Bash"
             ]
           }
         }
@@ -26,31 +26,52 @@
     "Angle": 0,
     "AngleDistance": 120,
     "DamageModifiers": {
-      "Physical": 0.3,
-      "Projectile": 0.3,
-      "Poison": 0.3,
-      "Pkmn": 0.3,
-      "Dark": 0.3,
-      "Bug": 0.3,
-      "Electric": 0.3,
-      "Fighting": 0.3,
-      "Ghost": 0.3,
-      "Grass": 0.3,
-      "Ground": 0.3,
-      "Ice": 0.3,
-      "Normal": 0.3,
-      "Psychic": 0.3,
-      "Rock": 0.3,
-      "Steel": 0.3,
-      "Water": 0.3
+      "Physical": 0.15,
+      "Projectile": 0.15,
+      "Pkmn": 0.15,
+      "Bug": 0.15,
+      "Dark": 0.15,
+      "Dragon": 0.15,
+      "Electric": 0.15,
+      "Fighting": 0.15,
+      "Fire": 0.15,
+      "Flying": 0.15,
+      "Ghost": 0.15,
+      "Grass": 0.15,
+      "Ground": 0.15,
+      "Ice": 0.15,
+      "Normal": 0.15,
+      "Poison": 0.15,
+      "Psychic": 0.15,
+      "Rock": 0.15,
+      "Steel": 0.15,
+      "Water": 0.15
     },
     "KnockbackModifiers": {
       "Physical": 0.25,
-      "Projectile": 0.25
+      "Projectile": 0.25,
+      "Pkmn": 0.25,
+      "Bug": 0.25,
+      "Dark": 0.25,
+      "Dragon": 0.25,
+      "Electric": 0.25,
+      "Fighting": 0.25,
+      "Fire": 0.25,
+      "Flying": 0.25,
+      "Ghost": 0.25,
+      "Grass": 0.25,
+      "Ground": 0.25,
+      "Ice": 0.25,
+      "Normal": 0.25,
+      "Poison": 0.25,
+      "Psychic": 0.25,
+      "Rock": 0.25,
+      "Steel": 0.25,
+      "Water": 0.25
     }
   },
   "StaminaCost": {
-    "Value": 10,
+    "Value": 7,
     "CostType": "Damage"
   },
   "CancelOnOtherClick": false,
@@ -68,15 +89,15 @@
                 "SystemId": "Shield_Shatter"
               }
             ],
-            "WorldSoundEventId": "SFX_Shield_T1_Break",
-            "LocalSoundEventId": "SFX_Shield_T1_Break"
+            "WorldSoundEventId": "SFX_Light_Melee_T2_Guard_Break",
+            "LocalSoundEventId": "SFX_Light_Melee_T2_Guard_Break"
           }
         }
       ]
     }
   },
   "BlockedEffects": {
-    "WorldSoundEventId": "SFX_Battleaxe_T1_Block_Impact",
+    "WorldSoundEventId": "SFX_Light_Melee_T2_Guard_Hit",
     "WorldParticles": [
       {
         "SystemId": "Shield_Block"

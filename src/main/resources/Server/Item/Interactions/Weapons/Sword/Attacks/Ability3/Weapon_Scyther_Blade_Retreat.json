@@ -1,0 +1,27 @@
+{
+  "Type": "StatsCondition",
+  "Costs": {
+    "Mana": 10
+  },
+  "ValueType": "Absolute",
+  "Next": {
+    "Type": "Serial",
+    "Interactions": [
+      {
+          "Type": "Replace",
+          "Var": "Retreat_Spin",
+          "DefaultOk": true,
+          "DefaultValue": {
+              "Interactions": [ "Weapon_Scyther_Blade_Retreat_Spin" ]
+          }
+      },
+      {
+        "Type": "ChangeStat",
+        "StatModifiers": {
+          "Mana": -10
+        },
+        "ValueType": "Absolute"
+      }
+    ]
+  }
+}
