@@ -3,28 +3,50 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Abra",
-    "Type1": "PsychicType",
+    "MaxSpeed": 9.0,
     "IsMemory": true,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "BaseStats": [
-      25,
-      20,
-      15,
-      105,
-      55,
-      90
-    ],
-    "CaptureDifficulty": 0.808,
     "TameRoleChange": "Pkmn_Abra_Tamed",
-    "MaxSpeed": 9,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]}
-    }
+    "Hp": 25,
+    "Atk": 20,
+    "Def": 15,
+    "SpAtk": 105,
+    "SpDef": 55,
+    "Spd": 90,
+    "Type1": "PsychicType",
+    "CaptureDifficulty": 0.808
   },
   "Parameters": {
     "NameTranslationKey": {

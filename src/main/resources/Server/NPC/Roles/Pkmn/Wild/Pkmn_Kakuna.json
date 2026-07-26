@@ -12,31 +12,61 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 3.5,
+    "FleeIfNotThreatened": true,
+    "Timid": true,
+    "TimidDuringDay": true,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Kakuna",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": true,
+    "AlertedActionRange": 4,
+    "AbsoluteDetectionRange": 1.5,
+    "TameRoleChange": "Pkmn_Kakuna_Tamed",
+    "Hp": 45,
+    "Atk": 25,
+    "Def": 50,
+    "SpAtk": 25,
+    "SpDef": 25,
+    "Spd": 35,
     "Type1": "BugType",
     "Type2": "PoisonType",
     "WildLevelMin": 7,
     "WildLevelMax": 10,
-    "CaptureDifficulty": 0.47,
-    "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Kakuna_Tamed",
-    "IsTameable": true,
-    "MaxSpeed": 3.5,
-    "AlertedActionRange": 4,
-    "AbsoluteDetectionRange": 1.5,
-    "Timid": true,
-    "FleeIfNotThreatened": true,
-    "TimidDuringDay": true,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Kakuna",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]}
-    }
+    "CaptureDifficulty": 0.47
   },
   "Parameters": {
     "NameTranslationKey": {

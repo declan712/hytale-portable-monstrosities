@@ -4,28 +4,58 @@
   "Modify": {
     "Appearance": "Pkmn_Koffing",
     "DropList": "Drop_Pkmn_T0_Hide",
-    "Type1": "PoisonType",
     "FlockArray": [
       "Pkmn_Koffing",
       "Pkmn_Weezing"
     ],
-    "WildLevelMin": 10,
-    "WildLevelMax": 35,
     "MaxSpeed": 3.5,
-    "CaptureDifficulty": 0.75,
-    "TameRoleChange": "Pkmn_Koffing_Tamed",
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Elemental",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]}
-    }
+    "TameRoleChange": "Pkmn_Koffing_Tamed",
+    "Hp": 40,
+    "Atk": 65,
+    "Def": 95,
+    "SpAtk": 60,
+    "SpDef": 45,
+    "Spd": 35,
+    "Type1": "PoisonType",
+    "WildLevelMin": 10,
+    "WildLevelMax": 35,
+    "CaptureDifficulty": 0.75
   },
   "Parameters": {
     "NameTranslationKey": {

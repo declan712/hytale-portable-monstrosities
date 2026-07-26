@@ -3,9 +3,7 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_NidoranF",
-    "AttractiveItemSet": [
-      "Plant_Fruit_Apricorn_T0"
-    ],
+    "AttitudeGroup": "Prey",
     "FlockArray": [
       "Pkmn_NidoranF",
       "Pkmn_NidoranM",
@@ -14,50 +12,82 @@
       "Pkmn_Nidoqueen",
       "Pkmn_Nidoking"
     ],
-    "Type1": "PoisonType",
-    "WildLevelMin": 2,
-    "WildLevelMax": 16,
-    "CaptureDifficulty": 0.92,
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn_T0"
+    ],
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_NidoranF_Tamed",
-    "AttitudeGroup": "Prey",
     "MaxSpeed": 4.1,
-    "WanderRadius": 20,
     "ViewRange": 8,
+    "FleeIfNotThreatened": true,
+    "Timid": true,
+    "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "NidoranF",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Double_Kick"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "WanderRadius": 20,
     "HearingRange": 10,
+    "FleeRange": 15,
     "AlertedRange": 12,
     "AlertedTime": [
       2,
       3
     ],
-    "Timid": true,
-    "FleeIfNotThreatened": true,
-    "TimidDuringDay": true,
-    "FleeRange": 15,
+    "AlwaysSleepAtNight": false,
     "HardLeashDistance": 60,
     "LeashDistance": 30,
     "CombatBehaviorDistance": 3,
     "CombatBackOffAfterAttack": false,
-    "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2,
     "ChaseRelativeSpeed": 0.6,
     "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
     "DayTimeNapWeight": 0,
     "DayFlavorAnimation": "IdlePassive",
     "NightFlavorAnimation": "IdlePassive",
-    "IsMemory": true,
-    "MemoriesCategory": "Critter",
-    "MemoriesNameOverride": "NidoranF",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Scratch"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Double_Kick"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_NidoranF_Tamed",
+    "Hp": 55,
+    "Atk": 47,
+    "Def": 52,
+    "SpAtk": 40,
+    "SpDef": 40,
+    "Spd": 41,
+    "Type1": "PoisonType",
+    "WildLevelMin": 2,
+    "WildLevelMax": 16,
+    "CaptureDifficulty": 0.92
   },
   "Parameters": {
     "NameTranslationKey": {

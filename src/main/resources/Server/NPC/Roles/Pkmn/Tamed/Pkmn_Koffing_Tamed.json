@@ -4,25 +4,58 @@
   "Modify": {
     "Appearance": "Pkmn_Koffing",
     "DropList": "Drop_Pkmn_T0_Hide",
-    "Type1": "PoisonType",
-    "IsMountable": false,
-    "CanEvolve": true,
-    "EvolveRoleChange": "Pkmn_Weezing_Tamed",
-    "EvolveRequiredLevel":[25,100],
     "MaxSpeed": 3.5,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
-    "MemoriesNameOverride": "Koffing",
     "MemoriesCategory": "Elemental",
+    "MemoriesNameOverride": "Koffing",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]}
-    }
+    "Hp": 40,
+    "Atk": 65,
+    "Def": 95,
+    "SpAtk": 60,
+    "SpDef": 45,
+    "Spd": 35,
+    "Type1": "PoisonType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      25,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Weezing_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

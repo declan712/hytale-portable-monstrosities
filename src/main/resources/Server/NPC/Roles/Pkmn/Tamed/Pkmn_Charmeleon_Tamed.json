@@ -3,27 +3,60 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Charmeleon",
+    "DropList": "Drop_Pkmn_Charmeleon",
     "AttractiveItemSet": [
       "Ingredient_Powder_Boom"
     ],
-    "Type1": "FireType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [36,100],
-    "EvolveRoleChange": "Pkmn_Charizard_Tamed",
-    "MaxSpeed": 8,
-    "WanderRadius": 12,
-    "DropList": "Drop_Pkmn_Charmeleon",
+    "MaxSpeed": 8.0,
     "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Fang"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Fang"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 12,
+    "Hp": 58,
+    "Atk": 64,
+    "Def": 58,
+    "SpAtk": 80,
+    "SpDef": 65,
+    "Spd": 80,
+    "Type1": "FireType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      36,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Charizard_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

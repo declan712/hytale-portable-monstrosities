@@ -4,6 +4,7 @@
   "Modify": {
     "Appearance": "Pkmn_Fearow",
     "AttitudeGroup": "Prey",
+    "DropList": "Drop_Chicken",
     "FlockArray": [
       "Pkmn_Spearow",
       "Pkmn_Fearow"
@@ -11,35 +12,64 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
-    "Type1": "NormalType",
-    "Type2": "FlyingType",
-    "WildLevelMin": 20,
-    "WildLevelMax": 45,
-    "CaptureDifficulty": 0.35,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Fearow_Tamed",
+    "MaxSpeed": 10.0,
+    "Timid": false,
+    "ProduceItem": "Food_Egg",
+    "IsMemory": true,
+    "MemoriesNameOverride": "Fearow",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "IsTameable": true,
-    "DropList": "Drop_Chicken",
-    "MaxSpeed": 10,
     "AlertedActionRange": 4,
     "AbsoluteDetectionRange": 1.5,
-    "ProduceItem": "Food_Egg",
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Fearow",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]}
-    }
+    "TameRoleChange": "Pkmn_Fearow_Tamed",
+    "Hp": 65,
+    "Atk": 90,
+    "Def": 65,
+    "SpAtk": 61,
+    "SpDef": 61,
+    "Spd": 100,
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 20,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.35
   },
   "Parameters": {
     "NameTranslationKey": {

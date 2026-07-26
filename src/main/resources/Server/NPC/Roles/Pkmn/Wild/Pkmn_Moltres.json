@@ -4,31 +4,61 @@
   "Modify": {
     "Appearance": "Pkmn_Moltres",
     "AttitudeGroup": "PredatorsBig",
+    "DropList": "Drop_Pkmn_T2_Hide",
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 9.0,
+    "Timid": false,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Moltres",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": false,
+    "TameRoleChange": "Pkmn_Moltres_Tamed",
+    "Hp": 90,
+    "Atk": 100,
+    "Def": 90,
+    "SpAtk": 125,
+    "SpDef": 85,
+    "Spd": 90,
     "Type1": "FireType",
     "Type2": "FlyingType",
     "WildLevelMin": 50,
     "WildLevelMax": 55,
-    "CaptureDifficulty": 0.01,
-    "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Moltres_Tamed",
-    "IsTameable": false,
-    "DropList": "Drop_Pkmn_T2_Hide",
-    "MaxSpeed": 9,
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Moltres",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
-    }
+    "CaptureDifficulty": 0.01
   },
   "Parameters": {
     "NameTranslationKey": {

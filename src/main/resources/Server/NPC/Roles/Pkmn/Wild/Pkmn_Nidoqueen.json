@@ -4,9 +4,6 @@
   "Modify": {
     "Appearance": "Pkmn_Nidoqueen",
     "AttitudeGroup": "Pkmn_PreyBig",
-    "AttractiveItemSet": [
-      "Plant_Fruit_Apricorn_T0"
-    ],
     "FlockArray": [
       "Pkmn_NidoranF",
       "Pkmn_NidoranM",
@@ -15,27 +12,60 @@
       "Pkmn_Nidoqueen",
       "Pkmn_Nidoking"
     ],
-    "CaptureDifficulty": 0.18,
-    "Type1": "PoisonType",
-    "Type2": "GroundType",
-    "WildLevelMin": 32,
-    "WildLevelMax": 52,
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn_T0"
+    ],
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Nidoqueen_Tamed",
     "MaxSpeed": 7.6,
     "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Nidoqueen",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Double_Kick"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Crunch"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Superpower"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Double_Kick"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Crunch"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Superpower"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "TameRoleChange": "Pkmn_Nidoqueen_Tamed",
+    "Hp": 90,
+    "Atk": 92,
+    "Def": 87,
+    "SpAtk": 75,
+    "SpDef": 85,
+    "Spd": 76,
+    "Type1": "PoisonType",
+    "Type2": "GroundType",
+    "WildLevelMin": 32,
+    "WildLevelMax": 52,
+    "CaptureDifficulty": 0.18
   },
   "Parameters": {
     "NameTranslationKey": {

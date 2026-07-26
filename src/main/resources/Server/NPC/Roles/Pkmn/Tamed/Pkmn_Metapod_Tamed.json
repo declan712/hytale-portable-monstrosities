@@ -2,31 +2,64 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T0_Chitin",
-    "Type1": "BugType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [10,100],
-    "EvolveRoleChange": "Pkmn_Butterfree_Tamed",
     "Appearance": "Pkmn_Metapod",
+    "DropList": "Drop_Pkmn_T0_Chitin",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "MaxSpeed": 3,
-    "WanderRadius": 20,
+    "MaxSpeed": 3.0,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars":{
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]}
-    }
+    "WanderRadius": 20,
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 50,
+    "Atk": 20,
+    "Def": 55,
+    "SpAtk": 25,
+    "SpDef": 25,
+    "Spd": 30,
+    "Type1": "BugType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      10,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Butterfree_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

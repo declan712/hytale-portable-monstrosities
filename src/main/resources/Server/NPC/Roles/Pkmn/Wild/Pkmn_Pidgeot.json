@@ -4,6 +4,7 @@
   "Modify": {
     "Appearance": "Pkmn_Pidgeot",
     "AttitudeGroup": "PredatorsBig",
+    "DropList": "Drop_Pkmn_T2_Hide",
     "FlockArray": [
       "Pkmn_Pidgey",
       "Pkmn_Pidgeotto",
@@ -12,35 +13,64 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
-    "Type1": "NormalType",
-    "Type2": "FlyingType",
-    "WildLevelMin": 36,
-    "WildLevelMax": 56,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Pidgeot_Tamed",
+    "MaxSpeed": 10.1,
+    "Timid": false,
+    "ProduceItem": "Food_Egg",
+    "IsMemory": true,
+    "MemoriesNameOverride": "Pidgey",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "IsTameable": true,
-    "DropList": "Drop_Pkmn_T2_Hide",
-    "MaxHealth": 40,
-    "MaxSpeed": 10.0,
     "AlertedActionRange": 4,
     "AbsoluteDetectionRange": 1.5,
-    "ProduceItem": "Food_Egg",
+    "MaxHealth": 40,
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Pidgey",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]}
-    }
+    "TameRoleChange": "Pkmn_Pidgeot_Tamed",
+    "Hp": 83,
+    "Atk": 80,
+    "Def": 75,
+    "SpAtk": 70,
+    "SpDef": 70,
+    "Spd": 101,
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 36,
+    "WildLevelMax": 56
   },
   "Parameters": {
     "NameTranslationKey": {

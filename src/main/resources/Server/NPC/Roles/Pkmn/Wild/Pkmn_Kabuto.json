@@ -3,13 +3,11 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Kabuto",
-    "Type1": "RockType",
+    "MaxSpeed": 5.5,
     "IsMemory": true,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "WaterType",
-    "BreathesInWater": true,
     "BaseStats": [
       30,
       80,
@@ -18,9 +16,18 @@
       45,
       55
     ],
-    "CaptureDifficulty": 0.733,
+    "BreathesInWater": true,
     "TameRoleChange": "Pkmn_Kabuto_Tamed",
-    "MaxSpeed": 5.5
+    "Hp": 30,
+    "Atk": 80,
+    "Def": 90,
+    "SpAtk": 55,
+    "SpDef": 45,
+    "Spd": 55,
+    "Type1": "RockType",
+    "Type2": "WaterType",
+    "CaptureDifficulty": 0.733,
+    "_InteractionVars": {}
   },
   "Parameters": {
     "NameTranslationKey": {

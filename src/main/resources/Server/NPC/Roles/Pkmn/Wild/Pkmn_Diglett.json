@@ -9,45 +9,81 @@
       "Rubble_Marble",
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "GroundType",
-    "WildLevelMin": 5,
-    "WildLevelMax": 26,
-    "CaptureDifficulty": 0.7,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Diglett_Tamed",
     "MaxSpeed": 9.5,
-    "WanderRadius": 12,
     "ViewRange": 18,
-    "HearingRange": 12,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
+    "FleeIfNotThreatened": false,
+    "TimidDuringDay": false,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Elemental",
     "MemoriesNameOverride": "Diglett",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 12,
+    "HearingRange": 12,
+    "FleeRange": 11,
+    "AlertedRange": 18,
     "AlertedTime": [
       2,
       3
     ],
     "MaintainDistanceWhileAlerted": false,
+    "AlwaysSleepAtNight": false,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 6.5,
+    "CombatBackOffAfterAttack": true,
+    "AttackDistance": 2.25,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.7,
+    "DayTimeNapWeight": 0,
+    "DayFlavorAnimation": "",
     "ThreatenDelayRange": [
       2,
       2
     ],
     "ThreatenAnimation": "Jump",
-    "FleeIfNotThreatened": false,
-    "FleeRange": 11,
-    "HardLeashDistance": 60,
-    "LeashDistance": 30,
     "LeashMinPlayerDistance": 7,
     "LeashTimer": [
       3,
       4
     ],
-    "CombatBehaviorDistance": 6.5,
     "CombatRelativeTurnSpeed": 1,
     "CombatDirectWeight": 10,
     "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": true,
     "CombatBackOffDurationRange": [
       3,
       4
@@ -64,27 +100,21 @@
       2,
       3
     ],
-    "CombatMovingRelativeSpeed": 0.7,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.25,
-    "ChaseRelativeSpeed": 1,
-    "AlwaysSleepAtNight": false,
-    "DayFlavorAnimation": "",
-    "DayTimeNapWeight": 0,
-    "TimidDuringDay": false,
     "DayTimePeriod": [
       18.01,
       6.01
     ],
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Scratch"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Diglett_Tamed",
+    "Hp": 10,
+    "Atk": 55,
+    "Def": 25,
+    "SpAtk": 35,
+    "SpDef": 45,
+    "Spd": 95,
+    "Type1": "GroundType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 26,
+    "CaptureDifficulty": 0.7
   },
   "Parameters": {
     "NameTranslationKey": {

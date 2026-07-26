@@ -5,29 +5,59 @@
     "Appearance": "Pkmn_Arbok",
     "AttitudeGroup": "Pkmn_PredatorsBig",
     "DropList": "Drop_Pkmn_T0_Hide",
-    "Type1": "PoisonType",
-    "WildLevelMin": 22,
-    "WildLevelMax": 45,
-    "MaxSpeed": 8.0,
-    "CaptureDifficulty": 0.4,
-    "TameRoleChange": "Pkmn_Arbok_Tamed",
     "FlockArray": [
       "Pkmn_Ekans",
       "Pkmn_Arbok"
     ],
+    "MaxSpeed": 8.0,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Arbok",
-    "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Fang"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Fang"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "TameRoleChange": "Pkmn_Arbok_Tamed",
+    "Hp": 60,
+    "Atk": 95,
+    "Def": 69,
+    "SpAtk": 65,
+    "SpDef": 79,
+    "Spd": 80,
+    "Type1": "PoisonType",
+    "WildLevelMin": 22,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.4
   },
   "Parameters": {
     "NameTranslationKey": {

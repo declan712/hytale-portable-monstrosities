@@ -13,32 +13,62 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
-    "Type1": "GhostType",
-    "Type2": "PoisonType",
-    "WildLevelMin": 25,
-    "WildLevelMax": 45,
-    "CaptureDifficulty": 0.45,
-    "BreathesInWater": true,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Haunter_Tamed",
-    "IsTameable": true,
     "MaxSpeed": 9.5,
     "Timid": false,
     "IsMemory": true,
     "MemoriesNameOverride": "Haunter",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Shadow_Punch"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
+    "IsTameable": true,
+    "BreathesInWater": true,
     "DayTimePeriod": [
       17.99,
       6.01
     ],
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Lick"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Shadow_Punch"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Lick"}]}
-    }
+    "TameRoleChange": "Pkmn_Haunter_Tamed",
+    "Hp": 45,
+    "Atk": 50,
+    "Def": 45,
+    "SpAtk": 115,
+    "SpDef": 55,
+    "Spd": 95,
+    "Type1": "GhostType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 25,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.45
   },
   "Parameters": {
     "NameTranslationKey": {

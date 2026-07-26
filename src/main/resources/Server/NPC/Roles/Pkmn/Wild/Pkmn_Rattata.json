@@ -3,53 +3,83 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Rattata",
+    "AttitudeGroup": "Prey",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "NormalType",
-    "WildLevelMin": 2,
-    "WildLevelMax": 20,
-    "CaptureDifficulty": 0.95,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Rattata_Tamed",
-    "AttitudeGroup": "Prey",
-    "MaxHealth": 30,
     "MaxSpeed": 7.2,
-    "WanderRadius": 20,
     "ViewRange": 8,
+    "FleeIfNotThreatened": false,
+    "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "Rattata",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tail_Whip"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "MaxHealth": 30,
+    "WanderRadius": 20,
     "HearingRange": 10,
+    "FleeRange": 15,
     "AlertedRange": 12,
     "AlertedTime": [
       2,
       3
     ],
-    "FleeIfNotThreatened": false,
-    "FleeRange": 15,
+    "AlwaysSleepAtNight": false,
     "HardLeashDistance": 60,
     "LeashDistance": 30,
     "CombatBehaviorDistance": 3,
     "CombatBackOffAfterAttack": false,
-    "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2,
     "ChaseRelativeSpeed": 0.6,
     "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
     "DayTimeNapWeight": 0,
-    "TimidDuringDay": true,
     "DayFlavorAnimation": "IdlePassive",
     "NightFlavorAnimation": "IdlePassive",
-    "IsMemory": true,
-    "MemoriesCategory": "Critter",
-    "MemoriesNameOverride": "Rattata",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Tail_Whip"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Rattata_Tamed",
+    "Hp": 30,
+    "Atk": 56,
+    "Def": 35,
+    "SpAtk": 25,
+    "SpDef": 35,
+    "Spd": 72,
+    "Type1": "NormalType",
+    "WildLevelMin": 2,
+    "WildLevelMax": 20,
+    "CaptureDifficulty": 0.95
   },
   "Parameters": {
     "NameTranslationKey": {

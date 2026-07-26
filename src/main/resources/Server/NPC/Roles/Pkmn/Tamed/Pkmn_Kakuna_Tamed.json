@@ -2,32 +2,65 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T0_Chitin",
     "Appearance": "Pkmn_Kakuna",
+    "DropList": "Drop_Pkmn_T0_Chitin",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "BugType",
-    "Type2": "PoisonType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [10,100],
-    "EvolveRoleChange": "Pkmn_Beedrill_Tamed",
     "MaxSpeed": 3.5,
-    "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]}
-    }
+    "WanderRadius": 20,
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 45,
+    "Atk": 25,
+    "Def": 50,
+    "SpAtk": 25,
+    "SpDef": 25,
+    "Spd": 35,
+    "Type1": "BugType",
+    "Type2": "PoisonType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      10,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Beedrill_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

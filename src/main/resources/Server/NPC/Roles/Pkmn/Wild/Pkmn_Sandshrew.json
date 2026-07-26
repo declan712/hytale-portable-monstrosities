@@ -2,8 +2,9 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
-    "DropList": "Drop_Pkmn_Geodude",
     "Appearance": "Pkmn_Sandshrew",
+    "AttitudeGroup": "Prey",
+    "DropList": "Drop_Pkmn_Geodude",
     "FlockArray": [
       "Pkmn_Sandshrew",
       "Pkmn_Sandslash"
@@ -11,50 +12,79 @@
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "GroundType",
-    "WildLevelMin": 5,
-    "WildLevelMax": 22,
-    "CaptureDifficulty": 1.0,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Sandshrew_Tamed",
-    "AttitudeGroup": "Prey",
     "MaxSpeed": 4.0,
-    "WanderRadius": 20,
     "ViewRange": 8,
+    "FleeIfNotThreatened": true,
+    "Timid": true,
+    "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "Sandshrew",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Swift"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "WanderRadius": 20,
     "HearingRange": 10,
+    "FleeRange": 15,
     "AlertedRange": 12,
     "AlertedTime": [
       2,
       3
     ],
-    "Timid": true,
-    "FleeIfNotThreatened": true,
-    "TimidDuringDay": true,
-    "FleeRange": 15,
+    "AlwaysSleepAtNight": false,
     "HardLeashDistance": 60,
     "LeashDistance": 30,
     "CombatBehaviorDistance": 3,
     "CombatBackOffAfterAttack": false,
-    "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2,
     "ChaseRelativeSpeed": 0.6,
     "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
     "DayTimeNapWeight": 0,
     "DayFlavorAnimation": "Idle",
     "NightFlavorAnimation": "Idle",
-    "IsMemory": true,
-    "MemoriesCategory": "Critter",
-    "MemoriesNameOverride": "Sandshrew",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Scratch"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Swift"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Sandshrew_Tamed",
+    "Hp": 50,
+    "Atk": 75,
+    "Def": 85,
+    "SpAtk": 20,
+    "SpDef": 30,
+    "Spd": 40,
+    "Type1": "GroundType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 22,
+    "CaptureDifficulty": 1.0
   },
   "Parameters": {
     "NameTranslationKey": {

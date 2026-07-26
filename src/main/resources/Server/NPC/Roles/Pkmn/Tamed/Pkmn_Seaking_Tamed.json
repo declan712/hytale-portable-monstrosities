@@ -3,19 +3,49 @@
   "Reference": "Template_Pkmn_Swimming_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Seaking",
-    "Type1": "WaterType",
+    "MaxSpeed": 6.8,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Horn_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Horn_Attack"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 6.8,
     "BreathesInWater": true,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Horn_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Horn_Attack"}]}
-    }
+    "Hp": 80,
+    "Atk": 92,
+    "Def": 65,
+    "SpAtk": 65,
+    "SpDef": 80,
+    "Spd": 68,
+    "Type1": "WaterType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

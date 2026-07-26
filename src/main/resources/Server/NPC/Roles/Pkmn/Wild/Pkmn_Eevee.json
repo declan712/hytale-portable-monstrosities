@@ -6,65 +6,95 @@
     "AttractiveItemSet": [
       "Food_Kebab_Fruit"
     ],
-    "Type1": "NormalType",
-    "WildLevelMin": 5,
-    "WildLevelMax": 25,
-    "CaptureDifficulty": 0.7,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Eevee_Tamed",
     "MaxSpeed": 5.5,
-    "WanderRadius": 10,
     "ViewRange": 12,
-    "HearingRange": 8,
+    "FleeIfNotThreatened": true,
+    "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Pokemon",
+    "MemoriesNameOverride": "Eevee",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "AbsoluteDetectionRange": 2,
+    "WanderRadius": 10,
+    "HearingRange": 8,
+    "FleeRange": 15,
     "AlertedRange": 18,
     "AlertedTime": [
       2,
       3
     ],
     "MaintainDistanceWhileAlerted": false,
+    "AlwaysSleepAtNight": false,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 6,
+    "CombatBackOffAfterAttack": false,
+    "AttackDistance": 2.5,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "DayTimeNapWeight": 6,
+    "NightFlavorAnimation": "Howl",
     "ThreatenDelayRange": [
       2,
       2
     ],
     "ThreatenAnimation": "Threaten",
-    "FleeIfNotThreatened": true,
-    "FleeRange": 15,
-    "HardLeashDistance": 60,
-    "LeashDistance": 30,
     "LeashMinPlayerDistance": 7,
     "LeashTimer": [
       4,
       5
     ],
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "CombatBehaviorDistance": 6,
     "CombatDirectWeight": 0,
     "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
-    "ChaseRelativeSpeed": 1,
-    "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
-    "NightFlavorAnimation": "Howl",
-    "DayTimeNapWeight": 6,
     "DayTimeNapTimeRange": [
       10,
       12
     ],
-    "TimidDuringDay": true,
-    "IsMemory": true,
-    "MemoriesCategory": "Pokemon",
-    "MemoriesNameOverride": "Eevee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Eevee_Tamed",
+    "Hp": 55,
+    "Atk": 55,
+    "Def": 50,
+    "SpAtk": 45,
+    "SpDef": 65,
+    "Spd": 55,
+    "Type1": "NormalType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 25,
+    "CaptureDifficulty": 0.7
   },
   "Parameters": {
     "NameTranslationKey": {

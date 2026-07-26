@@ -3,20 +3,27 @@
   "Reference": "Template_Pkmn_Swimming_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Tentacool",
-    "Type1": "WaterType",
+    "MaxSpeed": 7.0,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
+    "BreathesInWater": true,
+    "Hp": 40,
+    "Atk": 40,
+    "Def": 35,
+    "SpAtk": 50,
+    "SpDef": 100,
+    "Spd": 70,
+    "Type1": "WaterType",
     "Type2": "PoisonType",
-    "MaxSpeed": 7,
     "IsMountable": false,
     "CanEvolve": true,
-    "BreathesInWater": true,
     "EvolveRequiredLevel": [
       30,
       100
     ],
-    "EvolveRoleChange": "Pkmn_Tentacruel_Tamed"
+    "EvolveRoleChange": "Pkmn_Tentacruel_Tamed",
+    "_InteractionVars": {}
   },
   "Parameters": {
     "NameTranslationKey": {

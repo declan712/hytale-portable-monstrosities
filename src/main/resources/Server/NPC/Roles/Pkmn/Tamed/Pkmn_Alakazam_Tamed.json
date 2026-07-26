@@ -3,18 +3,49 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Alakazam",
-    "Type1": "PsychicType",
+    "Weapons": ["Weapon_Dual_Spoons"],
+    "MaxSpeed": 12.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Confusion"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Punch"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Psychic"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ice_Punch"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 12,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Confusion"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Punch"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Psychic"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Ice_Punch"}]}
-    }
+    "Hp": 55,
+    "Atk": 50,
+    "Def": 45,
+    "SpAtk": 135,
+    "SpDef": 95,
+    "Spd": 120,
+    "Type1": "PsychicType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

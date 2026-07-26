@@ -4,6 +4,7 @@
   "Modify": {
     "Appearance": "Pkmn_Charmeleon",
     "AttitudeGroup": "Pkmn_Predators",
+    "DropList": "Drop_Pkmn_Charmeleon",
     "FlockArray": [
       "Pkmn_Charizard",
       "Pkmn_Charmeleon",
@@ -12,39 +13,68 @@
     "AttractiveItemSet": [
       "Ingredient_Powder_Boom"
     ],
-    "Type1": "FireType",
-    "WildLevelMin": 16,
-    "WildLevelMax": 36,
-    "CaptureDifficulty": 0.45,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Charmeleon_Tamed",
-    "MaxSpeed": 8,
-    "WanderRadius": 12,
+    "MaxSpeed": 8.0,
     "ViewRange": 12,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Charmeleon",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Fang"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 12,
     "HearingRange": 8,
     "FleeRange": 15,
     "AlertedRange": 18,
-    "AbsoluteDetectionRange": 2,
     "AlertedTime": [
       2,
       3
     ],
     "MaintainDistanceWhileAlerted": true,
-    "DropList": "Drop_Pkmn_Charmeleon",
-    "Attack": "Root_Pkmn_Attack_Melee",
     "AlwaysSleepAtNight": false,
-    "IsMemory": true,
-    "MemoriesCategory": "Reptile",
-    "MemoriesNameOverride": "Charmeleon",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Fang"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Charmeleon_Tamed",
+    "Hp": 58,
+    "Atk": 64,
+    "Def": 58,
+    "SpAtk": 80,
+    "SpDef": 65,
+    "Spd": 80,
+    "Type1": "FireType",
+    "WildLevelMin": 16,
+    "WildLevelMax": 36,
+    "CaptureDifficulty": 0.45
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -7,33 +7,63 @@
     "AttractiveItemSet": [
       "Food_Kebab_Fruit"
     ],
-    "Type1": "FireType",
-    "IsMountable": true,
-    "MountAnchorX":0,
-    "MountAnchorY":1,
-    "MountAnchorZ":0,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "MaxSpeed": 10,
-    "WanderRadius": 10,
+    "MaxSpeed": 10.0,
     "ViewRange": 12,
-    "HearingRange": 8,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 3,
-    "CombatBehaviorDistance": 6,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Ninetales",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]}
-    }
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 10,
+    "HearingRange": 8,
+    "AlertedRange": 18,
+    "CombatBehaviorDistance": 6,
+    "AttackDistance": 3,
+    "Hp": 73,
+    "Atk": 76,
+    "Def": 75,
+    "SpAtk": 81,
+    "SpDef": 100,
+    "Spd": 100,
+    "Type1": "FireType",
+    "IsMountable": true,
+    "MountAnchorX": 0,
+    "MountAnchorY": 1,
+    "MountAnchorZ": 0
   },
   "Parameters": {
     "NameTranslationKey": {

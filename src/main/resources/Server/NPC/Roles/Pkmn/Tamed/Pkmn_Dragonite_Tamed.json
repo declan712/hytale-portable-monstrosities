@@ -4,20 +4,50 @@
   "Modify": {
     "Appearance": "Pkmn_Dragonite",
     "DropList": "Drop_Pkmn_T2_Hide",
-    "Type1": "DragonType",
-    "Type2": "FlyingType",
     "MaxSpeed": 8.0,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "IsMountable": true,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Dragon_Rage"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thunder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Hyper_Beam"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Dragon_Rage"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Hyper_Beam"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "Hp": 91,
+    "Atk": 134,
+    "Def": 95,
+    "SpAtk": 100,
+    "SpDef": 100,
+    "Spd": 80,
+    "Type1": "DragonType",
+    "Type2": "FlyingType",
+    "IsMountable": true
   },
   "Parameters": {
     "NameTranslationKey": {

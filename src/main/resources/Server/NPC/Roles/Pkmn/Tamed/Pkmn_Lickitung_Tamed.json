@@ -3,17 +3,12 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Lickitung",
+    "DropList": "Drop_Toad_Rhino",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "NormalType",
-    "IsMountable": false,
-    "WanderRadius": 6,
-    "DropList": "Drop_Toad_Rhino",
-    "MaxSpeed": 3,
+    "MaxSpeed": 3.0,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 6,
-    "CombatBehaviorDistance": 8,
     "_InteractionVars": {
       "Move_Start_1": {
         "Interactions": [
@@ -93,7 +88,18 @@
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 6,
+    "CombatBehaviorDistance": 8,
+    "AttackDistance": 6,
+    "Hp": 90,
+    "Atk": 55,
+    "Def": 75,
+    "SpAtk": 60,
+    "SpDef": 75,
+    "Spd": 30,
+    "Type1": "NormalType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

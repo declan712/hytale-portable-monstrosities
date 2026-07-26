@@ -4,32 +4,62 @@
   "Modify": {
     "Appearance": "Pkmn_Goldeen",
     "AttitudeGroup": "PkmnPassive",
+    "DropList": "Drop_Pkmn_T0_Chitin",
     "FlockArray": [
       "Pkmn_Magikarp",
       "Pkmn_Goldeen"
     ],
-    "Type1": "WaterType",
     "MaxSpeed": 6.3,
-    "WildLevelMin": 2,
-    "WildLevelMax": 20,
-    "CaptureDifficulty": 1.0,
-    "TameRoleChange": "Pkmn_Goldeen_Tamed",
-    "DropList": "Drop_Pkmn_T0_Chitin",
-    "IsMemory": true,
-    "Timid": true,
     "FleeIfNotThreatened": true,
+    "Timid": true,
     "TimidDuringDay": true,
+    "IsMemory": true,
     "MemoriesCategory": "Freshwater",
     "MemoriesNameOverride": "Goldeen",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tail_Whip"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Horn_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tail_Whip"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Horn_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]}
-    }
+    "TameRoleChange": "Pkmn_Goldeen_Tamed",
+    "Hp": 45,
+    "Atk": 67,
+    "Def": 60,
+    "SpAtk": 35,
+    "SpDef": 50,
+    "Spd": 63,
+    "Type1": "WaterType",
+    "WildLevelMin": 2,
+    "WildLevelMax": 20,
+    "CaptureDifficulty": 1.0
   },
   "Parameters": {
     "NameTranslationKey": {

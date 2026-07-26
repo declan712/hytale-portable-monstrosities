@@ -3,13 +3,11 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Slowbro",
-    "Type1": "WaterType",
+    "MaxSpeed": 3.0,
     "IsMemory": true,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "PsychicType",
-    "BreathesInWater": true,
     "BaseStats": [
       95,
       75,
@@ -18,9 +16,18 @@
       80,
       30
     ],
-    "CaptureDifficulty": 0.508,
+    "BreathesInWater": true,
     "TameRoleChange": "Pkmn_Slowbro_Tamed",
-    "MaxSpeed": 3
+    "Hp": 95,
+    "Atk": 75,
+    "Def": 110,
+    "SpAtk": 100,
+    "SpDef": 80,
+    "Spd": 30,
+    "Type1": "WaterType",
+    "Type2": "PsychicType",
+    "CaptureDifficulty": 0.508,
+    "_InteractionVars": {}
   },
   "Parameters": {
     "NameTranslationKey": {

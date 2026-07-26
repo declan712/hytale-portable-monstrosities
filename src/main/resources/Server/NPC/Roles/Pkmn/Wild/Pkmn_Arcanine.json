@@ -5,29 +5,59 @@
     "Appearance": "Pkmn_Arcanine",
     "AttitudeGroup": "Pkmn_PredatorsBig",
     "DropList": "Drop_Pkmn_T2_Hide",
-    "Type1": "FireType",
-    "WildLevelMin": 30,
-    "WildLevelMax": 55,
-    "MaxSpeed": 9.5,
-    "CaptureDifficulty": 0.29,
-    "TameRoleChange": "Pkmn_Arcanine_Tamed",
     "FlockArray": [
       "Pkmn_Growlithe",
       "Pkmn_Arcanine"
     ],
+    "MaxSpeed": 9.5,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Arcanine",
-    "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "TameRoleChange": "Pkmn_Arcanine_Tamed",
+    "Hp": 90,
+    "Atk": 110,
+    "Def": 80,
+    "SpAtk": 100,
+    "SpDef": 80,
+    "Spd": 95,
+    "Type1": "FireType",
+    "WildLevelMin": 30,
+    "WildLevelMax": 55,
+    "CaptureDifficulty": 0.29
   },
   "Parameters": {
     "NameTranslationKey": {

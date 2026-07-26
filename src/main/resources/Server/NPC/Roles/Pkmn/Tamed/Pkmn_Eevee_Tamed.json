@@ -8,30 +8,63 @@
       "Food_Kebab_Fruit",
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "NormalType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [1,100],
-    "EvolveRoleChange": "Pkmn_Jolteon_Tamed",
     "MaxSpeed": 5.5,
-    "WanderRadius": 10,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "CombatBehaviorDistance": 6,
-    "CombatDirectWeight": 0,
-    "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
-    "ChaseRelativeSpeed": 1,
-    "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 10,
+    "CombatBehaviorDistance": 6,
+    "CombatBackOffAfterAttack": false,
+    "AttackDistance": 2.5,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "CombatDirectWeight": 0,
+    "CombatStrafeWeight": 10,
+    "Hp": 55,
+    "Atk": 55,
+    "Def": 50,
+    "SpAtk": 45,
+    "SpDef": 65,
+    "Spd": 55,
+    "Type1": "NormalType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      1,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Jolteon_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

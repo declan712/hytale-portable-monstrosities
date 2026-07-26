@@ -2,28 +2,58 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Rat",
     "Appearance": "Pkmn_Raticate",
+    "DropList": "Drop_Rat",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "NormalType",
-    "IsMountable": true,
-    "WanderRadius": 20,
     "MaxSpeed": 9.7,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Hyper_Fang"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Hyper_Fang"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 20,
+    "AttackDistance": 2.5,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 55,
+    "Atk": 81,
+    "Def": 60,
+    "SpAtk": 50,
+    "SpDef": 70,
+    "Spd": 97,
+    "Type1": "NormalType",
+    "IsMountable": true
   },
   "Parameters": {
     "NameTranslationKey": {

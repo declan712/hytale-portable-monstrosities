@@ -4,23 +4,56 @@
   "Modify": {
     "Appearance": "Pkmn_Dragonair",
     "DropList": "Drop_Pkmn_T1_Hide",
-    "Type1": "DragonType",
     "MaxSpeed": 7.0,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "BreathesInWater": true,
-    "EvolveRequiredLevel": [55,100],
-    "EvolveRoleChange": "Pkmn_Dragonite_Tamed",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Dragon_Rage"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thunderbolt"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Dragon_Rage"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Dragon_Rage"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunderbolt"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Dragon_Rage"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "BreathesInWater": true,
+    "Hp": 61,
+    "Atk": 84,
+    "Def": 65,
+    "SpAtk": 70,
+    "SpDef": 70,
+    "Spd": 70,
+    "Type1": "DragonType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      55,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Dragonite_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

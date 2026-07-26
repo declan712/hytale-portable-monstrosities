@@ -12,28 +12,58 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 7.5,
+    "Timid": false,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Beedrill",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rage"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Twineedle"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Twineedle"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AlertedActionRange": 4,
+    "AbsoluteDetectionRange": 1.5,
+    "TameRoleChange": "Pkmn_Beedrill_Tamed",
+    "Hp": 65,
+    "Atk": 90,
+    "Def": 40,
+    "SpAtk": 45,
+    "SpDef": 80,
+    "Spd": 75,
     "Type1": "BugType",
     "Type2": "PoisonType",
     "WildLevelMin": 10,
     "WildLevelMax": 25,
-    "CaptureDifficulty": 0.18,
-    "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Beedrill_Tamed",
-    "MaxSpeed": 7.5,
-    "AlertedActionRange": 4,
-    "AbsoluteDetectionRange": 1.5,
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Beedrill",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Rage"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Twineedle"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Twineedle"}]}
-    }
+    "CaptureDifficulty": 0.18
   },
   "Parameters": {
     "NameTranslationKey": {

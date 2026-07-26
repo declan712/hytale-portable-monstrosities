@@ -4,42 +4,72 @@
   "Modify": {
     "Appearance": "Pkmn_Doduo",
     "AttitudeGroup": "Prey",
+    "DropList": "Drop_Chicken",
     "FlockArray": [
       "Pkmn_Doduo"
     ],
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
-    "Type1": "NormalType",
-    "Type2": "FlyingType",
-    "WildLevelMin": 12,
-    "WildLevelMax": 31,
-    "CaptureDifficulty": 0.7,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Doduo_Tamed",
-    "IsTameable": true,
-    "DropList": "Drop_Chicken",
     "MaxSpeed": 7.5,
+    "FleeIfNotThreatened": true,
+    "Timid": false,
+    "ProduceItem": "Food_Egg",
+    "IsMemory": true,
+    "MemoriesNameOverride": "Doduo",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rage"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": true,
     "AlertedActionRange": 4,
     "AbsoluteDetectionRange": 1.5,
-    "ProduceItem": "Food_Egg",
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
-    "FleeIfNotThreatened": true,
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Doduo",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Rage"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]}
-    }
+    "TameRoleChange": "Pkmn_Doduo_Tamed",
+    "Hp": 35,
+    "Atk": 85,
+    "Def": 45,
+    "SpAtk": 35,
+    "SpDef": 35,
+    "Spd": 75,
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 12,
+    "WildLevelMax": 31,
+    "CaptureDifficulty": 0.7
   },
   "Parameters": {
     "NameTranslationKey": {

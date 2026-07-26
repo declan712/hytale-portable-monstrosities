@@ -4,6 +4,7 @@
   "Modify": {
     "Appearance": "Pkmn_Pidgey",
     "AttitudeGroup": "Prey",
+    "DropList": "Drop_Chicken",
     "FlockArray": [
       "Pkmn_Pidgey",
       "Pkmn_Pidgeotto",
@@ -12,37 +13,66 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
-    "Type1": "NormalType",
-    "Type2": "FlyingType",
-    "WildLevelMin": 2,
-    "WildLevelMax": 18,
-    "CaptureDifficulty": 0.9,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Pidgey_Tamed",
-    "IsTameable": true,
-    "DropList": "Drop_Chicken",
-    "MaxHealth": 40,
     "MaxSpeed": 5.6,
+    "FleeIfNotThreatened": true,
+    "Timid": false,
+    "ProduceItem": "Food_Egg",
+    "IsMemory": true,
+    "MemoriesNameOverride": "Pidgey",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sand_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": true,
     "AlertedActionRange": 4,
     "AbsoluteDetectionRange": 1.5,
-    "ProduceItem": "Food_Egg",
+    "MaxHealth": 40,
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
-    "FleeIfNotThreatened": true,
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Pidgey",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Sand_Attack"}]}
-    }
+    "TameRoleChange": "Pkmn_Pidgey_Tamed",
+    "Hp": 40,
+    "Atk": 45,
+    "Def": 40,
+    "SpAtk": 35,
+    "SpDef": 35,
+    "Spd": 56,
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 2,
+    "WildLevelMax": 18,
+    "CaptureDifficulty": 0.9
   },
   "Parameters": {
     "NameTranslationKey": {

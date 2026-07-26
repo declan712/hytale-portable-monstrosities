@@ -3,28 +3,61 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Charmander",
-    "Type1": "FireType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [16,100],
-    "EvolveRoleChange": "Pkmn_Charmeleon_Tamed",
-    "ViewRange": 12,
-    "MaxSpeed": 6.5,
+    "DropList": "Drop_Pkmn_Charmander",
     "AttractiveItemSet": [
       "Ingredient_Charcoal"
     ],
+    "MaxSpeed": 6.5,
+    "ViewRange": 12,
     "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Ingredient_Poop",
-    "DropList": "Drop_Pkmn_Charmander",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Fang"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Fang"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "Hp": 39,
+    "Atk": 52,
+    "Def": 43,
+    "SpAtk": 60,
+    "SpDef": 50,
+    "Spd": 65,
+    "Type1": "FireType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      16,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Charmeleon_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

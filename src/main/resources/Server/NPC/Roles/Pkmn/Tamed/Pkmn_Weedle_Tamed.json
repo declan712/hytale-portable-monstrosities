@@ -2,32 +2,65 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T0_Chitin",
     "Appearance": "Pkmn_Weedle",
+    "DropList": "Drop_Pkmn_T0_Chitin",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
+    "MaxSpeed": 5.0,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "WanderRadius": 20,
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 40,
+    "Atk": 35,
+    "Def": 30,
+    "SpAtk": 20,
+    "SpDef": 20,
+    "Spd": 50,
     "Type1": "BugType",
     "Type2": "PoisonType",
     "IsMountable": false,
     "CanEvolve": true,
-    "EvolveRequiredLevel": [7,100],
-    "EvolveRoleChange": "Pkmn_Kakuna_Tamed",
-    "MaxSpeed": 5,
-    "WanderRadius": 20,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]}
-    }
+    "EvolveRequiredLevel": [
+      7,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Kakuna_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

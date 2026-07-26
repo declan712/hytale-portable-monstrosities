@@ -4,45 +4,78 @@
   "Modify": {
     "Appearance": "Pkmn_Charizard",
     "AttitudeGroup": "Pkmn_Predators",
+    "DropList": "Drop_Pkmn_Charizard",
     "FlockArray": [
       "Pkmn_Charizard",
       "Pkmn_Charmeleon",
       "Pkmn_Charmander"
     ],
-    "Type1": "FireType",
-    "Type2": "FlyingType",
-    "WildLevelMin": 36,
-    "WildLevelMax": 72,
-    "CaptureDifficulty": 0.15,
     "AttractiveItemSet": [
       "Plant_Flower_Flax_Orange"
     ],
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Charizard_Tamed",
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
-    "AlertedTime": [2,3],
-    "MaintainDistanceWhileAlerted": true,
-    "WanderRadius": 12,
+    "MaxSpeed": 10.0,
     "ViewRange": 12,
-    "FleeRange": 15,
-    "HearingRange": 8,
-    "DropList": "Drop_Pkmn_Charizard",
-    "MaxSpeed": 10,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AlwaysSleepAtNight": true,
     "IsMemory": true,
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Charizard",
     "_InteractionVars": {
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Dragon_Rage"}]}
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Dragon_Rage"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 12,
+    "HearingRange": 8,
+    "FleeRange": 15,
+    "AlertedRange": 18,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "MaintainDistanceWhileAlerted": true,
+    "AlwaysSleepAtNight": true,
+    "TameRoleChange": "Pkmn_Charizard_Tamed",
+    "Hp": 78,
+    "Atk": 84,
+    "Def": 78,
+    "SpAtk": 109,
+    "SpDef": 85,
+    "Spd": 100,
+    "Type1": "FireType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 36,
+    "WildLevelMax": 72,
+    "CaptureDifficulty": 0.15
   },
   "Parameters": {
     "NameTranslationKey": {

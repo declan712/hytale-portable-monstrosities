@@ -4,6 +4,7 @@
   "Modify": {
     "Appearance": "Pkmn_Spearow",
     "AttitudeGroup": "Prey",
+    "DropList": "Drop_Chicken",
     "FlockArray": [
       "Pkmn_Spearow",
       "Pkmn_Fearow"
@@ -11,35 +12,64 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
-    "Type1": "NormalType",
-    "Type2": "FlyingType",
-    "WildLevelMin": 4,
-    "WildLevelMax": 20,
-    "CaptureDifficulty": 1.0,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Spearow_Tamed",
-    "IsTameable": true,
-    "DropList": "Drop_Chicken",
     "MaxSpeed": 7.0,
+    "Timid": false,
+    "ProduceItem": "Food_Egg",
+    "IsMemory": true,
+    "MemoriesNameOverride": "Spearow",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": true,
     "AlertedActionRange": 4,
     "AbsoluteDetectionRange": 1.5,
-    "ProduceItem": "Food_Egg",
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Spearow",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]}
-    }
+    "TameRoleChange": "Pkmn_Spearow_Tamed",
+    "Hp": 40,
+    "Atk": 60,
+    "Def": 30,
+    "SpAtk": 31,
+    "SpDef": 31,
+    "Spd": 70,
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 4,
+    "WildLevelMax": 20,
+    "CaptureDifficulty": 1.0
   },
   "Parameters": {
     "NameTranslationKey": {

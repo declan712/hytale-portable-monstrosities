@@ -3,31 +3,64 @@
   "Reference": "Template_Pkmn_Flying_Predator",
   "Modify": {
     "Appearance": "Pkmn_Zubat",
+    "DropList": "Drop_Pkmn_T0_Hide",
     "FlockArray": [
       "Pkmn_Zubat",
       "Pkmn_Golbat"
     ],
+    "MaxSpeed": 5.5,
+    "IsMemory": true,
+    "MemoriesCategory": "Avian",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Fang"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "WanderRadius": 15,
+    "DayTimePeriod": [
+      17.99,
+      6.01
+    ],
+    "TameRoleChange": "Pkmn_Zubat_Tamed",
+    "Hp": 40,
+    "Atk": 45,
+    "Def": 35,
+    "SpAtk": 30,
+    "SpDef": 40,
+    "Spd": 55,
     "Type1": "PoisonType",
     "Type2": "FlyingType",
     "WildLevelMin": 5,
     "WildLevelMax": 22,
-    "CaptureDifficulty": 1.0,
-    "MaxSpeed": 5.5,
-    "DropList": "Drop_Pkmn_T0_Hide",
-    "TameRoleChange": "Pkmn_Zubat_Tamed",
-    "WanderRadius": 15,
-    "IsMemory": true,
-    "MemoriesCategory": "Avian",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "DayTimePeriod": [17.99,6.01],
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Fang"}]}
-    }
+    "CaptureDifficulty": 1.0
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -3,19 +3,41 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Articuno",
-    "Type1": "IceType",
+    "MaxSpeed": 8.5,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          "Pkmn_Moves_Wing_Attack"
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          "Pkmn_Moves_Gust"
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          "Pkmn_Moves_Ice_Beam"
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          "Pkmn_Moves_Ice_Punch"
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
+    "Hp": 90,
+    "Atk": 85,
+    "Def": 100,
+    "SpAtk": 95,
+    "SpDef": 125,
+    "Spd": 85,
+    "Type1": "IceType",
     "Type2": "FlyingType",
-    "MaxSpeed": 8.5,
-    "IsMountable": true,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": ["Pkmn_Moves_Wing_Attack"]},
-      "Move_Start_2": {"Interactions": ["Pkmn_Moves_Gust"]},
-      "Move_Start_3": {"Interactions": ["Pkmn_Moves_Ice_Beam"]},
-      "Move_Start_4": {"Interactions": ["Pkmn_Moves_Ice_Punch"]}
-    }
+    "IsMountable": true
   },
   "Parameters": {
     "NameTranslationKey": {

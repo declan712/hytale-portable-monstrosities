@@ -6,31 +6,66 @@
     "AttractiveItemSet": [
       "Food_Kebab_Fruit"
     ],
-    "Type1": "ElectricType",
-    "IsMountable": false,
-    "CanEvolve": true,
-    "EvolveRequiredLevel": [1,100],
-    "EvolveRequiredItem": ["Rock_Gem_Thunder_Stone"],
-    "EvolveRoleChange": "Pkmn_Raichu_Tamed",
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "MaxSpeed": 9,
-    "WanderRadius": 10,
+    "MaxSpeed": 9.0,
     "ViewRange": 12,
-    "HearingRange": 8,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Pikachu",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tail_Whip"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thundershock"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Thunderbolt"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tail_Whip"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thundershock"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunderbolt"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 10,
+    "HearingRange": 8,
+    "AlertedRange": 18,
+    "Hp": 35,
+    "Atk": 55,
+    "Def": 40,
+    "SpAtk": 50,
+    "SpDef": 50,
+    "Spd": 90,
+    "Type1": "ElectricType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      1,
+      100
+    ],
+    "EvolveRequiredItem": [
+      "Rock_Gem_Thunder_Stone"
+    ],
+    "EvolveRoleChange": "Pkmn_Raichu_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

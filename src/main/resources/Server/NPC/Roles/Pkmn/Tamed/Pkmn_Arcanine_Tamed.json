@@ -4,22 +4,52 @@
   "Modify": {
     "Appearance": "Pkmn_Arcanine",
     "DropList": "Drop_Pkmn_T2_Hide",
-    "Type1": "FireType",
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "IsMountable": true,
-    "MountAnchorX": 0,
-    "MountAnchorY": 1.7,
-    "MountAnchorZ": 0.5,
     "MaxSpeed": 9.5,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "Hp": 90,
+    "Atk": 110,
+    "Def": 80,
+    "SpAtk": 100,
+    "SpDef": 80,
+    "Spd": 95,
+    "Type1": "FireType",
+    "IsMountable": true,
+    "MountAnchorX": 0,
+    "MountAnchorY": 1.7,
+    "MountAnchorZ": 0.5
   },
   "Parameters": {
     "NameTranslationKey": {

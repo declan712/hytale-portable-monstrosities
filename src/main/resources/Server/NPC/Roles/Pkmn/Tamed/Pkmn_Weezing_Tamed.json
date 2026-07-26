@@ -4,22 +4,52 @@
   "Modify": {
     "Appearance": "Pkmn_Weezing",
     "DropList": "Drop_Pkmn_T2_Hide",
-    "Type1": "PoisonType",
-    "IsMountable": false,
-    "IsMemory": true,
     "MaxSpeed": 6.0,
-    "MemoriesNameOverride": "Weezing",
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
     "MemoriesCategory": "Elemental",
+    "MemoriesNameOverride": "Weezing",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]}
-    }
+    "Hp": 65,
+    "Atk": 90,
+    "Def": 120,
+    "SpAtk": 85,
+    "SpDef": 70,
+    "Spd": 60,
+    "Type1": "PoisonType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

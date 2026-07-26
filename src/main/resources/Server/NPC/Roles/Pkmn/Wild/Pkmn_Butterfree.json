@@ -12,32 +12,62 @@
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 7.0,
+    "FleeIfNotThreatened": true,
+    "Timid": true,
+    "TimidDuringDay": true,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Butterfree",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Confusion"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": true,
+    "AlertedActionRange": 4,
+    "AbsoluteDetectionRange": 1.5,
+    "MaxHealth": 45,
+    "TameRoleChange": "Pkmn_Butterfree_Tamed",
+    "Hp": 60,
+    "Atk": 45,
+    "Def": 50,
+    "SpAtk": 90,
+    "SpDef": 80,
+    "Spd": 70,
     "Type1": "BugType",
     "Type2": "FlyingType",
     "WildLevelMin": 10,
     "WildLevelMax": 25,
-    "CaptureDifficulty": 0.18,
-    "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Butterfree_Tamed",
-    "IsTameable": true,
-    "Timid": true,
-    "FleeIfNotThreatened": true,
-    "TimidDuringDay": true,
-    "MaxHealth": 45,
-    "MaxSpeed": 7,
-    "AlertedActionRange": 4,
-    "AbsoluteDetectionRange": 1.5,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Butterfree",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Confusion"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]}
-    }
+    "CaptureDifficulty": 0.18
   },
   "Parameters": {
     "NameTranslationKey": {

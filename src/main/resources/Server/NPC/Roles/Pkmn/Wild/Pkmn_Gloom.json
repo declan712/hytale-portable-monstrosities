@@ -2,35 +2,65 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
-    "DropList": "Drop_Pkmn_T1_Grass",
     "Appearance": "Pkmn_Gloom",
+    "DropList": "Drop_Pkmn_T1_Grass",
     "FlockArray": [
       "Pkmn_Oddish",
       "Pkmn_Gloom",
       "Pkmn_Vileplume"
     ],
     "MaxSpeed": 4.0,
-    "TameRoleChange": "Pkmn_Gloom_Tamed",
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
-    "WildLevelMin": 21,
-    "WildLevelMax": 40,
-    "CaptureDifficulty": 0.85,
-    "Timid": true,
     "FleeIfNotThreatened": true,
+    "Timid": true,
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Critter",
     "MemoriesNameOverride": "Gloom",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Razor_Leaf"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Razor_Leaf"}]}
-    }
+    "TameRoleChange": "Pkmn_Gloom_Tamed",
+    "Hp": 60,
+    "Atk": 65,
+    "Def": 70,
+    "SpAtk": 85,
+    "SpDef": 75,
+    "Spd": 40,
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 21,
+    "WildLevelMax": 40,
+    "CaptureDifficulty": 0.85
   },
   "Parameters": {
     "NameTranslationKey": {

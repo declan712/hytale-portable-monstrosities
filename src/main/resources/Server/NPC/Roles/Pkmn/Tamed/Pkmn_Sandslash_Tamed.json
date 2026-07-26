@@ -2,23 +2,53 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_Geodude",
     "Appearance": "Pkmn_Sandslash",
+    "DropList": "Drop_Pkmn_Geodude",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "GroundType",
     "AttractiveItemSetParticles": "Want_Food_Corn",
     "MaxSpeed": 6.5,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Swift"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Metal_Claw"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Swift"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Metal_Claw"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "Hp": 75,
+    "Atk": 100,
+    "Def": 110,
+    "SpAtk": 45,
+    "SpDef": 55,
+    "Spd": 65,
+    "Type1": "GroundType"
   },
   "Parameters": {
     "NameTranslationKey": {

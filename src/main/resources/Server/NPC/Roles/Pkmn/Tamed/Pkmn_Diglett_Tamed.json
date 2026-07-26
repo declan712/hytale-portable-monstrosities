@@ -8,30 +8,63 @@
       "Food_Kebab_Fruit",
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "GroundType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [26,100],
-    "EvolveRoleChange": "Pkmn_Dugtrio_Tamed",
     "MaxSpeed": 9.5,
-    "WanderRadius": 10,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "CombatBehaviorDistance": 6,
-    "CombatDirectWeight": 0,
-    "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
-    "ChaseRelativeSpeed": 1,
-    "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Scratch"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 10,
+    "CombatBehaviorDistance": 6,
+    "CombatBackOffAfterAttack": false,
+    "AttackDistance": 2.5,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "CombatDirectWeight": 0,
+    "CombatStrafeWeight": 10,
+    "Hp": 10,
+    "Atk": 55,
+    "Def": 25,
+    "SpAtk": 35,
+    "SpDef": 45,
+    "Spd": 95,
+    "Type1": "GroundType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      26,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Dugtrio_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

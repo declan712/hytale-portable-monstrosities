@@ -7,22 +7,56 @@
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "WaterType",
-    "IsMountable": false,
-    "CanEvolve": true,
-    "EvolveRequiredLevel": [20,100],
-    "MaxSpeed": 8,
-    "EvolveRoleChange": "Pkmn_Gyarados_Tamed",
+    "MaxSpeed": 8.0,
     "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Splash"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Splash"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Splash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Splash"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Splash"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Splash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "Hp": 20,
+    "Atk": 10,
+    "Def": 55,
+    "SpAtk": 15,
+    "SpDef": 20,
+    "Spd": 80,
+    "Type1": "WaterType",
+    "BreathesInWater": true,
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      20,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Gyarados_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

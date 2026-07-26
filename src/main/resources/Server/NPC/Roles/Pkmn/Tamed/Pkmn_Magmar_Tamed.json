@@ -3,18 +3,48 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Magmar",
-    "Type1": "FireType",
+    "MaxSpeed": 9.3,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Punch"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 9.3,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Punch"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
-    }
+    "Hp": 65,
+    "Atk": 95,
+    "Def": 57,
+    "SpAtk": 100,
+    "SpDef": 85,
+    "Spd": 93,
+    "Type1": "FireType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

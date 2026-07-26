@@ -4,31 +4,61 @@
   "Modify": {
     "Appearance": "Pkmn_Zapdos",
     "AttitudeGroup": "PredatorsBig",
+    "DropList": "Drop_Pkmn_T2_Hide",
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 10.0,
+    "Timid": false,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Zapdos",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunderbolt"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunder"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": false,
+    "TameRoleChange": "Pkmn_Zapdos_Tamed",
+    "Hp": 90,
+    "Atk": 90,
+    "Def": 85,
+    "SpAtk": 125,
+    "SpDef": 90,
+    "Spd": 100,
     "Type1": "ElectricType",
     "Type2": "FlyingType",
     "WildLevelMin": 50,
     "WildLevelMax": 55,
-    "CaptureDifficulty": 0.01,
-    "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Zapdos_Tamed",
-    "IsTameable": false,
-    "DropList": "Drop_Pkmn_T2_Hide",
-    "MaxSpeed": 10,
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Zapdos",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thunderbolt"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Thunder"}]}
-    }
+    "CaptureDifficulty": 0.01
   },
   "Parameters": {
     "NameTranslationKey": {

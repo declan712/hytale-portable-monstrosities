@@ -7,28 +7,58 @@
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "GroundType",
-    "IsMountable": false,
-    "MaxSpeed": 12,
-    "WanderRadius": 10,
+    "MaxSpeed": 12.0,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "CombatBehaviorDistance": 6,
-    "CombatDirectWeight": 0,
-    "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
-    "ChaseRelativeSpeed": 1,
-    "CombatMovingRelativeSpeed": 0.6,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]}
-    },
     "MemoriesNameOverride": "Dugtrio",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 10,
+    "CombatBehaviorDistance": 6,
+    "CombatBackOffAfterAttack": false,
+    "AttackDistance": 2.5,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "CombatDirectWeight": 0,
+    "CombatStrafeWeight": 10,
+    "Hp": 35,
+    "Atk": 100,
+    "Def": 50,
+    "SpAtk": 50,
+    "SpDef": 70,
+    "Spd": 120,
+    "Type1": "GroundType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -3,28 +3,58 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Blastoise",
+    "DropList": "Drop_Trillodon",
     "AttractiveItemSet": [
       "Fish_Lobster_Item",
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "WaterType",
-    "MountAnchorX":0,
-    "MountAnchorY":1.8,
-    "MountAnchorZ":1.8,
     "MaxSpeed": 7.8,
-    "WanderRadius": 12,
-    "BreathesInWater": true,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "DropList": "Drop_Trillodon",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bubble"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Skull_Bash"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Hydro_Pump"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Water_Gun"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Skull_Bash"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "BreathesInWater": true,
+    "WanderRadius": 12,
+    "Hp": 79,
+    "Atk": 83,
+    "Def": 100,
+    "SpAtk": 85,
+    "SpDef": 105,
+    "Spd": 78,
+    "Type1": "WaterType",
+    "MountAnchorX": 0,
+    "MountAnchorY": 1.8,
+    "MountAnchorZ": 1.8
   },
   "Parameters": {
     "NameTranslationKey": {

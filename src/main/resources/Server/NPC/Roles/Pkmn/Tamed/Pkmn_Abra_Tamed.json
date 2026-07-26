@@ -3,24 +3,30 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Abra",
-    "Type1": "PsychicType",
+    "MaxSpeed": 9.0,
+    "_InteractionVars": {
+      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
+      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
+      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
+      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]}
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 9,
+    "Hp": 25,
+    "Atk": 20,
+    "Def": 15,
+    "SpAtk": 105,
+    "SpDef": 55,
+    "Spd": 90,
+    "Type1": "PsychicType",
     "IsMountable": false,
     "CanEvolve": true,
     "EvolveRequiredLevel": [
       16,
       100
     ],
-    "EvolveRoleChange": "Pkmn_Kadabra_Tamed",
-      "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]}
-    }
+    "EvolveRoleChange": "Pkmn_Kadabra_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

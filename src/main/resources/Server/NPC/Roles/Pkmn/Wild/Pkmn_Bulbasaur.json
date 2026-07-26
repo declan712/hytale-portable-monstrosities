@@ -13,13 +13,7 @@
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
-    "WildLevelMin": 5,
-    "WildLevelMax": 16,
-    "CaptureDifficulty": 0.75,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Bulbasaur_Tamed",
     "MaxSpeed": 4.5,
     "ViewRange": 12,
     "AttackWhenStartled": true,
@@ -32,14 +26,50 @@
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Bulbasaur",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Vine_Whip"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "TameRoleChange": "Pkmn_Bulbasaur_Tamed",
+    "Hp": 45,
+    "Atk": 49,
+    "Def": 49,
+    "SpAtk": 65,
+    "SpDef": 65,
+    "Spd": 45,
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 16,
+    "CaptureDifficulty": 0.75
   },
   "Parameters": {
     "NameTranslationKey": {

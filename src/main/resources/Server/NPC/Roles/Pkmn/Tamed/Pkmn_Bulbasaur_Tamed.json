@@ -3,12 +3,7 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Bulbasaur",
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [16,100],
-    "EvolveRoleChange": "Pkmn_Ivysaur_Tamed",
+    "DropList": "Drop_Pkmn_T0_Grass",
     "FlockArray": [
       "Pkmn_Bulbasaur_Tamed",
       "Pkmn_Ivysaur_Tamed",
@@ -21,16 +16,54 @@
     "ViewRange": 12,
     "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Ingredient_Poop",
-    "DropList": "Drop_Pkmn_T0_Grass",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Vine_Whip"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "Hp": 45,
+    "Atk": 49,
+    "Def": 49,
+    "SpAtk": 65,
+    "SpDef": 65,
+    "Spd": 45,
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      16,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Ivysaur_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

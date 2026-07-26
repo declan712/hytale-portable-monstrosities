@@ -3,32 +3,65 @@
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Spearow",
-    "MaxSpeed": 7,
-    "MountAnchorX": 0,
-    "MountAnchorY": 0.75,
-    "MountAnchorZ": 0.25,
+    "MaxSpeed": 7.0,
     "AttackWhenStartled": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Food_Egg",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
+    "Hp": 40,
+    "Atk": 60,
+    "Def": 30,
+    "SpAtk": 31,
+    "SpDef": 31,
+    "Spd": 70,
     "Type1": "NormalType",
     "Type2": "FlyingType",
-    "CanEvolve": true,
     "IsMountable": false,
-    "EvolveRequiredLevel": [20,100],
-    "EvolveRoleChange": "Pkmn_Fearow_Tamed",
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "MountAnchorX": 0,
+    "MountAnchorY": 0.75,
+    "MountAnchorZ": 0.25,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      20,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Fearow_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

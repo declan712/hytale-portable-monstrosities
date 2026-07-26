@@ -4,41 +4,71 @@
   "Modify": {
     "Appearance": "Pkmn_Bellsprout",
     "AttitudeGroup": "PkmnNeutral",
+    "DropList": "Drop_Pkmn_T0_Grass",
     "FlockArray": [
       "Pkmn_Bellsprout"
     ],
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
-    "WildLevelMin": 8,
-    "WildLevelMax": 21,
-    "CaptureDifficulty": 0.75,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Bellsprout_Tamed",
-    "MaxHealth": 45,
-    "MaxSpeed": 4,
+    "MaxSpeed": 4.0,
     "ViewRange": 12,
     "AttackWhenStartled": true,
     "FleeIfNotThreatened": true,
+    "Timid": false,
     "TimidDuringDay": true,
     "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Ingredient_Poop",
-    "DropList": "Drop_Pkmn_T0_Grass",
-    "Timid": false,
     "IsMemory": true,
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Bulbasaur",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Vine_Whip"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Vine_Whip"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Vine_Whip"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "MaxHealth": 45,
+    "TameRoleChange": "Pkmn_Bellsprout_Tamed",
+    "Hp": 50,
+    "Atk": 75,
+    "Def": 35,
+    "SpAtk": 70,
+    "SpDef": 30,
+    "Spd": 40,
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 8,
+    "WildLevelMax": 21,
+    "CaptureDifficulty": 0.75
   },
   "Parameters": {
     "NameTranslationKey": {

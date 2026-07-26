@@ -4,52 +4,82 @@
   "Modify": {
     "Appearance": "Pkmn_Graveler",
     "DropList": "Drop_Pkmn_Geodude",
-    "AttractiveItemSet": [
-      "Ore_Copper",
-      "Rubble_Marble",
-      "Plant_Fruit_Apricorn_T0"
-    ],
     "FlockArray": [
       "Pkmn_Geodude",
       "Pkmn_Graveler",
       "Pkmn_Golem"
     ],
+    "AttractiveItemSet": [
+      "Ore_Copper",
+      "Rubble_Marble",
+      "Plant_Fruit_Apricorn_T0"
+    ],
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Graveler_Tamed",
-    "Type1": "RockType",
-    "Type2": "GroundType",
-    "WildLevelMin": 25,
-    "WildLevelMax": 45,
-    "CaptureDifficulty": 0.47,
     "MaxSpeed": 3.5,
-    "WanderRadius": 12,
     "ViewRange": 18,
-    "HearingRange": 12,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
+    "TimidDuringDay": false,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Elemental",
     "MemoriesNameOverride": "Graveler",
-    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 12,
+    "HearingRange": 12,
+    "AlertedRange": 18,
+    "AlwaysSleepAtNight": true,
     "AttackDistance": 3,
     "ChaseRelativeSpeed": 1,
-    "AlwaysSleepAtNight": true,
-    "DayFlavorAnimation": "",
     "DayTimeNapWeight": 0,
-    "TimidDuringDay": false,
+    "DayFlavorAnimation": "",
     "DayTimePeriod": [
       6.01,
       17.99
     ],
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Graveler_Tamed",
+    "Hp": 55,
+    "Atk": 95,
+    "Def": 115,
+    "SpAtk": 45,
+    "SpDef": 45,
+    "Spd": 35,
+    "Type1": "RockType",
+    "Type2": "GroundType",
+    "WildLevelMin": 25,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.47
   },
   "Parameters": {
     "NameTranslationKey": {

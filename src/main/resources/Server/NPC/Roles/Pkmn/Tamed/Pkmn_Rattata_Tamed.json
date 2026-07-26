@@ -2,31 +2,64 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Rat",
     "Appearance": "Pkmn_Rattata",
+    "DropList": "Drop_Rat",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "NormalType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [20,100],
-    "EvolveRoleChange": "Pkmn_Raticate_Tamed",
     "MaxSpeed": 7.2,
-    "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Tail_Whip"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tail_Whip"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 20,
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 30,
+    "Atk": 56,
+    "Def": 35,
+    "SpAtk": 25,
+    "SpDef": 35,
+    "Spd": 72,
+    "Type1": "NormalType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      20,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Raticate_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

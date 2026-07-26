@@ -3,19 +3,49 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Dodrio",
-    "Type1": "NormalType",
+    "MaxSpeed": 11.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rage"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
+    "Hp": 60,
+    "Atk": 110,
+    "Def": 70,
+    "SpAtk": 60,
+    "SpDef": 60,
+    "Spd": 110,
+    "Type1": "NormalType",
     "Type2": "FlyingType",
-    "MaxSpeed": 11,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Rage"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]}
-    }
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -7,31 +7,62 @@
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "WaterType",
-    "Type2": "FlyingType",
-    "IsMountable": true,
-    "MountAnchorX":0,
-    "MountAnchorY":1,
-    "MountAnchorZ":0,
     "MaxSpeed": 8.1,
-    "WanderRadius": 10,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 3,
-    "CombatBehaviorDistance": 6,
-    "CombatDirectWeight": 0,
-    "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
-    "ChaseRelativeSpeed": 1,
-    "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Water_Gun"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Water_Gun"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 10,
+    "CombatBehaviorDistance": 6,
+    "CombatBackOffAfterAttack": false,
+    "AttackDistance": 3,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "CombatDirectWeight": 0,
+    "CombatStrafeWeight": 10,
+    "Hp": 95,
+    "Atk": 125,
+    "Def": 79,
+    "SpAtk": 60,
+    "SpDef": 100,
+    "Spd": 81,
+    "Type1": "WaterType",
+    "Type2": "FlyingType",
+    "BreathesInWater": true,
+    "IsMountable": true,
+    "MountAnchorX": 0,
+    "MountAnchorY": 1,
+    "MountAnchorZ": 0
   },
   "Parameters": {
     "NameTranslationKey": {

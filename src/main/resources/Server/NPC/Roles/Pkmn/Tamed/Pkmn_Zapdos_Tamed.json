@@ -3,19 +3,49 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Zapdos",
-    "Type1": "ElectricType",
-    "Type2": "FlyingType",
+    "MaxSpeed": 10.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunderbolt"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunder"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 10,
-    "IsMountable": true,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thunderbolt"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Thunder"}]}
-    }
+    "Hp": 90,
+    "Atk": 90,
+    "Def": 85,
+    "SpAtk": 125,
+    "SpDef": 90,
+    "Spd": 100,
+    "Type1": "ElectricType",
+    "Type2": "FlyingType",
+    "IsMountable": true
   },
   "Parameters": {
     "NameTranslationKey": {

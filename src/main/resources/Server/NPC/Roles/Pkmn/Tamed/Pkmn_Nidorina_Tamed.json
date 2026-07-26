@@ -2,32 +2,67 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T1_Hide",
     "Appearance": "Pkmn_Nidorina",
+    "DropList": "Drop_Pkmn_T1_Hide",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "PoisonType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [16,100],
-    "EvolveRequiredItem": ["Rock_Gem_Moon_Stone"],
-    "EvolveRoleChange": "Pkmn_Nidoqueen_Tamed",
     "MaxSpeed": 5.6,
-    "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Scratch"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Double_Kick"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Double_Kick"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "WanderRadius": 20,
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 70,
+    "Atk": 62,
+    "Def": 67,
+    "SpAtk": 55,
+    "SpDef": 55,
+    "Spd": 56,
+    "Type1": "PoisonType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      16,
+      100
+    ],
+    "EvolveRequiredItem": [
+      "Rock_Gem_Moon_Stone"
+    ],
+    "EvolveRoleChange": "Pkmn_Nidoqueen_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -3,31 +3,61 @@
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Pidgeot",
-    "MaxSpeed": 10.0,
-    "MountAnchorX":0,
-    "MountAnchorY":0.75,
-    "MountAnchorZ":0.25,
+    "MaxSpeed": 10.1,
     "AttackWhenStartled": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Food_Egg",
+    "MemoriesNameOverride": "Pidgeot",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
+    "Hp": 83,
+    "Atk": 80,
+    "Def": 75,
+    "SpAtk": 70,
+    "SpDef": 70,
+    "Spd": 101,
     "Type1": "NormalType",
     "Type2": "FlyingType",
-    "CanEvolve": false,
     "IsMountable": true,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "MemoriesNameOverride": "Pidgeot",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]}
-    }
+    "MountAnchorX": 0,
+    "MountAnchorY": 0.75,
+    "MountAnchorZ": 0.25,
+    "CanEvolve": false
   },
   "Parameters": {
     "NameTranslationKey": {

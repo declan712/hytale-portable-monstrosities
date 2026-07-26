@@ -5,33 +5,63 @@
     "Appearance": "Pkmn_Dratini",
     "AttitudeGroup": "PkmnNeutral",
     "DropList": "Drop_Pkmn_T0_Hide",
-    "Type1": "DragonType",
-    "WildLevelMin": 5,
-    "WildLevelMax": 30,
-    "MaxSpeed": 5.0,
-    "CaptureDifficulty": 0.17,
-    "BreathesInWater": true,
-    "TameRoleChange": "Pkmn_Dratini_Tamed",
     "FlockArray": [
       "Pkmn_Dratini",
       "Pkmn_Dragonair"
     ],
-    "Timid": false,
+    "MaxSpeed": 5.0,
     "FleeIfNotThreatened": true,
+    "Timid": false,
     "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Dratini",
-    "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thundershock"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Dragon_Rage"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thundershock"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Dragon_Rage"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "BreathesInWater": true,
+    "TameRoleChange": "Pkmn_Dratini_Tamed",
+    "Hp": 41,
+    "Atk": 64,
+    "Def": 45,
+    "SpAtk": 50,
+    "SpDef": 50,
+    "Spd": 50,
+    "Type1": "DragonType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 30,
+    "CaptureDifficulty": 0.17
   },
   "Parameters": {
     "NameTranslationKey": {

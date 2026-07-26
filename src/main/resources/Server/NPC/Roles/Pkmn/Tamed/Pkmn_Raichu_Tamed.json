@@ -6,27 +6,57 @@
     "AttractiveItemSet": [
       "Food_Kebab_Fruit"
     ],
-    "Type1": "ElectricType",
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "IsMountable": false,
-    "MaxSpeed": 11,
-    "WanderRadius": 10,
+    "MaxSpeed": 11.0,
     "ViewRange": 12,
-    "HearingRange": 10,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Raichu",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Thunderbolt"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Thunder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunderbolt"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 10,
+    "HearingRange": 10,
+    "AlertedRange": 18,
+    "Hp": 60,
+    "Atk": 90,
+    "Def": 55,
+    "SpAtk": 90,
+    "SpDef": 80,
+    "Spd": 110,
+    "Type1": "ElectricType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

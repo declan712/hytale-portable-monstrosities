@@ -3,52 +3,82 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Raticate",
+    "AttitudeGroup": "Predators",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "NormalType",
-    "WildLevelMin": 20,
-    "WildLevelMax": 40,
-    "CaptureDifficulty": 0.65,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Raticate_Tamed",
-    "AttitudeGroup": "Predators",
     "MaxSpeed": 9.7,
-    "WanderRadius": 20,
     "ViewRange": 8,
+    "FleeIfNotThreatened": true,
+    "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Critter",
+    "MemoriesNameOverride": "Raticate",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Hyper_Fang"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "WanderRadius": 20,
     "HearingRange": 10,
+    "FleeRange": 15,
     "AlertedRange": 12,
     "AlertedTime": [
       2,
       3
     ],
-    "FleeIfNotThreatened": true,
-    "FleeRange": 15,
+    "AlwaysSleepAtNight": false,
     "HardLeashDistance": 60,
     "LeashDistance": 30,
     "CombatBehaviorDistance": 3,
     "CombatBackOffAfterAttack": false,
-    "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2,
     "ChaseRelativeSpeed": 0.6,
     "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
     "DayTimeNapWeight": 0,
-    "TimidDuringDay": true,
     "DayFlavorAnimation": "IdlePassive",
     "NightFlavorAnimation": "IdlePassive",
-    "IsMemory": true,
-    "MemoriesCategory": "Critter",
-    "MemoriesNameOverride": "Raticate",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Hyper_Fang"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Raticate_Tamed",
+    "Hp": 55,
+    "Atk": 81,
+    "Def": 60,
+    "SpAtk": 50,
+    "SpDef": 70,
+    "Spd": 97,
+    "Type1": "NormalType",
+    "WildLevelMin": 20,
+    "WildLevelMax": 40,
+    "CaptureDifficulty": 0.65
   },
   "Parameters": {
     "NameTranslationKey": {

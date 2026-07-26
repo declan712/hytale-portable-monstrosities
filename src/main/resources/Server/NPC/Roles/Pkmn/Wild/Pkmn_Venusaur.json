@@ -4,6 +4,7 @@
   "Modify": {
     "Appearance": "Pkmn_Venusaur",
     "AttitudeGroup": "Prey",
+    "DropList": "Drop_Pkmn_T2_Grass",
     "FlockArray": [
       "Pkmn_Bulbasaur",
       "Pkmn_Ivysaur",
@@ -12,39 +13,68 @@
     "AttractiveItemSet": [
       "Plant_Fruit_Spiral"
     ],
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
-    "WildLevelMin": 32,
-    "WildLevelMax": 64,
-    "CaptureDifficulty": 0.15,
-    "TameRoleChange": "Pkmn_Venusaur_Tamed",
-    "MaxSpeed": 8,
-    "WanderRadius": 12,
+    "MaxSpeed": 8.0,
     "ViewRange": 12,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Venusaur",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Razor_Leaf"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Solar_Beam"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 12,
     "HearingRange": 8,
     "FleeRange": 15,
     "AlertedRange": 18,
-    "AbsoluteDetectionRange": 2,
     "AlertedTime": [
       2,
       3
     ],
     "MaintainDistanceWhileAlerted": true,
     "AlwaysSleepAtNight": true,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "DropList": "Drop_Pkmn_T2_Grass",
-    "IsMemory": true,
-    "MemoriesCategory": "Reptile",
-    "MemoriesNameOverride": "Venusaur",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Razor_Leaf"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Solar_Beam"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Venusaur_Tamed",
+    "Hp": 80,
+    "Atk": 82,
+    "Def": 83,
+    "SpAtk": 100,
+    "SpDef": 100,
+    "Spd": 80,
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 32,
+    "WildLevelMax": 64,
+    "CaptureDifficulty": 0.15
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -3,18 +3,48 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Electabuzz",
-    "Type1": "ElectricType",
+    "MaxSpeed": 10.5,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunder_Punch"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Swift"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunderbolt"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunder"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 10.5,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Thunder_Punch"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Swift"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Thunderbolt"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Thunder"}]}
-    }
+    "Hp": 65,
+    "Atk": 83,
+    "Def": 57,
+    "SpAtk": 95,
+    "SpDef": 85,
+    "Spd": 105,
+    "Type1": "ElectricType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

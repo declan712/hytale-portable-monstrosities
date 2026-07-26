@@ -2,23 +2,53 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T2_Grass",
     "Appearance": "Pkmn_Vileplume",
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
+    "DropList": "Drop_Pkmn_T2_Grass",
     "MaxSpeed": 5.0,
     "IsMemory": true,
     "MemoriesCategory": "Critter",
     "MemoriesNameOverride": "Vileplume",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Razor_Leaf"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Razor_Leaf"}]}
-    }
+    "Hp": 75,
+    "Atk": 80,
+    "Def": 85,
+    "SpAtk": 110,
+    "SpDef": 90,
+    "Spd": 50,
+    "Type1": "GrassType",
+    "Type2": "PoisonType"
   },
   "Parameters": {
     "NameTranslationKey": {

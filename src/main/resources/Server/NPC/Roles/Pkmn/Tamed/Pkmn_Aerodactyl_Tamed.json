@@ -3,19 +3,49 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Aerodactyl",
-    "Type1": "RockType",
+    "MaxSpeed": 13.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
+    "Hp": 80,
+    "Atk": 105,
+    "Def": 65,
+    "SpAtk": 60,
+    "SpDef": 75,
+    "Spd": 130,
+    "Type1": "RockType",
     "Type2": "FlyingType",
-    "MaxSpeed": 13,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]}
-    }
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

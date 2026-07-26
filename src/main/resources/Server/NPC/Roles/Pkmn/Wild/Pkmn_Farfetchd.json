@@ -3,12 +3,11 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Farfetchd",
-    "Type1": "NormalType",
+    "MaxSpeed": 6.0,
     "IsMemory": true,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "FlyingType",
     "BaseStats": [
       52,
       90,
@@ -17,9 +16,18 @@
       62,
       60
     ],
-    "CaptureDifficulty": 0.697,
     "TameRoleChange": "Pkmn_Farfetchd_Tamed",
-    "MaxSpeed": 6
+    "Hp": 52,
+    "Atk": 90,
+    "Def": 55,
+    "SpAtk": 58,
+    "SpDef": 62,
+    "Spd": 60,
+    "Type1": "NormalType",
+    "Type2": "FlyingType",
+    "CaptureDifficulty": 0.697,
+    "Weapons": ["Weapon_Leek"],
+    "_InteractionVars": {}
   },
   "Parameters": {
     "NameTranslationKey": {

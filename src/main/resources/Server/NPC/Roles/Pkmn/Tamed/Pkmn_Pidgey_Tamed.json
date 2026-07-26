@@ -4,31 +4,64 @@
   "Modify": {
     "Appearance": "Pkmn_Pidgey",
     "MaxSpeed": 5.6,
-    "MountAnchorX":0,
-    "MountAnchorY":0.75,
-    "MountAnchorZ":0.25,
     "AttackWhenStartled": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Food_Egg",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sand_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
+    "Hp": 40,
+    "Atk": 45,
+    "Def": 40,
+    "SpAtk": 35,
+    "SpDef": 35,
+    "Spd": 56,
     "Type1": "NormalType",
     "Type2": "FlyingType",
-    "CanEvolve": true,
     "IsMountable": false,
-    "EvolveRequiredLevel": [18,100],
-    "EvolveRoleChange": "Pkmn_Pidgeotto_Tamed",
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Sand_Attack"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "MountAnchorX": 0,
+    "MountAnchorY": 0.75,
+    "MountAnchorZ": 0.25,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      18,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Pidgeotto_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

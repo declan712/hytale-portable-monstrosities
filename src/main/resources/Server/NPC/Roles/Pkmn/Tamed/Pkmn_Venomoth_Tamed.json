@@ -2,27 +2,57 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T2_Chitin",
     "Appearance": "Pkmn_Venomoth",
+    "DropList": "Drop_Pkmn_T2_Chitin",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
-    "Type1": "BugType",
-    "Type2": "PoisonType",
-    "IsMountable": false,
-    "MaxSpeed": 9,
-    "WanderRadius": 20,
+    "MaxSpeed": 9.0,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 3,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Confusion"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Psychic"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Confusion"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Psychic"}]}
-    }
+    "WanderRadius": 20,
+    "AttackDistance": 3,
+    "Hp": 70,
+    "Atk": 65,
+    "Def": 60,
+    "SpAtk": 90,
+    "SpDef": 75,
+    "Spd": 90,
+    "Type1": "BugType",
+    "Type2": "PoisonType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

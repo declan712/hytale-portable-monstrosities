@@ -3,9 +3,7 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Nidoking",
-    "AttractiveItemSet": [
-      "Plant_Fruit_Apricorn_T0"
-    ],
+    "AttitudeGroup": "Pkmn_Predators",
     "FlockArray": [
       "Pkmn_NidoranF",
       "Pkmn_NidoranM",
@@ -14,48 +12,80 @@
       "Pkmn_Nidoqueen",
       "Pkmn_Nidoking"
     ],
-    "CaptureDifficulty": 0.18,
-    "Type1": "PoisonType",
-    "Type2": "GroundType",
-    "WildLevelMin": 32,
-    "WildLevelMax": 52,
+    "AttractiveItemSet": [
+      "Plant_Fruit_Apricorn_T0"
+    ],
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Nidoking_Tamed",
-    "AttitudeGroup": "Pkmn_Predators",
     "MaxSpeed": 8.5,
-    "WanderRadius": 30,
     "ViewRange": 10,
+    "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Predator",
+    "MemoriesNameOverride": "Nidoking",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Horn_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Double_Kick"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Megahorn"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "WanderRadius": 30,
     "HearingRange": 12,
     "AlertedRange": 14,
     "AlertedTime": [
       2,
       3
     ],
+    "AlwaysSleepAtNight": false,
     "HardLeashDistance": 60,
     "LeashDistance": 30,
     "CombatBehaviorDistance": 3,
     "CombatBackOffAfterAttack": false,
-    "Attack": "Root_Pkmn_Attack_Melee",
     "AttackDistance": 2.5,
     "ChaseRelativeSpeed": 0.8,
     "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
     "DayTimeNapWeight": 0,
-    "TimidDuringDay": true,
     "DayFlavorAnimation": "IdlePassive",
     "NightFlavorAnimation": "IdlePassive",
-    "IsMemory": true,
-    "MemoriesCategory": "Predator",
-    "MemoriesNameOverride": "Nidoking",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Horn_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Double_Kick"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Megahorn"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Nidoking_Tamed",
+    "Hp": 81,
+    "Atk": 102,
+    "Def": 77,
+    "SpAtk": 85,
+    "SpDef": 75,
+    "Spd": 85,
+    "Type1": "PoisonType",
+    "Type2": "GroundType",
+    "WildLevelMin": 32,
+    "WildLevelMax": 52,
+    "CaptureDifficulty": 0.18
   },
   "Parameters": {
     "NameTranslationKey": {

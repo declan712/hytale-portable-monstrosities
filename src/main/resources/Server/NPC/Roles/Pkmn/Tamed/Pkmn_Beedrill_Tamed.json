@@ -2,30 +2,60 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T1_Chitin",
-    "Type1": "BugType",
-    "Type2": "PoisonType",
-    "CanEvolve": false,
-    "IsMountable": false,
     "Appearance": "Pkmn_Beedrill",
+    "DropList": "Drop_Pkmn_T1_Chitin",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
     "MaxSpeed": 7.5,
-    "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 3,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rage"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Twineedle"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Twineedle"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Rage"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Twineedle"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Twineedle"}]}
-    }
+    "WanderRadius": 20,
+    "AttackDistance": 3,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 65,
+    "Atk": 90,
+    "Def": 40,
+    "SpAtk": 45,
+    "SpDef": 80,
+    "Spd": 75,
+    "Type1": "BugType",
+    "Type2": "PoisonType",
+    "IsMountable": false,
+    "CanEvolve": false
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -4,33 +4,63 @@
   "Modify": {
     "Appearance": "Pkmn_Gyarados",
     "AttitudeGroup": "Pkmn_PredatorsBig",
+    "DropList": "Drop_Pkmn_T3_Chitin",
     "FlockArray": [
       "Pkmn_Gyarados",
       "Pkmn_Magikarp"
     ],
+    "MaxSpeed": 8.1,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Abyssal",
+    "MemoriesNameOverride": "Gyarados",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Water_Gun"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Water_Gun"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AlertedRange": 30,
+    "AttackRange": 4,
+    "TameRoleChange": "Pkmn_Gyarados_Tamed",
+    "Hp": 95,
+    "Atk": 125,
+    "Def": 79,
+    "SpAtk": 60,
+    "SpDef": 100,
+    "Spd": 81,
     "Type1": "WaterType",
     "Type2": "FlyingType",
     "WildLevelMin": 20,
     "WildLevelMax": 60,
-    "CaptureDifficulty": 0.1,
-    "TameRoleChange": "Pkmn_Gyarados_Tamed",
-    "DropList": "Drop_Pkmn_T3_Chitin",
-    "MaxSpeed": 8.1,
-    "AttackRange": 4,
-    "AlertedRange": 30,
-    "IsMemory": true,
-    "MemoriesCategory": "Abyssal",
-    "MemoriesNameOverride": "Gyarados",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]}
-    }
+    "CaptureDifficulty": 0.1
   },
   "Parameters": {
     "NameTranslationKey": {

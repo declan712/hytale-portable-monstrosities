@@ -2,30 +2,63 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T0_Chitin",
     "Appearance": "Pkmn_Venonat",
+    "DropList": "Drop_Pkmn_T0_Chitin",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
+    "MaxSpeed": 4.5,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Confusion"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "WanderRadius": 20,
+    "AttackDistance": 2.5,
+    "Hp": 60,
+    "Atk": 55,
+    "Def": 50,
+    "SpAtk": 40,
+    "SpDef": 55,
+    "Spd": 45,
     "Type1": "BugType",
     "Type2": "PoisonType",
     "IsMountable": false,
     "CanEvolve": true,
-    "EvolveRequiredLevel": [31,100],
-    "EvolveRoleChange": "Pkmn_Venomoth_Tamed",
-    "MaxSpeed": 4.5,
-    "WanderRadius": 20,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Confusion"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]}
-    }
+    "EvolveRequiredLevel": [
+      31,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Venomoth_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

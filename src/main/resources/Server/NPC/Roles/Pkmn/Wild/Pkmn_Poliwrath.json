@@ -3,13 +3,11 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Poliwrath",
-    "Type1": "WaterType",
+    "MaxSpeed": 7.0,
     "IsMemory": true,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "BreathesInWater": true,
-    "Type2": "FightingType",
     "BaseStats": [
       90,
       95,
@@ -18,9 +16,18 @@
       90,
       70
     ],
-    "CaptureDifficulty": 0.475,
+    "BreathesInWater": true,
     "TameRoleChange": "Pkmn_Poliwrath_Tamed",
-    "MaxSpeed": 7
+    "Hp": 90,
+    "Atk": 95,
+    "Def": 95,
+    "SpAtk": 70,
+    "SpDef": 90,
+    "Spd": 70,
+    "Type1": "WaterType",
+    "Type2": "FightingType",
+    "CaptureDifficulty": 0.475,
+    "_InteractionVars": {}
   },
   "Parameters": {
     "NameTranslationKey": {

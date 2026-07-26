@@ -4,23 +4,56 @@
   "Modify": {
     "Appearance": "Pkmn_Dratini",
     "DropList": "Drop_Pkmn_T1_Hide",
-    "Type1": "DragonType",
     "MaxSpeed": 5.0,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "BreathesInWater": true,
-    "EvolveRequiredLevel": [30,100],
-    "EvolveRoleChange": "Pkmn_Dragonair_Tamed",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Thundershock"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Dragon_Rage"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thundershock"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Dragon_Rage"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "BreathesInWater": true,
+    "Hp": 41,
+    "Atk": 64,
+    "Def": 45,
+    "SpAtk": 50,
+    "SpDef": 50,
+    "Spd": 50,
+    "Type1": "DragonType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      30,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Dragonair_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

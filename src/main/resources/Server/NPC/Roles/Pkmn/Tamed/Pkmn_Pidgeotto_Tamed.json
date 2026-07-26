@@ -4,32 +4,65 @@
   "Modify": {
     "Appearance": "Pkmn_Pidgeotto",
     "MaxSpeed": 7.1,
-    "MountAnchorX":0,
-    "MountAnchorY":0.75,
-    "MountAnchorZ":0.25,
     "AttackWhenStartled": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Food_Egg",
+    "MemoriesNameOverride": "Pidgeotto",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sand_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
+    "Hp": 63,
+    "Atk": 60,
+    "Def": 55,
+    "SpAtk": 50,
+    "SpDef": 50,
+    "Spd": 71,
     "Type1": "NormalType",
     "Type2": "FlyingType",
-    "CanEvolve": true,
     "IsMountable": false,
-    "EvolveRequiredLevel": [36,100],
-    "EvolveRoleChange": "Pkmn_Pidgeot_Tamed",
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "MemoriesNameOverride": "Pidgeotto",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Sand_Attack"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "MountAnchorX": 0,
+    "MountAnchorY": 0.75,
+    "MountAnchorZ": 0.25,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      36,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Pidgeot_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

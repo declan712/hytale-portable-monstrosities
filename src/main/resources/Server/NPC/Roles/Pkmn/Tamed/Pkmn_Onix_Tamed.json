@@ -3,19 +3,49 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Onix",
-    "Type1": "RockType",
-    "Type2": "GroundType",
+    "MaxSpeed": 7.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rage"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 7,
-    "IsMountable": true,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Rage"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]}
-    }
+    "Hp": 35,
+    "Atk": 45,
+    "Def": 160,
+    "SpAtk": 30,
+    "SpDef": 45,
+    "Spd": 70,
+    "Type1": "RockType",
+    "Type2": "GroundType",
+    "IsMountable": true
   },
   "Parameters": {
     "NameTranslationKey": {

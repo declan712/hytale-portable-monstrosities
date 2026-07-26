@@ -3,13 +3,11 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Slowpoke",
-    "Type1": "WaterType",
+    "MaxSpeed": 1.5,
     "IsMemory": true,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "PsychicType",
-    "BreathesInWater": true,
     "BaseStats": [
       90,
       65,
@@ -18,9 +16,18 @@
       40,
       15
     ],
-    "CaptureDifficulty": 0.8,
+    "BreathesInWater": true,
     "TameRoleChange": "Pkmn_Slowpoke_Tamed",
-    "MaxSpeed": 1.5
+    "Hp": 90,
+    "Atk": 65,
+    "Def": 65,
+    "SpAtk": 40,
+    "SpDef": 40,
+    "Spd": 15,
+    "Type1": "WaterType",
+    "Type2": "PsychicType",
+    "CaptureDifficulty": 0.8,
+    "_InteractionVars": {}
   },
   "Parameters": {
     "NameTranslationKey": {

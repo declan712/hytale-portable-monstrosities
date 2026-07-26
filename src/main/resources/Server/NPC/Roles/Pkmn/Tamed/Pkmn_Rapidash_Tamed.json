@@ -3,18 +3,48 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Rapidash",
-    "Type1": "FireType",
+    "MaxSpeed": 10.5,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Double_Kick"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 10.5,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Double_Kick"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
-    }
+    "Hp": 65,
+    "Atk": 100,
+    "Def": 70,
+    "SpAtk": 80,
+    "SpDef": 80,
+    "Spd": 105,
+    "Type1": "FireType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

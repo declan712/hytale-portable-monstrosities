@@ -4,23 +4,58 @@
   "Modify": {
     "Appearance": "Pkmn_Growlithe",
     "DropList": "Drop_Pkmn_T1_Hide",
-    "Type1": "FireType",
-    "Attack": "Root_Pkmn_Attack_Melee",
     "MaxSpeed": 6.0,
-    "IsMountable": false,
-    "CanEvolve": true,
-    "EvolveRequiredLevel": [1,100],
-    "EvolveRequiredItem": ["Rock_Gem_Fire_Stone"],
-    "EvolveRoleChange": "Pkmn_Arcanine_Tamed",
+    "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "Hp": 55,
+    "Atk": 70,
+    "Def": 45,
+    "SpAtk": 70,
+    "SpDef": 50,
+    "Spd": 60,
+    "Type1": "FireType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      1,
+      100
+    ],
+    "EvolveRequiredItem": [
+      "Rock_Gem_Fire_Stone"
+    ],
+    "EvolveRoleChange": "Pkmn_Arcanine_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

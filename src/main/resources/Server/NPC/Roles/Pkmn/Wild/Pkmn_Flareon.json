@@ -7,53 +7,95 @@
     "AttractiveItemSet": [
       "Plant_Crop_Chilli_Item"
     ],
-    "Type1": "FireType",
-    "WildLevelMin": 25,
-    "WildLevelMax": 40,
-    "CaptureDifficulty": 0.4,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Flareon_Tamed",
     "MaxSpeed": 6.5,
-    "WanderRadius": 10,
     "ViewRange": 12,
-    "HearingRange": 8,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
-    "AlertedTime": [2,3],
-    "MaintainDistanceWhileAlerted": false,
-    "ThreatenDelayRange": [2,2],
-    "ThreatenAnimation": "Threaten",
     "FleeIfNotThreatened": true,
-    "FleeRange": 15,
-    "HardLeashDistance": 60,
-    "LeashDistance": 30,
-    "LeashMinPlayerDistance": 7,
-    "LeashTimer": [4,5],
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "CombatBehaviorDistance": 6,
-    "CombatDirectWeight": 0,
-    "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": false,
-    "ChaseRelativeSpeed": 1,
-    "CombatMovingRelativeSpeed": 0.6,
-    "AlwaysSleepAtNight": false,
-    "NightFlavorAnimation": "Howl",
-    "DayTimeNapWeight": 6,
-    "DayTimeNapTimeRange": [10,12],
     "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Flareon",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 10,
+    "HearingRange": 8,
+    "FleeRange": 15,
+    "AlertedRange": 18,
+    "AlertedTime": [
+      2,
+      3
+    ],
+    "MaintainDistanceWhileAlerted": false,
+    "AlwaysSleepAtNight": false,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 6,
+    "CombatBackOffAfterAttack": false,
+    "AttackDistance": 2.5,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "DayTimeNapWeight": 6,
+    "NightFlavorAnimation": "Howl",
+    "ThreatenDelayRange": [
+      2,
+      2
+    ],
+    "ThreatenAnimation": "Threaten",
+    "LeashMinPlayerDistance": 7,
+    "LeashTimer": [
+      4,
+      5
+    ],
+    "CombatDirectWeight": 0,
+    "CombatStrafeWeight": 10,
+    "DayTimeNapTimeRange": [
+      10,
+      12
+    ],
+    "TameRoleChange": "Pkmn_Flareon_Tamed",
+    "Hp": 65,
+    "Atk": 130,
+    "Def": 60,
+    "SpAtk": 95,
+    "SpDef": 110,
+    "Spd": 65,
+    "Type1": "FireType",
+    "WildLevelMin": 25,
+    "WildLevelMax": 40,
+    "CaptureDifficulty": 0.4
   },
   "Parameters": {
     "NameTranslationKey": {

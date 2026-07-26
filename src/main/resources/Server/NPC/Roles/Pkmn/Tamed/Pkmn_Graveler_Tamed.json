@@ -4,29 +4,62 @@
   "Modify": {
     "Appearance": "Pkmn_Graveler",
     "DropList": "Drop_Pkmn_Geodude",
-    "MaxSpeed": 3.5,
-    "Type1": "RockType",
-    "Type2": "GroundType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [50,100],
-    "EvolveRoleChange": "Pkmn_Golem_Tamed",
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 3,
     "AttractiveItemSet": [
       "Ore_Copper",
       "Rubble_Marble",
       "Plant_Fruit_Apricorn_T0"
     ],
+    "MaxSpeed": 3.5,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]}
-    }
+    "AttackDistance": 3,
+    "Hp": 55,
+    "Atk": 95,
+    "Def": 115,
+    "SpAtk": 45,
+    "SpDef": 45,
+    "Spd": 35,
+    "Type1": "RockType",
+    "Type2": "GroundType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      50,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Golem_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -4,31 +4,53 @@
   "Modify": {
     "Appearance": "Pkmn_Articuno",
     "AttitudeGroup": "PredatorsBig",
+    "DropList": "Drop_Pkmn_T2_Hide",
     "AttractiveItemSet": [
       "Plant_Crop_Corn_Item"
     ],
-    "Type1": "IceType",
-    "Type2": "FlyingType",
-    "WildLevelMin": 50,
-    "WildLevelMax": 55,
-    "CaptureDifficulty": 0.01,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Articuno_Tamed",
-    "IsTameable": false,
-    "DropList": "Drop_Pkmn_T2_Hide",
     "MaxSpeed": 8.5,
     "Timid": false,
     "IsMemory": true,
     "MemoriesNameOverride": "Articuno",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          "Pkmn_Moves_Wing_Attack"
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          "Pkmn_Moves_Gust"
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          "Pkmn_Moves_Ice_Beam"
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          "Pkmn_Moves_Ice_Punch"
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": ["Pkmn_Moves_Wing_Attack"]},
-      "Move_Start_2": {"Interactions": ["Pkmn_Moves_Gust"]},
-      "Move_Start_3": {"Interactions": ["Pkmn_Moves_Ice_Beam"]},
-      "Move_Start_4": {"Interactions": ["Pkmn_Moves_Ice_Punch"]}
-    }
+    "IsTameable": false,
+    "TameRoleChange": "Pkmn_Articuno_Tamed",
+    "Hp": 90,
+    "Atk": 85,
+    "Def": 100,
+    "SpAtk": 95,
+    "SpDef": 125,
+    "Spd": 85,
+    "Type1": "IceType",
+    "Type2": "FlyingType",
+    "WildLevelMin": 50,
+    "WildLevelMax": 55,
+    "CaptureDifficulty": 0.01
   },
   "Parameters": {
     "NameTranslationKey": {

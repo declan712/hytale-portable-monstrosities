@@ -3,24 +3,54 @@
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Ponyta",
-    "Type1": "FireType",
+    "MaxSpeed": 9.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "MaxSpeed": 9,
+    "Hp": 50,
+    "Atk": 85,
+    "Def": 55,
+    "SpAtk": 65,
+    "SpDef": 65,
+    "Spd": 90,
+    "Type1": "FireType",
     "IsMountable": false,
     "CanEvolve": true,
     "EvolveRequiredLevel": [
       40,
       100
     ],
-    "EvolveRoleChange": "Pkmn_Rapidash_Tamed",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]}
-    }
+    "EvolveRoleChange": "Pkmn_Rapidash_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

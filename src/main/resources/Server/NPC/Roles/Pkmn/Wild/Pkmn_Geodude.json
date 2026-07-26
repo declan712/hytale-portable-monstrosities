@@ -4,56 +4,91 @@
   "Modify": {
     "Appearance": "Pkmn_Geodude",
     "DropList": "Drop_Pkmn_Geodude",
-    "AttractiveItemSet": [
-      "Ore_Copper",
-      "Rubble_Marble",
-      "Plant_Fruit_Apricorn_T0"
-    ],
     "FlockArray": [
       "Pkmn_Geodude",
       "Pkmn_Graveler",
       "Pkmn_Golem"
     ],
+    "AttractiveItemSet": [
+      "Ore_Copper",
+      "Rubble_Marble",
+      "Plant_Fruit_Apricorn_T0"
+    ],
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Geodude_Tamed",
-    "Type1": "RockType",
-    "Type2": "GroundType",
-    "WildLevelMin": 5,
-    "WildLevelMax": 25,
-    "CaptureDifficulty": 1.0,
     "MaxSpeed": 2.0,
-    "WanderRadius": 12,
     "ViewRange": 18,
-    "HearingRange": 12,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
+    "FleeIfNotThreatened": false,
+    "TimidDuringDay": false,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Elemental",
     "MemoriesNameOverride": "Geodude",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Harden"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 12,
+    "HearingRange": 12,
+    "FleeRange": 11,
+    "AlertedRange": 18,
     "AlertedTime": [
       2,
       3
     ],
     "MaintainDistanceWhileAlerted": false,
+    "AlwaysSleepAtNight": false,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 6.5,
+    "CombatBackOffAfterAttack": true,
+    "AttackDistance": 2.25,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.7,
+    "DayTimeNapWeight": 0,
+    "DayFlavorAnimation": "",
     "ThreatenDelayRange": [
       2,
       2
     ],
     "ThreatenAnimation": "Jump",
-    "FleeIfNotThreatened": false,
-    "FleeRange": 11,
-    "HardLeashDistance": 60,
-    "LeashDistance": 30,
     "LeashMinPlayerDistance": 7,
     "LeashTimer": [
       3,
       4
     ],
-    "CombatBehaviorDistance": 6.5,
     "CombatRelativeTurnSpeed": 1,
     "CombatDirectWeight": 10,
     "CombatStrafeWeight": 10,
-    "CombatBackOffAfterAttack": true,
     "CombatBackOffDurationRange": [
       3,
       4
@@ -70,27 +105,22 @@
       2,
       3
     ],
-    "CombatMovingRelativeSpeed": 0.7,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.25,
-    "ChaseRelativeSpeed": 1,
-    "AlwaysSleepAtNight": false,
-    "DayFlavorAnimation": "",
-    "DayTimeNapWeight": 0,
-    "TimidDuringDay": false,
     "DayTimePeriod": [
       18.01,
       6.01
     ],
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Harden"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Geodude_Tamed",
+    "Hp": 40,
+    "Atk": 80,
+    "Def": 100,
+    "SpAtk": 30,
+    "SpDef": 30,
+    "Spd": 20,
+    "Type1": "RockType",
+    "Type2": "GroundType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 25,
+    "CaptureDifficulty": 1.0
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -4,29 +4,59 @@
   "Modify": {
     "Appearance": "Pkmn_Onix",
     "AttitudeGroup": "Pkmn_PredatorsBig",
+    "DropList": "Drop_Pkmn_T1_Chitin",
+    "MaxSpeed": 7.0,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Abyssal",
+    "MemoriesNameOverride": "Onix",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rock_Throw"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Rage"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Earthquake"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AlertedRange": 24,
+    "AttackRange": 4,
+    "TameRoleChange": "Pkmn_Ekans_Tamed",
+    "Hp": 35,
+    "Atk": 45,
+    "Def": 160,
+    "SpAtk": 30,
+    "SpDef": 45,
+    "Spd": 70,
     "Type1": "RockType",
     "Type2": "GroundType",
     "WildLevelMin": 15,
     "WildLevelMax": 45,
-    "CaptureDifficulty": 0.3,
-    "MaxSpeed": 7,
-    "TameRoleChange": "Pkmn_Ekans_Tamed",
-    "DropList": "Drop_Pkmn_T1_Chitin",
-    "AttackRange": 4,
-    "AlertedRange": 24,
-    "IsMemory": true,
-    "MemoriesCategory": "Abyssal",
-    "MemoriesNameOverride": "Onix",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Rock_Throw"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Rage"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Earthquake"}]}
-    }
+    "CaptureDifficulty": 0.3
   },
   "Parameters": {
     "NameTranslationKey": {

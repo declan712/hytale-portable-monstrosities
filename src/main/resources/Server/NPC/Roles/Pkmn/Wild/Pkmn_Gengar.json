@@ -10,30 +10,65 @@
       "Pkmn_Haunter",
       "Pkmn_Gengar"
     ],
+    "AttractiveItemSet": [
+      "Plant_Crop_Corn_Item"
+    ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 11.0,
+    "Timid": false,
+    "IsMemory": true,
+    "MemoriesNameOverride": "Gengar",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Shadow_Punch"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Lick"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Shadow_Punch"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "IsTameable": true,
     "BreathesInWater": true,
-    "AttractiveItemSet": ["Plant_Crop_Corn_Item"],
+    "DayTimePeriod": [
+      17.99,
+      6.01
+    ],
+    "TameRoleChange": "Pkmn_Gengar_Tamed",
+    "Hp": 60,
+    "Atk": 65,
+    "Def": 60,
+    "SpAtk": 130,
+    "SpDef": 75,
+    "Spd": 110,
     "Type1": "GhostType",
     "Type2": "PoisonType",
     "WildLevelMin": 55,
     "WildLevelMax": 75,
-    "CaptureDifficulty": 0.1,
-    "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Gengar_Tamed",
-    "IsTameable": true,
-    "MaxSpeed": 11,
-    "Timid": false,
-    "IsMemory": true,
-    "MemoriesNameOverride": "Gengar",
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    },
-    "DayTimePeriod": [17.99,6.01],
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Shadow_Punch"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Lick"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Shadow_Punch"}]}
-    }
+    "CaptureDifficulty": 0.1
   },
   "Parameters": {
     "NameTranslationKey": {

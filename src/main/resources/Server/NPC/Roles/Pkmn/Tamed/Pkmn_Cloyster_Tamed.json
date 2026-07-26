@@ -3,20 +3,50 @@
   "Reference": "Template_Pkmn_Swimming_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Cloyster",
-    "Type1": "WaterType",
+    "MaxSpeed": 7.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bubble"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bubble"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "Type2": "IceType",
-    "MaxSpeed": 7,
     "BreathesInWater": true,
-    "IsMountable": false,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bubble"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Bubble"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]}
-    }
+    "Hp": 50,
+    "Atk": 95,
+    "Def": 180,
+    "SpAtk": 85,
+    "SpDef": 45,
+    "Spd": 70,
+    "Type1": "WaterType",
+    "Type2": "IceType",
+    "IsMountable": false
   },
   "Parameters": {
     "NameTranslationKey": {

@@ -2,31 +2,56 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T0_Chitin",
-    "Type1": "BugType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [7,100],
-    "EvolveRoleChange": "Pkmn_Metapod_Tamed",
     "Appearance": "Pkmn_Caterpie",
+    "DropList": "Drop_Pkmn_T0_Chitin",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
     "MaxSpeed": 4.5,
-    "WanderRadius": 20,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2,
-    "ChaseRelativeSpeed": 0.6,
-    "CombatMovingRelativeSpeed": 0.6,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          "Pkmn_Moves_Tackle"
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          "Pkmn_Moves_Tackle"
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          "Pkmn_Moves_Tackle"
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          "Pkmn_Moves_Tackle"
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": ["Pkmn_Moves_Tackle"]},
-      "Move_Start_2": {"Interactions": ["Pkmn_Moves_Tackle"]},
-      "Move_Start_3": {"Interactions": ["Pkmn_Moves_Tackle"]},
-      "Move_Start_4": {"Interactions": ["Pkmn_Moves_Tackle"]}
-    }
+    "WanderRadius": 20,
+    "AttackDistance": 2,
+    "ChaseRelativeSpeed": 0.6,
+    "CombatMovingRelativeSpeed": 0.6,
+    "Hp": 45,
+    "Atk": 30,
+    "Def": 35,
+    "SpAtk": 20,
+    "SpDef": 20,
+    "Spd": 45,
+    "Type1": "BugType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      7,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Metapod_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

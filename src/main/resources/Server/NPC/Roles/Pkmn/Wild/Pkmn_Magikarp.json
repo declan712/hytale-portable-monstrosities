@@ -4,31 +4,61 @@
   "Modify": {
     "Appearance": "Pkmn_Magikarp",
     "AttitudeGroup": "PkmnPassive",
+    "DropList": "Drop_Pkmn_T0_Chitin",
     "FlockArray": [
       "Pkmn_Magikarp"
     ],
-    "Type1": "WaterType",
-    "WildLevelMin": 2,
-    "WildLevelMax": 20,
-    "CaptureDifficulty": 1.0,
-    "TameRoleChange": "Pkmn_Magikarp_Tamed",
-    "DropList": "Drop_Pkmn_T0_Chitin",
-    "MaxSpeed": 8,
-    "IsMemory": true,
-    "Timid": true,
+    "MaxSpeed": 8.0,
     "FleeIfNotThreatened": true,
+    "Timid": true,
     "TimidDuringDay": true,
+    "IsMemory": true,
     "MemoriesCategory": "Freshwater",
     "MemoriesNameOverride": "Magikarp",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Splash"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Splash"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Splash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Splash"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Splash"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Splash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]}
-    }
+    "TameRoleChange": "Pkmn_Magikarp_Tamed",
+    "Hp": 20,
+    "Atk": 10,
+    "Def": 55,
+    "SpAtk": 15,
+    "SpDef": 20,
+    "Spd": 80,
+    "Type1": "WaterType",
+    "WildLevelMin": 2,
+    "WildLevelMax": 20,
+    "CaptureDifficulty": 1.0
   },
   "Parameters": {
     "NameTranslationKey": {

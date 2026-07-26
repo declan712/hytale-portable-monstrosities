@@ -3,8 +3,38 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Rapidash",
-    "Type1": "FireType",
+    "MaxSpeed": 10.5,
     "IsMemory": true,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Double_Kick"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
@@ -16,15 +46,15 @@
       80,
       105
     ],
-    "CaptureDifficulty": 0.492,
     "TameRoleChange": "Pkmn_Rapidash_Tamed",
-    "MaxSpeed": 10.5,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Double_Kick"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
-    }
+    "Hp": 65,
+    "Atk": 100,
+    "Def": 70,
+    "SpAtk": 80,
+    "SpDef": 80,
+    "Spd": 105,
+    "Type1": "FireType",
+    "CaptureDifficulty": 0.492
   },
   "Parameters": {
     "NameTranslationKey": {

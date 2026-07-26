@@ -2,27 +2,60 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_T0_Grass",
     "Appearance": "Pkmn_Oddish",
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
-    "CanEvolve": true,
-    "IsMountable": false,
-    "EvolveRequiredLevel": [21,100],
-    "MaxSpeed": 3,
-    "EvolveRoleChange": "Pkmn_Gloom_Tamed",
+    "DropList": "Drop_Pkmn_T0_Grass",
+    "MaxSpeed": 3.0,
     "IsMemory": true,
     "MemoriesCategory": "Critter",
     "MemoriesNameOverride": "Oddish",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Razor_Leaf"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Razor_Leaf"}]}
-    }
+    "Hp": 45,
+    "Atk": 50,
+    "Def": 55,
+    "SpAtk": 75,
+    "SpDef": 65,
+    "Spd": 30,
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      21,
+      100
+    ],
+    "EvolveRoleChange": "Pkmn_Gloom_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

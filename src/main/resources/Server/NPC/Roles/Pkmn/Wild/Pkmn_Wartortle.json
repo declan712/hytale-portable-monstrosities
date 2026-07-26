@@ -4,47 +4,77 @@
   "Modify": {
     "Appearance": "Pkmn_Wartortle",
     "AttitudeGroup": "Predators",
+    "DropList": "Drop_Pkmn_T1_Chitin",
     "FlockArray": [
       "Pkmn_Squirtle",
       "Pkmn_Wartortle",
       "Pkmn_Blastoise"
     ],
-    "Type1": "WaterType",
-    "WildLevelMin": 16,
-    "WildLevelMax": 36,
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Wartortle_Tamed",
-    "BreathesInWater": true,
     "MaxSpeed": 5.8,
-    "WanderRadius": 12,
     "ViewRange": 12,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Reptile",
+    "MemoriesNameOverride": "Wartortle",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bubble"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Water_Gun"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Water_Gun"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AbsoluteDetectionRange": 2,
+    "BreathesInWater": true,
+    "WanderRadius": 12,
     "HearingRange": 8,
     "FleeRange": 15,
     "AlertedRange": 18,
-    "AbsoluteDetectionRange": 2,
     "AlertedTime": [
       2,
       3
     ],
     "MaintainDistanceWhileAlerted": true,
     "AlwaysSleepAtNight": true,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "DropList": "Drop_Pkmn_T1_Chitin",
-    "IsMemory": true,
-    "MemoriesCategory": "Reptile",
-    "MemoriesNameOverride": "Wartortle",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Bubble"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Water_Gun"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Wartortle_Tamed",
+    "Hp": 59,
+    "Atk": 63,
+    "Def": 80,
+    "SpAtk": 65,
+    "SpDef": 80,
+    "Spd": 58,
+    "Type1": "WaterType",
+    "WildLevelMin": 16,
+    "WildLevelMax": 36
   },
   "Parameters": {
     "NameTranslationKey": {

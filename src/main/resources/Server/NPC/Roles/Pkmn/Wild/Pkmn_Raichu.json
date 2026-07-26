@@ -6,53 +6,83 @@
     "AttractiveItemSet": [
       "Food_Kebab_Fruit"
     ],
-    "Type1": "ElectricType",
-    "WildLevelMin": 25,
-    "WildLevelMax": 45,
-    "CaptureDifficulty": 0.3,
     "AttractiveItemSetParticles": "Want_Food_Corn",
-    "TameRoleChange": "Pkmn_Raichu_Tamed",
-    "MaxSpeed": 11,
-    "WanderRadius": 10,
+    "MaxSpeed": 11.0,
     "ViewRange": 12,
-    "HearingRange": 10,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
-    "Timid": true,
     "FleeIfNotThreatened": true,
+    "Timid": true,
     "TimidDuringDay": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
+    "IsMemory": true,
+    "MemoriesCategory": "Predator",
+    "MemoriesNameOverride": "Raichu",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunderbolt"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Thunder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 10,
+    "HearingRange": 10,
+    "FleeRange": 15,
+    "AlertedRange": 18,
     "AlertedTime": [
       2,
       3
     ],
     "MaintainDistanceWhileAlerted": true,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "CombatBehaviorDistance": 6,
+    "AttackDistance": 3,
     "ThreatenDelayRange": [
       2,
       2
     ],
     "ThreatenAnimation": "Threaten",
-    "FleeRange": 15,
-    "HardLeashDistance": 60,
-    "LeashDistance": 30,
     "LeashTimer": [
       4,
       5
     ],
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 3,
-    "CombatBehaviorDistance": 6,
-    "IsMemory": true,
-    "MemoriesCategory": "Predator",
-    "MemoriesNameOverride": "Raichu",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Thunderbolt"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Thunder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "TameRoleChange": "Pkmn_Raichu_Tamed",
+    "Hp": 60,
+    "Atk": 90,
+    "Def": 55,
+    "SpAtk": 90,
+    "SpDef": 80,
+    "Spd": 110,
+    "Type1": "ElectricType",
+    "WildLevelMin": 25,
+    "WildLevelMax": 45,
+    "CaptureDifficulty": 0.3
   },
   "Parameters": {
     "NameTranslationKey": {

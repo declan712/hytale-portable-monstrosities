@@ -3,27 +3,60 @@
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Golbat",
+    "DropList": "Drop_Pkmn_T1_Hide",
     "FlockArray": [
       "Pkmn_Zubat",
       "Pkmn_Golbat"
     ],
-    "Type1": "PoisonType",
-    "Type2": "FlyingType",
-    "DropList": "Drop_Pkmn_T1_Hide",
     "MaxSpeed": 9.0,
-    "WanderRadius": 15,
     "IsMemory": true,
     "MemoriesCategory": "Avian",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Fang"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "DayTimePeriod": [17.99,6.01],
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Fang"}]}
-    }
+    "WanderRadius": 15,
+    "DayTimePeriod": [
+      17.99,
+      6.01
+    ],
+    "Hp": 75,
+    "Atk": 80,
+    "Def": 70,
+    "SpAtk": 65,
+    "SpDef": 75,
+    "Spd": 90,
+    "Type1": "PoisonType",
+    "Type2": "FlyingType"
   },
   "Parameters": {
     "NameTranslationKey": {

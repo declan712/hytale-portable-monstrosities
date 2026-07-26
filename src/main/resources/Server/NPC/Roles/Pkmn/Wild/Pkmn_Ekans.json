@@ -5,29 +5,59 @@
     "Appearance": "Pkmn_Ekans",
     "AttitudeGroup": "Pkmn_Predators",
     "DropList": "Drop_Pkmn_T0_Hide",
-    "Type1": "PoisonType",
-    "WildLevelMin": 5,
-    "WildLevelMax": 22,
-    "MaxSpeed": 5.5,
-    "CaptureDifficulty": 1.0,
-    "TameRoleChange": "Pkmn_Ekans_Tamed",
     "FlockArray": [
       "Pkmn_Ekans",
       "Pkmn_Arbok"
     ],
+    "MaxSpeed": 5.5,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "IsMemory": true,
     "MemoriesCategory": "Reptile",
     "MemoriesNameOverride": "Ekans",
-    "Attack": "Root_Pkmn_Attack_Melee",
     "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Bite"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Fang"}]}
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Bite"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Fang"
+          }
+        ]
+      }
     },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
-    }
+    },
+    "TameRoleChange": "Pkmn_Ekans_Tamed",
+    "Hp": 35,
+    "Atk": 60,
+    "Def": 44,
+    "SpAtk": 40,
+    "SpDef": 54,
+    "Spd": 55,
+    "Type1": "PoisonType",
+    "WildLevelMin": 5,
+    "WildLevelMax": 22,
+    "CaptureDifficulty": 1.0
   },
   "Parameters": {
     "NameTranslationKey": {

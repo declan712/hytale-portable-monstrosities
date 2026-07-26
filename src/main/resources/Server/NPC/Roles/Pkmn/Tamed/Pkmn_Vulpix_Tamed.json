@@ -7,34 +7,69 @@
     "AttractiveItemSet": [
       "Food_Kebab_Fruit"
     ],
-    "Type1": "FireType",
-    "IsMountable": false,
-    "CanEvolve": true,
-    "EvolveRequiredLevel": [1,100],
-    "EvolveRequiredItem": ["Rock_Gem_Fire_Stone"],
-    "EvolveRoleChange": "Pkmn_Ninetales_Tamed",
     "AttractiveItemSetParticles": "Want_Food_Corn",
     "MaxSpeed": 6.5,
-    "WanderRadius": 10,
     "ViewRange": 12,
-    "HearingRange": 8,
-    "AbsoluteDetectionRange": 2,
-    "AlertedRange": 18,
     "Attack": "Root_Pkmn_Attack_Melee",
-    "AttackDistance": 2.5,
-    "CombatBehaviorDistance": 6,
     "IsMemory": true,
     "MemoriesCategory": "Predator",
     "MemoriesNameOverride": "Vulpix",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tail_Whip"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Flamethrower"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Tail_Whip"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Flamethrower"}]}
-    }
+    "AbsoluteDetectionRange": 2,
+    "WanderRadius": 10,
+    "HearingRange": 8,
+    "AlertedRange": 18,
+    "CombatBehaviorDistance": 6,
+    "AttackDistance": 2.5,
+    "Hp": 38,
+    "Atk": 41,
+    "Def": 40,
+    "SpAtk": 50,
+    "SpDef": 65,
+    "Spd": 65,
+    "Type1": "FireType",
+    "IsMountable": false,
+    "CanEvolve": true,
+    "EvolveRequiredLevel": [
+      1,
+      100
+    ],
+    "EvolveRequiredItem": [
+      "Rock_Gem_Fire_Stone"
+    ],
+    "EvolveRoleChange": "Pkmn_Ninetales_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

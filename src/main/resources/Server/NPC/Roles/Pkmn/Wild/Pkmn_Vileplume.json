@@ -2,35 +2,65 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
-    "DropList": "Drop_Pkmn_T2_Grass",
     "Appearance": "Pkmn_Vileplume",
+    "DropList": "Drop_Pkmn_T2_Grass",
     "FlockArray": [
       "Pkmn_Oddish",
       "Pkmn_Gloom",
       "Pkmn_Vileplume"
     ],
-    "TameRoleChange": "Pkmn_Vileplume_Tamed",
-    "Type1": "GrassType",
-    "Type2": "PoisonType",
-    "WildLevelMin": 40,
-    "WildLevelMax": 60,
-    "CaptureDifficulty": 0.85,
     "MaxSpeed": 5.0,
-    "Timid": true,
     "FleeIfNotThreatened": true,
+    "Timid": true,
     "TimidDuringDay": true,
     "IsMemory": true,
     "MemoriesCategory": "Critter",
     "MemoriesNameOverride": "Vileplume",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Powder"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Sleep_Powder"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Razor_Leaf"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Powder"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Sleep_Powder"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Razor_Leaf"}]}
-    }
+    "TameRoleChange": "Pkmn_Vileplume_Tamed",
+    "Hp": 75,
+    "Atk": 80,
+    "Def": 85,
+    "SpAtk": 110,
+    "SpDef": 90,
+    "Spd": 50,
+    "Type1": "GrassType",
+    "Type2": "PoisonType",
+    "WildLevelMin": 40,
+    "WildLevelMax": 60,
+    "CaptureDifficulty": 0.85
   },
   "Parameters": {
     "NameTranslationKey": {

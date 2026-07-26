@@ -3,30 +3,60 @@
   "Reference": "Template_Pkmn_Flying_Tamed",
   "Modify": {
     "Appearance": "Pkmn_Fearow",
-    "MaxSpeed": 10,
-    "MountAnchorX": 0,
-    "MountAnchorY": 0.75,
-    "MountAnchorZ": 0.25,
+    "MaxSpeed": 10.0,
     "AttackWhenStartled": true,
+    "Attack": "Root_Pkmn_Attack_Melee",
     "ProduceItem": "Food_Egg",
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Peck"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Quick_Attack"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Gust"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Wing_Attack"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
     "ProduceTimeout": [
       "PT18H",
       "PT48H"
     ],
+    "Hp": 65,
+    "Atk": 90,
+    "Def": 65,
+    "SpAtk": 61,
+    "SpDef": 61,
+    "Spd": 100,
     "Type1": "NormalType",
     "Type2": "FlyingType",
-    "CanEvolve": false,
     "IsMountable": true,
-    "Attack": "Root_Pkmn_Attack_Melee",
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Peck"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Quick_Attack"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Gust"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Wing_Attack"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "MountAnchorX": 0,
+    "MountAnchorY": 0.75,
+    "MountAnchorZ": 0.25,
+    "CanEvolve": false
   },
   "Parameters": {
     "NameTranslationKey": {

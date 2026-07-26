@@ -2,29 +2,59 @@
   "Type": "Variant",
   "Reference": "Template_Pkmn_Tamed",
   "Modify": {
-    "DropList": "Drop_Pkmn_Geodude",
     "Appearance": "Pkmn_Sandshrew",
+    "DropList": "Drop_Pkmn_Geodude",
     "AttractiveItemSet": [
       "Plant_Fruit_Apricorn_T0"
     ],
+    "AttractiveItemSetParticles": "Want_Food_Corn",
+    "MaxSpeed": 4.0,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Scratch"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Poison_Sting"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Slash"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Swift"
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    },
+    "Hp": 50,
+    "Atk": 75,
+    "Def": 85,
+    "SpAtk": 20,
+    "SpDef": 30,
+    "Spd": 40,
     "Type1": "GroundType",
     "CanEvolve": true,
     "EvolveRequiredLevel": [
       22,
       100
     ],
-    "EvolveRoleChange": "Pkmn_Sandslash_Tamed",
-    "AttractiveItemSetParticles": "Want_Food_Corn",
-    "MaxSpeed": 4.0,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Scratch"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Poison_Sting"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Slash"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Swift"}]}
-    },
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
-    }
+    "EvolveRoleChange": "Pkmn_Sandslash_Tamed"
   },
   "Parameters": {
     "NameTranslationKey": {

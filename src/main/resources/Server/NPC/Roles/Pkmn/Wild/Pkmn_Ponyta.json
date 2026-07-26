@@ -3,8 +3,38 @@
   "Reference": "Template_Pkmn_Predator",
   "Modify": {
     "Appearance": "Pkmn_Ponyta",
-    "Type1": "FireType",
+    "MaxSpeed": 9.0,
     "IsMemory": true,
+    "_InteractionVars": {
+      "Move_Start_1": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Tackle"
+          }
+        ]
+      },
+      "Move_Start_2": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Growl"
+          }
+        ]
+      },
+      "Move_Start_3": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Ember"
+          }
+        ]
+      },
+      "Move_Start_4": {
+        "Interactions": [
+          {
+            "Parent": "Pkmn_Moves_Fire_Spin"
+          }
+        ]
+      }
+    },
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
     },
@@ -16,15 +46,15 @@
       65,
       90
     ],
-    "CaptureDifficulty": 0.642,
     "TameRoleChange": "Pkmn_Ponyta_Tamed",
-    "MaxSpeed": 9,
-    "_InteractionVars": {
-      "Move_Start_1": {"Interactions": [{"Parent": "Pkmn_Moves_Tackle"}]},
-      "Move_Start_2": {"Interactions": [{"Parent": "Pkmn_Moves_Growl"}]},
-      "Move_Start_3": {"Interactions": [{"Parent": "Pkmn_Moves_Ember"}]},
-      "Move_Start_4": {"Interactions": [{"Parent": "Pkmn_Moves_Fire_Spin"}]}
-    }
+    "Hp": 50,
+    "Atk": 85,
+    "Def": 55,
+    "SpAtk": 65,
+    "SpDef": 65,
+    "Spd": 90,
+    "Type1": "FireType",
+    "CaptureDifficulty": 0.642
   },
   "Parameters": {
     "NameTranslationKey": {
