@@ -1,8 +1,10 @@
 package dw.portablemonstrosities.actions;
 
+import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
+import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.asset.builder.BuilderSupport;
 import com.hypixel.hytale.server.npc.corecomponents.ActionBase;
@@ -76,71 +78,119 @@ public class InitPkmnAction extends ActionBase {
         @Nonnull Store<EntityStore> store
     ) {
         super.execute(ref, role, sensorInfo, dt, store);
-        LOGGER.atInfo().log("InitPkmnAction");
+
+
+
+
+        // LOGGER.atInfo().log("InitPkmnAction");
         if(ref == null || !ref.isValid()) return false;
+
       
-        // Initialize Pokemon stats component
-        // CommandBuffer<EntityStore> commandBuffer = null;
-
         NPCEntity npcEntity = store.getComponent(ref, NPCEntity.getComponentType());
-        // PkmnStatsComponent pkmnStats = store.getComponent(ref, PkmnStatsComponent.getComponentType());
-        // if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
-
         if(npcEntity != null){
-            PkmnCaptureMetadata metadata = PkmnStatUtils.captureMetadata(store, ref);
-            PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(metadata);
-            if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
 
-            String roleName = role.getRoleName();
-            LOGGER.atInfo().log(roleName);
-            boolean isPkmn = PkmnStatUtils.filterByRoleName(roleName);
-            if(!isPkmn) { 
-                LOGGER.atInfo().log("not a pkmn");
-                int initialMaxHealth = role.getInitialMaxHealth();
-                int equivLevel = (int) (initialMaxHealth*10)/100 ;
-                pkmnStats.setLevel(equivLevel);
-            }
-
-            pkmnStats.setShiny(shiny);
             int[] baseStats = {hp,atk,def,spAtk,spDef,spd};
+            // pkmnStats.setShiny(shiny);
+            //type1
+            //type2
 
-            if (baseStats != null){
-                LOGGER.atInfo().log("baseStats = ["
-                + String.valueOf(hp)+", "
-                + String.valueOf(atk)+", "
-                + String.valueOf(def)+", "
-                + String.valueOf(spAtk)+", "
-                + String.valueOf(spDef)+", "
-                + String.valueOf(spd)+"]");
-                pkmnStats.setBaseStats(baseStats);
-            }
-            if (isValidPkmnType(type1)) {
-                LOGGER.atInfo().log("type1 = "+type1.toString());
-            }
-            if (isValidPkmnType(type2)) {
-                LOGGER.atInfo().log("type2 = "+type2.toString());
-            }
-
-            if (baseStats != null) { pkmnStats.setBaseStats(baseStats); }
-            if (isValidPkmnType(type1)) { pkmnStats.setType1(type1); }
-            if (isValidPkmnType(type2)) { pkmnStats.setType2(type2); }
-
-            String nature = pkmnStats.getNature();
-            if(nature == null || nature.isEmpty()){
-                PkmnNature newNature = PkmnNature.random();
-                LOGGER.atInfo().log("New Nature: "+newNature.name);
-                pkmnStats.setNature(newNature.name);
-            }
-
-            PkmnStatUtils.apply(store, ref, pkmnStats);
-            if(isPkmn) PkmnStatUtils.setPkmnNameplate(store,ref,roleName,pkmnStats);
+            initPkmn(ref,store,role,type1,type2,baseStats,shiny);
             return true;
+            // PkmnCaptureMetadata metadata = PkmnStatUtils.captureMetadata(store, ref);
+            // PkmnStatsComponent pkmnStats = PkmnStatUtils.fromMetadata(metadata);
+            // if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
+
+            // String roleName = role.getRoleName();
+            // boolean isPkmn = PkmnStatUtils.filterByRoleName(roleName);
+            // if(!isPkmn) { 
+            //     int initialMaxHealth = role.getInitialMaxHealth();
+            //     int equivLevel = (int) (initialMaxHealth*10)/100 ;
+            //     pkmnStats.setLevel(equivLevel);
+            // }
+
+            // pkmnStats.setShiny(shiny);
+            // int[] baseStats = {hp,atk,def,spAtk,spDef,spd};
+
+            // if (baseStats != null) pkmnStats.setBaseStats(baseStats);
+
+            // if (isValidPkmnType(type1)) { pkmnStats.setType1(type1); }
+            // if (isValidPkmnType(type2)) { pkmnStats.setType2(type2); }
+
+            // String nature = pkmnStats.getNature();
+            // if(nature == null || nature.isEmpty()){
+            //     PkmnNature newNature = PkmnNature.random();
+            //     pkmnStats.setNature(newNature.name);
+            // }
+
+            // PkmnStatUtils.apply(store, ref, pkmnStats);
+            // if(isPkmn) PkmnStatUtils.setPkmnNameplate(store,ref,roleName,pkmnStats);
+            // return true;
         }
-        LOGGER.atInfo().log("NPC NULL");
+        // LOGGER.atInfo().log("NPC NULL");
         return false;
    }
 
-   private boolean isValidPkmnType(String type) { 
+   public static void initPkmn(
+    @Nonnull Ref<EntityStore> ref, 
+    @Nonnull Store<EntityStore> store,
+    @Nonnull Role role,
+    @Nullable String type1,
+    @Nullable String type2,
+    @Nullable int[] baseStats,
+    @Nullable boolean shiny
+   ){
+        PkmnStatsComponent pkmnStats = PkmnStatUtils.getPkmnStatsComponent(store, ref);
+        if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
+
+        String roleName = role.getRoleName();
+        boolean isPkmn = PkmnStatUtils.filterByRoleName(roleName);
+        if(!isPkmn) { 
+            int initialMaxHealth = role.getInitialMaxHealth();
+            int equivLevel = (int) (initialMaxHealth*10)/100 ;
+            pkmnStats.setLevel(equivLevel);
+        }
+
+        if(shiny) pkmnStats.setShiny(shiny);
+
+        if (baseStats != null) pkmnStats.setBaseStats(baseStats);
+
+        if (isValidPkmnType(type1)) { pkmnStats.setType1(type1); }
+        if (isValidPkmnType(type2)) { pkmnStats.setType2(type2); }
+
+        String nature = pkmnStats.getNature();
+        if(nature == null || nature.isEmpty()){
+            PkmnNature newNature = PkmnNature.random();
+            pkmnStats.setNature(newNature.name);
+        }
+
+        PkmnStatUtils.apply(store, ref, pkmnStats);
+        if(isPkmn) PkmnStatUtils.setPkmnNameplate(store,ref,roleName,pkmnStats);
+   }
+
+
+
+    public static void initPlayer(
+        @Nonnull Ref<EntityStore> ref, 
+        @Nonnull Store<EntityStore> store,
+        @Nonnull CommandBuffer<EntityStore> commandBuffer
+    ){
+        PkmnStatsComponent pkmnStats = PkmnStatUtils.getPkmnStatsComponent(commandBuffer, ref);
+        if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
+        
+        PkmnStatUtils.apply(store, commandBuffer, ref, pkmnStats);
+    }
+   
+    public static void initPlayer(
+        @Nonnull Ref<EntityStore> ref, 
+        @Nonnull Store<EntityStore> store
+    ){
+        PkmnStatsComponent pkmnStats = PkmnStatUtils.getPkmnStatsComponent(store, ref);
+        if (pkmnStats == null) pkmnStats = new PkmnStatsComponent();
+        
+        PkmnStatUtils.apply(store, ref, pkmnStats);
+    }
+
+   public static boolean isValidPkmnType(String type) { 
        if(type == null) return false;
        return PKMN_TYPES.contains(type); 
    }

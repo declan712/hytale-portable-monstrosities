@@ -283,11 +283,29 @@ public class PkmnStatUtils {
         return statArray;
     }
 
+
+
+    public static PkmnStatsComponent getPkmnStatsComponent(
+        @Nonnull Store<EntityStore> store, 
+        @Nonnull Ref<EntityStore> ref
+    ){
+        return _getPkmnStatsComponent(store,ref);
+    }
+
     public static PkmnStatsComponent getPkmnStatsComponent(
         @Nonnull CommandBuffer<EntityStore>  commandBuffer, 
         @Nonnull Ref<EntityStore> ref
     ){
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
+        if (store == null) return null;
+        return _getPkmnStatsComponent(store,ref);
+    }
+    
+    public static PkmnStatsComponent _getPkmnStatsComponent(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> ref
+    ){
+        // Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         if (store == null) return null;
 
         // NPCEntity npcComponent = (NPCEntity)
