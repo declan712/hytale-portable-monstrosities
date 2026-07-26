@@ -42,6 +42,8 @@ public class PkmnCaptureMetadata {
     @Nullable private String nature;
     @Nullable private String nickname;
     @Nullable private String owner;
+    @Nullable private String type1;
+    @Nullable private String type2;
     private boolean shiny;
     private int  level      = 1;
     private long experience = 0L;
@@ -57,6 +59,8 @@ public class PkmnCaptureMetadata {
         this.nature="";
         this.nickname="";
         this.owner="";
+        this.type1="NormalType";
+        // this.type2="";
         this.level=1;
         this.experience=0;
         this.shiny=false;
@@ -90,6 +94,12 @@ public class PkmnCaptureMetadata {
 
     @Nullable public String getOwner()             { return owner; }
     public void              setOwner(String v)    { this.owner = v; }
+
+    @Nullable public String getType1()             { return type1; }
+    public void              setType1(String v)    { this.type1 = v; }
+
+    @Nullable public String getType2()             { return type2; }
+    public void              setType2(String v)    { this.type2 = v; }
 
     public int  getLevel()              { return level; }
     public void setLevel(int v)         { this.level = v; }
@@ -177,6 +187,16 @@ public class PkmnCaptureMetadata {
             (o, v) -> o.owner = v,
             o -> o.owner,
             (o, p) -> o.owner = p.owner
+        ).add()
+        .appendInherited(new KeyedCodec<>("Type1", Codec.STRING),
+            (o, v) -> o.type1 = v,
+            o -> o.type1,
+            (o, p) -> o.type1 = p.type1
+        ).add()
+        .appendInherited(new KeyedCodec<>("Type2", Codec.STRING),
+            (o, v) -> o.type2 = v,
+            o -> o.type2,
+            (o, p) -> o.type2 = p.type2
         ).add()
         .appendInherited(new KeyedCodec<>("Level", Codec.INTEGER),
             (o, v) -> o.level = v, 

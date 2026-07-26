@@ -146,9 +146,9 @@ public class PkmnStatsPage {
         }
         
         npcMeta = ball.getFromMetadataOrNull("CapturedEntity",CapturedNPCMetadata.CODEC);
-        if (npcMeta == null) {
-            playerRef.sendMessage(Message.raw("Pokemon is not currently in the ball"));
-        }
+        // if (npcMeta == null) {
+        //     playerRef.sendMessage(Message.raw("Pokemon is not currently in the ball"));
+        // }
 
         final String status = pkmnMeta.getNpcStatus();
         if (status == null) {
@@ -282,14 +282,27 @@ public class PkmnStatsPage {
     // private String status       = null;
 
         lvl = pkmnStats.getLevel();
+
         type1 = pkmnStats.getType1();
         type2 = pkmnStats.getType2();
+
+        if(type1 != null) LOGGER.atInfo().log("type1 ("+type1+") => "+typeIcon(type1));
+        if(type2 != null) LOGGER.atInfo().log("type2 ("+type2+") => "+typeIcon(type2));
+
+        
+        String type1Meta = pkmnMeta.getType1();
+        String type2Meta = pkmnMeta.getType2();
+        
+        if(type1Meta != null) LOGGER.atInfo().log("type1Meta ("+type1Meta+") => "+typeIcon(type1Meta));
+        if(type2Meta != null) LOGGER.atInfo().log("type2Meta ("+type2Meta+") => "+typeIcon(type2Meta));
+
         status = pkmnMeta.getNpcStatus();
         species = PkmnStatUtils.displayNameOf(pkmnMeta.getRoleId());
         nickname = pkmnStats.getNickname();
         String name = nickname!=null ? nickname : species;
         String nature = (pkmnStats.getNature() != null) ? pkmnStats.getNature() : "UKNOWN";
         var owner = pkmnStats.getOwner();
+
 
         page.editElement(cmds->cmds.set("#Level.Text", "Lvl."+String.valueOf(lvl)))
             .editElement(cmds->cmds.set("#Species.Text", species))
@@ -304,6 +317,11 @@ public class PkmnStatsPage {
             .editElement(cmds->cmds.set(overviewTabId+" #TopRight #HeldItem.Text", "N/A"))
             .editElement(cmds->cmds.set(overviewTabId+" #MemoLine1.Text", nature+" nature."))
             .editElement(cmds->cmds.set(overviewTabId+" #MemoLine2.Text", "N/A"));
+        if(type2 == null || type2.isEmpty()){
+            page.editElement(cmds->cmds.set(overviewTabId+" #TopRight #Type2.Visible", false));
+        }else{
+            page.editElement(cmds->cmds.set(overviewTabId+" #TopRight #Type2.Visible", true));
+        }
     }
 
     private void populateStats(
@@ -311,10 +329,8 @@ public class PkmnStatsPage {
         @Nonnull Ref<EntityStore> ref,
         @Nonnull PkmnStatsComponent pkmnStats
     ){
-        var currentStats = PkmnStatUtils.getCurrentStats(store, ref);
-
-        
-        var bastStats = pkmnStats.getBaseStats();
+        // var currentStats = PkmnStatUtils.getCurrentStats(store, ref);
+        int[] baseStats = pkmnStats.getBaseStats();
         int atk = pkmnStats.calcEffectiveStat(PkmnStat.ATK.index);
         int def = pkmnStats.calcEffectiveStat(PkmnStat.DEF.index);
         int spatk = pkmnStats.calcEffectiveStat(PkmnStat.SPATK.index);
@@ -322,16 +338,22 @@ public class PkmnStatsPage {
         int speed = pkmnStats.calcEffectiveStat(PkmnStat.SPD.index);
         int hp = pkmnStats.calcEffectiveStat(PkmnStat.HP.index);
         long exp = pkmnStats.getExperience();
-        var expMax = lvl*lvl*lvl;
-        var currentHp = pkmnMeta.getCurrentHp();
-        var currentExp = pkmnMeta.getExperience();
-        var ivs = pkmnStats.getIvs();
-        var evs = pkmnStats.getEvs();
+        int expMax = lvl*lvl*lvl;
+        float currentHp = pkmnMeta.getCurrentHp();
+        long currentExp = pkmnMeta.getExperience();
+        float expPercent = currentExp/expMax;
+        int[] ivs = pkmnStats.getIvs();
+        int[] evs = pkmnStats.getEvs();
+
+        LOGGER.atInfo().log("exp: "+String.valueOf(exp));
+        LOGGER.atInfo().log("expMax: "+String.valueOf(expMax));
+        LOGGER.atInfo().log("currentExp: "+String.valueOf(currentExp));
+        LOGGER.atInfo().log("expPercent: "+String.valueOf(expPercent));
 
         page.editElement(cmds->cmds.set(statsTabId+" #PkmnIcon.AssetPath", getIconPath()))
             .editElement(cmds->cmds.set(statsTabId+" #HealthBar.Value",    currentHp/hp))
             .editElement(cmds->cmds.set(statsTabId+" #HealthText.Text",    String.valueOf(currentHp)+"/"+String.valueOf(hp)))
-            .editElement(cmds->cmds.set(statsTabId+" #ExpBar.Value",       currentExp/expMax))
+            .editElement(cmds->cmds.set(statsTabId+" #ExpBar.Value",       expPercent))
             .editElement(cmds->cmds.set(statsTabId+" #ExpText.Text",       String.valueOf(currentExp)+"/"+String.valueOf(expMax)))
             .editElement(cmds->cmds.set(statsTabId+" #AtkValue.Text",      String.valueOf(atk)))
             .editElement(cmds->cmds.set(statsTabId+" #AtkIV.Text",         String.valueOf(ivs[PkmnStat.ATK.index])))
@@ -364,7 +386,7 @@ public class PkmnStatsPage {
 
     private String getIconPath(){
         if (pkmnMeta == null) { LOGGER.atInfo().log("getIconPath(): pkmnMeta null"); return FALLBACK_ICON; }
-        if (npcMeta == null)  { LOGGER.atInfo().log("getIconPath(): npcMeta null");  return FALLBACK_ICON; }
+        // if (npcMeta == null)  { LOGGER.atInfo().log("getIconPath(): npcMeta null");  return FALLBACK_ICON; }
 
         final String status = pkmnMeta.getNpcStatus();
         if (status == null)   { LOGGER.atInfo().log("getIconPath(): status null");   return FALLBACK_ICON; }
@@ -393,7 +415,7 @@ public class PkmnStatsPage {
 
     private String typeIcon(String type){
         final String typeIconDir = "UI/Textures/Icons/Types/";
-        final String png = "Type.png";
+        final String png = ".png";
         if(type==null || type.equals("")) { return ""; }
         return typeIconDir+type+png;
     }

@@ -10,6 +10,30 @@
 			"Value": [45, 49, 49, 65, 65, 45],
 			"Description": "Base stats: HP/Atk/Def/SpAtk/SpDef/Spe"
 		},
+    "Hp": {
+      "Value": 40,
+      "Description": "Pkmn HP Stat"
+    },
+    "Atk": {
+			"Value": 40,
+			"Description": "Pkmn Attack Stat"
+		},
+    "Def": {
+			"Value": 40,
+			"Description": "Pkmn Defense Stat"
+		},
+    "SpAtk": {
+			"Value": 40,
+			"Description": "Pkmn Special Attack Stat"
+		},
+    "SpDef": {
+			"Value": 40,
+			"Description": "Pkmn Special Defense Stat"
+		},
+    "Spd": {
+			"Value": 40,
+			"Description": "Pkmn Speed Stat"
+		},
     "WildLevelMin": {
 			"Value": 5,
 			"Description": "Level for this Pkmn to spawn with in the wild"
@@ -784,16 +808,6 @@
     "Compute": "MaxHealth"
   },
   "InteractionVars": {
-		"Init_Stats_Test": {
-			"Interactions": [
-				{
-					"Type": "SetCreatureNameplate",
-					"BaseStats": {"Compute":"BaseStats"},
-					"Type1": {"Compute":"Type1"},
-					"Type2": {"Compute":"Type2"}
-				}
-			]
-		},
 		"Melee_Damage": {
 			"Interactions": [
 				{
@@ -846,6 +860,13 @@
             "_ExportStates":["Idle"],
             "Type1": {"Compute":"Type1"},
             "Type2": {"Compute":"Type2"},
+            "Hp": {"Compute": "Hp"},
+            "Atk": {"Compute": "Atk"},
+            "Def": {"Compute": "Def"},
+            "SpAtk": {"Compute": "SpAtk"},
+            "SpDef": {"Compute": "SpDef"},
+            "Spd": {"Compute": "Spd"},
+            "Shiny": false,
             "IsWild": true,
             "WildLevelMin": {"Compute": "WildLevelMin"},
             "WildLevelMax": {"Compute": "WildLevelMax"},

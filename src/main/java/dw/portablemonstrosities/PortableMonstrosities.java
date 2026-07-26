@@ -10,6 +10,7 @@ import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
+import dw.portablemonstrosities.actions.BuilderInitPkmnAction;
 import dw.portablemonstrosities.commands.PkmnHudTestCommand;
 import dw.portablemonstrosities.commands.PkmnCommand.PkmnCommand;
 import dw.portablemonstrosities.components.FaintedPkmnComponent;
@@ -24,6 +25,7 @@ import dw.portablemonstrosities.interactions.DamagePkmnEntityInteraction;
 import dw.portablemonstrosities.interactions.FillFluidContainerInteraction;
 import dw.portablemonstrosities.interactions.HasOwnerInteraction;
 import dw.portablemonstrosities.interactions.HealAllPkmnInteraction;
+import dw.portablemonstrosities.interactions.InitPkmnInteraction;
 import dw.portablemonstrosities.interactions.ReturnActivePkmnInteraction;
 import dw.portablemonstrosities.interactions.ReturnFaintedPkmnInteraction;
 import dw.portablemonstrosities.interactions.SetCreatureNameplateInteraction;
@@ -33,6 +35,7 @@ import dw.portablemonstrosities.interactions.TogglePkmnHUDInteraction;
 import dw.portablemonstrosities.interactions.UseCaptureOrbInteraction;
 import dw.portablemonstrosities.systems.AddNetworkIdToMyEntitySystem;
 
+import com.hypixel.hytale.server.npc.NPCPlugin;
 import javax.annotation.Nonnull;
 
 public class PortableMonstrosities extends JavaPlugin {
@@ -43,8 +46,6 @@ public class PortableMonstrosities extends JavaPlugin {
     private ComponentType<EntityStore, FaintedPkmnComponent> faintedPkmnComponent;
     private ComponentType<EntityStore, PkmnStorageComponent> pkmnStorageComponent;
     private ComponentType<ChunkStore, PkmnCoopBlock> pkmnCoopBlockComponent;
-    
-    // private ComponentType<EntityStore, PkmnCaptureMetadata> pkmnCaptureMetadata;
 
 
     public PortableMonstrosities(@Nonnull JavaPluginInit init) {
@@ -81,7 +82,8 @@ public class PortableMonstrosities extends JavaPlugin {
 
         // this.getCodecRegistry(Interaction.CODEC).register("Bench_Dough_Mixer_Interaction", DoughMixerInteraction.class, DoughMixerInteraction.CODEC);
         this.getCodecRegistry(Interaction.CODEC).register("FillFluidContainer", FillFluidContainerInteraction.class, FillFluidContainerInteraction.CODEC);
-
+        
+        NPCPlugin.get().registerCoreComponentType("InitPkmn", BuilderInitPkmnAction::new);
 
         // -- Components ----------
         this.pkmnStatsComponent = this.getEntityStoreRegistry()

@@ -76,6 +76,17 @@ public class PkmnStatUtils {
         String nameplateString = buildNamplateString(roleName,pkmnStats);
         commandBuffer.putComponent(ref,Nameplate.getComponentType(),new Nameplate(nameplateString));
     }
+    public static void setPkmnNameplate(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> ref,
+        @Nonnull String roleName,
+        @Nonnull PkmnStatsComponent pkmnStats
+    ){
+        String nameplateString = buildNamplateString(roleName,pkmnStats);
+        store.putComponent(ref,Nameplate.getComponentType(),new Nameplate(nameplateString));
+    }
+
+
 
     /**
      * 
@@ -430,8 +441,7 @@ public class PkmnStatUtils {
         String roleId = NPCPlugin.get().getName(npcComponent.getRoleIndex());
         // int[] baseStats = PkmnBaseStatList.fromMap(toDisplayName(roleId));
 
-        PkmnStatsComponent pkmnStats = (PkmnStatsComponent)
-            store.getComponent(targetRef, PkmnStatsComponent.getComponentType());
+        PkmnStatsComponent pkmnStats = store.getComponent(targetRef, PkmnStatsComponent.getComponentType());
 
         if(pkmnStats == null) {
             pkmnStats = new PkmnStatsComponent();
@@ -441,6 +451,12 @@ public class PkmnStatUtils {
 
         pkmnStats.setExperience((long)currentExp);
         pkmnStats.setLevel((int)currentLvl);
+
+        String type1 = pkmnStats.getType1();
+        String type2 = pkmnStats.getType2();
+
+        LOGGER.atInfo().log("Type1: "+type1);
+        LOGGER.atInfo().log("Type2: "+type2);
 
         PkmnCaptureMetadata captureMetadata = new PkmnCaptureMetadata();
         captureMetadata.setCurrentHp(currentHp);
@@ -457,6 +473,8 @@ public class PkmnStatUtils {
         captureMetadata.setNpcStatus(isDead?"Fainted":"Healthy");
         captureMetadata.setShiny(pkmnStats.getShiny());
         captureMetadata.setRoleId(roleId);
+        if (type1!=null) captureMetadata.setType1(type1);
+        if (type2!=null) captureMetadata.setType2(type2);
         return captureMetadata;
     }
 
@@ -541,22 +559,31 @@ public class PkmnStatUtils {
         // var metaMaxHp           = metadata.getMaxHp();
         // var metaCurrentHp       = metadata.getCurrentHp();
         // var metaModelScale      = metadata.getModelScale();
-        var metaEVs             = metadata.getEvs();
-        var metaIVs             = metadata.getIvs();
-        var metaNature          = metadata.getNature();
-        var metaExperience      = metadata.getExperience();
-        var metaLevel           = metadata.getLevel();
-        var metaNickname        = metadata.getNickname();
-        var metaOwner           = metadata.getOwner();
-        var metaBaseStats       = metadata.getBaseStats();
-        pkmnStats.setExperience(metaExperience);
-        pkmnStats.setLevel(metaLevel);
-        pkmnStats.setEvs(metaEVs);
-        pkmnStats.setIvs(metaIVs);
-        if(metaNature!=null && !metaNature.isBlank()) pkmnStats.setNature(metaNature);
-        if(metaNickname!=null && !metaNickname.isBlank()) pkmnStats.setNickname(metaNickname);
-        if(metaOwner!=null && !metaOwner.isBlank()) pkmnStats.setOwner(metaOwner);
-        pkmnStats.setBaseStats(metaBaseStats);
+        var mEVs                = metadata.getEvs();
+        var mIVs                = metadata.getIvs();
+        String mNature          = metadata.getNature();
+        var mExperience         = metadata.getExperience();
+        var mLevel              = metadata.getLevel();
+        String mNickname        = metadata.getNickname();
+        String mOwner           = metadata.getOwner();
+        String mType1           = metadata.getType1();
+        String mType2           = metadata.getType2();
+        var mBaseStats          = metadata.getBaseStats();
+        pkmnStats.setExperience(mExperience);
+        pkmnStats.setLevel(mLevel);
+        pkmnStats.setEvs(mEVs);
+        pkmnStats.setIvs(mIVs);
+
+        if (mType1 != null) LOGGER.atInfo().log("mType1: "+mType1);
+        if (mType2 != null) LOGGER.atInfo().log("mType2: "+mType2);
+
+
+        if(mNature!=null   && !mNature.isBlank())   pkmnStats.setNature(mNature);
+        if(mNickname!=null && !mNickname.isBlank()) pkmnStats.setNickname(mNickname);
+        if(mOwner!=null    && !mOwner.isBlank())    pkmnStats.setOwner(mOwner);
+        if(mType1!=null    && !mType1.isBlank())    pkmnStats.setType1(mType1);
+        if(mType2!=null    && !mType2.isBlank())    pkmnStats.setType2(mType2);
+        pkmnStats.setBaseStats(mBaseStats);
         pkmnStats.setShiny(metadata.getShiny());
 
         // LOGGER.atInfo().log("GetPkmnStats.fromMetadata: Lvl="+String.valueOf(metaLevel));
@@ -598,6 +625,7 @@ public class PkmnStatUtils {
         boolean isPkmn = npcEntity != null && filterByRoleName(npcEntity.getRoleName());
         _applyToStatMap(stats, pkmnStats, isPlayer, isPkmn);
         store.putComponent(entityRef, EntityStatMap.getComponentType(), stats);
+        store.putComponent(entityRef, PkmnStatsComponent.getComponentType(), pkmnStats);
     }
 
     /**
@@ -620,6 +648,7 @@ public class PkmnStatUtils {
         boolean isPkmn = npcEntity != null && filterByRoleName(npcEntity.getRoleName());
         _applyToStatMap(stats, pkmnStats, isPlayer, isPkmn);
         commandBuffer.putComponent(entityRef, EntityStatMap.getComponentType(), stats);
+        commandBuffer.putComponent(entityRef, PkmnStatsComponent.getComponentType(), pkmnStats);
 
 
         PersistentModel persistentModel = (PersistentModel)
@@ -733,6 +762,8 @@ public class PkmnStatUtils {
             stats.putModifier(expIdx, "NPC_Max", new StaticModifier(ModifierTarget.MAX, CalculationType.ADDITIVE, expMax - 1000));
             stats.setStatValue(expIdx, pkmnStats.getExperience());
         }
+
+
     }
 
     /**
@@ -939,7 +970,7 @@ public class PkmnStatUtils {
     /**
      * 
      * @param roleName
-     * @return
+     * @returns true if NPC is Pkmn, false otherwise
      */
     public static boolean filterByRoleName(String roleName) {
         if(roleName.startsWith("Pkmn_")) return true;

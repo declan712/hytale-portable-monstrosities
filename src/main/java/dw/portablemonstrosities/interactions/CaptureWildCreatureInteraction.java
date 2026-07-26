@@ -49,6 +49,15 @@ import java.util.List;
  *   FullIcon       String  Fallback full-ball icon path.<br>
  *<br>
  *  TODO: combine naming/icon logic of this+UseCaptureOrbInteraction<br>
+ * 
+ * TODO: CapturedEntity only containse NpcNameKey (no icon)
+ * 
+ * TODO: owner stays as CAPTURING after capture
+ * 
+ * TODO: capture items state not updated on capture
+ * 
+ * TODO: type2 not set
+ * 
  */
 public class CaptureWildCreatureInteraction extends SimpleInteraction {
     protected String captureItemId = "Pokeball";
@@ -139,8 +148,7 @@ public class CaptureWildCreatureInteraction extends SimpleInteraction {
         //     if (player != null) ownerUuid = player.getUuid().toString();
         // }
 
-        PkmnStatsComponent pkmnStats = store.getComponent(
-            targetRef, PkmnStatsComponent.getComponentType());
+        PkmnStatsComponent pkmnStats = store.getComponent(targetRef, PkmnStatsComponent.getComponentType());
 
         // Guard: if capture is already in progress (sentinel) or owned by someone else, bail out.
         if (pkmnStats != null) {
@@ -158,12 +166,14 @@ public class CaptureWildCreatureInteraction extends SimpleInteraction {
 
         PkmnCaptureMetadata captureMeta = PkmnStatUtils.captureMetadata(commandBuffer,targetRef);
     
-        ItemStack ball         = new ItemStack(captureItemId, 1);
+        ItemStack ball = new ItemStack(captureItemId, 1);
 
         CapturedNPCMetadata npcMeta = PkmnStatUtils.getNpcMetadataFromBall(commandBuffer,targetRef,ball,fullIcon);
 
-        ItemStack withNpc      = ball.withMetadata(CapturedNPCMetadata.KEYED_CODEC,  npcMeta);
-        ItemStack capturedBall = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta);
+        ItemStack capturedBall = ball
+                .withMetadata(CapturedNPCMetadata.KEYED_CODEC,  npcMeta)
+                .withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta)
+                .withState("Full");
 
 
         // drop as

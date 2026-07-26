@@ -5,19 +5,47 @@
             "Idle"
         ],
         "Type1": {
-			"Value": "GrassType",
+			"Value": "NormalType",
 			"Description": "Primary elemental type of this Pokémon (e.g. Fire, Water, Grass, Rock, Ground, Electric, Ice, Poison, Psychic, Bug, Ghost, Dragon, Flying, Fighting, Normal). Used to compute damage resistances and weaknesses."
 		},
 		"Type2": {
 			"Value": "",
 			"Description": "Secondary elemental type (optional). Leave empty for single-type Pokémon."
 		},
+        "Hp": {
+            "Value": 40,
+            "Description": "Pkmn HP Stat"
+        },
+        "Atk": {
+            "Value": 40,
+            "Description": "Pkmn Attack Stat"
+        },
+        "Def": {
+            "Value": 40,
+            "Description": "Pkmn Defense Stat"
+        },
+        "SpAtk": {
+            "Value": 40,
+            "Description": "Pkmn Special Attack Stat"
+        },
+        "SpDef": {
+            "Value": 40,
+            "Description": "Pkmn Special Defense Stat"
+        },
+        "Spd": {
+			"Value": 40,
+			"Description": "Pkmn Speed Stat"
+		},
+        "Shiny": {
+            "Value": false,
+            "Description": "Is shiny"
+        },
         "IsWild": {
             "Value": false,
             "Description": "If true, does some extra stat calcs"
         },
         "WildLevelMin": {
-			"Value": 5,
+			"Value": 2,
 			"Description": "Level for this Pkmn to spawn with in the wild"
 		},
         "WildLevelMax": {
@@ -99,8 +127,29 @@
                         "ActionsBlocking": true,
                         "Actions":[
                             {
+                                "Type": "InitPkmn",
+                                "Hp":    {"Compute": "Hp"},
+                                "Atk":   {"Compute": "Atk"},
+                                "Def":   {"Compute": "Def"},
+                                "SpAtk": {"Compute": "SpAtk"},
+                                "SpDef": {"Compute": "SpDef"},
+                                "Spd":   {"Compute": "Spd"},
+                                "Type1": {"Compute":"Type1"},
+                                "Type2": {"Compute":"Type2"},
+                                "Shiny": false
+                            },
+                            {
                                 "Type": "Attack",
                                 "Attack": "Root_Pkmn_Init_Stats",
+                                "InteractionVars": {
+                                    "Init_Stats": {
+                                        "Interactions": [
+                                            {
+                                                "Type": "SetCreatureNameplate"
+                                            }
+                                        ]
+                                    }
+                                },
                                 "AttackPauseRange": [0, 0]
                             }
                         ]

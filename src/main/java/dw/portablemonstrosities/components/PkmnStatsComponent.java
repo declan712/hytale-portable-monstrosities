@@ -8,6 +8,7 @@ import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import dw.portablemonstrosities.PortableMonstrosities;
+import dw.portablemonstrosities.pkmn.PkmnNature;
 
 import java.util.Map;
 
@@ -254,13 +255,14 @@ public class PkmnStatsComponent implements Component<EntityStore> {
         int base = baseStats[statIndex];
         int iv = ivs[statIndex];
         int ev = evs[statIndex];
+        double modifier = PkmnNature.fromName(nature).statModifiers[statIndex];
 
         if (statIndex == 0) {
             // HP
             return 2 * (int) (((2.0 * base + iv + ev / 4.0) * level) / 100.0) + level + 10;
         } else {
             // Other stats
-            return (int) ((((2.0 * base + iv + ev / 4.0) * level) / 100.0) + 5);
+            return (int) (modifier*(((2.0 * base + iv + ev / 4.0) * level) / 100.0) + 5);
         }
     }
 
