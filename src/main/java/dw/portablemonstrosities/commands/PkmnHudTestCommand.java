@@ -117,9 +117,9 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
             //     hud.editElement(commands -> {commands.set("#Container.Visible",true);});
             //     LOGGER.atInfo().log("Unhide");
             // }
-            LOGGER.atInfo().log("Party size changed: "+String.valueOf(oldPartySize)+" => "+String.valueOf(partySize));
+            // LOGGER.atInfo().log("Party size changed: "+String.valueOf(oldPartySize)+" => "+String.valueOf(partySize));
 
-            LOGGER.atInfo().log("set height to "+String.valueOf(resize));
+            // LOGGER.atInfo().log("set height to "+String.valueOf(resize));
 
             hud.editElement(commands -> {
                 commands.set("#Container.ResizerSize", HUD_BASE_HEIGHT-resize);
@@ -156,9 +156,6 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
             }
 
             if(pkmn.equals(prev)){ continue; }
-
-            LOGGER.atInfo().log("Slot changed: "+String.valueOf(finalI));
-
 
             if(!pkmn.name.equals(prev.name)){
                 hud.editElement(commands  -> {commands.set(idName, pkmn.name);});
@@ -255,9 +252,9 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
             HudManager hudManager = player.getHudManager();
             var customHuds = hudManager.getCustomHuds();
             if(customHuds != null){
-                LOGGER.atInfo().log("CustomHuds: ");
+                // LOGGER.atInfo().log("CustomHuds: ");
                 for (CustomUIHud customHud : customHuds.values()) {
-                    LOGGER.atInfo().log("    - "+customHud.getKey());
+                    // LOGGER.atInfo().log("    - "+customHud.getKey());
                 }
             }
 
@@ -344,7 +341,7 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
         List<PkmnPartySlot> party = new ArrayList<PkmnPartySlot>();
 
         if(playerRef == null) {
-            LOGGER.atInfo().log("Error: player ref is NULL");
+            // LOGGER.atInfo().log("Error: player ref is NULL");
             return party;
         }
         if (hotbar   != null                    ) collectFromContainer(hotbar.getInventory(),   party, world);
@@ -430,7 +427,7 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
         if(store == null) return null;
 
         if(!store.isInThread()){
-            LOGGER.atInfo().log("Error: Store not in thread");
+            // LOGGER.atInfo().log("Error: Store not in thread");
             return null;
         }
 
@@ -471,16 +468,16 @@ public class PkmnHudTestCommand extends AbstractPlayerCommand {
     }
 
     private static void logParty(List<PkmnPartySlot> party){
-        LOGGER.atInfo().log("Party ["+String.valueOf(party.size())+"]:");
+        // LOGGER.atInfo().log("Party ["+String.valueOf(party.size())+"]:");
         for (int i = 0; i < party.size(); i++) {
             final PkmnPartySlot pkmn = party.get(i);
-            LOGGER.atInfo().log("["+String.valueOf(i)+"] - "+pkmn.name);
-            LOGGER.atInfo().log("    - Lvl "+String.valueOf(pkmn.level));
-            LOGGER.atInfo().log("    - HP:"+String.valueOf(pkmn.currentHp)+"/"+String.valueOf(pkmn.maxHp));
+            // LOGGER.atInfo().log("["+String.valueOf(i)+"] - "+pkmn.name);
+            // LOGGER.atInfo().log("    - Lvl "+String.valueOf(pkmn.level));
+            // LOGGER.atInfo().log("    - HP:"+String.valueOf(pkmn.currentHp)+"/"+String.valueOf(pkmn.maxHp));
             if(pkmn.fainted){
-            LOGGER.atInfo().log("    - [FAINTED]");
+            // LOGGER.atInfo().log("    - [FAINTED]");
             }else{
-            LOGGER.atInfo().log("    - [ALIVE]");
+            // LOGGER.atInfo().log("    - [ALIVE]");
             }
         }
     }

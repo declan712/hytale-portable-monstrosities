@@ -187,7 +187,7 @@ public class CaptureWildCreatureInteraction extends SimpleInteraction {
             commandBuffer.addEntities(drops, AddReason.SPAWN);
         });
 
-        // LOGGER.atInfo().log(String.format(
+        // LOGGER.atFinest().log(String.format(
         //     "PkmnCaptureFinalize: %s lv%.0f => tamed as %s, owner=%s",
         //     wildRoleId, currentLvl, tameRoleId, ownerUuid));
 

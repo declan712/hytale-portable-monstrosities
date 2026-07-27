@@ -175,13 +175,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
         }
-        // Entity caster = EntityUtils.getEntity(ref, commandBuffer);
-        // if (!(caster instanceof LivingEntity)) {
-        //     // LOGGER.atInfo().log("caster not LivingEntity");
-        //     fail(context);
-        //     super.tick0(firstRun, time, type, context, cooldownHandler);
-        //     return;
-        // }
 
         Hotbar hotbarComponent = commandBuffer.getComponent(ref, InventoryComponent.Hotbar.getComponentType());
         if(hotbarComponent==null){
@@ -189,6 +182,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
         }
+
         ItemContainer hotbarContainer   = hotbarComponent.getInventory();
         byte activeSlot                 = hotbarComponent.getActiveSlot();
         ItemStack activeItem            = hotbarComponent.getActiveItem();
@@ -206,20 +200,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         }
         ItemContainer storageContainer   = storageComponent.getInventory();
 
-        
-        // LivingEntity livingEntity  = (LivingEntity) caster;
-        // Inventory    inventory     = livingEntity.getInventory();
-        // byte         hotbarSlot    = inventory.getActiveHotbarSlot();
-        // ItemStack    inHandItem    = inventory.getActiveHotbarItem();
-        // if (inHandItem == null) {
-        //     // LOGGER.atInfo().log("inHandItem NULL");
-        //     fail(context);
-        //     super.tick0(firstRun, time, type, context, cooldownHandler);
-        //     return;
-        // }
-
-        CapturedNPCMetadata existingMeta = (CapturedNPCMetadata)
-            item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
+        CapturedNPCMetadata existingMeta = item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
         if (existingMeta != null) {
             // LOGGER.atInfo().log("CapturedNPCMetadata != NULL");
 
@@ -233,7 +214,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
 
         Ref<EntityStore> targetRef = context.getTargetEntity();
         if (targetRef == null) {
-            // LOGGER.atInfo().log("targetRef NULL");
             fail(context);
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
@@ -247,7 +227,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         }
         ItemStack capturedBall = tryCaptureIntoItem(commandBuffer, singleBall, targetRef, ref);
         if (capturedBall == null) {
-            // LOGGER.atInfo().log("capturedBall NULL");
+            LOGGER.atFinest().log("Unable to capture NPC into item");
             fail(context);
             super.tick0(firstRun, time, type, context, cooldownHandler);
             return;
@@ -280,40 +260,28 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
     ) {
         ItemStack item = context.getHeldItem();
         if (item == null) { 
-            // LOGGER.atInfo().log("ItemStack NULL");
             fail(context); 
             return; 
         }
 
         Ref<EntityStore> ref = context.getEntity();
         if(ref==null || !ref.isValid()) { fail(context); return; }
-        // Entity           caster = EntityUtils.getEntity(ref, commandBuffer);
-        // if (!(caster instanceof LivingEntity)) { 
-        //     // LOGGER.atInfo().log("Caster not LivingEntity");
-        //     fail(context); 
-        //     return; 
-        // }
 
-        // LivingEntity livingEntity = (LivingEntity) caster;
         Hotbar hotbarComponent = commandBuffer.getComponent(ref, InventoryComponent.Hotbar.getComponentType());
         if (hotbarComponent == null) { fail(context); return; }
         ItemContainer hotbarContainer = hotbarComponent.getInventory();
         byte hotbarSlot               = hotbarComponent.getActiveSlot();
 
-        // Inventory    inventory    = livingEntity.getInventory();
-        // byte         hotbarSlot   = inventory.getActiveHotbarSlot();
-
-        CapturedNPCMetadata existingMeta = (CapturedNPCMetadata)
-            item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
+        CapturedNPCMetadata existingMeta = item.getFromMetadataOrNull("CapturedEntity", CapturedNPCMetadata.CODEC);
         if (existingMeta == null) { 
-            // LOGGER.atInfo().log("CapturedNPCMetadata NULL");
+            LOGGER.atInfo().log("Item contains no CapturedNPCMetadata");
             fail(context); 
             return; 
         }
 
         BlockPosition pos = context.getTargetBlock();
         if (pos == null) { 
-            // LOGGER.atInfo().log("BlockPosition NULL");
+            LOGGER.atInfo().log("Unable to get target block position");
             fail(context); 
             return;
         }
@@ -321,7 +289,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         long       chunkIndex = ChunkUtil.indexChunkFromBlock(pos.x, pos.z);
         WorldChunk worldChunk = world.getChunk(chunkIndex);
         if (worldChunk == null) { 
-            // LOGGER.atInfo().log("WorldChunk NULL");
+            LOGGER.atInfo().log("Unable to get WorldChunk");
             fail(context); 
             return; 
         }
@@ -338,22 +306,18 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         // ItemStack capturedBall = withNpc.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMeta);
 
         PkmnCaptureMetadata existingCaptureMeta = item.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
-            // LOGGER.atInfo().log("NPC IS not?");
         if(existingCaptureMeta == null ){ fail(context); return; }
         
         String npcStatus = existingCaptureMeta.getNpcStatus();
         if (npcStatus==null) npcStatus="Healthy";
         if(npcStatus == "Fainted"){
-            // LOGGER.atInfo().log("NPC IS DEAD?");
             fail(context);
             return;
         }
         if(npcStatus == "Active"){
-            // LOGGER.atInfo().log("NPC not currently in ball?");
             fail(context);
             return;
         }
-        // LOGGER.atInfo().log("NPC state: "+npcStatus);
         
         PlayerRef playerRef = commandBuffer.getComponent(ref,PlayerRef.getComponentType());
         if(playerRef!=null){ 
@@ -361,15 +325,10 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         }
         existingCaptureMeta.setNpcStatus("Active");
 
-        // UUIDComponent ownerUuidComponent = commandBuffer.getComponent(ref, UUIDComponent.getComponentType());
-        // if (ownerUuidComponent != null) existingCaptureMeta.setOwnerUuid(ownerUuidComponent.getUuid().toString());
-        
-
         ItemStack blankBall = item.withMetadata((BsonDocument) null);
         ItemStack emptyBall = blankBall
                 .withMetadata(PkmnCaptureMetadata.KEYED_CODEC, existingCaptureMeta)
                 .withState("Active");
-
 
         // spawn into coop
         if (blockRef != null && blockRef.isValid()) {
@@ -378,15 +337,11 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
             CoopBlock coopBlock = (CoopBlock) chunkStore.getComponent(blockRef, CoopBlock.getComponentType());
 
             if (coopBlock != null) {
-                // LOGGER.atInfo().log("is coopblock");
                 // if(chunkStore.getComponent(blockRef, PkmnCoopBlock.getPkmnComponentType())==null){
-                //     LOGGER.atInfo().log("no existing PkmnCoopBlock");
                 //     FarmingCoopAsset coopAsset = coopBlock.getCoopAsset();
                 //     if(coopAsset != null){
                 //         String coopID = coopAsset.getId();
-                //         LOGGER.atInfo().log("coopAsset:"+coopID);
                 //         if (coopID=="Coop_Pokeball"){
-                //             LOGGER.atInfo().log("trying to add PkmnCoopBlock");
                 //             ItemContainer coopContainer = new SimpleItemContainer((short)5);
                 //             chunkStore.putComponent(blockRef, 
                 //                 PkmnCoopBlock.getPkmnComponentType(),
@@ -397,12 +352,9 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                 // }
                 // PkmnCoopBlock pkmnCoopBlock = (PkmnCoopBlock) chunkStore.getComponent(blockRef, PkmnCoopBlock.getPkmnComponentType());
                 // if(coopBlock!=null){
-                    // LOGGER.atInfo().log("PkmnCoopBlock found");
                     WorldTimeResource worldTime = commandBuffer.getResource(WorldTimeResource.getResourceType());
                     if (coopBlock.tryPutResident(existingMeta, worldTime)) {
-                        // LOGGER.atInfo().log("PkmnCoopBlock.tryPutResident");
                         world.execute(() -> {
-                            // LOGGER.atInfo().log("PkmnCoopBlock.ensureSpawnResidentsInWorld");
                             coopBlock.ensureSpawnResidentsInWorld(
                                 world,
                                 world.getEntityStore().getStore(),
@@ -420,7 +372,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
                     }
                     return;
                 // }
-                // LOGGER.atInfo().log("PkmnCoopBlock still null");
             }
         }
 
@@ -448,7 +399,7 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull World world,
         @Nonnull Vector3i targetBlock
     ) {
-        // LOGGER.atInfo().log("simulateInteractWithBlock?");
+        // LOGGER.atFinest().log("simulateInteractWithBlock?");
     }
 
 
@@ -477,13 +428,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         if(storage == null) return false;
         ItemContainer container = storage.getInventory();
 
-        // Entity thrower = EntityUtils.getEntity(throwerRef, commandBuffer);
-        // if (!(thrower instanceof LivingEntity)) return false;
-
-        // LivingEntity livingEntity = (LivingEntity) thrower;
-        // Inventory    inventory    = livingEntity.getInventory();
-        // ItemStack    inHandItem   = inventory.getActiveHotbarItem();
-        // if (inHandItem == null) return false;
         if(inHandItem==null) return false;
         ItemStack singleBall = inHandItem.withQuantity(1);
         if(singleBall==null) return false;
@@ -512,7 +456,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull Ref<EntityStore> targetRef,
         @Nonnull Ref<EntityStore> catcherRef
     ) {
-        // LOGGER.atInfo().log("tryCaptureIntoItem");
         Store<EntityStore> store = commandBuffer.getExternalData().getStore();
         if (store == null) return null;
 
@@ -525,7 +468,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         if (deathComponent != null) return null;
 
         // Filter NPC groups
-        // TODO: remove?
         TagSetPlugin.TagSetLookup tagSetPlugin = TagSetPlugin.get(NPCGroup.class);
         boolean tagFound = false;
         for (int group : this.acceptedNpcGroupIndexes) {
@@ -539,15 +481,14 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
 
         // PkmnStatsComponent
         // TODO: use method from utils instead
-        PkmnStatsComponent pkmnStats = (PkmnStatsComponent)
-            commandBuffer.getComponent(targetRef, PkmnStatsComponent.getComponentType());
+        PkmnStatsComponent pkmnStats = commandBuffer.getComponent(targetRef, PkmnStatsComponent.getComponentType());
 
         if (pkmnStats != null) {
             String owner  = pkmnStats.getOwner();
             // Player player = commandBuffer.getComponent(catcherRef, Player.getComponentType());
             PlayerRef playerRef = commandBuffer.getComponent(catcherRef, PlayerRef.getComponentType());
             if (PkmnStatUtils.hasOtherOwner(owner, playerRef)) {
-                // LOGGER.atInfo().log("Creature is owned by someone else");
+                // LOGGER.atFinest().log("Creature is owned by someone else");
                 return null;
             }
         }
@@ -576,14 +517,8 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         String npcStatus = captureMetadata.getNpcStatus();
         if (npcStatus==null) npcStatus="Healthy";
 
-        if(npcStatus == "Fainted"){
-            // LOGGER.atInfo().log("NPC IS DEAD?");;
-        }
-        if(npcStatus == "Active"){
-            // LOGGER.atInfo().log("NPC not currently in ball?");
-            captureMetadata.setNpcStatus("Healthy");
-        }
-        // LOGGER.atInfo().log("NPC state: "+npcStatus);
+        if(npcStatus == "Fainted"){}
+        if(npcStatus == "Active"){ captureMetadata.setNpcStatus("Healthy"); }
 
         // String ballEntityId = existingCaptureMeta.getballEntityUuid();
         // if(ballEntityId==null || ballEntityId.isBlank()){
@@ -645,7 +580,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         @Nonnull ItemStack replacementItem
     ) {
 
-        // LOGGER.atInfo().log("spawnCapturedCreature");
         Vector3d spawnPos = new Vector3d(pos.x + 0.5, pos.y, pos.z + 0.5);
         var clientState  = context.getClientState();
         if (clientState != null) {
@@ -664,8 +598,6 @@ public class UseCaptureOrbInteraction extends SimpleBlockInteraction {
         int    roleIndex = NPCPlugin.get().getIndex(roleId);
 
         PkmnCaptureMetadata captureMetadata = item.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
-
-
             // spawnEntity(
             //       @Nonnull Store<EntityStore> store, 
             //       int roleIndex, 

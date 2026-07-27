@@ -118,8 +118,6 @@ public class PkmnStatUtils {
         String entityId = targetUuid.getUuid().toString();
         captureMetadata.setNpcEntityUuid(entityId);
 
-        // LOGGER.atInfo().log("released NPC with uuid: "+entityId);
-
         return ball.withMetadata(PkmnCaptureMetadata.KEYED_CODEC, captureMetadata);
     }
 
@@ -197,7 +195,7 @@ public class PkmnStatUtils {
     ){
         boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
         if (isDead) {
-            LOGGER.atInfo().log("NPC is dead");
+            LOGGER.atFinest().log("NPC is dead");
             return null;
         }
         EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
@@ -313,7 +311,6 @@ public class PkmnStatUtils {
         // if (npcComponent == null) return null;
 
         // boolean isDead = store.getComponent(ref, DeathComponent.getComponentType()) != null;
-        // if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
 
 
         EntityStatMap stats = store.getComponent(ref, EntityStatMap.getComponentType());
@@ -369,8 +366,6 @@ public class PkmnStatUtils {
         Player player = store.getComponent(ref, Player.getComponentType());
         if (player != null && baseStats!=PLAYER_BASE_STATS) pkmnStats.setBaseStats(PLAYER_BASE_STATS);
 
-        // if ( baseStats[PkmnStat.ATK.index] == 0) { LOGGER.atInfo().log("Entity base ATK is 0"); }
-        // if ( baseStats[PkmnStat.DEF.index] == 0) { LOGGER.atInfo().log("Entity base DEF is 0"); }
         return pkmnStats;
     }
 
@@ -412,7 +407,6 @@ public class PkmnStatUtils {
         if (npcComponent == null) return null;
 
         boolean isDead = store.getComponent(targetRef, DeathComponent.getComponentType()) != null;
-        // if (isDead) LOGGER.atInfo().log("NPC is dead"); // return null;
 
         EntityStatMap stats = store.getComponent(targetRef, EntityStatMap.getComponentType());
         if (stats == null){ 
@@ -473,9 +467,6 @@ public class PkmnStatUtils {
         String type1 = pkmnStats.getType1();
         String type2 = pkmnStats.getType2();
 
-        LOGGER.atInfo().log("Type1: "+type1);
-        LOGGER.atInfo().log("Type2: "+type2);
-
         PkmnCaptureMetadata captureMetadata = new PkmnCaptureMetadata();
         captureMetadata.setCurrentHp(currentHp);
         captureMetadata.setMaxHp(maxHp);
@@ -527,8 +518,6 @@ public class PkmnStatUtils {
         PersistentModel persistentModel = commandBuffer.getComponent(targetRef, PersistentModel.getComponentType());
         if (persistentModel != null){ 
             ModelAsset modelAsset = ModelAsset.getAssetMap().getAsset(persistentModel.getModelReference().getModelAssetId());
-            // LOGGER.atInfo().log("persistentModel null");
-            // return null;
             if (modelAsset != null) {
                 npcMeta.setIconPath(modelAsset.getIcon());
                 npcMeta.setFullItemIcon(modelAsset.getIcon());
@@ -592,10 +581,6 @@ public class PkmnStatUtils {
         pkmnStats.setEvs(mEVs);
         pkmnStats.setIvs(mIVs);
 
-        if (mType1 != null) LOGGER.atInfo().log("mType1: "+mType1);
-        if (mType2 != null) LOGGER.atInfo().log("mType2: "+mType2);
-
-
         if(mNature!=null   && !mNature.isBlank())   pkmnStats.setNature(mNature);
         if(mNickname!=null && !mNickname.isBlank()) pkmnStats.setNickname(mNickname);
         if(mOwner!=null    && !mOwner.isBlank())    pkmnStats.setOwner(mOwner);
@@ -604,8 +589,6 @@ public class PkmnStatUtils {
         pkmnStats.setBaseStats(mBaseStats);
         pkmnStats.setShiny(metadata.getShiny());
 
-        // LOGGER.atInfo().log("GetPkmnStats.fromMetadata: Lvl="+String.valueOf(metaLevel));
-        // LOGGER.atInfo().log("GetPkmnStats.fromMetadata: Lvl="+String.valueOf(pkmnStats.getLevel()));
         return pkmnStats;
     }
 
@@ -669,39 +652,20 @@ public class PkmnStatUtils {
         commandBuffer.putComponent(entityRef, PkmnStatsComponent.getComponentType(), pkmnStats);
 
 
-        PersistentModel persistentModel = (PersistentModel)
-            commandBuffer.getComponent(entityRef, PersistentModel.getComponentType());
-        if (persistentModel == null) { LOGGER.atInfo().log("persistentModel null"); return; }
+        PersistentModel persistentModel = commandBuffer.getComponent(
+            entityRef, PersistentModel.getComponentType());
+
+        if (persistentModel == null) { 
+            LOGGER.atInfo().log("persistentModel null"); 
+            return; 
+        }
 
         ModelReference modelReference = persistentModel.getModelReference();
-
-        // NPCAppearanceCommand
-        // protected void execute(
-        //     @Nonnull CommandContext context, 
-        //     @Nonnull NPCEntity npc,
-        //     @Nonnull World world, 
-        //     @Nonnull Store<EntityStore> store, 
-        //     @Nonnull Ref<EntityStore> ref
-        // ) {
-        //     ModelAsset model = (ModelAsset)this.modelArg.get(context);
-        //     npc.setAppearance(ref, model, store);
-        // }
         String modelId = modelReference.getModelAssetId();
         if(pkmnStats.getShiny() && !modelId.endsWith("_Shiny")){
             ModelAsset model = ModelAsset.getAssetMap().getAsset(modelId+"_Shiny");
-            // ModelAsset modelAsset = (ModelAsset) ModelAsset.getAssetMap()
-            // .getAsset(persistentModel.getModelReference().getModelAssetId());
             npcEntity.setAppearance(entityRef, model, commandBuffer);
-            // Map<String,String> randomAttachments = null;
-            // ModelReference modifiedModelRef = new ModelReference("modelAssetId",1f, randomAttachments,true);
-            // ModelReference modifiedModelRef = new ModelReference(modelId+"_Shiny", 1f, randomAttachments);
-            // persistentModel.setModelReference(modifiedModelRef);
         }
-
-
-
-
-
         // npcEntity.setAppearance(entityRef, new ModelAsset(), commandBuffer);
         // commandBuffer.putComponent(entityRef, NPCEntity.getComponentType() );
     }
@@ -897,10 +861,9 @@ public class PkmnStatUtils {
             if (p.getUsername().equals(username)) {
                 matches.add(p);
             }
-
         });
         if(matches.size()>0) return matches.get(0);
-        LOGGER.atInfo().log("Couldnt find player: "+username);
+        LOGGER.atFinest().log("Couldnt find player: "+username);
         return null;
     }
     
@@ -943,8 +906,6 @@ public class PkmnStatUtils {
         boolean isValidRoleSuffix = NPCPlugin.get().hasRoleName(tameRoleSuffix);
         boolean isValidRolePrefix = NPCPlugin.get().hasRoleName(tameRolePrefix);
 
-        // LOGGER.atInfo().log("isValidRole("+tameRoleSuffix+"): "+isValidRoleSuffix);
-        // LOGGER.atInfo().log("isValidRole("+tameRolePrefix+"): "+isValidRolePrefix);
         if (isValidRoleSuffix) return tameRoleSuffix;
         if (isValidRolePrefix) return tameRolePrefix;
         return wildRoleId;
@@ -1057,8 +1018,6 @@ public class PkmnStatUtils {
         float raw = (2+2*level/5)*power*atk/def/50;
         float withStatus = raw*burn*screen*weather+2;
         float damage = withStatus*crit*item*(float)random*stab;
-
-        // LOGGER.atInfo().log("POW: "+power+", ATK: "+String.valueOf(atk)+", DEF: "+String.valueOf(def)+", STAB: "+attackerSTAB+", crit: "+crit+", lvl: "+level);
 
         return (int) damage;
     }

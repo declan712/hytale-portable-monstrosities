@@ -79,20 +79,12 @@ public class InitPkmnAction extends ActionBase {
     ) {
         super.execute(ref, role, sensorInfo, dt, store);
 
-
-
-
-        // LOGGER.atInfo().log("InitPkmnAction");
         if(ref == null || !ref.isValid()) return false;
-
       
         NPCEntity npcEntity = store.getComponent(ref, NPCEntity.getComponentType());
         if(npcEntity != null){
 
             int[] baseStats = {hp,atk,def,spAtk,spDef,spd};
-            // pkmnStats.setShiny(shiny);
-            //type1
-            //type2
 
             initPkmn(ref,store,role,type1,type2,baseStats,shiny);
             return true;
@@ -126,7 +118,6 @@ public class InitPkmnAction extends ActionBase {
             // if(isPkmn) PkmnStatUtils.setPkmnNameplate(store,ref,roleName,pkmnStats);
             // return true;
         }
-        // LOGGER.atInfo().log("NPC NULL");
         return false;
    }
 
@@ -166,8 +157,6 @@ public class InitPkmnAction extends ActionBase {
         PkmnStatUtils.apply(store, ref, pkmnStats);
         if(isPkmn) PkmnStatUtils.setPkmnNameplate(store,ref,roleName,pkmnStats);
    }
-
-
 
     public static void initPlayer(
         @Nonnull Ref<EntityStore> ref, 

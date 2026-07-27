@@ -162,20 +162,13 @@ public class HealAllPkmnInteraction extends SimpleInteraction{
         return healedItem;
     }
 
-
-    public boolean hasCapturedPkmn(
-        @Nonnull ItemStack itemstack
-    ){
-        // String itemId = itemstack.getItemId();
+    public boolean hasCapturedPkmn(@Nonnull ItemStack itemstack){
         PkmnCaptureMetadata captureMetadata = itemstack.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
         if (captureMetadata==null) return false;
         if (hasState(itemstack,"Active")) return false;
-        // if (itemstack.getItemId() == itemstack.getItem().getItemIdForState("Active")) return false;
         if (captureMetadata.getNpcStatus() == "Active") return false;
         return true;
     }
-
-
 
     public static boolean hasState(
         @Nonnull ItemStack itemstack,
@@ -188,12 +181,8 @@ public class HealAllPkmnInteraction extends SimpleInteraction{
         return (itemId.startsWith(statePrefix) && itemId.endsWith(stateSuffix));
     }
 
-    // private static void fail(@Nonnull InteractionContext context) {
-    //     context.getState().state = InteractionState.Failed;
-    // }
-
     private static void fail(@Nonnull InteractionContext context, String logMessage) {
-        // if(logMessage != null) {  LOGGER.atInfo().log(logMessage); }
+        if(logMessage != null) {  LOGGER.atFinest().log(logMessage); }
         context.getState().state = InteractionState.Failed;
     }
 

@@ -46,31 +46,31 @@ public class FillFluidContainerInteraction extends SimpleInteraction {
 
         if (commandBuffer == null) {
             interactionContext.getState().state = InteractionState.Failed;
-            // LOGGER.atInfo().log("CommandBuffer is null");
+            LOGGER.atInfo().log("CommandBuffer is null");
             return;
         }
 
-        World world = commandBuffer.getExternalData().getWorld(); // just to show how to get the world if needed
-        // Store<EntityStore> store = commandBuffer.getExternalData().getStore(); // just to show how to get the store if needed
+        World world = commandBuffer.getExternalData().getWorld(); 
+        // Store<EntityStore> store = commandBuffer.getExternalData().getStore(); 
 
         Ref<EntityStore> ref = interactionContext.getEntity();
         Player player = commandBuffer.getComponent(ref, Player.getComponentType());
         if (player == null) {
             interactionContext.getState().state = InteractionState.Failed;
-            // LOGGER.atInfo().log("Player is null");
+            LOGGER.atInfo().log("Player is null");
             return;
         }
         PlayerRef playerRef = commandBuffer.getComponent(ref, PlayerRef.getComponentType());
         if (playerRef == null) {
             interactionContext.getState().state = InteractionState.Failed;
-            // LOGGER.atInfo().log("PlayerRef is null");
+            LOGGER.atInfo().log("PlayerRef is null");
             return;
         }
 
         ItemStack itemStack = interactionContext.getHeldItem();
         if (itemStack == null) {
             interactionContext.getState().state = InteractionState.Failed;
-            // LOGGER.atInfo().log("ItemStack is null");
+            LOGGER.atInfo().log("ItemStack is null");
             return;
         }
         double  durability = itemStack.getDurability();
@@ -85,13 +85,10 @@ public class FillFluidContainerInteraction extends SimpleInteraction {
         var aboveTargetFluid = world.getFluidId(targetPos.x,targetPos.y+1,targetPos.z);
         var aboveBlockType = world.getBlockType(targetPos.x,targetPos.y+1,targetPos.z).getId();
 
-        
         // TransformComponent playerTransformComponent = store.getComponent(player.getReference(), EntityModule.get().getTransformComponentType());
         // var playerPos = playerTransformComponent.getPosition();
         // var targetLabel = interactionContext.getLabel(targetBlock);
 
-    
-        
         // 6 = lava_source
         // 7 = water source
         // 8 = water
@@ -103,11 +100,8 @@ public class FillFluidContainerInteraction extends SimpleInteraction {
             playerRef.sendMessage(Message.raw("Your target fluid is: "+targetFluid+"  (" + targetPos.x +","+ targetPos.y+","+ targetPos.z + ")"));
             playerRef.sendMessage(Message.raw("above your target block is: "+aboveTargetFluid+"  (" + targetPos.x +","+ (targetPos.y+1)+","+ targetPos.z + ")"));
         }catch (Exception e) {
-            // TODO: handle exception
             playerRef.sendMessage(Message.raw(e.toString()));
         }
-
-
 
         try {
             var a = itemStack.getItemId().toString();
@@ -122,23 +116,9 @@ public class FillFluidContainerInteraction extends SimpleInteraction {
         } catch (Exception e) {
             playerRef.sendMessage(Message.raw(e.toString()));
         }
-        // if(targetLabel != null){
-        //     player.sendMessage(Message.raw("Your target block is: "+targetLabel.toString()));
-        // }
-
-        // var  targetEntity= interactionContext.getTargetEntity();
-        // if(targetEntity!=null){
-        //     player.sendMessage(Message.raw("Your target entity is: " + targetEntity));
-        // }
-        
-
 
         interactionContext.getState().state = InteractionState.Failed;
         return;
-
-
-        
     }
 
-    
 }

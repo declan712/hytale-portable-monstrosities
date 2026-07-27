@@ -72,24 +72,27 @@ public class ReturnActivePkmnInteraction extends SimpleInteraction {
 
         PkmnCaptureMetadata pkmnMetadata = ball.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
         if (pkmnMetadata == null) { 
-            playerRef.sendMessage(Message.raw("Item missing capture metadata"));
+            playerRef.sendMessage(Message.raw("Ball has missing or corrupt NPC data"));
             // LOGGER.atInfo().log("Item has no Pkmn Metadata");
-            fail(context); return; }
+            fail(context); 
+            return; 
+        }
         
         String npcStatus = pkmnMetadata.getNpcStatus();
         if(npcStatus != "Active"){ fail(context); return; }
         
         String npcId = pkmnMetadata.getNpcEntityUuid();
         if (npcId == null) {
-            LOGGER.atInfo().log("npcId is NULL");
+            LOGGER.atInfo().log("Ball has no linked NPC ID");
             fail(context); 
             return; 
         }
         
         Ref<EntityStore> targetRef = world.getEntityRef(UUID.fromString(npcId));
         if (targetRef == null) { 
-            playerRef.sendMessage(Message.raw("Couldn't find entity :("));
-            // LOGGER.atInfo().log("Couldn't find entity");
+            playerRef.sendMessage(Message.raw("Unable to locate linked NPC."));
+            playerRef.sendMessage(Message.raw("If the NPC is still alive, return them by left clicking with this ball in melee range"));
+            playerRef.sendMessage(Message.raw("If the NPC has been lost, they can be restored to this ball with the command: /pkmn restore"));
             fail(context); 
             return; 
         }

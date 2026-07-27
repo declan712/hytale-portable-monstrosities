@@ -150,11 +150,9 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
                     if(result) return;
                 }
             }
-
-
-            // LOGGER.atInfo().log("Unable to return to owner");
+            // LOGGER.atFinest().log("Unable to return to owner");
         }else{
-            // LOGGER.atInfo().log("no OwnerUUID, spawn tombstone instead");
+            // LOGGER.atFinest().log("no OwnerUUID, spawn tombstone instead");
         }
         spawnAsTombstone(
             context, 
@@ -245,13 +243,11 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
     ){
         PlayerRef playerRef = store.getComponent(ownerRef, PlayerRef.getComponentType());
         if(playerRef==null) return false;
-        // LOGGER.atInfo().log("owners name is: "+playerRef.getUsername());
         InventorySlotItem ballInSlot = findMatchingBall(store,ref,entityId,ownerRef);
         if(ballInSlot==null){
-            // LOGGER.atInfo().log("no ball found");
+            LOGGER.atFinest().log("Unable to return, no matching ball found");
             return false;
         }
-        // LOGGER.atInfo().log("Found the right ball");
 
         Short slot = ballInSlot.slot;
         ItemStack ball = ballInSlot.itemstack;
@@ -271,9 +267,6 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
         return true;
     }
 
-
-
-
     public record InventorySlotItem(Short slot, ItemStack itemstack, InventoryComponent inventory) {}
 
     private InventorySlotItem findMatchingBall(        
@@ -286,7 +279,6 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
         Storage storage = store.getComponent(ownerRef,InventoryComponent.Storage.getComponentType());
         Backpack backpack = store.getComponent(ownerRef,InventoryComponent.Backpack.getComponentType());
 
-        
         List<InventorySlotItem> matches = new ArrayList<>();
         
         if(hotbar!= null) {
@@ -296,16 +288,8 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
                 if(validItems.contains(itemStack.getItemId())){
                     PkmnCaptureMetadata captureMetadata = itemStack.getFromMetadataOrNull("PkmnCapture", PkmnCaptureMetadata.CODEC);
                     if(captureMetadata!=null){
-                        // LOGGER.atInfo().log("Possible item: "+itemStack.getItemId()+" with data: "+captureMetadata.toString());
-                        // var npcEntityUuid = captureMetadata.getNpcEntityUuid();
-                        // var roleId = captureMetadata.getRoleId();
-                        // var level = captureMetadata.getLevel();
-                        // LOGGER.atInfo().log("EntityID = "+npcEntityUuid);
-                        // LOGGER.atInfo().log("needs to be: "+entityId);
-                        // LOGGER.atInfo().log("roleId = "+roleId+" ["+String.valueOf(level)+"]");
                         String itemEntityUUID = captureMetadata.getNpcEntityUuid();
                         if (entityId.equals(itemEntityUUID)){
-                            // LOGGER.atInfo().log("found matching item");
                             matches.add(new InventorySlotItem(slot,itemStack,hotbar));
                             return;
                         }
@@ -323,7 +307,6 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
                     if(captureMetadata!=null){
                         String itemEntityUUID = captureMetadata.getNpcEntityUuid();
                         if (entityId.equals(itemEntityUUID)){
-                            // LOGGER.atInfo().log("found matching item");
                             matches.add(new InventorySlotItem(slot,itemStack,storage));
                             return;
                         }
@@ -341,7 +324,6 @@ public class SpawnPkmnTombstoneInteraction extends SimpleInteraction {
                     if(captureMetadata!=null){
                         String itemEntityUUID = captureMetadata.getNpcEntityUuid();
                         if (entityId.equals(itemEntityUUID)){
-                            // LOGGER.atInfo().log("found matching item");
                             matches.add(new InventorySlotItem(slot,itemStack,backpack));
                             return;
                         }

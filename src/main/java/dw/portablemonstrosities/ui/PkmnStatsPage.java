@@ -100,7 +100,6 @@ public class PkmnStatsPage {
             .fromFile("Pages/"+UI_FILE);
 
         page.onRawDataEvent((data, hyuiPage) -> {
-            LOGGER.atInfo().log("onRawDataEvent");
             switch (data.action) {
                 case "Overview" -> tabSelected("Overview");
                 case "Stats"    -> tabSelected("Stats");
@@ -181,7 +180,6 @@ public class PkmnStatsPage {
     }
 
     private void tabSelected(String selectedTabId){
-        LOGGER.atInfo().log("Tab selected: "+selectedTabId);
         switch(selectedTabId){
             case "Overview":
                 switchTabOverview();
@@ -217,7 +215,6 @@ public class PkmnStatsPage {
     }
 
     private void switchTabOverview(){
-        LOGGER.atInfo().log("switchTabOverview");
         page.editElement(cmds->cmds.set(overviewTabId+".Visible", true))
             .editElement(cmds->cmds.set(statsTabId+".Visible", false))
             .editElement(cmds->cmds.set(movesTabId+".Visible", false))
@@ -225,7 +222,6 @@ public class PkmnStatsPage {
     }
 
     private void switchTabStats(){
-        LOGGER.atInfo().log("switchTabStats");
         page.editElement(cmds->cmds.set(overviewTabId+".Visible", false))
             .editElement(cmds->cmds.set(statsTabId+".Visible", true))
             .editElement(cmds->cmds.set(movesTabId+".Visible", false))
@@ -233,7 +229,6 @@ public class PkmnStatsPage {
     }
 
     private void switchTabMoves(){
-        LOGGER.atInfo().log("switchTabMoves");
         page.editElement(cmds->cmds.set(overviewTabId+".Visible", false))
             .editElement(cmds->cmds.set(statsTabId+".Visible", false))
             .editElement(cmds->cmds.set(movesTabId+".Visible", true))
@@ -282,20 +277,9 @@ public class PkmnStatsPage {
     // private String status       = null;
 
         lvl = pkmnStats.getLevel();
-
         type1 = pkmnStats.getType1();
         type2 = pkmnStats.getType2();
-
-        if(type1 != null) LOGGER.atInfo().log("type1 ("+type1+") => "+typeIcon(type1));
-        if(type2 != null) LOGGER.atInfo().log("type2 ("+type2+") => "+typeIcon(type2));
-
-        
-        String type1Meta = pkmnMeta.getType1();
-        String type2Meta = pkmnMeta.getType2();
-        
-        if(type1Meta != null) LOGGER.atInfo().log("type1Meta ("+type1Meta+") => "+typeIcon(type1Meta));
-        if(type2Meta != null) LOGGER.atInfo().log("type2Meta ("+type2Meta+") => "+typeIcon(type2Meta));
-
+    
         status = pkmnMeta.getNpcStatus();
         species = PkmnStatUtils.displayNameOf(pkmnMeta.getRoleId());
         nickname = pkmnStats.getNickname();
@@ -330,25 +314,25 @@ public class PkmnStatsPage {
         @Nonnull PkmnStatsComponent pkmnStats
     ){
         // var currentStats = PkmnStatUtils.getCurrentStats(store, ref);
-        int[] baseStats = pkmnStats.getBaseStats();
+        // int[] baseStats = pkmnStats.getBaseStats();
         int atk = pkmnStats.calcEffectiveStat(PkmnStat.ATK.index);
         int def = pkmnStats.calcEffectiveStat(PkmnStat.DEF.index);
         int spatk = pkmnStats.calcEffectiveStat(PkmnStat.SPATK.index);
         int spdef = pkmnStats.calcEffectiveStat(PkmnStat.SPDEF.index);
         int speed = pkmnStats.calcEffectiveStat(PkmnStat.SPD.index);
         int hp = pkmnStats.calcEffectiveStat(PkmnStat.HP.index);
-        long exp = pkmnStats.getExperience();
+        // long exp = pkmnStats.getExperience();
         int expMax = lvl*lvl*lvl;
         float currentHp = pkmnMeta.getCurrentHp();
         long currentExp = pkmnMeta.getExperience();
         float expPercent = currentExp/expMax;
         int[] ivs = pkmnStats.getIvs();
-        int[] evs = pkmnStats.getEvs();
+        // int[] evs = pkmnStats.getEvs();
 
-        LOGGER.atInfo().log("exp: "+String.valueOf(exp));
-        LOGGER.atInfo().log("expMax: "+String.valueOf(expMax));
-        LOGGER.atInfo().log("currentExp: "+String.valueOf(currentExp));
-        LOGGER.atInfo().log("expPercent: "+String.valueOf(expPercent));
+        // LOGGER.atInfo().log("exp: "+String.valueOf(exp));
+        // LOGGER.atInfo().log("expMax: "+String.valueOf(expMax));
+        // LOGGER.atInfo().log("currentExp: "+String.valueOf(currentExp));
+        // LOGGER.atInfo().log("expPercent: "+String.valueOf(expPercent));
 
         page.editElement(cmds->cmds.set(statsTabId+" #PkmnIcon.AssetPath", getIconPath()))
             .editElement(cmds->cmds.set(statsTabId+" #HealthBar.Value",    currentHp/hp))
@@ -385,25 +369,40 @@ public class PkmnStatsPage {
     }
 
     private String getIconPath(){
-        if (pkmnMeta == null) { LOGGER.atInfo().log("getIconPath(): pkmnMeta null"); return FALLBACK_ICON; }
-        // if (npcMeta == null)  { LOGGER.atInfo().log("getIconPath(): npcMeta null");  return FALLBACK_ICON; }
 
-        final String status = pkmnMeta.getNpcStatus();
-        if (status == null)   { LOGGER.atInfo().log("getIconPath(): status null");   return FALLBACK_ICON; }
+        if (pkmnMeta == null) { 
+            // LOGGER.atInfo().log("getIconPath(): pkmnMeta null"); 
+            return FALLBACK_ICON; 
+        }
+
+        String status = pkmnMeta.getNpcStatus();
+        if (status == null)   {
+            status="";
+            // LOGGER.atInfo().log("getIconPath(): status null");   
+            // return FALLBACK_ICON; 
+        }
 
         final boolean isActive  = "Active".equals(status);
         final boolean isFainted = "Fainted".equals(status);
         final boolean isHealthy = "Healthy".equals(status);
 
-        if (!isActive && !isFainted && !isHealthy) { LOGGER.atInfo().log("getIconPath(): status UNKNOWN"); return FALLBACK_ICON; }
+        if (!isActive && !isFainted && !isHealthy) { 
+            LOGGER.atInfo().log("getIconPath(): status UNKNOWN"); 
+            // return FALLBACK_ICON; 
+        }
+
         String roleId = isActive 
                 ? pkmnMeta.getRoleId()
                 : null; // For fainted/healthy, we'll get name from captured entity metadata
         
         // final String nickname = pkmnMeta.getNickname();
 
-        if (roleId == null && npcMeta != null) { roleId = npcMeta.getNpcNameKey(); }
-        if (roleId == null) { LOGGER.atInfo().log("getIconPath(): roleId null"); return FALLBACK_ICON; }
+        if (roleId == null && npcMeta != null) roleId = npcMeta.getNpcNameKey(); 
+
+        if (roleId == null) { 
+            LOGGER.atInfo().log("getIconPath(): roleId null"); 
+            return FALLBACK_ICON; 
+        }
 
         // String name = PkmnStatUtils.displayNameOf(roleId);
         // if (nickname != null && !nickname.isBlank()) name = nickname;

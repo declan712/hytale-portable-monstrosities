@@ -75,12 +75,12 @@ public class ReturnFaintedPkmnInteraction extends SimpleInteraction {
 
         FaintedPkmnComponent faintedPkmnComponent = commandBuffer.getComponent(targetRef,FaintedPkmnComponent.getComponentType());
         if (faintedPkmnComponent == null) {
-            LOGGER.atInfo().log("Tombstone has no FaintedPkmnComponent");
+            LOGGER.atInfo().log("Target has no FaintedPkmnComponent");
             fail(context); return;
         }
         PkmnStatsComponent pkmnStats = commandBuffer.getComponent(targetRef,PkmnStatsComponent.getComponentType());
         if (pkmnStats == null) {
-            LOGGER.atInfo().log("Tombstone has no PkmnStatsComponent");
+            LOGGER.atInfo().log("Target has no PkmnStatsComponent");
             fail(context); return;
         }
 
@@ -121,7 +121,6 @@ public class ReturnFaintedPkmnInteraction extends SimpleInteraction {
                 .withMetadata(CapturedNPCMetadata.KEYED_CODEC,npcMetadata)
                 .withMetadata(PkmnCaptureMetadata.KEYED_CODEC,pkmnMetadata)
                 .withState("Fainted");
-
 
         var storage = store.getComponent(playerRef, InventoryComponent.Storage.getComponentType());
         var hotbar = store.getComponent(playerRef, InventoryComponent.Hotbar.getComponentType());

@@ -247,21 +247,21 @@ public class InitPkmnInteraction extends SimpleInteraction {
         pkmnStats.setShiny(shiny);
         int[] baseStats = {hp,atk,def,spAtk,spDef,spd};
         if (baseStats != null){
-            LOGGER.atInfo().log("baseStats = ["
-            + String.valueOf(hp)+", "
-            + String.valueOf(atk)+", "
-            + String.valueOf(def)+", "
-            + String.valueOf(spAtk)+", "
-            + String.valueOf(spDef)+", "
-            + String.valueOf(spd)+"]");
+        //     LOGGER.atFinest().log("baseStats = ["
+        //     + String.valueOf(hp)+", "
+        //     + String.valueOf(atk)+", "
+        //     + String.valueOf(def)+", "
+        //     + String.valueOf(spAtk)+", "
+        //     + String.valueOf(spDef)+", "
+        //     + String.valueOf(spd)+"]");
             pkmnStats.setBaseStats(baseStats);
         }
         if (isValidPkmnType(type1)) {
-            LOGGER.atInfo().log("type1 = "+type1.toString());
+            // LOGGER.atFinest().log("type1 = "+type1.toString());
             pkmnStats.setType1(type1);
         }
         if (isValidPkmnType(type2)) {
-            LOGGER.atInfo().log("type2 = "+type2.toString());
+            // LOGGER.atFinest().log("type2 = "+type2.toString());
             pkmnStats.setType1(type2);
         }
 
