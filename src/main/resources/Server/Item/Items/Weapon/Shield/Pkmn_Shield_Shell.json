@@ -27,21 +27,22 @@
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Bar_Pokemetal",
-        "Quantity": 1
+        "ItemId": "Ingredient_Bar_Pkmn_T3",
+        "Quantity": 10
       },
       {
         "ItemId": "Ingredient_Pkmn_Chitin_T2",
         "Quantity": 30
       }
     ],
-    "BenchRequirement": [
+      "BenchRequirement": [
       {
+        "Id": "Armor_Bench",
         "Type": "Crafting",
-        "Id": "Bench_Pokeball",
         "Categories": [
-          "Pkmn_General"
-        ]
+          "Weapon_Shield"
+        ],
+        "RequiredTierLevel": 2
       }
     ]
   },
